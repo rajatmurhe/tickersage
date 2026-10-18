@@ -34,10 +34,12 @@ class LLMUnavailable(Exception):
 
 @dataclass
 class Usage:
-    input_tokens: int = 0
+    input_tokens: int = 0  # uncached input only, as Anthropic counts it
     output_tokens: int = 0
     cache_write_tokens: int = 0
     cache_read_tokens: int = 0
+    # The amount the provider says it billed (OpenRouter); when set it replaces the price-table estimate.
+    reported_cost_usd: float | None = None
 
 
 @dataclass
@@ -154,6 +156,75 @@ class OpenAIProvider:
         return resp.output_text, usage, model
 
 
+class OpenRouterProvider:
+    """OpenRouter's OpenAI-compatible Chat Completions API. Same Claude models, one key.
+
+    Not available through it: the Claude API's server-side refusal fallback. Cost comes from
+    the `cost` OpenRouter reports for each call, so traces show what was actually billed.
+    """
+
+    name = "openrouter"
+
+    def __init__(self, api_key: str, base_url: str, timeout: float) -> None:
+        import openai
+
+        self._openai = openai
+        self.client = openai.AsyncOpenAI(api_key=api_key, base_url=base_url, timeout=timeout, max_retries=1)
+
+    async def generate(self, *, model, system, user, max_tokens, json_schema, effort):
+        o = self._openai
+        system_msg: dict[str, Any] = {"role": "system", "content": system}
+        if model.startswith("anthropic/"):
+            # OpenRouter passes Anthropic cache breakpoints through; the system prompt is the static prefix.
+            system_msg["content"] = [{"type": "text", "text": system, "cache_control": {"type": "ephemeral"}}]
+        kwargs: dict[str, Any] = {
+            "model": model,
+            "max_tokens": max_tokens,
+            "messages": [system_msg, {"role": "user", "content": user}],
+        }
+        extra: dict[str, Any] = {"usage": {"include": True}}
+        if effort:
+            extra["reasoning"] = {"effort": effort, "exclude": True}
+        if json_schema:
+            kwargs["response_format"] = {"type": "json_schema",
+                                         "json_schema": {"name": "output", "strict": True, "schema": json_schema}}
+            # Only route to upstream providers that honour structured outputs.
+            extra["provider"] = {"require_parameters": True}
+        try:
+            resp = await self.client.chat.completions.create(**kwargs, extra_body=extra)
+        except o.APITimeoutError as exc:
+            raise ProviderError(f"timeout: {exc}") from exc
+        except o.APIStatusError as exc:
+            raise ProviderError(f"HTTP {exc.status_code}: {exc.message}") from exc
+        except o.APIConnectionError as exc:
+            raise ProviderError(f"connection error: {exc}") from exc
+        error = getattr(resp, "error", None)
+        if error or not resp.choices:
+            raise ProviderError(f"no completion: {error or 'empty choices'}")
+        choice = resp.choices[0]
+        native = getattr(choice, "native_finish_reason", None)
+        if choice.finish_reason == "content_filter" or native == "refusal":
+            raise ProviderError(f"refusal ({native or choice.finish_reason})")
+        if choice.finish_reason == "length":
+            raise ProviderError("response truncated at max_tokens")
+        if choice.finish_reason == "error" or not choice.message.content:
+            raise ProviderError(f"no answer text (finish_reason={choice.finish_reason})")
+        u = resp.usage
+        prompt = getattr(u, "prompt_tokens", 0) or 0
+        details = getattr(u, "prompt_tokens_details", None)
+        cache_read = getattr(details, "cached_tokens", 0) or 0
+        cache_write = getattr(details, "cache_write_tokens", 0) or 0
+        cost = getattr(u, "cost", None)
+        usage = Usage(
+            input_tokens=max(prompt - cache_read - cache_write, 0),  # OpenAI-style prompt_tokens include cached ones
+            output_tokens=getattr(u, "completion_tokens", 0) or 0,
+            cache_write_tokens=cache_write,
+            cache_read_tokens=cache_read,
+            reported_cost_usd=float(cost) if cost is not None else None,
+        )
+        return choice.message.content, usage, resp.model or model
+
+
 class LLMClient:
     def __init__(self, settings: Settings, providers: dict[str, Provider] | None = None) -> None:
         self.settings = settings
@@ -166,6 +237,8 @@ class LLMClient:
             providers["anthropic"] = AnthropicProvider(s.anthropic_api_key, s.llm_timeout_s, s.anthropic_server_fallback)
         if s.openai_api_key:
             providers["openai"] = OpenAIProvider(s.openai_api_key, s.llm_timeout_s)
+        if s.openrouter_api_key:
+            providers["openrouter"] = OpenRouterProvider(s.openrouter_api_key, s.openrouter_base_url, s.llm_timeout_s)
         return providers
 
     @property
@@ -181,12 +254,14 @@ class LLMClient:
             ("anthropic", "strong"): s.anthropic_strong_model,
             ("openai", "fast"): s.openai_fast_model,
             ("openai", "strong"): s.openai_strong_model,
+            ("openrouter", "fast"): s.openrouter_fast_model,
+            ("openrouter", "strong"): s.openrouter_strong_model,
         }
         return table[(provider, tier)]
 
     def _order(self) -> list[str]:
         primary = self.settings.primary_provider
-        return [primary] + [p for p in ("anthropic", "openai") if p != primary]
+        return [primary] + [p for p in ("anthropic", "openai", "openrouter") if p != primary]
 
     async def generate(
         self,
@@ -208,7 +283,8 @@ class LLMClient:
             try:
                 text, usage, served = await asyncio.wait_for(
                     provider.generate(model=model, system=system, user=user, max_tokens=max_tokens,
-                                      json_schema=json_schema, effort=effort if name == "anthropic" else None),
+                                      json_schema=json_schema,
+                                      effort=effort if name in ("anthropic", "openrouter") else None),
                     timeout=self.settings.llm_timeout_s + 5,
                 )
             except (ProviderError, TimeoutError) as exc:
@@ -224,8 +300,9 @@ class LLMClient:
                 model=served,
                 provider=name,
                 usage=usage,
-                cost_usd=cost_usd(served, usage.input_tokens, usage.output_tokens,
-                                  usage.cache_write_tokens, usage.cache_read_tokens),
+                cost_usd=usage.reported_cost_usd if usage.reported_cost_usd is not None else
+                cost_usd(served, usage.input_tokens, usage.output_tokens, usage.cache_write_tokens,
+                         usage.cache_read_tokens),
                 latency_ms=round(latency, 1),
                 fell_back=bool(failed),
                 failed_attempts=failed,

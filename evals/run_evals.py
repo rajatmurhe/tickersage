@@ -52,18 +52,25 @@ def load_cases(path: Path = CASES, category: str | None = None, ids: list[str] |
 
 
 def build_settings(args: argparse.Namespace) -> Settings:
-    return Settings(
+    kw: dict = {}
+    if args.provider:  # otherwise PRIMARY_PROVIDER / the configured keys decide
+        kw["primary_provider"] = args.provider
+    s = Settings(
         llm_mode=args.llm,
         tool_mode=args.tools,
         routing_mode=args.routing,
         planner_mode=args.planner,
-        primary_provider=args.provider,
         verifier_enabled=not args.no_verifier,
         cache_enabled=not args.no_cache,
         semantic_cache_enabled=not args.no_cache,
         database_url="sqlite://",
         fixtures_dir=EVALS_DIR / "fixtures",
+        **kw,
     )
+    if args.models:
+        fast, strong = (m.strip() for m in args.models.split(",", 1))
+        s = s.model_copy(update={f"{s.primary_provider}_fast_model": fast, f"{s.primary_provider}_strong_model": strong})
+    return s
 
 
 async def run_case(agent: Agent, case: dict, use_judge: bool) -> CaseResult:
@@ -188,7 +195,9 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument("--tools", choices=["replay", "live"], default="replay")
     p.add_argument("--routing", choices=["routed", "single"], default="routed")
     p.add_argument("--planner", choices=["rules", "llm"], default="rules")
-    p.add_argument("--provider", choices=["anthropic", "openai"], default="anthropic")
+    p.add_argument("--provider", choices=["anthropic", "openai", "openrouter"],
+                   help="primary LLM provider (default: PRIMARY_PROVIDER, or the one whose key is set)")
+    p.add_argument("--models", help="FAST,STRONG model ids for the primary provider, e.g. openai/gpt-5-mini,openai/gpt-5")
     p.add_argument("--no-verifier", action="store_true")
     p.add_argument("--no-cache", action="store_true")
     p.add_argument("--judge", action="store_true", help="score answers with the LLM judge (live only)")

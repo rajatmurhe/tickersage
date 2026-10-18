@@ -3,11 +3,14 @@
     python -m evals.experiments                 # runs what the available keys allow
     python -m evals.experiments --only cache
 
-1. routed vs single model      cost, latency, correctness        needs ANTHROPIC_API_KEY
+1. routed vs single model      cost, latency, correctness        needs ANTHROPIC_API_KEY or OPENROUTER_API_KEY
 2. verifier on vs off          number faithfulness               needs an LLM key (offline answers are
                                                                  templated, so the verifier has nothing to catch)
 3. cache on vs off             latency on live tools             runs anywhere with network access
-4. Claude vs OpenAI primary    the same eval on both providers   needs both keys
+4. Claude vs OpenAI primary    the same eval on both providers   needs ANTHROPIC_API_KEY + OPENAI_API_KEY,
+                                                                 or OPENROUTER_API_KEY (both families through it)
+
+Claude runs on the Claude API when ANTHROPIC_API_KEY is set, otherwise through OpenRouter.
 
 Writes evals/experiments.md.
 """
@@ -29,6 +32,12 @@ from .run_evals import EVALS_DIR, load_cases, parse_args, run
 
 OUT = EVALS_DIR / "experiments.md"
 CACHE_CATEGORIES = {"price_lookup", "comparison", "explain_move"}
+# GPT models with the same fast/strong split as Haiku/Sonnet, for experiment 4 through OpenRouter.
+OPENROUTER_GPT = "openai/gpt-5-mini,openai/gpt-5"
+
+
+def claude_provider(s: Settings) -> str | None:
+    return "anthropic" if s.anthropic_api_key else "openrouter" if s.openrouter_api_key else None
 
 
 def _row(name: str, report: dict[str, Any]) -> str:
@@ -53,24 +62,30 @@ async def eval_config(extra: list[str]) -> dict[str, Any]:
     return await run(parse_args(["--llm", "live", "--judge", *extra]))
 
 
-async def exp_routing() -> list[str]:
-    routed = await eval_config(["--routing", "routed"])
-    single = await eval_config(["--routing", "single"])
+async def exp_routing(provider: str) -> list[str]:
+    routed = await eval_config(["--provider", provider, "--routing", "routed"])
+    single = await eval_config(["--provider", provider, "--routing", "single"])
     return ["## 1. Routed vs single strong model", "", *HEADER, _row("routed (Haiku + Sonnet)", routed),
             _row("single (Sonnet everywhere)", single)]
 
 
-async def exp_verifier() -> list[str]:
-    on = await eval_config([])
-    off = await eval_config(["--no-verifier"])
+async def exp_verifier(provider: str) -> list[str]:
+    on = await eval_config(["--provider", provider])
+    off = await eval_config(["--provider", provider, "--no-verifier"])
     return ["## 2. Number verifier on vs off", "", *HEADER, _row("verifier on", on), _row("verifier off", off)]
 
 
-async def exp_providers() -> list[str]:
-    claude = await eval_config(["--provider", "anthropic"])
-    openai = await eval_config(["--provider", "openai"])
-    return ["## 4. Claude vs OpenAI as the primary model", "", *HEADER, _row("Claude primary", claude),
-            _row("OpenAI primary", openai)]
+async def exp_providers(provider: str) -> list[str]:
+    if provider == "openrouter":  # one key, both model families
+        claude = await eval_config(["--provider", "openrouter"])
+        gpt = await eval_config(["--provider", "openrouter", "--models", OPENROUTER_GPT])
+        labels = ("Claude primary (via OpenRouter)", "OpenAI primary (via OpenRouter)")
+    else:
+        claude = await eval_config(["--provider", "anthropic"])
+        gpt = await eval_config(["--provider", "openai"])
+        labels = ("Claude primary", "OpenAI primary")
+    return ["## 4. Claude vs OpenAI as the primary model", "", *HEADER, _row(labels[0], claude),
+            _row(labels[1], gpt)]
 
 
 async def _timed_pass(agent: Agent, questions: list[str]) -> list[float]:
@@ -113,13 +128,16 @@ async def main() -> None:
     ap.add_argument("--only", choices=["routing", "verifier", "cache", "providers"])
     args = ap.parse_args()
     s = Settings()
-    has_claude, has_openai = bool(s.anthropic_api_key), bool(s.openai_api_key)
+    claude = claude_provider(s)
+    any_llm = claude or ("openai" if s.openai_api_key else None)
+    both = "anthropic" if s.anthropic_api_key and s.openai_api_key else "openrouter" if s.openrouter_api_key else None
     sections: list[list[str]] = []
     plan = [
-        ("routing", exp_routing, has_claude, "needs ANTHROPIC_API_KEY"),
-        ("verifier", exp_verifier, has_claude or has_openai, "needs an LLM API key"),
+        ("routing", lambda: exp_routing(claude), claude, "needs ANTHROPIC_API_KEY or OPENROUTER_API_KEY"),
+        ("verifier", lambda: exp_verifier(any_llm), any_llm, "needs an LLM API key"),
         ("cache", exp_cache, True, ""),
-        ("providers", exp_providers, has_claude and has_openai, "needs ANTHROPIC_API_KEY and OPENAI_API_KEY"),
+        ("providers", lambda: exp_providers(both), both,
+         "needs ANTHROPIC_API_KEY and OPENAI_API_KEY, or OPENROUTER_API_KEY"),
     ]
     for name, fn, ok, why in plan:
         if args.only and name != args.only:

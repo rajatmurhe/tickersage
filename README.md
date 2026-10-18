@@ -41,7 +41,7 @@ Backend (FastAPI, Python 3.11):
 
 ```bash
 python3.11 -m venv .venv && .venv/bin/pip install -r requirements.txt
-cp .env.example .env   # optional: add ANTHROPIC_API_KEY / OPENAI_API_KEY
+cp .env.example .env   # optional: add ANTHROPIC_API_KEY / OPENAI_API_KEY, or OPENROUTER_API_KEY
 .venv/bin/uvicorn app.main:app --app-dir backend --port 8077
 ```
 
@@ -56,6 +56,8 @@ Open http://localhost:3077 for the chat (live progress steps, then the verified 
 The frontend reads the API address from `NEXT_PUBLIC_API_URL` (`frontend/.env.development` sets it to port 8077). The API accepts cross-origin calls from any localhost port; set `CORS_ORIGINS='["https://your-frontend.example"]'` for a deployed frontend. The backend also serves a no-build version of the same chat at http://localhost:8077.
 
 With no API keys the agent runs **offline**: a rules router plus template answers, with live market data. With `ANTHROPIC_API_KEY` set it uses Claude Haiku 5.5 for routing and simple price lookups and Claude Sonnet 5.5 for analysis, with OpenAI as the fallback provider when `OPENAI_API_KEY` is also set.
+
+An `OPENROUTER_API_KEY` works instead: the same two Claude models run through OpenRouter's OpenAI-compatible API (`anthropic/claude-haiku-5.5`, `anthropic/claude-sonnet-5.5`). With only that key set, OpenRouter becomes the primary provider. Each call records the cost OpenRouter reports billing, not a price-table estimate. Anthropic's server-side refusal fallback isn't available through OpenRouter.
 
 Full stack (Next.js + API + Postgres + pgvector + Redis), with the chat at http://localhost:3000 and the API at http://localhost:8000. The Compose file and the pgvector backend haven't been run end to end yet; the default SQLite + in-memory path is what the tests cover:
 
@@ -77,7 +79,7 @@ A public link with a live Claude key needs rate limits, a spend cap and private 
 **Render.** `render.yaml` is a Blueprint for the API, the Next.js frontend (`frontend/Dockerfile`), Postgres for traces, and a Key Value store for the cache and rate limits. It starts at 5 questions per minute and 40 per day per visitor, with a $2 daily budget. Change these in the file or in the dashboard.
 
 1. Push the repo to GitHub. In Render, choose **New → Blueprint** and pick the repo.
-2. Enter `ANTHROPIC_API_KEY` when asked. `OPENAI_API_KEY` is the optional fallback provider; leave it blank to skip it.
+2. Enter `ANTHROPIC_API_KEY` when asked, or `OPENROUTER_API_KEY` instead. `OPENAI_API_KEY` is the optional fallback provider; leave the ones you don't use blank.
 3. After the first deploy, check the two service URLs. The file assumes `https://tickersage.onrender.com` for the API and `https://tickersage-web.onrender.com` for the frontend. If Render added a suffix to either name, set `CORS_ORIGINS='["https://<frontend-url>"]'` on the API and `NEXT_PUBLIC_API_URL=https://<api-url>` on the frontend, then redeploy both. The frontend needs a fresh build, because Next.js inlines `NEXT_PUBLIC_API_URL` into the browser bundle (Render passes environment variables to the Docker build as build args).
 4. Copy the generated `ADMIN_TOKEN` from the API's **Environment** tab. Traces are then readable with `curl -H "X-Admin-Token: <token>" https://<api-url>/api/traces`.
 5. Check the guards: `/api/health` reports `"llm": "live"`, `/api/traces` without the header returns 401, and a sixth question within one minute gets a 429. If a second device is also refused right away, every visitor is sharing one count, which means there is another proxy hop: set `TRUSTED_PROXY_HOPS=2`.
@@ -156,10 +158,10 @@ Offline latency on replayed tools: p50 17 ms, p95 31 ms on the latest run (these
 
 | # | Experiment | Status |
 |---|---|---|
-| 1 | Routed (Haiku + Sonnet) vs single strong model: cost, latency, correctness | needs `ANTHROPIC_API_KEY`: `python -m evals.experiments --only routing` |
+| 1 | Routed (Haiku + Sonnet) vs single strong model: cost, latency, correctness | needs `ANTHROPIC_API_KEY` or `OPENROUTER_API_KEY`: `python -m evals.experiments --only routing` |
 | 2 | Number verifier on vs off: faithfulness | needs an LLM key (offline answers are templated, so there is nothing to catch) |
 | 3 | Market-data cache on vs off: latency | **done**, see below |
-| 4 | Claude vs OpenAI as primary | needs both keys |
+| 4 | Claude vs OpenAI as primary | needs both keys, or one OpenRouter key (both model families run through it) |
 
 **Cache (measured on live Binance data, 24 price/compare/explain questions, second pass):** p50 **120.5 ms → 5.0 ms** (24x), p95 315.8 ms → 6.4 ms. Full table in `evals/experiments.md`.
 
@@ -193,7 +195,7 @@ backend/app/
   cache.py, semantic_cache.py, embeddings.py, tracing.py, symbols.py, pricing.py
 backend/mcp_server.py  the same tools over MCP
 backend/docs_corpus/   cited glossary and API notes for search_docs
-backend/tests/         148 tests (pytest)
+backend/tests/         156 tests (pytest)
 frontend/              Next.js (App Router, TypeScript) chat and /evals pages
   lib/api.ts           SSE over fetch for POST /api/chat/stream
   components/          Chat, Markdown (React elements only, no raw HTML), TracePanel, EvalsView

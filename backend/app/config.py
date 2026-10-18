@@ -6,7 +6,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Literal
 
-from pydantic import field_validator
+from pydantic import field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 BACKEND_DIR = Path(__file__).resolve().parent.parent
@@ -19,8 +19,11 @@ class Settings(BaseSettings):
     # --- LLM providers -------------------------------------------------------
     anthropic_api_key: str | None = None
     openai_api_key: str | None = None
+    # OpenRouter serves the same Claude models (and GPT ones) through one OpenAI-compatible API.
+    openrouter_api_key: str | None = None
     llm_mode: Literal["auto", "live", "offline"] = "auto"
-    primary_provider: Literal["anthropic", "openai"] = "anthropic"
+    # Unset or blank: "openrouter" when that is the only key, otherwise "anthropic". Always set after validation.
+    primary_provider: Literal["anthropic", "openai", "openrouter"] | None = None
     routing_mode: Literal["routed", "single"] = "routed"
     planner_mode: Literal["rules", "llm"] = "rules"
 
@@ -28,6 +31,9 @@ class Settings(BaseSettings):
     anthropic_strong_model: str = "claude-sonnet-5-5"
     openai_fast_model: str = "gpt-5-mini"
     openai_strong_model: str = "gpt-5"
+    openrouter_base_url: str = "https://openrouter.ai/api/v1"
+    openrouter_fast_model: str = "anthropic/claude-haiku-5.5"
+    openrouter_strong_model: str = "anthropic/claude-sonnet-5.5"
     # Server-side refusal fallback on Claude Sonnet 5.5 (Claude API only).
     anthropic_server_fallback: bool = True
     llm_timeout_s: float = 30.0
@@ -81,13 +87,26 @@ class Settings(BaseSettings):
     def _blank_budget_is_unset(cls, v: object) -> object:
         return None if v == "" else v  # `DAILY_BUDGET_USD=` in .env means no cap
 
+    @field_validator("primary_provider", mode="before")
+    @classmethod
+    def _blank_provider_is_unset(cls, v: object) -> object:
+        return None if v == "" else v  # `PRIMARY_PROVIDER=` in .env means "pick from the keys"
+
+    @model_validator(mode="after")
+    def _pick_primary_provider(self) -> "Settings":
+        if self.primary_provider is None:
+            # With only an OpenRouter key, Claude-first would fail on every call and then fall back.
+            only_openrouter = self.openrouter_api_key and not self.anthropic_api_key and not self.openai_api_key
+            self.primary_provider = "openrouter" if only_openrouter else "anthropic"
+        return self
+
     @property
     def llm_live(self) -> bool:
         if self.llm_mode == "offline":
             return False
         if self.llm_mode == "live":
             return True
-        return bool(self.anthropic_api_key or self.openai_api_key)
+        return bool(self.anthropic_api_key or self.openai_api_key or self.openrouter_api_key)
 
 
 @lru_cache

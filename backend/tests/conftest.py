@@ -14,7 +14,7 @@ FIXTURES = REPO_DIR / "evals" / "fixtures"
 
 def replay_settings(**overrides) -> Settings:
     base = dict(llm_mode="offline", tool_mode="replay", fixtures_dir=FIXTURES, database_url="sqlite://",
-                anthropic_api_key=None, openai_api_key=None, redis_url=None)
+                anthropic_api_key=None, openai_api_key=None, openrouter_api_key=None, redis_url=None)
     base.update(overrides)
     return Settings(**base)
 

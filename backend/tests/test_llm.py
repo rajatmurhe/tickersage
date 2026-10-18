@@ -9,14 +9,18 @@ import openai
 import pytest
 
 from app.config import Settings
-from app.llm import AnthropicProvider, LLMClient, LLMUnavailable, OpenAIProvider, ProviderError
+from app.llm import (AnthropicProvider, LLMClient, LLMUnavailable, OpenAIProvider, OpenRouterProvider, ProviderError,
+                     Usage)
 from app.pricing import cost_usd
 
 from .conftest import ScriptedProvider
 
 
 def s(**kw) -> Settings:
-    return Settings(llm_mode="live", database_url="sqlite://", **kw)
+    # Keys default to None so a developer's .env can't change what these tests exercise.
+    base = dict(llm_mode="live", database_url="sqlite://", anthropic_api_key=None, openai_api_key=None,
+                openrouter_api_key=None)
+    return Settings(**{**base, **kw})
 
 
 def test_cost_table():
@@ -147,3 +151,103 @@ async def test_openai_request_shape():
     body = json.loads(seen[0].content)
     assert json.loads(text) == {"intent": "price"} and usage.output_tokens == 7
     assert body["instructions"] == "S" and body["text"]["format"]["strict"] is True
+
+
+# --- OpenRouter ----------------------------------------------------------------------------------
+
+
+def _openrouter_completion(**over) -> dict:
+    body = {
+        "id": "gen-1", "object": "chat.completion", "created": 0, "model": "anthropic/claude-haiku-5.5",
+        "choices": [{"index": 0, "finish_reason": "stop", "native_finish_reason": "end_turn",
+                     "message": {"role": "assistant", "content": "{\"intent\": \"price\"}"}}],
+        "usage": {"prompt_tokens": 1200, "completion_tokens": 30, "total_tokens": 1230, "cost": 0.000255,
+                  "prompt_tokens_details": {"cached_tokens": 1000, "cache_write_tokens": 0}},
+    }
+    body.update(over)
+    return body
+
+
+def _openrouter_provider(handler) -> tuple[OpenRouterProvider, list]:
+    seen: list[httpx.Request] = []
+
+    def wrapped(request: httpx.Request) -> httpx.Response:
+        seen.append(request)
+        return handler(request)
+
+    provider = OpenRouterProvider("sk-or-test", "https://openrouter.test/api/v1", 10)
+    provider.client = openai.AsyncOpenAI(api_key="sk-or-test", base_url="https://openrouter.test/api/v1",
+                                         max_retries=0,
+                                         http_client=httpx.AsyncClient(transport=httpx.MockTransport(wrapped)))
+    return provider, seen
+
+
+async def test_openrouter_request_shape_and_billed_usage():
+    provider, seen = _openrouter_provider(lambda r: httpx.Response(200, json=_openrouter_completion()))
+    schema = {"type": "object", "properties": {"intent": {"type": "string"}}, "required": ["intent"],
+              "additionalProperties": False}
+    text, usage, model = await provider.generate(model="anthropic/claude-haiku-5.5", system="SYS", user="Q",
+                                                 max_tokens=2000, json_schema=schema, effort="low")
+    req = seen[0]
+    body = json.loads(req.content)
+    assert req.url.path == "/api/v1/chat/completions"
+    assert body["model"] == "anthropic/claude-haiku-5.5" and body["max_tokens"] == 2000
+    assert body["messages"][0]["content"][0]["cache_control"] == {"type": "ephemeral"}
+    assert body["messages"][1] == {"role": "user", "content": "Q"}
+    assert body["response_format"]["json_schema"]["strict"] is True
+    assert body["provider"] == {"require_parameters": True}
+    assert body["reasoning"]["effort"] == "low" and body["usage"] == {"include": True}
+    assert json.loads(text) == {"intent": "price"} and model == "anthropic/claude-haiku-5.5"
+    # prompt_tokens include cached ones; Usage keeps Anthropic's split, and the billed cost is carried through.
+    assert (usage.input_tokens, usage.cache_read_tokens, usage.output_tokens) == (200, 1000, 30)
+    assert usage.reported_cost_usd == pytest.approx(0.000255)
+
+
+async def test_openrouter_plain_text_call_for_other_models():
+    provider, seen = _openrouter_provider(lambda r: httpx.Response(200, json=_openrouter_completion(model="openai/gpt-5")))
+    await provider.generate(model="openai/gpt-5", system="SYS", user="Q", max_tokens=100, json_schema=None,
+                            effort=None)
+    body = json.loads(seen[0].content)
+    assert body["messages"][0] == {"role": "system", "content": "SYS"}  # cache breakpoints are Anthropic-only
+    assert "response_format" not in body and "provider" not in body and "reasoning" not in body
+
+
+@pytest.mark.parametrize("response, needle", [
+    (httpx.Response(429, json={"error": {"message": "Rate limit exceeded", "code": 429}}), "HTTP 429"),
+    (httpx.Response(200, json=_openrouter_completion(choices=[
+        {"index": 0, "finish_reason": "length", "message": {"role": "assistant", "content": "{\"int"}}])),
+     "truncated"),
+    (httpx.Response(200, json=_openrouter_completion(choices=[
+        {"index": 0, "finish_reason": "stop", "native_finish_reason": "refusal",
+         "message": {"role": "assistant", "content": "I can't help with that."}}])), "refusal"),
+    (httpx.Response(200, json=_openrouter_completion(choices=[], error={"message": "upstream failed", "code": 502})),
+     "no completion"),
+])
+async def test_openrouter_failures_become_provider_errors(response, needle):
+    provider, _ = _openrouter_provider(lambda r: response)
+    with pytest.raises(ProviderError, match=needle):
+        await provider.generate(model="anthropic/claude-haiku-5.5", system="S", user="U", max_tokens=100,
+                                json_schema=None, effort=None)
+
+
+async def test_billed_cost_replaces_the_price_table():
+    class Billed:
+        name = "openrouter"
+
+        async def generate(self, *, model, system, user, max_tokens, json_schema, effort):
+            return "ok", Usage(input_tokens=1000, output_tokens=200, reported_cost_usd=0.0123), model
+
+    resp = await LLMClient(s(primary_provider="openrouter"), {"openrouter": Billed()}).generate("strong", "s", "u")
+    assert resp.cost_usd == 0.0123 and resp.model == "anthropic/claude-sonnet-5.5" and resp.provider == "openrouter"
+
+
+def test_openrouter_only_key_makes_it_the_primary():
+    only = s(openrouter_api_key="sk-or-test")
+    assert only.primary_provider == "openrouter" and only.llm_live
+    assert list(LLMClient(only).providers) == ["openrouter"]
+    assert LLMClient(only).model_for("openrouter", "fast") == "anthropic/claude-haiku-5.5"
+    assert s(openrouter_api_key="sk-or-test", primary_provider="").primary_provider == "openrouter"  # blank in .env
+    assert s().primary_provider == "anthropic"
+    # An explicit choice wins, and a Claude key keeps Anthropic as the default.
+    assert s(openrouter_api_key="sk-or-test", primary_provider="anthropic").primary_provider == "anthropic"
+    assert s(openrouter_api_key="sk-or-test", anthropic_api_key="sk-ant-test").primary_provider == "anthropic"

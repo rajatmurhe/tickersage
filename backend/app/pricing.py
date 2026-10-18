@@ -18,6 +18,12 @@ PRICES: dict[str, tuple[float, float]] = {
     "claude-opus-5-5": (4.00, 20.00),
     "gpt-5": (1.25, 10.00),
     "gpt-5-mini": (0.25, 2.00),
+    # OpenRouter model ids, from OpenRouter's models API on 2026-10-19. Only a fallback: OpenRouter
+    # reports the billed cost of every call, and the LLM layer records that instead.
+    "anthropic/claude-haiku-5.5": (0.10, 0.50),
+    "anthropic/claude-sonnet-5.5": (2.00, 10.00),
+    "openai/gpt-5-mini": (0.25, 2.00),
+    "openai/gpt-5": (1.25, 10.00),
 }
 
 CACHE_WRITE_MULT = 1.25
