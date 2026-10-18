@@ -3,14 +3,15 @@
     python -m evals.experiments                 # runs what the available keys allow
     python -m evals.experiments --only cache
 
-1. routed vs single model      cost, latency, correctness        needs ANTHROPIC_API_KEY or OPENROUTER_API_KEY
+1. routed vs single model      cost, latency, correctness        needs an LLM key with a fast/strong pair
 2. verifier on vs off          number faithfulness               needs an LLM key (offline answers are
                                                                  templated, so the verifier has nothing to catch)
 3. cache on vs off             latency on live tools             runs anywhere with network access
 4. Claude vs OpenAI primary    the same eval on both providers   needs ANTHROPIC_API_KEY + OPENAI_API_KEY,
                                                                  or OPENROUTER_API_KEY (both families through it)
 
-Claude runs on the Claude API when ANTHROPIC_API_KEY is set, otherwise through OpenRouter.
+Experiments 1 and 2 run on the primary provider (PRIMARY_PROVIDER, or the first one with a key). In
+experiment 4, Claude runs on the Claude API when ANTHROPIC_API_KEY is set, otherwise through OpenRouter.
 
 Writes evals/experiments.md.
 """
@@ -36,8 +37,13 @@ CACHE_CATEGORIES = {"price_lookup", "comparison", "explain_move"}
 OPENROUTER_GPT = "openai/gpt-5-mini,openai/gpt-5"
 
 
-def claude_provider(s: Settings) -> str | None:
-    return "anthropic" if s.anthropic_api_key else "openrouter" if s.openrouter_api_key else None
+def live_provider(s: Settings) -> str | None:
+    """The configured primary provider if it has a key, otherwise the first provider that has one."""
+    keys = {"anthropic": s.anthropic_api_key, "openai": s.openai_api_key, "openrouter": s.openrouter_api_key,
+            "nvidia": s.nvidia_api_key}
+    if keys.get(s.primary_provider):
+        return s.primary_provider
+    return next((name for name, key in keys.items() if key), None)
 
 
 def _row(name: str, report: dict[str, Any]) -> str:
@@ -65,8 +71,8 @@ async def eval_config(extra: list[str]) -> dict[str, Any]:
 async def exp_routing(provider: str) -> list[str]:
     routed = await eval_config(["--provider", provider, "--routing", "routed"])
     single = await eval_config(["--provider", provider, "--routing", "single"])
-    return ["## 1. Routed vs single strong model", "", *HEADER, _row("routed (Haiku + Sonnet)", routed),
-            _row("single (Sonnet everywhere)", single)]
+    return ["## 1. Routed vs single strong model", "", *HEADER, _row("routed (fast + strong model)", routed),
+            _row("single (strong model everywhere)", single)]
 
 
 async def exp_verifier(provider: str) -> list[str]:
@@ -128,13 +134,12 @@ async def main() -> None:
     ap.add_argument("--only", choices=["routing", "verifier", "cache", "providers"])
     args = ap.parse_args()
     s = Settings()
-    claude = claude_provider(s)
-    any_llm = claude or ("openai" if s.openai_api_key else None)
+    live = live_provider(s)
     both = "anthropic" if s.anthropic_api_key and s.openai_api_key else "openrouter" if s.openrouter_api_key else None
     sections: list[list[str]] = []
     plan = [
-        ("routing", lambda: exp_routing(claude), claude, "needs ANTHROPIC_API_KEY or OPENROUTER_API_KEY"),
-        ("verifier", lambda: exp_verifier(any_llm), any_llm, "needs an LLM API key"),
+        ("routing", lambda: exp_routing(live), live, "needs an LLM API key"),
+        ("verifier", lambda: exp_verifier(live), live, "needs an LLM API key"),
         ("cache", exp_cache, True, ""),
         ("providers", lambda: exp_providers(both), both,
          "needs ANTHROPIC_API_KEY and OPENAI_API_KEY, or OPENROUTER_API_KEY"),

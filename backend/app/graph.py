@@ -28,7 +28,7 @@ from .schemas import (
 )
 from .semantic_cache import SemanticCache
 from .symbols import SymbolRegistry
-from .synthesizer import synthesize
+from .synthesizer import normalize_citations, synthesize
 from .templates import advice_snapshot_intro, build_citations, clarify_message, render
 from .tools.registry import RunOptions, Toolbox
 from .verifier import verify
@@ -216,7 +216,7 @@ def build_graph(deps: Deps):
                 notes = state.get("notes", []) + [f"llm unavailable, template answer used: {exc}"]
                 return {"draft": render(route, results), "attempts": attempts, "status": "safe_fallback",
                         "notes": notes, "steps": [_step("synthesizer", t, mode="template", error=str(exc))]}
-            return {"draft": resp.text.strip(), "attempts": attempts,
+            return {"draft": normalize_citations(resp.text.strip()), "attempts": attempts,
                     "steps": [_step("synthesizer", t, resp, attempt=attempts, retry_for=unsupported)]}
         return {"draft": render(route, results), "attempts": attempts,
                 "steps": [_step("synthesizer", t, mode="template")]}

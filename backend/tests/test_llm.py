@@ -9,17 +9,18 @@ import openai
 import pytest
 
 from app.config import Settings
-from app.llm import (AnthropicProvider, LLMClient, LLMUnavailable, OpenAIProvider, OpenRouterProvider, ProviderError,
-                     Usage)
+from app.llm import (AnthropicProvider, LLMClient, LLMUnavailable, NvidiaProvider, OpenAIProvider, OpenRouterProvider,
+                     ProviderError, Usage)
+from app.synthesizer import normalize_citations
 from app.pricing import cost_usd
 
 from .conftest import ScriptedProvider
 
 
 def s(**kw) -> Settings:
-    # Keys default to None so a developer's .env can't change what these tests exercise.
-    base = dict(llm_mode="live", database_url="sqlite://", anthropic_api_key=None, openai_api_key=None,
-                openrouter_api_key=None)
+    # No .env and no keys, so a developer's local settings can't change what these tests exercise.
+    base = dict(_env_file=None, llm_mode="live", database_url="sqlite://", anthropic_api_key=None,
+                openai_api_key=None, openrouter_api_key=None, nvidia_api_key=None)
     return Settings(**{**base, **kw})
 
 
@@ -251,3 +252,69 @@ def test_openrouter_only_key_makes_it_the_primary():
     # An explicit choice wins, and a Claude key keeps Anthropic as the default.
     assert s(openrouter_api_key="sk-or-test", primary_provider="anthropic").primary_provider == "anthropic"
     assert s(openrouter_api_key="sk-or-test", anthropic_api_key="sk-ant-test").primary_provider == "anthropic"
+
+
+# --- NVIDIA ----------------------------------------------------------------------------------------
+
+
+def _nvidia_provider(handler) -> tuple[NvidiaProvider, list]:
+    seen: list[httpx.Request] = []
+
+    def wrapped(request: httpx.Request) -> httpx.Response:
+        seen.append(request)
+        return handler(request)
+
+    provider = NvidiaProvider("nvapi-test", "https://nvidia.test/v1", 10)
+    provider.client = openai.AsyncOpenAI(api_key="nvapi-test", base_url="https://nvidia.test/v1", max_retries=0,
+                                         http_client=httpx.AsyncClient(transport=httpx.MockTransport(wrapped)))
+    return provider, seen
+
+
+def _nvidia_completion(content: str) -> dict:
+    return {"id": "chatcmpl-1", "object": "chat.completion", "created": 0, "model": "nvidia/nemotron-3-super-120b-a12b",
+            "choices": [{"index": 0, "finish_reason": "stop", "message": {"role": "assistant", "content": content}}],
+            "usage": {"prompt_tokens": 800, "completion_tokens": 120, "total_tokens": 920}}
+
+
+async def test_nvidia_request_shape_strips_inline_thinking():
+    provider, seen = _nvidia_provider(lambda r: httpx.Response(200, json=_nvidia_completion(
+        "<think>The user wants a comparison.</think>\n{\"intent\": \"compare\"}")))
+    schema = {"type": "object", "properties": {"intent": {"type": "string"}}, "required": ["intent"],
+              "additionalProperties": False}
+    text, usage, model = await provider.generate(model="nvidia/nemotron-3-super-120b-a12b", system="SYS", user="Q",
+                                                 max_tokens=2000, json_schema=schema, effort="low")
+    body = json.loads(seen[0].content)
+    assert seen[0].url.path == "/v1/chat/completions"
+    assert body["messages"] == [{"role": "system", "content": "SYS"}, {"role": "user", "content": "Q"}]
+    assert body["response_format"]["json_schema"]["schema"] == schema
+    assert not {"usage", "provider", "reasoning"} & body.keys()  # OpenRouter-only fields stay out
+    assert body["chat_template_kwargs"] == {"enable_thinking": False}  # low effort turns Nemotron's thinking off
+    assert json.loads(text) == {"intent": "compare"} and model == "nvidia/nemotron-3-super-120b-a12b"
+    assert (usage.input_tokens, usage.output_tokens, usage.reported_cost_usd) == (800, 120, None)
+
+
+async def test_nvidia_thinking_without_an_answer_is_an_error():
+    provider, seen = _nvidia_provider(lambda r: httpx.Response(200, json=_nvidia_completion("<think>hmm</think>  ")))
+    with pytest.raises(ProviderError, match="no answer text"):
+        await provider.generate(model="nvidia/nemotron-3-super-120b-a12b", system="S", user="U", max_tokens=100,
+                                json_schema=None, effort="medium")
+    body = json.loads(seen[0].content)
+    assert body["reasoning_effort"] == "medium" and "chat_template_kwargs" not in body  # thinking stays on
+
+
+def test_nvidia_calls_are_free_and_picked_when_it_is_the_only_key():
+    assert cost_usd("nvidia/nemotron-3-super-120b-a12b", 1_000_000, 1_000_000) == 0.0
+    only = s(nvidia_api_key="nvapi-test")
+    assert only.primary_provider == "nvidia" and only.llm_live and list(LLMClient(only).providers) == ["nvidia"]
+    client = LLMClient(only)
+    assert (client.model_for("nvidia", "fast"), client.model_for("nvidia", "strong")) == (
+        "nvidia/nemotron-3.5-lightning-30b-a3b", "nvidia/nemotron-3-super-120b-a12b")
+    # With both free-tier keys, OpenRouter comes first unless PRIMARY_PROVIDER says otherwise.
+    assert s(nvidia_api_key="nvapi-test", openrouter_api_key="sk-or-test").primary_provider == "openrouter"
+    assert s(nvidia_api_key="nvapi-test", openrouter_api_key="sk-or-test", primary_provider="nvidia").primary_provider == "nvidia"
+
+
+def test_normalize_citations():
+    assert normalize_citations("Volume was 3.07x SOL's【1】.") == "Volume was 3.07x SOL's[1]."
+    assert normalize_citations("See 【2†source】, 【1, 3】, 【 4 】 and 【1，2】.") == "See [2], [1, 3], [4] and [1, 2]."
+    assert normalize_citations("Already [1] fine; 【not a cite】 stays.") == "Already [1] fine; 【not a cite】 stays."

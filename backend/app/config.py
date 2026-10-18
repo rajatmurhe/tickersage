@@ -21,9 +21,11 @@ class Settings(BaseSettings):
     openai_api_key: str | None = None
     # OpenRouter serves the same Claude models (and GPT ones) through one OpenAI-compatible API.
     openrouter_api_key: str | None = None
+    # NVIDIA's API catalog (build.nvidia.com): Nemotron models, free for prototyping, OpenAI-compatible.
+    nvidia_api_key: str | None = None
     llm_mode: Literal["auto", "live", "offline"] = "auto"
-    # Unset or blank: "openrouter" when that is the only key, otherwise "anthropic". Always set after validation.
-    primary_provider: Literal["anthropic", "openai", "openrouter"] | None = None
+    # Unset or blank: picked from the keys (see _pick_primary_provider). Always set after validation.
+    primary_provider: Literal["anthropic", "openai", "openrouter", "nvidia"] | None = None
     routing_mode: Literal["routed", "single"] = "routed"
     planner_mode: Literal["rules", "llm"] = "rules"
 
@@ -34,6 +36,9 @@ class Settings(BaseSettings):
     openrouter_base_url: str = "https://openrouter.ai/api/v1"
     openrouter_fast_model: str = "anthropic/claude-haiku-5.5"
     openrouter_strong_model: str = "anthropic/claude-sonnet-5.5"
+    nvidia_base_url: str = "https://integrate.api.nvidia.com/v1"
+    nvidia_fast_model: str = "nvidia/nemotron-3.5-lightning-30b-a3b"
+    nvidia_strong_model: str = "nvidia/nemotron-3-super-120b-a12b"
     # Server-side refusal fallback on Claude Sonnet 5.5 (Claude API only).
     anthropic_server_fallback: bool = True
     llm_timeout_s: float = 30.0
@@ -95,9 +100,16 @@ class Settings(BaseSettings):
     @model_validator(mode="after")
     def _pick_primary_provider(self) -> "Settings":
         if self.primary_provider is None:
-            # With only an OpenRouter key, Claude-first would fail on every call and then fall back.
-            only_openrouter = self.openrouter_api_key and not self.anthropic_api_key and not self.openai_api_key
-            self.primary_provider = "openrouter" if only_openrouter else "anthropic"
+            # Claude first when its (or the OpenAI fallback's) key is set; otherwise the first provider with a
+            # key, so a missing Claude key doesn't make every call fail and then fall back.
+            if self.anthropic_api_key or self.openai_api_key:
+                self.primary_provider = "anthropic"
+            elif self.openrouter_api_key:
+                self.primary_provider = "openrouter"
+            elif self.nvidia_api_key:
+                self.primary_provider = "nvidia"
+            else:
+                self.primary_provider = "anthropic"
         return self
 
     @property
@@ -106,7 +118,7 @@ class Settings(BaseSettings):
             return False
         if self.llm_mode == "live":
             return True
-        return bool(self.anthropic_api_key or self.openai_api_key or self.openrouter_api_key)
+        return bool(self.anthropic_api_key or self.openai_api_key or self.openrouter_api_key or self.nvidia_api_key)
 
 
 @lru_cache

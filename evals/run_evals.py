@@ -195,7 +195,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument("--tools", choices=["replay", "live"], default="replay")
     p.add_argument("--routing", choices=["routed", "single"], default="routed")
     p.add_argument("--planner", choices=["rules", "llm"], default="rules")
-    p.add_argument("--provider", choices=["anthropic", "openai", "openrouter"],
+    p.add_argument("--provider", choices=["anthropic", "openai", "openrouter", "nvidia"],
                    help="primary LLM provider (default: PRIMARY_PROVIDER, or the one whose key is set)")
     p.add_argument("--models", help="FAST,STRONG model ids for the primary provider, e.g. openai/gpt-5-mini,openai/gpt-5")
     p.add_argument("--no-verifier", action="store_true")

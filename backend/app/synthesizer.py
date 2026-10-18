@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from typing import Any
 
 from .llm import LLMClient, LLMResponse, Tier
@@ -18,6 +19,15 @@ FAST_INTENTS = {"price"}
 
 def tier_for(intent: str) -> Tier:
     return "fast" if intent in FAST_INTENTS else "strong"
+
+
+# Some models (Nemotron, GPT-style) cite as 【1】 or 【1†source】. The verifier, the UI and the eval
+# citation check all expect [1], so drafts are normalised before anything else reads them.
+_LENTICULAR_CITE = re.compile(r"【\s*(\d+(?:\s*[,，]\s*\d+)*)\s*(?:†[^】]*)?】")
+
+
+def normalize_citations(text: str) -> str:
+    return _LENTICULAR_CITE.sub(lambda m: "[" + re.sub(r"\s*[,，]\s*", ", ", m.group(1)) + "]", text)
 
 
 def _compact(tool: str, data: dict[str, Any], by_chunk: dict[str, int]) -> dict[str, Any]:

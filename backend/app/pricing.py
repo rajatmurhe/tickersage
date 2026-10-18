@@ -24,6 +24,9 @@ PRICES: dict[str, tuple[float, float]] = {
     "anthropic/claude-sonnet-5.5": (2.00, 10.00),
     "openai/gpt-5-mini": (0.25, 2.00),
     "openai/gpt-5": (1.25, 10.00),
+    # NVIDIA API catalog (build.nvidia.com): the developer tier is free and rate-limited.
+    "nvidia/nemotron-3.5-lightning-30b-a3b": (0.0, 0.0),
+    "nvidia/nemotron-3-super-120b-a12b": (0.0, 0.0),
 }
 
 CACHE_WRITE_MULT = 1.25

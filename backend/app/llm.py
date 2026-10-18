@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import re
 import time
 from dataclasses import dataclass, field
 from typing import Any, Literal, Protocol
@@ -172,7 +173,6 @@ class OpenRouterProvider:
         self.client = openai.AsyncOpenAI(api_key=api_key, base_url=base_url, timeout=timeout, max_retries=1)
 
     async def generate(self, *, model, system, user, max_tokens, json_schema, effort):
-        o = self._openai
         system_msg: dict[str, Any] = {"role": "system", "content": system}
         if model.startswith("anthropic/"):
             # OpenRouter passes Anthropic cache breakpoints through; the system prompt is the static prefix.
@@ -190,39 +190,87 @@ class OpenRouterProvider:
                                          "json_schema": {"name": "output", "strict": True, "schema": json_schema}}
             # Only route to upstream providers that honour structured outputs.
             extra["provider"] = {"require_parameters": True}
-        try:
-            resp = await self.client.chat.completions.create(**kwargs, extra_body=extra)
-        except o.APITimeoutError as exc:
-            raise ProviderError(f"timeout: {exc}") from exc
-        except o.APIStatusError as exc:
-            raise ProviderError(f"HTTP {exc.status_code}: {exc.message}") from exc
-        except o.APIConnectionError as exc:
-            raise ProviderError(f"connection error: {exc}") from exc
-        error = getattr(resp, "error", None)
-        if error or not resp.choices:
-            raise ProviderError(f"no completion: {error or 'empty choices'}")
-        choice = resp.choices[0]
-        native = getattr(choice, "native_finish_reason", None)
-        if choice.finish_reason == "content_filter" or native == "refusal":
-            raise ProviderError(f"refusal ({native or choice.finish_reason})")
-        if choice.finish_reason == "length":
-            raise ProviderError("response truncated at max_tokens")
-        if choice.finish_reason == "error" or not choice.message.content:
-            raise ProviderError(f"no answer text (finish_reason={choice.finish_reason})")
-        u = resp.usage
-        prompt = getattr(u, "prompt_tokens", 0) or 0
-        details = getattr(u, "prompt_tokens_details", None)
-        cache_read = getattr(details, "cached_tokens", 0) or 0
-        cache_write = getattr(details, "cache_write_tokens", 0) or 0
-        cost = getattr(u, "cost", None)
-        usage = Usage(
-            input_tokens=max(prompt - cache_read - cache_write, 0),  # OpenAI-style prompt_tokens include cached ones
-            output_tokens=getattr(u, "completion_tokens", 0) or 0,
-            cache_write_tokens=cache_write,
-            cache_read_tokens=cache_read,
-            reported_cost_usd=float(cost) if cost is not None else None,
-        )
-        return choice.message.content, usage, resp.model or model
+        resp = await _chat_completion(self.client, self._openai, kwargs, extra)
+        return _parse_chat_completion(resp, model)
+
+
+class NvidiaProvider:
+    """NVIDIA's API catalog (build.nvidia.com): Nemotron models behind an OpenAI-compatible Chat Completions API.
+
+    The developer tier is free and rate-limited, so calls are recorded at $0.
+    """
+
+    name = "nvidia"
+
+    def __init__(self, api_key: str, base_url: str, timeout: float) -> None:
+        import openai
+
+        self._openai = openai
+        self.client = openai.AsyncOpenAI(api_key=api_key, base_url=base_url, timeout=timeout, max_retries=1)
+
+    async def generate(self, *, model, system, user, max_tokens, json_schema, effort):
+        kwargs: dict[str, Any] = {
+            "model": model,
+            "max_tokens": max_tokens,
+            "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
+        }
+        if json_schema:
+            kwargs["response_format"] = {"type": "json_schema",
+                                         "json_schema": {"name": "output", "strict": True, "schema": json_schema}}
+        extra: dict[str, Any] | None = None
+        if effort == "low":
+            # Nemotron thinks at length by default: ~1,700 tokens and 16 s to classify one question.
+            # With thinking off the same call is ~20 tokens and 1 s.
+            extra = {"chat_template_kwargs": {"enable_thinking": False}}
+        elif effort:
+            kwargs["reasoning_effort"] = effort
+        resp = await _chat_completion(self.client, self._openai, kwargs, extra)
+        return _parse_chat_completion(resp, model)
+
+
+async def _chat_completion(client: Any, o: Any, kwargs: dict[str, Any], extra: dict[str, Any] | None) -> Any:
+    try:
+        return await client.chat.completions.create(**kwargs, extra_body=extra)
+    except o.APITimeoutError as exc:
+        raise ProviderError(f"timeout: {exc}") from exc
+    except o.APIStatusError as exc:
+        raise ProviderError(f"HTTP {exc.status_code}: {exc.message}") from exc
+    except o.APIConnectionError as exc:
+        raise ProviderError(f"connection error: {exc}") from exc
+
+
+_THINK_BLOCK = re.compile(r"^\s*<think>.*?</think>\s*", re.DOTALL)
+
+
+def _parse_chat_completion(resp: Any, model: str) -> tuple[str, Usage, str]:
+    """Text, usage and served model from an OpenAI-style chat completion, with failures as ProviderError."""
+    error = getattr(resp, "error", None)
+    if error or not resp.choices:
+        raise ProviderError(f"no completion: {error or 'empty choices'}")
+    choice = resp.choices[0]
+    native = getattr(choice, "native_finish_reason", None)
+    if choice.finish_reason == "content_filter" or native == "refusal":
+        raise ProviderError(f"refusal ({native or choice.finish_reason})")
+    if choice.finish_reason == "length":
+        raise ProviderError("response truncated at max_tokens")
+    # Reasoning models may put their thinking inline; only the answer after it is kept.
+    text = _THINK_BLOCK.sub("", choice.message.content or "")
+    if choice.finish_reason == "error" or not text.strip():
+        raise ProviderError(f"no answer text (finish_reason={choice.finish_reason})")
+    u = resp.usage
+    prompt = getattr(u, "prompt_tokens", 0) or 0
+    details = getattr(u, "prompt_tokens_details", None)
+    cache_read = getattr(details, "cached_tokens", 0) or 0
+    cache_write = getattr(details, "cache_write_tokens", 0) or 0
+    cost = getattr(u, "cost", None)
+    usage = Usage(
+        input_tokens=max(prompt - cache_read - cache_write, 0),  # OpenAI-style prompt_tokens include cached ones
+        output_tokens=getattr(u, "completion_tokens", 0) or 0,
+        cache_write_tokens=cache_write,
+        cache_read_tokens=cache_read,
+        reported_cost_usd=float(cost) if cost is not None else None,
+    )
+    return text, usage, resp.model or model
 
 
 class LLMClient:
@@ -239,6 +287,8 @@ class LLMClient:
             providers["openai"] = OpenAIProvider(s.openai_api_key, s.llm_timeout_s)
         if s.openrouter_api_key:
             providers["openrouter"] = OpenRouterProvider(s.openrouter_api_key, s.openrouter_base_url, s.llm_timeout_s)
+        if s.nvidia_api_key:
+            providers["nvidia"] = NvidiaProvider(s.nvidia_api_key, s.nvidia_base_url, s.llm_timeout_s)
         return providers
 
     @property
@@ -256,12 +306,14 @@ class LLMClient:
             ("openai", "strong"): s.openai_strong_model,
             ("openrouter", "fast"): s.openrouter_fast_model,
             ("openrouter", "strong"): s.openrouter_strong_model,
+            ("nvidia", "fast"): s.nvidia_fast_model,
+            ("nvidia", "strong"): s.nvidia_strong_model,
         }
         return table[(provider, tier)]
 
     def _order(self) -> list[str]:
         primary = self.settings.primary_provider
-        return [primary] + [p for p in ("anthropic", "openai", "openrouter") if p != primary]
+        return [primary] + [p for p in ("anthropic", "openai", "openrouter", "nvidia") if p != primary]
 
     async def generate(
         self,
@@ -284,7 +336,7 @@ class LLMClient:
                 text, usage, served = await asyncio.wait_for(
                     provider.generate(model=model, system=system, user=user, max_tokens=max_tokens,
                                       json_schema=json_schema,
-                                      effort=effort if name in ("anthropic", "openrouter") else None),
+                                      effort=effort if name in ("anthropic", "openrouter", "nvidia") else None),
                     timeout=self.settings.llm_timeout_s + 5,
                 )
             except (ProviderError, TimeoutError) as exc:

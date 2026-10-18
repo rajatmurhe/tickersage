@@ -79,6 +79,19 @@ async def test_live_flow_uses_router_and_synth_models():
     assert "<tool_output" in claude.calls[1]["user"] and 'trust="untrusted"' in claude.calls[1]["user"]
 
 
+async def test_lenticular_citations_from_nemotron_become_markdown_markers():
+    nemotron = ScriptedProvider("nvidia", {
+        "router": [route_json("price", ["BTC"])],
+        "synth": [quoting_price("BTC is trading at {price}【1】, per 【1†source】.")],
+    })
+    agent = await _live_agent(nemotron, primary_provider="nvidia")
+    r = await agent.ask("What's BTC trading at?")
+    await agent.aclose()
+    assert r.status == "ok" and "【" not in r.answer
+    assert re.match(r"BTC is trading at \$[\d,.]+\[1\], per \[1\]\.", r.answer)
+    assert r.trace.models == ["nvidia/nemotron-3.5-lightning-30b-a3b"] and r.trace.cost_usd == 0
+
+
 async def test_verifier_retries_once_then_accepts_fixed_draft():
     claude = ScriptedProvider("anthropic", {
         "router": [route_json("price", ["BTC"])],
