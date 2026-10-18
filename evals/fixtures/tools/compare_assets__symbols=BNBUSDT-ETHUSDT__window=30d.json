@@ -1,0 +1,49 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "BNBUSDT",
+   "ETHUSDT"
+  ],
+  "window": "30d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T22:17:44.469376+00:00",
+ "data": {
+  "window": "30d",
+  "rows": [
+   {
+    "symbol": "BNBUSDT",
+    "base_asset": "BNB",
+    "end_price": 716.85,
+    "return_pct": -5.84,
+    "volatility_pct": 1.68,
+    "annualized_volatility_pct": 32.04,
+    "max_drawdown_pct": -10.33,
+    "rsi_14": 38.26,
+    "volume_quote": 2695966390.19
+   },
+   {
+    "symbol": "ETHUSDT",
+    "base_asset": "ETH",
+    "end_price": 2388.48,
+    "return_pct": -8.56,
+    "volatility_pct": 1.91,
+    "annualized_volatility_pct": 36.55,
+    "max_drawdown_pct": -13.97,
+    "rsi_14": 36.04,
+    "volume_quote": 20419884161.5
+   }
+  ],
+  "highest_return": "BNB",
+  "lowest_return": "ETH",
+  "highest_volatility": "ETH",
+  "highest_volume": "ETH",
+  "volume_ratio": 0.13,
+  "volatility_ratio": 0.88,
+  "return_gap_pct": 2.72,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T22:17:44.464549Z"
+ }
+}

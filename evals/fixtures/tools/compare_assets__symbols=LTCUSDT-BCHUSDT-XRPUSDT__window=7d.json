@@ -1,0 +1,61 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "LTCUSDT",
+   "BCHUSDT",
+   "XRPUSDT"
+  ],
+  "window": "7d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T22:17:44.761329+00:00",
+ "data": {
+  "window": "7d",
+  "rows": [
+   {
+    "symbol": "LTCUSDT",
+    "base_asset": "LTC",
+    "end_price": 58.47,
+    "return_pct": -9.57,
+    "volatility_pct": 1.58,
+    "annualized_volatility_pct": 73.88,
+    "max_drawdown_pct": -13.63,
+    "rsi_14": 43.37,
+    "volume_quote": 127165738.55
+   },
+   {
+    "symbol": "BCHUSDT",
+    "base_asset": "BCH",
+    "end_price": 272.1,
+    "return_pct": -4.96,
+    "volatility_pct": 1.62,
+    "annualized_volatility_pct": 75.8,
+    "max_drawdown_pct": -8.62,
+    "rsi_14": 47.04,
+    "volume_quote": 63219165.73
+   },
+   {
+    "symbol": "XRPUSDT",
+    "base_asset": "XRP",
+    "end_price": 1.29,
+    "return_pct": -8.46,
+    "volatility_pct": 1.24,
+    "annualized_volatility_pct": 57.86,
+    "max_drawdown_pct": -10.77,
+    "rsi_14": 43.02,
+    "volume_quote": 874979679.61
+   }
+  ],
+  "highest_return": "BCH",
+  "lowest_return": "LTC",
+  "highest_volatility": "BCH",
+  "highest_volume": "XRP",
+  "volume_ratio": 2.01,
+  "volatility_ratio": 0.98,
+  "return_gap_pct": -4.61,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T22:17:44.757970Z"
+ }
+}

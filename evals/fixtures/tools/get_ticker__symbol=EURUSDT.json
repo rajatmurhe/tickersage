@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "EURUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T22:17:44.906103+00:00",
+ "data": {
+  "symbol": "EURUSDT",
+  "base_asset": "EUR",
+  "last_price": 1.12,
+  "open_price": 1.12,
+  "price_change": -0.001,
+  "price_change_pct": -0.09,
+  "high_24h": 1.12,
+  "low_24h": 1.12,
+  "volume_base": 4480718.9,
+  "volume_quote": 5034619.76,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T22:17:41.702000Z"
+ }
+}
