@@ -1,0 +1,66 @@
+{
+ "tool": "get_order_book",
+ "args": {
+  "symbol": "BTCUSDT",
+  "depth": 100
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:00.779937+00:00",
+ "data": {
+  "symbol": "BTCUSDT",
+  "best_bid": 81241.63,
+  "best_ask": 81241.64,
+  "mid_price": 81241.64,
+  "spread": 0.01,
+  "spread_bps": 0.001,
+  "bid_depth_quote_1pct": 527229.26,
+  "ask_depth_quote_1pct": 1476497.7,
+  "depth_imbalance_pct": -47.38,
+  "top_bids": [
+   {
+    "price": 81241.63,
+    "qty": 2.23313
+   },
+   {
+    "price": 81241.62,
+    "qty": 0.00085
+   },
+   {
+    "price": 81241.61,
+    "qty": 0.00013
+   },
+   {
+    "price": 81241.06,
+    "qty": 7e-05
+   },
+   {
+    "price": 81241.05,
+    "qty": 0.16261
+   }
+  ],
+  "top_asks": [
+   {
+    "price": 81241.64,
+    "qty": 6.06696
+   },
+   {
+    "price": 81241.65,
+    "qty": 0.00062
+   },
+   {
+    "price": 81241.66,
+    "qty": 0.00013
+   },
+   {
+    "price": 81241.78,
+    "qty": 7e-05
+   },
+   {
+    "price": 81241.79,
+    "qty": 0.61185
+   }
+  ],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:00.711691Z"
+ }
+}

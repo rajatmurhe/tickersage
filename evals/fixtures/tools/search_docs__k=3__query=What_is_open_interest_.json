@@ -1,0 +1,23 @@
+{
+ "tool": "search_docs",
+ "args": {
+  "query": "What is open interest?",
+  "k": 3
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:26:57.624848+00:00",
+ "data": {
+  "query": "What is open interest?",
+  "chunks": [
+   {
+    "id": "open-interest#0",
+    "title": "Open interest",
+    "url": "https://en.wikipedia.org/wiki/Open_interest",
+    "text": "Open interest is the total number of outstanding derivative contracts, such as futures or options, that have not been closed or settled. Each open contract has one long side and one short side. Rising open interest means new positions are being opened; falling open interest means positions are being closed. Open interest measures participation in derivatives markets, not the direction of positions.",
+    "score": 0.828,
+    "redacted": false
+   }
+  ],
+  "source": "TickerSage docs corpus"
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "XRPUSDT",
+   "ADAUSDT"
+  ],
+  "window": "30d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:30.269743+00:00",
+ "data": {
+  "window": "30d",
+  "rows": [
+   {
+    "symbol": "XRPUSDT",
+    "base_asset": "XRP",
+    "end_price": 1.27,
+    "return_pct": -8.8,
+    "volatility_pct": 2.68,
+    "annualized_volatility_pct": 51.25,
+    "max_drawdown_pct": -19.02,
+    "rsi_14": 32.73,
+    "volume_quote": 6376169734.07
+   },
+   {
+    "symbol": "ADAUSDT",
+    "base_asset": "ADA",
+    "end_price": 0.2164,
+    "return_pct": -3.57,
+    "volatility_pct": 3.96,
+    "annualized_volatility_pct": 75.68,
+    "max_drawdown_pct": -19.97,
+    "rsi_14": 39.31,
+    "volume_quote": 1276293683.81
+   }
+  ],
+  "highest_return": "ADA",
+  "lowest_return": "XRP",
+  "highest_volatility": "ADA",
+  "highest_volume": "XRP",
+  "volume_ratio": 5.0,
+  "volatility_ratio": 0.68,
+  "return_gap_pct": -5.23,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:30.265639Z"
+ }
+}

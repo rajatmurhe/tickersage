@@ -1,0 +1,49 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "BNBUSDT",
+   "SOLUSDT"
+  ],
+  "window": "7d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:23.001626+00:00",
+ "data": {
+  "window": "7d",
+  "rows": [
+   {
+    "symbol": "BNBUSDT",
+    "base_asset": "BNB",
+    "end_price": 712.26,
+    "return_pct": -5.43,
+    "volatility_pct": 0.78,
+    "annualized_volatility_pct": 36.47,
+    "max_drawdown_pct": -5.61,
+    "rsi_14": 35.88,
+    "volume_quote": 491455354.09
+   },
+   {
+    "symbol": "SOLUSDT",
+    "base_asset": "SOL",
+    "end_price": 102.15,
+    "return_pct": -8.28,
+    "volatility_pct": 1.31,
+    "annualized_volatility_pct": 61.07,
+    "max_drawdown_pct": -9.28,
+    "rsi_14": 38.71,
+    "volume_quote": 1469221036.33
+   }
+  ],
+  "highest_return": "BNB",
+  "lowest_return": "SOL",
+  "highest_volatility": "SOL",
+  "highest_volume": "SOL",
+  "volume_ratio": 0.33,
+  "volatility_ratio": 0.6,
+  "return_gap_pct": 2.85,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:22.997536Z"
+ }
+}

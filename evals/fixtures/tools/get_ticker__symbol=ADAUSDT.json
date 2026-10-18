@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "ADAUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:11.853872+00:00",
+ "data": {
+  "symbol": "ADAUSDT",
+  "base_asset": "ADA",
+  "last_price": 0.2164,
+  "open_price": 0.2201,
+  "price_change": -0.0037,
+  "price_change_pct": -1.68,
+  "high_24h": 0.2233,
+  "low_24h": 0.2142,
+  "volume_base": 60370720.3,
+  "volume_quote": 13226914.2,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:11.246000Z"
+ }
+}

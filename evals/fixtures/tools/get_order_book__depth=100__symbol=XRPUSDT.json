@@ -1,0 +1,66 @@
+{
+ "tool": "get_order_book",
+ "args": {
+  "symbol": "XRPUSDT",
+  "depth": 100
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:10.657546+00:00",
+ "data": {
+  "symbol": "XRPUSDT",
+  "best_bid": 1.27,
+  "best_ask": 1.27,
+  "mid_price": 1.27,
+  "spread": 0.0001,
+  "spread_bps": 0.785,
+  "bid_depth_quote_1pct": 2635285.6,
+  "ask_depth_quote_1pct": 1930850.85,
+  "depth_imbalance_pct": 15.43,
+  "top_bids": [
+   {
+    "price": 1.2735,
+    "qty": 23009.0
+   },
+   {
+    "price": 1.2734,
+    "qty": 43296.2
+   },
+   {
+    "price": 1.2733,
+    "qty": 27366.5
+   },
+   {
+    "price": 1.2732,
+    "qty": 17721.4
+   },
+   {
+    "price": 1.2731,
+    "qty": 15353.8
+   }
+  ],
+  "top_asks": [
+   {
+    "price": 1.2736,
+    "qty": 273.5
+   },
+   {
+    "price": 1.2737,
+    "qty": 1649.8
+   },
+   {
+    "price": 1.2738,
+    "qty": 26823.5
+   },
+   {
+    "price": 1.2739,
+    "qty": 31272.6
+   },
+   {
+    "price": 1.274,
+    "qty": 33840.0
+   }
+  ],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:10.653559Z"
+ }
+}

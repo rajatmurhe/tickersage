@@ -1,0 +1,16 @@
+[project]
+name = "tickersage"
+version = "0.1.0"
+description = "Crypto market research agent: live public exchange data, verified numbers, no trading."
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["backend", "."]
+testpaths = ["backend/tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"

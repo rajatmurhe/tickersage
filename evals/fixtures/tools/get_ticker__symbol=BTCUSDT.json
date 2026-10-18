@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "BTCUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:00.586570+00:00",
+ "data": {
+  "symbol": "BTCUSDT",
+  "base_asset": "BTC",
+  "last_price": 81241.63,
+  "open_price": 81304.01,
+  "price_change": -62.38,
+  "price_change_pct": -0.08,
+  "high_24h": 82295.47,
+  "low_24h": 80819.66,
+  "volume_base": 8911.9,
+  "volume_quote": 727214274.29,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:00.008000Z"
+ }
+}

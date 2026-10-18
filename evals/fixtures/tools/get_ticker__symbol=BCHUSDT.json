@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "BCHUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:20.506157+00:00",
+ "data": {
+  "symbol": "BCHUSDT",
+  "base_asset": "BCH",
+  "last_price": 270.0,
+  "open_price": 273.3,
+  "price_change": -3.3,
+  "price_change_pct": -1.21,
+  "high_24h": 278.9,
+  "low_24h": 269.2,
+  "volume_base": 20012.52,
+  "volume_quote": 5498396.65,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:19.550000Z"
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "tool": "search_docs",
+ "args": {
+  "query": "What does maximum drawdown mean?",
+  "k": 3
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:26:57.612302+00:00",
+ "data": {
+  "query": "What does maximum drawdown mean?",
+  "chunks": [
+   {
+    "id": "max-drawdown#0",
+    "title": "Maximum drawdown",
+    "url": "https://en.wikipedia.org/wiki/Drawdown_(economics)",
+    "text": "A drawdown is a decline from a previous peak to a later trough, usually expressed as a percentage of the peak. The maximum drawdown is the largest such decline within a given window. Maximum drawdown is a measure of downside risk over a period: it shows the worst peak-to-trough loss someone would have seen in that window, regardless of how the period ended.",
+    "score": 0.801,
+    "redacted": false
+   }
+  ],
+  "source": "TickerSage docs corpus"
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "BTCUSDT",
+   "SOLUSDT"
+  ],
+  "window": "30d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:33:56.700539+00:00",
+ "data": {
+  "window": "30d",
+  "rows": [
+   {
+    "symbol": "BTCUSDT",
+    "base_asset": "BTC",
+    "end_price": 81139.57,
+    "return_pct": 0.32,
+    "volatility_pct": 1.71,
+    "annualized_volatility_pct": 32.58,
+    "max_drawdown_pct": -6.33,
+    "rsi_14": 44.93,
+    "volume_quote": 38342988317.36
+   },
+   {
+    "symbol": "SOLUSDT",
+    "base_asset": "SOL",
+    "end_price": 101.94,
+    "return_pct": -9.56,
+    "volatility_pct": 2.5,
+    "annualized_volatility_pct": 47.78,
+    "max_drawdown_pct": -16.55,
+    "rsi_14": 35.24,
+    "volume_quote": 7828522130.58
+   }
+  ],
+  "highest_return": "BTC",
+  "lowest_return": "SOL",
+  "highest_volatility": "SOL",
+  "highest_volume": "BTC",
+  "volume_ratio": 4.9,
+  "volatility_ratio": 0.68,
+  "return_gap_pct": 9.88,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:33:56.694584Z"
+ }
+}

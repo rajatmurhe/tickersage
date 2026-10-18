@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "SOLUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:06.197293+00:00",
+ "data": {
+  "symbol": "SOLUSDT",
+  "base_asset": "SOL",
+  "last_price": 102.12,
+  "open_price": 103.52,
+  "price_change": -1.4,
+  "price_change_pct": -1.35,
+  "high_24h": 104.79,
+  "low_24h": 101.25,
+  "volume_base": 1408315.86,
+  "volume_quote": 145402411.13,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:05.746000Z"
+ }
+}

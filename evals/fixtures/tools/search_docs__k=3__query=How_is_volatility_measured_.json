@@ -1,0 +1,31 @@
+{
+ "tool": "search_docs",
+ "args": {
+  "query": "How is volatility measured?",
+  "k": 3
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:26:57.570980+00:00",
+ "data": {
+  "query": "How is volatility measured?",
+  "chunks": [
+   {
+    "id": "volatility#0",
+    "title": "Volatility",
+    "url": "https://en.wikipedia.org/wiki/Volatility_(finance)",
+    "text": "Volatility measures how much an asset's price fluctuates over time. It is commonly calculated as the standard deviation of returns over a period. Higher volatility means larger and more frequent price swings in both directions. Volatility is often annualized so that different periods can be compared: the per-period standard deviation is multiplied by the square root of the number of periods in a year. Crypto assets typically show much higher volatility than major stock indices. Volatility describes the size of past moves. It does not indicate direction, and past volatility does not guarantee future volatility.",
+    "score": 0.435,
+    "redacted": false
+   },
+   {
+    "id": "trading-volume#0",
+    "title": "Trading volume",
+    "url": "https://en.wikipedia.org/wiki/Volume_(finance)",
+    "text": "Trading volume is the amount of an asset traded over a period. On an exchange it can be expressed in the base asset (for example BTC) or in the quote asset (for example USDT). Quote volume is easier to compare across assets because it is in a common currency. Rising volume during a price move is often taken to mean more participation in that move. Volume reported by one exchange covers only that exchange; aggregators such as CoinGecko report volume summed across many venues, so the two figures are not directly comparable.",
+    "score": 0.163,
+    "redacted": false
+   }
+  ],
+  "source": "TickerSage docs corpus"
+ }
+}

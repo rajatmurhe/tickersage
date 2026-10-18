@@ -1,0 +1,39 @@
+{
+ "tool": "search_docs",
+ "args": {
+  "query": "What's LTC at?",
+  "k": 3
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:26:38.489803+00:00",
+ "data": {
+  "query": "What's LTC at?",
+  "chunks": [
+   {
+    "id": "leverage-liquidation#0",
+    "title": "Leverage and liquidation",
+    "url": "https://en.wikipedia.org/wiki/Leverage_(finance)",
+    "text": "Leverage means using borrowed funds to take a position larger than one's own capital. With 10x leverage, a 1% price move changes the position's value by about 10% of the trader's margin. If losses reduce the margin below the exchange's maintenance requirement, the position is liquidated: the exchange closes it automatically. Large clusters of liquidations can accelerate price moves, because forced selling or buying adds to the move that triggered them.",
+    "score": 0.158,
+    "redacted": false
+   },
+   {
+    "id": "stablecoin#0",
+    "title": "Stablecoin",
+    "url": "https://en.wikipedia.org/wiki/Stablecoin",
+    "text": "A stablecoin is a cryptocurrency designed to keep a stable value relative to a reference asset, most often the US dollar. Fiat-backed stablecoins such as USDT and USDC hold reserves of cash and short-term instruments. Other designs use crypto collateral or algorithms. Stablecoins are widely used as the quote currency on exchanges, which is why most trading pairs are quoted against USDT. A stablecoin can lose its peg if confidence in its reserves or mechanism breaks down.",
+    "score": 0.139,
+    "redacted": false
+   },
+   {
+    "id": "news-sentiment#0",
+    "title": "News sentiment scoring (VADER)",
+    "url": "https://github.com/cjhutto/vaderSentiment",
+    "text": "TickerSage scores recent headlines with VADER, a rule-based sentiment model that combines a word lexicon with rules for punctuation, capitalisation and negation. Each headline gets a compound score from -1 (most negative) to +1 (most positive). Headlines with a compound score of 0.05 or more are labelled positive, -0.05 or less negative, and anything in between neutral. Headline sentiment is a rough summary of tone in recent coverage. It does not prove why a price moved, and correlation between news tone and price moves on a given day is not causation.",
+    "score": 0.136,
+    "redacted": false
+   }
+  ],
+  "source": "TickerSage docs corpus"
+ }
+}

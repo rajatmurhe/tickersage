@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "AVAXUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:14.470747+00:00",
+ "data": {
+  "symbol": "AVAXUSDT",
+  "base_asset": "AVAX",
+  "last_price": 9.55,
+  "open_price": 9.83,
+  "price_change": -0.276,
+  "price_change_pct": -2.81,
+  "high_24h": 9.91,
+  "low_24h": 9.49,
+  "volume_base": 1703882.58,
+  "volume_quote": 16569498.23,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:11.002000Z"
+ }
+}

@@ -1,0 +1,515 @@
+{
+ "tool": "get_news_sentiment",
+ "args": {
+  "query": "bnb",
+  "max_items": 5
+ },
+ "kind": "raw_items",
+ "recorded_at": "2026-10-18T16:27:09.684907+00:00",
+ "data": [
+  {
+   "title": "BNB News: BNB Chain Quietly Passes $933M in Tokenized Stocks as Pepeto Looks Like the Next BNB",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 16:00:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVVMzOURPeUp2TEk0c0pkTEc0Smx1b2E3YzQyaUMwS0hSUXotMGZHb2RSczdvOWktMWJVVXZGOUF6VnphQ1JCUndtaUVudC05T2t5NXhBWlJtSXFuS0ZEOTFUUkFvRzROTE5uS1BJWkFXQXpENWllRUlqbmIwd3JTQnZGaEwtT05RekhiblpsZjEyVDBEQXM1NlI3OEZCNk9uNFl0cW91T1cxQjdWdUIybnpZX1ZpamlT?oc=5"
+  },
+  {
+   "title": "Binance New Listing: 1 Token in 7 Days, as PEPE Cofounder's Pepeto Waits Behind BNB and HYPE",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 15:58:13+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQMU9jNV94dHdybEZKYjE0cTNWOHNpMlJoNU1BZ1p2d3AzSEEycnVEQVFqYTJaZWNSRHBSUWFJblJpSFRNbHZtYmQxaUtlc0hQWW5iUmNWSmhLQ2g5TllwRl9YTVBPV0l3cjlnSHJhU3dPS1U4clg5c1gwd3hNS2duQXNiUWFDQ3hpcHJXNENOQms1b3hqRU14Z0l3WjU5aWEwd3c?oc=5"
+  },
+  {
+   "title": "Binance New Listing: RWUSD Opens Fee Free, BNB Holds $720, and Pepeto Buyers Race to Be Next",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 15:25:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOS3k0OVc4Z1BubXhSNnFSSTBLTjJTU0toeHZhbjk5eUVQVC1FRnhMdG16UlBKc3ZmWkd1aktFOEw1dmhQcjJoR1lHek5NX0hpQ29sSXJIaGQ1b19Gd1A2V0NPNnFGNUFxNlFiU3Jjc3lrbnBhM1RQMHQxNGVqc2cycWhVakhBQkdta0hBZS0wN3M2a25LTm5RYnlfUnNyU29Ra0lNT0JfYlpjbVowX0hqSWExNA?oc=5"
+  },
+  {
+   "title": "Cysic crypto bridge halted after unauthorized mint of 10M CYS",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-18 14:56:09+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBxNDhCbmJrRlBvQW4tV19sU2pST3NlU3NVU01IMkRsVTAxRFJWX1JYSWZ4UThRVTlwQU5BM2I0VkhWUHBIaU56SElYTHBBdVVsd0FMeEJOWHlEQQ?oc=5"
+  },
+  {
+   "title": "Binance Coin Price Today: 72% of Traders Back a BNB Bounce, but Pepeto Eyes a Pepe Style Run",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 14:23:50+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPVUNYX3pnaXVfYmNaaURzY2ZOUGY3VEFRbE42MFc1aEVjN3ZhWFZfQTMwbzhGZjhJcFVmang2YW9sR2lTazExektXQXJKM2VuRUJmdWJVVHlPSkg5TDRWbHJnWVNkQW5pWVZJZnh5UG5QS0dWY20tcm9yVnV3YTNoYmdLWEtFRjB4S1kxNWdkRFVvVmkwbkRlamN0b1U?oc=5"
+  },
+  {
+   "title": "Bitcoin rises 0.57% to $81,983 as crypto market cap drops 3.47%",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 13:26:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1jM0VqbHRGNVIyVWQ1Slpad01VOFkzR01Xd2c5MmQzMHZLcVhMd3F5TzY2SFJ4TUFJMklpUFpIa0c1NlRTRUo3VGtwS3BQcnlxN05icXZKbE0zcmR0UE9hNzNqQWFsM2d6MFY2eWJqVEQ5cmZaeWdnSWdEOA?oc=5"
+  },
+  {
+   "title": "BNB News: Binance Sets November 10 Pool Closure as Remittix",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 12:37:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPdEw5bGg3VTAzTVN2eUNsYXhhaEhKeGJ0X2x2b3c5d2JXLTE2dFJUUEN6QVo1T3h5UGZ5c1dROHJ6alp3TEVNUjRDTDV6UHpvUjBaZjNaYjV0UFU5WmJzbXZCVXZxN2hpdDZPWnc1REFLa2lTa054R2lyWUFIZVpTM2k5LVJDU1RDeHluSm9qc3FMUTRvZE5xX0dn?oc=5"
+  },
+  {
+   "title": "XRP leads domestic crypto trading with 15.99%, ...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 12:24:28+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQT2lfd1R3NTlLUDNUU09BZ0Y0cURuRlV6OHlpb0ZYS1d0N2FFSF9jaTZuS0ZWODBWV19tZ2NKSU5TTXB3M3FRSmlmT3JtZVFMRkVuNmtzeUMyYTAyQ2w1NVRueEt2U1ZOVUNLMUtHNDNMYzhaZS1yakJEcXV3WTFRT09JRE9WV095TVFpMGtQZ3FxTGllZGZrUm90LWRqVmF3d29KLS1wSlVyZF9OSUE?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: BNB Holds $720 as Its Chain Leads Tokenized Stocks, While Pepeto Buyers Eye 100x",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 12:20:45+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQSWlIN0xfQWhYMThkR25Ub2NJdENqUzlfZkc5QWozZDQ3cWp2TDV6SC1HWEVFTmVLQTYzRVJmb3c1dDRweS0xNE56NDRudHpreVdVOWx5VmJXbjViakt1OF9XRS1KRHNXd3U4eEwtaHlEN1kwbTJ0VTdyTjBaWXV3VjhqRk13YkxFdEFNNjc1X3dpRElTYWl0TWcwMmZmbVhK?oc=5"
+  },
+  {
+   "title": "Bitcoin inflows rise short-term despite monthly outflows; Binance trading volume drops sharply across regions",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 12:07:44+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOYlhPZ2tGRi1mOUVjcFRLOXFPcTh5SkwzRmNEMmdlcEtlbHlKVU5QSUc5cE1SdENEVmEtbGY2OWVPWmZlbTZSZ1NKQ1FtM1JET21KV182TElUcEIzbElLOFh6M2VyU0tJNHFsVTVZZDRSSUNub29uRXBaaE1rNzhtSTl1eG5iaHJEbzRjMUtrUEtIWUhnTEZ4YmxEU1VUN3A1ZmNidXBQdDRzbW9CSXByVw?oc=5"
+  },
+  {
+   "title": "Binance Coin Price Today: BNB Bounces Back to $729, While $11.2M Backs Pepeto Before Its Listing",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 11:55:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNNllxUkhDZGJwTzNINGlwZnJGM1V0dl9pUjdZd2hKaDc2djRJNHF1NFJnUExBc05vbWI3eTBUWF9MR01STThxM0Q4M0E1LXdWZTdDalBpSlh4NmNnLS1SSF9sSEZNUXpPMUdDdEZZdHlGQXZOMFc3SW5QckpHVndBS3BTMHVOdG43YWdvUW5oWkdJSE1UcWVCdUgxLVNrR1dJZU11SG05TWMxWm45Tkl0dWZJMVFYaHhR?oc=5"
+  },
+  {
+   "title": "Solana sets record with 557M stablecoin transfe...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 11:51:57+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQdDVCa2wzcm9EQTZtX2k2RXUyUGM4bWo3ZW9HckJZQW5ndnFpWkEtOENZN1ptcnRXWk1lY2F0XzRoM0FrRklNbTMzWjctaFIybUZkaXhnNHV4NkRyVm9hVWdXbXZWLTZLYm11YW5WblFvY05rckRCMkRaWmhhYkIwX2FHS2o0N1VsZ01HZXpoeV9OU2FzZWQ1WlVRRlhHeTZq?oc=5"
+  },
+  {
+   "title": "Cysic halts crypto bridge after unauthorized mi...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 11:02:20+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMXVKVVNBODJhRHNON1lBT3AxWDh0T0tmSWZHWnhiRUVyVnJhemdxOTU3WjhsR1lMLU5SelJkOEdWRndmaFJKcGhhY0JNc1FUWVpMMC1OdlVmX2J1eDY5Wng0Yklnc19SOGJ0TnU5NXhCTXI3dDRYNi1WdUVDazVaUFFhOWFaYzUyTlNWRDMyM0g4dmVYYmFTY05vVHgtTWd3SW1Pd01mUUFiUQ?oc=5"
+  },
+  {
+   "title": "Cysic halts crypto bridge after unauthorized mint on BNB Smart Chain",
+   "publisher": "Traders Union",
+   "published_at": "2026-10-18 10:51:20+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYmNUODYzT0lfM3h3TUpYM2M2TGk3emlDQjctTlBFUkRQalNONFMzX3pwLUxFUUJMSF9YMU9kLU05U1JXLTVFWl9FZlRJZTRTa3lsTHd0LWhoWGU2QWtzMWR6dTlGb0RmcjhnTndaa0dnSUhpNDJ1T3FVd25VLV9Jak90UTNlMFNrSkZOd01LdWJjSDJ2UTFhTWtEc0tTbFd3LU5JX0tpQQ?oc=5"
+  },
+  {
+   "title": "Bitcoin Analysts Are More Bullish Now Than at the Start of the 2023 Bull Market: CryptoQuant",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 10:14:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOY3kxVWt1TUFfd1JGc2p0ZldJYzJsV1JjWGlXS3lqdjQ3cjd4bWluazU5RU5fOUNPMWd4QjhNVEdkX3J5bmo4RGdOMzNkQnlOOUo5cm5KNzExdzNZUFJLa3dlZlpWa3BuZDlkX2NMTTdETzlnRHpIRlZXamFiVTNrWFFrVkh1VDdlbzV4WmhQUWFocEdCaWhnRzdKMUtNMnNRZ0NtZTZqdnlWQVJuRlpieGJYa2tsSXp5WXBQYnktcUpmZmxEaDFyOA?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: BNB Eyes $770 as AlphaPepe Presale Stage 21 Nears Sellout",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 09:05:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQUlF5OUZSUXcxRGFEcVNEelp4X0pNUHUtd0duRnk4WU82bnNQb3JqVVRCQTdMTEN2R2Y0akN2OXJXMXFGM19XR3dOVjFJWDJzbGtXQlJkQUtuQTdOdk4tZUx3emZhN3JuRldRbUthTnNJMjhlYnhldDVvVlpDT2NpVWZ2RnZ6dVVXYU0wZGtXZ2VfVzNCeXBvZDNQc0VpQzBF?oc=5"
+  },
+  {
+   "title": "Binance Coin (BNB) Trades 2.8% Below $740 October Target",
+   "publisher": "TOKENPOST",
+   "published_at": "2026-10-18 07:35:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE01YllVLVBmNWp1THZqblhKZXBZS1A1aE1oMGMtdENLSXFyc0hvUlJEeXRiMFI1bTNJMVphYzhCMUZtdjdneFR6TFNyRnJrdG1yd3VsTmJDTVVHQQ?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: Hugging the Lower Bollinger Band With $740 October Target in View",
+   "publisher": "Blockchain News",
+   "published_at": "2026-10-18 07:27:06+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQQ1U3WUVDd2ZUX3VTTmFBaFI2RVhVV0V3V0gzam5ja1gybkZyOENOTURvR2x3SjlfN0s2TGFScmtiaFhoZENPYnIzRGlXdER3ODdad1ZTajloRWVYcHl2QVRqa1BHU1R5eWp6RjkzTlJ2dkFsMTNCMFFJbmlmYWtCZUltYXpCa0IyMWd1UU9reXB6ckR2bENrV2JESnlDd0FSLTdsN3RR?oc=5"
+  },
+  {
+   "title": "Bitcoin sees net inflow on centralized exchanges despite mixed platform flows this week",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 06:24:22+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOcW8xRDBLbnkyRDBBYVJsMkE0T3B4MFNwVDVZbDNXdFRTRmRMZmdKMllJOWJLVU9RdWVuSE9lRWhVXzJtbHppWE1pdThBbnRodEtUQXhQcDhDdXlNWnlGWXFsNTFxdkFOUGU5ajJraGt3OUk1bmxmd3FpLU43WXMxTGF2RGdyeW8?oc=5"
+  },
+  {
+   "title": "\u725b\u6765 (Niu Lai) Price (\u725b\u6765/USD) Today | Live Price, Market Cap & Chart",
+   "publisher": "Binance",
+   "published_at": "2026-10-18 05:49:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9iV25tdjlPemRJLWQ2dXVIbmoyMk94eHNKZGxXbWNxOHFwd0Q5NGliRy1VQk44bDJTY21tVnhMWmRzTmVpdTVhQ3U5dS1LNGpiLXc?oc=5"
+  },
+  {
+   "title": "Bitcoin rises slightly to $81,801 while overall crypto market drops 2.75%.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 05:24:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNREZCM3I2Q0tfYTN3OEtoRThiOENERVE2YXlSMHlzcV8zN0dmRGdoaG1VQ0xjR1hiMmp1MkJiYmtQQW9KSVdPYjBNUk1fSHlKWTM3aUZ2TThfdy1MblZTZ0ZvWFpxVTU4V1pvVVFIa3BtT25XS0Fha1dmWUlHVzNsODZHWDQ5d211MEpzTnpLLTdSVDFGM2ZMaE9mQ0ZweG5LdW84amFXNm9hdjdZTVVz?oc=5"
+  },
+  {
+   "title": "\u725b\u6765 (Niu Lai) Price Today in India | \u725b\u6765 to INR Live Price & Chart",
+   "publisher": "Binance",
+   "published_at": "2026-10-18 04:58:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA3ekJ6UlFKU2poaFhIS1oyakluWndNWG5jRS1WTGJQakJONXR0eUIwMmlzTFNmWFVjdW5JSzZiMFpMLVVtSzBHQ0VQUnR1WXRIcmtGdWtn?oc=5"
+  },
+  {
+   "title": "Crypto Inferno(@M_KH_Frequent_Trader)'s insights",
+   "publisher": "Binance",
+   "published_at": "2026-10-18 04:26:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE94VzlvYnFuV2RtM1FvS1NEQU1aUzREVDBjRjIyRk1WRGczUEtiX2FnUHNOWG9aM19jeTBYZkl6ellPOGFQYkt1dURxWEJRVjZqTzJ2SDJCWUR6SkplcHVZU2dzMW0?oc=5"
+  },
+  {
+   "title": "BNB Price Today | Live BNB Price, Chart & Market Data",
+   "publisher": "Binance",
+   "published_at": "2026-10-18 01:21:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBHSUNGLWlKSHgtd1BtcHdNcl92ZnhGRUlFLUc5b2c0dll5V015Z0NFUUxpVURfa2FHTHpueUZpbnY4NTVtRjNCZXMzRy1Ja08y?oc=5"
+  },
+  {
+   "title": "Best Crypto to Buy in October 2026: Solana, BNB or Remittix With Its First Public Trading Cycle Still Ahead?",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 00:55:07+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQTElWbkx1Ty1Tdm9aRDNmWlRkTllFeTdlNlBJRExwaWl4cGVXazZldDBqSGFCbEM0dFlUaTFfaTBLQXNWSnphWF90dURlWl9EZndkbWsza1YwcGwyQmFyYmtmR1NGbEJ2RUlWWVhTV1BLRnMtQXdyZUNxYU5WOVZubVEwLTNndGs3N1lieWU0UDI2WUp4ZFRTWERqem5EdFBOV2hsTlhzdkYxUklPb1dCRW0wRUl5QmRSMF9FNS1QSGtKQ3hLbnBhY213?oc=5"
+  },
+  {
+   "title": "BNB News: Franklin Templeton Holds $1.5B on BNB Chain, While Pepeto's Presale Tops $11.2M",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 00:07:09+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPcEhlQVQ1WW5YTzk4UEZkVzY2ZVpScEdCcWdJTVlsOTcwUjZxbDNkbExKT0FPTUFSZ0wtUEc1Y0RDamJ0TzZuUlEwajB2OTFFTDlnX090YVFzV0V3dHo2M05IVnVTMlNWbVRibXA2SDlYRFJrUk50WjRMTlR0eERXUHNMUXhRaUZ3bW43aWM4ZmZ5bUpuRzJJRA?oc=5"
+  },
+  {
+   "title": "Binance New Listing: NeoSoul Jumps 230% on Day One, but Analysts Eye 500x for Pepeto Before Its Own",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 00:02:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQVHBhdUR2NEt2eGlfTlprRzJfUC1KSE1sdnZrbm0tT0lDQWNQcmJUWFlrQ2VqcVRCaXZWMHg0LU9HSWlIVi1UbXlhUDhheXNWSUdSVXNvMmdYU1hJOFZaUjhLMUxsOVNQVjlpN2xFOU1xWTdkRHlFcnd4MC1PWi1DRXl0T2REZkdPdFA5NXVMbHFHeTNFX21TRTNMZ2xvUQ?oc=5"
+  },
+  {
+   "title": "Convert 0.001 BNB (Binance Coin) to INR (Indian Rupee)",
+   "publisher": "Bybit",
+   "published_at": "2026-10-18 00:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9IRE82TjJKQWc0a21mUEFucWlkUnV5MGpBLWV1cUs2MlpkMjQ2MWkyVU41SmphU0lseFNtNU4xODJQQmlFYTdxaWZGRXhqbUdyOEZCdWFiR1RSaTVlaFRQNGY0SQ?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: BNB Near $720 After Binance AI Launch. Could Remittix's $0.28 Entry Be the Earlier Opportunity?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 23:56:07+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSUtRM2NRT1hqSDRFT2NETXd5aW9jZ0pmU0duZFd1U0Z2b0ktblluV1ZEMGFVbjd0RHZZWXRnWGFlT0pFR05OcV92VmFEa1kycVQtbFFTaVJidWcxMVAxRllLOXhGR1lGYlpfRm1OSkhZdTZ5bTh3TnBpRUdIeEpRQjRSdXAzSE5tRGpOR0VxbTdua01oSVF2YQ?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: Binance Pulls the Plug on Its Mining Pool, and Pepeto's $11.2M Presale Draws a 200x Call",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 23:30:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNSDBIdUh4QWZmNkRLTmJjdDl0aEpLMjVLdUFyRmVjOGhfWTF6REFiOXVvWTdlcWExVm5WRDdXOWJucXJUUnZ4Q0RxNnBjVk4yc0pwT05QQ2ppbzJEci0yRGNOdmpQRkRmc0duZUI3QnRoc1JNVjBETkxpaWdGTVVYczBFVWktQ2NnM3pGREJyaWFHUmk5T0cyTnF6bWdCWGs?oc=5"
+  },
+  {
+   "title": "Best Crypto to Buy Now: XRP, BNB or Remittix as Banking Integrations and AI Trading Expand Crypto's Reach?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 23:03:08+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNY25MUXUtSmUzbnpVRDBsa05aYnNWcm52YVNBb0ItLVdFVW5FNWFHc0ZETmFMcGhBMWdMMkNDcUNITG12QWFoRzlpVXdmckIxTDFQX0QxR0dMbVFWNzg4aUJoQlcyNTRkQkk1djFObHQ2X1FoR2NZalFNZHAzckRoMGRlOGZodWhOaW00cUloN0hqSTQ?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: BNB Near $720 Meets Remittix's $0.28 Entry and Announced $0.46 Final Presale Stage",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 21:52:30+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNV1ZNV1RxNDd0Ri1CTW9tOXNBMHVScTlQVER6YWF6dnpUa3lnUVdwNDIyT0RISl84d3hpU2xZeGFGdkxRRkFwZEM3RExNZXFqakhrMGRxdk5iUDE5ZE9wbXlUblNla1dWaHlySktjOWJuSXpuLVp4NDEzOHQ1Um50eGhEQTFicFZydVhXTUp1NEhNMWQ2UnJBM3pqUlV4QQ?oc=5"
+  },
+  {
+   "title": "BNB News: Binance AI\u2019s Trading Push Meets Remittix\u2019s PayFi Ecosystem With RTX\u2019s November Launch Ahead",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 21:26:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNNDlXbGZtYjVqYlVUU0JRVDRHNjFrZVZzOHpKY2M4RjJPZU5HaEpQLVZtbXRPdTNRT1FyU3BBNkd5dW8yX0FDYUg2SU9vTlBIZWlIejJZb1ViZUhmVm9xMEUwenNXOWlFT0QtaGdtNzdGaWlmM2lYYUF3UERFX3FXZUNRbkc5dFRlcGlHMThyT3BPMDEzalViNHhUTGNnT0dWZUticGZuQUZ4cnNWMDRsTUJ4YkREemE4dmpudS1hV0hFUkRBTFl3SDd6Q2NwMUZXbFc2ckh2a1QtWm5RM1I1bHFsMjRwb1JBNUQ0RGZmaUQtelE2M1NndWZ2NnRFa2FpTmVxNklOQUhFeWFXMWVrLWh5a19qdw?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: BNB Near $720 After Binance\u2019s Stock-Token Additions as Remittix Brings a New Ecosystem Bet",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 20:38:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxOTjMzTVF3RW5JZ0dHamMxdk5BZU80Y3JNZnhLMWZPT2VBQ3ktSzBVWURJODQ2X1NsdjgwTF8xQXNXRGJfQ25sd19ndUNRQWlQUHZGZE1mOWhtbHBHQkR1RDBMeENINE1UTElULXl6bWo2bGZVOHBBS2JQRndoZWRMOHBqRkQzTk5NU09seGpmUl9NUnI2LTE5XzBKdnoyTElWd0JKUW9PMG9zUXlMMFNkX1JqS1gyRGIzX1YzRWNKMzVJUFFORVItUmNiU1ZSMURWZEJ6czdqdHU2RnBLcnBTM25WQlBDelpfeXU0cTVSM0FqV3d5MjFXbW9kRU5DM05RNXh6Y2ZZOS1pQmJFWFFWY0Z3?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: Binance's Stock-Token Expansion Meets Remittix's PayFi Ecosystem Before Its First Trading Cycle",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 20:33:57+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNQWtsaFRuSUluN0o1Q09tc3pVQXdfVnkzdTdia2szUG1rUDU3M250cFZWcXdGdEJrdzFLUDNkYktWcVVqekE5dC0tdmtxRk9oQm52Mmd6NEwwZi0yRnExak9QdFlWWk5VdnV2U3FfNVh0emZwU0tkWlpiOEp3X0syOEdkb0ktM09KSFp1V0Z4QWUxN2ttc2k5eTd2X0lKRWI0SEI4NEoyRHQ3ejh4bDZLcUhwckMwN0ZNN1ptay0zaGlON09hYXZGZTRITURKWkR1ZF9tTkNR?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: BNB Holds Near $732 as Binance Pay Books Hotels and Pepeto Targets 100x",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 19:35:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPU3JmMlJLQ3NtUERXeGd5OWZUUDl6YVVhc2RTeVJyZXdwek5Xcm5BOGhlZmRTbGhnSXlzcUpYenpLalJ4VnIyYTZoSkJLMXR1MUVsdXEtZXM2R01PQWZ1V0N0enM3dmdNanpTandFSjFlREpkSDRHSlNvd1dITUFCY183MXQ1d29XQUF4NmFNT2M1SUFHMlFiSlJQT3hUb1cweTI3d2hydkNEMG54N2VQaW1kaEtOQUk?oc=5"
+  },
+  {
+   "title": "Binance Coin Price Today: BNB Holds $715 as Binance.US Seeks $100M, While Analysts Eye 100x for Pepeto",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 19:03:38+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQNDJUVEdqUDd5TUpXRTI5YlpYZ1dGVnRFMzJ0enZVZzBERWstLVpMZGNZVHItZzZJZ2xwc2dFSVhyTDRZT1pmMjZBMFdhaUhkS0xtODd5T1ZEUHY3d0RLaWh4Z0c3Vm56TG9KVWgwT2VmQjNUc1hnbW1iRDhsV21IVGRVSU5sZVoxS0daWXFkdTBLdm9ZT3kxd0ZR?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: $780 Breakout or Another Rejection?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 17:44:29+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQd2d3TFBnZU9lMWcwZkxiNmVQUFRkQ0hEM2hFa3lHclFvRHF3QkhLTE5JZjlOR2pzTXNQY1dOR2p5WHVBMEVJdGtmRXF0M3RkejEwMnU5STFEMkNsTUl1andrTXBkY0N2MUJPMThJSlJfcmlzYmtBdk9WS1ZFV3pfek43TXk1YXBZaWk1RmZzc0hRT3hZ?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: Binance Pulls In $163M in One Week, While Analysts Eye 100x for Pepeto",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 17:36:45+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQaWRYV1VmR3FyMWhCdDBlRmJCY29EalBvbHdST0xFQS1nLWlaR0NtV0lPYVpfRUpXMVFvM3lyOU1ncFhTWjJmMXh2aXBlSDA1QzluWXZHamIxOE9WTTAzM2VHcHpYYnI4ZUw5dGg5WG90bHo3c2cta0VYOHdTMndvcDVmbldKLUl3MjNlQzVZQmxqdXpkZFNxdWtaUzc?oc=5"
+  },
+  {
+   "title": "Afzal Crypto BNB(@mahijutt55)'s insights",
+   "publisher": "Binance",
+   "published_at": "2026-10-17 17:09:25+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1pOGZ5cERPTkM2WVY0Yjg4WW5rTG1LWlp3T25QVHJQTTVzYlQxZ25FN0I1Z0JjOXhCbDJ1cGJ0REZyTExfeEdWcV9tVEJ0SXJaV0ZjMVFzZWNFYkNCVkhmZmpFemc?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: BNB Holds $713 as Its Chain Leads Tokenized Stocks, While Analysts Eye 300x for Pepeto",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 16:51:08+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOSzJ0bkpnb2o3enFDZ0xMak5fNTVXd2lWSk1ydHlHSHdSOWVTVDNsQmlrXzVNQ0xqdDhnaDJxUXhhX0xSZlNUeS1NWHotMlhTamdnNXNfWmFwX2kwM0pNOWNTQTRNaHFaU216ejZrdnlSVDJIRlFOUG1EVmdJbVpTNVRnVG01REtURnVKVUs3bkhkdnIybkdiQzZUalRtbmFW?oc=5"
+  },
+  {
+   "title": "Binance New Listings: BNB Near $720 and PEPE Near $0.0000040 Put Remittix\u2019s Separate November Debut in Focus",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 16:38:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxQYW1zVHJNT0tYUnl0NHo2UGpZMXYzREFXd3hteEtFM1NvSGstM3VkTWxoTDhxN2lDc0VEcERTNkN0Q0k1VXNJektqYUo2V0wwSUp4WUNQNTRDSWNscjJob2kxZ0g2bEYtbHVOVTdpU1d2Y1hGLXFVZi1STDd1Zk9OS05zalpKU1BmR2FDRFVMcWoxZ0JlX01xQl8yUVVZZHljWE9JNjkyaENVM1dFakFKZ0N1aGdacW83aGV2Qk15UlhSMXhMQlJ4NjB0NFU4bEpaT25FbDBpRFl6SzB5WS1VNjRweTRzUEJ4YWo2cEJoX242TFIzc0RIUXNZbDlsWjNPQXZxV1NZUWxPakh2Y2hB?oc=5"
+  },
+  {
+   "title": "Binance Coin Price Today: BNB Near $721 as Binance Plans November 10 Pool Closure and Remittix Nears Its Debut",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 15:56:15+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQZmUyVkVObFFNek1SLWNBTnlPUkd3VEpydnhLc1luR3d5bnVZRFg4U2tyUXlZX1RKNVpLZjVPWXN1dTUydmpqd2FPQnpVa0p4MUFuMXJiRS0zWWtKZFI2UzdFdmx1clF6eURWVE1YYnVlbnB2b3g5dTl0V1JKVFF6V0RYbF9QcDl5UEJQQVh3dGJmVnhSUF8xM0ZOazBwU2FsdVh2SW9NdGJqU1FReHN6REowcFZ4QUlRekVtazRDQ2NHdnA3WE95elM1N19VQQ?oc=5"
+  },
+  {
+   "title": "Top 3 Cryptos to Buy Now: Solana, BNB and Remittix as Network Upgrades and AI Trading Expand Crypto's Utility",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 15:33:31+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPYXM2ZXBMSHhldTdjWEFUWXVWZTRHU3JXbkFQX0JObEVmaG9Rb0RfbXdLZkVUbmQ2Yjk2ZFk5RmF5SU9nVVdvZTd0aG1TRm1wWGd1SnFRTmI0dkhOekR2NllfdU43dzhSUlV0ZWNCODh0amczbU1uM290Nzd5VU1kR0pWcU5fcjhqRVd3Vm5wa2Y5eGxRODZqQ2RKcms3TlBDSEw3MFhpTW41TWJKOVAwMWV5dGRyZ0Y4cHRlbm5xbEdCeGFEQkdxR0tJTQ?oc=5"
+  },
+  {
+   "title": "BNB News: Binance Adds Four Stock Tokens as Remittix Brings a Fresh Payments Comparison for BNB and ZEC Holders",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 14:33:11+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPTURuZDBObE5vWjhGVEx3VFFCQ0ZWTFBpWUsxZU9VaUo4OGVnWlZjQTFtZFlTVVJnYnh4U1c5UnVpYnVoYkxjT3Q5SEw1SXNsX051R2ctTzRhYjJtVHJEUWJzaWI4QTRaMUtwWWtiazgwaTBNWlhnS0Fzd3RmNExqUHJvcEZuSTBzWVVrRnNnd050VlVFZzJEZDNDcDNYMlhKNm9rcjVyeldfLXUxRU5NdkNYNTZUbmpfSDBvcXZHcFB4OFlLb1FWZXhnWHVMOFBR?oc=5"
+  },
+  {
+   "title": "BNB News: Binance.US Hunts $100M at a $1B Price Tag, While Pepeto Buyers Back a 100x Shot With $11.2M",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 13:28:36+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQU3kyZTN6QWxIWkNCRXdFR1BLdFlDMUxieDE4Yk9GWmM0bUV1TEVtRENrVnBsUUtrYUZNT1ZEUktjQWxVcDdXcWdWemhZUzh6YXpoanlVMEpwdDJITkJINVlZWWtXZ3g3aVpqV0lFNHYtVlh6WUNHci1DS0pIQ1JBQkhjTERJWmVlSHZDM2doXy15aWthMkRINVdqUnB6Zw?oc=5"
+  },
+  {
+   "title": "Binance Coin Price Today: BNB Holds $729 After Binance Pool Exit as Pepeto Targets 100x",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 13:10:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPalA1VWQ5Tjl3dEd4d3VWZmhOVld1OGVLVUFjYVRRU01UajBZZlI5R0VmenZVVXVyUjZJUUlYVXNJazBIRlhtMHhoU0diRG5EOUItOWpLWDVvQlFBaDM3WVZlN1llTVJLNmd0aFZoY1JIdEpPanNUcHdBTDlxa1MyT3pRM3I0cGZnQ2o2US1md2llVjNmNmw1VG5VUW5IWHB3OE44U29OMldkYjdGVFpJ?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: Franklin Templeton Parks $1.5B on BNB Chain, but Pepeto's 300x Is the Bigger Story",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 12:44:56+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNY09XQTF2OVQ2QnNHMHRUVWZ3Y2h3RHhQQTV4WVA3ZTBaNGRya092RVZPT2pxTTVURHFqcVZKVThHVnNTSjkwZGhhTEp1djVzUTJ3S2IyTEFQWGtDVTEwV0dLLWpRMF9tV1dMSkk3eEhORnpVYmZkZDliM0czcXZlSkZQYmJYSlhwZ2dTaG9zcGlBZG9lU0JsRA?oc=5"
+  },
+  {
+   "title": "Crypto Update: Bitcoin Shakes Off a Hot 6.3% PPI, Ethereum and BNB Bounce, as Pepeto Buyers Line Up for 100x",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 12:42:44+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQaFNsZmFLNzgwTVprMFRiTVZ5RGdyNmlJUDhVN3BEd1ZkSVFNbkJmWWlKUkpURm0yMlBhWmJlYUtPTEhrQlZsNURQc1kxRjZzc2lrUXlyLUVWVHUxYVAtUFJDeElyVmJNZmFUdUtwX09GdTQ0MkdDNjFEQ0YybnVJYXF3LVd6UWtSOE9xSEtVS3RrUjYtcF9GXzRZa0tjN2hF?oc=5"
+  },
+  {
+   "title": "Bitcoin exchange balances see short-term inflows but monthly decline continues; US trading volume rises.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 12:28:45+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdkJZVkN5SVRrY0hrUms3Qjc0WDhfeGVWb1pCNFRZR0JRRGdpOUZoNVFhdnJMX3lPWEZPZFM2aFI2ZUdLaUxWQ05iakFSQlRPcTNidlN4ekxSZW1rRFhFTUNkSXY5NzBwQnJMMHhwZmxWX2pGai1CLVhaZ0daZ3RuQ3RyMmNEYXpJNTBrc2RGY0Y5VDI3MWF1M1RFSGNVMXZj?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: Binance's Stock-Token Expansion Meets Remittix's $0.28 Entry Before Its Planned Final Tier",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 11:34:24+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOcWVCY3RnOXpZSTdiZTVoUjBCdlo5anh5VUFMaXhWdVVVaFNHejBYZ3NEYTdzM1NDTXlaVUdiQUsxelFmbEE2MUdfbEgxWExVZHo4VlpOSUhid3dSeFlqcWpFTGY0VzF2dXVQNmVhd002YWVTQXN2WGZzck1VY0dWNklIRHZvaEl6SzBOS3ZkZWM3dzBRalFOV1ZB?oc=5"
+  },
+  {
+   "title": "Top 3 Cryptos to Buy Now: Pepeto, BNB and Chainlink as Strive Buys 3,311 BTC",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 11:25:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNTUdxdWI0eDF4U1NBUk1TQk1LNmZnWHVPbmFFalVzc2FudGJoWWsxY25WTnB4bEluTk9paUxhSjlNRktsWGwzRWFtQTl5VGtGelBEQXNRRjY1X0RjNGxkMjNyODJ3aUJWM282RElVMGRPZ2daSEhEN2lRejFNVng2cGYxSGlzTXNLdGlnMW4yczhfdHRuaVBWTmYyZjdVX2M?oc=5"
+  },
+  {
+   "title": "Tokenized-stock market cap nears $4B, led by BN...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 10:00:43+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcmR1cVNNWVU5bnRIZnAxOHM4MkM0cXdLUDRMemJ4Nm05OFhGdzFqd1o0TVl2SjZ0NnFjY1NoeHpSTW80NTJEWmxIM0dUX1BSUHQyNVpIVTk1Q2RicnRIcHpKN2IzLWIxOV9CQUh2RW5PbGY3enpzb3hKdmVSZ2dzWVc0LWlraEd4bGU2MnpibVJhSUE3UW9pMXFmeU9YMFBwaTFSQWtWdkk4ZVJqaFBN?oc=5"
+  },
+  {
+   "title": "NEAR: Shallow Correction Possibly Over if $4.80 Holds",
+   "publisher": "Blockchain News",
+   "published_at": "2026-10-17 09:47:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOeWs0NWdONmJWMzNET05qOWpSd3pnQWxaR1pxR2phbi00WGFsTmR4eG1tQTZVbDNXQVVmdkpJb3RaVjVkcFdUZGZiYmVENUJSODBOZTRQNEI4SktOYXJwSFZjNkZNZ1E2Q2xpRTJnT0k1bjVKNXRNTFliQmpaNnFpSnVYX3ZpLVYzRXpneUd3?oc=5"
+  },
+  {
+   "title": "Binance New Listing: Four bStocks Launch as Pepeto Eyes 100x Gains Over BNB and DOGE",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 09:40:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxORW82azZxdWlJREFXZHh6OXpXRW9mOHdpQzlfOUN4eHJlQnlnQ3lBTGtKYUdXdGtfUFVTa1puc3loajJuamVWYjFqSHJfVGdOM2tpRkZFaDAxNlNpRFZjaVFnbHFWbmsyMzNoanFsU2tpZmlTdVBIMTg0b0QwbzZKcEp3bmotZ0xwTWRmbVdtakVBSHpWT0sxYnVpTV9PWTdnNGVPU2xWWlpkMGdX?oc=5"
+  },
+  {
+   "title": "CZ: BNB Featured on Vietnam National TV",
+   "publisher": "Blockchain News",
+   "published_at": "2026-10-17 09:21:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5SYkRfYlpkZlI2VEVrV1BBSzVPYkhpTndUc1RmQnFrcm1tZGpqY1JMUHBwcTd2bmg0ZTFNUzJiTWY4eXlyUEJ2Q2wtLUNoYnVkWlBFYnZKS3Q4UC1QUzhNNE5xQXNkcW5oQThwMmNwYXRKNUx5NmROYg?oc=5"
+  },
+  {
+   "title": "T. Rowe Price's TKNZ ETF Brings Active Multi-Token Crypto Strategy to Market",
+   "publisher": "CoinMarketCap",
+   "published_at": "2026-10-17 07:50:48+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPbTZyN1pTT1lGRVV1SXJyU3R1ZndnVGV1b2ZmVzZiYVNuVUl5QlA5LWNXSDhWcF9qUlZka3BGSjVTOGgxZ3ZiMmZaemtyTmpxU2N5QW9Db1ZTd0lZa2YyMWtFNml4NGZ2YXhSbFhHNUhIcjdwSF9ieUwxSXRqUWt6RzhPVl9zcGVtXzQxU2FKTGszS2RtVW9LREl5UmlSM0g5SXcwelZDaXpOZGZkOFhBZkhITEYzQW8?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: An Established Ecosystem or Remittix",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 06:54:33+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNTNNa3NLNlRmaUZxVzZMTkE2aXpqajkwTzZoeXptSEFmVWZqaEhNN3BWWGJQX1B1bkVKZmlTdlFRYkc3dzBBeUt2YlpEX2xJYW9NS2ZWaFFWSDBleENIY1NLYnI0ZWx3TmR3bkVlNU05b3ltRTN0NklpZW1zMHA0LVoxaGZrUWMxanFYczdBQTMwN0RjcFppdg?oc=5"
+  },
+  {
+   "title": "Best Crypto Presale 2026: Sberbank Opens Crypto Access as Pepeto Targets 100x Over SOL and BNB",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 06:45:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNcThJVlVaWDgwaFRvV3JSQnFLcHJJZ04xV1ZtSXluSUM2SGdDb29YcVQyWmFqQUtEclJoM0hnMnZ5eV8xVFY3WEhUZjFVcDBibFJOeVRfbE5LM2dMdnFNdHAwRkgwTHE5WUs1QVdmY2VjRkZ5WEtsUVJib3F5WGhCaHpmaktJTVFBWk5iVzgwbnp1OXAzRmduaGJaTkhvZS1tUy1aZXFuaFJvdkF6aUlNRlp1NVlRakhfQ1E?oc=5"
+  },
+  {
+   "title": "BNB News: Binance Expands Stock-Token Trading as Remittix's $0.28 Entry Faces a Planned Final Presale Tier",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 06:36:49+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOQ3AwMkZzNmVtS1lJTjNINjhjMkJVaWhfVkdWZ29rV3VNUVp2Y081TzF1UV9zdWRqSDRxZy1rTHpNZ0djNnNBOTdYTHFrN2RqZ3FCaDRkVktGZ0ZVZy1tZnphLVgteEplMElEMWJfLURWNzN2cnN3TEZ4b3h3N19TSE1uSTIwZ2RjQ0R5a042bUZuelF2RnpCaUxB?oc=5"
+  },
+  {
+   "title": "Bitcoin and Altcoins: Market Overview (October 17, 2026)",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-17 06:15:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQWmNDTkhMYk1JbkszUlFhVG5yVkhiNkcyQi1wUW5fVUpHVEdGV2t1NmlRUG5nRFJuOThoZ3oxZ2ZqSDRacU5ZZjR5cldrNWR5V1JCY3FxTWZTc05ZcHJzY3J6dEUxZE1oa3R2VHlWVFFxMXR4eGNJNGZsV0gxZFltNnVaYWdpcGpKOGtXZEI1YVRod3J1akE?oc=5"
+  },
+  {
+   "title": "5 Best Crypto to Buy Now in 2026",
+   "publisher": "VT Markets",
+   "published_at": "2026-10-17 04:42:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNUzkyaG5PLUMtNXFOWFRtY0tKTzYxRWFwOC1kRTV1ZVZzVnRtY2gzei1nSEJKbVNKUVNldUN2ZGk1cGpNWnM4REdfeUktUHZQcmcyVHF1RHZLRElVNzZIVWVYbWZmdjZQMmQyLTBDRVpobkZCWVlEaDVIQ25mWEI4UHJlNA?oc=5"
+  },
+  {
+   "title": "BNB News: BNB Bounces Off $709 as Sellers Tire Out, and Pepeto Buyers Chase a Run",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 03:26:49+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNRTR2OGR0UDR4MEZjTm5HVTJneldlWUV2TER0Y0Y2cHNzTjBnVzJ5Tk9rUTlTUnVoZnRGVmRRaGpfN18wbndYc092YVJLd1B1MUItVmZyME1GSHlvMEZ5ckN0bTRGSThRT0M5OEFYX24xZkVaQWVGdVdhaVppd0JMMnljNXBJOW1yRFRJU3haRlo5bXNLR29vLWpBODFMTXZ5aVF3VXhsQzdhb3RIV0NRTzZ0NHA3ZVlzbWhVb3RlWmhRbk9rbkxCUmkyeXRFTEQ3RHdjZmlMMjRKMl9lYlB3cw?oc=5"
+  },
+  {
+   "title": "Crypto Update: Bitcoin Holds $80K After Hot Inflation, but Pepeto\u2019s Setup Is the Real Story",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 02:40:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPNUFfX0dLbzVlOU1mRmpLamdET0RiOWVoMGlQdTRvM2doZHhDbnRQV2U1VDFUdlNWeGxGUHhXckZDc0NVX2FzRjVXLXN3ckRjN2NpXzI2VVBLX2hNOGVIeXZ0MzVNMXRWTWp3MHNieDZuaGttUEpUVExlaEYtN0FPY3c2ZjIzTVhhSE5nS0xtaHdLUkdLQkVkQVhkNlFUNE9Va0VZQzRBejNYVUxTaTBUUkthZWk2dzdQYVBhcTlfaXhNS1hEUTJUckcwMWRkNjdIdjV4Y1BpZEdQel9iRUpmazdQSW52LWJDTHg0RjJkM1NqRFl0b25r?oc=5"
+  },
+  {
+   "title": "More Than 70% of BNB Chain Tokenized Stock Trading Occurs Outside US Market Hours",
+   "publisher": "bloomingbit",
+   "published_at": "2026-10-17 01:19:28+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9NcHpKQjBPdHg0RUtwY2huMGxYenRBUjRmQzRQSHZzQ3F2S2JuOVJDRFBrMzRObVVmdWhEMzFVdlQ5eDVPcHgycXp3RzdrMTBSbVR2Ug?oc=5"
+  },
+  {
+   "title": "Tokenized stocks hit $4 billion, BNB targets $1,601 after falling wedge setup",
+   "publisher": "Bitget",
+   "published_at": "2026-10-17 00:32:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1KU0MwNEZueGVsem1Eb0t4LXk1WjdxVjRrREZ2NzV0QkRLck94UXZsQ0RPbEtEUnYxOTM1NjRsZ3ZaZ1JLRWVEZkNsRUlNc0FSV013NTVVVU1XZXhhSnlDV1lwWdIBY0FVX3lxTE1KU0MwNEZueGVsem1Eb0t4LXk1WjdxVjRrREZ2NzV0QkRLck94UXZsQ0RPbEtEUnYxOTM1NjRsZ3ZaZ1JLRWVEZkNsRUlNc0FSV013NTVVVU1XZXhhSnlDV1lwWQ?oc=5"
+  },
+  {
+   "title": "Convert 1 ILS (Israeli New Shekel) to BNB (Binance Coin)",
+   "publisher": "Bybit",
+   "published_at": "2026-10-17 00:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5rVDJsckxpV1hyVlZoc29XUUZ4YUpnTENhWjNuYnFIbF9ueWR5QjBKYXlTdmE4UVBGak1famphOV93LU40c281YlRFUDBxLWVIalBuTXg1VXh4Zw?oc=5"
+  },
+  {
+   "title": "Convert 1 BNB (Binance Coin) to AZN (Azerbaijani Manat)",
+   "publisher": "Bybit",
+   "published_at": "2026-10-17 00:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBCTW5WazNLOGlQNXBRemk5MlZ5azBnRndBYXBQMVBHU05iZjZLNURZNXhoRG5wUmNMdER2ZVQyRWZsak5sUWhlSWtkejlNQVVlMlhaSGRLeDlKUQ?oc=5"
+  },
+  {
+   "title": "BNB Chain Leads Tokenized Stocks With $1.5B As BNB Price Eyes $1600",
+   "publisher": "TronWeekly",
+   "published_at": "2026-10-16 23:59:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxORWVIc1o2WDNISkJ1dkE0V3ZZZktOYzZTOVRvZTZhYS1obkdZWjVEVGV1NmU1bG5qMHB4RktrZUNSbW5fTGNSUU1JeFRkUHBUY2lYSHFSOGItTXc0cjZyMHdSNktJdWE1aGpZNFNTVFpOM2hOcmNod0czOURrUldUVUhBTFlsSFlJTW5iQWtmWTB5dXhveWc2Xw?oc=5"
+  },
+  {
+   "title": "BNB News: Binance Closes Its Mining Pool Nov 10 as Pepeto Presale Buyers Eye Big Listing Returns",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 23:45:04+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPN0dUZGtRMV9FR29RX3dEbmVSblVsRS1HYkxVNEpMWmoxWGx3YzFRcGpQS19KS09FRUFlMGppRzNKeW0xa0ZLQndPX3lZR0kycVh2SDV4OHNxUDlTVVRnOW1HM2ZKMnlDWWVrTjhrdmdRQmZkQ0dSYU5QS0FxR0hTZ2RCSDNobE85ZERJUFZFQnVxb3AxRzRpZno2Skt0NlJKUDVaWXlwMkJTWG00bGVlQUlub0JEZnZrMGVGRQ?oc=5"
+  },
+  {
+   "title": "Top 3 Cryptos to Buy Now: Solana, BNB and Remittix as Network Upgrades and AI Trading Set the Agenda",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 22:57:37+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQb0FrRVFMVnBaQkJHMUI4d01ueFRuUDBBX1VseWdPX0pQZXF5bzM0S1ZjZmdqV3czc2N1MVJ6VjNHV3FrNGRoS05tbEFyTUtsZjQwUnVnM0VrNmFIQXFOQ3BTdUdsQ2ItTHNLUzJlX1BTNTUwUEJIUDZjYWQyQlljZjlqdExzd19Ta2xwQVE1dFVST2dQVUxXWnVIUQ?oc=5"
+  },
+  {
+   "title": "Crypto News: Bitcoin, BNB Recover as Buyers Pour Into Pepeto's 100x Play",
+   "publisher": "Coin Gabbar",
+   "published_at": "2026-10-16 22:40:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOTlBuU2hzd0EtMVEwNU1pa1V5U2dMQ3RnTzZSNVJ5V3VkZ1VJWXl1LTNPVVFDVjhyclFLbmRuZE9uR3JmQW42aXBNTW9hOHl5R011LWY5Z0tCZ1dtQ2FwTVBDbi1HeUxFQTJxTTUtNU5rSFVodnpoY1dFYlZSVHNmbjV3MG1qOEVDV2I2Z0ZROA?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: Binance Pay\u2019s AI Commerce Push Meets Remittix\u2019s Crypto-to-Bank Testing Before Launch",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-16 22:04:49+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNMUxrN0JMVHFHUGtxdWFWM25ENV9xaWxTV0VUZGpDTVRidG5qSzVKTHlCVC1lcGdGUS0zcTNSaHlTaHpyZTRRLXY3NDlqanZwUVJpaG0zUVVYeVNCczRPNDEwUE1mLUFuVFlsQldOTXFGNEVSRXA2NkdiZE5TWDdzcTNVRVdBRXZ5Rk5ubTFhWnJMVjY5R1J1OVRFeW5KWmt3QmJsMU9RclVVZk5XeXRQV3RkZlNZemZOTlJsbW0wWG0xelpBTjBhMXVCSHY3dTl0NzVCemNjUWQwaks5bEx0TUV3MTBETnRpSklITEJ2X1JUNk9pdzV1UVgxeG9Ba251VWRwbDVlMUMzWGpXM0JkdWpn?oc=5"
+  },
+  {
+   "title": "Ethereum News: Dual Investment Launches on BNB Chain",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-16 21:14:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE93OG5jcWFUZVFaZ3BOa0dWOW15VXdaOEVmYVM3bGdLMVN2UnBEQkJNRGFHVzhYY0hPS2hrY3ZvaUJsci1yUVlHQS02TjBuUC1CcGdPMS1oSVVWNFc3?oc=5"
+  },
+  {
+   "title": "BNB, Cardano, Pepeto: Best Crypto to Buy in October 2026 as Dip Buyers Rush Into One Presale",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 20:57:18+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPMmdZWjU5bmNMcE1iNjNENFAtM2kzOHRzSXd3clRpR09HZkpsS1p2ZjhtalRVRUs4bHlGVVZfQTh0VmhFYVNjeU5hR0xpN1ZLMzFONURvU1RQZFB6ajRtUm9sNk1QTk5oUmVQWDZrSkNjVjl1dXZPWHE0Sno4ckNQWUE3OXFLYWZQVGdvUDRoQks2RlV6UXFJZG5Wbng?oc=5"
+  },
+  {
+   "title": "Crypto News: Pepeto Approaches Its Second Big Exchange Listing While the BNB Price Prediction Climbs Toward $3,000",
+   "publisher": "markets.businessinsider.com",
+   "published_at": "2026-10-16 20:44:21+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQazZHYlFFNm5TbFBFTmVOYjkteDRrNDJEbTZfZFlwU1Q3d3FxY1NieGlKRkxEbkJQN3NXajBoZzV1YTRVM1lmVk1ZRDdjX2RtcVk4dTJBcWhGMjBBRmZoVGF4anFwZ0NkN0hiMngxRW5tQVhPa2xpcDRidXh0dEo0d1ByNTg1dWY4MVBfa05RamtnX3hyMFAxM0xCUEY1cUprVlJWekRtNVRFQUx4bjduT3VVMnNFeTdlVjF1UnhxNXZ0ZGZDanB2Y3RVM1plcWJYdlRYN2JwWkZlTmVqblN5Z21ydFRDbTNLSUFoaEF1VjNYVDdHUktFWWFXN0FEeDJR?oc=5"
+  },
+  {
+   "title": "Binance.US Seeks $100M at $1B Valuation, Down 78% From 2022",
+   "publisher": "The Market Periodical",
+   "published_at": "2026-10-16 20:33:18+00:00",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE8yUDFPUGJMVDdsWFVJc1VMVUFWeGZCb08xUlJROUlvUGxlQ1BQNE1vQlVFNjhhYmRlNWlIOW1SVUI4ZHIxY2VnRk9zUVljWWdyektaSmdQYnJDTWVFaEp1dG1lbW1MVXhVcHp1MEhUNFYtLVRIMEJRS0tjaw?oc=5"
+  },
+  {
+   "title": "Crypto traders set BNB price target for the end of 2026",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-16 20:19:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE04bzFzNXk3d19Kbk5ZWEQ3UTdPdHhueHpsd1ZWYXpyQktPWV9qT1hfSlMyV2NWU3dtdllCbk0tMHRUSjFIZEFqZnJNRGRFdUZBOG9vaDlOUDVEZTQ?oc=5"
+  },
+  {
+   "title": "Cryptocurrency News: Injective Jumps 28% as Pepeto Eyes a 100x Rally While ETH and BNB Bounce",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 20:02:52+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQMngwVGtNbXNXVzhmc09EcEItQ2NkTXYwUkxFYmI4YV9mODZTZUtjZk1rOFY5RVhlM3NRaVpqLTlCdkd0Tll2emprWGM0akMtSFBYR3NHbk5pQWh1dlY2MFlkdzBneUJsYmZrYk5YWjhoMTFrWmNjbGY2eWphYTQ2OVpzZEFtbEpSYUxIY1kxRjFWaF9IS3dwYVFQazg?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: BNB Chain Stock Tokens Top $1.2B, But a $16K Pepeto Buy Targets $4.8M at 300x",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 18:30:03+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPN1k2aGNRbEJTdk93OWNGaDdZUVFLcmQtM2FRblcyajVMSzB0bnZYWWpwSkV2QVZianBIeE03b21iQzlUSGtCMlVGX2VIWHRUM3ltcUM2X05zSks2RXdhMGJfLWRHTHhQUTE2R1NOSDJrWVB0RjRYUVE0VUNHYk1aOGlPVU9NZ2EyaFJ1TGZvTVFWTDNqZS1jbExpcTE4cVpfZzFra3hOSGRKNW93TGJRNUlFak5paFRJWE8w?oc=5"
+  },
+  {
+   "title": "Zcash News Today | ZEC Price, Analysis & Updates",
+   "publisher": "BlockchainReporter",
+   "published_at": "2026-10-16 18:22:10+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE44a3ZjY3hydEg3T2ZQenBibm5rbGhKc1R2cUJwZ3FzRWVrVHdQQWRKQldfd2h2VFVmX1JOZjVYOGRaMXpISWc3X3VjUzB0ellGUDZYbkc4TXpnTENf?oc=5"
+  },
+  {
+   "title": "Crypto News: Pepeto Approaches Its Second Big Exchange Listing While the BNB Price Prediction Climbs Toward $3,000",
+   "publisher": "lincolnjournal.com",
+   "published_at": "2026-10-16 18:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxObzZkcFhNdEtMNVQtSERqS0RPbnZxYld0d0lPZU5YTTBYdE95Q2ZvdUhadmU4WjJsQ19yNkNOSTFwem41ZGNCck1VWWlwNkVVcXZaUWc4LTNEUnFFTzdGb3V2a25GclU4ZlZTSFJsaVNrWWVKZk1ZVjRmSndsU3N6MlRrT2dvU0htUG5mTE9rTXZWRXotS1ppOXVaX0ZLNnRiLXpjYkhVTzRNQnN1Q0diY2dCVG5SSEJOOXdSY2YtcWFKRVROQU1mTHVkeTFjWGVBRnFIby1ONjdjSzctSDVGQXNuMFlzaFpkYzEyNzVyUkJncmRXYU8zRzlGNkxmYl9hV3k1cVJMX2htMU9fWkRjcXlGT0ZWTG1qSGRRRHlFN2ozXzRPLWpieEVyRmNVMDdmcnFMSXRn?oc=5"
+  },
+  {
+   "title": "BNB Price Prediction: Binance Adds Four Stock Tokens as Remittix's November Launch Creates Its Own Market Catalyst",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 17:58:39+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNbzg2eEJzTjM1WHp4S2EzcWc0d2Y1aUNETFdGMl9aVF9JekllZEZIdlZOX01yTnBuOExuZWVqMk94WnN4bkFDQ0NQWkU4cUxSZVBTOURIdmFLUVdFcHQ4VnJSX0twbi1kVVdFOWNkTjlyXzBuVkxSLUhGX2NvZHowSUdkUHhMcklySEZrNFgyc2lrNlRNVGtDMFRCYUktM1F5X0RMLUExd0R1QjhLbzFUZHppSmpmT1BUdk5PdzZ1Xzd5SWJFcDlibFAxOHYtRldRM1pj?oc=5"
+  },
+  {
+   "title": "BNB News: Could Remittix Become the Next Ecosystem Breakout? PayFi Leads Its November Launch Story",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 16:45:56+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPdWtnVkQwYkY3dDFEallzT3dFbW1kR1VyTndFR0dKb1IyaDVxSWN2b1pwRW44R25QSEpPX3ptRzNuTl90QlA1M2pKUnF4RjlMOWlzUTMwMllCRlA1clp2T1M2bTNac0tjV1RqTmdjZlc1MU54N3RqWldYdnIwc2N5akV2NmNveWZ3OGVzbXloQVdTNG5KVm15ZFlB?oc=5"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "tool": "compute_metrics",
+ "args": {
+  "symbol": "BCHUSDT",
+  "window": "30d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:21.706930+00:00",
+ "data": {
+  "symbol": "BCHUSDT",
+  "base_asset": "BCH",
+  "window": "30d",
+  "interval": "1d",
+  "n_candles": 30,
+  "start_price": 255.5,
+  "end_price": 270.0,
+  "return_pct": 5.68,
+  "high": 366.4,
+  "low": 239.0,
+  "range_pct": 53.31,
+  "volatility_pct": 5.89,
+  "annualized_volatility_pct": 112.59,
+  "max_drawdown_pct": -23.04,
+  "rsi_14": 43.32,
+  "rsi_overbought": 70,
+  "rsi_oversold": 30,
+  "sma_20": 291.29,
+  "sma_50": 275.33,
+  "price_vs_sma_20_pct": -7.31,
+  "vwap": 309.2,
+  "price_vs_vwap_pct": -12.68,
+  "volume_base": 2019453.67,
+  "volume_quote": 623654538.54,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:21.703114Z"
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "ETHUSDT",
+   "SOLUSDT"
+  ],
+  "window": "30d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:26.232918+00:00",
+ "data": {
+  "window": "30d",
+  "rows": [
+   {
+    "symbol": "ETHUSDT",
+    "base_asset": "ETH",
+    "end_price": 2369.22,
+    "return_pct": -9.3,
+    "volatility_pct": 1.92,
+    "annualized_volatility_pct": 36.74,
+    "max_drawdown_pct": -14.66,
+    "rsi_14": 34.76,
+    "volume_quote": 20262643574.18
+   },
+   {
+    "symbol": "SOLUSDT",
+    "base_asset": "SOL",
+    "end_price": 102.15,
+    "return_pct": -9.38,
+    "volatility_pct": 2.5,
+    "annualized_volatility_pct": 47.72,
+    "max_drawdown_pct": -16.37,
+    "rsi_14": 35.51,
+    "volume_quote": 7827964710.36
+   }
+  ],
+  "highest_return": "ETH",
+  "lowest_return": "SOL",
+  "highest_volatility": "SOL",
+  "highest_volume": "ETH",
+  "volume_ratio": 2.59,
+  "volatility_ratio": 0.77,
+  "return_gap_pct": 0.08,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:26.216225Z"
+ }
+}

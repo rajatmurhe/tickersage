@@ -1,0 +1,65 @@
+# Render blueprint for the public demo: API + Next.js frontend + Postgres + Redis-compatible key value store.
+# `sync: false` values (API keys) are asked for once, when the Blueprint is created, and never stored in git.
+# The two URLs below assume Render gave the services the names in this file. If a name was taken, Render
+# adds a suffix: then fix NEXT_PUBLIC_API_URL and CORS_ORIGINS in the dashboard and redeploy both services.
+services:
+  - type: web
+    name: tickersage
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: tickersage-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: keyvalue
+          name: tickersage-cache
+          property: connectionString
+      # The deployed frontend, as a JSON list. Browsers on any other origin can't call the API.
+      - key: CORS_ORIGINS
+        value: '["https://tickersage-web.onrender.com"]'
+      # Public demo guards (README: "Deploying a public demo"). Counts are per visitor IP.
+      - key: RATE_LIMIT_PER_MINUTE
+        value: "5"
+      - key: RATE_LIMIT_PER_DAY
+        value: "40"
+      # Render's proxy appends the visitor's IP to X-Forwarded-For; the limiter reads that entry.
+      - key: TRUST_PROXY
+        value: "true"
+      # Live LLM calls stop for the rest of the UTC day once the traced cost reaches this (USD).
+      - key: DAILY_BUDGET_USD
+        value: "2"
+      # Needed to read /api/traces and /api/refusals. Copy it from the dashboard's Environment tab.
+      - key: ADMIN_TOKEN
+        generateValue: true
+
+  - type: web
+    name: tickersage-web
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./frontend/Dockerfile
+    dockerContext: ./frontend
+    healthCheckPath: /
+    envVars:
+      # Render passes env vars to the Docker build as build args, and Next.js inlines this one into the
+      # browser bundle during `npm run build`: changing it needs a new build, not just a restart.
+      - key: NEXT_PUBLIC_API_URL
+        value: https://tickersage.onrender.com
+      - key: PORT
+        value: "3000"
+
+  - type: keyvalue
+    name: tickersage-cache
+    plan: starter
+    ipAllowList: []
+
+databases:
+  - name: tickersage-db
+    plan: basic-256mb

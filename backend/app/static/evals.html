@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TickerSage Evals</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><h1>TickerSage</h1><span>eval results</span></div>
+    <nav><a href="/">Chat</a><a href="/docs">API</a></nav>
+  </header>
+  <main>
+    <p class="intro" id="subtitle">Loading the latest replay eval run…</p>
+    <div class="cards" id="cards"></div>
+    <div class="panel"><h2>By category</h2><table id="cats"></table></div>
+    <div class="panel"><h2>Failure taxonomy</h2><table id="taxonomy"></table></div>
+    <div class="panel"><h2>Failing cases</h2><table id="failures"></table></div>
+  </main>
+  <script>
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const pct = (x) => x == null ? "n/a" : `${(x * 100).toFixed(1)}%`;
+  fetch("/api/evals/latest").then((r) => r.ok ? r.json() : Promise.reject(r.status)).then((d) => {
+    const s = d.summary, c = d.config;
+    document.getElementById("subtitle").textContent =
+      `Run ${d.run_id} · ${d.cases_run} cases · LLM ${c.llm} · routing ${c.routing_mode} · verifier ${c.verifier ? "on" : "off"} · tools ${c.tool_mode}`;
+    const cards = [
+      ["Pass rate", pct(s.pass_rate)], ["Tool selection", pct(s.tool_selection_accuracy)],
+      ["Number faithfulness", pct(s.number_faithfulness)], ["Key numbers present", pct(s.key_number_accuracy)],
+      ["Refusal accuracy", pct(s.refusal_accuracy)], ["Injection resistance", pct(s.injection_resistance)],
+      ["Citation rate (concepts)", pct(s.citation_rate)], ["Latency p50 / p95", `${s.latency_p50_ms} / ${s.latency_p95_ms} ms`],
+      ["Avg cost / query", `$${(s.avg_cost_usd ?? 0).toFixed(5)}`], ["Judge score", s.judge_score == null ? "not run" : pct(s.judge_score)],
+    ];
+    document.getElementById("cards").innerHTML = cards.map(([k, v]) => `<div class="card"><b>${esc(v)}</b><span>${esc(k)}</span></div>`).join("");
+    const cats = Object.entries(d.by_category);
+    document.getElementById("cats").innerHTML = `<thead><tr><th>Category</th><th>Cases</th><th>Passed</th><th>Pass rate</th></tr></thead><tbody>` +
+      cats.map(([k, v]) => `<tr><td>${esc(k)}</td><td>${v.n}</td><td>${v.passed}</td><td class="${v.passed === v.n ? "ok" : "fail"}">${pct(v.pass_rate)}</td></tr>`).join("") + "</tbody>";
+    const tax = Object.entries(d.failure_taxonomy);
+    document.getElementById("taxonomy").innerHTML = tax.length
+      ? `<thead><tr><th>Failure type</th><th>Count</th></tr></thead><tbody>` + tax.map(([k, v]) => `<tr><td>${esc(k)}</td><td>${v}</td></tr>`).join("") + "</tbody>"
+      : "<tbody><tr><td>No failures.</td></tr></tbody>";
+    const fails = d.cases.filter((x) => !x.passed);
+    document.getElementById("failures").innerHTML = fails.length
+      ? `<thead><tr><th>Case</th><th>Question</th><th>Failures</th></tr></thead><tbody>` +
+        fails.map((x) => `<tr><td class="mono">${esc(x.id)}</td><td>${esc(x.question)}</td><td>${esc(x.failures.join(", "))}</td></tr>`).join("") + "</tbody>"
+      : "<tbody><tr><td>Every case passed.</td></tr></tbody>";
+  }).catch((e) => { document.getElementById("subtitle").textContent = `No eval results yet (${e}). Run: python -m evals.run_evals`; });
+  </script>
+</body>
+</html>

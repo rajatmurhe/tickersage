@@ -1,0 +1,37 @@
+{
+ "tool": "compute_metrics",
+ "args": {
+  "symbol": "AVAXUSDT",
+  "window": "7d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:15.386724+00:00",
+ "data": {
+  "symbol": "AVAXUSDT",
+  "base_asset": "AVAX",
+  "window": "7d",
+  "interval": "4h",
+  "n_candles": 42,
+  "start_price": 10.89,
+  "end_price": 9.55,
+  "return_pct": -12.28,
+  "high": 11.12,
+  "low": 9.34,
+  "range_pct": 19.04,
+  "volatility_pct": 1.72,
+  "annualized_volatility_pct": 80.39,
+  "max_drawdown_pct": -13.53,
+  "rsi_14": 35.84,
+  "rsi_overbought": 70,
+  "rsi_oversold": 30,
+  "sma_20": 9.93,
+  "sma_50": 10.18,
+  "price_vs_sma_20_pct": -3.81,
+  "vwap": 10.19,
+  "price_vs_vwap_pct": -6.2,
+  "volume_base": 19573179.58,
+  "volume_quote": 199254969.26,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:15.382588Z"
+ }
+}

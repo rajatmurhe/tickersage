@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "ETHUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:01.743073+00:00",
+ "data": {
+  "symbol": "ETHUSDT",
+  "base_asset": "ETH",
+  "last_price": 2370.1,
+  "open_price": 2407.72,
+  "price_change": -37.62,
+  "price_change_pct": -1.56,
+  "high_24h": 2430.0,
+  "low_24h": 2356.79,
+  "volume_base": 143771.17,
+  "volume_quote": 344917955.34,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:02.014000Z"
+ }
+}

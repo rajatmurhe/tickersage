@@ -1,0 +1,37 @@
+{
+ "tool": "compute_metrics",
+ "args": {
+  "symbol": "SOLUSDT",
+  "window": "30d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:08.589054+00:00",
+ "data": {
+  "symbol": "SOLUSDT",
+  "base_asset": "SOL",
+  "window": "30d",
+  "interval": "1d",
+  "n_candles": 30,
+  "start_price": 112.72,
+  "end_price": 102.11,
+  "return_pct": -9.41,
+  "high": 124.95,
+  "low": 100.62,
+  "range_pct": 24.18,
+  "volatility_pct": 2.5,
+  "annualized_volatility_pct": 47.73,
+  "max_drawdown_pct": -16.41,
+  "rsi_14": 35.46,
+  "rsi_overbought": 70,
+  "rsi_oversold": 30,
+  "sma_20": 112.29,
+  "sma_50": 109.33,
+  "price_vs_sma_20_pct": -9.07,
+  "vwap": 114.68,
+  "price_vs_vwap_pct": -10.96,
+  "volume_base": 68236626.93,
+  "volume_quote": 7827953311.85,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:08.581631Z"
+ }
+}

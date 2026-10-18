@@ -1,0 +1,37 @@
+{
+ "tool": "compute_metrics",
+ "args": {
+  "symbol": "LTCUSDT",
+  "window": "30d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:17.383136+00:00",
+ "data": {
+  "symbol": "LTCUSDT",
+  "base_asset": "LTC",
+  "window": "30d",
+  "interval": "1d",
+  "n_candles": 30,
+  "start_price": 58.16,
+  "end_price": 58.29,
+  "return_pct": 0.22,
+  "high": 75.0,
+  "low": 56.53,
+  "range_pct": 32.67,
+  "volatility_pct": 3.79,
+  "annualized_volatility_pct": 72.49,
+  "max_drawdown_pct": -19.7,
+  "rsi_14": 38.42,
+  "rsi_overbought": 70,
+  "rsi_oversold": 30,
+  "sma_20": 64.65,
+  "sma_50": 60.12,
+  "price_vs_sma_20_pct": -9.84,
+  "vwap": 66.04,
+  "price_vs_vwap_pct": -11.73,
+  "volume_base": 14556647.89,
+  "volume_quote": 961060721.82,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:17.365089Z"
+ }
+}

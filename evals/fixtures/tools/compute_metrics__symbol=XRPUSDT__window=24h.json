@@ -1,0 +1,37 @@
+{
+ "tool": "compute_metrics",
+ "args": {
+  "symbol": "XRPUSDT",
+  "window": "24h"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:11.378345+00:00",
+ "data": {
+  "symbol": "XRPUSDT",
+  "base_asset": "XRP",
+  "window": "24h",
+  "interval": "1h",
+  "n_candles": 24,
+  "start_price": 1.29,
+  "end_price": 1.27,
+  "return_pct": -1.37,
+  "high": 1.31,
+  "low": 1.27,
+  "range_pct": 2.96,
+  "volatility_pct": 0.43,
+  "annualized_volatility_pct": 40.3,
+  "max_drawdown_pct": -2.31,
+  "rsi_14": 29.58,
+  "rsi_overbought": 70,
+  "rsi_oversold": 30,
+  "sma_20": 1.29,
+  "sma_50": 1.3,
+  "price_vs_sma_20_pct": -1.44,
+  "vwap": 1.29,
+  "price_vs_vwap_pct": -1.27,
+  "volume_base": 57975728.2,
+  "volume_quote": 74727108.52,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:11.369273Z"
+ }
+}

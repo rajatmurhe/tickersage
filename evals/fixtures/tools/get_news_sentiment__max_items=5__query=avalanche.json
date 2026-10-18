@@ -1,0 +1,269 @@
+{
+ "tool": "get_news_sentiment",
+ "args": {
+  "query": "avalanche",
+  "max_items": 5
+ },
+ "kind": "raw_items",
+ "recorded_at": "2026-10-18T16:27:15.001421+00:00",
+ "data": [
+  {
+   "title": "3 Altcoins Near Major Breakouts: Key Support and Resistance Levels to Watch",
+   "publisher": "Bitget",
+   "published_at": "2026-10-18 14:07:26+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE02NG45RHZsOEh1eTZBNjVkdm8xWEd6UHpUajN4X2tJWXFhWkdyOHpOWF9mMDRYMVRNQ0M5M1hOZEx6dl82LVltZDJhbFhoandHSDhTMkZqT3AzclVWT3l3ZXZEWdIBY0FVX3lxTE02NG45RHZsOEh1eTZBNjVkdm8xWEd6UHpUajN4X2tJWXFhWkdyOHpOWF9mMDRYMVRNQ0M5M1hOZEx6dl82LVltZDJhbFhoandHSDhTMkZqT3AzclVWT3l3ZXZEWQ?oc=5"
+  },
+  {
+   "title": "$1.2 Billion Stolen in Crypto in Three Months: What Are Trusted Audits Missing?",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 13:18:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNZ3hsRDVod2tMSVdodWY3TS1OY1pEX0ZJVWh1RV9BZUxQaFRIOWdxTWs2V2V0dW5LazdXcGsxYmxCSTVIOVJ3YmhRUldKNUlPd1ZzLVJLMXBVek41dG96dk84SUswdDZkVVdhOElNSlloRTEwQTRQOTNKa2hUUE9ORFl1X2pjbXJIQ0VIQ1p5bkJ3VUV3bTFjZ2I0ZElwekNPR1VaTFhNRVFLX2VYM290cll4TUdBQQ?oc=5"
+  },
+  {
+   "title": "Which Is the Best Crypto to Invest In? These 7 Top 100x Coins Could Surprise in 2026",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 13:03:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOczVFbmFDSEpJMmdkQWREVkpwNV9yNGhMbXBWWFJib1BMdTdvOFYwSkpUUWJUOC0yeV81SXJTdzZsVUZELVYxdWxaU0JfeGNSdF9QSHVKYjdOZ3FoOUFhSzB3MVBrZG1xRXIybGZoc3FUOTl1dHFNLXVMNkh4UXB1MjlqUTlOWlZVaDFxTDZwOC1sTktaRVFhWFROakxrSkgyOXZYSw?oc=5"
+  },
+  {
+   "title": "28 Arrested in West African Scam Operation Backed by Binance; $11 Million Traced",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 12:18:50+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRWlTVk9EYXkwZGdsbkhGc0ZETzBvTnJYQmRPQ3h1bVRyd1FILVByZWdtdWV0RW9DVndSMXlFblpRRW9xYV9kRjJhWmdNVzRDUHBVMkgwNnpaZWN2RlBuYmNuMTdoRFlqYVE1TmFBZnpwYkpLc2x5WkMxeF9hdDVyM0VWME85bk1yMnUxemFaNUQ4SWdUYkstTkYxRC1tQkQ0dktRMlZBNG5pcVc5NmFZU0dLQWlSTXpi?oc=5"
+  },
+  {
+   "title": "10 Best Cryptos to Invest In Now: Which Coin Could Offer 1,300% ROI?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 12:17:22+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNMGRHbFdNaTh1dzRIZVFMN0hLQ1BkRV9rQ1l0cVFOZzl3OElvdlVfeUJHNVk0M3l5WGVUM284eFRROFR0TEtINEowZm1PRHRnUGFoaEVxSDBCVDJxdGdFM3k3S0tTc1hjenVOZlBCVG5iLTBjb0szLU1LVEpqaDZWWnVOUWptcV9EVExrZEIyeHpQSjNVU0pKNldnTmRvZw?oc=5"
+  },
+  {
+   "title": "Crypto Markets Edge Higher on Sunday Morning as Bitcoin Tops $81,900",
+   "publisher": "Business Upturn",
+   "published_at": "2026-10-18 11:55:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNM0tCMmNfcFdtX016Tl9XOHZFNS1UaUNhWEl5eHZSaUVVMlJ1WF9nUEszWDV0UTBnM3FQQ0tIcW53WV9yZjd0ZTFlOWIzY1ZFSjJxSi1fdGVrMEdhSnExY0JyNjI1MkgzZjBXeW9OSTgzS2E5Q3gwRmlvTDVWLURwcmF2REU4b0NPdkFiNnd5U0NTV2I4OU9NX1NjbHJSandsWlVXOXlQYklQSkpDZkdlbFhQYWlHenV0TG5JUXpvaVlpdw?oc=5"
+  },
+  {
+   "title": "Avalanche Price Prediction: AVAX Faces a $9.27 Forecast as",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 10:48:24+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPNWs5enpWNzZhWUZ5bWdoRjlKWDQwTmVQVmVrU3ZUTlZiVGdoS2xhT0ZGOU9Hd1cyaHF0MnR1OHZKOG16V083eWk1SGFSU0tVdXlXT0k2TEtRR2lGclJUbTV6Rm5RNzJOT01uU1B4Z0taZGlQdVR2eG00RmRPWlJESVFrSXE3aTdTOVZZenBfRHc1X21QNlpV?oc=5"
+  },
+  {
+   "title": "Best Crypto to Buy Now: Pepeto Targets 500x as ZKsync Speeds Up Ethereum and AVAX, ICP Trail",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 10:10:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPSWhBeWp2RWZQSFlrZWsxQnFMOGtnekdMMGNsdjFrTkh0c1VIbnlfaE12Y1YxZkE5M2dNeDBlQTlMc3pRLW5OYXpHaU1UNnRLU3pMTGotOVc2ZDRMcU9VTndGZ2JwSWdWRFZMVC1Ybm0weWlmeWZrX1Fxbk4zMEN6VFEzRW9sYnBnNDdzOWl0ZUo2RjJmYk9XQURQeXpKOFIwSVUwLVh2TEpsUDJVcUg5VTVvM243UQ?oc=5"
+  },
+  {
+   "title": "Justin Sun Says He Sold Most of His Ethereum: What Signal Changed His Mind?",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 08:43:38+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPY3ZXbDVnejNTUXdqOHlsaDRHaV9aTWM5Z01OWTVBcGtMVnpfUDlMS2NEaUNkN2E5aU5xbDNqYnBjaWN5OW5idWc5VUQ3QlMxZzRkWGs5SXJUVnRvMEIyRnY0ODZUbXFrWExBb1ctY1FOMWUzSTl3Rk5tMElKZ2dITXJjc3A5ejh1c09LWlBxOUJMV3pwSkxuNWJFd1RhbS1VV3VvVDhHXzhZTkJPVWxtakdn?oc=5"
+  },
+  {
+   "title": "$52 Million in Crypto Liquidations in 10 Minutes While Wall Street Was Closed: How Did the Selloff Begin?",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 07:45:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOOFFickEyYk1hbXgtWHRVcFI5RjczU2pSSnc3V3ZyUGNCTXdpUWFGa2hwc0g3cHZ3R214aXBhSmFjWDFFMGhCZHZWNXh1ZmVzYXpUNGsxNnNCbGVacHRHdEF2aHNqN0N0STZGSkppRmJaaGlWVjRFTWdyT2w3dEJ5dUxFSHFpcVlsZkJ4NVNNRXhmVVhpaERmMlY5U1FoR0hLam1sTmpvZmtNQ1BlNzk2c3YydWxRUnBmUkQ5UUxrd2JXbkYzdENtR3g4OE1neUR4clJfeFpaMk8?oc=5"
+  },
+  {
+   "title": "Wallet That Accumulated Bitcoin at $127 Wakes Up 12 Years Later: Value Up Nearly 640x!",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 02:36:37+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPMFNTT0tvRUkzYjJMVnRBclFvMU1iRjVUeWtvaXlyZENpVjQ3QUs4WTlMLVU5eDhEWWhOMk1hNDRsVkZvekR2ekx1SjdsSlczUjdaVUtlaXF0TzdKSGlnbUF5bThsOThmUmRMdWRjMk0xemRhUkoyN05HT2JGUFAzcWVqNmJhcDU4MXpLclpQNUpCdzZtY3VHU2lDZjRfMXFkUzRnUFpGVnpVLXBCRTNrajltaVRac0E4RnRkRzI1Yw?oc=5"
+  },
+  {
+   "title": "Famous Whale Swings from $45M Profit to $37M Loss: Latest Deposit Nearly Wiped Out",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 02:18:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQOUhKdDAyNzhtdE53dmI0eFd2dy1WQkl3Tm1PVlFtZ3BYeGJJSEkzeXBZbmljemM0endvWHRCR3NLOU1zM1ZVN01scWkyMVFYbWJVTVJlb1BSLUxyX28xclFwY3lnczhHaHRhU0xIeU94cFJZSnJGSmRMS19GSW1OdXhiZjZqQk15S1hRSzhzMzJtdnNSalprNVcxbjJab1BCc1pkdk9IVlVra0FOTUMzMVQ1R3BpZkNPdFE?oc=5"
+  },
+  {
+   "title": "Is Apeing Flying Under the Radar? 7 Best Cryptos to Buy Now With a Presale Story to Watch",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 22:45:21+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNmcxUEZLWmg2MU9hTE1WYnR3VHhZZnhkYjZmbExheHVUMFdMcHZEYXdhZWRfQ1dYc2NzcTh4S0RUNjEzbHItbHZWSUhGSlNtNHJWb0ZDMkdsVmJVLWJtLUctS0s5Qkc0Slp6UlgxbjBpSmJyVkg4UVlYdTVSWFFfTmEyWXZCOTNXMlhlSlhGeVRweHJNcWlXZjRQek5aRk9L?oc=5"
+  },
+  {
+   "title": "Crypto Markets Slide on Saturday Evening as Altcoins Bear the Brunt",
+   "publisher": "Business Upturn",
+   "published_at": "2026-10-17 21:55:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMlcyZXhVM1pnSWNqUk1kYmtTSXZZTklkSWdnZDBOYWthQjZIVEVNQUliWnpJMndNbEVkNTRLTllBVGktQUJ2aHJMZmdBeFhySnpCU3RqT0lfNlRuRnBWWnFXV01BR3JXZXVndHBzeVMtX2hJaWhkUXM1R2ZhekJ6dFdNOFBjVkRvTDFDcndtcEtpS1pJYzNwcVprb2JaUlNoQ2F4RmtJcGFSZkh0OXJIa0VaOEdnTWhuX3RISQ?oc=5"
+  },
+  {
+   "title": "What Could Turn a Small Crypto Entry Into Huge Gains? Explore these 5 Best Cryptos to Invest in Now",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 21:32:21+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxObTNhMlFtSkJEMVhsRHUyLVdQZkloWGpLQ0V2eVVoczN0M3JvdWZycHhUOUl3TUVsZjBpZWdjdy1WN3JBeVdpTFhxOGRKa28wbEZ3VGI0aGJ0Q2hRbDlLYVM2alp1MkZLVG1zSWZyZVRxYXVGVTNfM05pcVdQaDk3MmpkX0xDMjgyd1diQVd5TWRMRjNEbkpOZlhBQmU?oc=5"
+  },
+  {
+   "title": "AI Ecommerce Android Installation Package",
+   "publisher": "H\u1ecdc vi\u1ec7n N\u00f4ng nghi\u1ec7p Vi\u1ec7t Nam",
+   "published_at": "2026-10-17 20:12:08+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1nbEtMaXFfN1R6anRVaTV2VFU4d1gwLUFYMWkwOWhaSTNEdFNDdmVNT1J6RmUya0ZhRnVEeElHUzBoTWRJRExZMlk3eVVGVnM?oc=5"
+  },
+  {
+   "title": "Nine Companies Object to Major Crypto Exchange\u2019s Stock Plan: Which Shares Were Blocked?",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-17 20:11:55+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQaXl6R01jRkExY1dncDU4V1dHd3FaNld6SzFQeEV3MTM2eU1CS1YyZTV4cGVyUHhZRU5DcUxHN09lM19UZkJBZWx4SGVTM3lYUDl6OEFhaml6ekdLYTBJUERhRGR2Q1ZZZEFvMlp0THBmUFBIYUZucUhxV05jT0pDOWFibGRtTVByM2thRTZpV0pkcU9xVWprV1lObHdySzRHX2JBRTJWVVRIajhneGdVXzd4NWxNM1V5Rm5CRjZfQlY?oc=5"
+  },
+  {
+   "title": "AVAX Drops 3.5% Amid Broad Market Risk-Off Move",
+   "publisher": "CoinMarketCap",
+   "published_at": "2026-10-17 17:05:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5iNElOS2JYRjBkMG0wMUE3c0xnUzYwMHB6c0lHSE1UaXQxTEx6MXpyeWxCUGNNOEdZRkExU2k5WGpQSEZHM2tLRV9YMGs1bmwwR3pDZ29GclZXUmlDMVVPVjhETW95amVIOXJvLThCMS0?oc=5"
+  },
+  {
+   "title": "A 5-Year Altcoin Pattern Meets Rising Fed Fears: 4 Coins Worth Taking a Risk On Before the Next Move",
+   "publisher": "Bitget",
+   "published_at": "2026-10-17 15:24:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE91S0N4WW96SU00VE5PZHdWZExtTGRHckFHeWJjQ2ZJTzBoZF85azRZQ2tlOUEwNGphX2tYSFFUZjdRNTRkQnZrajhmWXBmZGUtd2tSZ3RzSWlhMExESmtNZE9mY9IBY0FVX3lxTE91S0N4WW96SU00VE5PZHdWZExtTGRHckFHeWJjQ2ZJTzBoZF85azRZQ2tlOUEwNGphX2tYSFFUZjdRNTRkQnZrajhmWXBmZGUtd2tSZ3RzSWlhMExESmtNZE9mYw?oc=5"
+  },
+  {
+   "title": "Charles Schwab Expands Crypto Trading to 40.3 Million Active Accounts",
+   "publisher": "Hokanews",
+   "published_at": "2026-10-17 14:41:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOSUdmeGNjMzJSaW9YT0xnRk53OExQdE1zSVRYVG40SXBOemY0ZTdNOTdqSFB5ZHNKeUprdl9XLVpmc3k4dWhjNVVDM01Vd1Z5MVpJZV9WTGo3NW8tRG9tanVoZXRlckdsYXFPWkVGTWZhQy03eTRtdndqN1pVMU8wOQ?oc=5"
+  },
+  {
+   "title": "2 Banking Giants Make Major Crypto Moves as Schwab and Deutsche Bank Expand Into Digital Assets",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 14:33:30+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNSkxsTTBoM2Fzd0FhYlljSF90Q0lablRFVEN3NjZKY01GQzhFcmlSVXdrcTIwQ3hnbWIwNzEyM1g3RTlSbnkzcUJYWmEyMjc0NndzR2NLSzE5VHhhY0V0NzU2aGpHN0N1OEoyUUhkTTlpWDdBQnpvQU5VN1pLWXk0RllhM0NOTjc0M24zT1lSbXZQUjFmbENVRDlLNlJUNjZMNkhNZXVUQ185cC12R25oS3BuekIySjA4c1dPYUUyM2pZUjVVcXdPbE5BX3BFdw?oc=5"
+  },
+  {
+   "title": "Bitwise Launches Avalanche ETF With Staking Plans",
+   "publisher": "CoinMarketCap",
+   "published_at": "2026-10-17 13:24:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPOEpaSWVLUnZ5c3dCQVdORVJ1cmh2TTdYTGRVemZZdkpsd2ZkOUFDOHF5aDZUdmhwdUFUbFlHT3lUNmdXUTZMa0sxVllvLXlVWG04dHZ3SlRYRVBhSWs1QmVSQUxVYldxQ0x1R1c1SDFrSGNYVm1JYnF6RnBjb211WldPdktSXzAtdnJ0TjM1cG5YVlNKcnc?oc=5"
+  },
+  {
+   "title": "Crypto Morning Round-Up: Bitcoin Steady Near $81,471 as Cardano and Dogecoin Lead Declines",
+   "publisher": "Business Upturn",
+   "published_at": "2026-10-17 11:55:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNM19YZWRqS1F2eDBfcm03bzhDVi1NUU5hLXk0eUZDbG1TVWJQMUwzeGg4WFY0TUxIelVuMGk4bHJ3NkE1UHY2U1lqUnFvbWprd2hMQUJ2ekZzVUppR0xka1dpMm14NGZQaVk0ZWgwRUxISUNLMWhkRDFJZlVwZmtHX0RtNmFhWnowNlhwVGM5dTJBNnUtbkpoRDVIcDVtQWpxQVJ5S2xOLUJnbXV4RTVJX21WMWRkd0tOb1gzWDMxbU41Y3pJcVprV3o4UXpHNlhZYzZSTUwwZG8?oc=5"
+  },
+  {
+   "title": "DIFC Courts in Dubai Turn to Avalanche So Court Orders Can Be Verified Worldwide",
+   "publisher": "eGamers.io",
+   "published_at": "2026-10-17 09:28:44+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVV9JTGcyeUZPbTJmTjBBV1dvcVkzZXlfUlRMQjRMQVJ3eDNsQ3dSZTdtdzVLdEw4eUJmN2Q3cUstRmFuSE5ZQUdNNUtwdnVlZFNyMDlOZkRKSEtpMFlNRWJpeE5aTG5Ib2Q2V0VDcEdra1NYZ2pDTUFXMV9yMGh1aGhnaGQwdE42Vmxra05nOFl4bDBLUDZOMWRKT1VkSXdSOXc?oc=5"
+  },
+  {
+   "title": "Best Crypto Coins in 2026: 10 Cryptocurrencies to Watch Before the Next Market Move",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 07:51:25+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUDJMeVVYa2Myc3UteGNPRmt0WWIwWGVMbVk0R01ZX3BzZDAwYXVuWHpYRmFZN25vcVhtSFVQRE13cWxhTXFNZ0FLR3U3YTBORXUzSWVySk1Nc3JDX0wyMUFtLWdDM2oyRnM0LVc2Qmc5RUJFeHVyUVVOMjlFVmJ0RG90a0J6LWdzWFkzanVSbEhFNldNdDR3Y1JHM19aQQ?oc=5"
+  },
+  {
+   "title": "7 Best Cryptos to Buy Now: Apeing Stage 8 Raised $121K+ as Price Hike Nears",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 07:27:17+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPTFFQdVUxZGx2TlZ5UW9peVpVR3lyZWpTYjBOVTlXZUlkTlI0LU1ROG9pN2dmNnllWXpxQkRTcW43MFFSRVNIaTc0cWZ0SmRSeXJuQ1JFblAzandfcEZJdWF2dzBOeGFyeU4zRnkxRUVlT0h0Wnk4OEs4bm91RklqQmlSWF9nYXBzbmVWdXlmSFQ0Z003N2VkdWs1c3Z6Zw?oc=5"
+  },
+  {
+   "title": "Pharaoh Exchange dominates Avalanche DEX volume...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 07:10:06+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcnNqVm43QkZZem42WmxsZFdUOEMzejdLMzJaZE9rcWU0NnF3SEh3Zkpjak1GbkVvalkxcVRYMHkyOFZwcGZQdE8yRnZjWDM5aUtmbkxDYW9pV1lZVkdyVktMQkhSbWQ0V2U0aTdzQ1RBSVhYa0p2REM2NFZhcnh4QVZZdWdxaGsza1hCbVpxQTY?oc=5"
+  },
+  {
+   "title": "Charles Schwab Launches Full Crypto Trading for All Eligible Clients",
+   "publisher": "KuCoin",
+   "published_at": "2026-10-17 06:49:57+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNb1pKaUh3QjhJYk0yX1RzNW1GUHZ3c1hORHRpV09qb0w5SXVlSWJ6dUFnRl8tSlFyZE5CZVVtRjFhekdYaGJFYnhSY1FqU1kwUVVvUTh0R1dMc2g3b1pqWHZSZjU5bGl2VjU5Sm5iZElmaUFhUkNoN3VGLXRlNno5RWhRbTZCYVpoM1VORUQxNW5DbmZ5RzFjdTduc3Z0NHkyc094cw?oc=5"
+  },
+  {
+   "title": "Bitcoin and Altcoins: Market Overview (October 17, 2026)",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-17 06:15:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQWmNDTkhMYk1JbkszUlFhVG5yVkhiNkcyQi1wUW5fVUpHVEdGV2t1NmlRUG5nRFJuOThoZ3oxZ2ZqSDRacU5ZZjR5cldrNWR5V1JCY3FxTWZTc05ZcHJzY3J6dEUxZE1oa3R2VHlWVFFxMXR4eGNJNGZsV0gxZFltNnVaYWdpcGpKOGtXZEI1YVRod3J1akE?oc=5"
+  },
+  {
+   "title": "Charles Schwab Opens Crypto Trading to All Customers at 0.75% Fee",
+   "publisher": "BigGo Finance",
+   "published_at": "2026-10-17 03:25:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5jcGNoYXJ0dnVDM2dJb3NxQ1FwT0lXMVBpNW51Ykkzc21vc0o5dUVOYzdZb1lKYUc1MjRRQ3lYaVMxeWZrOTJ0NlNMX2VVRjdpU01FNkhCaElCRVI1MkpsYm42b2lONmhYaEY5dF9WZzhpYWtPd2c?oc=5"
+  },
+  {
+   "title": "Convert 1 AVAX (Avalanche) to USD (United States Dollar)",
+   "publisher": "Bybit",
+   "published_at": "2026-10-17 00:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5na1Y2ZmI4QWV3ZG9NaTVxMWVyX0lPLWQxem5VYm0tTTg1V21iTEFURmZEbEJuWkdGOXJKd3YteTJYalE3WVB5VUxMeDU4WV9JeEVjOExIa21pdlk?oc=5"
+  },
+  {
+   "title": "Schwab Opens Bitcoin and Ether Trading to Eligible Retail Clients",
+   "publisher": "tokenpost.com",
+   "published_at": "2026-10-16 22:34:32+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5wNEw1eWh3VTVfVU9YcDRHSUN0QkQxVWNxUkZPSE12bXhMX3RDU2x5R1JzV05JZFg0ckxvZ01XRlRXN3U5aVVOLUJDem5nejdldW9j?oc=5"
+  },
+  {
+   "title": "Charles Schwab Opens Crypto Transfers, Plans Three Token Trades",
+   "publisher": "tokenpost.com",
+   "published_at": "2026-10-16 22:30:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBVVnYteVhfSzRkdHNzWTlLTEEwdy1sZDMxQkR4bDJZSWZBOHd4LUVZV1M2THJja093WXpBQncyWEdibXpPS0lYRXBDMUo3bEF3VG84?oc=5"
+  },
+  {
+   "title": "Crypto Markets End Friday on a Weak Note as Broad Sell-Off Grips Major Coins",
+   "publisher": "Business Upturn",
+   "published_at": "2026-10-16 21:55:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPV2JPTzNaR3lyRlB0bDJIb29QVkRfdE5GTVo0RHhQZnNFaHZBa0FZN3BXOEZHTFY0UHVoanBwa2daRDFTVkRxdzIzUVNJRklpWlJPWXNyT2syWDV4X1ZWRk9zd0IwSjFpYVNyTnViT1lwcjV2ZWgyMlh2ZTJrY1ZFVC13b0Q0WHo4TE9PLTFuUmljdWJsQVFQVVB4czUtbUp0M1VaSWwtazhkbDhXTDlfWTY3LXBoUTZZakgtSVJFWDRodEU2V3ZOek95a3pCQQ?oc=5"
+  },
+  {
+   "title": "Fed Holds, Cuts, or Hikes? 5 Altcoins to Watch Before the Market Makes Its Next Move",
+   "publisher": "Bitget",
+   "published_at": "2026-10-16 21:32:25+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1FdU1ZeVRCOVJEQW1DcHhXLTgtNU5qR256dGVYN2ZKdU53Wjd6NGp6cU5Qb3lIR0dqUGhwcFpkenkyc09sbmk4RFVKVTBIeFZZalhLNHpOdWhwZncwMlZnX21CRdIBY0FVX3lxTE1FdU1ZeVRCOVJEQW1DcHhXLTgtNU5qR256dGVYN2ZKdU53Wjd6NGp6cU5Qb3lIR0dqUGhwcFpkenkyc09sbmk4RFVKVTBIeFZZalhLNHpOdWhwZncwMlZnX21CRQ?oc=5"
+  },
+  {
+   "title": "Crypto Market News: September Spot Volume Up 36.5%, Pepeto Presale",
+   "publisher": "Coin Gabbar",
+   "published_at": "2026-10-16 21:20:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcUZsSURCYUpKQ09hNVNtUEx6Z3lZeTE2ekM2QndLU3QxQWp6NkV4eDYwelBuVVBIX19sZS10a1lVLTk3TUpzeEdZOFBRdF9Sb0JoS2t3TVlOQXdBVVp0XzVyLUc2ZEt0UTdQRkM5U216UENxRkdfbjladVZ6bmdsbGRHM3I3QXZDaFJ3N2ROTS0?oc=5"
+  },
+  {
+   "title": "Charles Schwab Expands Bitcoin Trading, Plans Three New Crypto Listings",
+   "publisher": "Bitget",
+   "published_at": "2026-10-16 19:52:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9ZcExpVXJVaUtub1AtSV80N3dwenphdGhqMVdEVkRYaG4yR3VZY1Rma1RaWFc1MWMtTDJVNTRPdUJfMktmQnJCRnhHRjFld2Vqekw3bVdMRnozZlBpdUFCQ0lrSdIBY0FVX3lxTE9ZcExpVXJVaUtub1AtSV80N3dwenphdGhqMVdEVkRYaG4yR3VZY1Rma1RaWFc1MWMtTDJVNTRPdUJfMktmQnJCRnhHRjFld2Vqekw3bVdMRnozZlBpdUFCQ0lrSQ?oc=5"
+  },
+  {
+   "title": "Charles Schwab Announces Eligible Clients Can Now Trade Bitcoin and Ethereum Directly on Platform",
+   "publisher": "https://www.ababnews.com/",
+   "published_at": "2026-10-16 19:34:40+00:00",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9tVUxrTE5TM0Vuc2RkQkY2TE1TYWhRUl9mTFB4MjdiU2lhR01Ta2U5VFlhZHRIUnYxby1YcmFlbnd1VURkWHRFQy1mZ293a1pyVkxZOElmWGp2QlVmTzA5Z05OWTBIWVN4aDhvbW8yTkpGempLaUxadQ?oc=5"
+  },
+  {
+   "title": "Crypto News: AVAX Recovers Near $10 as Remittix's Payments Ecosystem Approaches Its November Token Debut",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 19:20:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNeDZIVUlMeGVHYk9nd2l5NlFnaVR6RjRZc0RubDZBbGxkSGRlZ3NZbkJkUUF4MFh4aWc0d1YzWFJRVGZxYUhpM3dYTVBxNHNyRHZzeWxXSHplb3BqaXZnN0JaVVhkRldVaTBOdjNYaDFFWTNYZ0ZGNEZwa0cwcmQ2US1iaG5lRFFLVW9naUZoNFZTSTlvbnVyb1Y1azc0bE55eHhUYkxoT2lGbl9QQUprSnliMWFvRlI3akpkdnZGakZZN1FI?oc=5"
+  },
+  {
+   "title": "AVAX Pharaoh Bullish 75% Dominance Amid 43% Volume Surge",
+   "publisher": "TronWeekly",
+   "published_at": "2026-10-16 19:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9YRUVFSjhMcWJMdElseWlVUV9Rbk5xcV9XVGh3Sk1TOHltSnlsNGFfSlZDQ1QyTm8xVGg4XzNmdkZIUURIWkV6NE5jTmdkUHNXRzFER0R6M05sU051WFNMRGVqQzBEMWJ5NVNFQi1UQ0dac0xU?oc=5"
+  },
+  {
+   "title": "Charles Schwab Opens Direct Bitcoin, Ether Trading to All Retail Clients",
+   "publisher": "BigGo Finance",
+   "published_at": "2026-10-16 18:19:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBXNTFxNWdueXNhN00zcEJsZmpNUG9KamtnR0tIMTNEUk1CUXN4RTZ1a3BwR3Uzci1ESFA1SjA2SzFiZHlDY0tmX0w5MlFCR2p3N2FvY1lUUlUyV0tLM0V3Q0s0YzJrRndyWENOY2FiV0Q3ZW8teVE?oc=5"
+  },
+  {
+   "title": "The first mobile customs clearance point tested in Transcarpathia in case of blackouts",
+   "publisher": "finway.com.ua",
+   "published_at": "2026-10-16 17:33:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE0tX09rVUlJVng0WExiSUtNbHlNM3BNNDlNejlVUkZ3TnczdXhXd1QxeUNNcW1raWF2WWxTd3puQTBrY0U1U0hmVDV5RFlPUmEtRDN6U3FJdXFUQlB1VzFUZ1BwZHZMLVFpdzE4ZA?oc=5"
+  },
+  {
+   "title": "Schwab Completes Retail Bitcoin and Ether Rollout, Begins Crypto Transfers",
+   "publisher": "The Defiant",
+   "published_at": "2026-10-16 16:58:51+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVUxqNXE1WVlOaGNvcS1MaTdfU1l4d0J1eHVFQS1ISkprb0R2cHhxbEpENFJNX0JTOWN5T0I3aWVZeEZVRVRLbnB6ZEJOMFdwenhsallkRkNPOFR3OHpTSW5kTFJZYVZ2MzhhLTZOOWhRYW11Q0dXOTZyZmhLRWlfNVl5R3luTlUxRkVScDEyU2tiOGhfU1ZwUVBuZ0NmV1ltaF82Q0pMcWl0c3pfOWdoR2tSN0tYbE9jZWFBVG9JR0Y?oc=5"
+  }
+ ]
+}

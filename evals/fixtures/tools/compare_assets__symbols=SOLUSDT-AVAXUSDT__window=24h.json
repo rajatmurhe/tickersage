@@ -1,0 +1,49 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "SOLUSDT",
+   "AVAXUSDT"
+  ],
+  "window": "24h"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:28.196216+00:00",
+ "data": {
+  "window": "24h",
+  "rows": [
+   {
+    "symbol": "SOLUSDT",
+    "base_asset": "SOL",
+    "end_price": 102.14,
+    "return_pct": -1.02,
+    "volatility_pct": 0.6,
+    "annualized_volatility_pct": 55.69,
+    "max_drawdown_pct": -2.29,
+    "rsi_14": 35.56,
+    "volume_quote": 141644777.19
+   },
+   {
+    "symbol": "AVAXUSDT",
+    "base_asset": "AVAX",
+    "end_price": 9.55,
+    "return_pct": -1.73,
+    "volatility_pct": 0.77,
+    "annualized_volatility_pct": 71.99,
+    "max_drawdown_pct": -3.63,
+    "rsi_14": 32.98,
+    "volume_quote": 15701283.59
+   }
+  ],
+  "highest_return": "SOL",
+  "lowest_return": "AVAX",
+  "highest_volatility": "AVAX",
+  "highest_volume": "SOL",
+  "volume_ratio": 9.02,
+  "volatility_ratio": 0.78,
+  "return_gap_pct": 0.71,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:28.192974Z"
+ }
+}

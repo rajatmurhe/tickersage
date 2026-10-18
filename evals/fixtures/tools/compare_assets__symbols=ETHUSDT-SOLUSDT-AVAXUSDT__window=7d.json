@@ -1,0 +1,61 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "ETHUSDT",
+   "SOLUSDT",
+   "AVAXUSDT"
+  ],
+  "window": "7d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:32:51.917905+00:00",
+ "data": {
+  "window": "7d",
+  "rows": [
+   {
+    "symbol": "ETHUSDT",
+    "base_asset": "ETH",
+    "end_price": 2365.75,
+    "return_pct": -6.74,
+    "volatility_pct": 1.21,
+    "annualized_volatility_pct": 56.55,
+    "max_drawdown_pct": -7.98,
+    "rsi_14": 36.74,
+    "volume_quote": 4516480734.94
+   },
+   {
+    "symbol": "SOLUSDT",
+    "base_asset": "SOL",
+    "end_price": 101.84,
+    "return_pct": -8.56,
+    "volatility_pct": 1.31,
+    "annualized_volatility_pct": 61.08,
+    "max_drawdown_pct": -9.56,
+    "rsi_14": 37.77,
+    "volume_quote": 1469552765.1
+   },
+   {
+    "symbol": "AVAXUSDT",
+    "base_asset": "AVAX",
+    "end_price": 9.51,
+    "return_pct": -12.71,
+    "volatility_pct": 1.72,
+    "annualized_volatility_pct": 80.3,
+    "max_drawdown_pct": -13.81,
+    "rsi_14": 34.42,
+    "volume_quote": 199302041.09
+   }
+  ],
+  "highest_return": "ETH",
+  "lowest_return": "AVAX",
+  "highest_volatility": "AVAX",
+  "highest_volume": "ETH",
+  "volume_ratio": 3.07,
+  "volatility_ratio": 0.92,
+  "return_gap_pct": 1.82,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:32:51.912704Z"
+ }
+}

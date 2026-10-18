@@ -1,0 +1,66 @@
+{
+ "tool": "get_order_book",
+ "args": {
+  "symbol": "AVAXUSDT",
+  "depth": 100
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:14.586095+00:00",
+ "data": {
+  "symbol": "AVAXUSDT",
+  "best_bid": 9.55,
+  "best_ask": 9.55,
+  "mid_price": 9.55,
+  "spread": 0.001,
+  "spread_bps": 1.047,
+  "bid_depth_quote_1pct": 537280.31,
+  "ask_depth_quote_1pct": 361518.9,
+  "depth_imbalance_pct": 19.56,
+  "top_bids": [
+   {
+    "price": 9.554,
+    "qty": 393.96
+   },
+   {
+    "price": 9.553,
+    "qty": 3861.62
+   },
+   {
+    "price": 9.552,
+    "qty": 70.41
+   },
+   {
+    "price": 9.551,
+    "qty": 524.81
+   },
+   {
+    "price": 9.55,
+    "qty": 1695.98
+   }
+  ],
+  "top_asks": [
+   {
+    "price": 9.555,
+    "qty": 1.88
+   },
+   {
+    "price": 9.556,
+    "qty": 99.84
+   },
+   {
+    "price": 9.557,
+    "qty": 364.69
+   },
+   {
+    "price": 9.558,
+    "qty": 710.85
+   },
+   {
+    "price": 9.559,
+    "qty": 1043.79
+   }
+  ],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:14.584836Z"
+ }
+}

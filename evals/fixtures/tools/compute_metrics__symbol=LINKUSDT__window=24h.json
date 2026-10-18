@@ -1,0 +1,37 @@
+{
+ "tool": "compute_metrics",
+ "args": {
+  "symbol": "LINKUSDT",
+  "window": "24h"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:16.042612+00:00",
+ "data": {
+  "symbol": "LINKUSDT",
+  "base_asset": "LINK",
+  "window": "24h",
+  "interval": "1h",
+  "n_candles": 24,
+  "start_price": 11.87,
+  "end_price": 11.76,
+  "return_pct": -0.96,
+  "high": 12.13,
+  "low": 11.71,
+  "range_pct": 3.54,
+  "volatility_pct": 0.6,
+  "annualized_volatility_pct": 55.78,
+  "max_drawdown_pct": -2.83,
+  "rsi_14": 31.24,
+  "rsi_overbought": 70,
+  "rsi_oversold": 30,
+  "sma_20": 11.95,
+  "sma_50": 12.11,
+  "price_vs_sma_20_pct": -1.67,
+  "vwap": 11.94,
+  "price_vs_vwap_pct": -1.57,
+  "volume_base": 1342711.1,
+  "volume_quote": 16023198.11,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:16.033364Z"
+ }
+}

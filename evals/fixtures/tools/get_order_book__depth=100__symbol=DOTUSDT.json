@@ -1,0 +1,66 @@
+{
+ "tool": "get_order_book",
+ "args": {
+  "symbol": "DOTUSDT",
+  "depth": 100
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:17.635033+00:00",
+ "data": {
+  "symbol": "DOTUSDT",
+  "best_bid": 1.07,
+  "best_ask": 1.07,
+  "mid_price": 1.07,
+  "spread": 0.001,
+  "spread_bps": 9.315,
+  "bid_depth_quote_1pct": 269070.76,
+  "ask_depth_quote_1pct": 191325.66,
+  "depth_imbalance_pct": 16.89,
+  "top_bids": [
+   {
+    "price": 1.073,
+    "qty": 46185.8
+   },
+   {
+    "price": 1.072,
+    "qty": 48084.85
+   },
+   {
+    "price": 1.071,
+    "qty": 40653.8
+   },
+   {
+    "price": 1.07,
+    "qty": 28629.02
+   },
+   {
+    "price": 1.069,
+    "qty": 25087.52
+   }
+  ],
+  "top_asks": [
+   {
+    "price": 1.074,
+    "qty": 1828.71
+   },
+   {
+    "price": 1.075,
+    "qty": 26805.05
+   },
+   {
+    "price": 1.076,
+    "qty": 31845.94
+   },
+   {
+    "price": 1.077,
+    "qty": 36615.18
+   },
+   {
+    "price": 1.078,
+    "qty": 33763.31
+   }
+  ],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:17.634605Z"
+ }
+}

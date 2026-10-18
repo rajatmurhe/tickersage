@@ -1,0 +1,66 @@
+{
+ "tool": "get_order_book",
+ "args": {
+  "symbol": "DOGEUSDT",
+  "depth": 100
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:13.519866+00:00",
+ "data": {
+  "symbol": "DOGEUSDT",
+  "best_bid": 0.07769,
+  "best_ask": 0.0777,
+  "mid_price": 0.0777,
+  "spread": 1e-05,
+  "spread_bps": 1.287,
+  "bid_depth_quote_1pct": 1978849.41,
+  "ask_depth_quote_1pct": 1770225.93,
+  "depth_imbalance_pct": 5.56,
+  "top_bids": [
+   {
+    "price": 0.07769,
+    "qty": 364838.0
+   },
+   {
+    "price": 0.07768,
+    "qty": 179035.0
+   },
+   {
+    "price": 0.07767,
+    "qty": 214237.0
+   },
+   {
+    "price": 0.07766,
+    "qty": 454319.0
+   },
+   {
+    "price": 0.07765,
+    "qty": 504338.0
+   }
+  ],
+  "top_asks": [
+   {
+    "price": 0.0777,
+    "qty": 83605.0
+   },
+   {
+    "price": 0.07771,
+    "qty": 145844.0
+   },
+   {
+    "price": 0.07772,
+    "qty": 331594.0
+   },
+   {
+    "price": 0.07773,
+    "qty": 490794.0
+   },
+   {
+    "price": 0.07774,
+    "qty": 305455.0
+   }
+  ],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:13.519623Z"
+ }
+}

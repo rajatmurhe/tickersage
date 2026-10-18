@@ -1,0 +1,66 @@
+{
+ "tool": "get_order_book",
+ "args": {
+  "symbol": "TRXUSDT",
+  "depth": 100
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:18.933145+00:00",
+ "data": {
+  "symbol": "TRXUSDT",
+  "best_bid": 0.3324,
+  "best_ask": 0.3325,
+  "mid_price": 0.3325,
+  "spread": 0.0001,
+  "spread_bps": 3.008,
+  "bid_depth_quote_1pct": 1941734.67,
+  "ask_depth_quote_1pct": 1333137.15,
+  "depth_imbalance_pct": 18.58,
+  "top_bids": [
+   {
+    "price": 0.3324,
+    "qty": 269598.9
+   },
+   {
+    "price": 0.3323,
+    "qty": 235126.4
+   },
+   {
+    "price": 0.3322,
+    "qty": 232289.8
+   },
+   {
+    "price": 0.3321,
+    "qty": 422821.8
+   },
+   {
+    "price": 0.332,
+    "qty": 232214.7
+   }
+  ],
+  "top_asks": [
+   {
+    "price": 0.3325,
+    "qty": 347255.4
+   },
+   {
+    "price": 0.3326,
+    "qty": 431393.7
+   },
+   {
+    "price": 0.3327,
+    "qty": 387870.8
+   },
+   {
+    "price": 0.3328,
+    "qty": 373873.2
+   },
+   {
+    "price": 0.3329,
+    "qty": 323417.8
+   }
+  ],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:18.931160Z"
+ }
+}

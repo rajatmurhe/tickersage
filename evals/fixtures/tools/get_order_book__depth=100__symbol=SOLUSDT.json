@@ -1,0 +1,66 @@
+{
+ "tool": "get_order_book",
+ "args": {
+  "symbol": "SOLUSDT",
+  "depth": 100
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:06.673894+00:00",
+ "data": {
+  "symbol": "SOLUSDT",
+  "best_bid": 102.11,
+  "best_ask": 102.12,
+  "mid_price": 102.12,
+  "spread": 0.01,
+  "spread_bps": 0.979,
+  "bid_depth_quote_1pct": 4534252.9,
+  "ask_depth_quote_1pct": 2847894.91,
+  "depth_imbalance_pct": 22.84,
+  "top_bids": [
+   {
+    "price": 102.11,
+    "qty": 166.581
+   },
+   {
+    "price": 102.1,
+    "qty": 175.947
+   },
+   {
+    "price": 102.09,
+    "qty": 213.978
+   },
+   {
+    "price": 102.08,
+    "qty": 223.054
+   },
+   {
+    "price": 102.07,
+    "qty": 356.932
+   }
+  ],
+  "top_asks": [
+   {
+    "price": 102.12,
+    "qty": 337.345
+   },
+   {
+    "price": 102.13,
+    "qty": 256.723
+   },
+   {
+    "price": 102.14,
+    "qty": 422.362
+   },
+   {
+    "price": 102.15,
+    "qty": 312.935
+   },
+   {
+    "price": 102.16,
+    "qty": 347.888
+   }
+  ],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:06.668036Z"
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "tool": "get_order_book",
+ "args": {
+  "symbol": "BNBUSDT",
+  "depth": 100
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:09.078143+00:00",
+ "data": {
+  "symbol": "BNBUSDT",
+  "best_bid": 712.17,
+  "best_ask": 712.18,
+  "mid_price": 712.17,
+  "spread": 0.01,
+  "spread_bps": 0.14,
+  "bid_depth_quote_1pct": 557296.05,
+  "ask_depth_quote_1pct": 478585.17,
+  "depth_imbalance_pct": 7.6,
+  "top_bids": [
+   {
+    "price": 712.17,
+    "qty": 60.111
+   },
+   {
+    "price": 712.16,
+    "qty": 1.19
+   },
+   {
+    "price": 712.15,
+    "qty": 12.578
+   },
+   {
+    "price": 712.14,
+    "qty": 42.064
+   },
+   {
+    "price": 712.13,
+    "qty": 0.011
+   }
+  ],
+  "top_asks": [
+   {
+    "price": 712.18,
+    "qty": 20.64
+   },
+   {
+    "price": 712.19,
+    "qty": 11.969
+   },
+   {
+    "price": 712.2,
+    "qty": 0.008
+   },
+   {
+    "price": 712.21,
+    "qty": 0.292
+   },
+   {
+    "price": 712.22,
+    "qty": 4.213
+   }
+  ],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:09.075774Z"
+ }
+}

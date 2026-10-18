@@ -1,0 +1,49 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "LINKUSDT",
+   "DOTUSDT"
+  ],
+  "window": "7d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:26.824395+00:00",
+ "data": {
+  "window": "7d",
+  "rows": [
+   {
+    "symbol": "LINKUSDT",
+    "base_asset": "LINK",
+    "end_price": 11.75,
+    "return_pct": -11.62,
+    "volatility_pct": 1.53,
+    "annualized_volatility_pct": 71.61,
+    "max_drawdown_pct": -12.81,
+    "rsi_14": 34.11,
+    "volume_quote": 160987796.08
+   },
+   {
+    "symbol": "DOTUSDT",
+    "base_asset": "DOT",
+    "end_price": 1.07,
+    "return_pct": -14.84,
+    "volatility_pct": 1.8,
+    "annualized_volatility_pct": 84.06,
+    "max_drawdown_pct": -15.6,
+    "rsi_14": 34.23,
+    "volume_quote": 82406954.87
+   }
+  ],
+  "highest_return": "LINK",
+  "lowest_return": "DOT",
+  "highest_volatility": "DOT",
+  "highest_volume": "LINK",
+  "volume_ratio": 1.95,
+  "volatility_ratio": 0.85,
+  "return_gap_pct": 3.22,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:26.803550Z"
+ }
+}

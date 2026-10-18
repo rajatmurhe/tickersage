@@ -1,0 +1,66 @@
+{
+ "tool": "get_order_book",
+ "args": {
+  "symbol": "ADAUSDT",
+  "depth": 100
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:11.969891+00:00",
+ "data": {
+  "symbol": "ADAUSDT",
+  "best_bid": 0.2164,
+  "best_ask": 0.2165,
+  "mid_price": 0.2165,
+  "spread": 0.0001,
+  "spread_bps": 4.62,
+  "bid_depth_quote_1pct": 593539.33,
+  "ask_depth_quote_1pct": 486808.37,
+  "depth_imbalance_pct": 9.88,
+  "top_bids": [
+   {
+    "price": 0.2164,
+    "qty": 136100.9
+   },
+   {
+    "price": 0.2163,
+    "qty": 186636.5
+   },
+   {
+    "price": 0.2162,
+    "qty": 190443.3
+   },
+   {
+    "price": 0.2161,
+    "qty": 208641.6
+   },
+   {
+    "price": 0.216,
+    "qty": 204697.8
+   }
+  ],
+  "top_asks": [
+   {
+    "price": 0.2165,
+    "qty": 34046.9
+   },
+   {
+    "price": 0.2166,
+    "qty": 202541.5
+   },
+   {
+    "price": 0.2167,
+    "qty": 233347.0
+   },
+   {
+    "price": 0.2168,
+    "qty": 189301.6
+   },
+   {
+    "price": 0.2169,
+    "qty": 213185.1
+   }
+  ],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:11.966040Z"
+ }
+}

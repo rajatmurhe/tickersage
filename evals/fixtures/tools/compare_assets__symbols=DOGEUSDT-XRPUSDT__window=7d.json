@@ -1,0 +1,49 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "DOGEUSDT",
+   "XRPUSDT"
+  ],
+  "window": "7d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:24.730297+00:00",
+ "data": {
+  "window": "7d",
+  "rows": [
+   {
+    "symbol": "DOGEUSDT",
+    "base_asset": "DOGE",
+    "end_price": 0.0777,
+    "return_pct": -10.59,
+    "volatility_pct": 1.29,
+    "annualized_volatility_pct": 60.44,
+    "max_drawdown_pct": -11.75,
+    "rsi_14": 33.51,
+    "volume_quote": 460420983.4
+   },
+   {
+    "symbol": "XRPUSDT",
+    "base_asset": "XRP",
+    "end_price": 1.27,
+    "return_pct": -9.71,
+    "volatility_pct": 1.16,
+    "annualized_volatility_pct": 54.23,
+    "max_drawdown_pct": -9.85,
+    "rsi_14": 33.76,
+    "volume_quote": 860714666.51
+   }
+  ],
+  "highest_return": "XRP",
+  "lowest_return": "DOGE",
+  "highest_volatility": "DOGE",
+  "highest_volume": "XRP",
+  "volume_ratio": 0.53,
+  "volatility_ratio": 1.11,
+  "return_gap_pct": -0.88,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:24.724414Z"
+ }
+}

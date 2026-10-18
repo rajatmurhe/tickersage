@@ -1,0 +1,39 @@
+{
+ "tool": "search_docs",
+ "args": {
+  "query": "What does the bid-ask spread mean?",
+  "k": 3
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:26:57.545272+00:00",
+ "data": {
+  "query": "What does the bid-ask spread mean?",
+  "chunks": [
+   {
+    "id": "bid-ask-spread#0",
+    "title": "Bid-ask spread",
+    "url": "https://en.wikipedia.org/wiki/Bid%E2%80%93ask_spread",
+    "text": "The bid-ask spread is the difference between the highest price a buyer is willing to pay (the best bid) and the lowest price a seller is willing to accept (the best ask) for an asset. A narrow spread usually signals a liquid market with many participants, while a wide spread signals thinner liquidity and a higher cost of trading immediately. Spreads are often quoted in basis points (bps) relative to the mid price, where 1 basis point equals 0.01%.",
+    "score": 0.783,
+    "redacted": false
+   },
+   {
+    "id": "bid-ask-spread#1",
+    "title": "Bid-ask spread",
+    "url": "https://en.wikipedia.org/wiki/Bid%E2%80%93ask_spread",
+    "text": "Spread = best ask minus best bid. Spread in bps = spread divided by the mid price, times 10,000. The mid price is the average of the best bid and best ask.",
+    "score": 0.868,
+    "redacted": false
+   },
+   {
+    "id": "liquidity#0",
+    "title": "Market liquidity",
+    "url": "https://en.wikipedia.org/wiki/Market_liquidity",
+    "text": "Market liquidity is how easily an asset can be bought or sold quickly without moving its price much. Signs of high liquidity include high trading volume, tight bid-ask spreads and deep order books. Large cryptocurrencies such as Bitcoin and Ethereum are generally far more liquid than small tokens. Liquidity also varies by venue, trading pair and time of day.",
+    "score": 0.279,
+    "redacted": false
+   }
+  ],
+  "source": "TickerSage docs corpus"
+ }
+}

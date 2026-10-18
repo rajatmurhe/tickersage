@@ -1,0 +1,39 @@
+{
+ "tool": "search_docs",
+ "args": {
+  "query": "What is an order book?",
+  "k": 3
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:26:57.580470+00:00",
+ "data": {
+  "query": "What is an order book?",
+  "chunks": [
+   {
+    "id": "order-book#0",
+    "title": "Order book",
+    "url": "https://en.wikipedia.org/wiki/Order_book",
+    "text": "An order book is the live list of buy orders (bids) and sell orders (asks) waiting to be filled for a trading pair, organised by price level. Each level shows a price and the quantity available at that price. The highest bid and the lowest ask form the top of the book. The gap between them is the bid-ask spread. The total quantity resting near the current price is called market depth. Order books change constantly as orders are added, cancelled and filled. A snapshot only describes liquidity at one moment; large orders can be placed or pulled within seconds.",
+    "score": 0.757,
+    "redacted": false
+   },
+   {
+    "id": "slippage#0",
+    "title": "Slippage",
+    "url": "https://en.wikipedia.org/wiki/Slippage_(finance)",
+    "text": "Slippage is the difference between the price a trader expects to get and the price at which the order actually fills. It happens when the market moves between placing and filling an order, or when an order is large enough to consume several price levels of the order book. Slippage tends to be larger in volatile markets and in assets with thin order books. Tight spreads and deep books reduce it.",
+    "score": 0.467,
+    "redacted": false
+   },
+   {
+    "id": "order-types#0",
+    "title": "Market and limit orders",
+    "url": "https://en.wikipedia.org/wiki/Order_(exchange)",
+    "text": "A market order executes immediately at the best available prices in the order book. It guarantees execution but not the price, so it can suffer slippage in thin markets. A limit order sets the worst price a trader will accept. It only executes at that price or better, so it may fill partially or not at all. Limit orders that rest in the book add liquidity; market orders remove it. A stop order becomes active once the price reaches a trigger level.",
+    "score": 0.284,
+    "redacted": false
+   }
+  ],
+  "source": "TickerSage docs corpus"
+ }
+}

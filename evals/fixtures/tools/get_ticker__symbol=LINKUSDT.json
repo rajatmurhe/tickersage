@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "LINKUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:15.634979+00:00",
+ "data": {
+  "symbol": "LINKUSDT",
+  "base_asset": "LINK",
+  "last_price": 11.76,
+  "open_price": 11.95,
+  "price_change": -0.194,
+  "price_change_pct": -1.62,
+  "high_24h": 12.13,
+  "low_24h": 11.71,
+  "volume_base": 1411880.34,
+  "volume_quote": 16846347.13,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:13.067000Z"
+ }
+}

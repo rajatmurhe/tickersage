@@ -1,0 +1,37 @@
+{
+ "tool": "compute_metrics",
+ "args": {
+  "symbol": "BTCUSDT",
+  "window": "30d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:01.607368+00:00",
+ "data": {
+  "symbol": "BTCUSDT",
+  "base_asset": "BTC",
+  "window": "30d",
+  "interval": "1d",
+  "n_candles": 30,
+  "start_price": 80883.86,
+  "end_price": 81241.63,
+  "return_pct": 0.44,
+  "high": 87395.67,
+  "low": 79800.0,
+  "range_pct": 9.52,
+  "volatility_pct": 1.7,
+  "annualized_volatility_pct": 32.56,
+  "max_drawdown_pct": -6.21,
+  "rsi_14": 45.3,
+  "rsi_overbought": 70,
+  "rsi_oversold": 30,
+  "sma_20": 83352.71,
+  "sma_50": 81418.01,
+  "price_vs_sma_20_pct": -2.53,
+  "vwap": 83758.24,
+  "price_vs_vwap_pct": -3.0,
+  "volume_base": 457742.89,
+  "volume_quote": 38340731492.77,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:01.598499Z"
+ }
+}

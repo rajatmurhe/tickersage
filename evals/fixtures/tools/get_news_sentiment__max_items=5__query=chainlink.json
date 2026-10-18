@@ -1,0 +1,323 @@
+{
+ "tool": "get_news_sentiment",
+ "args": {
+  "query": "chainlink",
+  "max_items": 5
+ },
+ "kind": "raw_items",
+ "recorded_at": "2026-10-18T16:27:15.909040+00:00",
+ "data": [
+  {
+   "title": "Chainlink partners with Tokyo's Pacific Meta to offer compliance tools for Japan's tokenised financial sector",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 15:58:15+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOYkhpV3c1Vlh1M21NY2d3OHp2MUEwZFFHZGY3TW9kZzM4Ykd6ZVppX183VW1oWU1KdmRkUWF2OEJ2QmdXMWJ4WUQyeVB1QWV6SWZHUFN2MVBtMlYta1VDZkdOc2VKclJvNDVXU2pZSi1BYzZvSkxJOFBOaGg5aEZUM0lOdl8?oc=5"
+  },
+  {
+   "title": "Chainlink Price Prediction: Chainlink Buys 431,900 LINK in a Month, as Analysts Track an 833% Pepeto Run",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 15:54:59+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNY2NyZTJYOXV5TjdSVmJqZ3haUkZCQW1RR0pMQmxtVXNPQVVYRVpzZ2d3dDRod2lNcnRURWdFR3FpRGp3RGxFTk1PNnFzdjdsN1RBcElvcHJxc1FBVlh4NTgzWUxnR2RnbERGOTlIdGZBSi1VSEFNd0V1TlJLaVMxRVN4OFpOSWRYNGNvSEVyY0RtRVVWeWgzMg?oc=5"
+  },
+  {
+   "title": "Chainlink ACE in Japan: what it means for LINK",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-18 15:36:39+00:00",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFAtdWt1WjRscnR3Vi1lMFZuenJmYVVaUTBpWFoxWVdhZVFoV1NlUEFJb0JYQTRMa0VXVHRfdmhyYmhnRTFlNjhlVzdBSVlJYXJSWlNsbVo0Uko5MDNkS0xPVEV2Smh4TUlJYlh0dko2M1VFX1VRVGxOTWVFU1NPZw?oc=5"
+  },
+  {
+   "title": "Japan is Betting on Chainlink Japan\u2019s Pacific Meta has partn",
+   "publisher": "KuCoin",
+   "published_at": "2026-10-18 11:08:21+00:00",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9pMWZzb0FMdU83eVktVWU5a2dzU0l3T0RZUlhNaTVLdVdlZXE1T0pPU04wWVUxaUR3bUp3S1F6TEVhbkZLYTU3bGlrWmVXcEJtUUNmVEg4aENzdDB4TV9pMUxXTnJOQmphbTBwdFdBZzFDWnM?oc=5"
+  },
+  {
+   "title": "Chainlink Price Prediction: LINK Eyes $14 as AlphaPepe Enters the Hunt for the Next 100x Crypto",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 10:04:21+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNeUNaQjlhUXlDaXpxZ3dfR2FUTmF4bHVPV1BDZkt2ZUFUUVdmY1RBOXdoYktkUkhqQy1MMkQtYURiU29HNGxKMlFodWpHaUV6bmd5d3R2ZUM3bUtiQUNLOVRVWkhsT01SNzR1RDBMOWF4N1JtUWh6b1lMajhMRXZHUk9waUhhWVluOUN1cXJmQXYtUDRnRXJIM3E0OA?oc=5"
+  },
+  {
+   "title": "Japan\u2019s Pacific Meta Selects Chainlink CCIP for Institutional Tokenization",
+   "publisher": "Hokanews",
+   "published_at": "2026-10-18 09:58:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxObldGVzhqTy1pb01vMms5MHI4bTRGYXZoSzZxYk14RTdGTFBBZC0tUnFjUkZDV2QzNGw0RUF3VmJyQUlTY3RZb1EzT2hTTE44YU5sOVQwZUpGa0w0bVR3TTZLam5VNlN4cUVUdDQ2WUphLTJfd3J2LU16UzNFbW56bw?oc=5"
+  },
+  {
+   "title": "Chainlink (LINK) price dips 2.23% to $11.98 wit...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 08:55:09+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPeF9YZGNmR0puRVkzLWY4bjROQVZEcjRhd3Ata1RUM05EX25PMzJoNzA1c054V2k3U2tQeF92UXByRGJHRDNGbGU4Q29BVlN3cm44RmkxVDRnU2YyVHkzZ1pfUjk2MUl5cUlXb29Jclh3MERZSkptbnA4SzZPMkpKWmttUnl2Wkg1UkRsVXZ1SklfRGlvNzVyREFHZy1TMUpubmwxYUJB?oc=5"
+  },
+  {
+   "title": "XLM Drops 4%, Lagging Bitcoin and Ether",
+   "publisher": "The Defiant",
+   "published_at": "2026-10-18 08:48:51+00:00",
+   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5wZVB6cFRKZ1c1TGFHTDA4STdPaUpxMVNyM0RTNUxLTE9zRWFTZWY1Wk5KUmJKM09UaTA3NlJQWlltNGg3eUpzeXFHTWF1Vl9uV0FjaGpnNjZDSm91Vk1JaTdnWnJSWEtocTBXQWVrUUI4VjZDT0dZLTJ1UXE?oc=5"
+  },
+  {
+   "title": "Chainlink Trades Near $12 as Five Moving Averages Sit Above LINK",
+   "publisher": "www.tokenpost.com",
+   "published_at": "2026-10-18 08:37:09+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBTZklaVWxzYVJPQkFzQWJZV3E0TGZid09LM284aVFkWEJqcG53QmhhZFh4UzlRX3dCQTBKdExoeUhLaUhENFBKMXBEQUlneTkzeDNpWVl6cTg5QQ?oc=5"
+  },
+  {
+   "title": "Pacific Meta adds Chainlink's compliance engine, boosting Japan's tokenized finance infrastructure.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 04:24:09+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOSFdkQmhwNndtdVdpb2RTWHRqZWxWaGs5UVRhZ2FKdFdhdW1XeEs1MGNzYnNYZXlHMm95SFNEU2JvZTJwcThQWWpCUHNaUzVJWk4yQmZwMUFXMkJhUHd5MXc3WVBwdWdoS2ZDZXI3cjNGNVUwRjJQZ1NZTm02LS1QLW1ySnNEQWpQaG9pYlBwS3Y3cjJUZkE?oc=5"
+  },
+  {
+   "title": "Chainlink's CCIP adoption lags in $40B tokenized asset market, but Japan's stablecoin push may boost growth.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 04:23:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMUo3azRWVVFlMmdNZFdwZVFwblFKbmUwTlRyekdpY0M4bWpRekpnWEQxekdMZTlWM0V1a21EejNGVXk2OGxRUWt0S2VLOFZGM0hicTMwck1id1BnMDNBc20wcXRQUkVYcVlwUzM3TFhNSzVsR1JwN2hrdG5GdWVPbmFCSEtVeEN5?oc=5"
+  },
+  {
+   "title": "Pacific Meta Adds Chainlink Compliance Engine to Its Marketplace",
+   "publisher": "TOKENPOST",
+   "published_at": "2026-10-18 04:08:03+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1ZclJjZk42LVlyRTlZYVhvR1Z1UWlhWllSQ1Zrdmk4Yk9EQzZpSDRqQTREZmc2Y2hNZEJ2VkdWRExHSElhMV8yeUt0cUJfQ25fcHZ5andSX2Q?oc=5"
+  },
+  {
+   "title": "Japan taps Chainlink\u2019s CCIP to accelerate tokenization \u2014 Details",
+   "publisher": "AMBCrypto",
+   "published_at": "2026-10-18 04:00:51+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxORUQ5OXdaSHpaUGExVVc2YnA4SWQwS1JBRjZMR19QMzZqWmF6V1R1SG1XeFdjWE1TcFdKd2MxQ2FOc1RJTXo5Vmt5YUZhUlNFU0p5dWItMjlhbE03V25vOVNkVUo0VjlxLUJfX3ZTaktmZkdHWXpNd3ZrRmhyd2FhUm9YY21HQlNjV1kzYg?oc=5"
+  },
+  {
+   "title": "Chainlink Price Prediction: LINK Near $12.30 Gets a Stellar Utility Boost as Remittix's November Countdown Builds",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 02:17:26+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdThReUhGRUE3OHBNaGhoR2ZmUEJvaFQ4WEF4Nlp4MDFUalozZHhmZlZjWC1DdEl4Q21PMGQ1YXA4aU51aXJmeXZHZ25aU0pYYVJXZVl2OWpTTV9BRzk3V0MwVlZpU1FVd0o5RDBTSzZMbjdwdlQ4WnNEUHpSbFBXZDB6T2dIenFVdWw2M1lHczg0Nk9SVlduOA?oc=5"
+  },
+  {
+   "title": "Chainlink Price Prediction: Reserve Adds 89,200 LINK as Pepeto, From Pepe's Cofounder, Draws 100x Calls",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 21:29:30+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNLVdwcEtRWS1LQkEzQ2FiV01HWndMTW9EdVoya3Z5Vmgxc0tGZUhiaXdyelFaeWpCZ3Q0UXVzU050dWt0cy1udDZ2d2ZWSUdYNFd0Qk9nUjFDY0VHRVhBQmtLMWtTQ2h3YlRMb3FPeGU1eVVZMFhEX1U4aGc3eXRJcmFZM3hrNzZ5MjQwQjdka1ZjTWZFbTYyakEzT1N6Zw?oc=5"
+  },
+  {
+   "title": "Chainlink Price Prediction: LINK Near $12.30 Faces a Stellar Utility Test as Remittix Nears Its First Market Cycle",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 20:27:35+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxObkQ3cElxMWVYMWwxbnFDU0pJWXZMVTFGQ3MwMVZGNmxnakFOdGh1MzlVdDF2bExLUkdyMzRPZnRkMEhzWTRoR1ZZUXdzR2szaF9SSG5PcUlQbkRMNklNb1ZobXFtYlN3eFExY2dpTFVvYjZkVUZoekdnRXhSVHhZMS1yN1hjQnFBbVZPOFNuN2s1N1ZDeHBhcDRELXdoVVlGaV9hS1kwUHNqNEtzUEE1TThwa2JKV0p2d3dtVC01WjhCeFhUX1p0eEpzOEtaUi1GLWVGVS1rcXFWRVl0YmxQb3VINU13Nm0yV3RFblQ2dGY4b3lfaTRlSUNMejZGcWpJYTVSdVd1ME11QQ?oc=5"
+  },
+  {
+   "title": "On the Brink: Chainlink's Uncertain Future",
+   "publisher": "OneSafe",
+   "published_at": "2026-10-17 17:26:16+00:00",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE8yY0h1azRDa0hqYzNXRWsyRUtBc2NtamtsVlZHTE9wVXFrNlVMbDhjV21tWGZHSDNDTWNNZ3JTS2ZlNzBseUpMQWxtdWpBQzJRd19OdkdvVGM4dnZQOGgyMmNkVGVYT242bzZIOWN2cFpwMHdHd2Vz?oc=5"
+  },
+  {
+   "title": "Chainlink Price Prediction: LINK Risks a 30% Crash as Key Support Weakens",
+   "publisher": "CaptainAltcoin",
+   "published_at": "2026-10-17 17:02:14+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQYjBfSlRzeVJlUGI5RlpYdExBQjZ6NVpkdUdQTnpDQlZKRkxzR1p0MldGU1RNQllmZFFiTlBoTFR4MWFRZW5Zc2tXVEZOeXEzT3QycjdRZ0hQVmtLOW0wbWxlMUtGS3hBbjZlVXk2SlBDTjJKanpNYWstVmtOYUhkOFlDaDZYUUhjekdEby1USlhGbE9OZ3lTbGxrNTRpRVdJ?oc=5"
+  },
+  {
+   "title": "Expert Analyst Warns About a Major Altcoin: \u201cA Major Correction May Be on the Horizon\u201d",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 16:29:56+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9EZEZjME94YzdYeEdwUUlJd29EbU9DUjRuWUw4S3VQNGg3MlFFY1FKbVp6NkIwaFNyYWhfUTd3MVJkb2JWYkFFazVWTnJSd2lGdUQ1OG9ycG1vRXM?oc=5"
+  },
+  {
+   "title": "Chainlink Sees Increased Interest as Institutions Explore",
+   "publisher": "Coinfomania",
+   "published_at": "2026-10-17 16:04:31+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQc2tGZmNwZG9pUldPb09Wc2tkTjFKMGx1SUxkMTFVMTlGUURKZ2pkeGJaeFRnWDhoOURpWUxBSElpMEFiWnZhSWktc1cxS2JSYnhqeldIamZrY3M5VkFaSnJSSktab0UxYnF6V0ptU1ZTbmltNVpBR3VsWXdoVjVqVTc2STNkbVlzaHc?oc=5"
+  },
+  {
+   "title": "Chainlink Keeps Buying Its Own Token. Why Is LINK Still Down This Week?",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 15:30:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQemRCZF9FeXJEQm1tMVE1eHdUV1A5N2Q3RFMzbEQ1TWFTYTVKOXBha2RaTjFMdXRkelRPZkhyWmp3VUl5VlhPLWtFNGpzVndUS0RKcVlYeGphTzRzQUVyUlgzNEFWMlZTVmNoeThHcXFEM25hbzJuZllMSDVySWppYVhBRlJqU2tnY282UW5TSjVTejl5dVYyWHFIOW80dw?oc=5"
+  },
+  {
+   "title": "Top 3 Cryptos to Buy Now: Solana, Chainlink, and Pepeto, the Pepe Cofounder's Presale Eyeing 100x",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 12:46:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxONzY1a0YzWlNjdFBfTjBWcmdOTGpSN1dqNzN1NWQxQTBlMEtSTUxZWHpIeVNHcGNRNmFZb1ZCTFBibnY3NGtoOEhMQWQwODcyMXk3a3cySGVtdTFCTXlsX3dCUXQxNnRJNTRWSTh1aVQ2NGJVYWc5Nm12cU9hZURiak1TYkx2NW9CRXAta0p6UFlZLXA4U0NXUU5UcUgyQQ?oc=5"
+  },
+  {
+   "title": "Chainlink Price Prediction: LINK Near $12.30 and Stellar Expansion Meet Remittix's Crypto-to-Bank Opportunity",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 12:27:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPRVI2SkV3MzFtdk05c3ZmbHNuczZhcVF0TGtMTHlmN1NjZHJRT3M3OTEzbTZoNDd2RUZXeGdac2JadnRCYlhVOTM1eHREdnA5NVFMU2FyMWRpajNpNHJXRnpSTUlLVWtBU3lEWWswYWljUVR6TnFuejBwcldqdENJMUc1b3cyUGN3bUZSUXRtc1hNNk1l?oc=5"
+  },
+  {
+   "title": "Convert 1 LINK (Chainlink) to USD (United States Dollar)",
+   "publisher": "Bybit",
+   "published_at": "2026-10-17 11:50:10+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9pM2VqOTZWc2cwQkxmOExETHZnMU9WbzZ2WW5nRHFuQXd0dzVJSS0wTDZMMklLWnZBYVRSUDZrT3lmdjhaZFBjYVFxNmFDYklZbmVUTm1lY20?oc=5"
+  },
+  {
+   "title": "Top 3 Cryptos to Buy Now: Pepeto, BNB and Chainlink as Strive Buys 3,311 BTC",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 11:25:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNTUdxdWI0eDF4U1NBUk1TQk1LNmZnWHVPbmFFalVzc2FudGJoWWsxY25WTnB4bEluTk9paUxhSjlNRktsWGwzRWFtQTl5VGtGelBEQXNRRjY1X0RjNGxkMjNyODJ3aUJWM282RElVMGRPZ2daSEhEN2lRejFNVng2cGYxSGlzTXNLdGlnMW4yczhfdHRuaVBWTmYyZjdVX2M?oc=5"
+  },
+  {
+   "title": "Best Altcoin to Buy: Chainlink Expands to Stellar and Ondo Opens Private Markets as Remittix Advances PayFi Testing",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 09:34:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQUVhwS0M3bzh4bTdDbUNUZDVQQ1RkN05YWTAzRFJxTWRHN3dFX05YZ25wdmlZNXdNOWNZMFNmTTFhcWJOVFp5ZHpVdEs5ejZQN0N3VHdPRi1KT0JWM3ZQR05RMF91S2hWZ2FEUDBWMmh6RTJuRzF1M2FUR0hQS0RaZXJwUVNPaFVqcmFjNnJNUG9ERmJRMUdrT0wzWGEzU0w3TUFSbkYxQ29uM0ZGNDltVWNwYWFoQ2lBTEM0R2FKUHZTdEZSN001bHN6SlZUWDZHX1NDUFBn?oc=5"
+  },
+  {
+   "title": "Chainlink: Van de Poppe Flags Correction Windows",
+   "publisher": "Blockchain News",
+   "published_at": "2026-10-17 07:26:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPdkFXMFlvU1dPNUs5MTFydFlnZFA4Ry1SSXd5ZlhXcjZNeV9ZOUFCV3NlWXhUdVhkTDRGNjhzbXFYb05ZelZSbGJzRGZOR1dFZ1dMSDJnSDJRZ3lQV1paU0t1ZHdxS0E3VkZjMjJHVXYzcGVsTlVyMnd5X1BDSE44ZEVWMWJxc2Vl?oc=5"
+  },
+  {
+   "title": "Top DeFi Protocols Using Chainlink Price Feeds in 2026",
+   "publisher": "Coin Gabbar",
+   "published_at": "2026-10-17 07:14:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5jWWZHYkszUDhnTWtRZTJ2VkUyeFZoX0hwcDQ3U1ZlVkUzLWcxQTNENTNGbkxUNnBCYTJjRk16aVVMMHBnT1NpRXNVaks5R3JZaE51Z2huZlhYVnI3bUpTYUo3WXRhUy1DTERJSi1BREgwVUNuczFRUGJRTzE?oc=5"
+  },
+  {
+   "title": "Chainlink Price Prediction: Why Is LINK Falling on Good News?",
+   "publisher": "Coin Gabbar",
+   "published_at": "2026-10-17 06:31:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQNEZPRTlPdWJKUDFpSDVMb2NSTnpKY09QbmF6eHRyZWhnWkJJalYzbmZuLXBzVFJ6b0xmYlozT3JISnZvQjNSQURxYWNDUDRNLVUzamxrYW9tYkx0bk9PX0ktbGdYel9QeGFNU1NFaVdaTVNJSUpDM1o5Uno0dEdpbm00T0kyUkE?oc=5"
+  },
+  {
+   "title": "Chainlink News: Pacific Meta Adopts CCIP and Fulcrum Is Introduced",
+   "publisher": "Coin Gabbar",
+   "published_at": "2026-10-17 06:20:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBYZ1Z4WlVrcW5nT0pXbU5MY1VvNUVHWDlYS3Jmc2VKcTBYS3lLMi1oTDgtNjFrYWlpOEo2NExlbFFkblJkQjkxT2tLMFg2czhXM0YwVDBhWkk4ZXEzZzVuLVpIRzl5WGdZZ3pTSktfemE0WUYyRGtLYzV3?oc=5"
+  },
+  {
+   "title": "Chainlink Ecosystem News: Stellar Integration Expands Its Financial Reach as Remittix Tests Crypto-to-Bank Transfers",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 04:36:50+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPRVN6U3RTOWFXYVZoTmh1dkduQ3pmWlVjdU0wQ0dpOVNmLVZSZnFfMi1wcEZNSVlnMnYxX2kwNUhBcDE1RURWUi1KQ29hTHZiTm5PNUJfTFZvS1RqQWVRSXdEeHNwWFY4Mzd5QWRva0V1OXMtMVBMSXRNQVAtNU9OZy05Zm01YWtKTFlORE9KanBtNjNwa2w2VDZKREJQcnRVWTFzZzFsZ1BhZ2l6RTFGZXZfbERFLVBSNURCUVdLTFdWdHdiVWdwbFFnU2RyV3QybG83UHA2UEtEc3hCMjdDbThBTGxBMUl3bUxHalVGU0QwVWZBc282Yk16ZVhaRGEwS1NmalB3c1FGdw?oc=5"
+  },
+  {
+   "title": "DeFi Compliance Just Got Automated\u2014What That Means Now",
+   "publisher": "OneSafe",
+   "published_at": "2026-10-17 04:35:48+00:00",
+   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBCdWpFY09KRGFZZmdIcTBKLWJSN1UwbDdFaHk5eVRFUWV6a0lXS1hxbjRWSzFWeXhxYnE3NUhPVWhzZVlkd0tvQ1lTMThod1lXMnBHb3M2UTZoMjhySmRDbDdMYW5ZX1Jhdm4xaGVwdWFqWEJHV1N6akNKdm4?oc=5"
+  },
+  {
+   "title": "Cryptocurrency News: Chainlink Goes Live on Stellar as Remittix Brings PayFi Tests Into Its November Launch Countdown",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 03:58:13+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPQWtWQkEzVlFKU1BzMVJaeGM5cENtTUdMMExxb1NteDd1dWFmSnE4enJmYWt2SW8yYVd1ZERRV2QzcjJzRHZRbVh4TXgyMFAteEQ5R3V1aWdzVkVzbkRHNXdMdkhfTVBESnJqV3ZKQ2dBNHdjMG1obTFjMGNZT0Y4T3VPc2xoWmo0LUo2bWpPbjQwQ1J4Sm5saUcyVGs2OGJtV0FBdmhOckkxOWJiTU96Sm1zRnExZGE2dC12X08xdlIzSjJNT0ozMGxpTDYzdjNtcl9iYUNWd1c?oc=5"
+  },
+  {
+   "title": "Pacific Meta chooses Chainlink's CCIP for Japan's institutional tokenized finance push",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 00:12:40+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQdnlQRjJHNEpZS2hVVXZtQUxTdVFjbWpaMGVsMGQ1R3ZLTElsU25mTm4yeVlUQmtxaS1rWjdJWFRlb3ZRb0R4R0lGRmpvSThxaWp2LWV2VENHS2huQm9NZXJrWGdvc2tkWG11cjd1MEZUYjAxRDE5MWloVTJYZFNJOWdqOTVTTVA1ajB5ODJKNHVzOGFqVGJXejVoYU9hbjg?oc=5"
+  },
+  {
+   "title": "Pacific Meta adopts Chainlink's CCIP and ACE fo...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-16 23:36:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNU2g5Qy11dG5YbHRfcFNOeC1fa196MllPZnJhM1dPU0diQW9rd3MtaHNiMEVtNFEwS1h5MkdzcjVGVGFlcWN0V3ZoeHpEM3d2THVIMWRVZldxSzNTZk5Hb0lOaVc3U3ZQX1RtRWUtcUNHQUR5NzVnckItbDl3QjBwNFFudTV2TE1xbFJDSnpWTEJsc0FQc1ducQ?oc=5"
+  },
+  {
+   "title": "Chainlink Partnership Targets Institutional Tokenization in Japan",
+   "publisher": "Blockonomi",
+   "published_at": "2026-10-16 23:15:40+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNcUNfWXg2bzdYUTVza3YxZm9VRGxjU193SkZ5LTR5VkY4dTZjRTBaTGhLN1RGbzJjQlZNc25MZkJHSGl0N3dSZjdiSXFmUlo2MFpmNjdzdUpuZmhfNU5zeS1WT3lXZjhFLU1oVU9BcFd6dDdsMlVuUjBoeTBRYjBiREpLYVl4cVpjVXdpdjNycFFfTk0?oc=5"
+  },
+  {
+   "title": "\ufe0f Crypto News Digest: Key Updates You Need to Know The curr",
+   "publisher": "KuCoin",
+   "published_at": "2026-10-16 22:44:09+00:00",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1rNkVoaHpjd2RIMVV0SDI1MTc2bmROZkZSRWtiY1lUTEpSMW9VLW1CZnhxckVLWlgzQkNmU0JLekV0SnNGSVY1Nk9UVS1DSUV2VnlMbjNyRy1Fa2Z5T08zWGtwZC13Z1JfWTlmRUZyeWU0V3M?oc=5"
+  },
+  {
+   "title": "Charles Schwab Opens Crypto Transfers, Plans Three Token Trades",
+   "publisher": "tokenpost.com",
+   "published_at": "2026-10-16 22:30:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBVVnYteVhfSzRkdHNzWTlLTEEwdy1sZDMxQkR4bDJZSWZBOHd4LUVZV1M2THJja093WXpBQncyWEdibXpPS0lYRXBDMUo3bEF3VG84?oc=5"
+  },
+  {
+   "title": "Convert 1 DKK (Danish Krone) to LINK (Chainlink)",
+   "publisher": "Bybit",
+   "published_at": "2026-10-16 21:41:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9HQ3hnTUdKakViTEtyOUUyWGRReklOSVl3VXc1YjFCdGkxckVrLVhRYmFtdFB1T0VoWnZpYmVsTlozNDJ2Wk5ySFJnUUpScVd3eFo3VDJEeDM?oc=5"
+  },
+  {
+   "title": "This Week in Crypto, brought to you by Holoworld @chainlink",
+   "publisher": "KuCoin",
+   "published_at": "2026-10-16 21:24:09+00:00",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBJaXZ6RmZTVFVMd1NBN2x3RmtnWkVua1FPZlJQRS1EaVJtRTFSUkV6TEdHVlU3XzhmM2p1NmNYVzlEeFZwREM2UVc5TGU3UGtUcVBkVGZlVFBKTThkREUyY3B3T2pmbGVJN2xEbDFzeDJQZw?oc=5"
+  },
+  {
+   "title": "Chainlink News: Stellar's $4B-Plus RWA Ecosystem Gets Chainlink Infrastructure as Remittix Targets Everyday Bank Payments",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 21:20:08+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQU2ltNmJ0aWN2aklDYVBZaERmUjJWTVg5cjhPVVYtbWw2cmZXY2hGbFBVSnBGV2FERUlKLTBUMC1GYXFrSmtjOFRMdlRWUU5oVWprRzVNOV9rZ2RIVnctVWV1dnI4YVZ5MUpraE5rTmp6aHdaZkFZSDl4RUJqTWwxVUZJWk1YRGFKbGFsbDdyUnJzQlBoZ01vcVh3bWpMN21JWmFCUW5FNGVNektJbldLY0xXWjBubzVld0NBeTV4WFpOalJkVDR3Tjh2REdONENPVHBXQkNldldWY0k?oc=5"
+  },
+  {
+   "title": "Chainlink Price Prediction: LINK Eyes $13.50 as Stellar Launch Meets Trendline Support",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-16 21:14:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9lZ1BnTXRON0RrNzE4cHVZQVJ5Skl5dF9VaHlud2tBWGtvc3FkQU03ZkVtczZMUkpyWTRvV1hXYXRDWTdPTFRsZ2NscTJaa1A2U0Z5aGdRSWhuX0U?oc=5"
+  },
+  {
+   "title": "Chainlink Price Prediction: LINK Lands on Stellar, Wall Street Meets October 29, but Pepeto Gets a 300x Call",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 20:53:28+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNN3V2ZW56MTB1MVZwOFdHVEtUa2JxaGZxZ3h2UEVlMTlCRW03dW93a3gxVUUzVEV1Zmg3OENJVktMSlJrczd2eU1jM2x6NUNHVWhPNGg0US1jaUZLVGw4X3FnOW1US05iZDQybml4WnlPcHQwRm5zTkpLTXpNcjdDOVJkWHo1Y0pIOVRucUwtdGMtOG5WamJpaHdjMEM?oc=5"
+  },
+  {
+   "title": "Convert 1 LINK (Chainlink) to VND (Vietnamese Dong)",
+   "publisher": "Bybit",
+   "published_at": "2026-10-16 20:02:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5JNl9PTzltbDlkSFhHNkV5bDJNTFlWZGZxY3Z1WEpLbFp5NUFLVUZobDBMLWNsRnZ1TVIzN2R4MlVEa3Ayb0JwV3RUREF3OThsU1ZBV0VMMDQ?oc=5"
+  },
+  {
+   "title": "Chainlink Achieves $30 Trillion in Transaction Value",
+   "publisher": "Coinfomania",
+   "published_at": "2026-10-16 18:56:59+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOYl90Ym9WZzRPV3BEWEoyUElYTGhDaTZFQUozOTFIckpJbjBVZ1VZem1CNGtQM2ZkM1dnbTlaa1QteFJicTJST3g5ZnhKcWVyaWlhQkhuTUdSQkZ2ZnRjU0ZiQll6aTlFWXVreDM2c1hqYllGeV9HTkhQQVQ1YmRmS25n?oc=5"
+  },
+  {
+   "title": "Chainlink Price Prediction: Stellar's $4B-Plus RWA Ecosystem",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 18:49:50+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNWWd2XzA5WW9qb3BMU1hfMVRnb0hLTnhMVGJsREhCM0tXMUFicXphWVVkUDRUOEtVbE9Odi1pajF3Z1Y1U1JxX2FySFp6NmxHSWd4LW5RTk5PVkZYUHRYOWlQRWJqc09DVDRnMEoxNHczaEpfLUZFZ1M1clVXNHMydVJES1lQY1l0SGUyaVVMd0hQa0p3cXZWREhB?oc=5"
+  },
+  {
+   "title": "Chainlink Reserve: 431,900 LINK in 30 days",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-16 18:33:44+00:00",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5DVnhUN3ItQWp4RzZRT3dFRmN4b2Fuckx0RnJIZjlXUHdTYk9wV3NzUE1LUmlURUVTbTZQcllwSEdYbm1TYUJfWGFsWXBLRWZSdldaYTlLbDdCcjZWZW5lTWtaMG5XQXFZVEV5azdmblVCX1B0WXdJ?oc=5"
+  },
+  {
+   "title": "Chainlink Price Prediction: LINK Holds $12 as Stellar Goes Live, While Early Buyers Chase Pepeto's 100x Run",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 17:16:36+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNQW0zc0Fyd1ZONFIzc1d5ckVWRmNWQ1JSNTQ5bzBlakdpQ2RXY1A3dU5zbGJYRTZWa2VJQ293cWxqbVNzWmhka3NUYVY3Z3FLcHc1VDFkdW1Xc1VQeUYtMldkZlM0N3ExLWtmbklqUXZ6d0dvRXQ3eExUa2VYSkZCVWNUMkM0TnRPbkxCNm90dXJtOTlzTnA4ZlI1S0JKdw?oc=5"
+  },
+  {
+   "title": "Chainlink Data Services Go Live on Stellar\u2019s $4B RWA Network",
+   "publisher": "NFTevening",
+   "published_at": "2026-10-16 17:03:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBwQXRPTTNIeTRDWGN3V1dQbmctTElySmozRHZrWVRFRVRVcm9DWW5XOWk1VFNtQXdXQ1dvN21STUowRUVmaXpFY0ZKYjdYV1VMV2ZpOHYzMTdEYkpfQ0NmYmVyNDJIekxNcFRSZUpuYUVwUQ?oc=5"
+  },
+  {
+   "title": "Stellar adds Chainlink feeds on October 14: What it means for Chainlink price",
+   "publisher": "ad-hoc-news.de",
+   "published_at": "2026-10-16 16:52:39+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQV0hESjBwaTBNZW5iYllSeTRqTUVKVXhTblZjSk9tLXBURmljSFY4aHduLTRkVFhxRHlYRmNnR0hRT2dzd3VpTmU2QTQ2Y3poRWpyRmdwZzJpN1JkMlZxYjl5OHgtR2VlQ1QwY3M5dmdTeGlwOFdsLUJVUWVQazVVM1hvcVJDOGRJVmVxbkM4LU1zWjA2c29ZWEhJMVZXb3lHcTBqZmoyUVkzeGtwaFpHSUhXSlM5Q3UxUjNSQ25rVVhudHVLZW9mVXJla3pNaXBybFFTaw?oc=5"
+  },
+  {
+   "title": "Chainlink Price Prediction: A $13 Recovery or a Fresh Presale",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 16:44:51+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZEsxZW5lU21OTUNVTUh0RnR1S0RLRUh1Y3dUQjY5Nm9jQy1iRmhLTmo4VXY3WERsMndSTzVqZkVyUktTTlFuNUpkUDBPTTl3QWVFMDIzS2FBMlpfcG16TlM5X0c3VFF6ZHc1SWtuaXdkQ0VRNUl3ZG9TRGxMMTVmS1RQZHRKdkN6Z0ttU3FJX2lPMUsySl82cGRvNA?oc=5"
+  },
+  {
+   "title": "Best Altcoins to Buy Now: 3 Crypto Projects Ready to Dominate H2 2026",
+   "publisher": "Bitget",
+   "published_at": "2026-10-16 16:31:22+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE85dWJLY1Zlei1SbF9ZNUZ3d0l2NlZxdUZ6amI3TVhEUzgyUnB5dXMxQnlvOTB1MGlzaklScWE0NVRUOG9Ra05oajlKQzJCWkRUMmFOWG1RWTVSMnVaNUJiTGc0ONIBY0FVX3lxTE85dWJLY1Zlei1SbF9ZNUZ3d0l2NlZxdUZ6amI3TVhEUzgyUnB5dXMxQnlvOTB1MGlzaklScWE0NVRUOG9Ra05oajlKQzJCWkRUMmFOWG1RWTVSMnVaNUJiTGc0OA?oc=5"
+  }
+ ]
+}

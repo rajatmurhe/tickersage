@@ -1,0 +1,335 @@
+{
+ "tool": "get_news_sentiment",
+ "args": {
+  "query": "bitcoin cash",
+  "max_items": 5
+ },
+ "kind": "raw_items",
+ "recorded_at": "2026-10-18T16:27:21.159903+00:00",
+ "data": [
+  {
+   "title": "Michael Saylor hints at more Bitcoin buys as Strategy holds 848,250 BTC",
+   "publisher": "Crypto News",
+   "published_at": "2026-10-18 16:14:41+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNdmp2MnVpUjQyT1d4LXJGOV9RRUd3VE1nbk9BQ0pSZXhWY0hjbkpZWTJMY01CYWZoWlgwSmM2SjI2bEpJTXZMODBodE04dGNkRFJvaUFyVVZfMC1tY3VGNkRTOTlaVHdWMFBXbFdOWWpmOWRodjlzY3dkN1B4dHhaSU50eDMxa095OEZWM1hicXdIeHlQVVE?oc=5"
+  },
+  {
+   "title": "Bitcoin Price: Record $125 Trillion Money Supply Fails To Lift BTC As November Signal Draws Near",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-18 16:05:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1BWUVIUzcyWldfYUdZeVZHbXNTeXBKRDBsVDVwdFBWaFRCVkMtNUlPM2ZiNW05WjBVbnFGYkdtdUlxV0FZZUp2dWZHQjBrVnNiZ09mNk1Bd0M?oc=5"
+  },
+  {
+   "title": "Crypto News Today: Bitcoin Holds $81K as Stocks Slide, While Pepeto Draws Buyers Eyeing 100x",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 16:04:37+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNN1EtV3R3RnFQXzJhZV90bEtyVGF4VTl4UHRKTjRQdURuX3NMcmEwNDVSUGxQOFU2V1JJQmVLV0phSlI5Y3JveHRCTnYzS1pPTlBvbWpSaG5XVFAyVlhYS2VXQ0lQdmNkSWthc19pUmZEMWIwUTAyR1VxYWx3cDR6SjNEa1hXRndUdE1JOUxqb1VlcEw0UE5EeA?oc=5"
+  },
+  {
+   "title": "Ethereum and Solana ETFs Keep Losing Money. Which Coin Is Holding Up Better?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-18 15:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNTGVlMTloUDdPRXowSks0d0kzUE0wTGxwSGJaOEhLUjc0UU1xZ3lTT0g4cnVTeGJiNkZ2ODRjdE90V295ZVFuYXBKaHdPSmk0UGIwalo4dHVlUG5lUGhZUUNiV0RuVXY2dzBXNXNISEl5U1J4NzBlaElUajQ1TGpUc250TVJQbmozdVo0QWE1ZEZnaldJb2ExRm43T0lRemlHX1BvdDNmVmxpT3VDNWlZenZsbzFmZ3MzYlcyWlBwZWtFY3Y5cnhIZDVhZnlSZw?oc=5"
+  },
+  {
+   "title": "Ethereum ETFs lose more money than Bitcoin ETFs last week",
+   "publisher": "Crypto News",
+   "published_at": "2026-10-18 15:05:53+00:00",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBFQnBtSGNlbHVpeVlRdm8xdmRIU19YbzZzLXlHMVR5M3BXRkJfQ3plZUpkZE5UTmF2bXJtVHpxRHZWSE9oM0x1SXVzWU1DN3gyakU3eGZHZmVuWTdIQVBtQUN2VlhMaDVNSlJoMHFtajFLa0thMjlv?oc=5"
+  },
+  {
+   "title": "Strive CEO hints at another Bitcoin purchase with \u2018double the horsepower\u2019 remark",
+   "publisher": "Business Upturn",
+   "published_at": "2026-10-18 14:40:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQOEg3VGFSUjhaS2VHWU52cmV3TUgxakFiQl8tYXVlSmk3emZfZXBRdmIxUWdGNTladUU2cGNfbzJXTFZPaWtOVnRUZXRUakdiWG1yUGJoTU1LRlhDQVJZVzd6bXFKcHFHNTdtMGQ3RVRmdkR2aTRzQUwtR2dpeTVZUExzVnBHWVdNTGJoZ01fWTNSWTJtQzhpQ1h1WWhpc2lqeERFeEFZaExIUWxQVU41WHhONGFJVjBraXloWkpkc290RGZmTWZUWmt6WVpaQ2tK?oc=5"
+  },
+  {
+   "title": "Michael Saylor hints at new Bitcoin announcement as Strategy investors await fresh purchase update",
+   "publisher": "Business Upturn",
+   "published_at": "2026-10-18 14:04:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNbFBRSXQtVGRlSEJjQXJ1U2hJM1c5bWUtRFBibG10N0VkeksyWU50ZlNqTFBJMVVNanExaFFBYkRBcGZ6U1FIWk5hQURsV0gycG9iWmlFY09Fb0tZdl9BX28zbGo2Vlg4Z2NUWkxwNThUX21nRlpFM1BlZzJhT05RS0RYS2ZGYS1FanVpVVNNQ3ZfY1l6MTBIdWx3UFdTZ21rUEJBZzcwbEhneWc0bk1USGpqdU5uZzE5cWd1eDQ4djFlSjlZeURpazVoTnh2bkp3c2tRYTNzOUYtSnBEMnhHc3dWRWpqUQ?oc=5"
+  },
+  {
+   "title": "Michael Saylor Reveals Why Wall Street Prefers Cash to Bitcoin",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-18 12:47:58+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPSXAxa2xCMXgzcTBjUnd6YUlBM1N0SFl3THAxRjJzeVg0VjdZcS1uME1SZU12VFIzVDZCLVh1a0s2YjBwUFhCbW5MbkZvT1NzY2d6M3RWN2hFWlRia3RZa1VTc0VoRE5rbms4SXVsamhncHlpczNkVTJsMnJBcFRHaThMZVY3RmI3WTQwWDkxZkE2c1paeGkwVUJ3YWQ?oc=5"
+  },
+  {
+   "title": "Wall Street Is About to Get Uniswap Futures. Why Is UNI Down 21% in Two Weeks?",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-18 12:41:38+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcVdjUklEdjdjbDl1NmJxUWE1dTRKUGg3cklhcU41RHBOQjhNMDVSMnpPNTByaEQzY1hIdXc1X3pGaXh3WXlERWJIbU5lTl92cWMzS28wN0ZGN1QxVHBmQUdoQWRWa3NVTWstVHJsd2s2Uk5RcWxvaWxDOVo5NC1uSVRXb3gxVEJoRFBnU2lGMkROeWh1VDlLTnJHVXA?oc=5"
+  },
+  {
+   "title": "10 Best Cryptos to Invest In Now: Which Coin Could Offer 1,300% ROI?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 12:17:22+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNMGRHbFdNaTh1dzRIZVFMN0hLQ1BkRV9rQ1l0cVFOZzl3OElvdlVfeUJHNVk0M3l5WGVUM284eFRROFR0TEtINEowZm1PRHRnUGFoaEVxSDBCVDJxdGdFM3k3S0tTc1hjenVOZlBCVG5iLTBjb0szLU1LVEpqaDZWWnVOUWptcV9EVExrZEIyeHpQSjNVU0pKNldnTmRvZw?oc=5"
+  },
+  {
+   "title": "Saylor and Yusko's BTC Price Target, Bitmine's ETH Purchase and More: This Week in Crypto",
+   "publisher": "Benzinga",
+   "published_at": "2026-10-18 12:00:07+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNQjFydnJ0X3BRMGw3RFNYTnNEZlpDWXVsSTZlVWY1T2hfNXhtZUo1czYtVzkxQ25UdmFFbGVSYk4telkwZXVsUjlVdFo4dlFIVE1ZRlBTVDd1eWc3SEZhM0h4S3E0OHVjanlGYkdSS0ViOFVNaHZUUGczVG5lLTRaeWJBUW0ybTR5QmI0amk1SkFuVVBmM0FpNVNMU0JPVzJVbzF5V0x0ZlNFZHREWXdnQ09Wb0hPV1Y1VVdfc29ob2NlQXdQODJKYWMzQW0?oc=5"
+  },
+  {
+   "title": "7 Top Cryptos to Buy in October 2026 Before the Next Major Market Surge",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 11:53:28+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQOTd3WmtiZ3daQmo5NFh2LTZSbnI4aFB6bGRZdHFVVDhGdXY1QmRZcXZKOU5GYXpzMFN6Sl9oNmJ5emJKOVIzZ2VwQVZfZHRVUDd1ZFY4WFgxeVpzNkFsZFJhZ3FnMG9vdWRGdnZVcVZNZEZfal83a0VvR0dHMW5wb1UyZV9GcXFCRDhBSnBHUTI1QkNuZjcwQVNQQVJVWkZUZXpv?oc=5"
+  },
+  {
+   "title": "XRP ETFs Keep Pulling In Cash While Bitcoin and Ethereum Funds Bleed",
+   "publisher": "Startup Fortune",
+   "published_at": "2026-10-18 11:32:28+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOaUp4Y1p1MEtwY2xMdDlPS0xWQzZpQjdrdm9KcHk3UmRQdzRpT0ZLa1JwZXk3NUNXMGhsQUowU2ZBbl9XLV9fb3JUMlNQdGxfelVpQjdLYVpSb3dCS3R1eDhHNmt2ZGoyUTZaQmhMZElON3ZCTVBhV181Y1Z6SUZJQ1RzVHNRVEk5b1lITnVUQ1BLQ0djbU5FR19YRkM?oc=5"
+  },
+  {
+   "title": "Bitcoin and Solana Made Early Buyers Rich - Could Apeing Be the Next Crypto to Explode Before History Repeats",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 10:24:26+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOQTlUd3Y0Znp2TjNvN3BvdHNPVUlqdVYyUXkwRXdfdmp4RzdqY25Gb182bGpQRnFtWDJVVW9ZV0JGMk1pcE9CTHozUFI1SDRYTEdvblYwY1FtRjViWldmSXNTTXBBcFJ3ekpkYzlQdnl4UE5SUXhCcHh2QlowQk9tcG9EWVIwalk3TVNCM3EtTVRINzlkbC1RNg?oc=5"
+  },
+  {
+   "title": "BCH Price Prediction: Selling Pressure Mounts as BCH Trades Below Key Moving Averages",
+   "publisher": "Blockchain News",
+   "published_at": "2026-10-18 08:37:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOWU1WOWFBWXU4dlpfeVB1UEpTRHZvNnd1YkFxT0tQekZ2ZHgzNzRPb0VrYnhhdHBHZkVZVXJ4OFVTS1Q2LW1FYWlpdUpvX2MxMUI2SGlnVDRiOGJoeVJDUUlJS1NTY3RQclZRdzZsMEJ5Mm5mME52U2ZBcWRPUjE1Q1F2LUs0UV9FdGo0ckdoM09hdG5tb1V5ejdYX0o?oc=5"
+  },
+  {
+   "title": "Steak 'n Shake Launches Bitcoin Milkshake, and Grows BTC Reserve",
+   "publisher": "CoinMarketCap",
+   "published_at": "2026-10-18 08:33:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNalB1cEtBMEhuSGVGYm1HdVBpdG9hSDVJZVJ4SGRZdWVkVDFMVlZRbUhSdWZTeDlSY1k5WFBKZVlLNHlfTEJaOXVSd0ZYcFJpQUJDLXpjeXVMREZpYkN5b0g1WDIyNnNwYUY3QlNsOVUtd3M2ZE9XcFkzUF9ORDlNN3BTVDMzUmlUa0NZV3ZlTnh5ZU90TEJWSk42RFJ5MHQwWFpiNGlWaw?oc=5"
+  },
+  {
+   "title": "Wall Street Can Now Bet on Bitcoin Cash and Uniswap",
+   "publisher": "Coindoo",
+   "published_at": "2026-10-18 07:46:55+00:00",
+   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9mRWNnRC0wUW5uTFEyV0I0QWlOOUp6dmhjOFl3SnNxck9wcTJJazRxNWRUZHRDRThsUHVTcU9jUXppejdobzlBUmxBU0NOSjBNTmw2UWFxc01FcnRPRGxsQ2JmMFZVQ0FHaDZSUmlpUm1YOEVJcWJYWDRvRUE?oc=5"
+  },
+  {
+   "title": "Bitcoin network fee: 12 cents per withdrawal",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-18 06:18:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxORjlkT0VORno0UU5vVXp0TjNyR2dFTHZzTFdFVzQ1Ui11WndHdTFuSWNPdW9MYlJOMG5LRXBFYzZ0eThEVTBGTjN6UlNleS1zZkE5dFVEa1RUb1NrYXQzbnVsc1hBUVE3OHdZb0k4TDh4bElqb19CT2duZUJyeVpwb1Fjcw?oc=5"
+  },
+  {
+   "title": "BCH \ud83d\ude80 Bitcoin Cash is testing a potential breakout from a d",
+   "publisher": "KuCoin",
+   "published_at": "2026-10-18 05:08:16+00:00",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9vYXZQRF9zcklBRUJBSkQtTGNrYlBUYjdOQUFiRnZCS2FTZG10WWUzNjAzMG5XTXB4S0llNEFBcEpaNUdjUkNrLWEyanU0NlpCNUZyTzZ2UzVLSG1lUVBEYVFqQlA3TmZGN05TaEQ4MFJoUQ?oc=5"
+  },
+  {
+   "title": "5 Best Bitcoin Casinos: Top Online Gambling Sites Tested For October 2026",
+   "publisher": "Muddy River Sports",
+   "published_at": "2026-10-18 04:03:18+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQVUpTX1BlY1JCazFhWFpMd3lucDdobzlqdUw2SkNKclBldE9acGlYOXV6dS0zT1hzSnZsbG9td05OYzRaS09zQ05iQ0pJSnVXUnBMbmtrRkJSclVUSV85bU5RMHV4MTloODJQSFh0d1lGZTJnQnloMU5PVkNQeGoyOXhRNksydmxuNGFRMU8zQ1pGc0gzMjRFQjZqcFF1NXJDSUE4YVA2M29VV2dXVlRrOE9rYVhVWHJvSGYyc2VBbmVSV0JaeElv?oc=5"
+  },
+  {
+   "title": "Bitcoin Cash block time slows to 11 minutes due to drop in computing power, causing longer transaction confirmations.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 04:02:08+00:00",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE4taUdqM25WdDR2Z0ZybE53SjVJWDRrN2FXM25VTDBKdTM2VGhNQVJwWURSaU85QXp3TW9ubVhfN1RTZnFGRGRmM01Wa3FVYUhpNngzZVZSczJEU0p3cVZsS2JFYUtnbjFhQ3QzRFFMM2NLUldfTnAyaWtNNkUtQQ?oc=5"
+  },
+  {
+   "title": "Bitcoin Cash: 131 Blocks Instead of 144, Here Is Why",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-18 03:33:13+00:00",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5jTjdTYVYtTUc3SFBlQU43bWJoelBWQTJhenU0OTdOaDRWTmZqU182MUJGLUZxbDZqeVRSX2hVSDBhcVhRRXRlLVVmb0dZVmFYS3JwZWVaQ1lPVXIydFNQbFJnMml0bHgzdTNJVllOS056VEE?oc=5"
+  },
+  {
+   "title": "Votre guide pour Bitcoin, Ethereum & le Web3",
+   "publisher": "Decrypt",
+   "published_at": "2026-10-18 02:44:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE16X1M2Zlh5Y1YxUnEwSFpMYk9XcExyOFRzZ3JkNTV3blZZeklJNzJVbnpJdklNQlppeHozRF9pbTBEa0U?oc=5"
+  },
+  {
+   "title": "Wallet That Accumulated Bitcoin at $127 Wakes Up 12 Years Later: Value Up Nearly 640x!",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 02:36:37+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPMFNTT0tvRUkzYjJMVnRBclFvMU1iRjVUeWtvaXlyZENpVjQ3QUs4WTlMLVU5eDhEWWhOMk1hNDRsVkZvekR2ekx1SjdsSlczUjdaVUtlaXF0TzdKSGlnbUF5bThsOThmUmRMdWRjMk0xemRhUkoyN05HT2JGUFAzcWVqNmJhcDU4MXpLclpQNUpCdzZtY3VHU2lDZjRfMXFkUzRnUFpGVnpVLXBCRTNrajltaVRac0E4RnRkRzI1Yw?oc=5"
+  },
+  {
+   "title": "Beyond the Crypto Giants: Could Apeing's Live Stage 8 Presale",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 22:21:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNV2k4YmFwSzg3cFFPcUJVbEo5dS05em1TdTg4VFMwM3dpd2QyMkg3WkJkWlpCeFQ3ZXhDRXA3N2ZyUElLcHZVcWQ3ZThWY2NuWjktSmhVRzU5STZiS1BWQV9pWmNnRlhyUG1mU0xHWUhyZXRjd003YWZuU1Z5NzRDWmZiYlM4aXR6QkFFaFA5cDd5b3JUSVYwdF9HRVE?oc=5"
+  },
+  {
+   "title": "10 Top Cryptos to Buy in October Going Bullish: Apeing's ERC-20",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 21:57:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQb2tsc1lFU09SQktCdlZ4SUtYOXAyaklPNXVuc09HNF9aLTFoWFlKOXRHY2JZVmRKNlJxVmZpbjYzN0hjTC04bWFrNGVlTXo4Nnc1MDBEdXRCWm5BeVlZT2JHWE5OS2ZINmFMV1Z3ZjliZ1ZDd04taU5oSWFrLXhMTE5OcTRha2xkVVQ5TzJfeHVBQkN6SmhhYnUzZGpWTG8?oc=5"
+  },
+  {
+   "title": "Bitcoin ETFs log $228M in weekly sales as monthly outflows near $618M",
+   "publisher": "Crypto Briefing",
+   "published_at": "2026-10-17 20:34:20+00:00",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5ieUhwN1daS2FPeDdqM0JwNmlFLUVmdm5UNFZ0VlRaQzl2OVpFbGtoRTc1bm5zZTRkWGxyZ2NjazBhVGlrNDZrVjJxOGlNZHpLejRyeGRVemxmQkRZVWhZOFkxNFJ2MXRVY0dwaTFkdWU5VnM?oc=5"
+  },
+  {
+   "title": "Dogecoin Price (DOGE INR)",
+   "publisher": "LatestLY",
+   "published_at": "2026-10-17 17:50:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5Qd2tZZmo1eGZELUdqcmFlb3cxaVI5YTBEbThGY0FRenkzWGFjQk5iaFk1V2FxbXIwMGlpTjFGd1dfcWhYV3ZhQlN3R0gwOFdFUGQ2dk9JUjFqc010MkEycmZKck9qVkZIVWU3VkNOWGpGbmlEdUhiREhPelVGTE0?oc=5"
+  },
+  {
+   "title": "Bitcoin SV Sees 3.25% Move Amid Normal Volatility, No Catalysts",
+   "publisher": "CoinMarketCap",
+   "published_at": "2026-10-17 16:05:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9nbEI3WlFOWEFQMHZ2bjZZV1dKYlRtMEZzSWpBbUxmTGZiSVpyNW1ucnVLUjVLa0ExSlU5MlQ3U2NMS1dlQ0t1NTdxUEthdTVNRWlTXzZkdDZSUE1PRWwtekRYM0VRNjZIMnVwQ0QtWi0?oc=5"
+  },
+  {
+   "title": "Top 10 Online Casinos for Real Money USA \u2013 List Of Best Real Money Casino Sites 2026",
+   "publisher": "Muddy River Sports",
+   "published_at": "2026-10-17 15:30:30+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNZEVUZXc5QUdjbm42WlhZRldWMGs3U0MteDY3R0FYTF9qR2dFZW1aLTNyWXdpY080cTI4c1daVWt4cHdsVkk3UHJPRm1UV3UtQjVuZnlkNGg5dTIwTkFKQTJzQTF4NWVMUHZuV2hFbV9DMk9xM1plbGZrTFFjZ1dsa0NNRmhEczJwUE9TbmVSQ1cyU0xzRXpOVjY2ZlF3aTZRZldIX0d5ZFFTb0JwUEd4MjhKanhuWGR1OHozYXBXRU1aR2VtOVMwMnotNTAwbEVHbVpuRQ?oc=5"
+  },
+  {
+   "title": "Chainlink Keeps Buying Its Own Token. Why Is LINK Still Down This Week?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 15:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNaGlWZ0c1cHNGY0J6eGFCTjhtWjlCTWcyVm5oQXhSS3M5RHVIRnFFcHdUQndHaU1EUm1PdDRIaDd3UDgtRHN0UVRrN09BNjNBdzFxVWJqTHprMG9OaWNPT3VHSVlBcHF5YnVyT2JuNTJEZDJlWFU2ZHhFc0NTb3A5UXl5VUYxX3phU3U0ODc2MThrU28yeWQzVktwOWdrS1FTTWlRcG9jS1pMZGI2X3lyMG5IWnJVQXYwQU1KUjhBZzg1cTJqTk1Z?oc=5"
+  },
+  {
+   "title": "Dogecoin (DOGE) Is Nearing Its First Death Cross of 2026. What Happened After the Last One?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 15:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQb053NWpHUUJtS2lRbGhfei1QM1FGVTdwNnNsdDZnaUd0bFhva2hodUcya2oxWW1fY3g2U3Y1ZXdtS1RvNjV0aDVkLThidFd0Q3lobWx1N1NmR2FjUElEaVFWeUVac2ZTLXdwWnFkU1p6bFpMTUF0aHZKbXdieVRUY1lsMU95bFRIRDlEazVLZS12c0RjMXNTbDNlT3Vpc1NPYnl0SjY1bVJSOElQUzZaU1g1SkZFNE9wMUxiR1BVV3B1ci1RTERZamZxUzRuZXg4RWp2Q0luSjBHVDNVei00?oc=5"
+  },
+  {
+   "title": "Next Crypto to Explode: Schwab Opens Crypto to 40.3M Accounts,",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 14:17:08+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOcHZUeUJEYVFoQzZIRURKTjFRUXZ0VmYyZ253VkxSX2l4dWIzRFFxbVJQN0dmend5TUwwX3B1RExXWGRrenVVQkJSYTB3M2JDMW9hcTBwdWV2cFFrWnJXUWRmSGZHVU03aDkweW5rcWJrWUVtd2kzYTFnY2QyRTdmWi1BU0gwbEk2dnlpLTllQWRhejRsTmxYWHBCVVA?oc=5"
+  },
+  {
+   "title": "Best Crypto Presale 2026: Russia Curbs P2P Trades as BCH and CRO Wait, While Analysts Eye 1000x for Pepeto",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 13:57:16+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPRXFtd0dyeVgzZ1Iya0tnOXFGVXRSRVpJRFQ5cVRSaVVjRGZlczh6N2hEdGlFalVUZER6OFJ0Vm1jMHB2YUFwNWpnYjZncnAwTHMwWWE3WVVxeDctbFVEdWZuWmZnQVlGdEphYmtKUjRuLVhfQ1J2VFJsUzF5Rk90VjlEQ0ZGWmlNM19GYkxhbjFQS1ozMEswNkhQZ0FQbkM3?oc=5"
+  },
+  {
+   "title": "Man 'petrified' after gang raid home to steal cryptocurrency",
+   "publisher": "BBC",
+   "published_at": "2026-10-17 13:55:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE01OTlrbUwwYk14aFpHNmdpbE8zVE44VDZldUZCTlZpaDZrWkc3dHpDZkYzeTVLZmF5cC0zOFNqSUR1akl1NXRVaWVkQWVWUG5xSWlreXY2SnZVc1k?oc=5"
+  },
+  {
+   "title": "Dogecoin: Bitwise pays out in cash on 22 October, what it means for your coins",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-17 12:26:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNNEcyeXB6SUZtaGNkLWFxQnhnRnJtcmIwRlNudXRieTJMb3BDejRZVC1DSUNsdGNVTnk2YW5JRUN5OTFla1F5NWRLVzhFYXlyQWQwd3FmR01vWUpBeW5NM28tbGlJUjR5ZTFpQnlad0RJNTdXNnotRDNHaWhhcE43cEFhbw?oc=5"
+  },
+  {
+   "title": "CME Futures launch news fails to spur UNI\u2019s price rally \u2014 What happened?",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 11:39:49+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBHUmdmbnNnQTBYMFhmWGJBNFFUMktEbXE5bTNhM0hkR0RUeXBFbmQzNmtXRTZmR3RXX3EzQmQ0bW02RXYwUzBWWFA0WEM5UjZRT1phbDZ4NGZKLVE?oc=5"
+  },
+  {
+   "title": "Uniswap Slides Ahead Of CME Futures Debut As Binance Selling Pressure Eases",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 11:33:43+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWkZPU2M5eklCQm5kRFVUazR1dk9FX01DekpHOHpLaU5YbGhDVEZ1NnZMb0ZlSnlZZV9rNXZyRHc5X1NJYlZSSzhmbkxKTUYzMy04X0gxeTZ2VHkwRTlOeFNORm40UHNETXhBcVMtTlBSNVBpNzYyRkhnSkZlMUpnTVhvUWhPdFRBYVU0ckRMUVJjVEgxT05wcC11OHZ4Zw?oc=5"
+  },
+  {
+   "title": "Aave Is Moving Closer to Accepting Native Bitcoin as Collateral. Is AAVE a Better Buy Than BTC?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 11:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPdHhVQ1JxSXRISWJEYmJ4VGhlMXgzblNYcEJsSkkyNjhJM0V1VUFmZUlIWXY4cnNuS1M5TTJRRlplbk9QdE5jZmtLM3pHejlDeWM2cWxtMXUyVVQ4U1lmcDVTS1RBMmZ2WmYxbUFIZFNvOEFIUnhONmtERy1Ha2k5cUxOaFdYSlp6bnJtUnNvaWxkdUEwSnlES0FmWFFOMm5lZThuaDBTaU5OWUhHd2VGRVJKREFtTDJFSi1wa2F6TVB4R3VWcXBLRURnOUdoRVZkSlRFcE5Ub0dsaEtXX2JWV1N5WjlKQkU?oc=5"
+  },
+  {
+   "title": "BCH Price Prediction: October Forecast Floor Tested as Sell-Side Flow and Bearish Averages Dominate",
+   "publisher": "Blockchain News",
+   "published_at": "2026-10-17 08:45:51+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNaTFFTGRrc3Iwb1VRSHlYazBWTHhycUpqM1RtN2h6b0NkNlB4ZGhDU1MzaG1UM1c2UFNzRFVCWUhWOHhqVmppckYzUU8yNlgyMHlCc3lfckhOLWkxbW91cVBicUl4Z3pWZFE3ei1Cem1EWmRtNVYxVmhPQ2Z5S1dxcnA5blJlQThqODZXQXNHdVJXZkMwOTZtcWI4eWQ1Q0p4bWNN?oc=5"
+  },
+  {
+   "title": "Best Crypto Coins in 2026: 10 Cryptocurrencies to Watch Before the Next Market Move",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 07:51:25+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUDJMeVVYa2Myc3UteGNPRmt0WWIwWGVMbVk0R01ZX3BzZDAwYXVuWHpYRmFZN25vcVhtSFVQRE13cWxhTXFNZ0FLR3U3YTBORXUzSWVySk1Nc3JDX0wyMUFtLWdDM2oyRnM0LVc2Qmc5RUJFeHVyUVVOMjlFVmJ0RG90a0J6LWdzWFkzanVSbEhFNldNdDR3Y1JHM19aQQ?oc=5"
+  },
+  {
+   "title": "Bitcoin Casino Ireland: Top 5 Bitcoin Casinos for Irish Players in 2026",
+   "publisher": "Businessworld.ie",
+   "published_at": "2026-10-17 07:41:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZmwxZ3BXSE13QTZyZFN3b0l3WDAwLXcxZ09PYWoyZFRUcWFNNmtubGF3OGNYcUROMTJQWkVDcWpXNFJGZGVxSjNCaDc5TTZuTm1mYWJtZC1oSVhPSHdydnRacUJSU2RWUGowanhUelNMbjZlUXV0Q1BxS0hyT1J5OGF0eWJyNkplVDZiVWYyNVpiTVpPbGVZNDBWMnFGMTl5dXoyeHpKME0zaXIxVTlmUXNHZUh1NWc?oc=5"
+  },
+  {
+   "title": "World\u2019s Largest Movie Theater Chain to Start Accepting Ethereum, Litecoin and Bitcoin Cash",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 07:10:11+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQLWo1aTJrM3p6UjdzeWx3aWZOaWxsM291Ml9ZRHQycVo5MDRBOXhlblJINWgwMXQ4TUpSUTMzUEpUVmRnS2VxdGNsRmJ5S2tYSWozc0JfMVh6NnNkYlBpYXI3bTRMOGxyWHVqWl9GVndYVzNxVTl3RjYyazY1d2t3MVRWTVJ1ZnhvZGVFU0tFNC1zQQ?oc=5"
+  },
+  {
+   "title": "Bitcoin\u2019s inflation hedge has a hidden cost, and leverage makes it worse",
+   "publisher": "CryptoSlate",
+   "published_at": "2026-10-17 07:00:46+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPZEtrSzRkWk9acGZlNDJ0NjAzRmx4SFA3NmFha0NCYkpTbXpuVXBiYTJWQlRxQWpvS3IxZEd1Y1VMRlBKRzM4eURVOXlHWWhNZHNIRzNuaG5RVmFFRTFyYlJ5X090Tm11d0EzdUxTMS1Oc21BX3c4ZmxibzZUM1hjbDc5U1dCb2FjRDdmLThKbm1OSXNnWE1EaWxUWQ?oc=5"
+  },
+  {
+   "title": "Bitcoin and Altcoins: Market Overview (October 17, 2026)",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-17 06:15:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQWmNDTkhMYk1JbkszUlFhVG5yVkhiNkcyQi1wUW5fVUpHVEdGV2t1NmlRUG5nRFJuOThoZ3oxZ2ZqSDRacU5ZZjR5cldrNWR5V1JCY3FxTWZTc05ZcHJzY3J6dEUxZE1oa3R2VHlWVFFxMXR4eGNJNGZsV0gxZFltNnVaYWdpcGpKOGtXZEI1YVRod3J1akE?oc=5"
+  },
+  {
+   "title": "Crypto Hunters Who Watched Bitcoin and XRP Soar From",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 05:50:15+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQenh5WGcxRk5zZzJvaW1DRm1JU3hUVzdHeHNhOUZaN29iUkNFaTNDR2x1MUhVVTZraUJfM0RybjNKNjBCTHd6dFlKNUpEV1Roa0RxUVNRQkU3a3hJZmdOQ21lYmVaRmRVM0x6N1BkZUhFTFBWOVkyUG92aHBpc29fVFZrbTFwbjVZR0VrRFI5SnZYUQ?oc=5"
+  },
+  {
+   "title": "Bitcoin Cash - Mitrade",
+   "publisher": "Mitrade",
+   "published_at": "2026-10-17 03:18:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBwWWdmNTNrLUY0cENuQm9mcHFGQk1ERVhBV0NEa2xrTTZ2T1RwZ3NiUm1OU2p1ZWFRWnRWOHRRSS1WVE41YUtNMXZBN0ZYR1RMVXB0Q29zU1FqdDd3U0V3XzZ3NXRPbXVM?oc=5"
+  },
+  {
+   "title": "Coinbase pushes Bitcoin's post-quantum migration",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-17 00:33:17+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOUVluRDR2UXpRZHhSUExwOV9lRmZmTjNPTXpQSDgxVnBoZjE4TlpmSHNXMmhSa2RNak9tSDlSZVk3bFptbzY4RHNEaGdoODNNZlgxdmVhTjc4R1JRMFA4TzRTa0prcTFpRllZY19tLXpSZmhubGI5YXBCUmFjSWYwaA?oc=5"
+  },
+  {
+   "title": "What's Driving the Crypto Market Higher? Bitcoin Nears $84K as",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 23:13:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVmRZNXdYVkZyXzlHMGNVNzloUUo1Y1FaeDZQczY5NnRkVjdUcEhsbk54ZkZmcFpON0tEdHBuWGQyaU1RbzVHQ0FIQ2xnWUxib2U5NWx5bl9MbldYcDE5MWp3SG5CSWxxLWtsNWNWUUxEVmlLenNGTUx5TlVqMUVKZmxrZ29tQ19LUXdPRmtUMXJDS19jazlDV2JTejc?oc=5"
+  },
+  {
+   "title": "Today's Crypto News: Bitcoin, Ether and Altcoin Insights",
+   "publisher": "Investing News Network",
+   "published_at": "2026-10-16 21:05:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9PU3pBdGY0NWJMSWFUTFRDUGx3RklNQlNENWdlQjBiNG9meUo5andqSHFER0lkNlhEaFVwOXpLYWZseVJ1YVZsU2Q4RzBWT1RoeUhTM19YaFljM2ZHcm5yMHYxTlc?oc=5"
+  },
+  {
+   "title": "Strive price target raised as bitcoin purchases outpace TD Cowen forecasts",
+   "publisher": "Traders Union",
+   "published_at": "2026-10-16 20:39:38+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQamZEUzMtRGtFallDM1hZd0hVVzh1ZmRRLVp1ZWZXbFZNWlhKaXRsZDY5UTAtTGlyRnFWQTNsOURDZ191RnMxdmRUemw0Q1ZSdE1Ockt2bTZGb2t0blZsczhrdkRnRE5ZQlhYVXRfbWxxbXc3dWtwYmZfVnVuUTNhUzNKOUx3dzY4NUtaZXgwWS1kVFp6ZHFxNHFmejltMjZXSHln?oc=5"
+  },
+  {
+   "title": "Analysts Raise Target on Bitcoin Treasury Stock Despite Slide: What Are They Betting On?",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-16 20:33:40+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOSmhMOTEzV28xajM2WDFsS0FyRVBGNm1WTURhcXZMaVRjTzd3WjRpanN3Q3dCYmJhbm02SzR5clNJaHV2SlFpbjJYSmpjcFVOS1ptR2pCaTI3RVRvbjRjMm91RE9kdXpWNXBLZ3pJT0FYR2JlMVlQb2d6ZmFSSms0RXdtQVdKRVo2OEg5eTBITVJwaTdlakFTLVAzd1RxRXB2QlNmbVVjLXdYOG05OVZsSVFnYmJOdlAtcTNHVEp5WkFxVkU?oc=5"
+  },
+  {
+   "title": "Bitcoin Cash price falls 6.14 percent to 283.91 USD on October 16, 2026",
+   "publisher": "ad-hoc-news.de",
+   "published_at": "2026-10-16 16:50:30+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOYXBLWThNU2dWSFhieDNEbUVHSFI3WUdRd1JmZ0RkcWFvaWw5SkcybFFzbTN5Y3h0dGFxNVpNYVBjcTkyRHZWZHQ3T3JqWVRWUU5jTWlvZ2FmREpCSGVabWM0bU90RDRLZktMNnZpWWFOUHQxbmNpcTFXaHNxbG1mWFg3NUx0ZldZc2hKRFFzSTFva1B3VFBNaXpCYlhxNGpBNUEwS0hCVmxOMWVQTjdUNnM4dTQ3c1BNWG5rYTMzbzhFSzNtRGNjS01za1E?oc=5"
+  },
+  {
+   "title": "Crypto vs. Stocks: What Should I Invest In?",
+   "publisher": "The Motley Fool",
+   "published_at": "2026-10-16 16:29:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNQ0lQTHY0eFFaNVZXQ0tKV0xxWV9sdnhUTGRhd2JRVEdTclhGTlpraU9nZWZOck1GSGhQVm10UjBEbUZKNU1ZRE5nOHVLdkNrbFhwN3FhclpGcGNYbFBYS3VCajRtOEtrdXBoLTR0dmVYRkstMl9PUjlPZlNGNkhCbUxGWnJ3U2NCVWZvdlpBTDhMVzhkMW56VlRxQlpKa1U3MS1DbDY2LXZfOEg0NWc?oc=5"
+  }
+ ]
+}

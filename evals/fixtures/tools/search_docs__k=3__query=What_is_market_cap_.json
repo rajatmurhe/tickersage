@@ -1,0 +1,39 @@
+{
+ "tool": "search_docs",
+ "args": {
+  "query": "What is market cap?",
+  "k": 3
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:26:57.605467+00:00",
+ "data": {
+  "query": "What is market cap?",
+  "chunks": [
+   {
+    "id": "market-cap#0",
+    "title": "Market capitalization",
+    "url": "https://en.wikipedia.org/wiki/Market_capitalization",
+    "text": "Market capitalization is the total value of an asset's circulating supply, calculated as the current price multiplied by the number of coins or tokens in circulation. It is used to rank cryptocurrencies by size. Fully diluted valuation (FDV) uses the maximum or total supply instead of circulating supply. Market cap is not the amount of money that has flowed into an asset, and thinly traded tokens can show large market caps that would be hard to realise.",
+    "score": 0.333,
+    "redacted": false
+   },
+   {
+    "id": "market-depth#0",
+    "title": "Market depth",
+    "url": "https://en.wikipedia.org/wiki/Market_depth",
+    "text": "Market depth describes how much volume an order book can absorb without the price moving significantly. It is usually measured by summing the value of bids and asks within a percentage band around the mid price, for example within 1%. Deep markets can absorb large orders with little price impact. Shallow markets can move sharply when a large order arrives. Comparing bid-side depth with ask-side depth gives a depth imbalance, which shows whether resting liquidity is heavier on the buy side or the sell side at that moment.",
+    "score": 0.168,
+    "redacted": false
+   },
+   {
+    "id": "order-types#0",
+    "title": "Market and limit orders",
+    "url": "https://en.wikipedia.org/wiki/Order_(exchange)",
+    "text": "A market order executes immediately at the best available prices in the order book. It guarantees execution but not the price, so it can suffer slippage in thin markets. A limit order sets the worst price a trader will accept. It only executes at that price or better, so it may fill partially or not at all. Limit orders that rest in the book add liquidity; market orders remove it. A stop order becomes active once the price reaches a trigger level.",
+    "score": 0.157,
+    "redacted": false
+   }
+  ],
+  "source": "TickerSage docs corpus"
+ }
+}

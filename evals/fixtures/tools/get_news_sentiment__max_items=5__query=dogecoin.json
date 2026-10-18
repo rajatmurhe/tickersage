@@ -1,0 +1,521 @@
+{
+ "tool": "get_news_sentiment",
+ "args": {
+  "query": "dogecoin",
+  "max_items": 5
+ },
+ "kind": "raw_items",
+ "recorded_at": "2026-10-18T16:27:13.774544+00:00",
+ "data": [
+  {
+   "title": "ZEC, XMR, and DOGE Face Bearish Pressure: Key Price Levels to Watch",
+   "publisher": "KuCoin",
+   "published_at": "2026-10-18 16:03:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOaTJhXzkwR0ZLRXFycjFoUnhROVdpeVl0UkRqVWpPREk4emxDcVZJVjZzcUQwSmV2eFNMSVNhNHlUUGN6U3RaZ1lkaFlIQmFkYTE2U1FWRjFmWW1BaWNGWW1nbGgwOWdGSGIzaUpyb1g5bHNiZkk0N0oyeVBzSVdXbUVBN1Z5M2hDc04wZjNoVUhyU1Z1VWVwNjF0c3YzOE0?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: DOGE Eyes $0.094 as AlphaPepe Brings Working AI DEX Utility to the Meme Coin Race",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 15:13:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOazlSSDVuVUZTcFJDRFBISGpiSU5oQUR2a1ZaSFVOWEIyNzhGb0xaUmc3QkQ5WVBsNkFpNGxKNnhYRTBZVGotaG1MV09iWW83MWo2REZwclFJcXpfLTBZQUdPSmJfRGhvb0VZdjBBNktGdGpTQ0J3bEEzWkZmRTlrVDdYdmdHN0VxQmNrbWVWcEZrVUlOMk9ZMjlWVEJmdw?oc=5"
+  },
+  {
+   "title": "Dogecoin price on Oct 18, 2026 at 12pm EDT Crypto Prediction Market",
+   "publisher": "Robinhood",
+   "published_at": "2026-10-18 15:05:04+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQa0l4NGswTEl0cnNKUFl6X2JKUlQ1cWdueS1QcU53ckdPSTRYYzVmcjRjU1ZoYS0yeERvc2d1ZWJyZG9Db3JIeV9jUmVNeGwtelh3VUtwYlVpLWx5R2Z3WmlQOWF4V2RpQW9ESXhtaGYyRVVQM2RYWEZVU2NhSWt6bnB5LWxUMDMyM3gzZ0dDR2NlMTlCMkNuVFI2Q21WdzVULUNOOTRLZUFpY1ZBaUw1ZzNUZnZsdw?oc=5"
+  },
+  {
+   "title": "Looking for the Top 100x Meme Coins? 7 Cryptos That Could Explode in October 2026",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 13:48:18+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSWVqcVRIR18yUXhYcmpmUnllc0ZnZEZyNFBFd3ptY0E2c3dmZkYzM3B0OWp6RlFNWVVGdUNtbnFQVW81MERMTDRDd1RCcTZELV9YV05NUGNYVEhDempuUXg5VnFNMEMyQ0l6STJSMU1sTHJBY1BPVU4waXBSRm9ySHVVc0VWSVdpaU9pS0xienUwWUhlVDBKNlFWekk1clBHTEE?oc=5"
+  },
+  {
+   "title": "Bitcoin rises 0.57% to $81,983 as crypto market cap drops 3.47%",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 13:26:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1jM0VqbHRGNVIyVWQ1Slpad01VOFkzR01Xd2c5MmQzMHZLcVhMd3F5TzY2SFJ4TUFJMklpUFpIa0c1NlRTRUo3VGtwS3BQcnlxN05icXZKbE0zcmR0UE9hNzNqQWFsM2d6MFY2eWJqVEQ5cmZaeWdnSWdEOA?oc=5"
+  },
+  {
+   "title": "Dogecoin miners earn 99.95% from new coin issua...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 12:36:14+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNdUtaSHFVWjc3MWpWdlBoTmRSTTF1QVZkUUs2STJ6bzgzMWgzRGNUWkF4X24yblluMkJsSUFrQ1JLZG5jMXJkQk1lODYwLWgzLVluRHloeXp2MTJFYXczT0JESUxWYW5RS0lIc1RzR3dwRHNFZ29wZ28wal96Tzk0WU1VUW4xSkdk?oc=5"
+  },
+  {
+   "title": "Analyst Maps Out 3 Reasons to Be Bullish on Dogecoin (DOGE): But Should You Really Be?",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 12:26:48+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNcE51ZTdnalVqODRkMDJEMnlOdEsxY0Z3endsQ2stbHJReWZuTnFVbTBURkVsM1dKY3djQWtNYThfWDFmb3ExSEJ1NTdoelBqZTczZlRmSHJtcWpaWnBZeDdmU1gtV3hQZHltZnlpQktrc05XRGJoZVBNLVJTRm1NRXRMTV9oUkdJUDFIcEMzOTdiUF85RVRiMWpTOWg2b0Z6X0VPWk56WF9UYUtjZUtObEI3eFY4U2UwN0hKbQ?oc=5"
+  },
+  {
+   "title": "Dogecoin: 13.82M New DOGE, 0.05% Fee Share",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-18 12:15:52+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNd3pydTR0Q2x4ZUVoUlRaXzBzaGpxT0FwcUNqUmhpdEkyZkRqZy14ZXhnM29pRF84ZnhwcXdQVG1TNGRDal9OdzdlRTV5RDJ6X2R3cDJCNWZJWFM1MlNDSXhpREphaUxxemd0SFpPRGJ6N0hOaERvd09JN0FYZTRldHFB?oc=5"
+  },
+  {
+   "title": "Crypto Markets Edge Higher on Sunday Morning as Bitcoin Tops $81,900",
+   "publisher": "Business Upturn",
+   "published_at": "2026-10-18 11:55:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNM0tCMmNfcFdtX016Tl9XOHZFNS1UaUNhWEl5eHZSaUVVMlJ1WF9nUEszWDV0UTBnM3FQQ0tIcW53WV9yZjd0ZTFlOWIzY1ZFSjJxSi1fdGVrMEdhSnExY0JyNjI1MkgzZjBXeW9OSTgzS2E5Q3gwRmlvTDVWLURwcmF2REU4b0NPdkFiNnd5U0NTV2I4OU9NX1NjbHJSandsWlVXOXlQYklQSkpDZkdlbFhQYWlHenV0TG5JUXpvaVlpdw?oc=5"
+  },
+  {
+   "title": "Crypto Investors Eye Apeing After Dogecoin and Fartcoin's Surge: Is It the Next 100x Crypto?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 11:09:26+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPVTQ1MnNabGVmVEFnTHdIOU1MQkFYa2pIalhtOG5qYUtWR0RMaDlMcVdRbGNWNXFRVU5UUzNUdTBlVXVQaklBNS1YSFNMRE8yZjg0R3lFaENaMmdpQjg0Q0Q3SEtsR2VuWm45MXRhVXZqc2IyQXdtdkdmMXd5aFMwLXp2Q0hfZFg3X0EwVWQxa3FsemNnRHkwSQ?oc=5"
+  },
+  {
+   "title": "Dogecoin Trading Volume Falls 49% to $607 Million as DOGE Tests Key Support",
+   "publisher": "Hokanews",
+   "published_at": "2026-10-18 09:45:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPeWxaMTFBY1NxOXJfeXpJenQ2Zkl3MEhTNloydC10Vm5EYnBHam4zLS1LNWpJNFo4ZG9zQnBEemxHckhUWWpqcUM5UU8yYXpTRGdKYjljbWxjV19ocUdsR2VuTndjdXR0MmFMZ3VVRTNYZEFhQ3p0dmhWcmZtLXZtQ3Z4VQ?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: DOGE Eyes $0.1186 Breakout as Pepeto Targets 300x",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 09:35:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONFhqb0ZVSV9FSDVta2wybHg0OFFSdGk4ZzZseUtrU1Z6ZUp0bDdDaEpIT1hYd2NTVWM0UF9McU5nalFNSVRfaGo5UDVLejJ1Z0xxelJlNWw3eHR4QnRvYzczbHpHMmhzR0c0c1Fad2VueEhheVFQaEpBVmlDTEdiLThtNEpNcHQ5Z2FRbFYySktkQklGQlctbmV1c0V6UXgz?oc=5"
+  },
+  {
+   "title": "Claude Predicts Dogecoin Could Hit $0.117 as Apeing Targets $0.01 Listing Price as the Best Crypto Presale in 2026",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 08:53:21+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPc21nN3FxNS0yRTUwek0xWkY4djBNZkhMQUNBMWgtcXdhZldJX001dW43Y3VOWWJHSVM5RGgyVi1qWDNxNTNleTVvSDZQcVJySjdJcThQc2Y1V2pXamFEQUEtRzRrVFA3MkFsS0NyR1AwS0dUMXhhSDZSM1pZTzRPWERfT0ZjNTBaN3FSVGlPeWIxU0VEdUNfUFlB?oc=5"
+  },
+  {
+   "title": "DOGE Price Prediction: Below Every Major Average, Doge Clings to Lower-Band Floor",
+   "publisher": "blockchain.news",
+   "published_at": "2026-10-18 07:50:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNN2p3YVRoWU1NNG8xUG1rckpWVGFZV0ZXcERYODV4cDBmc2pEMFhnMXdSeGhuVDk5cVBpakpHMWk4a0toVnc0cGZCRzBMLXJSdjRlRmpMbXdwOGJqU282bnhyaXEzSHdCejlUMDNfMEhZTVU2d3RienVhZFRDdjF2Nml4RjkyUFJsMW9GSExKWXhvWUZ0ZHBVNVMwX3l0QQ?oc=5"
+  },
+  {
+   "title": "Cardano Founder Says Working to Solve Crypto\u2019s Biggest Problems",
+   "publisher": "The Crypto Basic",
+   "published_at": "2026-10-18 07:41:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOWEFKb09rTldZNnJzbzZPVXhlNWtPU2dlTVFZTnQyTl9tWGxnYmN5d1lDUmx1SFhMUWNWT2YwR2ozY0dVLVc4WkRfSlFNOF9LZ0RobDBELTJzUTUyc3FaTTBBSmhVNmo5MDQ4ZWdVYkkyTUdVT05yZVB4S2dubjBhRTJFcXNoOGN0NnlHQjE0Y2h3eG1CdlhlOEZxUXU5MjcyMWxB?oc=5"
+  },
+  {
+   "title": "Can $500 Turn Into $7,142 With Apeing's Best Crypto to Invest?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 06:54:30+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNWVRnRlJGYWpDbWdfZk1WZVlMWlpTTDRjYlJhQVJBZHlLWlZxQmpoU3NMVElOSzI0VlRHQzNvQ1FBd3A2VFZibzJIdmtUMDVnWHQyYklsWnJTWFVzYUhxbXJ4LVJUM25EREFRWDRydjljR2dlOW4zTTZ6TmdobjRjVmlEMXNMak82SFJHUGhTTFQtbXdPcEhsd0xJNA?oc=5"
+  },
+  {
+   "title": "PEPE and Dogecoin Draw Eyes While Apeing's Stage 8 Claims a Spot Among the Best Cryptos to Buy in 2026",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 05:42:14+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOUzJKMWxSY2NxWXFyb1Q3c0hRVzBLajhSSHoycElXYWpxU3FleWl3YjBOS3dCV2dXano4TWVNNjM2eGNoRG9hRnNuYldBbkhXLXA5OVBHY1JDNGZxLThGTU50VF9la0pWTHJMQ3kyc0pPSXN5T1gyMEFSbmlxY2tOX29YVEl5bWJ0enRsbllrRGVEU3daM0k2bDVQY0tkRU4yTGc?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: DOGE Bounces at $0.079 While Pepeto Presale Surpasses $11.2M",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 05:30:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOaVc5OXZqRWJteWRHc1lqRmlLV0lZNXNKTjA3bktnQ0Y3VzNKRldhdTR0VnlORGNZLXpwU3pZTkRmb3ZISElseG42SFdfbXZSZmxtaXlyOE1EWGtnY0JnUEFNRmFTVDI4Q2ozdEJlSWZaUGNqcFZnc25jQWpQVHBuR1haWGQyX0FHQnNXTGhjRFdKUFRPRVRkaXJUZnpOSFc0bEN4VDV6N0l0VTVYUnc?oc=5"
+  },
+  {
+   "title": "Bitcoin rises slightly to $81,801 while overall crypto market drops 2.75%.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 05:24:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNREZCM3I2Q0tfYTN3OEtoRThiOENERVE2YXlSMHlzcV8zN0dmRGdoaG1VQ0xjR1hiMmp1MkJiYmtQQW9KSVdPYjBNUk1fSHlKWTM3aUZ2TThfdy1MblZTZ0ZvWFpxVTU4V1pvVVFIa3BtT25XS0Fha1dmWUlHVzNsODZHWDQ5d211MEpzTnpLLTdSVDFGM2ZMaE9mQ0ZweG5LdW84amFXNm9hdjdZTVVz?oc=5"
+  },
+  {
+   "title": "Dogecoin falls 2.6% amid weak memecoin sector a...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 04:24:09+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQRk9pRUNNdHRwUndxU3U5Qklyd3M0QzBWS3ZWSmZ3X2Q0Tms2NzgtMENhbW4zZEoyQTI1cUlZTmVaVjJtaXlOc2NsRk9IWVY5bEtSN3ludHRLR1d6cTRDaVppZk5LME5QSk1wY29DRW5KcGowcmZVNU45dF92aFFKWTd6M2VFN0YxcFVnSERpRERBZGpHaXNGV1RMUHJNek1TYVhJY1RfbUdwZw?oc=5"
+  },
+  {
+   "title": "ETH: Bullish Divergence Holds as Dips Draw Buyers",
+   "publisher": "blockchain.news",
+   "published_at": "2026-10-18 03:45:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOak1tVE82THhSV19vWnVIaldOa1ZLaVVGN2JCV2dlUTZFSEEwa3Y1MGdrR09xcTdXWXdJcTk2eXplbjZWX0g1bEFmcWRnb01KOHhhSDlLd25xUTN0MHFENF9ONm9nbmh3MHM2UjJsbDM5STJIV1FfME1iTEpndXRmZ1c4RmxPQQ?oc=5"
+  },
+  {
+   "title": "Dogecoin price on Oct 18, 2026 at 12am EDT Crypto Prediction Market",
+   "publisher": "Robinhood",
+   "published_at": "2026-10-18 03:05:09+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPN29IaVJRMjNJb29TbndiWDVMRElwTDFWZW1meXAxLTFTNmx1Ry1MS1MyRWpiRU80eW1IV0IzeUtHcTBmbzJ5TktaaHhNQ1pGVVVrUjNpMEV5ZmNRSWZzWUxwMlZ6Y1lpV2J1dmU3ci04d1BZQVQ1TzJqaGlCaGRIa05wUDN3UXR4b1l4dldOYmhjcVVsUkRyQzhZbVZPVHE3VmVqeUlISmxzcS04MW8tT1RNQm8tQQ?oc=5"
+  },
+  {
+   "title": "Can 36 billion DOGE UTXO cluster avert price breakdown below $0.081?",
+   "publisher": "AMBCrypto",
+   "published_at": "2026-10-18 03:00:15+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNNXVsN2xpdU1DNnhQdGY3V1d4cWE0bDc3dlNTYXZqSHAxaXI4YThEV21CWXNEUmJySTZ2RDNfVDh5MFVqaXU1XzVUM2t4b0pLYVJuMTVnUEZPUWVOSksySkpvM1d1LXBIMXFadXFMRC0xMmxuZklmTFhVSFdLMk10U0ZwY3p4OGpuY0RfRjFoQm5NMEU?oc=5"
+  },
+  {
+   "title": "Dogecoin: Bullish Falling Wedge Forms on 4H Chart",
+   "publisher": "Blockchain News",
+   "published_at": "2026-10-18 02:32:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQWDg0MTctYnJHVmlnM3R3N1Q4MS1JRlJ1ZzhTMUZUM2F1R1pWSUhnQnpKX3c0c1Y5NXNZTi1IMnVnMVEzZ1dPelJoSklCX2REdHhXU0JFVHQtS0JHVmJlRk9kdlVCaU9hMVV0WkdfcDNlVW0zaTNtTExOX29QdGZ3TXprc3RKUQ?oc=5"
+  },
+  {
+   "title": "Dogecoin Volume Drops 50% in Quiet Weekend Trade Amid Market Selloff",
+   "publisher": "U.Today",
+   "published_at": "2026-10-18 01:36:05+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNWmtZSHZIcFk4eXdfbjF5ci1SbGU0LWlrcGZaSWRadjRkay15YnVOZ3JiU1djSHl1MXJOelRjNlZJTW9oRHZ3Vnl4emZxbkJQd2lwRU5OOWo4aXBCcWlJdGg0cDR0TVBBZVZ6dWFVUEx0c3d0N3dmY1RTS1hWWVM0OVlvc3BYbU5lWkVz0gGQAUFVX3lxTFB0Um1iVFU4YU12enRleUgxOUwtMlVlWUNaeHZoZUFlaHBwTjM2dzE0U25pZTl1cS1xUTAzb0psdWo3NGtoWmQ4WWN0QjJxUTlseGpNTnV1VVJmX0hrQXBKTjdER3Q5ZDZySGhFdGVMT1pWXzgxR3RPWkJBb2U0NzQ0cWFYcWhPa0ZkYmpCeW1Ccg?oc=5"
+  },
+  {
+   "title": "Dogecoin trading volume drops 50% amid weekend quiet and market selloff.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 01:24:21+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTFhSeklsUENONWxPUW5WQ1c1NmlPVmxXZ3Rqemc1a2lPdHdWLXlDY3k2a2JMQ1RpbVRRaS0zVURXWlAtUGp5WU9vYndJMFljWjhHS0NuMEkwalJkemZObUFRdy1FaEFCZjdtWFg0VlByWW44NllqdzlSTkpMVlRoUnJ1c3p2eVdaSFBsYmRqMUtUVzVGUk1zOXdCeDJ4aWR1TVlkVnBXbVdNQlpWdkdV?oc=5"
+  },
+  {
+   "title": "Searching for the 5 Top Meme Coins in 2026? Apeing's Live Presale Could Be the Next 1000x Crypto Breakout",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 00:58:26+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSzRzaTlrWVBsMERuMmRPaHlFNkVhMUpFZU1MNHBQUDlrUkloYkcxUkN2bm9yZWVpMFpOc0dPNHBDeEdubFZ2bEkzeTEyQTNLYzdqdE1wMnU3d05VejI0eWVnWURhZXhKcTRkVEdyY3ZuSVg3UllKcFdvMFpiME5jUW9GNGhiaE01ZXBmdWpVS2NURXM3NmowX1BGZGNSeF9xZnc?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: DOGE Near $0.08 Faces a $0.50 Bull Case as Remittix Prepares Its PayFi Token Debut",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 23:55:15+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOb3o5eWRBZjQ5bEU1cG9XYnA4OTYwT1JpNVBGbTBkZEJjVUNqUnM1VHNKeTVTakxUWkJ3RE1rUG9zUjZtdDFMYVF1TzRRMWJtUDBXZnZKdVFhQmZ1aHlyeHFPYnBQdFJUQlhnMWNObTZEMm9MRHNNTDdIaXl4cDM2dUY5STFuUFNCS0NqaTNDX2t5djBwd0lPeC1QSUpuZkprRnlkclVjYWdRanBfaGROQWR6ZHRvY1F5LVc4VjU3bEJXa0NXUDFCNk4wbw?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: Analyst Eyes $2 for DOGE at $0.078, as Pepeto's Presale Passes $11.2M Ahead of Listing",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 23:12:03+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbG4yeVc3cmRnLTZwVnVkWTc5Y1BiQnk4X0U5Q3JUV3o0eVlUMXVPUDFOalVWNXlueUxNbUNnaFNoZFQ5ZzFNd3ZHU2hfNTE0QVJCT2h0TDd4bFU0YTBnM3AtYUxjY0l6TjBWMFh5T3JYd1lsYUR5Yl9LdmxXREpNMHhxd0cxVmx4cjRBcV9iZWl6NW1EMk4tTDNrRXVIdw?oc=5"
+  },
+  {
+   "title": "Dogecoin News: DOGE Bounces Off $0.08 as 81% of OKX Traders Bet Long, and Analysts Eye 100x for Pepeto",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 22:46:03+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPVzVJbXN2LU1FWlN0ZlFmRlJiOWU5WjRNZmVjcnZtbVVsTmpCZ0R5clEyVllVSVRnOC1vOFVJQjdSWUhwdHFRVHNJZnl1ckRWaGdhcS1teVl2MmdLX05qX3M4a2puMEd6QVYtZE9xZDNzbTRXcWVBVGpGV3FfLWJ2TW02QllidE9xTDNEWUdMNnZzNXdsUWdSeUpmX1c?oc=5"
+  },
+  {
+   "title": "Dogecoin: Monthly Flag Signals Breakout Pump",
+   "publisher": "Blockchain News",
+   "published_at": "2026-10-17 21:56:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPdW92ZmZjVFNaRGxYaFE4dWdpNVBIa3E2U3FHbThIOGtnZ2V6aDJHTUVvQ0l3SUlGZWY1by05WURYbFMwMWNMY3NiYm5xQ2JIcS1Rb0NCSnEzME90eVJIRHZZYVJ1cC1DYXBHdUZoOVQ5Yzc1NGlyTHZDODU3VEFjTEpsSQ?oc=5"
+  },
+  {
+   "title": "Best Crypto Presale to Buy: Pepeto, DOGE and PEPE as Stablecoins Cut Transfer Fees 84%, and Analysts Eye 1000x",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 21:51:55+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQaXVyNUljS2xBUll4ME9qOFUtWlhpdXVJbnlaLTFyS2FnR01QQ1ZtZGQ1eW95WVgxZ18wY1JEdHFlYTNSNHd0cVhTM1RFLUpzNFYtMXZiTUJ0VHhSeU1QNlEwZ25XaW1zeTVqaFNpckQxTXJyaEJ1S0NZZVBWZEdjQmRjZE5ORGhqdjlaNVp6LTNBU0w2czZ4U2h3SC1OSFU?oc=5"
+  },
+  {
+   "title": "Crypto Overview: Bitcoin Whale Wallets Hit a Record 20,338 as Pepeto Buyers Pass $11.2M and DOGE Lags",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 21:35:43+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQ2w2eUtma1JyNDctbmp0QWpLYk1FNUNzZzczR3NjSjBadjdmWEdQMkdUbThRVHFQQ3d4MjJFdWY2T1BIM04ycFJSWmtyZDNuWmd2bXh3eU1rREo5VGRrcEVfS1ptQjlGU1FESHQ0WlU5Zk1vV3ZfbDA2ZkVrSnluTzNtTWhweDRxanFBc3owZFJjOEswRm9aZHhiNUI?oc=5"
+  },
+  {
+   "title": "Cryptocurrency News: XRP and DOGE Trade Near $1.30 and $0.08 as Remittix's PayFi Launch Story Builds",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 21:34:51+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPOHEtdG55Y2Jybk9Gbm5EQm1hY1BXbVZLajdjMVphQzRwNEJPTGFEZzFrczlIeEZObXV1QWhrSlZ2OFRQN3U2WjJhdXRTblItOEJvaVdHSU1EbTBldjEwQTJmUDZ1ci1oSW55cGxQbjY2QjhjMGxBcU1RQXdaMnRLckZEZk5ORDBxY0d6Y2xpOVRfa1J3WXRkZlVaQnU?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: DOGE Near $0.08 Faces the $0.50 Bull Case as Remittix Nears Its First Public Trading Cycle",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 20:36:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxNVlJ0OENWQXlPQk1oOE9JWG4zcjlhNXFOTUdEM21pdlBnRVRhMTltX1lySE1lSVRCdGFWRTROd0ZMcWhkS004LWpIMlVfRUJrYUhTTzR3VDBLVmlQTFNZc1p3TkJvdTE5NG8xWGFYZE5YRWE1MkhoaVhvdWxpU25HeWJfRHBDTGswZXhtTVlFX01TcjFkU215SEN6OVBKbDhPZ0R3S3ZaeDJuMXUwd0VVRjFpNEJZUmdScWpOWlNVN2hwbzgxUTdJc3RETldBVlh0ZF9nTmVMZTNOVFotRjRldm9ZN2RrclFldWUyOW9kRUVoLXJwaTBQR1Y5My1vaW1QcHJPNEliQ2xxRkItY0VqcQ?oc=5"
+  },
+  {
+   "title": "DOGE Shows the Cost of Being Late to Crypto Gains: Could Apeing Be the Next 1000x Crypto to Buy?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 20:28:29+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYmlabHE4dWxndnp5RDZ4c1ZHbUMxMTU3S0VyOHJxcWdVeml0UEJ5bHJGNDRBcHRZSkNnakZYcC1GU0lhOWx5eUMxWkNoRE9mcEttbERKbG0tSHRRRng5Y2pCSUwwcEFySGhRMTNxOUlnOG9FbFRPMHgzQnF0dnVGUThUOXY3dUEtT29WMDVyM3h5TEtkaWNJbm9rbzF2emZmaTlF?oc=5"
+  },
+  {
+   "title": "Dogecoin News: DOGE Trades Near $0.08 With DogeOS Testing Underway as Remittix Prepares Its PayFi Token Debut",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 20:06:17+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOQ3FoNkVXYktfZVhyX3VTTUhJM182eHJrcmttbjZfc0gzMHh2NXVvdmk2WW94WjBWLTh3WERjQ09YZFU5MGQ2emJUakVpUWtrSUpETncycFFpcjc3dzNIVzVSVTJNNmJCTm5sYXNCRllkanV3MlhKdWRLSTBzZVF0d3RoSE8zbWg2eUY4dGFEWFRiaXd5MHc?oc=5"
+  },
+  {
+   "title": "Dogecoin price on Oct 18, 2026 at 5pm EDT Crypto Prediction Market",
+   "publisher": "Robinhood",
+   "published_at": "2026-10-17 20:04:06+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQSDhGcHJnaVBQSjcwZDZWaGhuS2F4QllYTjBRcWJSTXFINU5mR1hSRTlxZ0ZHenhOeXV5RzVnX0NuTVFWa2pNZTdiMk9YZm9KR2t5dUQzZGU1UHAzQVJUay1YOGh2OUdwVjZKdHpydVFERng0cWlwQ2tFTHlYWEZFeEhab1hRSi1HMzQ4Tll4eHFaTUxiUG9zRVFkVC1CMy1XOXF5Wm5URUFFbDhVd1VCTzF2Ykk?oc=5"
+  },
+  {
+   "title": "Dogecoin News: DOGE Trades Near $0.08 With DogeOS Testing Active as Remittix Builds Its PayFi Launch Case",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 19:33:41+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNa3hHNVRJYktuR0VIb0prWldjNzhJUTdfT3JlWU41aTZRaXBOZjFIcEw5NXVJRkl3bzVQUDVYejFXdVNDSTIzWGt4T21GXy1HMVd6eXAtSXFKZ2ViNGQ0Rk9KSVNEWlg3NGpkZEllYzhzbjU2RmtaR0JvdkRaMEVQR1o0SUVYbkFBV0ZLcXZlcG94REtWR3Q2WGNQNkdQeUtNbV93bGRWQWEwYTBkb1o0R3kxRXQwSm1aT1lJTGd6b05VcWFTOHNB?oc=5"
+  },
+  {
+   "title": "Dogecoin News: $57.2M in DOGE Leaves Exchanges in a Week, as Pepeto's Presale Crosses $11.2M Before Listing",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 19:18:03+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeGJEVzF2R3RIcGo0eWFuTXYwakxJbFNkNFFWZ0drVjV0eVVfSnNRTE1yZ0VKenJwREl0UkRUZ0xPTWsxT0VGVjJBQ0QxRVhLV2luUTViWDVKZ0FkcWZlQVhNYXRGNUE4dk5TZWRqRGJJSUdWYlU2ZkVTbHJNdVYtUGFPdWRJTEtGNFl2bVJ1RVBkM0N3RWE0Xw?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: DOGE Nears Its First Death Cross of 2026 at 8 Cents, as Analysts Eye 100x for Pepeto",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 18:41:06+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOOVJ4V0FKa0s1YnI4YzBlRVZqLU51akdHWlMyRnp5b1htMjVscmtJVVhsMENNODJObEJnVEt3ZGUtOTVSLXVUdXoxcEdXU1FWODhGTnNOZElhdnBXR2pMMEFNRkVPS0dEZ1d3Z1lhXzhMMzdrbDVnamg3M0RwUGFoakJoWVVrUV8wTVdXQTVSazFzY0ZXcFE0c2RB?oc=5"
+  },
+  {
+   "title": "Grok Predicts DOGE at $0.15 in 2027: But Could Apeing's $0.01 Listing Target Make It the Top Crypto to Invest In Early?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 18:29:24+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPSGJiZ3VscFROVzhqNUtPVEdncTlPUEVSVVYwMUYwLWpmTndBbENaNkVjZUFPQ1FESHdQOEJGTFZXODVsSG9wNzA5cWtwWlhKMVl6QnFaQndZYS1RN3lQZlhDLWpHMGRMMDYtbzYzeGpsZnB5Ui03WGlLbTZFT2lrRnBGMDlSZTd6N2NCbjQwOFJtZXowR004b19n?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Holds Near $0.080 as Crypto Market Weakens and Fear and Greed Index Hits 49",
+   "publisher": "Hokanews",
+   "published_at": "2026-10-17 18:09:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE4tV3V2MHdndks5ZjBDZGplZ3Itc1pjYUozeFZRVzhZZG1mLUkwQnNNOURnaVFZcUhwaWNFalpjREtyNFVmaUViSnhqQ3VFWE1tY2U0N1ZBSnNJOVQxNkRycFlOb3RudkZub1pxX3MteFo0cUk5VU1lMXp1UQ?oc=5"
+  },
+  {
+   "title": "Dogecoin News Today: DOGE Near $0.08 Faces a Utility Test as Remittix Brings Bank Payment Testing to Its Debut",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 17:51:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQd0NPNjdhaHJTd2ZtQmU0UlpvNE9VT1oxeTlQdTBaeE1PWUpqYWF4TFN0WHMyQ2RXcXVfeV9aWWY2b3FBdVAzVHpoc2JfV09CNXpBUHRfU0MwYlVqR2dEODkyWm1SMjJMQ0RnNGF6MkxtS1phN0o1Z3RiSm9EUDdnbVpxMEM4MGNVVmRaRE10enR3d25WSzZHUExR?oc=5"
+  },
+  {
+   "title": "Dogecoin News Today: 300M DOGE Lands on Binance as Analysts Eye 100x for Pepeto\u2019s Live Scanner",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 17:15:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNTkZNZjZRU25xdWpCLWxTQTZOd203UUx1enNvNHhZOFdodVp4RVJJOFhGbmZOQVdxUnA4UDNHX3Z2b2dCanhHeVBkMUd3N2xKa1RhWUFLSVdMNUdrS2VjLUNZd0RWdjJjYmdYcnI2OUhRRThJSUNiY3dRdngzcU5fLW9DeVU0T2pINTdhZTZQQ0ZLSW90a3AtNjg4OGlBSERBVnhGaktGWEpJNEFlOEhMNGpkbXF0bWhL?oc=5"
+  },
+  {
+   "title": "XRP, DOGE or Remittix: Best Crypto to Buy Now as RLUSD Enters Core",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 16:35:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPT1RPckV3UTJqUlI4OFZ2X2xMcWVIUE9VTGVzMW5LOV93TFdaYjJ3NjBPUWhBOE1oS0JGN3RUZ0xtanRjOGlGM3FESlNjb2pnUTA0R25qMUZvZFhyQlpwY0NVWmJHS29nMldjQ1Q3TXFlX1U5ZGJycTlPdVBKVXkxWkc0Zk14VnJEdVd0TjhEWE1GTTl4RkpmUWVQRm10U1pMbmc?oc=5"
+  },
+  {
+   "title": "Dogecoin Price at a Crossroads: Will $0.080 Hold as Fear and Greed Hit 49?",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 16:29:56+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE96YmcxNXdGYmtOVHRpdFYxSU9LeXhnaEdDcWFjMFA5MHZtUE9jc3AxckR2dDg5RjNKY2pLTlNmY004SVpLanIxMEFUVS1tNW9vQVI3bWVQYlhhd0E?oc=5"
+  },
+  {
+   "title": "Apeing's Best Crypto Presale Sells 497M+ Tokens at $0.0007 as 85%",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 16:07:16+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbmdSV1FJV0VDQkF2LUVlelpsampKQXA2ZHZyMTc5TFZCV2FZcEFEOFZ4UWVReDdCblJOazViVEZxeV9uaDhoSi1kX213WTFsOUJlUU1IdDZXR0JlcnNiUmUwaS02WVJBOU1BODJyakpPcnpINk5FQ2VTaVlRdkpaNXNQTnBQVDctbFV2ckE5XzFIRmVOS3pDRzljZFZyaWs?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: Can DOGE Reclaim $0.10 as Remittix Approaches Its November 24 Token Debut?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 15:42:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPMEUyM3BHZ1FPTHR5WEx3Z3VKUlBPcGpKNkFMUm5ZVjFaT21lcjAxb0tLX1NNcXZQWVMxUml0SkNvcWxsTFNZcG94eTlWbXhCeHVZbE42SWQtbHROcjVXQVR1MF92NDRhR3JSMVZFUU5sR21oWC1wMnI1NmtPcEdPRXAzNnhTZS1rNGpBRGgtVkVEWU5zWEVTRi1Sdw?oc=5"
+  },
+  {
+   "title": "Dogecoin (DOGE) Is Nearing Its First Death Cross of 2026. What Happened After the Last One?",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 15:00:24+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOX0VydFBLNWlmVlVzX2htU0xYWkI4cEtyaEdjMDJ5ejBOb2tMR0Z2LWU3WFcwbWR5aklpQVV6VURNMDg2YWh5OFJEamNsbEtoX3FDelFzdVJacVVYUk54NjRJWnJ3eXJVRF82enFWNHNORnFRLTBnbExSSmVYZTBNaWRYaDFlMzI3bVBrR2d0ZDdHQmlXcGlKemZTSmtRakU?oc=5"
+  },
+  {
+   "title": "Dogecoin (DOGE) Is Nearing Its First Death Cross of 2026. What Happened After the Last One?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 15:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQb053NWpHUUJtS2lRbGhfei1QM1FGVTdwNnNsdDZnaUd0bFhva2hodUcya2oxWW1fY3g2U3Y1ZXdtS1RvNjV0aDVkLThidFd0Q3lobWx1N1NmR2FjUElEaVFWeUVac2ZTLXdwWnFkU1p6bFpMTUF0aHZKbXdieVRUY1lsMU95bFRIRDlEazVLZS12c0RjMXNTbDNlT3Vpc1NPYnl0SjY1bVJSOElQUzZaU1g1SkZFNE9wMUxiR1BVV3B1ci1RTERZamZxUzRuZXg4RWp2Q0luSjBHVDNVei00?oc=5"
+  },
+  {
+   "title": "Dogecoin News: SEC Lets House of Doge Raise Up to $100M as DOGE Sits Near $0.08, While Pepeto Passes $11.2M",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 14:58:52+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWDgzVVM4SnlCNHZSR2NEaGo0cnpvMWVBSU1wRmhEakpUTFE0dUlMWXFjeTN0aEJYbVV4VGlaRWVQQnhWdHhNZFBaZk81RkM4TGMyTENCVG4zTnRxS2ExYTEtTGNndmFZeWZsOW8wZm8yOC1IcnJNTzJSUkJtY2llM3RTVW9YRmhRN2FIWHRNdEcxek5IdzZnYUtXRC1STEp6T19QNQ?oc=5"
+  },
+  {
+   "title": "Dogecoin Falls Below $0.081 as Large-Holder Balances Rise",
+   "publisher": "www.tokenpost.com",
+   "published_at": "2026-10-17 14:08:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE12dXFPODNHZ3B6REgybHgzQkwwZ081TWZ6T2VZTVVFUDg2SlVTVm5vNVRTdzlpdUlLZmdjeWJPVVoxU1lVSlo0ZzVtYWFBbHRFY1FRWUdpTVk3QQ?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: DOGE Near $0.08 or Remittix Before Its First Trading Cycle? November 24 Sets the Timeline",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 14:07:46+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQYnVzWkJ0ZGJGRkFXaFV6eU03Q1JYaUpNTHlMaVFsRHYwd19Vd2JTNzNwUm93em1XYzBMU2YyOXJPLUhJX3VlQk1LV0dlMjRjU0xjdzFmRGdOSlFaZWNLcTVOaXJkNkVUZ1V4eUszYzFHYXhLdFNwVFBMWkhvMkhWU3FZd3Q2Rnpfc3JSVjZVek94YUoxWnlnNWFrcm5SMEtIUlBPQm9NcTRwTG1nNHk3UENkd0ozSk5YblN5aTJOaGRMeExIYlZ0RFpuLV9MYUZMczNTM2tnT2hNSHJiUlBVbnRmZlJWaFZMQndmaFVxSkRLbV9UazlZWW5zelc5UlZ0NDE2bzhTd2tWMDA?oc=5"
+  },
+  {
+   "title": "New Cryptocurrency Watch: Pepeto Eyes 300x After Hot CPI Report as XRP and DOGE Seek Buyers",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 13:45:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOaWc2M3QwekF6TVA2QldEdzBrY3Zzb3ZsX3FGd05IVTNRRU02TGxJci1jelRkYmtOVGxIT2NFcjZrdXdaRnNvSFVDeHdPaHd4VGNnNGRGdUNTMWt1LUNldWZZOU9CeHRrUzhEZ0JzSnIxaFNVSHh2aThURVo3NjFYajJpbUdNalhMNE1weFVfdE5CSkRoQnVQVng4emI2bDdQY3dkc1VQMkVHYWlRRVhFMDJnYlFCQQ?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: $0.033 Downside Forecast Puts AlphaPepe's 20,000% Bull Case Into the Spotlight",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 12:49:58+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNUQ4aGRISTFsWkJmcXNyQV92dWF5azdib0tzSktDbXVpSmZwd0Y2ZmRtZHF1ajVqRUtfX3hRLWt6aUJ1NXpLWlhfUUk0STRxZHhYVWJaTDVIQU1wWTRfcHBoWmNHWHFlQm4tOFBfakU2RW1oOWdTVUN5LXNSRVBwVFd4M1lmWnhnNGNQeWtVUUtzU1Vj?oc=5"
+  },
+  {
+   "title": "Dogecoin: Bitwise pays out in cash on 22 October, what it means for your coins",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-17 12:26:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNNEcyeXB6SUZtaGNkLWFxQnhnRnJtcmIwRlNudXRieTJMb3BDejRZVC1DSUNsdGNVTnk2YW5JRUN5OTFla1F5NWRLVzhFYXlyQWQwd3FmR01vWUpBeW5NM28tbGlJUjR5ZTFpQnlad0RJNTdXNnotRDNHaWhhcE43cEFhbw?oc=5"
+  },
+  {
+   "title": "Crypto Morning Round-Up: Bitcoin Steady Near $81,471 as Cardano and Dogecoin Lead Declines",
+   "publisher": "Business Upturn",
+   "published_at": "2026-10-17 11:55:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNM19YZWRqS1F2eDBfcm03bzhDVi1NUU5hLXk0eUZDbG1TVWJQMUwzeGg4WFY0TUxIelVuMGk4bHJ3NkE1UHY2U1lqUnFvbWprd2hMQUJ2ekZzVUppR0xka1dpMm14NGZQaVk0ZWgwRUxISUNLMWhkRDFJZlVwZmtHX0RtNmFhWnowNlhwVGM5dTJBNnUtbkpoRDVIcDVtQWpxQVJ5S2xOLUJnbXV4RTVJX21WMWRkd0tOb1gzWDMxbU41Y3pJcVprV3o4UXpHNlhZYzZSTUwwZG8?oc=5"
+  },
+  {
+   "title": "Dogecoin News: Pepeto Takes the Top Spot as DOGE Traders Look Past Bitwise and Eye 100x Gains",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 11:46:36+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQcFp2alVNVENROGVSQUhzMHZyS25CajVUMlNLSTNsdVBxUDFDOG8xY2h4SmNYY3B5VUl1LXRkaHpCLU1OSTVlcFJvRkdoYUE5ZVZNZzUyejEzeEx1Y09kSEV0aUJ6ZmtoX2ZQMHdaTWV4VjI1WDBMSWx0SEpXSjBMbzgyblBNUkNOcGpNZnZsYXBCQlJHTkN2bXZYcjYwa2plcmlz?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: DOGE Flashes a Buy Signal at $0.08 While Pepeto Eyes 100x Before Listing",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 11:35:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQcWZHTWdtd1c3TVNtVnJHR0I4WkVYcmE5ZTIxV3BvTWFSQXlIY254WTVOOE5TQVRUSW5pUE9RQUpHbl9NLVNsQWF6XzUwU2JDaUdSM1B3UUFZVk8yWXZqVW44aVZ6OHl4VUlwYXVsRWN3bnV3UUFOb2hlZmlIZ09PbXQ3RWExVUxGb3NUNl9Vb2tJYUVmZGRhdm1SRQ?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: 81% of Traders Bet Long as Pepeto Eyes a 100x No DOGE Chart Can Match",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 11:02:45+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPNmpOOW93Z2trRVdidnVObnZPQUc2aU82MllqbXNSRGhLcXh4Rl9HXzFfcHhqVjRtU0ozS01va3I3aTNQVUdnOW14LUN0NkVRcHFReVlKUWFGbG45VG9rSUl0dld4LTlCUDZTYTdRUkgxdURpdVVRX1ZRMGx5eUwzc2xqM0UwOXNJQk10d2dmUUlfZ3RzRHFEOUpLYUlhOU1M?oc=5"
+  },
+  {
+   "title": "Dogecoin price slips below $0.081: Can whale buying fuel a rebound?",
+   "publisher": "Crypto News",
+   "published_at": "2026-10-17 10:43:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBiRUFIRjI0NGlVYXlRc214bUxDRkJBRE9TWDNybWM5eUwyVjc3aUJxU2w5QTlyTUc3WWFuRFdMazByRVA3V0pQcGpfcTE4TmVFamN0ajMyZmgtSnlVREVzZmE2bUZEM2VCdFNHQ2JR?oc=5"
+  },
+  {
+   "title": "Dogecoin News: DOGE Holds Near $0.08 With DogeOS Testing Active as Remittix Tests Its Payments-First Proposition",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 10:23:29+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOZXJEVGg2UnJac0FJWmRSYnpZclB0Ym5JRVdPYzVLaVBLU3p2MThWZUlPM21id1RMdVNHSGV1Qlk5Y0k0S19Sc3MtQ3JBRFdyc19yNGJEWmVCVWRyT2tNRURlMzNaQWQxR3A4Z0hIcmduMzlWbjI4eEVaS3E5anVwd2ZlYk1XSm5VYVNIVUZyajBNaUJvdmU2UWxoNU5TQQ?oc=5"
+  },
+  {
+   "title": "Dogecoin News: Grayscale Secures 144.8M DOGE in Second Vault as Pepeto Eyes a Pepe-Style Rally",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 10:15:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxONEY2VVhRUXM2S2lvZ05LQ0RrM1BfUkNZaHUteTdsT29QdjNXTGRtcnppRnJFbE1tZHAxVngySkk4QWhZNTNqbzlfOEtCb0hVV3NRNDJubEp0Qk80ZzFiQVVaWlRUX2VWOFRVRVhLczN0UEprb3BqOTAwSjZUQXg3MENQcVNTU1pSbG10ZnZhSS0yM3o1R2RSV09aNHVmM1dIWnZYS3FGMThWVVhvMDh0NVlvTmxRZDZaNGc?oc=5"
+  },
+  {
+   "title": "Chart Levels Mark Support and Resistance for Four Crypto Assets",
+   "publisher": "www.tokenpost.com",
+   "published_at": "2026-10-17 09:39:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5JX3VDd2tLRTFYOXg5ZUFVSjZSRmIxU3cxcUFld3dRcktzd1JpZGU2QTlqVF82WlV2c0xSNmw4ZHVHRzFjbVhqbUtHQXk2UXpWdGw2RHE3RzB4Zw?oc=5"
+  },
+  {
+   "title": "Dogecoin Price at a Crossroads: Will $0.080 Hold as Fear and Greed Hit 49?",
+   "publisher": "CoinGape",
+   "published_at": "2026-10-17 09:07:52+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxObjZrMmJ3QTZNNGZvMVVNa3pHRHRKWDJQa2JmSl82blZEUUpjU0UtNnREUGZqOVNHRXlxbG96dTZTVndMSlhkMkFwaklVSHljR19VcXNKXy15R0Q4NzQ5MGV3VnNXa3F4MzFfeVFwUFBXejVqWC1LMURDb2JQbUlZOXQ4UzR4UTJNS2tWMmVXcFBySWdVUU5ESXdQNEVzOGRDekZv?oc=5"
+  },
+  {
+   "title": "Dogecoin News Today: Whale Sends 300M DOGE to Binance as",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 08:21:44+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTkxZdnJlVXhsSV95eVpKU1hjWXZyYlFjU01feG9WeVFQZzBfT2xlLW9ENmdPU3FjaGt2WVNfVU1qRE5fRDhpR0k4Nlc0YW9FbkVJMGlJTVBCUVNlMzR4a19INl9YdC1mZHhCVFVCOUJRMk0zWENUUi13Z0dyb3lkR3Mwdm9CQmhRUEZkdnllWURLMzU0YlE?oc=5"
+  },
+  {
+   "title": "DOGE and TRUMP Were Early Stories: Apeing Targets the Next 1000x Crypto With 1,328% ROI Potential",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 06:40:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOWEhQYTJOYVBYajlxRnZaYWlzOG9HRFgyOXMxOGtwV1hfODlmRjl2WHYtbXk4Q1JpM3hvX2RUS1Q1eEloRWtDQWJlcTEtLVdqUUZEa0JySHY2cnBZUm9FaUJtTW5STVl6cmFPX3ItTjZIdHczbHZ0OUxmamgxc0F0dV9GcVlvZzJHU2tFU0ZlZVU1VTdBUXp6cWVHaUQtcEtp?oc=5"
+  },
+  {
+   "title": "Dogecoin News Today: Could Remittix's PayFi Debut Outshine DOGE's Next Rally? November 24 Sets the Timeline",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 03:57:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOWjVELWxoMFByRFNRUjlqSkJ5b05tXzJfTXZ4SFpMalFIMHVXUXFiclZxeDlQVVZNa2QtZTd4eHFFbmdDVmxnWVlteVk2SThYN093eHR1MzdaSEcyQVhkczRVcnlkZXZCZkdDSGo2SXJMbHJDZTdiQUlNYXVvbTBTQVdGazMyVnoxR0dHa2oyYVhYSVV0SFNqZA?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: Can DOGE Revisit $1 While Remittix Approaches Its First Public Market Cycle?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 03:22:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSVdtenZtbXEyY3J4aUtrejM4ZGY4ZklGLUVUeGdtUmt3Tlo4QmxPZTI1dXh6MWpYbTl6ZEk2QTJOMG1IU0VOTHFRdmNWRFQ1cUhGUHRqUF9qRTZvcndVcERFY1pveXptdHU1Vi1Sc0ExUHZFSTAyQWZVbUVIR3ZNOEJDa2ZTNDdubG1IaDBlY0tXU2g1ZlRYZFdQZw?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Holds $0.08 As CZ Binance Highlights DOGE's Success",
+   "publisher": "TronWeekly",
+   "published_at": "2026-10-17 03:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9FbWFlTWQzSjhMSkNwcVMzWWhSYzdaTVZuclE1SUdDdm1hM1Nhbms0b0txR2ljTWY5ZjlZZ185QlFmQWVDVFFsUV9tN2k1N3daTXpCTHVlV3JaQy1wbFVkTE9UdHdXS0xWaWRvOGxsbVhraElpRlE?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: DOGE's $0.50 Bull Case Meets Remittix's $0.28 Entry Before Its November Debut",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 02:47:14+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPTVU0c2JBbW9HTExzOTdVVzJha1lCaWNJRHl2M3lyXzdUOUlDVnJEeEhwYVd5aGdpWFFvUGZvREFUNnh3WW5PamxIUllBMVlfMGZmRDNQbGdkN25aS0RsbTR6cTZpUG5ZbVNTZ2p2dGkwNTFIbTRMVUo4ZUlKMFliN1NtajFId3pMVF94Sk5vSmtSU3c?oc=5"
+  },
+  {
+   "title": "Dogecoin: Returns to Long-Term Launch Trendline",
+   "publisher": "Blockchain News",
+   "published_at": "2026-10-17 02:41:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPdUw5MnBsa3VtenlfTjltYTBwWWxUdUc1bWFPa0kwVmFUdFJXWFEyMmxXREhoalE0ME8wbVFPSllweTFzRldNd0tLSkRMUVZRRXE4Sk9pTHhWWHhJaEpfdFY0R2llQjNSbklDdFJuYk4tbGp4WDllLTRzU0FDd2p6V3FHbw?oc=5"
+  },
+  {
+   "title": "Best Crypto to Explode in October? SHIB and Baby Doge Coin Face",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 01:59:28+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZWJKN3BpZjV0MWQ1Wl9WNmlqbjl4UjBsVDdCem11RUg5bXJnRXFEZnpLLWF1dXJqVGlPeXBpb0RwUjVRd0VJVFEyYWdtQWFqOVZrTXViU1R4eW52V00xUlRFcDBtd3JyMnhuS3l3SW1OVmtKRkFoMnFlT05TUk5ISWRsZ3V1T1pHdm9WZXd4V0pibUdzV1JaQmZTZUdOMHc?oc=5"
+  },
+  {
+   "title": "Dogecoin Holds Firm While Apeing Advances: Could This Meme Coin",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 01:34:30+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQVlBFOWJ4QWIzeHVxWlNPbWt4UnVkbDlsdlpuVXZtdjlaUGYtY1BGampwbFlDd2VaUGJPT1BLOU5YTE5aQjF2TFRwangyZ2VZRGxKVnNZLWVnVFFSMzl3ZjlNSDlFTWc5ZVYtTzdvWkpJVWtJLWNBRTh5b2k2RmhqM2lLTmY1ZVI5WHV3R2dYOTJsNnF6SDY2cTFYUXVRdnc?oc=5"
+  },
+  {
+   "title": "XRP, SOL, and DOGE show buy signals after marke...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 01:27:45+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQeHhhbFF4WUtoVnBHYWthQXR4c2VKNmZMN2JtQy1mNDNhVXZrckVZVzdVVHFCVjhvck1pcXRDYmlMWnE5SDE5bkJFMEhXQl9EZ2E4anp6azFzUnRZaXktM1FWYkJpTUotdG1EOFkwSkJhM0JTUjJPMUxONExUZ0EwWWtWbjNPdw?oc=5"
+  },
+  {
+   "title": "Cryptos DOGE, SHIB, UNI, and ETH show mixed rec...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 00:34:52+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOWVVzLWctTmtTeTN5cVd0dkF4SkdqUHZLYWprakhXWUs4X2xhekF1ZGhSU2U4emZjRHpNNUxkR1ZQbThWMmIyWlhDM0g3M0ZxUlRTVkNyNEh3ZkdXYWQxM0ZIeGpqT2tucHFMLVhaamNXY2ozR3NiVURNSTJzRVppNGRtMi1lU045NEc1UERTcV8xMjQwajVPU294UGdiRkNES2dYRllR?oc=5"
+  },
+  {
+   "title": "Dogecoin Price Prediction: DogeOS Opens Its Testnet as Remittix's Crypto-to-Bank Story Enters the Launch Countdown",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 00:08:18+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNcmVMZW1TOVlVd1Z4eE43WFJYSVhZOFVOYThYZ1J1anV5aWpFUHFwWjlNeC1zdkp6R2l2X3ZnVy13eERlUy0yODQ3OWtUcGNSemUwbHYxVk9Lc2xyR3lFdEdVbWxtYy1iTXpVZktsU2I4N3NRMUF2dTVpMjBabzlucm11TkpzMkFVWkRrZWJtSXo5Q00?oc=5"
+  },
+  {
+   "title": "Dogecoin News: DOGE Trades Near $0.082 With DogeOS Testing Active as Remittix Approaches Its Market Debut",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 23:20:09+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNZVRLMDI1LUpnT3hSbW5wY1U2QzFSWVkxQ0k5bTFCcThXR3hEakZKNzE0dHRabEsweUtRTjFVQnl2LWZ1RWFKVXlmcUJnZjNmcmRjX1Z5TElGbFB1UTdGNEFlSlZhdGp5NFZBY253RXptd2laNU1aRnFHT3E0ZVN3OVoyMDBwZnNlWERJVExHRHAwa3VBUTdJNldVQjlBSzl4TjdNVC1acVNwczNxMEN4LW1oWllhWldfbGZMUmRvWFRzSTN6ZC04?oc=5"
+  },
+  {
+   "title": "Crypto News: Remittix Confirms Its Four-Product PayFi Ecosystem Ahead of Launch as Dogecoin Price Prediction Targets $0.50 and Shiba Inu Bulls Chase $0.00005",
+   "publisher": "GlobeNewswire",
+   "published_at": "2026-10-16 22:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiygJBVV95cUxNX2FCTnhaNlBZcC1IUzdSQjlGcXJ0cmROM3UwTVM0ZVJkVk0tS2VBN0xJWHYtSzB2ZXI3dW94VjNMd3Q3cEVsdFpzWGtTb0NfYVU2c2xYYkg4cjNoNTNmTEtHSzdXQmxKdkxja1k4WFVmUWRxSlI0blJRNzI5Nmd6MDdoUTQzaS05Nmx0cl9IM05CbGphbnlyRFRNR0lpMi16N3pteVhDcTk3cFA0czd4RGdkcEJiYWE1ZHhIMVhQdjRna0VFdjNVZ2RiMFM4RlpJalF1dE1RSEJEOVA5clRSbUdwVlYxSDRDeTIzOFhwNkhJNVZ1QXBncmpYdFBsT2lnTHlSQlpaQlhXOWNCZFBGcjdhUmZtQU9rTXZBSVgwNzRLU0RUYURMMldUeGtHWG03MVplXzUtVWVubWJyaXo0YTR6cVV5UW5hZ2c?oc=5"
+  },
+  {
+   "title": "Dogecoin Eyes First Major Daily Death Cross of 2026: Potential Trend Shift Ahead?",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-16 20:29:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1lSUI3YzBTTWd0S3BCOTBlYmVaSTNubFUyTXJlOWtFZmxmVHhiUFZYc1RKZGxsckljZnZUMFhfc0RGdU5pZ3U1bERTVWFrV1N0TXBCUmc1elA2SzQ?oc=5"
+  },
+  {
+   "title": "XRP leads crypto funding rates; Dogecoin sees b...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-16 19:43:50+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNelBZMVhTZTFKNzBEUkhvbURsRVlGR19uMFV5VExiWU5jQmZQeDM5elNyZE9fa0tqYlhTak1lRzhacHUwYTZib2pRTWVBT0plVzdzaWtrdDdXXzhjUS1oRi11TURobi04TUlFUUZxUXVMZlJzSkJfWkZieGY3amw2M3dwOUVkRmpfcEdhbzB2cG1uQ2JZZHhURkNoR2h6Y05yWS0yQ0lqaw?oc=5"
+  },
+  {
+   "title": "Dogecoin News: DOGE Flashes 2021 Chart Pattern as Pepeto Eyes DOGE-Style Gains",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 19:40:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOSDVsME1Fb2xNaTNVZjF1TWkwY1FCX0Vpa2tka3ZROGFyUnZIUEdCT0dZTGJQSmxxbmJlaGNOMVBNdWpoS1pFRHRDcVRSMnN5OU5JX0JrYkh6RjAxNmJCbzhVckRWVEVqNHB1Vm9tLTdESnJzUmcyM3RYSFVtWS1TMThkTEJJTGpPQldwNHlZN216VEtSam1TbTNlMjN5TGd4VjRlYw?oc=5"
+  },
+  {
+   "title": "Dogecoin Set for an Exciting Upswing",
+   "publisher": "OneSafe",
+   "published_at": "2026-10-16 19:25:41+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5uVUQyc2tVZFJqa0hoakcteWtGR2ZNeDdtZWNhRWs4M1VXUjlsNzctRHBGODVSa0NMbXVhaHV0QWQyNkwydGNJYXF2a09oYTBkOTFGVzBuNTM2d1ZvTHFlRWJocTItZXdGTVBaU19IX1FQNFlRbnc?oc=5"
+  },
+  {
+   "title": "Grok's Crypto Price Prediction: DOGE Eyes $0.10, PEPE Targets",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 17:50:18+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQNWEyV0syQXMzR3JXNG9xelNURmY0WEtFNXQ0YlQxc0s3bU9jejFhc21FQkNGaWtlQjhxZHhMT3EtNkhsbDlYQ2l2SUVOX3UyRXEtUUdSNUNVRDhYLWpab2hqT2dDanVuUjluRTB4Z2czZkxkc3hsTUZFTVQyX0JMUEZZemRnNkQ4ZGp0QktJUlNjLTh6RFlXczNB?oc=5"
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "DOGEUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:13.407358+00:00",
+ "data": {
+  "symbol": "DOGEUSDT",
+  "base_asset": "DOGE",
+  "last_price": 0.07769,
+  "open_price": 0.07936,
+  "price_change": -0.00167,
+  "price_change_pct": -2.1,
+  "high_24h": 0.08048,
+  "low_24h": 0.07704,
+  "volume_base": 551529754.0,
+  "volume_quote": 43359567.73,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:12.432000Z"
+ }
+}

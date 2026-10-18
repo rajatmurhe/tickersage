@@ -1,0 +1,257 @@
+{
+ "tool": "get_news_sentiment",
+ "args": {
+  "query": "polkadot",
+  "max_items": 5
+ },
+ "kind": "raw_items",
+ "recorded_at": "2026-10-18T16:27:18.043169+00:00",
+ "data": [
+  {
+   "title": "28 Arrested in West African Scam Operation Backed by Binance; $11 Million Traced",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 12:18:50+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRWlTVk9EYXkwZGdsbkhGc0ZETzBvTnJYQmRPQ3h1bVRyd1FILVByZWdtdWV0RW9DVndSMXlFblpRRW9xYV9kRjJhWmdNVzRDUHBVMkgwNnpaZWN2RlBuYmNuMTdoRFlqYVE1TmFBZnpwYkpLc2x5WkMxeF9hdDVyM0VWME85bk1yMnUxemFaNUQ4SWdUYkstTkYxRC1tQkQ0dktRMlZBNG5pcVc5NmFZU0dLQWlSTXpi?oc=5"
+  },
+  {
+   "title": "Justin Sun Says He Sold Most of His Ethereum: What Signal Changed His Mind?",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 08:43:38+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPY3ZXbDVnejNTUXdqOHlsaDRHaV9aTWM5Z01OWTVBcGtMVnpfUDlMS2NEaUNkN2E5aU5xbDNqYnBjaWN5OW5idWc5VUQ3QlMxZzRkWGs5SXJUVnRvMEIyRnY0ODZUbXFrWExBb1ctY1FOMWUzSTl3Rk5tMElKZ2dITXJjc3A5ejh1c09LWlBxOUJMV3pwSkxuNWJFd1RhbS1VV3VvVDhHXzhZTkJPVWxtakdn?oc=5"
+  },
+  {
+   "title": "Polkadot (DOT) price drops about 5.7% to near $1.11 over two daily readings.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 08:35:59+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNQ0h2Z1RtUlFEdWoyY0VKbHF1ZG5RRnp1aktXeVBVSDBWWW5tQk5xQmJlUHBveXp4QjZBWHBrd3Q2RHJtRTdVZ3I4SFU5dXgtbS1HTG52VER1T1NDV1N0ajlCRG1jZWdEaEd0d0ZPRUpjd0t4Q0pCODlBSlZTZFJnQjFqSQ?oc=5"
+  },
+  {
+   "title": "Polkadot (DOT) Falls About 5.7% in Two Daily Readings Near $1.11",
+   "publisher": "www.tokenpost.com",
+   "published_at": "2026-10-18 08:21:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1nUUdiRmk4cXRsbk12b3ZXRUFpRW1qOS1ndm1nTTNfcmZqYnVsMTlHY1ptdDRpT0lHeE1CVmlEcmk0NjV2cE5nSXF4S1B4d0pULW4yMEtNYWFyQQ?oc=5"
+  },
+  {
+   "title": "$52 Million in Crypto Liquidations in 10 Minutes While Wall Street Was Closed: How Did the Selloff Begin?",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 07:45:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOOFFickEyYk1hbXgtWHRVcFI5RjczU2pSSnc3V3ZyUGNCTXdpUWFGa2hwc0g3cHZ3R214aXBhSmFjWDFFMGhCZHZWNXh1ZmVzYXpUNGsxNnNCbGVacHRHdEF2aHNqN0N0STZGSkppRmJaaGlWVjRFTWdyT2w3dEJ5dUxFSHFpcVlsZkJ4NVNNRXhmVVhpaERmMlY5U1FoR0hLam1sTmpvZmtNQ1BlNzk2c3YydWxRUnBmUkQ5UUxrd2JXbkYzdENtR3g4OE1neUR4clJfeFpaMk8?oc=5"
+  },
+  {
+   "title": "DOT Volatility Explained: No Catalyst, Market Rotation Likely",
+   "publisher": "CoinMarketCap",
+   "published_at": "2026-10-18 06:04:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBSblU2VDlJX3VmYUN0M2dDTWpQdVhiek83amx3TUk4WGNSaVFpNkcyZ3hFYkNoc1Mwa2NCLUdOOWlBRjlncWcyb3N5SEozZ2ptQUtMdGZaUnJnLTdmckJlTWFQQXI5UkJsSWJ1ajN6ZDI?oc=5"
+  },
+  {
+   "title": "Bitway leads crypto gainers with 15.89% rise; m...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 04:14:15+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOTWpNUVJhOUh4cWtXYi1xRmU4N25Eakc1aW43U2FHSUYwb1Rxdzg4TFNLX2JLX3d5bngwWEM5RFNLM2hVOER6UU15NkhJdXRHVVZNUEhXX0NCRXBaT0NjaHhUTTNaRllINUFieC1CbnFhY0lHVUhpYXYwQ2FXUFpNbkI1dExPMmYwMVliVkxaaGNUaDU0VVlEQmwzUjNza28?oc=5"
+  },
+  {
+   "title": "Wallet That Accumulated Bitcoin at $127 Wakes Up 12 Years Later: Value Up Nearly 640x!",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 02:36:37+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPMFNTT0tvRUkzYjJMVnRBclFvMU1iRjVUeWtvaXlyZENpVjQ3QUs4WTlMLVU5eDhEWWhOMk1hNDRsVkZvekR2ekx1SjdsSlczUjdaVUtlaXF0TzdKSGlnbUF5bThsOThmUmRMdWRjMk0xemRhUkoyN05HT2JGUFAzcWVqNmJhcDU4MXpLclpQNUpCdzZtY3VHU2lDZjRfMXFkUzRnUFpGVnpVLXBCRTNrajltaVRac0E4RnRkRzI1Yw?oc=5"
+  },
+  {
+   "title": "Bitway jumps 16.5% on new logistics partnership, while Filecoin falls 6.67% amid market shifts",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 02:25:10+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQS2p2X3RKRHFTbEY4Qnp0dEJGRklra2tRdWFTdzFCLWQxU2E3YjNiTzFVa0ttWjF3UTBRZlhJSFFXaDg5WG84Wll0U3lBeldBTVdKSFRZbXFlZUVzOUpkQ2dwWC1NRmlKYjFYRkhsODctUG94SzNILXhvVDBkZ1FFZWl4NlR6TXh5WXozQTJObw?oc=5"
+  },
+  {
+   "title": "Famous Whale Swings from $45M Profit to $37M Loss: Latest Deposit Nearly Wiped Out",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 02:18:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQOUhKdDAyNzhtdE53dmI0eFd2dy1WQkl3Tm1PVlFtZ3BYeGJJSEkzeXBZbmljemM0endvWHRCR3NLOU1zM1ZVN01scWkyMVFYbWJVTVJlb1BSLUxyX28xclFwY3lnczhHaHRhU0xIeU94cFJZSnJGSmRMS19GSW1OdXhiZjZqQk15S1hRSzhzMzJtdnNSalprNVcxbjJab1BCc1pkdk9IVlVra0FOTUMzMVQ1R3BpZkNPdFE?oc=5"
+  },
+  {
+   "title": "Want 100X Gains From Your Tiny Budget? Examine These 10 Top Altcoins to Buy With Big Potential in 2026",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 23:06:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOd0VFbFVTMFBKaGFxN1dYNjdOLXRLZDhvSnVCTU5zZmR2UHdyb2ZhMklhc1hOcEVVbERBZENwRm83Ni1yOV94R2V6OHozR3JvQWw4ZXFqT2E5b0VmWFktaTg4ZVpsbzJtSUJSNmxyT2RERHNZbVpBekQtcEVBSENXOUg4OVZ2cGlBNG9sMTdKYUJUM0h4cDFLaXV3?oc=5"
+  },
+  {
+   "title": "10 Top Cryptos to Buy in October Going Bullish: Apeing's ERC-20",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 21:57:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQb2tsc1lFU09SQktCdlZ4SUtYOXAyaklPNXVuc09HNF9aLTFoWFlKOXRHY2JZVmRKNlJxVmZpbjYzN0hjTC04bWFrNGVlTXo4Nnc1MDBEdXRCWm5BeVlZT2JHWE5OS2ZINmFMV1Z3ZjliZ1ZDd04taU5oSWFrLXhMTE5OcTRha2xkVVQ5TzJfeHVBQkN6SmhhYnUzZGpWTG8?oc=5"
+  },
+  {
+   "title": "Nine Companies Object to Major Crypto Exchange\u2019s Stock Plan: Which Shares Were Blocked?",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-17 20:11:55+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQaXl6R01jRkExY1dncDU4V1dHd3FaNld6SzFQeEV3MTM2eU1CS1YyZTV4cGVyUHhZRU5DcUxHN09lM19UZkJBZWx4SGVTM3lYUDl6OEFhaml6ekdLYTBJUERhRGR2Q1ZZZEFvMlp0THBmUFBIYUZucUhxV05jT0pDOWFibGRtTVByM2thRTZpV0pkcU9xVWprV1lObHdySzRHX2JBRTJWVVRIajhneGdVXzd4NWxNM1V5Rm5CRjZfQlY?oc=5"
+  },
+  {
+   "title": "Best Crypto To Buy? Polkadot Recovery Bet Meets AlphaPepe\u2019s $500 to $10,000 Entry",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 20:05:48+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNbmZydkt4eGM4ek5RRzlNSHBFdTJHRHFMek5yTENYZE9uTExneE9SLTF3WlNYQTh2UXItdlR2SzZaU3pYZnlqZGlwQnVCNTliNVZxYjM0UV9xOHBENmhTdkFvZVdpRlVwMFc5YWlnQU5CYU5CUkk2cjcwMFlqdjlYYk1DYW9iMlVyYnRLVmk5XzhYZXFzT0RTdEhaYXl4M1doMDVV?oc=5"
+  },
+  {
+   "title": "Polkadot falls 5% after brief October rally des...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 18:27:43+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQZ1hKR3Vhak9ucU91bWxoRXdEWmNobGg5YmZGOUNhdWFxbkZlZmRQVGdFbHpEbTJPMk5Tald2ZEx0S1N0cVNUTEc2b1dteTRtdExBbWZOZG4ybXBTYXUyd3pPLVQ1OVc3RVlOMjQzNFFCT05KbkhCdHVyUnU2NkFvbUZHUWZUU0hwNVliVjYtUnBGNVp6M3lUdGZBNXZ6Q0VvNHlqOUQ3aFEweDA?oc=5"
+  },
+  {
+   "title": "Why Is Polkadot Down Today? DOT Falls 5% After Brief Altcoin Rally",
+   "publisher": "Coinpaper",
+   "published_at": "2026-10-17 18:05:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPcDd1eWd3NnBJZEdHZEJEcTB6Z3pXMVhpNW1ONWY1eVdvM3ZrZHZsNlpnbDlkQUJYS1FGY0pJREl5aURmbkNmTmdGSWlCakZNeF9YOGwxbldBYk9ZaGZKeTlFOXk2X2tSeDBVYlBQUUFVeGc5bF9RV1V3NzFHcElJUjdMczlYM2thTEVOM282dEdLWmJVeG9F?oc=5"
+  },
+  {
+   "title": "Polkadot Price Prediction: Only DOT Rose Among 26 Coins This Week, as Analysts Eye 150x for Pepeto",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 17:50:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZzl2UWlkUTJFTnNERGEwMnhSVUxrRjZOTnphak9id3cwRjNHTURjclJZQURPNjNpdjhxVlFYUVNBN3g4SjdKcHVmcnhLbkgwWV95WTNTSDZQVi1IRUp4UXJ1UWtBWnRzbXM5Mzg1MElENWU2UFhLMUdFYlI2ajZiQTg5RERUOUNINHJkWDZRMEdsZWRhajk0VC1Nc3FsNTc5U294YjhaVDlUekZkclppT3FTMXE5UlM5WmhUUjh3?oc=5"
+  },
+  {
+   "title": "Polkadot sets a 2.1 billion DOT supply cap, cutting issuance and changing staking yields.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 16:13:05+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNSXNmXzQ2OUdjWlo0OVRzWnRBLU5qbTNQUHR5cExYZEhtMFBDU19LRlgxNDJXVVc1bzFNeW9GN1RkNDlfLVZBdl94T01UZS1TY1JCd0QxWEQxdllqTmZiTUpqNkFienJaV1FPcVp1REZkSlRyMFZWNVozZndGby1RdFBZUkdwcFEyQ29R?oc=5"
+  },
+  {
+   "title": "Polkadot: 392 million DOT left to the supply cap",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-17 15:26:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1uUFJDQUo0cG1YZTBXcTJiRnFjLVY4dzV0ODRUQmNUUE53Q1VBTHNGVXJsU0hsQmRKcVFQb05sWVFxMjczRFhuUVU3YlQ5STNjUmVaWmE1T2FXazVDcVcxUk43MGV6RC1qLXQ1Sjh0WU8?oc=5"
+  },
+  {
+   "title": "A 5-Year Altcoin Pattern Meets Rising Fed Fears: 4 Coins Worth Taking a Risk On Before the Next Move",
+   "publisher": "Bitget",
+   "published_at": "2026-10-17 15:24:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE91S0N4WW96SU00VE5PZHdWZExtTGRHckFHeWJjQ2ZJTzBoZF85azRZQ2tlOUEwNGphX2tYSFFUZjdRNTRkQnZrajhmWXBmZGUtd2tSZ3RzSWlhMExESmtNZE9mY9IBY0FVX3lxTE91S0N4WW96SU00VE5PZHdWZExtTGRHckFHeWJjQ2ZJTzBoZF85azRZQ2tlOUEwNGphX2tYSFFUZjdRNTRkQnZrajhmWXBmZGUtd2tSZ3RzSWlhMExESmtNZE9mYw?oc=5"
+  },
+  {
+   "title": "Crypto Bull Run: Aptos, Polkadot or Pepeto? BTC Trails Its Usual",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 14:23:07+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZXpLWUNuRmdfNVVrY0JONmFzUWFSZDZQOEp1SHlHT0VmM2dGb1B0RzFBRmhBNFVMWHNZMEszaUtiWU1JUUhnWUQ0NEhibHh0bVY1aTJWMzdJbXNKbEpXZHJTcV92RmZUZ2RzcjE3RUY2NWw3Mk50SnhvaGVKcUZvRFFhLXZpQVg5eklqdG90djdqX1cxdjl3VUoxRHJuZw?oc=5"
+  },
+  {
+   "title": "TRON Is One of the Few Big Coins Up Over Two Weeks. Is TRX a Better Buy Than Ethereum?",
+   "publisher": "AOL.com",
+   "published_at": "2026-10-17 13:30:57+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1sa0NWQXFTS0lpWUQwa2pEamxhQW5WTzMtVVdDa1cta2pSbzhuZ1NlRV9LYjYxem1vMFBIaUQ0dlVWMFNCTVlBM3BUUFlqNENYZjdJV1dncVVxa1ozWkhkRTVVaUpDMmlhd1pwQlZNbzZwNzBW?oc=5"
+  },
+  {
+   "title": "TRON Is One of the Few Big Coins Up Over Two Weeks. Is TRX a Better Buy Than Ethereum?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 13:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNWGd0MkJuc2lXaHJxbS1Nb3ZfVWhiMmJFc2pqREk1cDN2S2t1eGh5X2V2QXJHVmhnV0x3bng3VGJSOVhzb0g5R1B4RlYtRlI1NTctZDdGOUJpS000RjNNb18zNlk0SVRud0VCeHlrUmFhc0dUbWhoLV9iVFhjLWVpNWpGX09HZUtlcVRwOWFGWUc0c2FaWHFlVzZLdExkNFZLbTdldTJISHFOVGtFQXlEc3VIMUZ6V3MxYWVrclZUV19jdHVJWGU0aXlzb2ZVODN6cXlveXEzLVRiZm8?oc=5"
+  },
+  {
+   "title": "Polkadot cuts annual DOT issuance and launches dotUSD stablecoin with liquidity pool",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 13:16:55+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPejk4TDhNR2FqYjdHdGRQY2FGNDJLTm1CM2FwTGU4T0dGZzhRZDYyQ2pGLWJKcGhGOEFtOWhRMHQwN2o3dkd2S25kQWQwQl83WVZSVmFLZlJvazVpekRMNjBpTzZSVWtkeVVTUGV1R0N1ZXZLYzdqNlhWTU9ZY3RaY2w5T1ViSjYzc1J4Qg?oc=5"
+  },
+  {
+   "title": "How to buy Polkadot?",
+   "publisher": "SunCrypto",
+   "published_at": "2026-10-17 12:52:39+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBrczRwUTBGSER5YkxYdkpMeXdwVXVJdFV6eXNybnUxY0Rmd3ZlSkM1Sm5CdUFOMVBIRUt6TnNKeVJIMTBKaG16RzgtMDM5SFdmNkN3T0dUYS1jUQ?oc=5"
+  },
+  {
+   "title": "Polkadot and Remittix Compared: Cross-Chain Infrastructure Meets a Crypto-to-Bank Payments Opportunity Before November",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 12:27:35+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPZm9CZjFXMlk3U3JRSkFGU19yZWJnQTQ5eTd1V2pPX2hOQTg5MXlVMjgtdWlMR0pyM2VBcUlXQk8zNUdyOFBJdnQ5MW1GTEdieDJJNm1IWlRIRmdoUmhlT2R5NWZRYW5XN3VSUFRvbk9taEowQ3ZMVGZjNjBXYmpTNTR4Q0hsTTZ6QzZJN29wcDhoV1NfMTVpUTlKUzg1Y1pEenNqeTRiX2F2b1dfM0JadkllTkM3OXQ4WGg3V0dCTllNU0ZoUERwbFNiX0xoTUJmNGtaRTcyRFpYTTF1WXBVeWo0UXJXcE5OX0N2VVlLUHNTNlVjNkVDX0pzcHZ1cjN4MEtNdnkzeWlVNndw?oc=5"
+  },
+  {
+   "title": "Celestia (TIA) leads crypto gainers with a 21.7...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 11:24:55+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOaDFfSWhlekNtRS1CcHVreFlMb2J6eGNNX1ZYS1o0YUpyUFZyVWNPOEhiUFI2djhmU2l1ZkZ1OW43a0VhVzJHdXd3b3NzQ0xvMzdkTklrZmJzMXF2VzJpdWg0bWJEYnFZX3JtWENKYTUwMEJKd05nQUZFRGt4UFZ3WEFrdTBNT1Y4UDJramNOYjNsZkZUbzh6NzJzd1M3eGtqRGV5cnl0bw?oc=5"
+  },
+  {
+   "title": "BullEadge(@Square-Creator-83ccfb582acd3)'s insights",
+   "publisher": "Binance",
+   "published_at": "2026-10-17 09:55:41+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBOMm5FdWVla2JSQTNsdE8yUVZKRUZtWmM0YWJHbW5DUldSMFZ0SzNrMlBKTjVwUnBKSUhNUklORDU5dXNYSHJ3SDVlWW9lLTlLWkUwYnJjNHA5ZTZLNGJEdjVGNzY?oc=5"
+  },
+  {
+   "title": "Polkadot Treasury Spending: Tracking Ecosystem Funding Trends",
+   "publisher": "Coin Gabbar",
+   "published_at": "2026-10-17 08:29:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9jdGNkN1RMTFZET0t6bUhIVWZlZE1qNzRFQ0U3ZkpyYWw3QlQ3N1BXcVdxRGlkMndqU2VFaWo2blVkQnNQWGpHV1pac3dWbUVsLU95cEJzVlJhcnJmZE5ORmZHSXBhTGsyOHR5dE1mREhwZDQ?oc=5"
+  },
+  {
+   "title": "Bitcoin dips 0.47% as crypto market cap drops 3...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 08:04:14+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOVlJMajZrWDhoeWtTV2R2QnRDdEZKcS1MMWRKc3BvRVR6aXdOUm5vTkFabG85YmtDWUV2b3dsLTBUYnBYZTZCZm9FX3dwV2NpY2pGNWdZXzRINTY4MTBhWGxhOWd2WjBWb1hWcF8yVGFJbjRUTDlwcF9ZdzVzcU55aE8tOV81V3R4SW1zWGVR?oc=5"
+  },
+  {
+   "title": "Bitcoin drops to $80,300 as September inflation rises to 3.7%, causing mixed trader signals.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 07:24:14+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQYVNIVkVneEs1VlE0RGxkQl9Idll6WkhPd0xKNXQ5ZGExR2k2dHJwQjcxWGRLWGR4V1Z6WnRJNGtTdmJJeXJCcFFpdURrY2RVazdWZWNKRFNSdmdsbE5wLW5QdEc0VFZySElaZHJnUkRrdVFwRGd4UzlKR0dtcjJBNUVuQURuOEh1UXBvU1RLOXpOdw?oc=5"
+  },
+  {
+   "title": "Bitcoin and Altcoins: Market Overview (October 17, 2026)",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-17 06:15:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQWmNDTkhMYk1JbkszUlFhVG5yVkhiNkcyQi1wUW5fVUpHVEdGV2t1NmlRUG5nRFJuOThoZ3oxZ2ZqSDRacU5ZZjR5cldrNWR5V1JCY3FxTWZTc05ZcHJzY3J6dEUxZE1oa3R2VHlWVFFxMXR4eGNJNGZsV0gxZFltNnVaYWdpcGpKOGtXZEI1YVRod3J1akE?oc=5"
+  },
+  {
+   "title": "Convert 500 USD (United States Dollar) to DOT (Polkadot)",
+   "publisher": "Bybit",
+   "published_at": "2026-10-17 03:17:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9qd2oxcy1IOE81MC1YQS1FeTBZZmEzaTJjUFhQNE0wZ3hnZkhnSkZRUmxqdzJyWFZYUGJSdVBfMnQ3My1EbERzd0lNNUMzNXNQYmVmSC1hMGdBRWRl?oc=5"
+  },
+  {
+   "title": "Polkadot Price Prediction: DOT Near $1.13 Meets Remittix\u2019s Pre-Launch Entry and Crypto-to-Bank Testing",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 02:40:48+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNUk83N3N5QnQwX3g3WlFPTFU5Ymdhd2xoY1JWS2lidVF0RlE4SjZGdUI0RnptejFiVG1CTWwxRy1NV1BjV2tVX3BPanZCd1VoUTNBTE1wSEZVbFM5X1pPazRCeUJlcHM5S2VsdDBzOUZNd3JUb1A3SWctTnpOMWFHc1FVZWt5Tlg1ekRmV1BINnhIaDQ2cEFzRmdYalowWlk5V0xnNkg1aVp0TGx3OWlNMmNma0d2RVRFS0l6ejhrUUcxT1hYb1piS04ya0RnZ1VIamxfenJJM3RMMHk1VXFXTUFWc1F6cTV6bjUwWjVkdmdkZ0ZDcTdvb2VWQjgyZlhTWDk0?oc=5"
+  },
+  {
+   "title": "Hyperbridge Exploit Mints 1B DOT Tokens in Attack, CertiK Reports",
+   "publisher": "CoinMarketCap",
+   "published_at": "2026-10-17 01:32:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNRElzYUhuNzR4Rm9LMGpiLVdFc3RyVEQ1ejNmRGtQMUdTOERGUVJmand6S3RHMXZPYWFLTGtnZ1BXNExiaGtKSm1NcVhnOF9RcDZQMDQwa000THp2cHVvaXdZOGhoZ2ItY2d5aXhEWkx4dWN5TEhCQmMzN0t0SmhPM0ZDQ0JUQXlRdFVFNWloVEZHWFgxUkRoR3lNSW1mUGdlVWxZWTh5OTJZdw?oc=5"
+  },
+  {
+   "title": "Bitcoin sellers capitulated above $80,000, hinting at a possible price floor after recent declines.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 01:23:52+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPWk1rUHpWaTBTVTVZemtLTUp3eHZxS0thRXBKQ0dnM0dEU0I1ZEpTaXBRdFNYTUdfWGxobXJKa0JvZnBySnNsTC1GRDNpQkFsYnhrcDdIVk5KcGtNT0VneGstUGMtN205cVc3bllDVlZzZ0paVTNvMEhiVFBiRTE2SVdVTU9IbmV3ME00ZTN1Q3YxVFl6djlFdmh4TzNjeS1lNVJUZ3NXZEJxQQ?oc=5"
+  },
+  {
+   "title": "Memecoins Steal the Spotlight as Altseason Builds: 4 Low-Cap Cryptos to Watch for 100x Potential",
+   "publisher": "Bitget",
+   "published_at": "2026-10-17 01:01:32+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE56cTMzMk13cmlvc2xmaC00aXBTNDhXZmFjUHd2Zk9FX21aUXlDRmZyMXg2eXJTSDIzSTNfbjNsQ0VRQi1kTXVmR3JFLU5zcmpLQkJ1TGhUc1NjNjdBMVIxV2hNMNIBY0FVX3lxTE56cTMzMk13cmlvc2xmaC00aXBTNDhXZmFjUHd2Zk9FX21aUXlDRmZyMXg2eXJTSDIzSTNfbjNsQ0VRQi1kTXVmR3JFLU5zcmpLQkJ1TGhUc1NjNjdBMVIxV2hNMA?oc=5"
+  },
+  {
+   "title": "Convert 100 DOT (Polkadot) to CHF (Swiss Franc)",
+   "publisher": "Bybit",
+   "published_at": "2026-10-17 00:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5tR2pyQ0JzX1A2U3lCa09Zb2ZOWnBTZUlIYlNPZmY3eXNLZHVoVkhadFNuMXdLb0FTcHJGWl9JTndOWi1ZYUpLY2RiMDUtd1JjM1FRVjk4ajVnVHhO?oc=5"
+  },
+  {
+   "title": "Claim Raises Questions for Ledger: Were Wallet Tampering Reports Coming In for Months?",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-16 23:27:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSUJ3RVRWaVh6TVl3SDhneDBKdXVlaWZjcHgwcWdLbHZ1Z01lTFZOd1AyTEZaRHBhZmVfdXl4TC1iWGtYRDYxeFBxRE5oUWRGR1RWUUdjZ0FLTmN3Ry1NOGQtVVNHenVRMmpxZVU2aW0tLXY2RnNiXzBidDNRVzhGLVBwaG83a1JZclp3TUg3RHR1aHRuQW5ZaVhKSWJacjVsbkF3OG5oUy1hakJYTFJRR3dYNjZoMnl1ZHVkMTNneGQ?oc=5"
+  },
+  {
+   "title": "Analysts Raise Target on Bitcoin Treasury Stock Despite Slide: What Are They Betting On?",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-16 20:33:40+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOSmhMOTEzV28xajM2WDFsS0FyRVBGNm1WTURhcXZMaVRjTzd3WjRpanN3Q3dCYmJhbm02SzR5clNJaHV2SlFpbjJYSmpjcFVOS1ptR2pCaTI3RVRvbjRjMm91RE9kdXpWNXBLZ3pJT0FYR2JlMVlQb2d6ZmFSSms0RXdtQVdKRVo2OEg5eTBITVJwaTdlakFTLVAzd1RxRXB2QlNmbVVjLXdYOG05OVZsSVFnYmJOdlAtcTNHVEp5WkFxVkU?oc=5"
+  },
+  {
+   "title": "Polkadot (DOT) Price Today, Live Chart, Market Cap & News",
+   "publisher": "TechGraph",
+   "published_at": "2026-10-16 18:43:32+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBOOGlUQUR3Q1Npc3VWajdBM0tORzJRaFo2MFNYdUE1Z0pfTnJjQ1dkTGp1aGF4ZDJvdXZnQWNyMEdjMXVKaXlZb0w5alBic1QwR2IyN21qeVBZS28?oc=5"
+  }
+ ]
+}

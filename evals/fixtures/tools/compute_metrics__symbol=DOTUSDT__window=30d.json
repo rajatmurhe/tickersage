@@ -1,0 +1,37 @@
+{
+ "tool": "compute_metrics",
+ "args": {
+  "symbol": "DOTUSDT",
+  "window": "30d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:18.649181+00:00",
+ "data": {
+  "symbol": "DOTUSDT",
+  "base_asset": "DOT",
+  "window": "30d",
+  "interval": "1d",
+  "n_candles": 30,
+  "start_price": 1.13,
+  "end_price": 1.07,
+  "return_pct": -5.29,
+  "high": 1.31,
+  "low": 1.01,
+  "range_pct": 29.44,
+  "volatility_pct": 4.72,
+  "annualized_volatility_pct": 90.16,
+  "max_drawdown_pct": -15.3,
+  "rsi_14": 42.93,
+  "rsi_overbought": 70,
+  "rsi_oversold": 30,
+  "sma_20": 1.18,
+  "sma_50": 1.1,
+  "price_vs_sma_20_pct": -8.7,
+  "vwap": 1.18,
+  "price_vs_vwap_pct": -8.77,
+  "volume_base": 333163606.0,
+  "volume_quote": 391596425.13,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:18.642455Z"
+ }
+}

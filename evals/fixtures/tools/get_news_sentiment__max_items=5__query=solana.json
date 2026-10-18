@@ -1,0 +1,611 @@
+{
+ "tool": "get_news_sentiment",
+ "args": {
+  "query": "solana",
+  "max_items": 5
+ },
+ "kind": "raw_items",
+ "recorded_at": "2026-10-18T16:27:07.413882+00:00",
+ "data": [
+  {
+   "title": "Is Solana Too Cheap to Ignore at Today's Prices?",
+   "publisher": "The Motley Fool",
+   "published_at": "2026-10-18 16:24:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNNDZ1TmZLaXJjVkNSOWFRaEFKR0dSLWJLd3NBVks5eFRhVWduS3pTblJzRFh6cGI5NGVNMHBhTmNVMmc0WmlaSWFCNnlPSXlZbXdFckViZ3dTMmJiZWJrbUM0YVZicFQ2MUN2UlRjZ1hYREp5cHpCYUxtalowcHY2eVNnTHJrRHlrWHlFYlFKclJMLTQ?oc=5"
+  },
+  {
+   "title": "Spot Ripple (XRP) ETFs Reach the End of an Era, Solana (SOL) Funds Can\u2019t Catch a Break",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 15:51:10+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxObnREQjBJckk1ZDhoTTJ3QUtmdENYUFpqVTBQaWVwbzN1UUVka1RXOW55YXJLMXNjZEl6bkYtVXlqVUY1Nnp4akNxN25IUVFtWFdUbzJMT0ZZbzVNSHdGRG5jYXUxZXdLM2tleml3bG8wSXM0Rlo4RFljQ0dJS3hjSE02RnRlTVlQbVJBUjZja0VTVEtjNlM4RHhnNU5VUk9YMG8xTXVIVmZjWU9yR0ZlQWxsS0xvcFhfbXc?oc=5"
+  },
+  {
+   "title": "Spot Ripple (XRP) ETFs Reach the End of an Era, Solana (SOL) Funds Can\u2019t Catch a Break",
+   "publisher": "CryptoPotato",
+   "published_at": "2026-10-18 15:36:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOWmNsdnJpTWQwbEJYUnItU2Fjc1g0RE9kdDZMbThDajBsTjZDTW9kcEZoQjN1U3dnTHVDSERQa25DdkYxWE1CSGlOamRuZHRTcjNDVFE3RzBDRTFYSWxMdWlLdXNkb09HOTdUQlFHY1JpcEs0blR6Y2dVYnlFQmQzazR2enMtQ0FfRzdyYk1ZY0xwSXpWbTVzRVdQbE5XLTF0LXN6Wk85UTZjdw?oc=5"
+  },
+  {
+   "title": "Ethereum and Solana ETFs Keep Losing Money. Which Coin Is Holding Up Better?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-18 15:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNTGVlMTloUDdPRXowSks0d0kzUE0wTGxwSGJaOEhLUjc0UU1xZ3lTT0g4cnVTeGJiNkZ2ODRjdE90V295ZVFuYXBKaHdPSmk0UGIwalo4dHVlUG5lUGhZUUNiV0RuVXY2dzBXNXNISEl5U1J4NzBlaElUajQ1TGpUc250TVJQbmozdVo0QWE1ZEZnaldJb2ExRm43T0lRemlHX1BvdDNmVmxpT3VDNWlZenZsbzFmZ3MzYlcyWlBwZWtFY3Y5cnhIZDVhZnlSZw?oc=5"
+  },
+  {
+   "title": "This week Solana reached retail users in Mexico through Western Union\u2019s USDPT, institutional allocators in Hong Kong through a second spot SOL ETF, and Da Nang\u2019s innovation ecosystem through a new MOU with its Startup Support Centre. BREAKPOINT",
+   "publisher": "Moomoo",
+   "published_at": "2026-10-18 15:16:38+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPWTYyRGJQa1ZoVVZLLUdtWGROTFozVXN3cnFuYU5yQVFSV2lFY2FmdElSaGdPMG96SHl1NmdlUUtaY2JrbjVnSFhrZG9qMGxvaTJYM3k4NUtKaTRLSzAybzNoVWRSVUp6czhtMUlydk10YlF4QWgwSU4yalNaTzhWU3VrZ3dmWVFhZjQwWFZOUDREeWJvS3p0VjlvY1ZvT1lHTUhORTk1UWR5VTdhZFJfWDh6RktiOWd2?oc=5"
+  },
+  {
+   "title": "Cardano Fell 12.6% This Week, More Than 6 Times Bitcoin\u2019s Drop. Can ADA Hold $0.20?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-18 15:05:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNS1BZQkNxSnRpU2xkWWFVZ0Y1ZmtXMnRLcFZRY2NzYlBtTmt1RC12d29XdTlUM25TcmtEaFUyMHN6NEFhbHkweS0zWVBlNm5jeWhzMkEzSHFSVTJBUHlXV2ZYd0JrZUQxTUR2SWF6WFk1ckU3dDdPNkpyRjdiRWxkR1UydHlJV0J4T2pURTdBZjFRVV96RmwxbDZOd095M0VRdnBMVGNrLXlMcG9rdEpKVXZEampzaENGc0FQdjIyTmN3Mm50Uy1xWjAtTWtSdmJEdVE?oc=5"
+  },
+  {
+   "title": "New Crypto News: Zcash Jumps 8%, Solana Speeds Up, and Early Pepeto Buyers Eye Big Gains",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 14:50:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOUHRmMHRYM1pUNWpicDZERjEzWXRMNTZuWmJMODE0TnRaRFhFZ1ZXTmVNUjZJbjJYYWtPcU9hN3dwU21LZWlZM3o1TnJra19yZldUQXNTX29wX3Bvb3kzdG1LZUJ0MU10V3VLRVpSbjJyVEh4eG9kVm96cEx0RVFaQkVnNTJrOGdYUUY5cmVIUHJQemtuT01naFhRRjYzbWFuT0xjRm04Qk9Mem01Q3c?oc=5"
+  },
+  {
+   "title": "Solana Now Holds $15.5 Billion in Stablecoins. How Far Behind Ethereum Is It?",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-18 13:57:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPLWRGUFlrUkRvaktMdTZJZWt3MDU3MkJwaE9pX3pJbEs2QkVGaVAyZ082YXpQUDNiVHN4OHlRdHgzN1pCNWNoaFhpd0NfaVNTSi1VT2NRYTh2VE40Z2hkc1IweE83Qm96MDFWMWVpSUFOX0hGc3NMOG5zUTgtaEQ5bWRRRGtCRUlJVmlzb0pDYw?oc=5"
+  },
+  {
+   "title": "Memecoin outlook for Q4 2026: Can the sector find lasting buyers?",
+   "publisher": "Crypto News",
+   "published_at": "2026-10-18 13:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPelI1bmNpZkE5ZVZ1Y1VrWjFienJrMF9RajNFci1OX3otX09VN1hRb1Q4UWE4Rm5TdGJwVWZVdExtaW5ZelFSREoxem1zREZ5eHM0d0RsdmhzM3RjcG1OeDc5Y1I5Qm1KWFdtM1JTNFNhQ0JVQm5sazdYMHVZVTVGaTduSUY4emY1T3dUSg?oc=5"
+  },
+  {
+   "title": "Solana event in Shanghai postponed despite Bina...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 12:44:17+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPZ2JxQzA5WnNMWTJzaVpJY2J3SHphd09ac2tjWjJ2YUFlaGhGSzJDZjhFdWthZ094WXpMZGRhaHJlenZnODhWQUFNcWlYRGFIaWpOMkFHUXowZDVGZ1pFWjhFVDdMeFZOUlhYeVhtem9seUhpUE9RRFRlakhQLTBaMUFpM1NVUU95elJaRGpWeUxzMUZSM0JFcXVRVy05OUNnSktmM2F3?oc=5"
+  },
+  {
+   "title": "Binance's CZ supports XRP, Solana amid China's crypto crackdown on Solana's Shanghai event.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 12:34:09+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOM3hWVFFNWDFxc0E5TXNiM0RpUjV3VVUyZXJ6bVViajFaa2xqR2hjNzk2S3dwMWp6QVRQYk93bWFkQzdWT2ZvVElhTW44NFFRRDRiNGp5TVpWcXE3enhDNi1aaTlQN2hHZVNQUnpaZHNSNjh6cnRpXzE0UXcwUDFScS1jLTlmSDMyZ3dWaGFlSmNTWlZBV052blZlRlBaN2VsbGxNY0FnUlltWFU0dkV4Rg?oc=5"
+  },
+  {
+   "title": "Solana sets record with 557M stablecoin transfe...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 11:51:57+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQdDVCa2wzcm9EQTZtX2k2RXUyUGM4bWo3ZW9HckJZQW5ndnFpWkEtOENZN1ptcnRXWk1lY2F0XzRoM0FrRklNbTMzWjctaFIybUZkaXhnNHV4NkRyVm9hVWdXbXZWLTZLYm11YW5WblFvY05rckRCMkRaWmhhYkIwX2FHS2o0N1VsZ01HZXpoeV9OU2FzZWQ1WlVRRlhHeTZq?oc=5"
+  },
+  {
+   "title": "OSL Indonesia Holds Solana Launchpool, Prepare Rp100 Million Reward",
+   "publisher": "VOI.ID",
+   "published_at": "2026-10-18 10:58:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9USVFhd1ZzNEttNHBzVWJJN3FSZU1XeXZKQ0Y1TXZHUzZpUzNrUWFsREZtNWdiSnh4OUpVcnVOSEFsTkdDZ1Fr0gFCQVVfeXFMUFctdUE5cGwzN1pfV2owOC1rcUJWbW45S1FKMTJLX2Z1NHc4Yzd2Y0hSMEh1bE9iRzVrRFlFZ3FabWhB?oc=5"
+  },
+  {
+   "title": "Yuga Labs launches Mudwater, a physical and dig...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 10:44:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNbFl0Vlc3OEdXYzNPaW0xekY1UkMzNDgydkgxUWh5dGN4QWJpX2xYaWNwbFFiaGNqckNIcGh3NVM5Z29BdndNbWZETVFXTUN6T1BtY0hhb215MXVaOVJjaEFQek5wWFEtdEpjV3FfOElLbkRqNzRjY3VQc3JCZG1TWlRHa1RPcmNReEtrdkdKLU9JLVU4ZU13?oc=5"
+  },
+  {
+   "title": "Solana drops below $105 as Yuga Labs launches NFT cards",
+   "publisher": "Crypto News",
+   "published_at": "2026-10-18 10:26:26+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQdXh5YkFidFlCZklCaXp1bXFTVTU2NFZ1cVIzam5HdFlzRG9CY1lMaXhRc2p3QURYZkd4R3NOTm9jc0lwVk5RSUhyYU9iZGNPUEVKUW5vbG52MzUyb0ZsSTZHQjFaS2sxdFQ4SnNQQ21tZlA2ekN6YkVhc0tGc0gwRA?oc=5"
+  },
+  {
+   "title": "Solana\u2019s burn rate hits highest since 2025 \u2013 What could it mean for SOL/ETH?",
+   "publisher": "AMBCrypto",
+   "published_at": "2026-10-18 10:00:40+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOMUwzb2ZnbzlzbUxadFJlNmRzVWhJdnRDZ2YtUi1pd2RNcU1MYWVuTEgxR3k1TGJ3SXdYZ2RNMWhhRWJIMUVWWlF4QnZHbzc1TzNYNGpFbDlpVTF4dWR0UmVKSlRfUXpjLWNJczlQMV9fRl9XQXkzUkt5a3RIX19JbUd4eEl6VlJTR3RfTEVjdVg2b3AyV2NLblBkUQ?oc=5"
+  },
+  {
+   "title": "This Week\u2019s Key Economic and Crypto Events: US Initial Jobless Claims, China GDP",
+   "publisher": "bloomingbit",
+   "published_at": "2026-10-18 08:56:16+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBhM29PUzByTzJWYmhiOEIyZ0JmSE5FT3hVTkNlN3R2ei1YNzF5WVh4M3Rta2NTMy1DekhwbnYyQ0VCYmhlZ1FpcUo4MFVSRG15M29qdA?oc=5"
+  },
+  {
+   "title": "Best Crypto Presale to Buy as 21 Banks Plan Stablecoin: Ethereum, Solana or Pepeto?",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 07:50:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQSk5uTzJvVTZ2SDBoMlhQdXlza3paTlUwdTFKWDBKekgxbjEzNjd5bFZzNjNtVkVfbWt1QWg2YUJ6UDFKSGdYTlhONUhEa2h0Tks1eXlvZnVrc0dReGJCVjctajZJMElJVzNndWFTV2JablJwRlJYOTNzTDBTbkJjR3RpUklBZG1HcTdDbTN3ZGlGRXh3aFcwTHdnMXdBNlVYalNrSFRBVWU?oc=5"
+  },
+  {
+   "title": "Top 3 Cryptos to Buy Now: Remittix, Solana and XRP as Alpenglow Nears and RLUSD Enters Core Banking",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-18 06:11:46+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQNGRXR3MtbFNqaDFZN1VhSkxWcElROEZiNUFUbThSS3dya09XcERJOC10Wm9YUlpwbXh6UnZDVDI5OWg4RnpfdXZUSGhIWVhPbktmYU1HWTdWQWlweGVDbHg4dGFKNHdubkYtREE2Ni1MYno1ZWVYTzh2dERxUzMxYWUtT1hLOGtZTzFHODNkUWRtbnozQnRqb0xCajhmWG1GYktfRXNRY05nT3RXbmVhRWIzWDZxYjFiX0NVcGdaUnlZdzJkaGJFOTZXVExrTUxnX1ZGUk93Z3Ixd2ZFbWIxQm1pQ2JnRVc2b0FEUm1XdzJxYzJWZnc?oc=5"
+  },
+  {
+   "title": "Solana Network Transfers Surge 33% in September, Leads Stablecoin Volume",
+   "publisher": "Altcoin Buzz",
+   "published_at": "2026-10-18 06:08:58+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNRkdMY1ZYYlFBMVUySmdwSDhGaVF2aHNzT3pBN3BUeWR0dXRvaWxfY1pabC1CZXVXR0tYR2NEWFBNQzlJNy1HSnVkRk4weUp4WGVPalFoYzNhNE9QRkgxN2c0LWk1SzgwcjZ0SVdwZ2lxRDhBSjhNTThFTEhHT3Y0T3VOYzBMWDlBU055OEJSb0NQNzhxckNCY3ZiTjV4QQ?oc=5"
+  },
+  {
+   "title": "Solana Price Prediction: SOL Near $104 and Alpenglow Five Days Away Put Remittix's November Catalyst in Focus",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 02:55:39+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQZUo1dGpSZmd0N2V2Nzc2UHNlQ2RtZVBKOU9PMnZsbjM4UE9DdU5td3E0cFZrZUp6Z0FZZ1JwemU4dUI4MjZoY09GQ1FqQ3BsSTQtUlhxSVZTMHg3Nmp0djFrRXFiU21PR1MtbzFyTXdhRzB0RWpNX0I5ZDN0YXV5NWJSMlJ3VGE4MmNYWVA3Z1o4TXh1VG0yTm5Uc0RkbnJ3eDdyazAzVkZlUmVtem9EYWdPd21xaWpVODc4WjNzRkh0UWdpaTlTWHNobw?oc=5"
+  },
+  {
+   "title": "Major Meme-Market Volume Falls 22.3% to About $203 Million",
+   "publisher": "TOKENPOST",
+   "published_at": "2026-10-18 02:06:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBwYjQ2QjIxSHJhNktOb0hXSnp5dXpCVjhYcUQya3NwYnhIWGExTlNMaGluV1RJMlpRLVVFRWg5eWlrYzFCRlZKME9uXzI4TDFIaXVHWnlvMXJ3QQ?oc=5"
+  },
+  {
+   "title": "Solana Price Today: SOL Hits $104 as Apps Generate $193M Monthly and Pepeto Eyes 500x",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 02:00:12+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPMDBhTFkwclJjdWNWbUhLOXdhZmd3bFlRUlFCdnZhOFJ6MTg1MnFlYW1Hc2pIa3o1MTZ2dF9FMUdIWTh6Vm9yN3N6UlNSRjN0Z0EwckMxTkVfY1RMeWJNcVZVTDl4OE1KNGNyVTB3MS15Y0dYTWJRdE16VUFiY1hmbTVvT0oxRjlBMFRpQXFwRTFzaFh3bTlWUko4M0Q4MXFpQ1B4ZVluRTJKNWs?oc=5"
+  },
+  {
+   "title": "$RAY | DEX/Solana Timing the recovery as Solana DEX flows re",
+   "publisher": "KuCoin",
+   "published_at": "2026-10-18 01:12:12+00:00",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1Vb1ZvcHJMLUdEaTVfM1FFNUJQX19SeWs5bjNzdmE5eFgxUjJYb1BmUVJNMFVKRXVrNXB0WWFsN2wzSThZNWNvOFpHMUFyaGJLaUswbWd0MmQ3Q0haSDMwOW5qOG1RVlhKNGF5dGdPMU5GUQ?oc=5"
+  },
+  {
+   "title": "Best Crypto to Buy in October 2026: Solana, BNB or Remittix With Its First Public Trading Cycle Still Ahead?",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 00:55:07+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQTElWbkx1Ty1Tdm9aRDNmWlRkTllFeTdlNlBJRExwaWl4cGVXazZldDBqSGFCbEM0dFlUaTFfaTBLQXNWSnphWF90dURlWl9EZndkbWsza1YwcGwyQmFyYmtmR1NGbEJ2RUlWWVhTV1BLRnMtQXdyZUNxYU5WOVZubVEwLTNndGs3N1lieWU0UDI2WUp4ZFRTWERqem5EdFBOV2hsTlhzdkYxUklPb1dCRW0wRUl5QmRSMF9FNS1QSGtKQ3hLbnBhY213?oc=5"
+  },
+  {
+   "title": "VEXORIQ(@reduan_1)'s insights",
+   "publisher": "Binance",
+   "published_at": "2026-10-18 00:13:24+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1BajlqSWN1NU1uNENLU212bDlldkVnLWdhbXlxTUVSQVo3cTdOcVhsQzFXTElaQ2pLb1l0UURRaWRHM24zaldZTVd2VWN5dzRWTVlIVFAwSERvRHZhTFM3NnJJelA?oc=5"
+  },
+  {
+   "title": "Solana's RWA market cap jumps to $4.3B, boostin...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 23:48:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPQlJqWWxJRmpnbW96M3A0Vkg4T2M5SEs5VmdjZG16bTMtc3N2V2lacHZEbDl3UXBlTWx1UzlkTkZDd3NCM0Y5RFBsbGljTVdFeFhCRXpjWnNkZU5DOEpZV0J2RVlUWUx2Z0JQSGp3UUJMSTBwb2ZEb1Qtak05WkR4dmYxdnpjNnBoY25wSWdaZjBaX1ZYejBMaE9kZFBIRVcySEJzZXduX1FURENITUV5eQ?oc=5"
+  },
+  {
+   "title": "Crypto derivatives open interest drops, led by Solana with a 6.59% decline on Oct 17",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 23:23:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTmc1RzVaUl84T1I3bW9RR1RIcXJSMkJiM0p5amxuTHI2TWxVY3poYnEzWWdsazVSdDdTcUt6UU5MaG5CLTU1a29yTkVnSkRoUzg0eTQzTnFUbnlyLUVOdzd5aDNjTTRSSU15cEEybWVYT3pKVTgtZlYxZHpseFhSTTVZcXpBRDNZUWNXQWVxbUVaV0hVaUozRE9NX1BzcVNiVlhrQkhGZ0E?oc=5"
+  },
+  {
+   "title": "Solana Open Interest Falls 6.59% as Ether Long Accounts Reach 75.4%",
+   "publisher": "www.tokenpost.com",
+   "published_at": "2026-10-17 23:02:25+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBfeTlWQjBaU1EwcERMak5mQW9FNTFLQ3NTMHB5ZDNodFZSREdoZUdhTXhpalIwVjZxMm4tQzktdVlialhpWTNMeE84R1RvbmRGT2RsRHFpLWFNdw?oc=5"
+  },
+  {
+   "title": "Can $299M in app revenue, positive Q3 releases push SOL\u2019s price higher?",
+   "publisher": "AMBCrypto",
+   "published_at": "2026-10-17 23:00:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOd0NoZTY2OXpndmlMb1F5N1Z0MXJtekF5ek8xZC1ockN0Q2dnX2tGRzhYRzlRWjU3b1lXY3dfSDJCMkdFSk9Vb2ZHZVNFVW1mWFlPN251SEdxMU9vWTlDR2NsNDc3TE9GRm1mbFp2QWZVWldmWE5pNU9SLURlMFpxX1RjNjhpVGh0a3RMN19zb0VLbEpJ?oc=5"
+  },
+  {
+   "title": "Solana\u2019s RWA Market Explodes 600% in a Year as Ethereum Struggles to Keep Up",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 22:45:39+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE8wZ3FhYlNXNUQ1VkZYTGRTVlV2eGpfWXVMVENZckplTmQzd2MyOExfS1A1TjEtMlRGdXJJOUd4ZWc5Ymg5TmpQTWdJSGZnZDY1M1hiOQ?oc=5"
+  },
+  {
+   "title": "BONK Price Prediction: BONK Slips 6% as Solana Funds See 8 Days of Outflows and Pepeto Targets 1000x",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 22:30:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZWk0S0pNQmw2RXF4N2ViTWY5UHQwR0VaVnd0TWF1Sjh0TmxPYWZaT0pBYUVmUTlSQ0x2VnZTLWs0SWJjSGFscmE1WXd5dnhPVHhVdGFaS09reU50bktDU0dnRDlJT2ZsN3pmWjBWM09HeGpEaHN4UVozRExuSzhyUnhoOHpDWDRFRkNhd3hxQTlDbDZwVnJ5Mjd1LXJxem94aG55NDRXSy1YSXE0LWQ3WC1CRXh3SGhiZzBQMjBqSng?oc=5"
+  },
+  {
+   "title": "Solana\u2019s RWA Market Explodes 600% in a Year as Ethereum Struggles to Keep Up",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 22:17:29+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNV2RUaTFUdzd3YnY5QTdSNUUyclVpVGhqTkhsRmpFN3VsY0NOcmUycVFVWHpWTExSVHRLYS1FV0NsREVKSmViS0Z0cWhCOUd2Q2llUnBpUzlVLVJfbTBYcUZQZWxwdXJram5DUlZjODRNSXBuaklXVUxLbDJHNjNwUGxLajl6Z3ZKQnlSOXZlVG1JSE9PTllKU254R2F4Rk90QjdxRm5SSF9tVHhYLS1IMVNR?oc=5"
+  },
+  {
+   "title": "Solana (SOL) price drops 2.13% to $102 amid mixed long and short positions on major exchanges",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 22:06:29+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMXRYMFNwb3dXRHluR0xmY3Zfa2ZySk9VMDBWV3Q2ZnNaR2haMUd1VE8tdkhWYW82clRLdnlBTFRhakY0ajhIQ0xzSmcxY0NOekVvQ3hhWTI4YjNjMTdXR2JNUDQxandTS1VuMm5TZ08xVE1tY3FFdDRuS0g5OWdpOGZVb3Q1X3EydVpzREtFOGVaTXp2UHQ0?oc=5"
+  },
+  {
+   "title": "Solana Price Drops On Selloffs, ETF Outflows Reach 10-Day",
+   "publisher": "MarketForces Africa",
+   "published_at": "2026-10-17 22:05:36+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPT0ZfcHplY1pjUnMtZ25zMVhYaWlONFpMa2pCR1pfRFp5cC03X0p0TU42SElQNnpPYTMwMXljUXJKcWtZRHF4elVMdl9NV2o0Y0tma3hjYjJSYjRWTG5tUnY1Q2N4V0IteEVLdzNKQXg5NUcxWTFBdXAtYkxyR1I1UWNNQjN5bjhEbjk0?oc=5"
+  },
+  {
+   "title": "Pump.fun Just Launched Futures on Hyperliquid. Better Buy: HYPE or Solana?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 22:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNX1dXaDQtV21uTTBfcDh5NlF5STRtVGw3MU1GZWdsWEVBLXRUZnFlVGRjSlFaSUFPcWFQc0pZalQzMHJMdEIwZTJOTFVaOHJSZDRKRXFnck1EYmRwOW9ZdFRiRUIxWkFIcnhkcGhVcjhhUnhnYzZDdkNrc0hOYkctQVprb0tWRjV6VGtTVFg3SGluOVVTX2dJQ1BIVFZ4eDdGU015WURydVNxbFNaQlVWbm8tX3AwOEhjUnNSOEZNV1hUQnRvRjNuTWFn?oc=5"
+  },
+  {
+   "title": "Solana Price Prediction: October 21 Alpenglow Schedule Meets Remittix's November 24 RTX Market Debut",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 21:55:31+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNalY0aWRkOVFoZElVS19SOFBKcWFlemtLNGdQY1hzbTIzVE5PS0ItNHZsbVVfUUVwbjZVcGp3UGQ2NHd1YUYtUWU3OWtMRWtxUFI0MzhtYjlnQjBzVmVBcy1GRHhHOGVqVDRoa3dEM0h6OEUtUzFyTmhiazJJa3NZV25uM2x4dERucFV3TUI2cFBVVjNkWVpLM3NBbWZTSXY5M2NqaXhadDhsS0xsc3lxRWhSUUhxcGVhc0FMYWh4ZEE?oc=5"
+  },
+  {
+   "title": "Historical Data for Quantum Inu (Solana) in USD",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 21:42:37+00:00",
+   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBZb2hOTGpzUDNOS0NkMkhVUkl6VW4teUJleVFuOUVITjlZMXEtZFlfcGZqRnprcFZaNVlKMm5WYnNzZGwxazYzaW1DMFdRZXVQWHNia1FZOERaYWtNX1dNSEVYcFA5NzlXSE9UcW1DVQ?oc=5"
+  },
+  {
+   "title": "Quantum Inu (Solana) Analytics: Price Dynamics, Quarterly Returns, and Annual Price Changes in USD",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 21:31:12+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBFT3gyU1I2cTlmZWJlTGhlWVVFOUtxRE9PMm1weEI0aHliOWFmZkNVSElBT2tMeWZ2LWNXMFhiWnZrbUtLY1lsTHE4OFExaTBRb2hnTllhT2h6cWVpamFhaGR2X1prVVE?oc=5"
+  },
+  {
+   "title": "Quantum Inu (Solana) Exchanges QI Markets | Buy & Sell & Trade",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 21:14:15+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE85NWJWQ1Vwd3U4b0l3b3NObnRTdmpqeWZMMlI4VUFfOGhFVUMzaUVOaW5lM1Q5QWs5a01BSl9mazAxZ0YxMXB6ZDVzZk9GNkZXbURlVk9JNjNIeENBcWRJR3VrcE1YalE?oc=5"
+  },
+  {
+   "title": "Quantum Inu (Solana) Arbitrage Opportunities",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 21:08:32+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4ybXBIQUZJcENCSjNyMDNCWlRGTDB2cTNhV2oxbC1uQkdKNzZWS055LU9xakl6ZEhReTlUME82ZVdoanp0RmJlQ1c1eGdNVi1lcWR3U0p6NjN4eVJpS0t1bVZJSFZkUWM?oc=5"
+  },
+  {
+   "title": "Solana Tests Channel Support After Sharp Rebound",
+   "publisher": "KuCoin",
+   "published_at": "2026-10-17 19:03:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQM0NYNTR6TWd0dXJfNWsySmZPVHU5aWZhSUZjaXI4VFpHWU5pcTVmZmxqNk5XN1p2cnlLSGdhNkhZUVFtMzFPdXdiUnItSngxaVlBZEZ4VndpRjRJNzUxeEhQaE5sNTJtaDg1YnBPSDJCVWdGTVZNZjJ3MVJwd0hUOGF5cml1YkdZa0E?oc=5"
+  },
+  {
+   "title": "Solana Price Prediction: $100 Returns to the Debate as AlphaPepe Puts a 100x Scenario Behind Its AI DEX Entry",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 18:55:11+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNdDBLXzNReVFFWDA2SUJtSjR4bzlRRVI1MVl1c3Fib0dPLUN4QW9yVWEwZ0ZDd2E2TkJwY1NlVWFkbDZldFVKdjRsTlBUbWFJandqdW1FT1daNkVmUVFlQmhhSDN5U2VDWDNGOGdSR2w2MGdGSzZzZDJFdzFad2VzNEYwdVJtZ2h5NFZvQy1YNDZDYjEwVnVuczlka251TWlMS0lqa0d5RjJjNDEzZDlpemRHcWZrMTVzOVhCNEVtVHQ1YXM2Vi1qMU5HLUI?oc=5"
+  },
+  {
+   "title": "Solana price prediction: stablecoin base at $15.96bn",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-17 18:22:07+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9GRmh4RnJTQ3NOWlpXVTFzbDBKenVLM1hzTkpVdXRjbmFXYUthVk9jMWhybjN0V09NVHM1VE93OGppSWpXRlBpTk05RmhCWEl2cF94QzVSMnFWcndVMUw2NDUtQjJXTnFxS0h6RWxRWDdiZkFoSWhFYzZ3?oc=5"
+  },
+  {
+   "title": "Binance Founder CZ Reiterates Support for XRP, Zcash and Solana Amid China Scrutiny",
+   "publisher": "BigGo Finance",
+   "published_at": "2026-10-17 18:17:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE16NGt6bmQ2XzU3Tko4SjZoZ0VBMURZNHd3SHFWRTVrbDdwZ21tQ2ZJS3lseHlMUkUyRWNhT08yTmpEVDZTWlA2R0FJd2EzTW50V3IyYWxVbGVER0xCa2xBZWVtS183X2RUQjB5SVNOZlJ5cUt0YlE?oc=5"
+  },
+  {
+   "title": "Solana Price Prediction Ahead of October 21 Alpenglow Launch",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 18:10:48+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1XaEtQV3RHOU1HZG9ad2ZTbzFtZkVWXzV5ZXd3bVd1NDFBd1U4M2JDQnI0d0I5TFl1a1FtZzlRZTZTaGE3S3JBdzQ1MTRQaWdxeDBrOE9DRUxMMW8?oc=5"
+  },
+  {
+   "title": "Solana shows resilience, but some areas need continued observation, Fidelity says",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 18:10:44+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5ZM0xkb1QxdTFQTWxHN3RnT2NGMDZIckpJQklZNmRrWFhZVGE0MVpIMkEwNTJzMUNBb3psSXF0YmZFeGJtS1dCb0hfSnpiMFBWNlJEdVRQTmhCdw?oc=5"
+  },
+  {
+   "title": "Solana Price Prediction: Alpenglow Targets 150ms Finality as Remittix Brings a November Catalyst of Its Own",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 17:33:08+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOc01PODVlTUtGTWNvZlpocTRySzdoZ2FnazVGdF9xcUJqMmI0SkJ2S0FyektWdVJnRXg1ODh4Y0l3NUlvazhNcFEtRUxTLUN3M0p5N1hDSEFqUlJIZ3lQeTc4SlRtbGNXWDlHdGVSUW9SWmRoY1EyTnhVa0lTTnkzaVRQWEJoQWJXOWxyTVJkem5wZGRKZ29HWmY4Q210RGo3c2VsSHFXQkNlWVFVOHJYZHlYeHpRYi13TWlLMWdOcFpxYVZsYjREZHNsYw?oc=5"
+  },
+  {
+   "title": "Fidelity Says Solana Runs Two Years Without Mainnet Outage, Seeks 200ms Block Interval: 5 outlets compared",
+   "publisher": "NewsCord",
+   "published_at": "2026-10-17 17:22:12+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNbTJYWVhLZVlQR2V6YUNwWmJNRXdJY2tZSjdPNXV2TS1Wdl9nM0pSWGc4VGs3WkY0enJRaEJFSTFIN1Z4cFdXWmdmN3luZVJHUjZoR0t1bXhzNWE5ZkxIdjVOT3hrY3hSdllxMS16bXFSSDN3X2FDcVh2SEROYU4yc0piSEsyR21uc25ROTQ4UDdYQjczOXFKSlNNZ3lIeWRBSFdQNDZscmktVmhTU3pjOWpNNURkWjVWUU5uQXpVLUlVckdqWkhYOV8xOUcyZ0Q0LWhoYjZ3TWVYbVVuUGZDYnREWnVMSDdhUlE?oc=5"
+  },
+  {
+   "title": "Crypto Market Capitalization Falls 4.28% to $2.75 Trillion",
+   "publisher": "TOKENPOST",
+   "published_at": "2026-10-17 15:39:04+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9OazJTSjhMLWFHaTdJcmtSWGFQUjhPakFPNzRWWU1DZk1ZTEV5b2hFdlFrQllVSlVQSzlLNWtBMFk5ekszRlJGWDRWbE00NmxuVFp5YkUtYUUtZw?oc=5"
+  },
+  {
+   "title": "Top 3 Cryptos to Buy Now: Solana, BNB and Remittix as Network Upgrades and AI Trading Expand Crypto's Utility",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 15:33:31+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPYXM2ZXBMSHhldTdjWEFUWXVWZTRHU3JXbkFQX0JObEVmaG9Rb0RfbXdLZkVUbmQ2Yjk2ZFk5RmF5SU9nVVdvZTd0aG1TRm1wWGd1SnFRTmI0dkhOekR2NllfdU43dzhSUlV0ZWNCODh0amczbU1uM290Nzd5VU1kR0pWcU5fcjhqRVd3Vm5wa2Y5eGxRODZqQ2RKcms3TlBDSEw3MFhpTW41TWJKOVAwMWV5dGRyZ0Y4cHRlbm5xbEdCeGFEQkdxR0tJTQ?oc=5"
+  },
+  {
+   "title": "Solana Ad Lasted 10 Minutes in China. Critics Blamed CZ",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 15:29:32+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPQklPQ04tUTg3Vzh0N05iMnFVS1JLTEZtemptaDVXNXVXOUFlUkZUR1pNazFXVms4OXBVbEt4TnRmTDk2LWk2QloxMC04NlhkODYtTlkwZHhPTTFYeHZ5cmVZX21KemtNWVJCS0JtOFJyNDZBcGpNcFRsLTBTM050SEtmaXh6MENIZUtlSXM5VlRuVWh3MVhr?oc=5"
+  },
+  {
+   "title": "Solana Ad Lasted 10 Minutes in China. Critics Blamed CZ",
+   "publisher": "BeInCrypto",
+   "published_at": "2026-10-17 15:29:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1aTkNWTXJ2d05uWWNjZEhwUWludFdGcjlRYTJrelJJNGlCMW5lRjRaUTY5VVpadDNsOTdiV1VjUUxyUDBja3o2b1pQMGdKaXNub3JETllIbHZCMHFOWklHOU9QUzBGX2pIU1E?oc=5"
+  },
+  {
+   "title": "Solana's open interest drops 4.25%, Bitcoin and Solana share highest crypto funding rates at 3.8% annualized",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 14:35:32+00:00",
+   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1kTFh1bFh3eFpzajdUUEVuMURyeGRCZHo5MUl0THMxZXZxeWpIU1dOUGgtYV9sT2w2QWxfRktuTkotOFJ5NzF4REtZVjZfbGNGYU53cWk2TEhzWDloS0F1cU9sZDBQbm5tTkpWdGlJME5IUjBra05ERFlLc3E?oc=5"
+  },
+  {
+   "title": "Bitcoin Open Interest Stands at $7.68 Billion as Solana Open Interest Drops 4.25%",
+   "publisher": "tokenpost.com",
+   "published_at": "2026-10-17 14:11:36+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE91YXlZb01JYmdxSElhak5jZmNYdDN5dnB6dG5sN2V5dS1xa0EtejJDLUd5SVdBQmZueHFURFQwd1ZLempYTVlmNkJKcXlnYTFZZEV5cg?oc=5"
+  },
+  {
+   "title": "Solana Price Prediction Ahead of October 21 Alpenglow Launch",
+   "publisher": "CoinGape",
+   "published_at": "2026-10-17 13:53:31+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQNFk5ZE1ZcjdWYXlxTEJTRmZZM0NMdWh1R25aNDdBTHJrYW5ZSzYyRmVqbC1xekhDcEZyek5ybnNRcTNiZXFDbUJsRDI0ckhBMkhzWUVpeWd5Z2FoX3RrcFlmZktPd2Q5dHFYWEVkMTloOVlMZW1YYnJmeDIyMjhkaHRTVWxMcHZvbURLVVRRRDlyYkNh?oc=5"
+  },
+  {
+   "title": "Solana Price Prediction: SOL Near $104 Faces Its Alpenglow Catalyst as Remittix\u2019s $0.28 Entry Enters the Launch Countdown",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 12:27:35+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAJBVV95cUxPbU1hWk1sZ25rYTFmY1pfMVIwNGZtaFNtM09fNjlCTUZHa1Zvc1dmVkhweGF0U1J4ZlhPc1JRSzk4ZzFqMk9DVjRHR1c5d0N3WlBwMHU1YUcxb3g2LVVZNVcyVFB6RWJJUlJEejc1Y3VLQUc5aGRFaWcxYjBwYWtPSm11UFZMN0VtdTJKZ292YVJUeTR2SXZGQ1JZV2lxc2VNeFRDX1ZPYzFWQU02Mjdld2JpTkpsZVJmeG5mOVhBSDVXaFBBR1hoWEZzTk9EXzY5bGNRMHpkT2NicGhRN3VoWHhTb2Y5dE1iSmpKYUtoTzZQeFF5eHNZTTc3V0RBZlRkYmdwVGdieV9VYmpFcngyQkNoNHgyRl9MTXlvVGN0Ni0?oc=5"
+  },
+  {
+   "title": "Best Crypto to Buy in October: Solana's October 21 Upgrade or Remittix Before Its First Public Trading Cycle?",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 10:55:26+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQc1hwTTBLM25Xc0dtZ3lIMkNTRzJYZFhxNU9OSjhsUTJHaXRIcVZ3OGpWQ2NhNXJNNmlSMmJ6TGZCWkc3enFxYUpYNE9JN1hmcFpETXlPZ2s4RWE1cV9HLV9ZMmg5eXJLUWlpeVdtNHNOZ0pEdHQwalNFalVtdXhiYzBPNFFTOTg3TDJHU1BWSWlBRVNxeFg5eDhiMlJUTzRLcGtTQWdmRjd6RlRMcFZWX3RsbHlIczl1Ynhkb0p2ajVBV2lZZmdVZS00MA?oc=5"
+  },
+  {
+   "title": "Solana trades at $105 as Alpenglow upgrade aims to cut finality to 150 ms",
+   "publisher": "Bitget",
+   "published_at": "2026-10-17 09:42:20+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1mZnJ2MVhYYjNjX3B2dklTTXo3eENzYl9kUHA3TF85djBsN1lqaXFoSXlINWRZQmZYNmpHU0R6VDJOU3p3R29CYmZKUmhOUTA4TUNROEJOQjJMWHJGbHBCOXVFd9IBY0FVX3lxTE1mZnJ2MVhYYjNjX3B2dklTTXo3eENzYl9kUHA3TF85djBsN1lqaXFoSXlINWRZQmZYNmpHU0R6VDJOU3p3R29CYmZKUmhOUTA4TUNROEJOQjJMWHJGbHBCOXVFdw?oc=5"
+  },
+  {
+   "title": "Dacity Coin (Solana) Price | Dacity Price Today, Live Chart, USD converter, Market Capitalization",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 09:27:55+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5uRlowQmlzbWV5NTNDYnlnclNzQkZPcVpvcW1acFBqV3JLbHo3akFzSHpFM04xUXlKbFdGalY1Z25rVmVndVB5U2JOSEpxQWk0MWZfMEU3UTNHQQ?oc=5"
+  },
+  {
+   "title": "Best Crypto Presale 2026: Stablecoin Use Doubles as Pepeto Targets 200x Over SOL and XRP",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 09:05:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeFZVR1JIS1BFNGxVZVRtUm90YkUzNVdWSGRhZ1lYcFV3MWFrV2pMblBoOTdQa3FIUkc3VkNjeTl3N0xyd1A5N0J6dVBvanhxMVoyTkZyWGhHajhEWEVoRmtacWhaZGFFckh0WG0tYzlNYTJOcmh3S3NmUGRPNEZDTG5Bc1NWRWM2SVJoc3R3SU1rM2tjNlBYek43TkltX2pPRDVnVlVXNHd6VHFQQmNRMERB?oc=5"
+  },
+  {
+   "title": "Jupiter tests $0.29 demand zone as Solana DEX token mirrors Bitcoin\u2019s pullback",
+   "publisher": "AMBCrypto",
+   "published_at": "2026-10-17 09:00:56+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZnZLYUFOdUFkNXNvd1RSdnlMZkhjLXpneUdJZi16OFFGeWlGRDIzX1R2dVp2Zmd1eXBONk54dm9yemloTE9fUWc4NXBZUGg4cnpUMWtvWC1HSmlhbjVxTV92LXNobnE2WkNlZHFGdkYtYjB2S29UQUlqSFZyRWZoc1R1b3pRbmlFTU12M1ptRFNNc09oZWdIeUxidmUtSHVN?oc=5"
+  },
+  {
+   "title": "TCB Daily Edition: What Happened in Crypto on October 16, 2026",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 07:45:38+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNQmxRVldmZVJzMVV2cDN5bl9ZOXg4cmlkT1ZibkVhRXFGVzZ3ejZaSktnSTNJV2dmQ1RZMTRucVZBMXlzd0tjQzgxbzN0NFR3RGZGUDRpVzBzSjlVaGc4YW9CeV9ZODdwTjlhN0VCdThaNGJmXzAxeVhNT2ZEc3pjd3BJTkJYekM3dWczYlVGdVl0ZXVNdllwVjNqTk50dDA?oc=5"
+  },
+  {
+   "title": "Crypto ETFs lose $610.7 million as Ethereum outflows overtake Bitcoin",
+   "publisher": "Crypto News",
+   "published_at": "2026-10-17 07:40:30+00:00",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE53YW9FREJGVWtZVnRRLU1VT0R0eFkxWkFHc2hwTnE3a1plUlRhb2xnYW96d0JLZnVaQjZwRnZPX0ZPaWNueTJCVWZQQVhRRkJuMl96QjMwU3FSUXNXdHpEQkw0MDFJdGJOVzlZMXRtQm9XUG8?oc=5"
+  },
+  {
+   "title": "Is Uptober Over for BTC? Bitcoin Is Down Nearly 4% So Far This October.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 07:16:25+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQWHFYZ0NPME9WM1ZOdEVBd2R4WlRlcWEyU3k4ZEhmMWRqSkhCZG5IUGQtRTA5Vi1HZUdZazdYTGNUcldmMjdhd052Ukw0OFdPckpFMUlMNV9EUWU3RnU0TENhNU9TdWZOZFdMYVI3TkliYTEwVWZ3TzJHaVR0bXFKZDFhcmh3SDNua0RiQm5GVFcyNnFkWTQtd0R3?oc=5"
+  },
+  {
+   "title": "Is Uptober Over for BTC? Bitcoin Is Down Nearly 4% So Far This October.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 07:16:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMGVqR2pIVjlEc1JfdXBtYWZtbEVsX2J3b043V21HbUVCMWNOei1LWFFEeEI1WDE2SVdHMVJtZ3hZZ1FWeTEtTHVNQWNaYmtLdngxY3hJZlpfTGlOLVN1cHFhVk5mdVc0cU9MYTNzVnFMVUVfYS1ZNjdtbmN0ZnVkN3RDa0VYSzd0NmlNZFZEUzFibGQwbGZ3aHpGYmZHMFNwZDYzcHRCMGNLVjBhWFVSYlQtdExtRXp4MHlySlVTdVNEdjQxT0E?oc=5"
+  },
+  {
+   "title": "Hedera\u2019s Network Activity Is Up 168%, but HBAR Fell 8% This Week. Better Buy Than Solana?",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 07:07:44+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPOExheVdVdXg1ODN0dG5ELW43WHJZNnA5c1gxaTFjbXZibTFramlwdFVOZWppekxYY3pvc2hIZ0RTa2R2bzVObzZwQ3dES1pDSUpWeEk1OFVPbENVVHJjTTFKVGJTR0Z3azRHV2oxaVMxaVdwTXZXMlNGY1VDTHNNWmFkX3ZGdnJjbkQzUmRyS3JSRm1jUk1LSXZTR3RNdw?oc=5"
+  },
+  {
+   "title": "Hedera's Network Activity Is Up 168%, but HBAR Fell 8% This Week. Better Buy Than Solana?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 07:07:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOcWRLbE05VlhGQXdwVnVFSzA3SUJJT3FyLVlXbGlZX1BSdm5JbkxvQ2FYSW50VzRTN2RvcTFnWjU0MjRxaXBDS2dveXNuUXUxMVRTa0FYcHM2Ukc1U1kxUXRnRWluY1BMLWczQ3E5eUkxTEJNQUVKaUtSN3ZwcUp3VWtvS2NoVTV4RkxjOE9UaWdtZjRud0ZWSHQ0c1NQbGtPYnY4R3NHV0VJby1hcHlVc21LcDNGNVg3dHR6RlNzZmZGakVtMmVwMWlIeHgyV0RQbXh5S0pNRW1YdkV0eFJGYXllWTliS2tOUjVKQWhiMFZKTWNES3BkZ3VZOHZ2NGhJTHRicjNpUEk?oc=5"
+  },
+  {
+   "title": "NEAR Gains More Than 12% as Sunrise Expands Solana Market Access",
+   "publisher": "TOKENPOST",
+   "published_at": "2026-10-17 05:40:29+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1mQWFWRFVIaDRDcmk5SmJRanZCTXI0bVNDNnhTWC1hMl9NWjNFbFA2YnBfQVp3VGZPSDNlckNhWDFLclZscmx2b2NBNUhVWGluV0ZWWWllemlZZw?oc=5"
+  },
+  {
+   "title": "Firedancer Launches Bug Bounty Program Offering 2x Rewards",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 05:19:36+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5QblFvWloyYnpadVp4OThFZ3VMUWFIQjJhYVQ3eDJRa2RJZVEyNnZyWGhjdWcyN3ZEa2k4SnRVdlBMQjBnaW8waGFINGlCZERfN2ZYdG9tX3d2ZllN?oc=5"
+  },
+  {
+   "title": "Best Crypto to Buy Now: Solana\u2019s Upgrade Catalyst or Remittix Before RTX Reaches Public Trading?",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 04:21:22+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPWWFNVVFISnpfbFFTeE9ILXVlYV9GczRyc1JBZjhhazdRZWVHaV9PVWlreVd1ZzVaRXlET01NTy1DOFgwTTEySkdTRGdlNnRlY29jMWR1OGhmNmxuNHh1VHJsRzBIOENPTDI5U0hGOWlYbG82NWJFOG5WTC0zMlE0RVJzRlpMRHIxTHU3X2tjcDhlMEhiQVFmMWpwZzM5RWtYUXVKR292LU1SZFg3a1czRFdhamJKbE5aWkVKalZVYnh0NU10MW1DVlNTZ2FVNFdBcURMZWRrN3hPT25jU2l4M25kbVREb1p1SmtEWDZ3VWJnQUFOLW1yaw?oc=5"
+  },
+  {
+   "title": "Miss crypto Pro(@Square-Creator-367924ed42b08)'s insights",
+   "publisher": "Binance",
+   "published_at": "2026-10-17 03:52:41+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5PbWNHbEdHQnRvbkRTU2F0VkthRTJVdHVWaURIWnl1dDRGcE50TmhrVk1nYlZYenZBX29WMy1XQVpxYkpndVFNemVxaFVaQVdCSkYwMWQ2eXk3MGZZVFg1ZW9TM2k?oc=5"
+  },
+  {
+   "title": "Remittix, Solana, Sui: Best Crypto to Invest In as Alpenglow Nears and Hashi Secures $500M-Plus in Capital Commitments?",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 01:40:52+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNTHRIdEpKQ1pta2dJOFQ3RWI2ZkFMWVl6X1RwQzJEc2pGaGRIdmIwbHFhQV90N2RmeUR1eEFhR01uUmpZWjRyLVRGLTd0WVh6bVFtVnhyN2d1NWdUSWloRHFkWUZsa2NTYnN2d1RwdTN6ZVN4VEV2UUlhOHFRbER4X2kzZFhFaTJIVGxNSjNtUVBYQVZSa3NzY2pkMVhfUlhmLTBhU1RfYWRyUXZZelh0MjNIaV8zV0NQTkVFcVNhbTN1eU9QVjk3YVYwWXMxaTNyTXVwb2hB?oc=5"
+  },
+  {
+   "title": "Doge Pepe (Solana) Analytics: Price Dynamics, Quarterly Returns, and Annual Price Changes in USD",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 01:13:24+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5ydTlpdktuZ1d2YXktbGtvOV9tNU1FY2pNOEVQems5WDBfeEhOSVJXTXlneGZJUm1QODg2RC0zdXRDR1pMOVZVMkZnMGVPU0c4VnpUbEt6Z1JET0pza0hDOEc0cWg?oc=5"
+  },
+  {
+   "title": "Solana Price Prediction: Alpenglow Targets 150ms Finality as Remittix's $0.28 Entry Faces a November Countdown",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 00:40:49+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNTjVhYjFNSXJkM04wSjRvQVpDS0lDTVp6XzhqcTFMSUQyVGE5LWdRQWxiZTZwNUNtZlg5c2xVS19pYjJSUUx6N1JYbWdQRU9xbjZkVkc0V2pBWWI3dEVpUmlHSUVROWpRQ0M3eExnbjc4RGR1eVlFSjM5Tk9RR01WeXVIeUxERHBwcWtQTW1xNnpuM1JJWmNDaWV6S2hNbmZhN0VSVGotbWZfWVF1RmpqMGZneHUtYWlUMUpnRzhTMDdoNGg3TTRHcDB0Zk0?oc=5"
+  },
+  {
+   "title": "Solana Reports 1,400 TPS Today, 150ms Finality Coming Soon",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 00:39:05+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE81QjNlQzZaem9WR2VOYU02R1lvbktHMFd1X1BOZVFucTl6TzZxWWZhR2pWd284aHloQ0NVY1VZMzB4TGh1WU5LN1RkVWduMHN2b25RRmRucW90QQ?oc=5"
+  },
+  {
+   "title": "Solana (SOL) Price Prediction: Major Oct 21 Upgrade Looms as Early Buyers Move Into Pepeto",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 00:20:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNa2R3aDQ2Mi00NWIzMjdUak1Uc1cxb3FFeTZnUFlTWmk0Q0lLZDRiQ182LXc3T3Q2b3RwUFZvM0t5N3lVRVZ2LUxHVmZ1alByN1VPNGMyWW9GTThvaHdDRS1pVkpLQ2dwRVRfenVxaWlnb20xVHlFRVJaU0Y2R0RjcVpwb0Q2LURRTnZvNmxzM3NacnFtanRCcWxZYmxZMTlyMXFZdU9lZnZNaXpYdjdKdXRn?oc=5"
+  },
+  {
+   "title": "Raoul Pal Holds Bitcoin, Solana and Ethereum, but Calls One Wildly Undervalued",
+   "publisher": "Bitget",
+   "published_at": "2026-10-16 23:18:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE40ZHlhdmRJc0MzemR6QlZja3hCaC1NX0ZvdUdQdlVfdGhzNXJNNnZqSjdOSk1nZTVtNE1rY2hYWGZpMFJKS2Y1YW1ReVlid2ZabEVWV0V5X3o5YVEyX3ZQWnpSb9IBY0FVX3lxTE40ZHlhdmRJc0MzemR6QlZja3hCaC1NX0ZvdUdQdlVfdGhzNXJNNnZqSjdOSk1nZTVtNE1rY2hYWGZpMFJKS2Y1YW1ReVlid2ZabEVWV0V5X3o5YVEyX3ZQWnpSbw?oc=5"
+  },
+  {
+   "title": "Solana\u2019s Liu says Shanghai event postponed over registration surge",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-16 23:06:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE96REdkbjBIV1JvTnYtdVZ3aGg3bWN5NFlDTlJrcXVBak9JYV9LcjY5VW5GYzBOUkNOWVhETmZxeVdScDhhSEZGRVJpb0FuLUVWUFloSzQ5bUVfZw?oc=5"
+  },
+  {
+   "title": "GENIUS Act factored into Samsung stablecoin move, Solana Foundation exec says",
+   "publisher": "TheStreet",
+   "published_at": "2026-10-16 22:59:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMm43Zm1aRm1nSFlSbDI4ZGZtaGVxMkpqMk95MVBfSTFPUy1CdERRb3ctWXlYRnZsQkNoWVJQYnJlbFRjQkRibmphcU9YNkpKbFljaTZ1TWpjNjg5R0ZnYkVpT2EyMzk5Zkxrd3FKbUhLLWhIZVNYYmM5U3U1WUJsRV9qei1jTDdGaTVwdWN4ekFsaEVjS01rd2Mtc2F5eXJGcGZCLXlGNGZjTnFYQ3k3VHBWMHVjRGMyVkxzTQ?oc=5"
+  },
+  {
+   "title": "Solana Shanghai Event Delay Draws Criticism from Binance Founder CZ",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-16 22:57:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQXzU4VWxZRWhZSFh6ZTBMdDNyOGdsRzh2U2JkX2lrejZBY0VISTNHQ1dvVEp4U2dTR0JrMktpamlrXzREM2VlUk5yd1VRTjFTelVfVThtVFNBY1p2ZUh2RkViWGtWcDBZX3VIcldDU29JSFFmZVA4aWhGU3ZlNTN4VG93Yk4wN0xJX2VpekhFMEhxQWVmajNEZlU2UHRMS2F4aEkxLTZfcFo?oc=5"
+  },
+  {
+   "title": "SPYx Showcases Composability for Tokenized ETFs on Solana",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-16 22:49:05+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE0xdjc3cDUzU0JlaG5UcTkxUWhFdUNvWFlZTjBkS1g1bjhCMzZQSFFZYnRmdV9ZakM4MW5pMkpxRU0wOFNpM25NZTRqWVZKR3huczJpeXVsMlR5QXQy?oc=5"
+  },
+  {
+   "title": "Solana Price Prediction: SOL Near $106 Before Alpenglow or Remittix Before Its First Public Trading Cycle?",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 22:39:53+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNWDMtZFFVQ2FJX2VINXlfNFJzeU44eUdKd2g5X3laT1JzZTJ6U0diaVkzY3RCSEFsTGdNRk9XNGk1RnVqVFZiZmVQa2VRWm9wblBGeERxWU95Z1lrd2NNajR6TlpWNEVZT2RVUHM4ZURPZHI0UlIyOUpnbDFKZkFwSllSdWwwMzZyNzZJVDZLcEtWcGlNQVhMejdNZ2NieGZwNHlaYlN6V013QjFQejA2V1NHemotNk1lR3dPZXZYRUlxM3dmamcw?oc=5"
+  },
+  {
+   "title": "Pepeto, Solana and XRP: Best Crypto to Buy Now as Thailand Opens ETFs, Which One Has 100x Room?",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 22:35:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQcGM0b3JBWlZNckN0Z0UydV9fLWZNTVFZUzZrWEk3Ung1ZDZBYTNzNE8xWU5RVC0yWEYtNEgxTW0zMk11WXE5NVJfeWtWZFJEZXN1dDFkbkgtVS04R1FUMUlJanZWaGRmcXA4TjM0Z2RiM2pTUGhLemVVcThZUlBOVUEycW1xS2tKSFBXRE1zSU1FSWQyR1FSdEVOTHJxN3owTDZmcmxJM0locmlIdXZZSnRWWXFPdG8?oc=5"
+  },
+  {
+   "title": "Raoul Pal Holds Bitcoin, Solana and Ethereum, but Calls One Wildly Undervalued",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-16 21:59:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPUmFXRjUzRWxIZUtXeFBYWVhDcXAtOVhaU0kxQ0ZnaGk4LUgxa0xSaXFIbGlLSXBQLVdzcjFncmtkbk5GMllqTGdxQkNhcW1GT1E5WldWNWY0STdmU2g4bjlGSmZyeVdlcHlzMlZfNldmRFlEdmI2T21fUXRnLXhhR3lUQnFPNENEQ3FxTHFBb3QxWUhXUUxCZFRZZw?oc=5"
+  },
+  {
+   "title": "Raoul Pal Holds Bitcoin, Solana and Ethereum, but Calls One Wildly Undervalued",
+   "publisher": "BeInCrypto",
+   "published_at": "2026-10-16 21:59:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBjdmhjMkdLb1BRTTZibTFkZGZqZGNKcGowUnE3WDBZZER0MU54UW5EMG1falBCUnJXNUJDYXItRzBhNHFDTmJZanRuUHl2QTFjQ2x6YjhuTV9wakwwczBvSTVwbWx1R1dEUHNpN2VQaDJkV1Fk?oc=5"
+  },
+  {
+   "title": "Solana Price Prediction: October 21 Alpenglow Schedule Gives Remittix's November Debut a Fresh Comparison Catalyst",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 21:40:51+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNaTJrS0swYWZSZ3J1am5meHktZGwzcmczOFRoSXRqZ3pydGl1ZFVhVkxHbmtHUFloeFFpdk9FNHpITFV6MDhMQlpDQXpyS0s0R0hmOV9ITG9HcjJ4Q3IxVW1RVzhYWldxd19IT0dlNEZZOWxpZXJwTVpfRkxzTnJfZHd0NjUxd1lUbTdQaEs1VGNRQWNJRlpLTXpfeUg4LVlqYkE1SVBHUE5KSnZyQnFWVm91UFpYamxsQjZ5allIWnRWd1M4Q1NXT0lRbGJPUlhoYWFz?oc=5"
+  },
+  {
+   "title": "\ud83e\udd5b Solana\u2019s biggest upgrade ever \u26a1",
+   "publisher": "Milk Road",
+   "published_at": "2026-10-16 21:36:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBmMzJVYkVkUmtPNGJfdHRaMGZjMDAwdDF2N0hJbVFoR3NFa3dNUDVmQkZIWFloaFpLZTVEazlzWXFhZkpHWVN3VXhzTUJOeGk5eHV5SFlQSEhtbmgwQzJxblQtQkFUV00?oc=5"
+  },
+  {
+   "title": "Solana forecast: capital outflow and falling fees",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-16 21:29:59+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQZG9nVy04RzRnUUJjVUN0QjhRMVlna0dTZ0ZZYURmYlpLbkR6dElfTVNpOHRZX1VrajdOQXZ6LXhIbTVnS2xIdXdqN1lMMVg4Q2NfRFBlZURYTEJ6Z29vYjZGcUJQekFOcW9fM2tDbHZBbVNxZF9UYkNTbFYtc0RzczJn?oc=5"
+  },
+  {
+   "title": "Solana Outshines Ethereum as RWA Market Cap Soars in 2026",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-16 21:29:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1aWTZBa2NPV1FzMWpRcWV6U2Njd3FyOGVwNnVYQkpmaEtyd0dsWFlJQXhwVDhMMUNJODFoTGdSeUNsdEtJNWRxM0ZyQjV5cm1pbzFJNzgtQWROUXZa?oc=5"
+  },
+  {
+   "title": "Mantle Announces Tokenization Initiative on Solana",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-16 21:29:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5keUhwMUR4YkxEb1MtYVNNbFN5UmRBaDNsQzdTYkdfWE5yRXBUNmtiWkFhQ1ZuVUhGUDh1SWJnc1luTU52bWMxVkQyWVR1bG9xa0prX0JhM1B6SEhq?oc=5"
+  },
+  {
+   "title": "The 7 Best USDC on Solana to XMR Swap Platforms in 2026",
+   "publisher": "Brave New Coin",
+   "published_at": "2026-10-16 21:02:18+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOakxlN0w3d0lFVms5UV9yOVF1MmpfRXpVd0VkYXNvZjk0elNqeFlodHQ2MlBfUkdOM01YTDd3bmdkLXNsYjdialdUSXUxeHUxOXVIRzVaU3c5SFFMZEhxb3pEeExGYjVnb3hNMGdWcU1XdmxHWGltZTB4VjVuYldldTRManE1RUdvcXJHTWpxZUNrVEM3bjhaRnBmSGlHT28?oc=5"
+  },
+  {
+   "title": "Cryptocurrency News: Strive\u2019s $235M Bitcoin Buy Sparks Buzz as Solana, XRP and Pepeto Target 300x",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 20:50:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPc2xKSVM4a2RETDViUmJUMHVhU1NaR0lDSEFpbUY0Rjd1cmlMb3dkSS1WTFNaMzlzMzlYeXBEX0JZd3cwX2U3aV8zY0ViOTZkdUdjT3hndDZoTElxYkVrazRUa1ZjQXA5OWpla1hEYXVmU19lOTBWelZIQkxCc1o1ZW1XTEdXekM1SXVyU2xIMHN0cTJQYlRYTlRxZGlLNk9lM0FxRkU5MFpZbUJ4M1c5STE0VnhjVkFzeFE?oc=5"
+  },
+  {
+   "title": "Best Crypto Presale to Buy Now: Solana's Upgrade and Zcash's ETF Filing Meet Remittix's November Launch",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 20:20:05+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQbk5qVGtLVUFIVy00REZTaVNWWTBYOURHekNzZG0xVHVLWlFIenVZVjhrV1FnODNtNTJPRUNRVGgyU1pFZGdTdEZVaVNlZkZCUFl4aG9UNFVCM0dVSWhEQUo3NXB6RmZhWjlTWmlNSXM4TUI2NHFzcEVhLUcwdnFoTjVUcmJBak94RW9MZmhwcGFEa0FtNFR4Y19ESWF6LVdISk85THZvTEZPR2F2NFlBMTM5YjBHZ3ZqSmxaeE84Ujk3dw?oc=5"
+  },
+  {
+   "title": "Why NEAR crypto\u2019s 12% rally could extend after Sunrise partnership",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-16 20:19:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE4xbGdIQkFoeGJWb2pSQktMNk93S2Q3VlZubkxQWldkd2VxMElCcFdHMEhBT2EwOVQxa2xFRFE4UW5Nc1FtVWVia3FlWG1yc1FSUVdwcFk5RjFSanc?oc=5"
+  },
+  {
+   "title": "Solana lending protocol Spout raises $2 million strategic round for borrowing against tokenized s...",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-16 20:09:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9fMDVETHVxR2Rnb0FfdUJWYS1qaUkwYWpQd0ZwSjVhY2trZnpCNVB3aUp0NjdhbGVFUlBBSDNKZjFCN0pvRlJNWU5kbUt1clRLMzcwY0s3YXA?oc=5"
+  },
+  {
+   "title": "Shiba Inu on Solana: 42.48 billion tokens, $218,000",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-16 18:15:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQT09JRC1LblFGM2xRLUU2LTdJbWR4X1NReWRvdEUtbjVic1k2UXd3cW9saEJ6ZGtrUW9SeVcyVlV3azFsNFRiNG5rSmItZDNrcGw4dTJfckw4T1dBbkdnSVVKYm5JQU9BZ015R2UwbGlJWEZuU29WdEVmMHFoc1J3anVIZlZOSGln?oc=5"
+  },
+  {
+   "title": "XRP, Solana and Ethereum ETFs Lose $71 Million as Bitcoin Funds Attract $5.1 Million in One Day",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-16 17:40:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQT2s5UDNQLVhpeFZFa29oTWJqdVFjR0pXSThsOWNwMTBBUGRRQ1Z5XzF1N0piT0JLVFRLM3NiMER6WERBV0VqWjhzNXZBRjlVcFp3VmczYW03N1c0a3RkLWhLekk1bGsyaTlGQVY3YjNGMHZmQ0hLS2x1ZXVZbC11X1pPVnRDWE5ZRktoa2hVdWhtMks5bG9rR2loamFDV1lBRGFDR2ZzZ1JYdjdWM3YzNEhCUzFtVzlsRVdybkhVZEFWYWpEV29sZw?oc=5"
+  },
+  {
+   "title": "Bitcoin ETFs attract $5.1 million inflow as Ethereum, XRP, Solana funds see outflows",
+   "publisher": "Bitget",
+   "published_at": "2026-10-16 17:01:46+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5UUTJmSDIwZnlWbHVaTTFaaGRhVjEtWnh4RkktLXBwTElMaWw0d3hqb2FsZ0x1NjFxZFlkd1pHWk5XREZla0ZJZXpOOGtxWjB2aWc4NHJrRG1Lc28weER0ZnBaWdIBY0FVX3lxTE5UUTJmSDIwZnlWbHVaTTFaaGRhVjEtWnh4RkktLXBwTElMaWw0d3hqb2FsZ0x1NjFxZFlkd1pHWk5XREZla0ZJZXpOOGtxWjB2aWc4NHJrRG1Lc28weER0ZnBaWQ?oc=5"
+  },
+  {
+   "title": "Solana Price Prediction: SOL Nears Alpenglow as Pepeto Draws 100x Calls Before Binance",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 16:45:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZFVQLThTYWtTcjZzYnVhWEI5RnlVa19vN01PN1AxdGo0ZHRSU2R2Y3Y4UzdSMTU4U2xaMnpoV2RZOVRkUFNHNDVsVXNwTFZTY2VZU2hPR1Q1MlJoT0x0Z09Ock9ER3BaYWRlaTFNemhReTRiNkZnYnM0U05qaWxBOXpxWTExY1BYSGNKX2dKY09jWlBvTUJSY2hhQ09pZmtmVUVFNXo3UmNSWVhSRXVv?oc=5"
+  }
+ ]
+}

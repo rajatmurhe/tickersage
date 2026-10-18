@@ -1,0 +1,37 @@
+{
+ "tool": "compute_metrics",
+ "args": {
+  "symbol": "BNBUSDT",
+  "window": "24h"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:10.039155+00:00",
+ "data": {
+  "symbol": "BNBUSDT",
+  "base_asset": "BNB",
+  "window": "24h",
+  "interval": "1h",
+  "n_candles": 24,
+  "start_price": 713.64,
+  "end_price": 712.2,
+  "return_pct": -0.2,
+  "high": 724.25,
+  "low": 710.15,
+  "range_pct": 1.99,
+  "volatility_pct": 0.33,
+  "annualized_volatility_pct": 31.02,
+  "max_drawdown_pct": -1.55,
+  "rsi_14": 32.96,
+  "rsi_overbought": 70,
+  "rsi_oversold": 30,
+  "sma_20": 719.13,
+  "sma_50": 719.96,
+  "price_vs_sma_20_pct": -0.96,
+  "vwap": 718.11,
+  "price_vs_vwap_pct": -0.82,
+  "volume_base": 73518.17,
+  "volume_quote": 52788318.12,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:10.025773Z"
+ }
+}

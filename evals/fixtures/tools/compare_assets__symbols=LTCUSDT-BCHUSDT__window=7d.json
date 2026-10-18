@@ -1,0 +1,49 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "LTCUSDT",
+   "BCHUSDT"
+  ],
+  "window": "7d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:27.871342+00:00",
+ "data": {
+  "window": "7d",
+  "rows": [
+   {
+    "symbol": "LTCUSDT",
+    "base_asset": "LTC",
+    "end_price": 58.29,
+    "return_pct": -10.03,
+    "volatility_pct": 1.48,
+    "annualized_volatility_pct": 69.16,
+    "max_drawdown_pct": -11.97,
+    "rsi_14": 38.57,
+    "volume_quote": 123716272.91
+   },
+   {
+    "symbol": "BCHUSDT",
+    "base_asset": "BCH",
+    "end_price": 270.0,
+    "return_pct": -5.36,
+    "volatility_pct": 1.54,
+    "annualized_volatility_pct": 72.27,
+    "max_drawdown_pct": -8.62,
+    "rsi_14": 42.8,
+    "volume_quote": 62261549.32
+   }
+  ],
+  "highest_return": "BCH",
+  "lowest_return": "LTC",
+  "highest_volatility": "BCH",
+  "highest_volume": "LTC",
+  "volume_ratio": 1.99,
+  "volatility_ratio": 0.96,
+  "return_gap_pct": -4.67,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:27.858352Z"
+ }
+}

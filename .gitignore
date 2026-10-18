@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+*.db
+evals/results/*.json
+!evals/results/.gitkeep
+node_modules/
+.DS_Store
+.claude/

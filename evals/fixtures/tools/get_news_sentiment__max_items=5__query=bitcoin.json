@@ -1,0 +1,611 @@
+{
+ "tool": "get_news_sentiment",
+ "args": {
+  "query": "bitcoin",
+  "max_items": 5
+ },
+ "kind": "raw_items",
+ "recorded_at": "2026-10-18T16:27:01.050932+00:00",
+ "data": [
+  {
+   "title": "Is Solana Too Cheap to Ignore at Today's Prices?",
+   "publisher": "The Motley Fool",
+   "published_at": "2026-10-18 16:24:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNNDZ1TmZLaXJjVkNSOWFRaEFKR0dSLWJLd3NBVks5eFRhVWduS3pTblJzRFh6cGI5NGVNMHBhTmNVMmc0WmlaSWFCNnlPSXlZbXdFckViZ3dTMmJiZWJrbUM0YVZicFQ2MUN2UlRjZ1hYREp5cHpCYUxtalowcHY2eVNnTHJrRHlrWHlFYlFKclJMLTQ?oc=5"
+  },
+  {
+   "title": "XRP Price Battles $1.30 as $2.77B Futures Market Loses Momentum",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-18 16:15:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9DeDdlaWVzck9WOERBQVQ2WXV1OTBZZGxGa01jNDNYX0pKUWtJdl9qQ19DT0dRUm5EY3Y4TU9yczl1czg3TUZNUFpJOGVab0ZHcHBuWEU3SnlRbkU?oc=5"
+  },
+  {
+   "title": "Michael Saylor hints at more Bitcoin buys as Strategy holds 848,250 BTC",
+   "publisher": "Crypto News",
+   "published_at": "2026-10-18 16:14:41+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNdmp2MnVpUjQyT1d4LXJGOV9RRUd3VE1nbk9BQ0pSZXhWY0hjbkpZWTJMY01CYWZoWlgwSmM2SjI2bEpJTXZMODBodE04dGNkRFJvaUFyVVZfMC1tY3VGNkRTOTlaVHdWMFBXbFdOWWpmOWRodjlzY3dkN1B4dHhaSU50eDMxa095OEZWM1hicXdIeHlQVVE?oc=5"
+  },
+  {
+   "title": "Bitcoin Price: Record $125 Trillion Money Supply Fails To Lift BTC As November Signal Draws Near",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-18 16:05:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1BWUVIUzcyWldfYUdZeVZHbXNTeXBKRDBsVDVwdFBWaFRCVkMtNUlPM2ZiNW05WjBVbnFGYkdtdUlxV0FZZUp2dWZHQjBrVnNiZ09mNk1Bd0M?oc=5"
+  },
+  {
+   "title": "Aave\u2019s Native Bitcoin Plan Moves Forward, But Governance Has Questions",
+   "publisher": "TradingView",
+   "published_at": "2026-10-18 16:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNY0pyZ09FMGxucGNKNTRhaUNMTGtwRzFxTUxiZEtnMkJ6bFgxd1FuZmg5MTFISmsxMHAwSzNWS2NjVXh1UGQzN05kbDBEeHFQb2pnNUxObTNueWowcW1ReUZpZm5UT29PdGljWngyUWJiaVZoS2Z4N1hVTjlWNkNfZDFzSWhYa3UxZkxZM0xGU25SUFc0VEhFaEpsWVE1WDgyMkRIaVJGaC1KSl9MSGVkbUpFMUJtMDc4UE9UT1RXTU5kZmxxMHc?oc=5"
+  },
+  {
+   "title": "Ledger CEO clashes with ex-Mt. Gox boss over $90M wallet thefts",
+   "publisher": "Crypto News",
+   "published_at": "2026-10-18 15:36:50+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxObldrbC04dExsM1dza3lLZXc2NmpIa0VsRkhGVkstcnpjWjJMU1gxWkF0S0dpQTB1V2twYWdtdjRWRXRrSmZvZXcwa0xmRVV5amRVczBrX0pGbzlpekpHVEpiVWxGYlUyZVNPZ25vbnBmdG9MNkthRmx3Y2FEd0RmSWZiejlMdVgtcXc?oc=5"
+  },
+  {
+   "title": "Bitcoin to Reach $1M by 2030? Mark Moss Says It Could Happen",
+   "publisher": "Benzinga",
+   "published_at": "2026-10-18 15:30:12+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOcUJiaTdTN1otTlRBVFdQZjNiak5KY0ppVFZWYXkyc2lLaHRldHdhNzhma3MwVW01OGlnb3Zia3cyNGx0ZXI2VnhlQjdLUkdmX3pCczRFM1hLdm9PaG1MUWRPSlVhbFBwWTY5UXpyZ3JVMXllRjlXWEk2NWJrYTN5a0h0cmVIOXk0UXZGSXNNNHVfSDZOOXBOSGE0bU9XNUg5UjNqMHN0UjZHOUxPMTUwVG5xXzNvVmozZzJSNw?oc=5"
+  },
+  {
+   "title": "Ethereum and Solana ETFs Keep Losing Money. Which Coin Is Holding Up Better?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-18 15:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNTGVlMTloUDdPRXowSks0d0kzUE0wTGxwSGJaOEhLUjc0UU1xZ3lTT0g4cnVTeGJiNkZ2ODRjdE90V295ZVFuYXBKaHdPSmk0UGIwalo4dHVlUG5lUGhZUUNiV0RuVXY2dzBXNXNISEl5U1J4NzBlaElUajQ1TGpUc250TVJQbmozdVo0QWE1ZEZnaldJb2ExRm43T0lRemlHX1BvdDNmVmxpT3VDNWlZenZsbzFmZ3MzYlcyWlBwZWtFY3Y5cnhIZDVhZnlSZw?oc=5"
+  },
+  {
+   "title": "XRP price prediction: 398 XRP burned in a day against 1 billion from the escrow",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-18 15:29:12+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQa0F5dXlRTnJwYVFJd1dlWGlJNjJYa09UZTdjZmVjMFRWVVZGQWs5eWdLa3ZUcS1nZk9DeTAyZ3NIUndjQkpzMDB6T2IwT09aaWIySjZxeDVBbmdrTXJ0dGtoRDQ5LWRBU2ZnLVFhR0Jra2RxalZCSDZDM2F0RUkyWC13b3NuekE?oc=5"
+  },
+  {
+   "title": "Ethereum ETFs: $320m outflow, $299m at BlackRock",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-18 15:18:49+00:00",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1jV1hHeFl3TmV5TE5mck9iTHRBTnc0ei1aZ0wzTi1GdkJQeWkxdUpkcnY1eHVydHRPY3JnbUNpRWpuV0N1VnZra0VZRkszWHpnRlo0V0JaclNpanNOdVpwOUYzMUdGWE9XMDlBNlBoQmFwdw?oc=5"
+  },
+  {
+   "title": "BTC..",
+   "publisher": "Moomoo",
+   "published_at": "2026-10-18 15:18:26+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5XRGRVdC1uR2REcnpXUkFuakx5bDY4aTFkU0xoeUdqOTFKQjNCNUJQdDd5OURQc2p6WkpORk5hbW41aExudVh0ZEFrN25PeHJsV21UUVYtU1RzTjRCZEs3MERCbEl6elBR?oc=5"
+  },
+  {
+   "title": "ETH Sits 'In The Middle Of Nothing' Heading Into The Back Half Of A Red October",
+   "publisher": "Stocktwits",
+   "published_at": "2026-10-18 15:09:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQbl9uLVVTNGRzT29TWXg0YWszTXBza2JuTldpdW1xakFkaE1nVkprNnVVbE80NEtXWFF1dTMxVktyTEo2cWpRVVhmUHlMV2VmYS1XTEUzT3R6YmpKT0kwTlhIOV9fZVZuckI1VHY0NzkwblQ5ZDBHMDZlM1BNV3hqTFVXX0FtUjd2UERRN2xfMlhnRG1OT3dzQThOTUpoV3pvVGtaUXcwWHlTR1kwZ0ZDMDRnd0pLbWxKWGFJX05OWVd6c05UclNQSlVzNExRNE5uR09qZlMwWGVOODRQZGpJNE1jdw?oc=5"
+  },
+  {
+   "title": "Ethereum ETFs lose more money than Bitcoin ETFs last week",
+   "publisher": "Crypto News",
+   "published_at": "2026-10-18 15:05:53+00:00",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBFQnBtSGNlbHVpeVlRdm8xdmRIU19YbzZzLXlHMVR5M3BXRkJfQ3plZUpkZE5UTmF2bXJtVHpxRHZWSE9oM0x1SXVzWU1DN3gyakU3eGZHZmVuWTdIQVBtQUN2VlhMaDVNSlJoMHFtajFLa0thMjlv?oc=5"
+  },
+  {
+   "title": "Cardano Fell 12.6% This Week, More Than 6 Times Bitcoin\u2019s Drop. Can ADA Hold $0.20?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-18 15:05:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNS1BZQkNxSnRpU2xkWWFVZ0Y1ZmtXMnRLcFZRY2NzYlBtTmt1RC12d29XdTlUM25TcmtEaFUyMHN6NEFhbHkweS0zWVBlNm5jeWhzMkEzSHFSVTJBUHlXV2ZYd0JrZUQxTUR2SWF6WFk1ckU3dDdPNkpyRjdiRWxkR1UydHlJV0J4T2pURTdBZjFRVV96RmwxbDZOd095M0VRdnBMVGNrLXlMcG9rdEpKVXZEampzaENGc0FQdjIyTmN3Mm50Uy1xWjAtTWtSdmJEdVE?oc=5"
+  },
+  {
+   "title": "Bitcoin ETFs Shed Nearly $1 Billion in Two Weeks as Uptober Stays Red",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-18 15:01:04+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZ3EzVWFVbkJuZzIzemlTb1ZJTlpEMzJTcGxBYWhYNlpYQUIxaWlSTWdEY2IwU012QlBLZTQ3SjdnNm5lSVR2Unhvbmx2cHhoYkxKREVzUUowUnZ1WlcweC1TV1NOQUdlMWRnb3JicUo2eVg0eDlpb0ZDdHBIN1gyTkRxcV9fRUotcU9hNURleVhrVmtIRFE?oc=5"
+  },
+  {
+   "title": "Bitcoin ETFs Shed Nearly $1 Billion in Two Weeks as Uptober Stays Red",
+   "publisher": "Decrypt",
+   "published_at": "2026-10-18 15:01:04+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNV213dzdMUjBKX0xzZHk2ajdDUGdsVmd1M0NNbjgtSFhaMjVLQmppNjJPTW9kbVpUT244bmxaWmRoSk11MjNqSi1saGNNNnBTU2xZZ3pOcXdWYW9uYnRVcjNYZUFpWWRjdWhodEwwNmQtT1hXeHpfeHVKU0xDOWtkb09mOW42RnU4TlE?oc=5"
+  },
+  {
+   "title": "Sui Is Back Under $1 Despite a 35% Gain This Month. Is It a Better Buy Than XRP?",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-18 14:50:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNRjk4MWE0b1A0eGpSaXhMTU1tQVlud1RRVGw0cVhXX1p4Y2JyREFHTDhtb2E2Ukd3NHlhdnczMGtrZkJtZDhaNFBzaDFpLUlLRTRXbEhqYlk4a2lrU0FTRHNsUDdISFpSeklRMVNkb1ZrakJyWjVXNi03SmdWN2tjY1ZkQnpGbW1fTm9nQm9aYmNsYVU?oc=5"
+  },
+  {
+   "title": "Bitcoin Price at $81,500 Leaves Weekly Close Needing a Big Push",
+   "publisher": "Cryptonews",
+   "published_at": "2026-10-18 14:45:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZjB5ZklNM1RScnFPalZOZnRMRllncFkxOTJEMGRLTGpkNThxSTU1N3FzOWhkcktCS0FzbGtCWTZDRlZRVnRlZ240VUhJTGNHUnpiQ3pHdWFhOF9aVjRWQ21Hc3dwR2lGR3pWSTNQYUxaMDQ5bm91X09lVGREbzNnYkh4R0lUZFE1bVZRMERUSQ?oc=5"
+  },
+  {
+   "title": "Could Bitcoin Price Drop to $10,000? Bloomberg Analyst Gives Grim Warning",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-18 14:39:53+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQVThPTjZldzBoLXU2VzdSZUdKRnpZNVJCSVBfTzdyMERWWjBEZll3STVjWVJUV0tfN0JXZUUyMk1JVHA3TDJObTlMRTE4UHh6SzM3ZHIwY3FTQWktOG5FRGZ6Y05NcF9DRS1yU084YVIteEVEeU1JbzZkaWlkMmstT1hGaFhiSWNDaFpBRGZLMTVTdUdqRExB?oc=5"
+  },
+  {
+   "title": "Could Bitcoin Price Drop to $10,000? Bloomberg Analyst Gives Grim Warning",
+   "publisher": "BeInCrypto",
+   "published_at": "2026-10-18 14:39:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE55N19aZEcyRDl1cUIyRFhVdVNFUFJWNTlWNnphYllTaDZCWFVWNnV3enAwaGxBd054bVRtU1hvc3FfMEZxWEZBSDNZQmpkbzJUa0pZUUl2UDA5a2Q5ZjhpbXltUFluSEQtN1V5X1B4Yy1jalJidGhncA?oc=5"
+  },
+  {
+   "title": "Bitcoin & XRP Price Outlook Ahead of the 2026 U.S. Midterm Elections",
+   "publisher": "CoinGape",
+   "published_at": "2026-10-18 14:38:05+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONlltWEdMZTRvRm80SGNUdWxqeDJqV0Y4YTBJVExqMFcwWFdrNzBvZ0hEQ3NSMGZ4OWZzVlpSa3hzaXVHWXVlLWxaNk83WVA3VUVYNmhxcmt3bjdlVXJoSWsxbDFnbHU5eGFJUkFXNnVLcmpnTlZuWnVqeG95NmJ4SUVQeVhxTEI2UjQycENsdmVQNGREY2ZRQXFPSQ?oc=5"
+  },
+  {
+   "title": "Binance Pool To Close November 10, Giving Bitcoin Miners Weeks To Move",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 14:37:40+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNUk45cjhwbXZ1R1JFcG5pX3NfcWNjLVdpSDJSUmhrd1E1VENJcXp4em1vSlFWc2hBRDNFclptaUJFcG1RVkM1M3A5R1AtRlJ3QlhPYThDZDAzSXI3VEhhOTRkaHB6cnNET055b2xyMEVpQ2ZtZUtCdkpyMEVoU2U0MmxiVlZvWWRnNEFn?oc=5"
+  },
+  {
+   "title": "BlackRock\u2019s Bitcoin ETF Lost $165 Million in a Week. Is Wall Street Pulling Back?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-18 14:31:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdWVvSUF1N25BX0NvR3FkN251V3IwVXp0S2ROaG1pZUsxNmVfbWZiOUU4ZzlZMkFOQi1ETVZDTzY3aUVEVjJjdHZRRk1WQzg2cjkwalVHb0pUMUttcE40TzNLcXhJUFBWUDVQcnh5TEh1TDFjVzkzb0N2dTMzZDhSNFg1Q0d5YURLdGhrX190RjJCYVNvMVdfanpzRVgyVjBzSTlUNHI4Z0NlVlFKUkhhdUJqQ3pfSkRXUGRHUnU3ZGdNSzNRbHFSMGgyNUF3YWtBZGc?oc=5"
+  },
+  {
+   "title": "Trump Gave Crypto What It Wanted: Is He Also Its Biggest Problem?",
+   "publisher": "Benzinga",
+   "published_at": "2026-10-18 14:30:22+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOTG03VzlUal9yUVRaRmZocU1YYktvY3kxZ0ZGUDJZdXpXUHVoTXZmMnZPeExYajBiM1B1UHVIYmVCREpMR2UwcGZnalJybXRuZDlvbVFhSjFYLTg3aXNNZk8tbXgzR3FUcWNGRExsdEZVblVkN1FqN0RCdmtrTk9MZllDNEd4MGhJUE5VSkxlUlZSQWNkVllERnV1Mzh6TWFLT0hWOHZTa2p2QmpqSHVZSnQxX3RUdFhlUzNzdzVKZTNVTmc?oc=5"
+  },
+  {
+   "title": "Bitcoin ETFs vs Ethereum ETFs: Which Bled More Last Week?",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 14:09:29+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNbFFLSmlvU3pQaFF0T0pZYUFLaWZZY1JHclVRbG9LS00yT19jTnlSdWNKQlY3V2lhWlgzLVJBcFg5ZXJFRUZ2YjhKRjNVZzRsbzRCb0dYekhhRGtzOTZia2h2SDJpZmlEV1VsMmNLWF9HVmtQOGVQMjF6UW1rbVBJZW5nMGtwM3Zha0t1eWJPeGVPOFh5Vjd2eA?oc=5"
+  },
+  {
+   "title": "Bitcoin ETFs vs Ethereum ETFs: Which Bled More Last Week?",
+   "publisher": "CryptoPotato",
+   "published_at": "2026-10-18 13:58:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMUx3R3IxbGdzaTdzNWVEaUJ6X0V2LUlTbkJOT1J1cG92cDJFWnVtM1kzaXI4TERJOC1fVVljQ0Eyb2hrS19QNjItU2c5UktsZjk2OW5hUnItWFJROTNPYlZmN2tEdnp1WHJteTlWRlF4OEtSN0lodXc5Wkt4dEhxZTc1ZkhBalk1?oc=5"
+  },
+  {
+   "title": "Solana Now Holds $15.5 Billion in Stablecoins. How Far Behind Ethereum Is It?",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-18 13:57:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPLWRGUFlrUkRvaktMdTZJZWt3MDU3MkJwaE9pX3pJbEs2QkVGaVAyZ082YXpQUDNiVHN4OHlRdHgzN1pCNWNoaFhpd0NfaVNTSi1VT2NRYTh2VE40Z2hkc1IweE83Qm96MDFWMWVpSUFOX0hGc3NMOG5zUTgtaEQ5bWRRRGtCRUlJVmlzb0pDYw?oc=5"
+  },
+  {
+   "title": "Solana Now Holds $15.5 Billion in Stablecoins. How Far Behind Ethereum Is It?",
+   "publisher": "AOL.com",
+   "published_at": "2026-10-18 13:57:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5Jc3lEY2lKYUJRc0c2VG9HaXVMTFhyX1ZtM2VxTzllVnE0S2p2YWxWUDRxNTNLdS1WM0dfWkh4YTZKcnd5eGxVZGpvOXFMZmI1X2RYMU5zaWhEQWpneXBCY0hBaG5WZ1Z5U25FYXNCaTc5N2s?oc=5"
+  },
+  {
+   "title": "Bitcoin rises 0.57% to $81,983 as crypto market cap drops 3.47%",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 13:26:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1jM0VqbHRGNVIyVWQ1Slpad01VOFkzR01Xd2c5MmQzMHZLcVhMd3F5TzY2SFJ4TUFJMklpUFpIa0c1NlRTRUo3VGtwS3BQcnlxN05icXZKbE0zcmR0UE9hNzNqQWFsM2d6MFY2eWJqVEQ5cmZaeWdnSWdEOA?oc=5"
+  },
+  {
+   "title": "Nine crypto groups form Quantum Alliance to sec...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 13:26:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNQnYxSEtBa2NlX201YW8yNjVXU1RwMnNlSVBGUTRhSjJNTm5yWUQ5YTNnWWN3YTNlZUdLcGtFQU1wNU51WVpfb0ZNQ21hVTVVT1NTSlN2QXlERWpqekNUNlhPNXJ2Z3RVSWZNYlo1LWdEdEpZZ2VTUERpcVIyYkV1UnREQlBOTVh5X1o4?oc=5"
+  },
+  {
+   "title": "BTC price on Oct 18, 2026 at 10am EDT Crypto Prediction Market",
+   "publisher": "Robinhood",
+   "published_at": "2026-10-18 13:04:35+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPS0ZfbHd6Vm8xdUxBMzlCZ0p4MGltQzVoTkxNaGhSa2R3aS1LWkFoTmdVN3VxRHBZbldNcDI0cTVISW1hMV9mWlhVbEl0ZFYtWW9yem9nNU4xNzB2TkpheXdxTzNfMmhoLXQzcUlFM2tEQ1psXzgtai14YUF4cnJRalp3UjBteUtJc0dPbEhKYlBBcXF6Tko0UkQ4ZUFvenp3czJqMHVSR0w4U1AyUHBV?oc=5"
+  },
+  {
+   "title": "Shock Leak Triggers Sudden Bets On A Massive Bitcoin \u2018Bailout\u2019 Amid Price Crash Fears",
+   "publisher": "Forbes",
+   "published_at": "2026-10-18 13:03:37+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQS0VXdExqeEhJLUdMN1FqYjFKcGc1VTFlalRubDBkSXRXWTZVVVk0bmpOdkVnWTE5TFl2bnNBclBGVWZtYmVxUkJlRU5rbW1xbnZKS0VkcXY4NHVkUzRTUEx6SDJxNEZjNWZnTW9kVEFWV2hMdzN0dHczeUd4ZmFveThBd3pLSDJKWXdUMlFNZENhZlRodnhZMk8yUVpqVmJscXNzaTYtblF1dEhsZS1FclNnWlNhSjB3S0E?oc=5"
+  },
+  {
+   "title": "Michael Saylor hints at buying more Bitcoin. \u201cWe found room for more orange.\u201d",
+   "publisher": "Moomoo",
+   "published_at": "2026-10-18 13:01:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMlF1bG1sU0JyUjRMVTBjTHhBZmM5dTFmQW9DVmg0NGc0ckRBd0dyWjdnamRhLV9UUzZXS1plcFNTOGRkelltdEd6Y19EampTUUo5ZDg4bC16dmIxdGx3ZkdRSFl5ZmFLWWpLODZ1UEtEa1FVV3ZrbnhUSzRHeV9xdFdHQVNCNjRPLTM5VW5EVWQ5YzVhNEcyZUZUQ29SSV95VFd2TzNTell6elFWTnN6Yg?oc=5"
+  },
+  {
+   "title": "Bitcoin\u2019s path to $100,000 splits analysts as rate risks loom",
+   "publisher": "CoinDesk",
+   "published_at": "2026-10-18 13:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNHVkdW16ZXYyc29pVlJldlV0U1dnUks3anJGbU91WURXcEdBNVlBbWFrMEk1b21aRjVURWt0aXpNdTVyYlhHYzNmYnlkMkdBZVY4UkpNME1vV1NSNV9ldW1zOWQtTUZFTVk5MzRqOEQxT2p1S2hJa1g4OFVzX1RrTVFfRnRvRm5wNkJUYkJjVlFLb3VKaGhqMG0yRW5VLXJpdjNVejEyZGZ0eUR5aUppZ3V5Wkx4QnJIOTFza1NQM3Q?oc=5"
+  },
+  {
+   "title": "Wall Street Veteran Jordi Visser Ties Bitcoin's Next Leg Up To Big Tech Earnings",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-18 12:58:17+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQYVNSaXpmeVlBY3N6UTBqRkJ3S3NlYVotLXNEUHFqUjJIcEJ4WFhqV3oyQXdCSzJvZ25VeWxuQVpJeklEYng0bV9WdUZtRnF3Qm15MVNVM1BOU2JyX2dFVVlTWmhqSnNrQ1RyS3VQU09uWEVlR1o4V0dfY3lFc0lYQUZHVkpvQ05wcDRyT0NIbWgwVDVFM1JDYW5pOEdvUQ?oc=5"
+  },
+  {
+   "title": "Binance Coinbase West Africa Scam Sweep: $11M Flagged",
+   "publisher": "Bitcoin Foundation",
+   "published_at": "2026-10-18 12:53:25+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPczZxUmN2NnRSVFJrLTN6d3Nyd01QVTV5elFkTkZtR0ZzQ0phWDVZYml4SG1mTHpOS25YdXYzWU94MGY1NnZIZWY4QWJsWC15Snl2c2ZTdEwwc0c3bzRSUlhLanpGTm8tVE90MVhZTkh5WEJ6QzFfeEY4MDc4ZTNNVUFOSzlxNHZfNlQ1enV6cFYyb0tGSWtBeGJncTNzUkJDNFk4bVJyS09LZXFuNGJja08xNmxybGQ2by1qdA?oc=5"
+  },
+  {
+   "title": "Bitcoin Price Prediction: Strategy Adds 250 BTC as Remittix Brings an Earlier-Stage Payments Opportunity to Market",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-18 12:51:48+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOWDNMUFEzX1ZVdUtDQ0ZZQXd0MG95bWNtOFB2TmMwVEJZYzNzUklocHpTTkpEajlHalF6Yk1JeEwtSGtiNVBSVGV3R0h4OG1aSW13THc1bnVycWZOMHBWam9GbzBOR0pOazExN0lKSUJHSFRmOHA3T1ltRzdKLW1zQlljeTRwQnNQUm1KVDVaRTJMZGNkT2dFemdad1NiVXFfbFZBMjNLTmtZU1draTFXNTNBRzVIM0ZmS01RU2hFQVk3cHRrdV96YVA5SGtQSEZaRkNocUZkWGVQX01jTmNFclM3SGNsNXpldEZldWdOa1VVSWpDZWxrQzR1ZDRGdXAzWGdpY2h4VQ?oc=5"
+  },
+  {
+   "title": "Michael Saylor Reveals Why Wall Street Prefers Cash to Bitcoin",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-18 12:47:58+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPSXAxa2xCMXgzcTBjUnd6YUlBM1N0SFl3THAxRjJzeVg0VjdZcS1uME1SZU12VFIzVDZCLVh1a0s2YjBwUFhCbW5MbkZvT1NzY2d6M3RWN2hFWlRia3RZa1VTc0VoRE5rbms4SXVsamhncHlpczNkVTJsMnJBcFRHaThMZVY3RmI3WTQwWDkxZkE2c1paeGkwVUJ3YWQ?oc=5"
+  },
+  {
+   "title": "Michael Saylor Reveals Why Wall Street Prefers Cash to Bitcoin",
+   "publisher": "BeInCrypto",
+   "published_at": "2026-10-18 12:47:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFB1MlFNdkMzR3VicmxDdU9zVnlVQkNEbnA0bmpiQUhuMjYzU08xM0ctOWVQMWVjNGRHeWFiSzhRaEJkVUVzMUw4TTRkMk9SenVVV3YzQzZXNUt2Rm9yOXNFNlVHdGE3NnNGZGk4?oc=5"
+  },
+  {
+   "title": "Wall Street Is About to Get Uniswap Futures. Why Is UNI Down 21% in Two Weeks?",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-18 12:41:38+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcVdjUklEdjdjbDl1NmJxUWE1dTRKUGg3cklhcU41RHBOQjhNMDVSMnpPNTByaEQzY1hIdXc1X3pGaXh3WXlERWJIbU5lTl92cWMzS28wN0ZGN1QxVHBmQUdoQWRWa3NVTWstVHJsd2s2Uk5RcWxvaWxDOVo5NC1uSVRXb3gxVEJoRFBnU2lGMkROeWh1VDlLTnJHVXA?oc=5"
+  },
+  {
+   "title": "Wall Street Is About to Get Uniswap Futures. Why Is UNI Down 21% in Two Weeks?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-18 12:41:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPM2lOR2phY2VkNEhnWl9GVWY3LWxXbmFwNFBrendpMEpFUUZRaVZTd3JTTzZEN2R5QllwMFd3cy1YNnVHek00MXZKTnZYMmlmZ1FuUjN5SU9ydlM3b2ZMcEUxOVpNNnc3RktnNDdpMGY2aW1VU0gxSFBJNjlvdkRRcjFwT3ZJU0RiT2xMM3RSZnhTNFdIX0lIbXVaX0hpNGkxZVMyWnZ4TnNrVWxGbDJPemVtUkpXWVVYdEtGdHB2TndRNUs2TjlSUmR1bVJkQ3c?oc=5"
+  },
+  {
+   "title": "Cysic Bridge Exploit: 10 Million CYS Minted, Bridge Halted",
+   "publisher": "Bitcoin Foundation",
+   "published_at": "2026-10-18 12:38:24+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdTU2Q3h4X01kRzZDSzdBSHZaQ2dsN1ZIXzBPbHVMaV9jNTJHZ1l0THVsdlFWZmU0enJRdUVnb3prMkpacGUwaThEYnUwaFE2c29NbUZuYU8wZmxiUUpLV0xRRkhnaVdkbmJUMGpuckJ2a3ZxYmcyNnJnNEZYQWpKN2otY3hDcTdBLUp6QU1UVG52NjVrZXJOM1RtUUN2VHpqcVRzV2dicTQ?oc=5"
+  },
+  {
+   "title": "Bitcoin Futures Open Interest Slips To $7.68 Billion As Traders Keep Funding Positive",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 12:30:46+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNbkREOWt3ZDh1elRyRkNMUlNxQldWOTV4ZWk0SEthWXRHYXhjNjFEZXNfTmEtbGM3dzQwazBTM1J0SWZMMXd4NTAySTdQeGE0QXpvc2ZMaEVTSzhQcnM4bHJQN0luTm5WN3ZSZ3UxSlBBcHNkWHdDQjhJNGxiV1BlR1E1ekY2ZVRtV1VlS1JOcUtnQQ?oc=5"
+  },
+  {
+   "title": "Bitcoin leads crypto inflows with $100M while E...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 12:07:44+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPb2hqWVczM0lEamp2VGpCVWNKel95UFRldmFfaDRRWTlMTjMwMTZWczhWOC1oWm40SWxNRHpoMGNKVXU2UkNsR1JLanZEUWgzUmE4VmZWU2xxazFUb1R5TFlYakpxNmI2V3I2MVU5bjRLMXZpUUtkcVdWSnlLUHBWZElsZk52MFFYQWQyQWpwRU9WbXB1UWc?oc=5"
+  },
+  {
+   "title": "BTC price range on Oct 18, 2026 at 9am EDT Crypto Prediction Market",
+   "publisher": "Robinhood",
+   "published_at": "2026-10-18 12:04:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQZ3pvUkFjSkRTd0Zfa0taak1ka29YMnhTQ0hzNVNMSGdIb19pNkdGbWp4cUhIZjhEX2t4cmpyTllQb3lPVExGNTVldUJiX0M0MkFFMzZ5X1psMS14QXRwRlh6SENxMkxFRlBoek1RODZGc1lPd2tIS0xxdFg5Sk84am5JTFBXTE14MExYX2FIeEVVLVM5dkh4TG9zZ2ZuMmJSZjFyQmM1MlVaaUdYckJHbnA2Q3g0dw?oc=5"
+  },
+  {
+   "title": "Bitcoin\u2019s sell pressure eases as whale demand remains uncertain: Can BTC rebound?",
+   "publisher": "AMBCrypto",
+   "published_at": "2026-10-18 12:00:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPaW1IeTJ6eG82X3o5SFZZTGE2MnJ2VndZc2ppRFFGbmFvUWd4TDAxXzBZUW1CUWUyQjV2U285T1NCSFVEb0hHUVRWQXlfdFBQbTlZYzlRc1NZVnV3Um91bU5zbXdET0Y0SENIaXRyd1NpZm5LTVhuSDVCSUJXYTcyMU1aRWc1WEFWOG9jR08zTGY5ck9lSWVQUEZxZVJmM19DcVlv?oc=5"
+  },
+  {
+   "title": "Saylor and Yusko's BTC Price Target, Bitmine's ETH Purchase and More: This Week in Crypto",
+   "publisher": "Benzinga",
+   "published_at": "2026-10-18 12:00:07+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNQjFydnJ0X3BRMGw3RFNYTnNEZlpDWXVsSTZlVWY1T2hfNXhtZUo1czYtVzkxQ25UdmFFbGVSYk4telkwZXVsUjlVdFo4dlFIVE1ZRlBTVDd1eWc3SEZhM0h4S3E0OHVjanlGYkdSS0ViOFVNaHZUUGczVG5lLTRaeWJBUW0ybTR5QmI0amk1SkFuVVBmM0FpNVNMU0JPVzJVbzF5V0x0ZlNFZHREWXdnQ09Wb0hPV1Y1VVdfc29ob2NlQXdQODJKYWMzQW0?oc=5"
+  },
+  {
+   "title": "ChatGPT AI Predicts Million-Dollar Bitcoin by 2027",
+   "publisher": "Cryptonews",
+   "published_at": "2026-10-18 11:58:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxONU82a1ZWSGlTTUVManR6S2NtcVRVaEw4UHVXWkRMUjhNLWp0eXYtbzNfeXR4WnpGRDF0TEZVTVN1dTZqa0hEVWR3UXFtMVJvUURPN2tZeFBjZjlDYUhZc2hnODJ3NkktVjRKTXE4MzFlODZyMWN4YVZZandMdndPVGRR?oc=5"
+  },
+  {
+   "title": "XRP ETFs Keep Pulling In Cash While Bitcoin and Ethereum Funds Bleed",
+   "publisher": "Startup Fortune",
+   "published_at": "2026-10-18 11:32:28+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOaUp4Y1p1MEtwY2xMdDlPS0xWQzZpQjdrdm9KcHk3UmRQdzRpT0ZLa1JwZXk3NUNXMGhsQUowU2ZBbl9XLV9fb3JUMlNQdGxfelVpQjdLYVpSb3dCS3R1eDhHNmt2ZGoyUTZaQmhMZElON3ZCTVBhV181Y1Z6SUZJQ1RzVHNRVEk5b1lITnVUQ1BLQ0djbU5FR19YRkM?oc=5"
+  },
+  {
+   "title": "Bitcoin Price: Record $125 Trillion Money Supply Fails To Lift BTC As November Signal Draws Near",
+   "publisher": "Coinpedia",
+   "published_at": "2026-10-18 11:27:06+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOMHAyUDROMUlJSTRFRmRGU1NldHdUWFpRdEsycjJXNjRlaThITTE2Y190SzN6QjZ3LXBIY19sSmRVVzJmWGNacFg1ZEVCRWVZOWluN245UFJQWklCZFJ2OEpRYXdncENvNmxlemlOdC0xdHNmZ2dYQjBaUjI2ZnFya3ZSZ194d0thM0U4SlZLNXdybE9oZWZlbDJIdE9wTHpkWXlSQlhsLVFtYzQwdU5hdV8xbXVxT1BFTjJ0LWRTRdIBxAFBVV95cUxQZEQ0SG85V0pQMjlXQ00wV1AyNm9XS1Q4TWZ0NXpzbkYyckJDMDl3Z0dJbWNKWFdRUkNQV29MNUFkbXpwQUY4SkNndTNqOF9GRWNxc3E2NkV3Y1pUNTYtYTZKeFhXaFJFdXd4UGZGUU90dWVSNXNtVkRVTVZNNTdySS1uaXB4QzNKNS1RMjJQVnhqZno4cE5zVHhXWkdxaUI3YjNxRU9Eam43dVV3TFlSdnFabTRsdW1zeUYtUlJSdWlNUTBU?oc=5"
+  },
+  {
+   "title": "BTC price on Oct 18, 2026 at 8am EDT Crypto Prediction Market",
+   "publisher": "Robinhood",
+   "published_at": "2026-10-18 11:03:59+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOcXY2QXBFbmlVWWpPbGg5bkRDR2ZJemliRmZYczRGb3NmYmYxTzJFTUlmbWx3YUlWLU85MWl0cmhEQU5aeFR6MWFjYlZPM1N3V1lQSEcta2NzQWxhN3RmWU9GSGN6cHBjSzhKeVZwRnduYmRmWElDZ01vbDJWcVM2TVdwUnJaNmp4TzFLTnFQaFlud05XSm4zQ1VEblZuelJrbDA3a3pvM3RmZFlvOUE?oc=5"
+  },
+  {
+   "title": "As Bitcoin Matures, Altcoins Face a Reckoning. Here's Which Ones Have a Real Use.",
+   "publisher": "The Motley Fool",
+   "published_at": "2026-10-18 11:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPU3d0QURZNVZWNXR3VEY4LU5qdDZXZVQtZC1vQkp3dWlpN3Axd3RqZC1aS2pteFF1U05obmRad21UYnQ3YUlxS0hfbGZ4S3hIRFJSazZMWC1sMngzUkgxV244YkFqWm9ucU9YaUtxVUZ6WkVRVF9YU3RoSU1scllER19TdXZtTVJIQkJsOWJINWJkbDBiUHNKRA?oc=5"
+  },
+  {
+   "title": "New study warns AI could change money forever, Michael Saylor has a Bitcoin answer",
+   "publisher": "www.thestreet.com",
+   "published_at": "2026-10-18 11:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxONlY1TU4zZTZfVmNkQmRWc2FhaHFpYm5wVzVwekJQTFY1bmJKSmNJOVk4Y25PVHk5OEVwUF9qZWZLTlFFaHpQQTJCUmtKVEh1R3hiLWNCQnhibzVFQndERC1HOTRuS3FzS3h6SWcyMW1hZldnTWpiWHEwd0MxbkFTcGMxNWh5M3BuYmpYSlpCSHBxc3dGc3ZEcHJMeVdOOVNja3dJRUlfWVQzbjZ5MEsxTmVBa3hMUWhNYmVBalJ0NA?oc=5"
+  },
+  {
+   "title": "Ethereum ETFs Lose $320 Million In A Week As Bitcoin Outflows Slow",
+   "publisher": "TradingView",
+   "published_at": "2026-10-18 11:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRGFiclhHNFQ2WjNLR0RNek9hZ0NTdkxqMVFwNHN4MVYxNVRmVzhSZWNiaGF5VHBXMTl1ak9jZnZEbGlIM1FZZWg1bUE3NXgyamxNaE5QNk9wdW1LQW9xUXQ4U2VSZmRwUzNpbTlxRmJYbFU4aVVhRHhwdzZlT3diUGphdlJpMEJScFY4Xy1IVXNFcVRyVHdmTE5LaHdnWktJbTZtbmwtdl82M0twZUYwTjBKUWFjRXVWWlQ2RXV0WDA?oc=5"
+  },
+  {
+   "title": "As Bitcoin Matures, Altcoins Face a Reckoning. Here's Which Ones Have a Real Use.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-18 10:20:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVTFmMEJIQUNlTkVHSV9jTHNWRThYWkRLekRnaDQ4UUV0cmdETkpKT25POW9ad3k4T0JId0xUeXd2WXg2U3NOdlpOSFdMYkw5VFBtcllSSHZ3eU1NTUJvcHYxU2w1Y3RPdGg4OGdrRXNBc21EYTVWY29HNm9lOWtyWFV4QlZNUGMtTzJtOXN5OHdORDNRaWpBOGRfeFRfRW0ybXJoc3VoMA?oc=5"
+  },
+  {
+   "title": "Bitcoin Analysts Are More Bullish Now Than at the Start of the 2023 Bull Market: CryptoQuant",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 10:14:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOY3kxVWt1TUFfd1JGc2p0ZldJYzJsV1JjWGlXS3lqdjQ3cjd4bWluazU5RU5fOUNPMWd4QjhNVEdkX3J5bmo4RGdOMzNkQnlOOUo5cm5KNzExdzNZUFJLa3dlZlpWa3BuZDlkX2NMTTdETzlnRHpIRlZXamFiVTNrWFFrVkh1VDdlbzV4WmhQUWFocEdCaWhnRzdKMUtNMnNRZ0NtZTZqdnlWQVJuRlpieGJYa2tsSXp5WXBQYnktcUpmZmxEaDFyOA?oc=5"
+  },
+  {
+   "title": "Crypto Analysis: Market Caution Extends Even to Bitcoin",
+   "publisher": "FOREX.com",
+   "published_at": "2026-10-18 10:09:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNdGo2c0VsMnhpQ3UtSXdiM08tbnRVajlVSGpMNkdKWmZsYy0wWGZiSmVObXl2dkp2MUcyQlIzTHlzcXdLckVvcm9oWWZPWjFvT0plSTJUbU1nN00zVUREMUxRcHkyM0hfdVZkN1dnNzZsRExselNzd0phVHlsTjVNUlJHdzJLcnVxSGlYaTJBbElIWC01YWpsNDEtN2FYeTNNRVNTanltczZPVFVUamxB0gGvAUFVX3lxTE10ajZzRWwyeGlDdS1Jd2IzTy1udFVqOVVIakw2R0paZmxjLTBYZmJKZU5teXZ2SnYxRzJCUjNMeXNxd0tyRW9yb2hZZk9aMW9PSmVJMlRtTWc3TTNVREQxTFFweTIzSF91VmQ3V2c3NmxETGx6U3N3SmFUeWxONU1SUkd3MktydXFIaVhpMkFsSUhYLTVhamw0MS03YVh5M01FU1NqeW1zNk9UVVRqbEE?oc=5"
+  },
+  {
+   "title": "El Salvador's Bitcoin reserve tops 7,800 coins despite IMF limits",
+   "publisher": "TradingView",
+   "published_at": "2026-10-18 10:08:44+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPSEFzQm1QMkUzcG5UQTlwU005YXZYR3lwR3BtV1RTX0JuQV9vUEJYOGh0ODd2TzBlazVZTDdPQTN4aHJjOFdCNXlrTEI0OG9teHhZaFlJNzZVSjRobloyUTJHc2llQlBlbmZPbVZhaDZ6MXZmWHJnZHVJUGswZWhxZ2tiWVVRLV9UUEY1UGxTVkFxVlZneVo5djBiNHBVYmFVR2l6OUJsVVphRGRnMUdtM0tPbExkdzhLVU5FSERCOEdmSUJjWmo0R01B?oc=5"
+  },
+  {
+   "title": "Bitcoin Analysts Are More Bullish Now Than at the Start of the 2023 Bull Market: CryptoQuant",
+   "publisher": "CryptoPotato",
+   "published_at": "2026-10-18 10:02:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQdFJlYUwtVnNFdFFQbzI2dWhDcWw5cDF4VTRsbkJfaEhfdDRYOTlrUW0tT0N0OTJCUkJCU0dvTjZZYVZEZHBiY3BiMHM3b2NkS0RMNk12OFBZcWJGMmgwWm1CaUh2X2FSODhWMHpGQkhqR1NWMnpDUTU3MnlLYlA0X1ZHeF9RckxKRzBpQ2ZyYW1rN29YNU5HQkNYSlVEOVY3Q0JtZjdmZVVWdXFVU2pmRXFvWmNRQ2cx?oc=5"
+  },
+  {
+   "title": "Bitcoin and $STRC: Saylor\u2019s Insights from ParaFi Investor Day",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-18 09:05:41+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBsMDlOTUZLd0xYRWU2RmY3SmRiZmRJWkEyQXJDVEpSVWhVMTMzY21uNVFpeVNaeXhZN2RpQm8zX3JXOGlKQlBhZWtqcnRLcmNMaF9seHJOelY?oc=5"
+  },
+  {
+   "title": "Bloomberg Analyst Makes Alarming Prediction for Bitcoin: $10,000\u2014He Explained the Condition",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-18 08:30:39+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5TLUY0ZWtCWnRpSTZNaC1UMzdRTkdic19fVXFRdzhlcEx5OGZmeFhTXzFlUGpfOTRqRmlQcjhhbWxEbS1iUlJZWkYxWWM3c3IzSUwzMlFBTTE?oc=5"
+  },
+  {
+   "title": "Bitcoin\u2019s Recovery Challenge: Three October Charts Reveal Shifting Supply and Demand",
+   "publisher": "CryptoQuant",
+   "published_at": "2026-10-18 08:16:35+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5rbm4xYnhpUXNQdDg3Y3FnTTEwMEZCTWdRZ0lrUWFrQkFsa0JuWlNQUDQ4R2VZVVJpSEtGTGhfQndHNHFCR0RrMWpEdDZrdFRmQmE2dERzZGM4cXFGcWlUTlZocThkZmh2cVZzY2tNeFZydnlYNkE?oc=5"
+  },
+  {
+   "title": "Bitcoin Returns to About $81,600 After Weekend Flash Crash",
+   "publisher": "www.tokenpost.com",
+   "published_at": "2026-10-18 08:07:07+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5KaTZEdTNDUHBhZ25QUU4xVjk3RXdyRXhJZVZURnV6OGJGMk9mcXBsZ29ncHFLNV83S2J5M2dzbWp3YUZ5SzFLMkdteUF2d0dsdndhU2RVRHJndw?oc=5"
+  },
+  {
+   "title": "BTC, ETH, XRP Recover From a Flash Crash as More Volatility Looms: Weekend Watch",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 08:03:16+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRlBEb0dKVlE5aHFwVnY5SExCUGtyc0t3ek5VRG1aczc3MlBNODg3aXRDQWFlWmJ0MDFUcHI1TUJqcFJEOGk0OGp6VUM4VkVVcHFnTk9QRHlsdVJxOUtYN1RmZ19KMzJLV3I3UmROTndFTlV2ZGJUR3NwQ3lqQUtyaFlWb1ZEV1U1S09fNTlLbngyQXN2SllwdktVeGppWTl6a293cTlNcHdaVjUwMTczc3FycGY1Zw?oc=5"
+  },
+  {
+   "title": "BTC, ETH, XRP Recover From a Flash Crash as More Volatility Looms: Weekend Watch",
+   "publisher": "CryptoPotato",
+   "published_at": "2026-10-18 07:56:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOTV9lcG8xWWFpMTV1d1pSUmxKNzU3TUJualpjb0d5VmV1bWVOaXpfNXJHYTNXTThaZ3N6OVZkeEw3aDcwaERtSUg2OHNRVGo1N1R1eDBDZ1Ezdmx0SktZVVpLQk0zV1VOMGZVNlpHLWluUlNpWWFCc1dKNllvaXFGZ055R0hZVndwbFlHOENmWkNuMGtURkdfOE5GRkhXeThiajJ1a2Jn?oc=5"
+  },
+  {
+   "title": "Investors Withdrew over $548 Million from Bitcoin and Ethereum ETFs in Week",
+   "publisher": "Incrypted",
+   "published_at": "2026-10-18 07:17:12+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQQTlzcFcyVWQ3NUN2ZXpSZ3VvXzlUZS1fa3BRRXlOLWpDek1ZSExZemtnQlI0Tkd4WHI2NGM1UlhSUkkxak9CSXJTWUtQci1aQmNWc2ZndXEwMllVeDZSTnFVVFo3UFExZ1oxUVFxdUJPUy1DUWctakxNWXpFeXRDRndRZ0FyMXREdm1MSVppTnVJU3g4aVd3amVlcFI3Y3FVNXc?oc=5"
+  },
+  {
+   "title": "Anthropic's Junk Rating Sparks a Bigger Bitcoin Debate",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 06:53:49+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQM2JkVzktaThlalNFaUZmOTYyT1FfVzRsSlo4OGZjY3AxQjdCX0NzM0FLTGFsU0g5VUpyR09OWms4MmtYeUV4ZmZacFM5ZFpUVjVZUU1zNG1hWUNwM1d2NmpZWDBzOUVZN21Zb0dRSS1veThqTkRTOUxLQ1pzQXhndmJR?oc=5"
+  },
+  {
+   "title": "Bitcoin struggles above $80K as whale transfers signal mixed outlook",
+   "publisher": "Investing.com",
+   "published_at": "2026-10-18 06:40:51+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPZEVpQVBiUHNsalFlQjQwNmY5ZTFVS1Z3d0RfVTdQN09kX3MyVHk0dm5lZkdHaGZWdmgtalF0MWs4YlZWRktMZU04bWNkQ0ZoYU5BRHdob2NyS1l3eWJqQnNURGRORDF3dEJvdUlBU0NiZ3hIUXREWWFqRm12M0xJRU9Demw1a3hTV3ZXVkhOekNfZlhZSVdmQzZXTjNEWV9fUFp0X3pNSmM0aWY3bDRudFJzai1tVlpLS29PRFAteE01QV9y?oc=5"
+  },
+  {
+   "title": "Ledger crypto wallets compromised in hardware attack linked to $90M theft",
+   "publisher": "Yahoo Finance Australia",
+   "published_at": "2026-10-18 06:26:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUE9IajVabHlsRGt2SkF6cHI5SFVQeFRpM1Z2cEY5bGVqa0dSenRUOVg3UVVGMk5meTZwS1dhUWZtU1p6VzdrTjV4VWM4Ul9INHR5alZYUF9HS1VzQ1IwQ3pjZDVrSkk3RVQwdHhHeExDY3lWZkNFWHJyLVVIM09GRURvWUROYlJ5Z25YU19jZVRzWHZERHc?oc=5"
+  },
+  {
+   "title": "Bitcoin network fee: 12 cents per withdrawal",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-18 06:18:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxORjlkT0VORno0UU5vVXp0TjNyR2dFTHZzTFdFVzQ1Ui11WndHdTFuSWNPdW9MYlJOMG5LRXBFYzZ0eThEVTBGTjN6UlNleS1zZkE5dFVEa1RUb1NrYXQzbnVsc1hBUVE3OHdZb0k4TDh4bElqb19CT2duZUJyeVpwb1Fjcw?oc=5"
+  },
+  {
+   "title": "Cryptocurrency News: Bitcoin Trades Near $81,500 After a Volatile Week as Remittix Nears $33 Million Raised",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-18 06:01:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxNVmJCQkZzS2F2TWxrcWtDOUFrUmlwZ1A3aEhXU01xOHpIYkltOEJfS0FpXzZHMkk1c2hkOEJkWXh4R0hKT0loZlVJazRsN2ExTU9aUURNNEFqSEdlYkVLdmJQYWt3X3pUVmlvWGNQWlUycnBUX3BpTFhXMjBPVElVeHBpdkR1cVBDWkQ5OS1Qd3NMb2Jxb3U1bE8tUnFZUDctdEg3eTdNR0RrMUpkbXNpdmpfRmtfRlRWbHJjQ0hSZG1mVFRQdUpicDE4UnRDVU1tb2lzNmVEXzd6M09LQXhaWUNRZ0QtVVMyNGRpRjNha0pQT3B4QmdzMTRUWVItTlJhekFISlRB?oc=5"
+  },
+  {
+   "title": "Crypto millionaire uses computers mining Bitcoin to heat the swimming pool of his $45M mansion",
+   "publisher": "supercarblondie.com",
+   "published_at": "2026-10-18 05:56:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPMnh4Sk1tMWxMdnFTZGRKTTZLUV9RVVFZeVpSdUhxYWlEUGdsdnFPS0dldVdQNHVsOTVwU0s1X1ZMQ1otOVdQbUFsajZOTnBkT3JRNHl5ZFdHVk5Lb2lBVEJkZlA3eFIwUEdmSzVqY1lFWmJ6Ul9DVng2S3V5eTA1RVRrTF9YYllpeFVGZGt3?oc=5"
+  },
+  {
+   "title": "Binance is shutting down its bitcoin mining pool after hashrate crashed 65%",
+   "publisher": "Startup Fortune",
+   "published_at": "2026-10-18 04:52:44+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMENhOUc2N2lRQkhHX2owaThBSGV2ZHMxeWo5Q2gwQUhnYkNXSHdvWFhteU1uMGFVR2RFbWJGajlTNDF4YmxPQnlWbWVaZVJNa3N5WFZPcjFJQlpwekNSX2ZseUlsQkRXUmk2bkVwMTBieDhzQTV1UXFMN1ZKNnBQSWdEaDhyOFFwM3RTd1hXRG84NUdZc3A3anlEM19MdU0tNzhnQg?oc=5"
+  },
+  {
+   "title": "Bitcoin Cash: 131 Blocks Instead of 144, Here Is Why",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-18 03:33:13+00:00",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5jTjdTYVYtTUc3SFBlQU43bWJoelBWQTJhenU0OTdOaDRWTmZqU182MUJGLUZxbDZqeVRSX2hVSDBhcVhRRXRlLVVmb0dZVmFYS3JwZWVaQ1lPVXIydFNQbFJnMml0bHgzdTNJVllOS056VEE?oc=5"
+  },
+  {
+   "title": "Anthropic's Junk Rating Sparks a Bigger Bitcoin Debate",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-18 01:11:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPQWxhakVuTlhoTnJDLS1fdnM5V2ZIWlVZcjAxaG0xcFVMd0tKZGJSOXQ1c1VvUDZ2ek5ndFpfdks1bjBFMElXcThoUEFMOFBfajFscHZhRXdFVlg4Q0c5S3ZzYXJUeDMxUVFUN2pudzNIVko4cGRjWjFHSTNheDBwWXJWTjUtbkttazcwblpkMWg2Y3RRX05ZTWpZR1o4N3Y3cjdF?oc=5"
+  },
+  {
+   "title": "Anthropic's Junk Rating Sparks a Bigger Bitcoin Debate",
+   "publisher": "BeInCrypto",
+   "published_at": "2026-10-18 01:11:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE52cEU2TnpTb3ctYXhlRVQ0X3dKcUszeHJRUS11TzF2aU1IU0xmNGg3T2xXOEpaUnNqOFdwa3puRGR2SFQtNGY2NE10Tk1xbkVhRG5ZV0ZMWEZkd2MwOXNwZHIyM2RZajRsdHJPa2t0aw?oc=5"
+  },
+  {
+   "title": "Pump.fun Just Launched Futures on Hyperliquid. Better Buy: HYPE or Solana?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 22:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNX1dXaDQtV21uTTBfcDh5NlF5STRtVGw3MU1GZWdsWEVBLXRUZnFlVGRjSlFaSUFPcWFQc0pZalQzMHJMdEIwZTJOTFVaOHJSZDRKRXFnck1EYmRwOW9ZdFRiRUIxWkFIcnhkcGhVcjhhUnhnYzZDdkNrc0hOYkctQVprb0tWRjV6VGtTVFg3SGluOVVTX2dJQ1BIVFZ4eDdGU015WURydVNxbFNaQlVWbm8tX3AwOEhjUnNSOEZNV1hUQnRvRjNuTWFn?oc=5"
+  },
+  {
+   "title": "One of the Biggest Victims of the Ledger Hack Was a Crypto Scammer.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 21:30:41+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPb0FibDBhQ1UySDZMZUZUbnNEVEJRc3pTb3NxbVh2ekR2LTZCOGhGV0VmRkppTjJZazcwcFNKMTBrWWpsMlFUTk5rem5JWHpmS2YyYnhEdVR0R0hub3ZwZkJ2UEpDSTJLNEx2WnRTRFkxb3ZRYV9aTFkyb0kxaWJJY1dWVElvZFNVc2JXQUZmMnU0MURCbzNvTWJQUE0?oc=5"
+  },
+  {
+   "title": "One of the Biggest Victims of the Ledger Hack Was a Crypto Scammer.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 21:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPZUthVW9ncXN4VjU1SFpMeHFfVFpqTmVQbWxmLTJFdlZnSTN4X1RZYVBONUt2Qm9adU9ocDk0SmctNl9OMDllSExIM0ZtYmpzMktWakNtcUQyN09LZXVkWDVkVmFlT1VaWF8wdWJFY0EtOThFblkzekRabVdPSGMyeXhuWkZTYW9LY3Bzbm1NZ0Zsb2dtWEFGUmhKOVBOWk9XWDJOVkNHLXQyZnBZWkRIUTFFM3pWMGxkRnVFNnJFd0Vha3c?oc=5"
+  },
+  {
+   "title": "Bitcoin: Large Spot Orders, but Fresh Demand Remains Unconfirmed",
+   "publisher": "CryptoQuant",
+   "published_at": "2026-10-17 21:16:31+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5RbU5QLW9MQjN1bEd3cFdIc0FFM0tGVDZ5eGFacEFkYm1MMUtwS1YtOEtHUUtrMW9waXRDZXRNckFhZmljQkpYWWt6MHZ1UlJJMFJGdF8xcDBVbDNtLXR5eEZsVEVDNnBBYjJqMWdTUkVUazI5c1E?oc=5"
+  },
+  {
+   "title": "Coinbase Global (COIN) Wins SEC Backing For Binaries And Flags Bitcoin Quantum Risk",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 21:10:32+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPS0hwWWF1UndCOS1wYXE4TTYxVDZRWjYzT1hSa2x3NnowOU1PcGpjMUdNVDVIbUdBN1QxU0JJM0RxUXRUVjBiYnVZVWxISEJaUG5CX3lxOFExX2FSRDd2dGs0bk0xVm5HVGdMSGU4WkR4Ujh0bWhsZk9nYy1iWWdiNV96RVM2OGUwUEJlS1FTQ3pBMWdxdURERHpB?oc=5"
+  },
+  {
+   "title": "MSCI Advances Rules That Put Strategy at Risk of $2.8B in Outflows",
+   "publisher": "Bitcoin Foundation",
+   "published_at": "2026-10-17 19:02:56+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNd3MxR0Q1MFUwV1BqTWRzUjRCUUNJT0FPbm9zNFk0ZWVTdjd5c3RfbE9IeGtQQWlaVFpzTVFlYnBab2lyOTlQeGxHaWNlamZqYmtkaDRwX0V4UHh4UUpoNnMwYncwS2ZpZnEtMjRiS251RHR2QVpwSjUzaG5jTTZTdkJiSXZLSHJacTNDQXlyNEhqUFBneGhqbVZlQmpyakRRSC14Q3ltWklLWGxybnc?oc=5"
+  },
+  {
+   "title": "Crypto Firms Launch Quantum Alliance as 6 Million Bitcoin Sit Exposed",
+   "publisher": "Decrypt",
+   "published_at": "2026-10-17 16:01:03+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUUVjdXhrUDJLZ3hzOE9HYko5ZjV0Qk5vLUMtaTdLbUowb0IxMHBHV2l0Ry0ydV9DTkZiUkdya0swSjVNYTAyNFdrVFJtRUJ6bW1nQzNDQ0xrdU1hRC1FTFVsZ3owVEhTRTFXVVljTG9PelRFcDEyaU5iMFBrdGQtWHowUXRESFdnUEY0YzA5aGZUeHF5RjBFNXI2VQ?oc=5"
+  },
+  {
+   "title": "Who Really Owns the Bitcoin Inside BlackRock\u2019s ETF?",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 16:00:38+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbEEzWHN4LURYUzdWekN6SGpyZlJQaHlZZ25Hc1JtWVRVQUR2NTdTZkl0NHBzX2dGRU1ab1VvbjRqcDF6VzRpSm41TlEzaVJLX04zbjItc0FMWWlHdkpfX0dhVkt0YkVrRUFHcGt3c0VUZjJONGdmdW9DTW1XX0RlaGlOOUZWTzNlZVcyR2J4NUhXVlluS1c1a3VrSDc1ekJweTJr?oc=5"
+  },
+  {
+   "title": "Who Really Owns the Bitcoin Inside BlackRock\u2019s ETF?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 16:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQV9LdmpzX1A3OWZrRWt5ZVNacDdRSUQxa1kwMUY2NE8xVkZmaUx2Q3B5ZDBIckR3bDdJWlNHRzlIbklVZGdDZ0lQZGxLS3ljZ3JUcnpCdXoycURyVVY1TGRQYzQ1eXF2SFd3aGxtRl9wSUpRYTdnNHg3Nk1DaXBqQVlNWmVxT0NZZGhBc1dBb1paeUE1UVctS2M5ZlFRWXdYemw4U29BYUNGTHMx?oc=5"
+  },
+  {
+   "title": "Deutsche Bank Is Weeks From Holding Bitcoin and Ethereum for Clients. Could Other Big Banks Follow?",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 14:30:32+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOLWlHQnpKMEFSNjlXSVBXYjNVbk5FbG1ocmQ3WlM1bjVmUS15Y3VPTDlEZUxocG5WUkZwMmNBNk9CdmYwRkIwQ2cxb09IRC02VkRRemtkaWFOclpBOFQzLTBvSm5JR25rN0FXY0taTTVsMHRUSm56TzlzMWhoaENFeXQzaC1VQnN3eFJ0RVZfSldtZHk0ZnkxX2NZNzRUeGdkd0E?oc=5"
+  },
+  {
+   "title": "Deutsche Bank Is Weeks From Holding Bitcoin and Ethereum for Clients. Could Other Big Banks Follow?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 14:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNek1CaFEyeW9Yc3NMR0tqdkwxSnNvNGlGN1VqdElTVWVVdU9fZVMxOURkaWxfR01qcnZmWUxBd2p5VDlQVUxXZi1DdTB2SnZqdlVVTzl1d2RVVm8xamlCSUlVcnpQMi1LUVE5SkxaeEFBenNaYkNHS19TLU1CM1YxMzVlWmxwZkJUdm9OVWtwRldHckNNaHVnSWVUWVA2NGxtU1hPV1BReTlYRHhoLUJMSEtXSTFKbkg3bTVTVDJHVWFJSlJIRWp1RjZPOGRtS2ZYaG83UU1HZXJOdkliSnowRko3a2tRSVBCbm1xcw?oc=5"
+  },
+  {
+   "title": "Hyperliquid, Monero or Bitcoin: Which Could Hit a New All Time High First?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 14:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPU0hmOHZCT1EwVkFYei1yWDJZaVhMMGxmWkFQLV9zMEhoVEtHRzZzLUdVS3g3UV9PNVFRR24xeWk2YmEwVGdBTl9IM19lMENVMlVueVFvU3RGcGpxN1N1VXNYb01fNGo2eXdfMUhOZWIyYlc5YlBxOGlMMENVbWg3c2loY2xmUVRuWUlCUlY3SVhFaDVwaW9hVXNmalFGZFpRX0JGVXFwalp0TGRua1dPdHVaT0hwdzBUU0JFVkRaN0ZNUFM5YTQ4UUV3?oc=5"
+  },
+  {
+   "title": "Bitcoin Bounces Off Its Lowest Point In A Month, But Charles Schwab\u2019s Adam Lynch Warns A Midterms Risk",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 12:38:14+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPclBzcHFMRE1YRU0zTkhCemo5Mm41V1o3bmNZSUJZRlVVR2F1MUlsd0VJNDFISVRaak9JTjE0eXJIZ3F3Z1E4MV9ncGU4elZhUEpuWW5pTjRyY2tWRGdxYTEzZ1JxM2tWQThlcDUtbVIyam1JYWZUeTl5Y2NUc0lqZ3pGNjZYbDd3VDFWMjZiQ19zbHZ3d0VJZWFRZFpKZw?oc=5"
+  },
+  {
+   "title": "Tom Lee Calls Crypto a \u201cCoiled Spring.\u201d Which Coins Have Pulled Back the Most?",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 12:30:35+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQdUJsMGJmYUg5ZmJ2a1VXdEptSGZFeVBXcEZWTUJZQ05OTTVKSFlsdU5KM3VIdW44dFJVZFZrMGx6SmhlcnlJQU4xM0Vkd1MzZkQ2Mk05QlhYdU9NeURIVGxWZTlVNVAxbEt2SHZuM21WSEFsejZzTmlvdkFfVVN6bDl5Wnp1OGFDVFNwX0NsangwWEtXbHln?oc=5"
+  },
+  {
+   "title": "Tom Lee Calls Crypto a \"Coiled Spring.\" Which Coins Have Pulled Back the Most?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 12:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQQ0JtTzNtTE12Zk83SFpBZG5NUmZvTVVJcGh1VENZeHlIYlEtUzZ5NzRmR29fUFUwYXBaOHhfUFJub1F6Q253b2U2WVo3MS1LRmk4WmUzSXdiWHhSNlVqSTZOWFl6ZzJzOTIzVTdpYVNqc1RJcnBpRzlUMTZqQjU1TnFyUm56ZkVXOTBPMW9ua2VaVzVNUjY1Tm5GMmpMdjdDUXZyaUpGWWxkMHFZU0dfa0ZsVDNaQ0dscTVUNXVPaHBJcU9qTUlHWGl1WGlqQQ?oc=5"
+  },
+  {
+   "title": "Litecoin Just Turned 15. Has It Kept Up With Bitcoin?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 12:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZ2ZvYlUyLTA5cmY2eGRpM2NJYnBOZUwxYmNEZzVvdHpKN1FtWE1tcEtwNUdOaWVmV0kxUHVOdHhfeWp0ZTZHVWx1UVZSNGlLaTM0ay1iRmhBMU12ZHZuRUxvbW1aQnRWaXJ5MTBXTTdGNWVjTDZuYWcyOUZhd3pINEZqbzRPR1pGSEk5MTYxaEFKdXRlNzlrWnNIZENQVFRSNFhqX05pUHd3alpVMmtz?oc=5"
+  },
+  {
+   "title": "Oil Just Hit $100 a Barrel. What Happened to Bitcoin the Last Time Oil Prices Hit Three Digits?",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 11:30:30+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNNEQ2VllaUUJkM2E2VmpLcm0zZ2x6UUxxYTNZQWxuRGJzN3BQaDNWSWlqYnpQSV9pQV9NWElzamdiVllRcER5R3RjbGQxZG1abzZvSEppVkRYNU1JQTBfdFB4ZVpyZDNlRTF3UHJfM1hxZ01nTG1yLWM0aGh6dGZ6bkFpUVFkbGZBT3lCYndCMFloQQ?oc=5"
+  },
+  {
+   "title": "Aave Is Moving Closer to Accepting Native Bitcoin as Collateral. Is AAVE a Better Buy Than BTC?",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 11:00:15+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNc1lGb1BhZkhTWElfUjk4TGFsRU53bl83UVZiS3ZzU0F5ekdXMTVmOG4yWmxOcnNaUng3VVlKdzFHNjF0ZWoybGpUanJabFNETzBSQnpGb2E1RVVKUnNkRmYwcFNVdzZtc0JsbGxwUklJcmVyQ3RyREhkb2g2UERQLW1QbW8xcEMtMjNQMlBiY1dZWDJpRFVVeWtPREFSVDlsdnc?oc=5"
+  },
+  {
+   "title": "Aave Is Moving Closer to Accepting Native Bitcoin as Collateral. Is AAVE a Better Buy Than BTC?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 11:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPdHhVQ1JxSXRISWJEYmJ4VGhlMXgzblNYcEJsSkkyNjhJM0V1VUFmZUlIWXY4cnNuS1M5TTJRRlplbk9QdE5jZmtLM3pHejlDeWM2cWxtMXUyVVQ4U1lmcDVTS1RBMmZ2WmYxbUFIZFNvOEFIUnhONmtERy1Ha2k5cUxOaFdYSlp6bnJtUnNvaWxkdUEwSnlES0FmWFFOMm5lZThuaDBTaU5OWUhHd2VGRVJKREFtTDJFSi1wa2F6TVB4R3VWcXBLRURnOUdoRVZkSlRFcE5Ub0dsaEtXX2JWV1N5WjlKQkU?oc=5"
+  },
+  {
+   "title": "Is Uptober Over for BTC? Bitcoin Is Down Nearly 4% So Far This October.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 07:16:25+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQWHFYZ0NPME9WM1ZOdEVBd2R4WlRlcWEyU3k4ZEhmMWRqSkhCZG5IUGQtRTA5Vi1HZUdZazdYTGNUcldmMjdhd052Ukw0OFdPckpFMUlMNV9EUWU3RnU0TENhNU9TdWZOZFdMYVI3TkliYTEwVWZ3TzJHaVR0bXFKZDFhcmh3SDNua0RiQm5GVFcyNnFkWTQtd0R3?oc=5"
+  },
+  {
+   "title": "Is Uptober Over for BTC? Bitcoin Is Down Nearly 4% So Far This October.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 07:16:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMGVqR2pIVjlEc1JfdXBtYWZtbEVsX2J3b043V21HbUVCMWNOei1LWFFEeEI1WDE2SVdHMVJtZ3hZZ1FWeTEtTHVNQWNaYmtLdngxY3hJZlpfTGlOLVN1cHFhVk5mdVc0cU9MYTNzVnFMVUVfYS1ZNjdtbmN0ZnVkN3RDa0VYSzd0NmlNZFZEUzFibGQwbGZ3aHpGYmZHMFNwZDYzcHRCMGNLVjBhWFVSYlQtdExtRXp4MHlySlVTdVNEdjQxT0E?oc=5"
+  },
+  {
+   "title": "Bitcoin price holds above $81,000 as ETF outflows weigh on sentiment",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 06:18:46+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQQjFaT1doRzdLTHJ0a29KcWZORDR3YTNxdTJOOGRHcDlHQmVxQktkU2pJVUdTLU5Gb0J1THByOUN5RGxuMDM1VGRRU19rYmpIYkhVcEtpaWRTM2kyYVYzM3A3bmNjMzhhU1hZV0h1bHJfSmpIN0JlT3JEWmtRYjVsLVJvZGU2YWdOM0VBYnZ2ajU3Q1I4c2QwcQ?oc=5"
+  },
+  {
+   "title": "Satoshi-era bitcoin faces a bigger quantum threat after Google\u2019s new Willow breakthrough",
+   "publisher": "CoinDesk",
+   "published_at": "2026-10-17 02:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMC1lc1BqSkFEZlZycHhIN2ltczJTUC1fdVYzVXZwT3N0MGsteDlSejBTMWFjWE9PWGhWSFo5WE1pREJBZzdMMEJnZ2JMV1dYTHVaVkVEYkswTnlrcDRudF9zcFAxT3BVQWY2OUdnX0pNU0hNVDZSMW5NVDhzc3ZzN3ZjVzRNdjRvOXk2a3dRZWlfQm13T3RmU2Zxbkg2Xzd4YnVEYVY0MTRCZDgxZVpyVVQweXRCdmU1Z1QyT01RcnlrRWJ6Y3g0Sw?oc=5"
+  },
+  {
+   "title": "Crypto Analysis: Market Caution Extends Even to Bitcoin",
+   "publisher": "StoneX",
+   "published_at": "2026-10-16 20:23:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOdjdERE9xN0lvN0xEaDJ5SE1NV1hnQ0V4NnlBeGhNc1NTQUs5U3JES2k4bTgyUnU1dzN4N0NqSFN6MXZENXJlVnc4TWtZOHJ2NjFfbXR0bUtxaTlzWkRtWHBmdmFWZDhoX2NMYjZ4bWVBMHlCT0d3OUY3T2FaYU9XR3pYVVYxdXg5X0NsbjZJRXRUaGg0blJnY2k4cVhCM2RwNjVlYkNjQ3E4VDZYV2h4a1JRbw?oc=5"
+  }
+ ]
+}

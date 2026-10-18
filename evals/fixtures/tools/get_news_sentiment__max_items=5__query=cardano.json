@@ -1,0 +1,611 @@
+{
+ "tool": "get_news_sentiment",
+ "args": {
+  "query": "cardano",
+  "max_items": 5
+ },
+ "kind": "raw_items",
+ "recorded_at": "2026-10-18T16:27:12.692391+00:00",
+ "data": [
+  {
+   "title": "Cardano Founder Says Working to Solve Crypto\u2019s Biggest Problems",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-18 16:05:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB2MDVPYmJHMEVzZ0NCdWhTOWNBSEF6dlhNQURxQ3FXa0VFa2FJblQyVEdvQWRnNjkyQzI3WFhnckllaEJQUDA0SVNXMlZlU3dsMUEzSldtcVhvUQ?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: Pepeto Pulls Buyers Chasing 200x While ADA Waits on a 73% Breakout",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 15:59:22+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOd2xLaWtEbEVNUHVXN3BqZ1luQWE3X3l3QWI3ZDMzV19HYV83bTRYNDFLQVEwdmpZdTI4OWYxTGlDcl9BNzlLU0xKdy12Q3h2VW1lS0JaTXhJRnpGVGE1dnllbmhuVXNuQ1FMRm9TZ0lJajBoUDM5VnN6dzVJelU5QS0yY05pSnl2aWtybkd1NWdkeEp4dm1fSQ?oc=5"
+  },
+  {
+   "title": "Charles Hoskinson says he is personally writing a new programming language for Cardano",
+   "publisher": "eGamers.io",
+   "published_at": "2026-10-18 15:31:39+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPR09tZ25zVXZ1Y24xS0g5bUtrbmRRdm9wVVBUQVV6WkhHMUdhM0JVcHB0T2Z0UWFZZmlHeUNla3AtTmczdWhFT05YWkxiQjE3b1pXV19pYV8za2dnSmlZVGZIZGRlQWFNdloxbjBidmpDQ2VzejhOWHBaNlFybVhpazNUSkNpM2duNFhJcWUzeXNxaEVtTmIzeG13TGR6Q2tWdU5LQmxYT2FoQQ?oc=5"
+  },
+  {
+   "title": "Cardano Fell 12.6% This Week, More Than 6 Times Bitcoin\u2019s Drop. Can ADA Hold $0.20?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-18 15:05:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNS1BZQkNxSnRpU2xkWWFVZ0Y1ZmtXMnRLcFZRY2NzYlBtTmt1RC12d29XdTlUM25TcmtEaFUyMHN6NEFhbHkweS0zWVBlNm5jeWhzMkEzSHFSVTJBUHlXV2ZYd0JrZUQxTUR2SWF6WFk1ckU3dDdPNkpyRjdiRWxkR1UydHlJV0J4T2pURTdBZjFRVV96RmwxbDZOd095M0VRdnBMVGNrLXlMcG9rdEpKVXZEampzaENGc0FQdjIyTmN3Mm50Uy1xWjAtTWtSdmJEdVE?oc=5"
+  },
+  {
+   "title": "Cardano Price Outlook Eyes $0.30+ Ahead of Leios Mainnet Release Candidate",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-18 14:55:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1YTTBFZHdWZXdicjcweWt1UElxVkJPajkwc3VGdmNKMWh5NEdtNHRPYUx4SzRObXU4SHZPbTlaUE5IWjlBY0VZQXRYV2F6TlBMaFNMaXllME9UZTQ?oc=5"
+  },
+  {
+   "title": "ADA Price Prediction as Cardano Smashes Its 2021 Network Record While Pepeto Buyers Eye a 100x Listing",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 14:21:03+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNOGZzOHI0TGdzS0JiRXV4aHBWbEZrakZqSFpNWWpyMm1od2k4R01wb3BEdDdJak9zYldlRnBETURwMnhGYTZGWmV6R185NGhWZ0U1Z0k2dExULVJEbExQbFNtYmJpdW9OZE81ZVpvM0tzMzRiakF5eTRndGE3eFJ0OXN2U2ZmVzRET1FtRnBZNVQ4dkh4cG82bS1MWHlicEFJ?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction as ADA Breaks a 2021 Record and Pepeto's 100x Presale Pulls In Buyers",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 14:00:58+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZ2xsZ2F0LU93d1daUUVGMjczelYxT0RveXM5NE9qYUhJQm5UU25TdnlVWFJ4OG4zdjNyN2NtY1duVGs4bkJOX24wZnZQWEsySzlzb0xhMmxoM0hVc3YtSEZzcWtCaW0yalFqSWVzNFRWY016RndxU1Z1MGtrbXJTaUY2UnpCOV8zU0dQenlNM0FfT1ItblN5Y0pLZTR5WGtBOTJj?oc=5"
+  },
+  {
+   "title": "Binance Word of the Day Answer 19 October 2026: Full WOTD List",
+   "publisher": "Coin Gabbar",
+   "published_at": "2026-10-18 13:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPbVFpUVh6ZFg2STM2b01ZOHJnU0hYNXBQR1Vhbm43TkhEV0hWemFSZXk2VE5POVFlV0dqa0RTbWNLUkNoQS1pWFBodmRNVmlZMW9BQ2NoZnhpY19OS2p0Z0dpZUFOMTBiN0s1dWFIRFZZcFk2bUU2SDZsbnF4a1kzRlZaY0VLc1RhZHRyOVNWa3MtUkE3TkE?oc=5"
+  },
+  {
+   "title": "Cardano Founder Says Working to Solve Crypto\u2019s Biggest Problems",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 12:55:11+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZjF0eGhmMDdXUUFGaDJhM0t6QWYtTHU1Tk9YVzN1NERwQmVQMDdkU05Dakc3MGQzblhTZGdzSG5pRnRYd1FCc2RCallWMjFDWS1BSXVBMDc2cU1MZ1NqMmVkMTVLcnFxQktrZ2RaOEJFSDk5N01RdjcwM1hzSFY0LTJDSDlrSXVtaHRFbXdsNzdnOE9YUUptWmdYcE1hMk9ENVE?oc=5"
+  },
+  {
+   "title": "Cardano's CEO nears launch of new privacy-focused blockchain project, Midnight.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 12:54:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORDI4ZVk1SFQ1bWRrUUh5RUd6d2J6VE1OQTN3WXpsNlZnTmJJYldzRUFLRFdLZzJyR0JtXzF3X1NHME5LaktIMndLYmF2WTdBZ1JjdFhSdzhlV3IxdnRNX0I2Zld0MVpfUW0zVkJYaHZ4a0NGTWEzTURxbVVTYk9GUHhDYjdQM1dZY3JSWlBsSW5DNGcwT3Bn?oc=5"
+  },
+  {
+   "title": "Cardano nears completion with Leios upgrade pro...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 12:48:16+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPZzhaZGFJQWU1bExEcEtQWUxHV25tZEFWaUlBdG1lc1RxT29nWnVwd0Fzb0hNZkNDY1U4RjdpbmVWYkMwUWQ2M1VmVUppeV9lREtMeWc2Q2lPaFExcnNIeGM2OGxJdW9ibWR5dzdWVnBxT2NoSlgtQ2xEWmpaWHJpZC12dmQtS2Q1aFJvd0RxVXVzeEx3RW1yT3p1bldZdUhQ?oc=5"
+  },
+  {
+   "title": "5 Hidden Crypto Opportunities Worth Watching: Discover the Best Cryptos to Buy Now",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 12:38:29+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNRGVsVkJqNGhYWUFnLTlKM25weEZYdmE2RUMweDZfeFZyc1laR3diNmtIcEcyS2hLNzR2Z3drZ1hSQWJ5QkdBUFBKc0g0ZXRwb0txVEtmaXAxNjZHWVZyLTZBYkpUYk51TnRadmM3YlBBNzYtSkhISWlEWlh0d3BOeTNOSHBoUUhtM05GQ2lXU1RCU2diMGt3NDZJdGlNeDA?oc=5"
+  },
+  {
+   "title": "Cardano Is One Upgrade Away From Being Fully Complete, Hoskinson Declares \u2014 Will It Be Enough To Ignite ADA\u2019s Price?",
+   "publisher": "ZyCrypto",
+   "published_at": "2026-10-18 12:25:22+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQMV9zSEhCQlhpVlJ0NGVUWXhBTWoyMEV2SE1KTTk5SnRCYVVpOU5aOUhVWU9DS1VMbVNOZThUZnUxdm5kcFA1WjduX1A1MDlNc3dsV2ZrY0ZpVTQ2V2NPZmI0SlRPdU5HeVZmWVhnQ2JZcFdsQ3lpUHh5V2pSaFBpa2l2YmMwenhtTkJoaTAzUDdZR1FxcXVsXzBVbUpNa1dJQS1uNDQyVVV3QkJ6UnhfY0dnWHV2Q2tpcnNWZDJmdUgycmV4WHBUMnBRM2NiUdIB0wFBVV95cUxNY1lPVVlWbWNrRkgxT3VDYWxvWnFCZ0dvNkt6M0NXLXlSc0wyeDlMNXNEeGJfOC1wbEptVmwxMlRSWmdqem1pNTF0eTVWT0JsUjROWVJvZlJleUxtWFlzb1ZxcjhUNk5fUU9CRTAyWTNYOUx3MEtlTTFzdkNDUFBZTmM4bGp0aU9MMzFhX3c5eWE0MlNDYVowRkFmcUZlZjFta2ZqVTNDaDhyT2tocXdZUmdqRHR6OG8zczNaYTk0Tk9CQ3Z0RHh0a0w0ZTFCd1BRTVgw?oc=5"
+  },
+  {
+   "title": "2027 Price Predictions Reveal 5 Best Altcoins to Buy Now as Apeing Crosses $121K+",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 11:29:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQnh2WlA4eTQyMi1XcXlCZjVtMmpYck5PTU1kTFN0Ylp3Q2lkazh3dzdrcjRCR2FkWTE5alhiRWR4Q3ZLWHFGS21uN1R5OXhZQXdoT3JoZUQwcjREb0JvQWM0MnUxam1pd0dxNlZ3b1V5UlRadVkxN2VkSU94LUhTR2NUUzR2VGhkNkVKOXZSY2JHVXkxV2NLOFloTDJkQnhNQ0dseQ?oc=5"
+  },
+  {
+   "title": "Cardano News: Transactions Hit Record as AlphaPepe's 100x Talk Returns With Growing Presale Demand",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 11:03:07+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNckMtQUh6UWJFV1Fla2xERGw4NHl1bzBTT0FCbTNGbUowZ2w1dDRoWThDbDlNRDgtbDRoNnhVR1ZWbG5QdXNpTjB5V0p6ZG1xRXhyYUtUb2NEb2RHdWhTSUgzTE4tTHpQZkJfSWtnSjZ5UndHemRRTG51WXBLbzllVlpheUx3WGlobjluekdheG16ZkJ0R1VyM2dfQndIdw?oc=5"
+  },
+  {
+   "title": "Cardano Stablecoin Offers 50% APR. What's the Catch?",
+   "publisher": "BeInCrypto",
+   "published_at": "2026-10-18 10:29:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE42YmlwN1h0LTdXSkMtVTNkb2xsVWhraXFYa1o0MTA4b0wwN1NnbUdlOEFVQ1lYeDktWmZ5Q0Y5Nm1yalhCT29yZkN5SDFtN0Z0RVRCYXFSdEdqczRUOW9CSzRWbnZSQlcyV2pZWENKRWpyWHVxcXhWQmtYcW9UWjQ?oc=5"
+  },
+  {
+   "title": "Cardano Price Outlook Eyes $0.30+ Ahead of Leios Mainnet Release Candidate",
+   "publisher": "CoinGape",
+   "published_at": "2026-10-18 09:37:20+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZWtFdlBmblI5MWRWQUdtU0NSdlRZT2w4bVRSQjlIdzZGYVVmaGppR1gxRXdOYWN6ZmZtRXozTDM0ZHVSYjBQQnAyWHItekRfSXRXUVJNdXB2cHR4VW9CUHFfY3Jxa1lYcDlNejE5TUF2cWZyMVJsYXFwNGJJWGpnckR1UlV3X1ZyRnZsdlBxejFFdFRUVGtJN0Jyay12Vml0Q2tCSA?oc=5"
+  },
+  {
+   "title": "XRP Combined CVD Selling Nears $2 Billion",
+   "publisher": "The Crypto Basic",
+   "published_at": "2026-10-18 09:32:26+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNRF9EUk5pcHRSRE9WSElOOFVIanRKZHlOUWl3bmp4bTNGaFpsMDRjU2owS0o5cmM1elN5UG00bEZtQ3lTMFlQQTZfeHRSVDUzT0dwcktDQWNyWXJDWFd0NWwxbEZJU2JRNEFYczl4NTFZZ2hSQmtfS1YxY1hzWm5McFZvZ0JaQQ?oc=5"
+  },
+  {
+   "title": "Cardano founder Charles Hoskinson is developing...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 08:23:30+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSmx5ZmpJR0RWQ3VvUHM4SGxEbWJWTVpVZl8tR1NhWF9La1ByQzlYZEcyVmQxZ25OME9vZmFsRHNKOE14VmJBUU92Xzk3NE1iRlQ4aEFHdTJwZjN5dmZoVlVjQmo3QjBaZFBvNHQ2c2V3c3hUR2hvN0tCdEhMWmZUVE5yU3JiOUN5bFE?oc=5"
+  },
+  {
+   "title": "Cardano Founder Developing New Programming Language",
+   "publisher": "U.Today",
+   "published_at": "2026-10-18 08:12:04+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE52OVI0ZXpwdTNncWx5ay01RkVRVXdxWE5UaWQ2dTd0WDdsVHNEZ044bnhnSUhKVjJqZHl0T3J6b2pENlhFeGNsN0ZfLWNiMEVOZVlQNGVmU3pBTzRnUXhCMWRicmtnbEpfSXdnNGM2dE9TTjNJZlHSAXtBVV95cUxPMUVjaGxYRkxyQlpRWG1wQW5DQTVvNlFXN1VPOXpQZzc1b2xjOFVSbXRnbXp5c0lBb1djNmVSYUFjT2JSZGlPMzMzOUgyMVFqLWhYMEcxV19aUHYwUElGZndSa1FCUWR3clk4MXp0RFljdU02djhiOGFzUjg?oc=5"
+  },
+  {
+   "title": "Claude AI Predicts BTC & ADA's Next Big Move: Could Apeing's $0.01",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 07:44:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdEVwX1BwUFRSUXBBNlpMRkxkOWRWaW5QRjRsSHB1anBzWDFUbHhuUjg2c0ZyRDRCZDgycml0Mm9TYW5NWGhiUlR1WWJTM1VHUkZYeEQ0Q2wzdExPUWdycWo5MDYzTGJRcF9sUDB5bENFRnN4TXo3U1o4bWFlN09Ib1EzaHZDUFVlMmVLVS0xQVhRNmdMOC01b0RBeHAtUEE?oc=5"
+  },
+  {
+   "title": "ADA Price Prediction: Stuck Below the Moving Average Stack With $0.21 the Line That Matters",
+   "publisher": "Blockchain News",
+   "published_at": "2026-10-18 07:35:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQRkRsdWozdlAwLXViSmRRR2ZIODNjeFlqUGp5NmhQOEVKYzN1YXZOUlRpbUVDUklDdm9QdDFVOVl5SVoyZVNIOXJjYi1aang4ZXBIb2JXOXZBQjFnMXRYM3J2TFlIUThvTFJYWVFaZzZ0VVgyczFBenR6VzJUX1dtYmFZbXFqYzhOV2tQTzliekYwQlVjc1pndjFYMA?oc=5"
+  },
+  {
+   "title": "Quantum Alliance News: Why Are 9 Crypto Groups Setting New Standards?",
+   "publisher": "Coin Gabbar",
+   "published_at": "2026-10-18 06:20:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQbzVPbmRVRkxIUmtBWXFPZHcxMkRlNWZsM2Z0U21qQy1NZ1g5cHNFVUF2RVgyZHZZMy1yOWxMUmltSkFmcUM0NUw0NV9tXzJEQU9uSG5zYjVjeVlwV1NCOExmRDE3aDJSYlNXMFRwUnFjeldUMFEzVzNzdFRGVTk3cWtwTGtNNzY5WGRvNHBvbTc?oc=5"
+  },
+  {
+   "title": "Could Apeing Surprise Buyers as a Best Crypto to Explode",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 06:06:24+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPWkRPMUUwWHlGRHhNbmhQbGFrOEY0Mzd1U3k2MmdrRk1mT3JFcUJFZW1CbUd0QWZuT2lYc0tRcGlQMXVCdmlpZGR3ZW81MFZMWUxGeDFnNmxtejFDYUxnTEVGcnRNbDhRcWlvWEFyYmdUaDFodWxraFAxYk1hS3JUeEJid295eVhlZFVVTGNrTENQZkdMSldZ?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: ADA Near $0.224 or Remittix Before Launch? Real-World Utility Sets Up the Comparison",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 05:00:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNcnZQSnVyVFNJdWZhMlhKSWV3R3p6VWwwR2w4U0VJdGxieGhScDQ4VklnQ0E2dDI1UzdCdTBoNjNwR3owZ0lGbDd1VTRnOW8yWXJHVmpJVFk3UEpzNDlVQnRxR0UtaXFzMjU0THpkcDRSYzBiRjFiTlhiemZpM1gxM3lQYklONWJOVVFndl9NTGRlSGs0V1d5Sk9YTkdkV0otVFdKMGlzbmxQX0RyWjd1RHFRYlNRZldHU0xjckdXOHJfTTJJWlI4aFFGMTc?oc=5"
+  },
+  {
+   "title": "Could Apeing Be the Top 1000x Crypto Hidden in Plain Sight While Cardano Trades at $0.2292?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 04:33:21+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNTEdyXzdMWkRDMk9xWk9fYVFLblRrcUUzb0ZrSHNfV0kzZ0pGdlNCd252QnRNTS1OZVdTMUdleFF3V05GZF9QenVZSjBOSWRzQmRrckZ2RXI5WHVPWkRtY2FBLXQyWGtQdmNsSGJhbEktbURCeDE0dUJBLUc5Z1RlUVVoV2FDUmpBRGdOUE8zVlBwQk9veUxjV0JzeDQyQV9aeVE?oc=5"
+  },
+  {
+   "title": "Crypto Weekly News: Ledger Alert, Solana Upgrade And US Inflation",
+   "publisher": "Coin Gabbar",
+   "published_at": "2026-10-18 04:15:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOV01QZlA1OTVTN0JHeFN2NkczSjdZTWxxaFlGUXFMdUl6N0dVa1BrMlpQdndub1laRV9GclRIZVVEeC0wc3NINkdfS2dxS2NKMFdlem1ETmVPc29IRHlDQ3dRa3M0WlhlVU5ISG1TWFZWeEhGZDVfeno4aXFtUkVEZERUNUZTMzMwWkkwaTVKeXNieE0?oc=5"
+  },
+  {
+   "title": "Charles Hoskinson: Invitation to upload to BodegaCardano ahead of one million milestone",
+   "publisher": "Traders Union",
+   "published_at": "2026-10-18 04:05:15+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQU29kVUcwT0g0T0pBZ2pSQmNnbE5aMlFROE5odG4yZF9BOTR5bUhybkNHd2NmRHdhNW13bm5KaTltNkhyaExuT0lCYkN4OC1IMS1YWUdWYXIzTmFBbjJGamI5bFdGcVBZS0phaG9YUXVjZ1ByMGs4bWdWTU1XMURkTnBqNC01aDd1NUVlNkhkY3BtV1dnclBF?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: $1 ADA or $1 AlphaPepe? The Same Target Could Produce Very Different Returns",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 03:05:06+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPY0tVT0ZyemlfWjZ5eGlTMXBVMloyVXpIa3VZdXg4SV9YMVdaX0VSVkk5VTNGYmJNaVBrU09RSHd5bXpJU2ZWWkxMcjhGZE1KbWpmV2dsX0p2RC02eTRQMUFvNVJscWR3MW5NLVNLc2VQQUNUWHM4SlktYzVKZnpYd3J4bUwtaXQ3ZnoxeElRNWdpZklSTk5kSUtJVF9XM3JDS0NBdGk0OTVvU2dTczJoMzRZMl95eVRINjk5UVJFUHc?oc=5"
+  },
+  {
+   "title": "Cardano Price Watch: ADA Trades Near $0.224 After a Busy Transaction Epoch as Remittix Tests Bank Payments",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 01:55:16+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPM05jcUNiLXVZMHFqemFabHBjUlJDT3Z5bEtySGxSdnRPS0ZDLXV5ZFlSdEowQXpmMVEwOEZpc04xVkNzZVRKT1VoYlhhLWhxSmZJM3l2ZENNaDJuVUxBZzhUbVpvQzZZOGU5eXpyUVd3c2pXaHBTeVVHVXZyU3hsSlFacW9WV01jbVdsRVQtZzNjYTdzNnh3RVdWRTNJSFNQRUZKaEtYOVZFYm03b1ktNmR1WDFmMjlkbXA1R3VqWERYYU5SeDd4Xw?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: Leios Test Hits 6x Mainnet Load as ADA Holds $0.22 and Pepeto Eyes 100x",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 23:40:04+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOcmpYZWtHd0lUTWJSTlNPVmp2NkVFWFFVcGNxVEVINnhoSmJQVXFuYzVsSU1mUzd0a0ozMjJRYTRaZkt4SnZZZVpvcl9FWlk5TEtDR0VPd0VfRG8ybGdjQzhWMzk2UzEwUEZNdGl5ckNPRC1TMWl1Q3k2Vkc0RExqSVNIY2NfTWF4MnYycXVTUzJBYmNJR2ZpYURhd2F6cERGSzJsRmRna3RieGR3eG9MR1dLNGwya3huQlg3Nw?oc=5"
+  },
+  {
+   "title": "Cardano Price Today: Whales Sell 110M ADA as Use Hits a Record, but Analysts See 300x in Pepeto",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 23:24:15+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQMXRDcUFQWnd5SzR3VXZjRnRZOTRaRFdqLVRLZlg2R04tejM3RkZ2OE1QdjJLM1hNSEppb0NhaTJvVjZfem9rdkdwOUc4SmV1OGx5U3dlQW9zNnVfWlM3eWJ3UjlHWm53bFFfN0pTQmp4MzhsRzZPdFZNOHliUkplSTcwNmx1dDBlTkdCb2dJN0NUU0w4UjlqLTczOW9kQ1VET3RF?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: ADA Nearly Doubles Bitcoin's Monthly Gain and Eyes $0.28, as Analysts See 300x for Pepeto",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 22:50:38+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNVFdfT1lLWjVpRjlkd2lBWkNveFZvbkptRTNoS3lxZmV4UldUal9ZVkxmN202M2FKbm5vQzQ0VUhJOFgwNWZlSWxrbTZsd0pCYXViTWNuMlVrb2UyVVZnNTVnZ3NkNGFjaWc0eG05X3I4WlF2MW9MeDVpUFVzamRvYnYta1hmRG9NanMzTEx3OWxLMWk0Nk8wREhUcGxCUQ?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: ADA Trades Near $0.224 After Its Busy Transaction Epoch as Remittix Tests Bank Payments",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 22:45:28+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNVdxaFdhQnVBSnZWek9fQ2g3OGEwUDdIU3dxYXQ3TXdYWHJlMlQ3am1OMFRmT1IxRlNWMndBaFVjcDM4OUd3OVFNalFhQnA5ZTZSXy1kUTg2azFRN1BwbjNMWldjQnpGX3V1TWVSVE9hYUZ1emZSZnFCYXc5eG9DUWlwT0lRcGJGOExfSDZJT0YweF9LMDdCRDdFUzU5UQ?oc=5"
+  },
+  {
+   "title": "Cardano Dips 4% On Technical Rejection, Altcoin Rotation",
+   "publisher": "MarketForces Africa",
+   "published_at": "2026-10-17 22:15:44+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNazNGOUlscndXUElXUjR5RFQ2OTN4RlZPU0pTNnBwU09fS3ZrTmQ2eWMwU2hFVm9zajF4Y0NFWWg4ZVYtSmhDTUVmaGo2bEFDcjFkelZCbnhMZEZEdHdFV1ZHY3UxWU9Fb2tHUXJtRFJQVDhMZzlPaHUwMC1MTG51MmRuZnZQaEFi?oc=5"
+  },
+  {
+   "title": "Crypto News Today: Cantor Lifts Its Bitcoin Target to $112,000, While $11.2M Backs Pepe's Cofounder Before Listing",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 21:59:17+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNdDR4cnZVbWFKSE9QbjFidHhCZkVqYXk3WkkyS29keUxxVTF4dkpyVDZtQmxpcWxBUGdDUzZuRVd2c2JFdnRScXFuLUotRVVtWWNQNmxVZDV2Mm5xczZiNlBXcnVoanlUQWNoTEhqZWhXT2g0Ni1Dbkc5SVhFdVNsZmFXSnU4MmJuSjlweUk4eXVieXBWMElKaEFnY2g?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: ADA Eyes $0.28 After 11.8M ADA Vote as Pepeto Targets 300x",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 21:55:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPT2VrMHNVWkFXTmpzdktOcXhlTW80T3VHTktxZlBxQUZFaEtrV1FUb0VKU2xKdHlxT3Fhd21yUHFZYVF4emx0UTNXc29mbEJfLUJQbUVTTHBocXR5RDBpX0RvelVuN3kzbUl0aml1R3lORGl1LVliRXg5RDA3TnljbzN1NHJwYl9tSWxRbnNPSkdNUDBtR1JjU0YyTHF4Q21HcGMzTXhYZzRxRFk?oc=5"
+  },
+  {
+   "title": "5 Top Altcoins to Buy Now: Is Apeing the Early-Stage Crypto Pick to Watch Before the Next Rally?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 21:12:29+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPUzNnVHk3aDNxSEtqTjIwMFRjT0VtOWo4bHRzVGswMXJfRVBGa1RINkRwZWl5X2dZUi0zZVZvU1R0SWZURGg5cGdCTVM3MVNWX096TFMyYmF3OVhCTXZtUV9pcjBOeUU3N2huOWdiTmZzTE5NMGJielF2amRTa2lFUmN1NzZuWW03NGwzSEdTdFd3anNKdF95bDlYTFJ0X1Ja?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: ADA Near $0.224 or Remittix Before",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 20:59:30+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcW9WUklHV3FyRHBReXp2UjBWZnFHMmFCblM3Q0pZOEt5OTVzT2FxOUFQZmVITXdwemJOdVFfaDNTX1J0WURuamlMQUtrbjNSYzNNUjd2N3RWUmVZenkydnVBRkpDbjBuSXowa0MwNXJVZXcyV1FSWGNWQkFDMU9CWVZOb2Y3U0xQTWozeUxYZE1NZDd0d2ZzNldB?oc=5"
+  },
+  {
+   "title": "Cardano Cup-and-Handle Pattern Eyes 73% Rally if ADA Price Reclaims This Level",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 20:11:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUHBwWUdZRnNfbzY3REI3b2RFbk5lVG5vVDFXZEp0eFdVS1hsV3ZnUXg3Wjk1QlZPYkU5WVRXaHFCVnF2MEc2VV9HSElwRkxHSklOS0xYY3dWMUoxQXpzUFJ5V3JKQmZkMUEySU9pTElZaEM5TWQwcDRXNS04eHFROE4wTTVyU0JveWhUdk16aGRoT3p3ZE1vN3RIVDM3X1dsazJ0ZVEzT3JwM3VJU2R4eU5oWXFQZw?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: ADA Near $0.224 and a Busy Transaction Epoch Meet Remittix\u2019s November Launch Story",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 20:02:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNdkVDYUQ2TF92WXNQU2VuT2liSGhGNjBOYl81cDBvSnBmcndqb2FDQ1F3cEJmY3VxOFNJVjE4bnlET29nZ3M2c2s3dDFhRURaQTlWSmFMNXBjRDBCLVFrUmJwMW1YSE9KOGswNTlkTFFud0JiS1Vobk5xRDBKdmZmSWFHOGQ3cGgxemt0WEZuZUpGcHZnUWxvWU9JZUY5MDdTc2tLQ1lERmtwTFhLS20zNTlMZFZiMDFQd0x0eHBRN3BFMklCWjVsZFBiNUQzWXp3OHRIT0NaeE16ajM1MlVXYnN3cmdfWGttRzBEM2NLejRxSm9rZUZ0U0lGUXpDYUdmYUtPNElaSjdVLU5M?oc=5"
+  },
+  {
+   "title": "ADA Price Prediction: Cardano Bulls Lose $4.2M as Leios Hits Stage 3, While Analysts Eye 100x for Pepeto",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 19:29:39+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNU1NYbjRFRnd4ZmVqTFhxUFFFZVBOZXdqN2dCd0xqeTlMSm8tRF9YTlZZZHd3S3ZmMUxZN3ZkVlhmNXN1SFRORW1CY0NvZTVDb1JKc0lPZDZqcmZrQ3lldVAwaDBfak1hUHZQVkdPUnFfdXpVZTNYMUY0RjNMMW9Ianhqak96c19EQzhmZ1dIdUhUYzM2ZmRVYWNn?oc=5"
+  },
+  {
+   "title": "Cardano News: ADA Whales Return as AlphaPepe Eyes Binance With Its Presale Entry Still Open",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 19:13:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPaTgzbGo0Qkk1R3Y4RUhLb05sMXRSYkhiUDhvRDhJMXpvQjJDeHpmenBYNWJaVzgxenFGU2NGSC1VbUNNbTA1d1U0V2lnY1REcVlYdTRfMGVHNWNjR09jRHFHV2FvaTREQlNQR3UxMGhONUZDR3RiUUZKMWlweEhDLWd0OHczWlJaU1RGWW5hUGVDNjYxMlVNMTlYdTN5QQ?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: ADA Near $0.224 Meets Remittix's $0.28 Entry and Active Crypto-to-Bank Tests",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 18:45:12+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOYUhWbGxlQjVWNm5HYXpsVVA5QjRmOEFhZnF0WE4zUDdvRlk1NmUybFI4UVBYNjctQm9iN0lYY18yemJnRC1zU0JWNThiOE9uQkFacXMyV25CbEFEQ2NJRG9lYl9zVzlWcG9xMk52Wm1NUHpYOGU5RndfQzhZMm80cmZic19HWGpuVFlYcE1GOGhNdURpSGFr?oc=5"
+  },
+  {
+   "title": "Cardano's Leios Upgrade Hits 26.8 TxkB/s in Testnet as Hoskinson Declares Endgame",
+   "publisher": "BigGo Finance",
+   "published_at": "2026-10-17 18:16:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE11VlZ3VS04NlZzbnFXSG9NQ3VZSnU2ak03WWNHN2tVR05OVHBqalBBU3ppcmRNOEJ6WTRiSlYwZjZISjJ3dms1N0xkdldWdTIwVWlFUlk3Sy1SNENqbDBXOUN4cnFER2RzTEN5TG9POGxKMUl2U3c?oc=5"
+  },
+  {
+   "title": "TCB Daily Edition: What Happened in Crypto on October 17, 2026",
+   "publisher": "The Crypto Basic",
+   "published_at": "2026-10-17 17:56:29+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOYWxsSFhQc0Jfb3o5Z2N6U0hwWVVkZjNicU43enBGRUZkRmowcG9TNFdxdk5HeVBtdHNSclZTbUFPRUVDMU5hUmc0a2RoRTYwME1pWDdxdDFiQ1VqODRfLUlzdk44b09MTFZoa0VQRlhLSzRvaDNySXIxeDBSU3d2NDN3WENhaURzN2pFY3pfZFN2MndKXzV2WmRJdVdkalQ5?oc=5"
+  },
+  {
+   "title": "Grok Reveals What Could Be Next for Bitcoin and Cardano: Is Apeing the Best Crypto to Invest Before Its Next Stage?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 17:41:22+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQYmlCSzd6Z0plSHVWcWVzekdBNXBaVkUzVUhzWXNVRDhEMmtvOGl4NzBRaGVnUDQ2aFZMME42ODJsakNZOGlCcjlsTzZyd2s0cXJzQ1ZzdWpOZVdSQzBvVXRSeDJmdUhxd2RjczVTb2FYRGtzMW9XZUkteTVLdkNWSVE5bUFhN1ppU2VpQ3BqZ1FHWmlxdEtHeUxna2h3dVdLVDFZ?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: Strike Pays Up to 50% on ADA, as Pepeto Presale Passes $11.2M",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 16:35:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPV1hjSndhcTlLVS1CLVZpZlllMzB2OXo4TUktUVNMNlpaZThFUGoxNlNzdjlGZ29rNk5rYU0wODdOZVQtSVoyV3MyT1JuMndsQXNLTGE3MDZQZUdJVFFTc0xlRnhjUjBJV1BkSUY1V09ubE13TmdYczVQR3FPaXE4LWZyYnpOUVFQbWxZVURCb1RIdkxWWTFZenUtSFNqTmc?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: ADA Sits 93% Under Its $3.10 Peak, While Pepeto's Presale Passes $11.2M",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 16:03:17+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPTzhpOVJBNkNURmF6MVpUNVlrQzJ1ZEw0MkhGa1EzaHlxb0NFQkphdlgxelpQY3hvNlA4Z0lkNXpkRE1raE1VbjNFYzVyYWFKRzVlQmpyNENFM2FPN1Q2d28xU0EzOWoxaHFRVFY3QlB2MkRiUjZUNG9fZWhMVGlxYlhReVRJX3Vvd2l0Yy12MTB6NzJrYUVB?oc=5"
+  },
+  {
+   "title": "Charles Hoskinson Teases New Midnight Concept to Solve Crypto\u2019s Biggest Problems",
+   "publisher": "Bitget",
+   "published_at": "2026-10-17 15:43:57+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBKM2U4aFdldkpCTTdaemtUSFRraE9uSUFhTzRmTXRrV2hVRjcxM0xvZkVFbkpIbDdDRWg1ZW9aUm0xV0psOEFzRVQyNDg0dHhDNWZ1OU1PNVNGV1l3NWVQV2UtZ9IBY0FVX3lxTFBKM2U4aFdldkpCTTdaemtUSFRraE9uSUFhTzRmTXRrV2hVRjcxM0xvZkVFbkpIbDdDRWg1ZW9aUm0xV0psOEFzRVQyNDg0dHhDNWZ1OU1PNVNGV1l3NWVQV2UtZw?oc=5"
+  },
+  {
+   "title": "Cardano\u2019s Leios upgrade targets 30x throughput, Hoskinson says network nearly complete",
+   "publisher": "Bitget",
+   "published_at": "2026-10-17 15:43:56+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE55UGJnN1FvdVFFT1VWeTJya3d1ZklvOTAwN0pwclYzY096OHdDSzk2UlhKeXBLRDBidGpubzQ1Mlp3NUVfalJkUmZVRTBWdjYySkwzLTRoWkk0bjdYanVXQlBSc9IBY0FVX3lxTE55UGJnN1FvdVFFT1VWeTJya3d1ZklvOTAwN0pwclYzY096OHdDSzk2UlhKeXBLRDBidGpubzQ1Mlp3NUVfalJkUmZVRTBWdjYySkwzLTRoWkk0bjdYanVXQlBScw?oc=5"
+  },
+  {
+   "title": "Cardano Price Forecast as Hoskinson Hints at Major Midnight Update \u2013 Can ADA Defend $0.20 Support?",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 15:39:56+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9iU0Jad2NpS1d0QlYxeUcteW1YNlU5LUVMX1pQaVhZWWxIN19DdWpCcDRMVWJoQUhrUmNuME5lYll5QVB0dXlsRmM0QVM0cHRQaVA1RnVodnNiUG8?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction 2026: ADA's 1.78M-Transaction Epoch Meets Remittix's Earlier-Stage PayFi Opportunity",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 15:24:53+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNMnRwcUVVSXVFS2lmT2RyX24ybWd0YURMT3I2N2JyYVBmU0J6aVpwUjhuWEZod3NkcldYZGZpTVNuT21Qdm9DNkF0YXYyTDhMQjZLUlh1UGlyaGg5UWk5NVF2WndvdndkNThsMkcza3czeEEwampzVTM3dkRYS2tRVkxldEVBa2NTMFY2SllKOUZwbTRKRnFvVG4wNA?oc=5"
+  },
+  {
+   "title": "Cardano Prepares Major Upgrade to Boost Performance",
+   "publisher": "Cointribune",
+   "published_at": "2026-10-17 15:05:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNUk9zYkU3OTNOSGlYNzE4MHFpelpUWjRNSUFnN1pmNDFzdHpUMVdzWFptVl9kc3ZWa0ZXUk93OUx5VDctYUI3WGUzQ2g2X2VZVlZvM2pETnJNeS04STF6WGpyMFNSSXp2ZGdHZVg1LWF0NVlZdmJua0hFS3FDZWhzYmtZNDRfcXJGbjMw?oc=5"
+  },
+  {
+   "title": "Cardano Slides Toward $0.22 as Evernorth Prepares 473M XRP",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 15:03:24+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUXFIbHZPZkt5QVFVbXVGSzJZS2lUdDVkbERlTDFtVHRoZUwzWXMtamFFX25wLXF1QTUwMjhZTktXVFVuWmZFZWljLWg4U005ckJudFpmUG82QU1MdHBGM1pYak1DWHNiY1g2TGp5SVp1aGhhdjZHenQ5b1JXa2R3SWwycGlqaTF4LTVoT2ZuRGZ1Umo3Y3lzNw?oc=5"
+  },
+  {
+   "title": "Best Crypto to Buy Under $1 in 2026: ADA, XLM or Remittix at $0.28 Before Its Announced Final Presale Stage?",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 15:02:53+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPV3R0ckFiWWZ1cVV1SGZkQlJvRzFsbFpydWlybGJrZE1hUlV0dVdRSktSRlhNY3hJc2lSSF9wbU15VXVuTkxESHRTT09EdEFjdkpQYXJnREJ6ekxaVk1ybktlZDRodHFpYWJNQ2Vvb1dWbkd2bHZNeGNJdVFmMTg0YlhoTERZc2dXZUJ5RDZISF9UelJnd0VJeXRYR2dZYWlxclJ1Z2NRZzlBajZNcnJpN1pVT0p5Ui00VnUzc09VWlVGd0drZ1FTRGxHRnZLbzRNSm1uOEpqZlM3dU9IckxtUm5kNENiemlxcVNIaHBEeERweExSeEt3aDBtS3N2djBWUXJlRVFB?oc=5"
+  },
+  {
+   "title": "Cardano treasury has spent 91.5% of its 500M AD...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 13:35:15+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxObHFhTmZLMGJ3V2tKRms0MVV6Q0Npdy1jb1UwVFg1SlVnQ3Mwc0dabTN1RzVvNkRXSTQ1NU5YaE82LW5zbzVjdFFNSHUzNmtIWkVrZHRnc0NLSU1EMWw1Mi1FRGtueHZGbmQtU252aXU3NU9kUzZnZ1l4a2FLYVI1N2ZCel9FLVJrQ3NPcg?oc=5"
+  },
+  {
+   "title": "Cardano Price Today: Wallet Support and an Old 1,600% Pattern Lift ADA as Pepeto Eyes 1000x",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 12:44:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNWXQtN0I2dDBTbXZPN1dPS1VOY0VQZmFrSmppNlhkRzNLemRSQjMxSlRueXBfVDFlYWZlMjZ1YXkwcWdmdTU0bnMxN3VzTmlCQ3JZWnI5c3NqNkpDUHZhYXdkcUVGTFMtNlhMeGttWFdZSWhTMHJSZGpJd3h5NlBKR0JLRWZRTFBLMmVvYUlhMGQ5cDdaNnlUZXEyYw?oc=5"
+  },
+  {
+   "title": "Cardano (ADA) Price Down 68% in One Year: Can 'Uptober' Reverse Trend?",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 12:43:18+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE4tNXRZam9fcG5mYVQyTTNzSy03UFZtWFpWVUtLS1RFbEIxT1BSbVNoLTAyeE5OdnFiaTRubWQyRDV4YVZEVXZ2Ulc2UjBqUGFtaW9fd2tEV2Qzb2c?oc=5"
+  },
+  {
+   "title": "ADA Price Prediction: Cardano's 1.78M-Transaction Epoch Meets Remittix's $0.28 Entry and Bank Payment Tests",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 12:33:45+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNcDF2VE1qMVVySm44SlNSVnktZDJ2S3R3T0lscE5TNmNHWGJwSU1vUHN6UmhFZUlDSmFNeEhGQ3VrNlBFb0RLMVlJS0RwTDliaEVmaEJLLVJtdVFKOXYzcmtlUlZSQ2FNZTB2dFkxcU1SNE1vY0k3NkJmc21GdU9qM2I3UHRzb2hZb1B2TFZfTTJham53QldBTDY3a3lhUGVfNks0MmRrZDY1d0hSMU9aNlZTRmZxRGNiRDRXTkQ1NHpzSm9SY3hz?oc=5"
+  },
+  {
+   "title": "Cardano: 42.6 million ADA left under the spending cap",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-17 12:33:13+00:00",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5hS0kyeU1kTjJBSkJPRFQ5NGJIckNWY04yRjk1WUpjR1Y5bVBUdktzMnRlNWNtbG5jWVI1STJ5cXNZc1dETm5GdXFOUEg1SEl3RWpCdmJzZVZ1U1VkazFtcmh3VUpPd203ZzAzX1k1clNNVVk?oc=5"
+  },
+  {
+   "title": "Cardano price drops over 11%, eyes potential re...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 12:32:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNeUJ0TUFFTjZGMmdFNldEa0ozREtzd3c2N1pSakJ6XzFHMUNBT21KVS1YZGdIYjdtLVN5d1hFWGRyVkNsSVluYmt6clUtSjViODdVd29Vck1Cck9YSExEYnhiSzdSUUp0S1paSnpZWlRxU0N2TEp6c0ltLVo5MWtXN0pJM2xCSjRXSVA5eC00Rzg2RlpNOXpRa2hn?oc=5"
+  },
+  {
+   "title": "Cardano News: Founder Teases New Midnight Concept as ADA Nears Completion",
+   "publisher": "CaptainAltcoin",
+   "published_at": "2026-10-17 12:21:43+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNTF93VElKbkI5d3VyY0FtQXRKLXpnTHhhak93cXJRdWhua2NuNElsZ3lTRzhWbC1wa25mcjR2cDB5VmxuNkdhTHVUVTV1Y1lpVHY0TDBjZUZyRGFrSnFpb2VxTV9wVUpJVUg3blVHb3puTVNDV0ZMZ1JTOFViNzlfRl9QbjBSdkhfdWdnbDBWMUZKQXJkR1BHVzlDeC1GZlh4d2c?oc=5"
+  },
+  {
+   "title": "Cardano price falls 11% as analyst eyes $0.36 on a breakout",
+   "publisher": "Crypto News",
+   "published_at": "2026-10-17 12:06:26+00:00",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1KNWphMkFtMFB3R3BibkRtbUJ0cjIyMjl5ZG11dWRmR3RwMzh4WldleDZnQTVwdnRhX29CeFp6N0tFVnJtdVU1dkszYUNUV3JNYjEtVlZMZFF3UkcwR0FUdEVES1dGWWYzaE1XQjFmWi1tRlVTQXNJ?oc=5"
+  },
+  {
+   "title": "ADA Price Prediction: Cardano Hits 1.78M Transactions as Pepeto Eyes a Pepe-Style Rally",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 12:00:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMjlCc01ncGdPbWhJdnIwelV6b3ZkOHQxUU4yN3V5Q0xOdklITm1wa2dPVXpqOENyXzFNTXBkTVNQemlTb2hLdmhrVDNyejdldDl3UHZ6R3Y4QzJSaThwQ21FdURVQjNzcGdVQmFydFBmQkdfLWxnLUFfeWx6cW9qMUdIbE1RTkVKNXdxVHJqWmphWjluOElRNF9icGZSQUhRVjJzYlFPdzFfTlVRc0k2VA?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: ADA Bounces 5% as Big Gain Hunters Back Pepeto for a 300x Run",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 11:48:41+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQZkl4aFZTMGFBMFVpN2hNRzVQNFVBaWRWZlhPNmNmaDJxek9lWXRUcFM0YlNpQWljdzh4c0ZDRW1VcFhJNmR0cXVHOHN2TUVUSGlzVjEzOUp5TWVwM3hxN1g2eS02TlUwcEl4SWIzYjFIVk5aakdqUVIwdG0zcUZSdEdZQmtORjBuTXJRVVk4SzBTc2NIbVlhT3VkRTE2alRr?oc=5"
+  },
+  {
+   "title": "Is Cardano Complete? Hoskinson Says 'Yes' but There Is One Thing Left",
+   "publisher": "U.Today",
+   "published_at": "2026-10-17 11:18:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQNFRqODZfMHotMUo5MVUyaHdHVEQ0X0J2YjJKVkpjUFdEX045RHVPeThHY3hCRnIySllVdWExUngzU2pSaklUem1FTlNrMG9PNTl6STlaLThiamVMSHJCN1NsRkR0X1F3X3Via3BqZG1pTkxnSHF5bm1ILUViTzdQTUhsNlpwamdkcEHSAY8BQVVfeXFMUEEwTWJkWlJkTjYyYk5iYmlfTUVGT1R0Y005T1RrTG41RUhETnAtQ3JoS1k5OFpYNFF5SmNtcG1sSmNIa3ZkZkNzc0thN2xXcjg5djZKcXByY2NMZDUxdE51dl94SDZJcUNkSTlNX05GOHNmRzJvalZpZGd3eTFNTXNiNjJ1UVRqSFpXdjBvcWc?oc=5"
+  },
+  {
+   "title": "Cardano Price Today: ADA Bounces Off $0.216 While Pepeto Lines Up a 100x Pepe Style Run",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 10:51:38+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPaW4zTXBuSnRJSy1rckhfaVN1WFBlWm5tRUdpV3VyWEhNQ091RktxcnlmcTdMbHdtWjM4RnpTR05CY0Q3Yl9ZdVIxcFNadFg0UXZGVGRYaW40YUE5RmZPTW5BRmlKTkZmVk1LNUpCNXItSFo1aF9jZWhEdXAxRlJ0WWdQY0hieUwyVDNoTjg5eWFSSTlmNXFfMFZuNFBFekpx?oc=5"
+  },
+  {
+   "title": "Is Cardano Complete? Hoskinson Says 'Yes' but There Is One Thing Left",
+   "publisher": "TradingView",
+   "published_at": "2026-10-17 10:35:56+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPU1Z5SktPVHVodnNKb1pEdzNkZ2FyX0VYVUJOdDdWZEgwSVZSczZTVld5dkJBN2JCb1VwNlFqMFdmZFJvdFFYWTk0SzlFQzJvWXB6YkJ3d3hvdTV3UEdGT1RTc2RsUXRwQW9nY3dWTXVjV3ZyMEhTX1NOeE4zWERjTWQ2eEFXMFNtTjNLejdjM0NJQzJRVHkzYklPaVRXRFVLLWJrNmE5YkM0WE52QTUtNnpDd0hlRWVLNHJRVG9xT0c?oc=5"
+  },
+  {
+   "title": "Cardano Price Today: ADA Near $0.224 Meets Remittix's PayFi",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 10:03:49+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPaEtWb3RTeS1Ka3Y1c3I0eWE1R1dKdnBQM21LTWNEVkpzU0lDaHFfX2I0RnRRYjJ4ZWJ3TDhuR0QtbTlvdzRBUmttUGJxUkhDbGtET01CTXlNR1BtS25Ldl84am9PUVlLWWFvUmI3NjQ5ODZFU0Q4UFllMm9CN0t6MUZCQ0VDalBaemxxZFJ2QkV3dGszVkdUUA?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: ADA Risks $0.19 as a $1 AlphaPepe Forecast Turns $500 Into Nearly $15,000",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 09:50:12+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNM0VQTWpTZUhwMFd1Ui1TbE1WVjdzUDFnc185T2VPczNLZVVsQl9ZRWc5enItTlo0U2VONnJCdmRVaEZiVmxZZ0pmdG9JOUc3bEZzYkhGdW1tQXlkS0VVckFsSnlnVWVRek42UGU2VGtDdVhsSkRFRFQ2aVI3MjJKSzR2bEZCenZqWkFBRkxSNmlqNmtXTUFn?oc=5"
+  },
+  {
+   "title": "Cardano Price Forecast as Hoskinson Hints at Major Midnight Update - Can ADA Defend $0.20 Support?",
+   "publisher": "CoinGape",
+   "published_at": "2026-10-17 09:41:28+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQTTNSMThWUndzcWFfQmQ1a1FnMVpGWG5hUVRDdzl1RC1DQU1DTVFhRTctSXRhZTBHSlFkc2ZDVGJCc3I5bFhiNkhrX2VJdU9rbWtkLUd1M3l0WWtpY3BzRUlfTlE5ZXJEMmdRYVBhUWRfRXVvQjdxQ2xQdUJiRFk2TWtkcHZXOVlnUE9jSFVHclZFMmVRNWFkM0tha0s?oc=5"
+  },
+  {
+   "title": "Cardano's stablecoin market value rises 25.8% t...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 08:43:20+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPSEJOUEhnLVhBRDFUMUU5RnE3LW10dDl5dU42RmJqdldUYnRkOVVmeVNtU29HMDFibzRGNGJVZlJOQzNubUNYUlRBbU9zTXVubldGalZLZE1zbkxWYjNXSFBlWVN3cERfczVKZ1VaNUFfWUc3cTc0OVE0S3lkbUFnLTh6a2ZLdm9Hd3VV?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: ADA's $3 Comeback Scenario Meets Remittix's $0.28 Pre-Launch Entry",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 08:21:05+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOTk5yMC1OX0xGSGtac3YxWHJRaFI2UnRmUVlwRDVrcHNkUmgtMkJVX3JzeC1IbGxac1kycmxSSDlSd2J1dlM1cHZrcmxJeWpacGFWRG9DbS1LX3ctbUVpTExDT1kybHZGZmZvbTJFa0N1SWVoZjd2Yko2Y3c0Rl95RXR3NEh4NlBiNklxNHhFX3VWRXM5V1JN?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: ADA's 1.78M-Transaction Epoch Revives the $3 Question as Remittix Prepares Its Debut",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 06:01:29+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPdXlUWFNkZXZOYzZ6YS1ZanJ4bDhPU1ZuU0h3T05ySmJuRzZ3WEo5MklJZVExeW5qNEltYzF3VlduXzhuOG9mUFR4WnZrazU3THZRSFRnYzZpTUlwcWZJYUpEYV90NFdpNkZudDZwZHA2bWRPX0N4TC1YbDFrbllNcjFkMlRQeHQ1ZDlwVklCSjVoY3h3?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: Could Remittix's First Trading Cycle",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 05:26:11+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQT0FuQmJIWnd2TUdDWXFZTzZ6VDhyVnc4UV9LTF84NWhJSktHYWg2U0V5dGwtYms4T3ZlcER6NEZYQVNQN0QzNlRLXzB3UUlJdlIwTDBaalNNWjVpNVV6N2FiRTkzNGxPTTY5bVQ2Yi1IZi1Db3ExQXF1N2ZCcVpVRUpvNE1Xc1RqekVGZmJTVkpaaURldWVCODF0T3Rwdw?oc=5"
+  },
+  {
+   "title": "Cardano Security Audits: How ADA Projects Are Verified",
+   "publisher": "Coin Gabbar",
+   "published_at": "2026-10-17 05:22:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5mTkNQS3JCVjhJQnBFSG5jNlVYcEhNQnpPMHZrVE0wNXNfYWt5M01RcEgyN1RITF9Ud1VOd2xTSkdxMGhzbmNoWmU3QU5FM0hISzdKcWFpRWtmXzZ0SFNKbWd5VUh5WE9RRFo4?oc=5"
+  },
+  {
+   "title": "Cardano shifts $26M to USDCx as bridge controls freeze payouts",
+   "publisher": "CryptoSlate",
+   "published_at": "2026-10-17 05:00:24+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPREJYXzk5M3RCVWo5cjBGQUczSUlmMkZsdVRWV1JxTUpSclowajRqazNza3FFZU9wVFhrbTA0a1Ayc0RUcWFZaUVVbEgyTnFYUVY0NVdCMkhJRDdpSC16TjhKM2p6RF9IMENXQzdGeFdZeTNLSFlGMThPX2p1WjZXT0g4MXNoZnYzSzFQV2piMA?oc=5"
+  },
+  {
+   "title": "Cardano News Today: ADA Crashes 2%, 2 Big Updates Could Help",
+   "publisher": "Coin Gabbar",
+   "published_at": "2026-10-17 04:55:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPREtkQk14dW5CRUlZeXQ5T1JMNlRUdl9YYlNGRGQ5Y3VBODh6eVV6dXlpX18wQ0VtLUEwUEViTkpLR0hnQXFDN2hIZWVqWUtXR3NMRDJyY3ByZVVsZnhEVWNoWHRLVkFEdEoyTWpHX010bW5jcmh6MWtpREpucEtmcXRwc3MyT3E5NHBQNFFwdw?oc=5"
+  },
+  {
+   "title": "Bitcoin, Cardano and the Best Crypto Presale to Buy While Inflation Bites: Why Pepeto Buyers See Gains",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 04:27:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQY1J6a3NEYm42M1FVU0R4Mzh4Nll2T0NFOXlfRDRqLU5GZG52UG85M092UXFlcDRpTzlzWUlxakd5S2NZU2ZJUHowbjJEc055cmI5ZExEVkVRXzY1NnVPU1pzRk1TTDhrMEtSMXZxbVBlajZTbG5BMkdNRHQzbHRlVU84ckoyUGxYSnBnclcyc3BmbThXc3liOFZPQkoyUW53a0dRaU9mcnNlbVU5S19hcWFYUEZ3T1E1dmVXZzdoQzFLdXFaTEM3dXl5WEtJMTJ3ZFEwYUtDbEFULXBpcnZILURzSWpRdnVWeDhsbGpaTWdpeDNOYmEyQXNR?oc=5"
+  },
+  {
+   "title": "Ethereum Price Prediction - ETH Targets $4,000, ADA Eyes $0.30,",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 04:18:28+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPbDJ5Q29HN2Y4bENLUmp5cUUtS1RyQnJ0Z25NTGhLTVU2ZS1xNmUyWWRmV3pSVlEyWC0xNS1vLS1FNDlxMldIekkyejNMajgwcXJfZXNtVkt5SURMVm0weXVpOWQ5ZFBIaDVkT3dsWkJuQmgyWHJEdW8tWHFtR0JJRjhZbng5QWNZTU9lSEdTTDM4VURLZm5KbQ?oc=5"
+  },
+  {
+   "title": "Cardano's Hoskinson confirms call with Blockstr...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 02:25:17+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPejE1VkMtRkVFX1lqOGNJLWpRLU55XzZ5N0dRX3JneHV2REhEelAwYzV2RlY3VnFKd1JIQndKc1hKR0Y5ektpdU5WZG1MNUtXRVdKci03Ty1DVDdQTnF3Tl9yTkdaZWV1SloyS3h5M0JvYkFZMXdLWlVFNFRjV2lqV3F4YmJDOVdTZFY2cmJyTGdaLVBNVzEtdlFtZ2Q1THlwNTY3U3M5UjZ5ZG8zRV9oUDJn?oc=5"
+  },
+  {
+   "title": "Convert 0.001 ADA (Cardano) to BTC (Bitcoin)",
+   "publisher": "Bybit",
+   "published_at": "2026-10-17 00:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE81MTE3cFBhSzNQQlRsNjJxOEk4RENid0daallhMGNiR1EzYXhfX0VEaUM2bmNyRXZrcS1FTGpxQjdFbDRSMDk0cTdOZXJpVHRWX3VqemgzRVlJTDBuQndV?oc=5"
+  },
+  {
+   "title": "Cardano Price Today: ADA Near $0.23 After a 1.78M-Transaction Epoch Meets Remittix's November Launch Story",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 23:58:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQYU9vM2tQV01COXRCTVl3blhrb0xJTUdEQlUyQXd0OHpRNzlVN3B5TGlxOWQycE1pMnlXcGV3VHZtUzVUMHhLNkVUSVhHTDhORnZQeE5HMlhHSUY3V294dHRSZ3EzbVpJbmdveHBGTjAyQlJHeVNRMkdQbURnZDBHMi1DdmlFVHJrc2VaVVpTVko1eUJzbjBxZUVpT1FReXBPUko3WVZsTHlwRDlCc3ZQQjl5UmVWc3RURzR4Vmp6Yl8zamxpUXZn?oc=5"
+  },
+  {
+   "title": "Cardano stablecoin market cap up 25.8% to $68.3 million, ADA price falls 2.3%",
+   "publisher": "Bitget",
+   "published_at": "2026-10-16 23:43:59+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE92anZCWWhlVDJBMHJwMlFaU084bFljM1F4WGtldzZycGVxSGxOLUxfOU9kSUwtLU12d0RkbEZZeHhkWEFieHRNaFhtZlVQWnc2OVNVMXp1ajVlQzhkRG5YT2RDY9IBY0FVX3lxTE92anZCWWhlVDJBMHJwMlFaU084bFljM1F4WGtldzZycGVxSGxOLUxfOU9kSUwtLU12d0RkbEZZeHhkWEFieHRNaFhtZlVQWnc2OVNVMXp1ajVlQzhkRG5YT2RDYw?oc=5"
+  },
+  {
+   "title": "Cardano (ADA) nears key $0.21 support, signalin...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-16 23:06:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNclhnblRnRjloT25yQzlDa0tYckg4LU84emZSMkJUMlNLWlluRmxyR3ZtVUUwOXh4NzNVamJQRDh4VXRYNHE1dDBRWUNEOXJIdl9za001SzRTSExTeHk3dDQ5d1JndjRTTlJVSGg5Nk5tTmF3ODEyQkNuVWVENVFsUVhMTUZvVGdaemFkUkJkNHJxMGg5RndQVWVIWHhDYjA?oc=5"
+  },
+  {
+   "title": "Cardano Faces Selling Pressure as Apeing Presale Hits 1300% ROI - Here's Why It's Emerging as a Top 1000x Crypto",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 22:51:15+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPc0RvV0hzb1Q1TUpNckd2bTh6MHJaNTQ1WHdKOXFSS1VtUXIyd1J2QzRaX0NyVjJGT00yczVDeDRXbWJSX2xtd1pVN2xSZy1Ld0s4Qjk5bk95Rkx5ZzVweUd2RnVXUm9aUmhxZXZ6VmtnaDEwLWVkdVdaRXl4V2pYNkt6MU8wTTBYNEdOTHBQMDJxRE03dUFXc2VfaXFobWc?oc=5"
+  },
+  {
+   "title": "Charles Hoskinson Reveals What Comes After Smart Contracts as Cardano Pushes Into AI",
+   "publisher": "ZyCrypto",
+   "published_at": "2026-10-16 21:02:13+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQREpLa1dEajEzWEFieGd6dnNUZEl6ckk4Z3Nka0ItcXJwRG16SjdYVUg3cUJnbFFDMmhFNlJiUmpiRENZQjZaUlZJRmRiTTdyazc5Um9WeTViVG1QN2t6S1NwWmxObWtwNXh3d1B2eGtPdXF5QnNYV0pxNVc3NU56UTlPOXhuOEloWkRGVGFzUUxoLTIwV0NoSmpPVjc2anVrSk1MajBLckpRUdIBrwFBVV95cUxPcUJ0WHdkNmFRS3NTckpvX2dMMzFPTnRzd0Z6VjZZOG16TXFLUXduV1NDcHpVZzZ5UkI1SUF2ZWFLU1Rma2ZnMm0yRG40VTFuU1hhWVk4cUNlRnhPWTMyWXJsYkx5NElCelQxdG1WRERrR3FNMGJCUHM1ZXZiSFUwY2pOWlk5Tm1DSW1PcGo1Y3ZwUkZCYkVCZE5IRXFXb1M5QUlOTVpKM2RSQVRQWHR3?oc=5"
+  },
+  {
+   "title": "BNB, Cardano, Pepeto: Best Crypto to Buy in October 2026 as Dip Buyers Rush Into One Presale",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 20:57:18+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPMmdZWjU5bmNMcE1iNjNENFAtM2kzOHRzSXd3clRpR09HZkpsS1p2ZjhtalRVRUs4bHlGVVZfQTh0VmhFYVNjeU5hR0xpN1ZLMzFONURvU1RQZFB6ajRtUm9sNk1QTk5oUmVQWDZrSkNjVjl1dXZPWHE0Sno4ckNQWUE3OXFLYWZQVGdvUDRoQks2RlV6UXFJZG5Wbng?oc=5"
+  },
+  {
+   "title": "Cardano \u2018Ghost Chain\u2019 Claims Challenged as Hoskinson Confirms Adam Back\u2019s Revelation",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-16 20:14:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQNDg5UTR5SWlqTmdhcHkwbFVtdVRuNVFwLUJ3ZlJ3VGVvNGZrWGc3c0RwNTFaZlEzS2RBdzhERl9oRF9DRjZubjlTUEZuZmZkeEZMT1NKbDJTcmlwSXhjWUdUMVNZZXRYcjN1UVQyUjRIZGdvWXNpMk8ycmNwLXU4VzNWVDVkRW42bEhhSVNzVTVDSHpOekFnSkRJS1dqMVN2TGdXaWI0UEVDdlFlT2Zka0hoQmIybTJOWkxB?oc=5"
+  },
+  {
+   "title": "ADA Price Prediction: US Inflation Shock Puts Cardano $0.23 Support at Risk",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-16 20:14:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQeDVOLTk1eXVnRG52YVQxZkpmaERreXRKaU1vUFZHaXdlWDZPM3pWM2YweU0zcEZuZGdrd29UcHR6S2Zac2EtWENfbmZRS1QxSm9ZZ1pyVTJjT3N5UVppNTlLVy1IdGFuYnZRZWpnNWVTYU9HVml0XzVZdDY3NmpiZzNfOGpkcUppbEFRQWFaZnJzRzFUM0ozZnFPSUJuN2FuM0VYTGVFMGQ1TU1nVTdseg?oc=5"
+  },
+  {
+   "title": "Nick Valdez Reveals Key Entry Price for Cardano Longs",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-16 20:14:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNQjlCdHRXbURCTVQ4NHpsdXdTbHo0aGZldHdrN3pKNFM4VHFFUWZiN3B6Q3djTmNHb21EUVRHckdoWDNtd1VtbjNzTFUtY1BpZVBCU1B0TzRmeUVDeFZvNVNVS00zV2R0azJ3RENjMXFCRlpJNUplU25HTzBFZzNNZ045ek9jU0ZsODczbzVMTUIxU0llVGc?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: Can ADA Climb Toward $0.43?",
+   "publisher": "Coinpedia",
+   "published_at": "2026-10-16 19:55:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaTFCeDAtYUVhYVZ5UVRaMEYwYVg5NkxyRXVLMjh6NWlvMnNhdEJ4M09WMGVOQjFSYUhpMkRGYUszYngyVWZhS2VWeG1ySm9ncThncTJVYzlxa09NTU03d1BERnZEQXNCZTZmeVBsR2lGZVF4X0xxNGFkbnNKa2xObmVETUhnT1pqVFB2MjVyNHVHUFN0MHVj0gGXAUFVX3lxTE1pMUJ4MC1hRWFhVnlRVFowRjBhWDk2THJFdUsyOHo1aW8yc2F0QngzT1YwZU5CMVJhSGkyREZhSzNieDJVZmFLZVZ4bXJKb2dxOGdxMlVjOXFrT01NTTd3UERGdkRBc0JlNmZ5UGxHaUZlUXhfTHE0YWRuc0prbE5uZURNSGdPWmpUUHYyNXI0dUdQU3QwdWM?oc=5"
+  },
+  {
+   "title": "ADA Price Prediction: US Inflation Shock Puts Cardano $0.23 Support at Risk",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-16 19:44:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1aZ3ZHVG5jSTVKemRUdFlmM0xZQTllWG94aDRTQ052bDBfOUhLOHBNdnc4b3NuRUROOHZuSUpEWE5oVTRtRFYtY2laM3NjTnd3UzdEazAxai0xcWs?oc=5"
+  },
+  {
+   "title": "Skipped the Early Days of Cardano and ETH? The Next Big Crypto Opportunity is Still Here That Nobody Wants to Miss",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 19:27:17+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOQlV1VjdLNG9mMDhRUi1EOXBDRVhnbDQ4Y1dJV2ROdS1keENPd0NkNmRial9MakNRSV9RWHVNRmVoVktHMU0xT3VhTU04cjhRZ181ZmFmRnFUN0h1d3puUm5oTVBZSmluMHRxT2Zrci1RWDFhdEFRcFh1UmhRbGVSVTcyMUQ5OFhielMtNWsyZ05tU01SY1ZHSlpvV2llUQ?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: ADA Near $0.23 and a Busy Transaction Epoch Put Remittix's Pre-Launch Entry in Focus",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 18:40:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPYk1ZWWl4d2J0czFFUDFNLWJfX1VUSGJnblVPSXFmQVJpZEF6dWIzZUVaYVhWLUJPOHZuU0xybVEtWmVOSDBVSjdOWHFXMnlaU3RwOVk3UVlHT053LXkxMnpWek15ZnhiZXM3QjZIc1BHYktkUzdjcXRFMEd2V1VOWnYyOThrWjJTcEdMdUNSY19Oc2NxLUZ6czlVazBYd0JkbUxTZjBCeUhMRHVmRDVpaUJLZnVTSDRLcDVwVVhueGtVLXlydTA2djVDNlQ?oc=5"
+  },
+  {
+   "title": "Bitcoin and Ether Rebound Faces Key Resistance as Crypto Market Seeks Footing After $942 Million Liquidation Wave",
+   "publisher": "BigGo Finance",
+   "published_at": "2026-10-16 18:16:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5LaUE4Ujc1WHJKeXh5WVRXN3RQZjdrZVI4dkt3NlVkVVpLRTlLWVJGLUdGb1ZURGMzNllsTTdubzRfZ3d6X18xNUNvLTh2R01pcTZRUUNxWGF6Nm9Nb1pkbGZRRHlHNW94N0cxZWhRLVZySGtxVVE?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: $0.32 ADA Recovery or AlphaPepe Before Listing? The AI Presale Adds 100+ Holders Daily",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 18:05:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOOEliNjFTbGw0cXBxdFY0Ti10ajh2SGZ5cXROREZuWDQ3Mkh0aVQ1UGJLNVR4dmdXZndVTk16c2dVT0NDZDhIZ2tIZzN2ZDhIMlNVMWVnTk8wRDBSbXRJY1l5Q1h4SXFXVE13R2YyUWpMY0cwTi1Yek1tTGZMWnFPLVBlR1ZVWVRuVmt4VzFraEFrTmZBUzBmWFZTRHc5d1ZqWGVlamp6NmF1ckdmY1BNVEVVcGFmaVdtOUFWODZQUEFROFFRN0NjalNPM1pJQQ?oc=5"
+  },
+  {
+   "title": "Cardano Price Prediction: ADA Tests $0.22 as Pepeto Targets 300x Before Binance",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 17:20:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQM240TjlLbGlpMlBoLWtsYkNoa1BjWnVLTkFrRWxoV0FCaERrcTFRWEJwUUdORkEwWEE3VkJoTnFFRHJROTVsTjdJWU9LTDhHdjgtd2tIRjU2MDJXMlJPUFF0UWdTeDVKWXdrLWRGZmFBM0psVm4wUDJhWDVwSHR6SjBNQ3V6ei11MVRlczY2akdpc2tfSTBkWkRmWWkzdm9mbGhzeQ?oc=5"
+  },
+  {
+   "title": "Claude Predicts XRP and ADA's Next Moves: Could Apeing's $0.0007 Presale Make It the Best Crypto to Buy Now?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 16:37:17+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNeG9aRUI2ck5xTHNPVTdMY191WmhkVmJ5Snd2bmswM2lxZlUtM2pDVERuQ2JxdGRTRUZEZ1pYRXJyT21QbzFfaHowckVSclh0UFkyMFA3UkVTaS1JWTkyMnpVTjFQM3c1VjJkVi1iNEk3OFpaV3pUcmtlM2xJa2pmNVNxdHVzNzVUQ0h4SGJpSGhBTUVZNGQ2el9iR1hPRFU?oc=5"
+  }
+ ]
+}

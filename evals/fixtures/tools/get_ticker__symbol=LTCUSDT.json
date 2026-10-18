@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "LTCUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:16.449871+00:00",
+ "data": {
+  "symbol": "LTCUSDT",
+  "base_asset": "LTC",
+  "last_price": 58.29,
+  "open_price": 58.88,
+  "price_change": -0.59,
+  "price_change_pct": -1.0,
+  "high_24h": 60.04,
+  "low_24h": 57.6,
+  "volume_base": 275111.44,
+  "volume_quote": 16212587.91,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:15.146000Z"
+ }
+}

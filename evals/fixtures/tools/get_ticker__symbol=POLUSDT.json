@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "POLUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:32:51.492130+00:00",
+ "data": {
+  "symbol": "POLUSDT",
+  "base_asset": "POL",
+  "last_price": 0.09007,
+  "open_price": 0.09199,
+  "price_change": -0.00192,
+  "price_change_pct": -2.09,
+  "high_24h": 0.09397,
+  "low_24h": 0.08951,
+  "volume_base": 31969782.9,
+  "volume_quote": 2931869.94,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:32:43.749000Z"
+ }
+}

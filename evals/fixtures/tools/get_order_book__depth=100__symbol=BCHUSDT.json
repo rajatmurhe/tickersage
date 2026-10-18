@@ -1,0 +1,66 @@
+{
+ "tool": "get_order_book",
+ "args": {
+  "symbol": "BCHUSDT",
+  "depth": 100
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:20.625129+00:00",
+ "data": {
+  "symbol": "BCHUSDT",
+  "best_bid": 270.0,
+  "best_ask": 270.1,
+  "mid_price": 270.05,
+  "spread": 0.1,
+  "spread_bps": 3.703,
+  "bid_depth_quote_1pct": 395069.46,
+  "ask_depth_quote_1pct": 292269.42,
+  "depth_imbalance_pct": 14.96,
+  "top_bids": [
+   {
+    "price": 270.0,
+    "qty": 3.948
+   },
+   {
+    "price": 269.9,
+    "qty": 63.786
+   },
+   {
+    "price": 269.8,
+    "qty": 58.87
+   },
+   {
+    "price": 269.7,
+    "qty": 52.349
+   },
+   {
+    "price": 269.6,
+    "qty": 40.716
+   }
+  ],
+  "top_asks": [
+   {
+    "price": 270.1,
+    "qty": 20.209
+   },
+   {
+    "price": 270.2,
+    "qty": 37.677
+   },
+   {
+    "price": 270.3,
+    "qty": 71.093
+   },
+   {
+    "price": 270.4,
+    "qty": 35.959
+   },
+   {
+    "price": 270.5,
+    "qty": 85.633
+   }
+  ],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:20.624935Z"
+ }
+}

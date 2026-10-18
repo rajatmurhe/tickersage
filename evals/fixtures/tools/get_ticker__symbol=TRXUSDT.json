@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "TRXUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:18.764541+00:00",
+ "data": {
+  "symbol": "TRXUSDT",
+  "base_asset": "TRX",
+  "last_price": 0.3325,
+  "open_price": 0.3351,
+  "price_change": -0.0026,
+  "price_change_pct": -0.78,
+  "high_24h": 0.3353,
+  "low_24h": 0.3319,
+  "volume_base": 58588284.4,
+  "volume_quote": 19536631.79,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:17.085000Z"
+ }
+}

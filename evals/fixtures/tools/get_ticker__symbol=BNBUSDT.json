@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "BNBUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:08.700845+00:00",
+ "data": {
+  "symbol": "BNBUSDT",
+  "base_asset": "BNB",
+  "last_price": 712.17,
+  "open_price": 714.97,
+  "price_change": -2.8,
+  "price_change_pct": -0.39,
+  "high_24h": 724.25,
+  "low_24h": 710.15,
+  "volume_base": 76221.95,
+  "volume_quote": 54719600.09,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:07.987000Z"
+ }
+}

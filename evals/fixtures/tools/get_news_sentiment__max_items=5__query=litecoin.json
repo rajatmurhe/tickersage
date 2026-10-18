@@ -1,0 +1,311 @@
+{
+ "tool": "get_news_sentiment",
+ "args": {
+  "query": "litecoin",
+  "max_items": 5
+ },
+ "kind": "raw_items",
+ "recorded_at": "2026-10-18T16:27:16.733104+00:00",
+ "data": [
+  {
+   "title": "$1.2 Billion Stolen in Crypto in Three Months: What Are Trusted Audits Missing?",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 13:18:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNZ3hsRDVod2tMSVdodWY3TS1OY1pEX0ZJVWh1RV9BZUxQaFRIOWdxTWs2V2V0dW5LazdXcGsxYmxCSTVIOVJ3YmhRUldKNUlPd1ZzLVJLMXBVek41dG96dk84SUswdDZkVVdhOElNSlloRTEwQTRQOTNKa2hUUE9ORFl1X2pjbXJIQ0VIQ1p5bkJ3VUV3bTFjZ2I0ZElwekNPR1VaTFhNRVFLX2VYM290cll4TUdBQQ?oc=5"
+  },
+  {
+   "title": "10 Best Cryptos to Invest In Now: Which Coin Could Offer 1,300% ROI?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 12:17:22+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNMGRHbFdNaTh1dzRIZVFMN0hLQ1BkRV9rQ1l0cVFOZzl3OElvdlVfeUJHNVk0M3l5WGVUM284eFRROFR0TEtINEowZm1PRHRnUGFoaEVxSDBCVDJxdGdFM3k3S0tTc1hjenVOZlBCVG5iLTBjb0szLU1LVEpqaDZWWnVOUWptcV9EVExrZEIyeHpQSjNVU0pKNldnTmRvZw?oc=5"
+  },
+  {
+   "title": "Dogecoin: 13.82M New DOGE, 0.05% Fee Share",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-18 12:15:52+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNd3pydTR0Q2x4ZUVoUlRaXzBzaGpxT0FwcUNqUmhpdEkyZkRqZy14ZXhnM29pRF84ZnhwcXdQVG1TNGRDal9OdzdlRTV5RDJ6X2R3cDJCNWZJWFM1MlNDSXhpREphaUxxemd0SFpPRGJ6N0hOaERvd09JN0FYZTRldHFB?oc=5"
+  },
+  {
+   "title": "Crypto Price Prediction: Capital B Hits 3,538 BTC as Pepeto Targets 100x and LTC, XLM Wait",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 10:45:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNZ0UxSWZLM01kOWwxd3V0ajJaX2trQk5OcjZRc213NTA4Q05QUlRRbnJoWVdyVFQ5X3NWMURaLWYxRlRUVVZuMlFISEhYMkMyR29KTDlyWEp4b0VzeVI4Q1FjUUE3THFNNm56endXX3A5d1dna0hUYTdQZGR2TUJXSXN0bzVWbF9KX1kxN09xNzktNzVkZWk4WHcxeXhJSjh6aGpBMDdFU1pQY2thSV9YVjNB?oc=5"
+  },
+  {
+   "title": "LTC Price Prediction: Stochastic Reaches Oversold Territory as Every Near-Term Moving Average Points Lower",
+   "publisher": "Blockchain News",
+   "published_at": "2026-10-18 09:01:06+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQaEp4ekt4QktnNlhPY0pTQ3JRVjlUWU9BSFNWR3JfZnhPazlaLUxXVVdONzM3Q2h3aW1QcS0xT1FLdWJxRXhMQVEyeWFzMjlYdkRXQjd4c3B4SWcyYnFrNF9BWGVBaUxEcWVKQVRQaDlmbjN0Z2FHVlk0UjgyYm9DWUZoODFHV3JmQkZZd0J4OG9VWDQxcmVCQTE5cWsxaWpfRGplWGYxN2o?oc=5"
+  },
+  {
+   "title": "Ethereum ETFs Lose $320 Million In A Week As Bitcoin Outflows Slow",
+   "publisher": "Finanzen.net",
+   "published_at": "2026-10-18 09:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRHg2bk9iVGdfWWROREhIRlRsRUdXZlNOR2Nwc04zVDB0d29oNjhQNTVnY0tiQXRhSG5fWHBwNG80TzE2VVRmbE5zbXdaOVVrRjJrOWJtTTJaYk9YRlZYZW5OVmtyNERJY0dlaTBPOXM1T3V3S0YwRHk4SmNSbGpCOWpvY3AxS004Q2tFbmpSTm5lU3Zfalp3MXh2S20wLUpFYkN3N3VGdDJ2ZDNraWpxVmxPLVQ1dDB20gGUAUFVX3lxTE95TjRuRmlyWFFpeDNQTWk4ZENkallLVWIwTEpzbTlyTTJIYWt6TGNKaFFjS0ZLQWpRS21rQVpHNjZfN1QxTFk5R05KRkhjSG1ZdWt5OFFvdmNYZ2hJZnpQNzRkQ2tmZktlQlNULXFNbkgwOUlmQUlWNkVacGd3LTJDWkh3Tm5PN0dCM1FQdFVFMklLREI?oc=5"
+  },
+  {
+   "title": "Circle USYC Price (USYC INR)",
+   "publisher": "LatestLY",
+   "published_at": "2026-10-18 08:52:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOY1hZdkJLdlRjM3RnZ0p1VktXd1Y1SUx2azJXaEtQeklpaWFOMDVhS1k5YllqQmpFcnQ2eUdwYnpNeVJxR2dhTVpZVGR4V0w4QnY0Q2dnLVcxM0ttWmhtVU9kcFl1bGZSdjJ5VHdkbE1GZ0o1SkptVUx2SmJfMVNEMkVwVF8wQQ?oc=5"
+  },
+  {
+   "title": "Justin Sun Says He Sold Most of His Ethereum: What Signal Changed His Mind?",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 08:43:38+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPY3ZXbDVnejNTUXdqOHlsaDRHaV9aTWM5Z01OWTVBcGtMVnpfUDlMS2NEaUNkN2E5aU5xbDNqYnBjaWN5OW5idWc5VUQ3QlMxZzRkWGs5SXJUVnRvMEIyRnY0ODZUbXFrWExBb1ctY1FOMWUzSTl3Rk5tMElKZ2dITXJjc3A5ejh1c09LWlBxOUJMV3pwSkxuNWJFd1RhbS1VV3VvVDhHXzhZTkJPVWxtakdn?oc=5"
+  },
+  {
+   "title": "$52 Million in Crypto Liquidations in 10 Minutes While Wall Street Was Closed: How Did the Selloff Begin?",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 07:45:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOOFFickEyYk1hbXgtWHRVcFI5RjczU2pSSnc3V3ZyUGNCTXdpUWFGa2hwc0g3cHZ3R214aXBhSmFjWDFFMGhCZHZWNXh1ZmVzYXpUNGsxNnNCbGVacHRHdEF2aHNqN0N0STZGSkppRmJaaGlWVjRFTWdyT2w3dEJ5dUxFSHFpcVlsZkJ4NVNNRXhmVVhpaERmMlY5U1FoR0hLam1sTmpvZmtNQ1BlNzk2c3YydWxRUnBmUkQ5UUxrd2JXbkYzdENtR3g4OE1neUR4clJfeFpaMk8?oc=5"
+  },
+  {
+   "title": "Audiera (BEAT) Price Prediction: Today, Tomorrow, Next Week",
+   "publisher": "Traders Union",
+   "published_at": "2026-10-18 06:47:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5wWXB4VEZVNERmVFJQZmZaVDQxbjJxQ0p2aWtZcmV2a0xFbmpiQmxHd1EzRVlPYnJpaXptZUo3TlZLRlMybW83dFhkWkg0c1g1MDF3NkNMbnMtTTVVTC1WMHFWelR6YVpEMVhEYlZjLV9leE52OXRNN0xKMA?oc=5"
+  },
+  {
+   "title": "Aster Price (ASTER INR)",
+   "publisher": "LatestLY",
+   "published_at": "2026-10-18 04:36:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1ONjVJZlNhdXdkYmwwYkliMGcwOUZaOXZKS1hpelV4TWc4NG9XWXpqeTUtd29fa2VvaEcxaldaZjE2djlWTk9TUDlKcHdZRmczV0gxb2REeGpTUnZhQWJnVzN4YktVRzFWZkpJenVCXzJrNXBxeGRoMno0akZIdw?oc=5"
+  },
+  {
+   "title": "5 Best Bitcoin Casinos: Top Online Gambling Sites Tested For October 2026",
+   "publisher": "Muddy River Sports",
+   "published_at": "2026-10-18 04:03:18+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQVUpTX1BlY1JCazFhWFpMd3lucDdobzlqdUw2SkNKclBldE9acGlYOXV6dS0zT1hzSnZsbG9td05OYzRaS09zQ05iQ0pJSnVXUnBMbmtrRkJSclVUSV85bU5RMHV4MTloODJQSFh0d1lGZTJnQnloMU5PVkNQeGoyOXhRNksydmxuNGFRMU8zQ1pGc0gzMjRFQjZqcFF1NXJDSUE4YVA2M29VV2dXVlRrOE9rYVhVWHJvSGYyc2VBbmVSV0JaeElv?oc=5"
+  },
+  {
+   "title": "Cryptocurrency prices in India today (18 Oct 2026)",
+   "publisher": "LatestLY",
+   "published_at": "2026-10-18 03:36:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE94WXE3ZDRnS0RWTkNoWXZCUS1vTEJBc3pXc2x6UXUzbldMejRSbDFjcmJ1VmhtSjF2em1hbllubE1wbkFfT2Z2VnR4Y3RHOFRjQzVMcTBIZXV6ekpyZ3dVRzF1MjItUzh1YWV0aVZZVVVua0k?oc=5"
+  },
+  {
+   "title": "Bitcoin Holds $81,954.97 - Could Apeing's $0.0007 Presale Give Top 1000x Crypto Watchers a New Story to Follow?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 03:03:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPSHA1N0kxa2hkSGtmam9CNkFEdWI1REtIN1h3NmtteVg2eFFTbEI5NzZRS29FZ3poN2g3eDkwOWdSWkt3Y1lWN2VKdDJsNmtLUF96YmlMcHc4YV94UzF4YjlqemdMNWhrUUpjN0NXV1M4SUcxZi00ejRTVjYwWklyRFJBb25JcGVsdEw3WnZMTXZzWk9jeTZJTkJ3?oc=5"
+  },
+  {
+   "title": "Litecoin Price Prediction: LTC Trades Near $60 After Its 15th Anniversary as Remittix Prepares Its November Debut",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-18 03:01:14+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNZ1EyNWdNZXdzSTFTR0hsMUFyWkxDekM3cWRoZVJkOGVtX2R3Z2RHd1AzY3ZnaWhBSlN6SWl6VkotYndNbGhUYXRMUnVMeXlCdm9kQXAxSnhJaFJKYXZReE9vSTB2bkhNVE8xNjdsT292N0RIVzNzaWNGZk41TVRlRE5iMWRKRk5CODd0bUpmX0NXS0Nsd3hDa09hR2ZXU1A1WUhGX0pqaUdVX3VNMENQTExUbkozNEVaR29jejJFWjYzei1ZWEpZcXZMMzc0QUxjSUZWWGUyYXFxVms0Wng5YzNqTGUxM0lSdEVEMVZMa2tOZGlqZGoyTlFqTDNRNDNwcEJlZFhLbnE?oc=5"
+  },
+  {
+   "title": "Wallet That Accumulated Bitcoin at $127 Wakes Up 12 Years Later: Value Up Nearly 640x!",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-18 02:36:37+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPMFNTT0tvRUkzYjJMVnRBclFvMU1iRjVUeWtvaXlyZENpVjQ3QUs4WTlMLVU5eDhEWWhOMk1hNDRsVkZvekR2ekx1SjdsSlczUjdaVUtlaXF0TzdKSGlnbUF5bThsOThmUmRMdWRjMk0xemRhUkoyN05HT2JGUFAzcWVqNmJhcDU4MXpLclpQNUpCdzZtY3VHU2lDZjRfMXFkUzRnUFpGVnpVLXBCRTNrajltaVRac0E4RnRkRzI1Yw?oc=5"
+  },
+  {
+   "title": "Litecoin Price Prediction: LTC Trades Near $60 After Turning 15 as Remittix Nears $33 Million Raised",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-18 02:35:07+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQUVpiQm8tT3pxMno2YXdQa0JTX185TUVXWmU2aWxFZlVtdUx6d2JEN2R4SDYyTmhwVDdsekpma2Q0YXVUV2ZKa3NkYnJJNy04b2dPUEtaVy1sZ3lfcklDUEwyNjl1YWNhRmtUMWZJYzFHMnQ0NjVmNFpKWnVEZGNmaEszS2JWcmtWdmZaaDdrYVU3MU5mQ2tfY2hEREZhQQ?oc=5"
+  },
+  {
+   "title": "10 Top Cryptos to Buy in October Going Bullish: Apeing's ERC-20",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 21:57:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQb2tsc1lFU09SQktCdlZ4SUtYOXAyaklPNXVuc09HNF9aLTFoWFlKOXRHY2JZVmRKNlJxVmZpbjYzN0hjTC04bWFrNGVlTXo4Nnc1MDBEdXRCWm5BeVlZT2JHWE5OS2ZINmFMV1Z3ZjliZ1ZDd04taU5oSWFrLXhMTE5OcTRha2xkVVQ5TzJfeHVBQkN6SmhhYnUzZGpWTG8?oc=5"
+  },
+  {
+   "title": "What Could Turn a Small Crypto Entry Into Huge Gains? Explore these 5 Best Cryptos to Invest in Now",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 21:32:21+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxObTNhMlFtSkJEMVhsRHUyLVdQZkloWGpLQ0V2eVVoczN0M3JvdWZycHhUOUl3TUVsZjBpZWdjdy1WN3JBeVdpTFhxOGRKa28wbEZ3VGI0aGJ0Q2hRbDlLYVM2alp1MkZLVG1zSWZyZVRxYXVGVTNfM05pcVdQaDk3MmpkX0xDMjgyd1diQVd5TWRMRjNEbkpOZlhBQmU?oc=5"
+  },
+  {
+   "title": "Litecoin Price Prediction: LTC Turns 15 Stuck Near $59, While $11.2M Backs Pepeto's 100x Shot",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 20:33:26+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPMFVLRzRfYmFIWnA3b09oV2Y1V2hJNnRaRVZkcmUtaU9SSjNSZXpnaGJwRlhyaE1pSUE2OGVhZjNPM2lkcWRfckZQT2M1OG5yY0RGNGxTVVlrZjd3bEhsYy1aNVRxazY1aGl1dnpxd3U1VDR1X2g2VVRfRjhIMERFQ09ZZmFwcWlOWEpNbTdpWGQ0anQ3YUllY1J3?oc=5"
+  },
+  {
+   "title": "Nine Companies Object to Major Crypto Exchange\u2019s Stock Plan: Which Shares Were Blocked?",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-17 20:11:55+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQaXl6R01jRkExY1dncDU4V1dHd3FaNld6SzFQeEV3MTM2eU1CS1YyZTV4cGVyUHhZRU5DcUxHN09lM19UZkJBZWx4SGVTM3lYUDl6OEFhaml6ekdLYTBJUERhRGR2Q1ZZZEFvMlp0THBmUFBIYUZucUhxV05jT0pDOWFibGRtTVByM2thRTZpV0pkcU9xVWprV1lObHdySzRHX2JBRTJWVVRIajhneGdVXzd4NWxNM1V5Rm5CRjZfQlY?oc=5"
+  },
+  {
+   "title": "Fidelity Pays $500K to California Over Crypto Withdrawal Limits",
+   "publisher": "The Crypto Times",
+   "published_at": "2026-10-17 19:58:12+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbnd5NV92b1JGenFLbC1BUmI5X3JUMTcxZjY1WXV1aWhXZGJ6d1pIb3FnTFRWeVNYdzZ0Z19jZ2o2TGZTXzdTYkkySUtfMF85WVdRcjhpT2c0bFpVc2pvbFpZNDRJUk9FLVM1RFRydDAyUTBGdlloTkx5N09sWDRZZ2Utdll4UzdVa0pUaUN1WlJReEdVOTZFNUZFQTJycU12T2t3?oc=5"
+  },
+  {
+   "title": "Dogecoin Price (DOGE INR)",
+   "publisher": "LatestLY",
+   "published_at": "2026-10-17 17:50:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5Qd2tZZmo1eGZELUdqcmFlb3cxaVI5YTBEbThGY0FRenkzWGFjQk5iaFk1V2FxbXIwMGlpTjFGd1dfcWhYV3ZhQlN3R0gwOFdFUGQ2dk9JUjFqc010MkEycmZKck9qVkZIVWU3VkNOWGpGbmlEdUhiREhPelVGTE0?oc=5"
+  },
+  {
+   "title": "Aster Price (ASTER INR)",
+   "publisher": "LatestLY",
+   "published_at": "2026-10-17 17:14:17+00:00",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1UVVZoYXlqVTBkU3g1aFNLdmZnamRqWTFxcTVlLVJBeTVGUzI5YVZRczBFQlJ2WGdFWDc0LTQ1NVI3NDJhS0NyWE9fNDhJR2p1TDF5cGNWRjJ2WmdqUEp0cEtOT2YwSHlkRjZta2hoalZjQnh3VVhVY3pCaXlCUQ?oc=5"
+  },
+  {
+   "title": "Top 10 Online Casinos for Real Money USA \u2013 List Of Best Real Money Casino Sites 2026",
+   "publisher": "Muddy River Sports",
+   "published_at": "2026-10-17 15:30:30+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNZEVUZXc5QUdjbm42WlhZRldWMGs3U0MteDY3R0FYTF9qR2dFZW1aLTNyWXdpY080cTI4c1daVWt4cHdsVkk3UHJPRm1UV3UtQjVuZnlkNGg5dTIwTkFKQTJzQTF4NWVMUHZuV2hFbV9DMk9xM1plbGZrTFFjZ1dsa0NNRmhEczJwUE9TbmVSQ1cyU0xzRXpOVjY2ZlF3aTZRZldIX0d5ZFFTb0JwUEd4MjhKanhuWGR1OHozYXBXRU1aR2VtOVMwMnotNTAwbEVHbVpuRQ?oc=5"
+  },
+  {
+   "title": "Clarity Act Passage Could Trigger Crypto Rally, Says JPMorgan",
+   "publisher": "CoinMarketCap",
+   "published_at": "2026-10-17 13:29:04+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPcHpJSVI2bC16czF0OGxsb2Q0V1lObGg1b1g3eXl6dlpMRW12VWFZRGZQVnR5M1ZjcEtHeEpEZ29BVElod2pLejFwazF3NzQxa3oyQTAxRGlQcDJsTlMzUUlRUWJzZnFIZ0tXa3FHTWZmSUFoREpDOU5tWkVLZE1meVpPcEY3RUxjNXU5NjI0VkpoTm9NNVNYYVV4cFRtdXdlRURKaA?oc=5"
+  },
+  {
+   "title": "Tom Lee Calls Crypto a \"Coiled Spring.\" Which Coins Have Pulled Back the Most?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 12:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQQ0JtTzNtTE12Zk83SFpBZG5NUmZvTVVJcGh1VENZeHlIYlEtUzZ5NzRmR29fUFUwYXBaOHhfUFJub1F6Q253b2U2WVo3MS1LRmk4WmUzSXdiWHhSNlVqSTZOWFl6ZzJzOTIzVTdpYVNqc1RJcnBpRzlUMTZqQjU1TnFyUm56ZkVXOTBPMW9ua2VaVzVNUjY1Tm5GMmpMdjdDUXZyaUpGWWxkMHFZU0dfa0ZsVDNaQ0dscTVUNXVPaHBJcU9qTUlHWGl1WGlqQQ?oc=5"
+  },
+  {
+   "title": "Litecoin Just Turned 15. Has It Kept Up With Bitcoin?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 12:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZ2ZvYlUyLTA5cmY2eGRpM2NJYnBOZUwxYmNEZzVvdHpKN1FtWE1tcEtwNUdOaWVmV0kxUHVOdHhfeWp0ZTZHVWx1UVZSNGlLaTM0ay1iRmhBMU12ZHZuRUxvbW1aQnRWaXJ5MTBXTTdGNWVjTDZuYWcyOUZhd3pINEZqbzRPR1pGSEk5MTYxaEFKdXRlNzlrWnNIZENQVFRSNFhqX05pUHd3alpVMmtz?oc=5"
+  },
+  {
+   "title": "Large wallet withdraws $1.14M in Ondo tokens fr...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 11:06:59+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQa1RHLUsweDk4MlVPcGMzS3lPSTdPQjRhRENZVXFKa2JvRzlxZFowc0hQeDJjS3F5Y0JIWUk0bXVZdmdDeG45czExeGVodkJXbkFtS2JTVW5mcnVSNFdGTVRUSG1ObWtnb3BQeVRnZnRUVkxWbThMZC02dFdFbnJXREd4OGtPV0ZiZ2l6Tw?oc=5"
+  },
+  {
+   "title": "Crypto Whale Withdraws 2.455 Million ONDO Tokens From Binance",
+   "publisher": "www.tokenpost.com",
+   "published_at": "2026-10-17 10:40:20+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBqcWRGMW5OZTNYdHhTN1N3LWJLd0xDcDZHYjlaeHZkbHBfVWd5Y1ZXblZBblRYYVZYV3QzY3JBaVJMaFo5U3pXRmtDbWZQR3BxdDFJX1lZNTJ1Zw?oc=5"
+  },
+  {
+   "title": "Bitcoin mining costs split evenly between elect...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 09:04:33+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMWlsd1pla2hlSzFVS1FqV3pkQ3Z3N1Y2SE1qeTlFWWJRSWYxMHo5Sm5JWUZ1RENkZjV6OWNUOGVfU19mWUxWdFJucHRreDNjR3RKdmQtLWlGRk95bXR1bXBwMHNGSGIyVEFxZF82VlFsUjA5U1czaWNLY1ZCYThkOW1wTjRIQnRFVW45TmhWY0pEd1RzTFBGUnk4U29XblJuc0ZGRQ?oc=5"
+  },
+  {
+   "title": "Top Altcoins to Buy Now: Could the Next Big Crypto Story Start at Just $0.00070?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 08:37:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNR0VmQzl2eFZDbWVjRTF0MWJ0bWVpWDI4RlFsV1BoTlZhWVk4MU92X3AtQWFIMktzeHBzd3ZYalVyVXF0aWU1ckU3aDBtczNsTTJhRXFtaDJJckxzSkE2VEk4LUJrT0tVYWlFOXAxaU5DbnpDc21JdlgwV21wdmU3T3hNM3NOaFJZVDZ1WUVpTWdsZWpvMk84N1lBWURmQQ?oc=5"
+  },
+  {
+   "title": "7 Best Cryptos to Buy Now: Apeing Stage 8 Raised $121K+ as Price Hike Nears",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-17 07:27:17+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPTFFQdVUxZGx2TlZ5UW9peVpVR3lyZWpTYjBOVTlXZUlkTlI0LU1ROG9pN2dmNnllWXpxQkRTcW43MFFSRVNIaTc0cWZ0SmRSeXJuQ1JFblAzandfcEZJdWF2dzBOeGFyeU4zRnkxRUVlT0h0Wnk4OEs4bm91RklqQmlSWF9nYXBzbmVWdXlmSFQ0Z003N2VkdWs1c3Z6Zw?oc=5"
+  },
+  {
+   "title": "MSCI Tightens Index Rules As Strategy And Other Bitcoin Treasury Firms Face Fresh Scrutiny",
+   "publisher": "Finanzen.net",
+   "published_at": "2026-10-17 07:13:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNMEZXR2diM0kzXzdObUxOWS1Ga3VQZkZ0YVYzd2NHalFzODFtX1pNel9CVFZDNGRpeW0ydWdhSGFTX3VjLU5kenFtQWQ3ZndRQmtLVmJzZW03ZFp0dHg5VWdRQ3g0SDNLR0JwbmprZDN0LUVlSGlfYUFCZl84djFXY2lSSnphOGxtdkV1SzB4NTZHam4tN2VfelBXLVFlVV9POXlKeXJfNzBrMkFRZy1JdU1qUmdkQUJlWVltVDg5UWFKWTNDVzhzcGJFLXJJRWRkb1RWaV83V2U0d9IBrwFBVV95cUxQY0NlZko4bDlkZjFZNmpNY1M2bWd3OC1wRThtc0tHXzRFNWxhMXpxaWtoQVdYcGhvWGVPYzFaUHpDbFl1d2pybmVHYzZnVmJNU01VQkVRc3lWdnkzbjBIUzI2bVdUMTV3NzNkNnkyVGRnUFNnUS1KeHlJVExEeUdlZXZMN0V6ZnBMUXZ0ZzRoMlhmUTlRVEQ1Vk4wVERHWGNHTFZQOHdPSGhqQjlBVDF3?oc=5"
+  },
+  {
+   "title": "World\u2019s Largest Movie Theater Chain to Start Accepting Ethereum, Litecoin and Bitcoin Cash",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 07:10:11+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQLWo1aTJrM3p6UjdzeWx3aWZOaWxsM291Ml9ZRHQycVo5MDRBOXhlblJINWgwMXQ4TUpSUTMzUEpUVmRnS2VxdGNsRmJ5S2tYSWozc0JfMVh6NnNkYlBpYXI3bTRMOGxyWHVqWl9GVndYVzNxVTl3RjYyazY1d2t3MVRWTVJ1ZnhvZGVFU0tFNC1zQQ?oc=5"
+  },
+  {
+   "title": "Monero Rose 6.5% This Week While Zcash Fell 6%. Which Privacy Coin Is the Better Buy?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 07:06:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPVlNxMTVZMmNSeVVIZmJlVS1ZUy1zM1JkaFMydTZGMTh6a21LRF9NeFZTRHZFRDBzZm4yUWctdEdRLUZPTFc3NmtWdS1XaDdNeGxfRmVkdWJJUTI0eDZ6VWN0R1RtYXFzS3RBMndJVlVqVmRkSENtVF9NdkRnRHkzeVJWOGQ2ejlNZGhKMF9naDRkbEFmLWIza2ZJTjRXNk93T0k1RDhUYTQ5OWFfa0xlcS14M01xUXhic0J5UFZueUx0emplbkhGMTBQbUx4dVhEUGgxS2NDYw?oc=5"
+  },
+  {
+   "title": "Bitcoin and Altcoins: Market Overview (October 17, 2026)",
+   "publisher": "Koin B\u00fclteni",
+   "published_at": "2026-10-17 06:15:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQWmNDTkhMYk1JbkszUlFhVG5yVkhiNkcyQi1wUW5fVUpHVEdGV2t1NmlRUG5nRFJuOThoZ3oxZ2ZqSDRacU5ZZjR5cldrNWR5V1JCY3FxTWZTc05ZcHJzY3J6dEUxZE1oa3R2VHlWVFFxMXR4eGNJNGZsV0gxZFltNnVaYWdpcGpKOGtXZEI1YVRod3J1akE?oc=5"
+  },
+  {
+   "title": "Dogecoin(DOGE) Stock Price Today | Quotes & News",
+   "publisher": "Moomoo",
+   "published_at": "2026-10-17 04:17:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxNQWdQdHh6bWtPM284bEN5N3FoRFJlMmFPdHlkTkVJQzM5X2NGamlOQnJuVTZtNDc1dXdFc3pjRi1lNHNIUVJDeGQxSEEweUlhLUlTWjFuXy11S2sycTBXQ0l5RnVENWNvQXBtYWlYVTNBN0pjREo4VVJKckNFQVFBOC05YWlxX2FlWG1IbUVodkROdzhmSUx6c0xrZWZEdWZSUGd6NV94bTNuemx3RXBKVUE0bmlHbGtaakF5LWZBWlhNczlscUMwdEgxblVFNHItMTNXRXlBd1VDRlh2cVdRcDZWV0NzZTZ0VlVFVjRBRXZBNnBLaDNRaFBVb09VSnFVY1ZHdUwtRDdCd2RGX2RWYjFUYk9ab1ZIQWdoYnNwSVBTdmRfUUJBT2ZJUkVSaWFhbUM3aUlKVG1NNHRyaWd4TXA2YXRzYTFBM19wSDlyZXVnQ05N?oc=5"
+  },
+  {
+   "title": "Convert 1 LTC (Litecoin) to MXN (Mexican Peso)",
+   "publisher": "Bybit",
+   "published_at": "2026-10-17 03:46:07+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBkcGZaU0N0RGRYbm1ueFBHRW9uOW90NTFsSmVLemNaS1lqS2ZwVG84V2wzUkMyaDN5eHNSakVfbG9BcnNwejh0WHhRck1UczJUaFgyVlhkWQ?oc=5"
+  },
+  {
+   "title": "Convert 1 MXN (Mexican Peso) to LTC (Litecoin)",
+   "publisher": "Bybit",
+   "published_at": "2026-10-17 02:10:57+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1qUm1Xd1ItYTBLVFVxQmxrMEZsdXZicHM2WldpbVhmVUh6NFpoU1VQTEh6Nm9JSzNSb2QwUTJFSHl0eVBxbUQ1c2ZGSGtPcFhsYl9Ea09ORQ?oc=5"
+  },
+  {
+   "title": "Memecoins Steal the Spotlight as Altseason Builds: 4 Low-Cap Cryptos to Watch for 100x Potential",
+   "publisher": "Bitget",
+   "published_at": "2026-10-17 01:01:32+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE56cTMzMk13cmlvc2xmaC00aXBTNDhXZmFjUHd2Zk9FX21aUXlDRmZyMXg2eXJTSDIzSTNfbjNsQ0VRQi1kTXVmR3JFLU5zcmpLQkJ1TGhUc1NjNjdBMVIxV2hNMNIBY0FVX3lxTE56cTMzMk13cmlvc2xmaC00aXBTNDhXZmFjUHd2Zk9FX21aUXlDRmZyMXg2eXJTSDIzSTNfbjNsQ0VRQi1kTXVmR3JFLU5zcmpLQkJ1TGhUc1NjNjdBMVIxV2hNMA?oc=5"
+  },
+  {
+   "title": "Bitcoin Price Prediction: BTC Recovers Above $82K as Remittix's Planned Final Tier Puts $0.28 in Focus",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 21:11:37+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNaWpYWVA4NU0yV2ZHQUdzaHhtM3d6dEpIb0JLLWQ2YVJHODNQTnByMlpKRkxQREdvWGJCd2k4QlUzWWNZTW9WUF9Mc05lby1Oc0ZQNXBPVEhHLVRuMzZNRklnWW4taHdCVkpPbUVfa1RGUkZGMFBJRHF2Y2pPTkRsNTFOYlBndnJYbGhITWpiY1dlLWozVzZuT213LWZKdw?oc=5"
+  },
+  {
+   "title": "LTC Price Bounces 4% to $59 as Two in Three Traders Bet Higher, While Pepeto Lines Up a 100x Run",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 21:07:38+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOelNtblRlelF5VE5fdk1MQ2ZzVTJzVk5MUXB5LTZoaWh0S1gyaU82T2NwVUtodFFnTEs2d0JiWHFmWmwzUGZBVnNVcXhmZGJVc3lqLVhmbHota0ZrTW9Yc29CSkFpMm1MWmltN0Q1Y0FFSzdESlhtVkpQNGFrX0RKZDdCWW9yZ3ZuQ0NYbFN6M09zejE3RnluQ1J4NGo?oc=5"
+  },
+  {
+   "title": "Litecoin Price Today: LTC Trades Near $60.50 After Its 15th Anniversary as Remittix Prepares Its First Market Chapter",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-16 20:40:16+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOS1N1blBuWnVQMy1UcWhzX2hSY1o4NllvSjkxaHZWYUliaURrbVIxNUtqY2FqVXBZWl9yYXR1TnlCQjAxMHFIam0xNnBSTHVVRllpeGctTHVMRndhSG9tcXJOTDRhNm02dTRGZlM1ektuMDVaalZWaDU0SndjQXh4RGpQbnJmU2huLUdZMzJfV1Qxdng0V240aUxaRFZkZDU1cWE5eGRUb2RlMVR3TzdObFNwdXVGeGtpbmlGS0EzSFJ0WHdiQ2RwM05fRXVBVC1ZSktadlpfQQ?oc=5"
+  },
+  {
+   "title": "Litecoin Price Prediction: LTC Reclaims the $60 Region as Remittix Prepares Its First Public Market Chapter",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 20:36:13+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOcXlVLWxOMndkajRhWjFGTEZSb3NNbnlsUUtwOEQxUDR5ZjlSQ3RTODdZRkNWRElTUlg5OHE3QkRYbWNCbDZRdXVGN1dFTWI4ODQ4cnBqbHROLWJiZnRVQ29vV2pfZjc2Z0xFV2I1NWlvRnhPZzUxRHQzRE9Xb1kwOWRmeHYyQUVteEl0Tno4dGk0MU4zNUE?oc=5"
+  },
+  {
+   "title": "Litecoin Price Prediction: LTC Bounces 4% Off Its Floor as Pepeto Buyers Eye 1000x Before Binance Listing",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 20:32:20+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNTUpYNDZEamFBekhLMHowUm45R09yTWU4WENOOVpxRnlEVzdWRGFYRXlBSks4Rk5PSkRVVHQ5VHdJdWRpOTIzMWpZaDQycHVBei1jcFM5clZPSGJyakhpdFdlRUhpZHFCcjJscHR3ZXlxbkwtb1VwUU5jTmdOSGdvNElpNHRwVFN5bUF6Qm1OdU4wR21NOXBQWHRjMlpxbzMt?oc=5"
+  },
+  {
+   "title": "How Digital Payments Are Moving Past the Checkout Counter",
+   "publisher": "The Tennessean",
+   "published_at": "2026-10-16 18:31:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOR3NWdXY2bEdaMjNqWnZiZTRNc1J1emtDMS1JOWI2dHFORnBfRjFDcHQzX2p2cDg3a2d0ME0zNXBhYURoOWtzdldJbU84S29ZeVQ5NWs3cXZydUZIbzNDaXQwakUyYU5iN1h3WVc2Q2JjcDhmSENaTUtvTlIwRDktMTNNR0FwX0dNakY0b1ppNWpCV3BzZURTcVVBUzVJNzRXWTJLaGc4REN5dm9XRUZ2WHVQZDhTVjQ3SExGVkVTeGVmSmV2Rm9hcXFrWXJ3Ty1WenprZ2NVRVRxdw?oc=5"
+  },
+  {
+   "title": "BlackRock USD Institutional Digital Liquidity Fund Price (BUIDL INR)",
+   "publisher": "LatestLY",
+   "published_at": "2026-10-16 18:28:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOb21OeEJDQ1FTNmJldmRTTnczZXRZOFNCUmxQa1ZENHJ5c05IRktid19VaE45dGhZcENrc21JOUp0RXRMdDFEeHBsRC1aNWljLU5RY0ZjS18xZ1JDWjJuYWI1elRxejVTbFh5R3Q3MVpHbTlIb2dUWFA4cnlpREpiT3o0VEZMSHh3M1VPMDMyc1ZMajBpS1B2OGk1QURQZlVuQk94VjdJN0szQ0FLTGgyU1NXelFUemc?oc=5"
+  },
+  {
+   "title": "Convert 1 LTC (Litecoin) to AED (UAE Dirham)",
+   "publisher": "Bybit",
+   "published_at": "2026-10-16 17:51:59+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9wdjVyc3Y2TzM2TEZTR2pwU1NUbHdCNWhuRk0tenotRjNLeVZveXVlT0tNYVcxZkxvcUNDeDQ5UU1YVmVPcWQyU3ZRV2VTSnlCS3BQWElZbw?oc=5"
+  },
+  {
+   "title": "Litecoin Price Prediction: Can LTC Reclaim $59 as Pepeto Buyers Bet on 100x Gains Before Listing?",
+   "publisher": "openPR.com",
+   "published_at": "2026-10-16 17:22:37+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPcEprWFNfR2YzMm1LR0JwbGNmZHFBeVczZnFnT0pEWV9jSnVNTFF5MlUzZUJuLU5HN3J0ckpSS1p2MGFEaWhvNFZnOURYV19lcUtWTG5zbXo2NGJVM05DYktNZGJCb2tHRGN6ejhoNGdqU0J2WlItRFdMZWZpcG5oREp3c2NXZ21jdldUUzZvMDZmeEJiZUNxN0dwM0szdw?oc=5"
+  }
+ ]
+}

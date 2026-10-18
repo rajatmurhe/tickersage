@@ -1,0 +1,37 @@
+{
+ "tool": "compute_metrics",
+ "args": {
+  "symbol": "ETHUSDT",
+  "window": "7d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:05.582435+00:00",
+ "data": {
+  "symbol": "ETHUSDT",
+  "base_asset": "ETH",
+  "window": "7d",
+  "interval": "4h",
+  "n_candles": 42,
+  "start_price": 2536.63,
+  "end_price": 2369.79,
+  "return_pct": -6.58,
+  "high": 2579.88,
+  "low": 2318.0,
+  "range_pct": 11.3,
+  "volatility_pct": 1.21,
+  "annualized_volatility_pct": 56.49,
+  "max_drawdown_pct": -7.98,
+  "rsi_14": 37.32,
+  "rsi_overbought": 70,
+  "rsi_oversold": 30,
+  "sma_20": 2425.39,
+  "sma_50": 2465.79,
+  "price_vs_sma_20_pct": -2.29,
+  "vwap": 2452.49,
+  "price_vs_vwap_pct": -3.37,
+  "volume_base": 1840172.41,
+  "volume_quote": 4510146002.82,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:05.531459Z"
+ }
+}

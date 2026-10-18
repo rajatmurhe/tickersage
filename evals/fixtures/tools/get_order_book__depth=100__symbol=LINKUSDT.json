@@ -1,0 +1,66 @@
+{
+ "tool": "get_order_book",
+ "args": {
+  "symbol": "LINKUSDT",
+  "depth": 100
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:15.815797+00:00",
+ "data": {
+  "symbol": "LINKUSDT",
+  "best_bid": 11.76,
+  "best_ask": 11.76,
+  "mid_price": 11.76,
+  "spread": 0.001,
+  "spread_bps": 0.851,
+  "bid_depth_quote_1pct": 594439.76,
+  "ask_depth_quote_1pct": 466386.22,
+  "depth_imbalance_pct": 12.07,
+  "top_bids": [
+   {
+    "price": 11.755,
+    "qty": 117.46
+   },
+   {
+    "price": 11.754,
+    "qty": 148.27
+   },
+   {
+    "price": 11.753,
+    "qty": 195.0
+   },
+   {
+    "price": 11.752,
+    "qty": 369.65
+   },
+   {
+    "price": 11.751,
+    "qty": 896.5
+   }
+  ],
+  "top_asks": [
+   {
+    "price": 11.756,
+    "qty": 218.62
+   },
+   {
+    "price": 11.757,
+    "qty": 309.66
+   },
+   {
+    "price": 11.758,
+    "qty": 848.36
+   },
+   {
+    "price": 11.759,
+    "qty": 836.45
+   },
+   {
+    "price": 11.76,
+    "qty": 838.51
+   }
+  ],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:15.815604Z"
+ }
+}

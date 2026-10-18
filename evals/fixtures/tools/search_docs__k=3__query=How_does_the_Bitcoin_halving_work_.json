@@ -1,0 +1,31 @@
+{
+ "tool": "search_docs",
+ "args": {
+  "query": "How does the Bitcoin halving work?",
+  "k": 3
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:26:57.618563+00:00",
+ "data": {
+  "query": "How does the Bitcoin halving work?",
+  "chunks": [
+   {
+    "id": "bitcoin-halving#0",
+    "title": "Bitcoin halving",
+    "url": "https://en.wikipedia.org/wiki/Bitcoin_halving",
+    "text": "The Bitcoin halving is a scheduled event, roughly every four years or 210,000 blocks, in which the reward for mining a new block is cut in half. It reduces the rate at which new bitcoins are created. Bitcoin's total supply is capped at 21 million coins, and halvings continue until the block reward reaches zero. Halvings change new supply issuance; their effect on price is debated and is not mechanical.",
+    "score": 0.613,
+    "redacted": false
+   },
+   {
+    "id": "consensus-pos-pow#0",
+    "title": "Proof of work and proof of stake",
+    "url": "https://en.wikipedia.org/wiki/Proof_of_stake",
+    "text": "Proof of work and proof of stake are mechanisms blockchains use to agree on which transactions are valid. In proof of work, used by Bitcoin, miners compete to solve computational puzzles and the winner adds the next block. In proof of stake, used by Ethereum since 2022, validators lock up (stake) coins and are chosen to propose and attest to blocks. Proof of stake uses far less energy than proof of work. In both systems, participants who act dishonestly risk losing resources: electricity spent in proof of work, or staked coins in proof of stake.",
+    "score": 0.133,
+    "redacted": false
+   }
+  ],
+  "source": "TickerSage docs corpus"
+ }
+}

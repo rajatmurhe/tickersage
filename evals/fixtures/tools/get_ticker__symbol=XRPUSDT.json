@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "XRPUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:10.542511+00:00",
+ "data": {
+  "symbol": "XRPUSDT",
+  "base_asset": "XRP",
+  "last_price": 1.27,
+  "open_price": 1.29,
+  "price_change": -0.0186,
+  "price_change_pct": -1.44,
+  "high_24h": 1.31,
+  "low_24h": 1.27,
+  "volume_base": 59906441.5,
+  "volume_quote": 77218006.05,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:10.270000Z"
+ }
+}

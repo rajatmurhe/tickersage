@@ -1,0 +1,49 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "ADAUSDT",
+   "DOGEUSDT"
+  ],
+  "window": "30d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:22.742019+00:00",
+ "data": {
+  "window": "30d",
+  "rows": [
+   {
+    "symbol": "ADAUSDT",
+    "base_asset": "ADA",
+    "end_price": 0.2164,
+    "return_pct": -3.57,
+    "volatility_pct": 3.96,
+    "annualized_volatility_pct": 75.68,
+    "max_drawdown_pct": -19.97,
+    "rsi_14": 39.31,
+    "volume_quote": 1276293683.81
+   },
+   {
+    "symbol": "DOGEUSDT",
+    "base_asset": "DOGE",
+    "end_price": 0.0777,
+    "return_pct": -11.17,
+    "volatility_pct": 3.83,
+    "annualized_volatility_pct": 73.22,
+    "max_drawdown_pct": -22.64,
+    "rsi_14": 33.19,
+    "volume_quote": 2560101388.65
+   }
+  ],
+  "highest_return": "ADA",
+  "lowest_return": "DOGE",
+  "highest_volatility": "ADA",
+  "highest_volume": "DOGE",
+  "volume_ratio": 0.5,
+  "volatility_ratio": 1.03,
+  "return_gap_pct": 7.6,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:22.733386Z"
+ }
+}

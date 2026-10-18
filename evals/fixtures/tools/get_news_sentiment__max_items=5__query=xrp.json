@@ -1,0 +1,611 @@
+{
+ "tool": "get_news_sentiment",
+ "args": {
+  "query": "xrp",
+  "max_items": 5
+ },
+ "kind": "raw_items",
+ "recorded_at": "2026-10-18T16:27:11.244359+00:00",
+ "data": [
+  {
+   "title": "XRP Price Battles $1.30 as $2.77B Futures Market Loses Momentum",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-18 16:15:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9DeDdlaWVzck9WOERBQVQ2WXV1OTBZZGxGa01jNDNYX0pKUWtJdl9qQ19DT0dRUm5EY3Y4TU9yczl1czg3TUZNUFpJOGVab0ZHcHBuWEU3SnlRbkU?oc=5"
+  },
+  {
+   "title": "XRP Ledger Payments Volume Crashes 72%: Is This a Warning Sign for XRP?",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-18 16:05:47+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBhVDNObW9kN3ZBNTFKa0ZQcTlCUWR4S0pqTW4yMmRXcGhuUzBucFVqUzdSWWVHUUxXYVhSeVBUTF82dkdRNlluUVllOWpkWmstMjd0Xy1QYjV3NlE?oc=5"
+  },
+  {
+   "title": "XRP clings to $1.25 as Evernorth\u2019s rumored $655M purchase stays unconfirmed",
+   "publisher": "AMBCrypto",
+   "published_at": "2026-10-18 16:00:58+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQYTgxeWRGZURyYTd5dUVmdHhNZUxIeDZtYmVUdUhOXzhQWlpMM0M4LXhxUjJsTWgyaGtMU3NyWmNQbmpmR2FVNkdNVmY2YlpxYUtqc1VjN2pLWTZod3JxUVdTWUs0elBaQjAzd013SDc4UGNuS2ozNTFNWm1ZWTRmLU1xcVB2UmRfbWkwRmlTUlgtZnNNRF9EdkstTQ?oc=5"
+  },
+  {
+   "title": "Unraveling XRP's Market Alchemy",
+   "publisher": "OneSafe",
+   "published_at": "2026-10-18 15:59:12+00:00",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5TcURDbDVLQzBGWHktMk1JZW9SRWJfUV9XNmtRdlVoWEF2MzRIb3BxOFFUbWRHclYwZC1YWm13SmNxVlQxWnRYeUY3Z3FLaHo1cHZ1a3NqLWMwUU44VWdibnhjS2hZeHdBX3daQw?oc=5"
+  },
+  {
+   "title": "XRP Ledger burned 398 XRP in 24 hours; 1 billio...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 15:58:23+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9fQTFhY0U3Z3VYakF3cFV0b1NmSFhLdF9mS1J5MG5jQmRpVUxyR2Z1YVZHN003YmNLelcyNmowamN6UVFoWTl1RnExUEFoOTRkM0dxRnRqYUtpMlI3TjFkeXRuVFBZWkVkOWNtdEtjMWNfYmVjMkRyWFZR?oc=5"
+  },
+  {
+   "title": "Spot Ripple (XRP) ETFs Reach the End of an Era, Solana (SOL) Funds Can\u2019t Catch a Break",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 15:51:10+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxObnREQjBJckk1ZDhoTTJ3QUtmdENYUFpqVTBQaWVwbzN1UUVka1RXOW55YXJLMXNjZEl6bkYtVXlqVUY1Nnp4akNxN25IUVFtWFdUbzJMT0ZZbzVNSHdGRG5jYXUxZXdLM2tleml3bG8wSXM0Rlo4RFljQ0dJS3hjSE02RnRlTVlQbVJBUjZja0VTVEtjNlM4RHhnNU5VUk9YMG8xTXVIVmZjWU9yR0ZlQWxsS0xvcFhfbXc?oc=5"
+  },
+  {
+   "title": "Spot Ripple (XRP) ETFs Reach the End of an Era, Solana (SOL) Funds Can\u2019t Catch a Break",
+   "publisher": "CryptoPotato",
+   "published_at": "2026-10-18 15:36:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOWmNsdnJpTWQwbEJYUnItU2Fjc1g0RE9kdDZMbThDajBsTjZDTW9kcEZoQjN1U3dnTHVDSERQa25DdkYxWE1CSGlOamRuZHRTcjNDVFE3RzBDRTFYSWxMdWlLdXNkb09HOTdUQlFHY1JpcEs0blR6Y2dVYnlFQmQzazR2enMtQ0FfRzdyYk1ZY0xwSXpWbTVzRVdQbE5XLTF0LXN6Wk85UTZjdw?oc=5"
+  },
+  {
+   "title": "XRP price prediction: 398 XRP burned in a day against 1 billion from the escrow",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-18 15:29:12+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQa0F5dXlRTnJwYVFJd1dlWGlJNjJYa09UZTdjZmVjMFRWVVZGQWs5eWdLa3ZUcS1nZk9DeTAyZ3NIUndjQkpzMDB6T2IwT09aaWIySjZxeDVBbmdrTXJ0dGtoRDQ5LWRBU2ZnLVFhR0Jra2RxalZCSDZDM2F0RUkyWC13b3NuekE?oc=5"
+  },
+  {
+   "title": "Cardano Fell 12.6% This Week, More Than 6 Times Bitcoin\u2019s Drop. Can ADA Hold $0.20?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-18 15:05:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNS1BZQkNxSnRpU2xkWWFVZ0Y1ZmtXMnRLcFZRY2NzYlBtTmt1RC12d29XdTlUM25TcmtEaFUyMHN6NEFhbHkweS0zWVBlNm5jeWhzMkEzSHFSVTJBUHlXV2ZYd0JrZUQxTUR2SWF6WFk1ckU3dDdPNkpyRjdiRWxkR1UydHlJV0J4T2pURTdBZjFRVV96RmwxbDZOd095M0VRdnBMVGNrLXlMcG9rdEpKVXZEampzaENGc0FQdjIyTmN3Mm50Uy1xWjAtTWtSdmJEdVE?oc=5"
+  },
+  {
+   "title": "XRP Combined CVD Selling Nears $2 Billion",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 14:53:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOcXNHVFNwLWZtRTVVVG15ZHdDdUM2RXplSnpHd3NWOWQ0NDBTZndjTV84ZFhKUzNBWDNFd2hhQWEzLWNrYTM3R1NrRzVtTjVKOC1rbEhqQ3N3VjZjSFdrMXMtSWZVVHdTVzg2b3JmV3NReG41ekNSWE15OV9sY0hkYjVJR1Y?oc=5"
+  },
+  {
+   "title": "\u201cNew Money\u201d Is Coming, XRP Ledger Validator Shares Vision for the Future",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 14:53:01+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNTVVFeXQ0cEpWMFBqcVBlZTNiUkNOS3psbG96Z21qSFRBaFRyVDFUOGxVZnhpN1Y1LUJUVy1WNnVZZ25iZnBKZ2VOVzlicFFLZkx6LTBKbGQ4U3hhcWxudklySlZNZnZnWXhHLXhPUXR0WUpGVUZZZ0JqRGpaT2Myc2JSOHZHODdIM0xtOEQ4blluU0ItTnVjTUtkcnZJanI0c3ZhNTBnSUQ3SVE?oc=5"
+  },
+  {
+   "title": "Sui Is Back Under $1 Despite a 35% Gain This Month. Is It a Better Buy Than XRP?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-18 14:50:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNeGVBTklUTTF1aVBhdERnVUlhUmw0TjRyYW9mN19ic09aN193cDQ3anVnMUFDSk1UaVpiNGx1T2NQREZPdVY1SnRlaG5RbWlsOERDT0lWOWV0eUdlS0Jkc2JfWVk2NTIwZWtQOG1tVkFNVUtpTU9lQ1NwV3IyaVNIRlZsOUV1MFFqbV9wcVhBakZQbjVjUTdCUGp4dzdobk00TVhSb3VYUUE0aTJrYkhLeWhfMFUwRmxYTHpLLTY2SkFFcmRrLXhhSG1HWi1xUURK?oc=5"
+  },
+  {
+   "title": "Bitcoin & XRP Price Outlook Ahead of the 2026 U.S. Midterm Elections",
+   "publisher": "CoinGape",
+   "published_at": "2026-10-18 14:38:05+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONlltWEdMZTRvRm80SGNUdWxqeDJqV0Y4YTBJVExqMFcwWFdrNzBvZ0hEQ3NSMGZ4OWZzVlpSa3hzaXVHWXVlLWxaNk83WVA3VUVYNmhxcmt3bjdlVXJoSWsxbDFnbHU5eGFJUkFXNnVLcmpnTlZuWnVqeG95NmJ4SUVQeVhxTEI2UjQycENsdmVQNGREY2ZRQXFPSQ?oc=5"
+  },
+  {
+   "title": "XRP NFT creator highlights rising trend of phys...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 13:34:03+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWHRleFZCUmp3VVNBR2kzOUh5dGRSYmctMUUxeVNVYVRQSHl4M3l6YkFia3lQR0NSU1o5TGtyazBiN1VZaFQtazV0TWg4Wnd3ZDFsTnA1T2lWSDkxai1SR1pqUXVpQ1JXVUF3ZFQtenBIRS0td0o4UVBOZUNXTlBpZHlR?oc=5"
+  },
+  {
+   "title": "XRP ETFs End 13-Week Inflow Run With $1.84 Million In Withdrawals",
+   "publisher": "TradingView",
+   "published_at": "2026-10-18 13:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOMm1uQnRWSjhXRWRpaEZvd0l6U09ueFNvZXhkMjNOdnVObEdwYTg5aklicWJhSE14QU92ak10TXE4MlFKbWEyeVAzekEwZm91UV9FY09Wb09BMGtJNHNycFg0NGVHR3ZidnByQXVUeHZHV1lsUDgzeGhwaHhQOVV4MjBKdUVITC1uaG5IczQyODhRTEVMSk0zWTcxWXVUWlB0RkZYVElOQkNBRzcxVFI4MWIwSC05SjI0VTFOZ19NRQ?oc=5"
+  },
+  {
+   "title": "Binance's CZ supports XRP, Solana amid China's crypto crackdown on Solana's Shanghai event.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 12:34:09+00:00",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOM3hWVFFNWDFxc0E5TXNiM0RpUjV3VVUyZXJ6bVViajFaa2xqR2hjNzk2S3dwMWp6QVRQYk93bWFkQzdWT2ZvVElhTW44NFFRRDRiNGp5TVpWcXE3enhDNi1aaTlQN2hHZVNQUnpaZHNSNjh6cnRpXzE0UXcwUDFScS1jLTlmSDMyZ3dWaGFlSmNTWlZBV052blZlRlBaN2VsbGxNY0FnUlltWFU0dkV4Rg?oc=5"
+  },
+  {
+   "title": "Circle Paid Its Partners $819 Million in Six Months. Can Ripple\u2019s RLUSD Compete?",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-18 12:31:32+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNOE5aNzQ2djZaOVZickpCa2VNcVgyOUlKY21COXFFX2QwbG4zamJDczZ3eFhMYlRFVlFBZmV4Nm00cjhMdU9tOFNITEhvYkNPc1U5N3J3V1ZGd3hPUjA4bE1MdUFsYkZJeE5xWnJwcWI4QWlVWVRzN0NKVHIzR3FsUmYtUU9hNnVMdlpaNVYtLWR3cU82TDFlZTZGeUdOUQ?oc=5"
+  },
+  {
+   "title": "XRP leads domestic crypto trading with 15.99%, ...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 12:24:28+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQT2lfd1R3NTlLUDNUU09BZ0Y0cURuRlV6OHlpb0ZYS1d0N2FFSF9jaTZuS0ZWODBWV19tZ2NKSU5TTXB3M3FRSmlmT3JtZVFMRkVuNmtzeUMyYTAyQ2w1NVRueEt2U1ZOVUNLMUtHNDNMYzhaZS1yakJEcXV3WTFRT09JRE9WV095TVFpMGtQZ3FxTGllZGZrUm90LWRqVmF3d29KLS1wSlVyZF9OSUE?oc=5"
+  },
+  {
+   "title": "XRP price at Oct 18, 2026 at 9am EDT Crypto Prediction Market",
+   "publisher": "Robinhood",
+   "published_at": "2026-10-18 12:04:22+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPUjRSWEtZOTlfdDhkWXdSalJsdk9PUnBBd2d1c19qT1NmMFFSSmFPcmwxT2FBeWg1NmVNUmljaEExNG1DNGd5d255Q20tTTBnb0RYbGpvcWcwQUJyU2ZkZmRoZFdySEpTTGczUlp2ZFROLWpNdEU0QzNPUHVzampIbmZqZlI0R0NEVVN6ZXAxcXZMcmZnVE8xZkZ5NG5CZFNIc0l5dlNsTDUzM0VlVXc?oc=5"
+  },
+  {
+   "title": "XRP ETFs Keep Pulling In Cash While Bitcoin and Ethereum Funds Bleed",
+   "publisher": "Startup Fortune",
+   "published_at": "2026-10-18 11:32:28+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOaUp4Y1p1MEtwY2xMdDlPS0xWQzZpQjdrdm9KcHk3UmRQdzRpT0ZLa1JwZXk3NUNXMGhsQUowU2ZBbl9XLV9fb3JUMlNQdGxfelVpQjdLYVpSb3dCS3R1eDhHNmt2ZGoyUTZaQmhMZElON3ZCTVBhV181Y1Z6SUZJQ1RzVHNRVEk5b1lITnVUQ1BLQ0djbU5FR19YRkM?oc=5"
+  },
+  {
+   "title": "XRP's odds to hit $2 by year-end rise sharply; Bitcoin and Ether show mixed year-end price chances.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 11:24:39+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSm1EVXZ2Z1pHN002NE0tbHExYzNSZDdMVmp1TUFvVW5ac3YyUkJCaHRMQ0JzZHVYNG9SR1o4MnBZRVlzSWw2Ny1hdVljMFlkYUFWRkRpNGRQZDlIWERZalM3ZmNIWWFWSFJkOUVMclhtSE01eE5qTFNGTTk5OHRXRg?oc=5"
+  },
+  {
+   "title": "XRP Price Prediction: Three Buy Signals Flash Near $1.31 as Pepeto Targets 1000x",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 11:20:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNOGt5cVNHM2xscmJsUkFNSFBTX3YwUDRwV3NhNk1QNlJvSk1TTl9fd2RsR3ByNVFObmNvbDczaDRLekVTZ3IwdDAxVEltRllZT0xvSzBPY0d2Wlo0Q1JGajUxRkd2SHZCaWxMMElhUFo1bDFraVd3Vk9Ual93dDVOWUU0Uy0wYzRQSWU4bDRGTFBwZk5paVBfN2E4QXlWRWozSUdoREZ3?oc=5"
+  },
+  {
+   "title": "As Bitcoin Matures, Altcoins Face a Reckoning. Here's Which Ones Have a Real Use.",
+   "publisher": "The Motley Fool",
+   "published_at": "2026-10-18 11:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPU3d0QURZNVZWNXR3VEY4LU5qdDZXZVQtZC1vQkp3dWlpN3Axd3RqZC1aS2pteFF1U05obmRad21UYnQ3YUlxS0hfbGZ4S3hIRFJSazZMWC1sMngzUkgxV244YkFqWm9ucU9YaUtxVUZ6WkVRVF9YU3RoSU1scllER19TdXZtTVJIQkJsOWJINWJkbDBiUHNKRA?oc=5"
+  },
+  {
+   "title": "XRP trades near $1.30 amid Bitcoin dominance wa...",
+   "publisher": "Pluang",
+   "published_at": "2026-10-18 10:54:44+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNUW5RVFU2X3JFNXRCY2pLY2hBVGdpSUFla2dGa0g3bXYtcmNlbTNtQ3AyWHgxRklBNmZ3THRDWXZET2FkSE1Ea2l4TE0zSzlLaXExUkQ4M0F4NjROZl8tNkl4aHFybFNYZnJnUmV6dkdvTV9nUHYtTTRYUDBFSlNxZVQ3b0QybW5URWdYZ181VXR2MGlmbWVXcy1rWQ?oc=5"
+  },
+  {
+   "title": "As Bitcoin Matures, Altcoins Face a Reckoning. Here's Which Ones Have a Real Use.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-18 10:20:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVTFmMEJIQUNlTkVHSV9jTHNWRThYWkRLekRnaDQ4UUV0cmdETkpKT25POW9ad3k4T0JId0xUeXd2WXg2U3NOdlpOSFdMYkw5VFBtcllSSHZ3eU1NTUJvcHYxU2w1Y3RPdGg4OGdrRXNBc21EYTVWY29HNm9lOWtyWFV4QlZNUGMtTzJtOXN5OHdORDNRaWpBOGRfeFRfRW0ybXJoc3VoMA?oc=5"
+  },
+  {
+   "title": "Bitcoin Analysts Are More Bullish Now Than at the Start of the 2023 Bull Market: CryptoQuant",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 10:14:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOY3kxVWt1TUFfd1JGc2p0ZldJYzJsV1JjWGlXS3lqdjQ3cjd4bWluazU5RU5fOUNPMWd4QjhNVEdkX3J5bmo4RGdOMzNkQnlOOUo5cm5KNzExdzNZUFJLa3dlZlpWa3BuZDlkX2NMTTdETzlnRHpIRlZXamFiVTNrWFFrVkh1VDdlbzV4WmhQUWFocEdCaWhnRzdKMUtNMnNRZ0NtZTZqdnlWQVJuRlpieGJYa2tsSXp5WXBQYnktcUpmZmxEaDFyOA?oc=5"
+  },
+  {
+   "title": "$XRP Small time frame 4h chart. 5 waves down with the 5th f",
+   "publisher": "KuCoin",
+   "published_at": "2026-10-18 10:05:21+00:00",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE96RTVvamxzODk4MDdaeWItNFhubnc5a09mLTRXWk11Y005RllEd0cwM2xDUnRvWF9VOWltazJCNDJYSmRhc1Zqa3RSYngtYzkxeHh5d3h6R3BUTURKR1Q0UnRfVWhFajlTNWNpLTdUaXFRQQ?oc=5"
+  },
+  {
+   "title": "Crypto Rollercoaster: Bitcoin's Struggle for Stability",
+   "publisher": "OneSafe",
+   "published_at": "2026-10-18 08:48:29+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE12WHpXVDhwSUhNWXN0UjIxMGN1VldfNVJSQXlvQ2hxZ2tNRV9feUotSmpHa2xmVksxT1RlTTlCdlNRSTJpTllobUJEUjZwQ3dpaV9zZjZsRloyZG1ZYk16enJJSXpXVnhpUzlfOEZxZDN6aldB?oc=5"
+  },
+  {
+   "title": "Bitcoin Returns to About $81,600 After Weekend Flash Crash",
+   "publisher": "www.tokenpost.com",
+   "published_at": "2026-10-18 08:07:07+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5KaTZEdTNDUHBhZ25QUU4xVjk3RXdyRXhJZVZURnV6OGJGMk9mcXBsZ29ncHFLNV83S2J5M2dzbWp3YUZ5SzFLMkdteUF2d0dsdndhU2RVRHJndw?oc=5"
+  },
+  {
+   "title": "BTC, ETH, XRP Recover From a Flash Crash as More Volatility Looms: Weekend Watch",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-18 08:03:16+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRlBEb0dKVlE5aHFwVnY5SExCUGtyc0t3ek5VRG1aczc3MlBNODg3aXRDQWFlWmJ0MDFUcHI1TUJqcFJEOGk0OGp6VUM4VkVVcHFnTk9QRHlsdVJxOUtYN1RmZ19KMzJLV3I3UmROTndFTlV2ZGJUR3NwQ3lqQUtyaFlWb1ZEV1U1S09fNTlLbngyQXN2SllwdktVeGppWTl6a293cTlNcHdaVjUwMTczc3FycGY1Zw?oc=5"
+  },
+  {
+   "title": "BTC, ETH, XRP Recover From a Flash Crash as More Volatility Looms: Weekend Watch",
+   "publisher": "CryptoPotato",
+   "published_at": "2026-10-18 07:56:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOTV9lcG8xWWFpMTV1d1pSUmxKNzU3TUJualpjb0d5VmV1bWVOaXpfNXJHYTNXTThaZ3N6OVZkeEw3aDcwaERtSUg2OHNRVGo1N1R1eDBDZ1Ezdmx0SktZVVpLQk0zV1VOMGZVNlpHLWluUlNpWWFCc1dKNllvaXFGZ055R0hZVndwbFlHOENmWkNuMGtURkdfOE5GRkhXeThiajJ1a2Jn?oc=5"
+  },
+  {
+   "title": "Onchain data shows hackers moving stolen funds to Zcash",
+   "publisher": "Crypto News",
+   "published_at": "2026-10-18 07:45:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPUWxPdlBsVGpIamhMZEktdTBGVFZVbDNoZWx4WEJtZXhSVFpjbl9FbjJLMXJYTGMxYUxoNHJYZENSS0gzLUNDTXpRZ2JnRHlTdlp3WFRPTTZJeWZPMVNHZlBEYjJ0VG9zNjBsOVhXb2tOM1NjM0xiR250WnlkUjJ6UmJR?oc=5"
+  },
+  {
+   "title": "Ripple and XRP Weekly Wrap: Institutional Wins, Nasdaq Debut, and Price Struggles",
+   "publisher": "CryptoPotato",
+   "published_at": "2026-10-18 06:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQd2RXQVlTLUNBZVFFQ2M3R0NiWXpEMEZ2eldvdWFyOE5ERVc2UzdpNGpfS05uM1k2LWtmcUFTN2lpbWJyaW5IUk02RmxrX1dUNXZLaHVMT0R1UVVWOWphS0YxZDByNDk4MmVJZ0xzR2UtWkRzWmtSWjBaZnFFTVprWERsV2Uya0NUZFhzQmVWM1hQbzc0YXVxVXhmeVUtaWFvNklxOWFqSQ?oc=5"
+  },
+  {
+   "title": "XRP will be gold-backed and priced at $2,953.62 by Q2 2026! A $10,000 \u2013 $35,000 XRP price range is now a REAL possibility! The financial shift is happening \ud83d\ude80\ud83d\ude80",
+   "publisher": "Moomoo",
+   "published_at": "2026-10-18 04:17:51+00:00",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOa2syTnU5bnltNkJJb2FPdWtZek1TaFU2UzBmUVZzNmhvWTRLWGJTRVlMaHd5MEd3R0VCSHNvRG9fSGxhdVp3QWZlUVNfeTVsSWo1cFVNbzdZa3ZtTk5aR19TN0ZWQ19kUnZqMkM3YXZDa1BfRFNLSXBoN3U5ZU9UaVFOTm81OU1wNVhzb19HTVdBN0pCRTNRSXRxbTJDUQ?oc=5"
+  },
+  {
+   "title": "XRP News: Ripple Holds 35.6B XRP Ahead of Nov 1 Unlock as Pepeto Presale Tops $11.2M",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 03:45:03+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPLUk1RHR6UERLRV9CbTJ1YVFwUFJhX0ROZHpobTctZUM1cnJDbldHQmlucTlNM3Rib09DSXVWTExJUmN3YXlfTUlpT0NRUndPZ2poeW45ZE5xQ09jcnNKMTRiNHp0a09zUmxEQ0xxdGl3b3E1SXpycjR0d1F4eERWNnB4Wmcwa2Nrci0xcFlNajdUeGNGa0hwYlRadHpNUW5IS3lWT0Nna0pFZXM?oc=5"
+  },
+  {
+   "title": "XRP Cat Price, XCAT Price, Live Charts, and Marketcap",
+   "publisher": "Coinbase",
+   "published_at": "2026-10-18 03:44:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNY2dTSUR0WkdSZldiX2ZiNVdYZ01fLUFNQWZRVmo3SEcwZUM5ZGxRZk5HelFEbWZxYWc1aGMySUpIYWowYmZPb1lOVjhoYWJOQmtRWWROM0NQamV1NHdaOU83MDB6Rzhrbi1EYkRtaTNzZnZrZzFkaS1zaU1jakF4Mk1QRmdzd0w5QzZLWjd5Z0RnS3dsRjNIMFBiOVc?oc=5"
+  },
+  {
+   "title": "CLARITY ACT JUST NUKED XRP... (WE'RE DONE?!) Colorado (5SPEDIAGMu)",
+   "publisher": "Unisba Media",
+   "published_at": "2026-10-18 03:12:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQUVZfcjBoYjE1Mkc2amhySl9JWi12djN0cTRkd1FramRQa0VvR0R2bVFNR01TZkM3RU0wYWZMYTJmazNodlNxVHowYVR0d3ZWbjdxaTc0d2FvSk9TQ25BcGRHYjdzR0dMRWNuS1RLa1pZTW82SkFNVFRsV1RzX2ZFbw?oc=5"
+  },
+  {
+   "title": "XRP Price Prediction: A $10 XRP Would Mean a $630B Valuation, but Could AlphaPepe Make Smaller Buyers Bigger Winners?",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-18 03:01:14+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQODdyY1pjdV9zckl3RU1USFBXYzdmbFYzQkNlRExpMWQ2Vl9xN2RDYnFheVc1d3Ewc0U1U0tZZzQwZ1lpdEpWNTh5RkRzRGpWUGE4NUhHUjgweGxYN3NDOEN2ZHdvQmsyRk5hdU9lSVZ4aV9zdG9vY21QazJNY21IZHoyQjlFdm1WVHhOZVMyb3NaVVlyaW9UX0VhRTZzcXJoWEpISjAwNlgxV2h3OWhRakVmRU94VTBLRFQyamFqWXU0TnhON3AzeDdNczA2VG1yMjdEWjZFZGtud0Z0Rk5oS3RXejNLLTBVLU10UC1RN0ZmNDNyRU5KVWhrRzhFZkppTTF2YmVITmgzOG5fR0syRlZn?oc=5"
+  },
+  {
+   "title": "XRP Price Today: XRP Near $1.30 Gets Cross River's RLUSD Integration as Remittix Offers a Fresh Payments Entry",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 01:55:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQWlluYWNuTjdzNllObWRJdmthR3hjX0Vud2NVbTZGeDVyQmhKOTU0YXZJS1NtbjVFVHU0ZUVpd0R1S3p5OXlhT1pHWlhWaXpjUUgzaW9STWhVZ1VkZi00NmZZZG5RWE1UOERCc1NvU0tlcDZSZ0JpOHVHTnJHMktfbmhDM2x6SkdqTlJ5MGs5SnV1OVBCWEVXU20wc3hQQklGOXNsRzdQWGNDMXNXVkZWZ0VUVmh0eVJxeVlOWDVCVHc1bm51alF6QmxvejY?oc=5"
+  },
+  {
+   "title": "XRP News: Evernorth Holds 473M XRP as Remittix Counts Down to Its Own November Market Debut",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-18 01:28:10+00:00",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRWlRUTJLN3BiQ3U4TkVjTUo1M2tkS0JPdWdJQXBKQW54UDJzNFJuc0I1dzNtQ2VraUMxQTZDaVd2MFVveEtLWW1QdHRLQjZVdWNLWHFweWZ6RG5PdDVPRkxfdWtQX2R2VXYxY0ZreWVqWjMzNlotTmRheklRU2lpVExqN25QbWpFdkJ4a3lVYTdoOUJYMWRzYkJRb1BKSFlnOExCNjRRY2xrLXdST1dyUUFSTk54dw?oc=5"
+  },
+  {
+   "title": "The U.S. Producer Price Index and Its Influence on Bitcoin and XRP",
+   "publisher": "OneSafe",
+   "published_at": "2026-10-18 00:02:24+00:00",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1KaV9saFJGUzg2RDNUWWxyWUtjbFN4SkcxN09WVkpzMkxKelZ4MnRiSGdoc0ttZEt6RkdJN3J4alY5cVF2VUFjai1ZbDAycmNmcUlqZGR0U2hjTWRmTkJ6bFduT0JIY0tDVjd2UkJUQVlLZERjLXJwQzFrM1h2Zw?oc=5"
+  },
+  {
+   "title": "XRP Price Prediction: XRP Trades Near $1.30 as Cross River\u2019s RLUSD Integration Adds a Fresh Remittix Comparison",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 23:36:46+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxQc1VkRXBfUHczTlNaS2lGLUs3QVd0b0FtRU5Md3E4UU5oX3BzNGxxT01jVF9VYXVleFlnRlowb2lQLWp3aDZJU0J4NzMyLTJjVk1ZcEdfN0xvY2VhSFNVV1dpWTdoemhKLU1Ubkg5cGZXTHVwRENjcUNCWkJWMUFUZllJU2dQUlBPcExPeHFBWVBaMVRrcFh5Vi1PTWR4WHR5a014R001YlBFNmFiTXRLZUJzX3F5WlNBc2dZX2FFb3pkNFp3UWJWZHVnZC1keU1sQmY4LUc5Q2pmYXRRM3NkVi1oM2ZUeVUzY2NUemE3T2pSOVZPZ1QzNDU4T2p0NEgycEM2dVQ1VXlSWGQ4aU04cw?oc=5"
+  },
+  {
+   "title": "Expert Says People Will Be Sick Over XRP Supply. Here\u2019s Why",
+   "publisher": "Bitget",
+   "published_at": "2026-10-17 23:25:07+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE56ODVCVy1DZjNnalpuQk1VdjJkTURWUHo2TWI4RUNOYWR2elR1YmlYZm94bTlUdXphRnpVTkdOS0tCUFBmSjV3YmwtSk9kaDhScHRXdXRhakxGelNIZkZxNDhMWdIBY0FVX3lxTE56ODVCVy1DZjNnalpuQk1VdjJkTURWUHo2TWI4RUNOYWR2elR1YmlYZm94bTlUdXphRnpVTkdOS0tCUFBmSjV3YmwtSk9kaDhScHRXdXRhakxGelNIZkZxNDhMWQ?oc=5"
+  },
+  {
+   "title": "XRP Price Today: XRP Near $1.30 Gets New Institutional Perpetuals Support as Remittix Pairs Payments With Live Markets",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 22:36:57+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxQOVoyQVVoYWNkMUxPbWNFQ29QNFNtdmpoZnV6d0lyVlVrNGo0MWhDNDFXV0NvcUJoMEFXZDhuVGgwLU52Y1JqM284TWhEUnRXemhZbWxTUVJ1THZ6dTJaelBPaTJULWlON0owMTJBTmtZdnFrOGFHcWV2S1pINnJNMzI4QUZocWFOeFRTQTJUYXp3VExRZmg5T2luOXA4MnlrbWxzSC1tUHhOSGtJLVRjMXN5QVRudTE0cFR5amNucVNHSjBUQ1ZsTjRNZDByWE1Hcm00WXpyeHFXS0ZZSlNyU0M0TjBJWGhKODV5TGlJZ1loQzZmZTU5bFg3RmxFYUI2d1d1SUJhRUlKV3A1cVpj?oc=5"
+  },
+  {
+   "title": "XRP Ledger Nears Oct. 23 Upgrade as Lending Votes Fall Short",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 21:50:49+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5pdGViSWg3S1ZiZDRkSUZLUmpWQV90OG9XVHZpdGRrYnhfekp0MzVWcXctblVOeWhlMlBEUWFBakJ3YlZhNkx2eExfU0UtaHRTR0pUODRUS0gwUQ?oc=5"
+  },
+  {
+   "title": "Wall Street's Biggest Settlement Firm Is Lining Up Stellar for 2027. Is XLM a Better Buy Than Ethereum?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 21:01:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOYzlFWmxXZ3VsbFVvdC1ZRlItazhhZGJpTEJtdVBXY3RiZ01tZlhtUk8wdVFrMTRYTnIzZmN5TXJBYXgtVzBDUzdHd1JiRWV5NV9sYXk2MEszaHM2bElUU0NHVFJnbU1aWXhvUDJ0cWR0OWpiaHlLYTk0UWlScGMyQ2dfTkNKUWNGTUFwb0VVdEV3RkR0UzF3cVJaT3k4S3dteFhQYmw1eFY5ODMyWEJrbFM4MnZNQTJGNVdRaE1vN0QtZkdGTWd0bHVnN3Z3cUlZd2FFQ19ja19RcEVfX0VxeTFPWmgwTkJ0ZFhzSFRrdkU?oc=5"
+  },
+  {
+   "title": "XRP Could Reach $2.16 as Peter Brandt Spots This Historically Proven Pattern",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 20:57:17+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTXlIb3VJVVVjUk90elJHbDFVcjVwanpSNVFlUVFRV1NPQ3YzNzNqSWdVZjlhWHJiSFFiNzBSWXhEMDZtWjBXQ0xzUVlpZ3Bqa3JGQ0VicWdtYWdHdXplZlJrbGstbmp6WDZuMUR3TGE5dHVGcDZsakFBZE9sTkNhUXE0Mm9EZ1VHUTMxRTJ5X2pjVXF1eDNsajQtLVJOM2MwYWt6bF8xODY3YjNTUGFwMll0cw?oc=5"
+  },
+  {
+   "title": "Bitcoin, XRP or Remittix: Best Crypto to Buy as BTC Navigates Volatility and RLUSD Reaches Core Banking?",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 20:55:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNU3IxNWF5aU13M3ZfajdadjZ6bGVCTElrQ2hJTEk4eDVZbTJZVUc5b1MyWnI5dk5ON1lRMVVveVBaOFRwanIxX3NtUFQ3eDJ2cUpJTTdiTHc3YTBoeU1PVGdfTkw5T2x5SGExMjZHcDF2bmpDU1A3bXlBdlllX2I4bjhMM2ZNQzc5Znl4WDY3UUVnNmVvMFdoekU1a1NKeDZTV2hsVWpocWdLeThqcGlQQzlHb2U2aWRMM01kWXBXOXBaT2xE?oc=5"
+  },
+  {
+   "title": "Bitwise XRP ETF hits $541M in assets after $684M inflows, signaling strong institutional crypto interest.",
+   "publisher": "Pluang",
+   "published_at": "2026-10-17 19:15:39+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOU2pWdVJTc1JUb2lhTkx6Ymh6Z2hsMko1bHpfYUdGMWhTemJqSTF3VGtmbk43ZXpEdTU4bmJUaE1IelBzNHN3TFRtTHBVVTdMQWpySDVMWU1MTF9KdWlJa1lVa2JNNFdPWEFYR1ZaQXNfQUZ0OG1DTmN5aTF2VUZHZTJCV2Q3NnplYVN3NWthYU1KZjVXY3BUS1lNOA?oc=5"
+  },
+  {
+   "title": "Best Crypto Portfolio Picks: Ethereum, XRP and Remittix as ETH Staking and RLUSD Banking Integrations Expand",
+   "publisher": "TechBullion",
+   "published_at": "2026-10-17 18:55:11+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPaGhmb21hRXpQaS1IWDdyOGpiZkVfbVIzR2pqX3FQZmktOFE1OGxQZ1dTZ0xGRGRvaEV4NTlEWlY5MUZ2YmkzX0NxbXVabE1rdnlkU0owNmtmUzNHRmhjNkNnUUlKN2VRa3YtdlNEa1BVT3lpUzZwdkZ6NElEYk1heHUwcGdkYzVQSEI5NW9hcWRsLUYyWjVjM1RXZ0d2WlVtdDBYOFZBOUNaYWVhVzhvSVpTNHAtdGljNGlxQkhobnFqRGJjOHJaWjhYUQ?oc=5"
+  },
+  {
+   "title": "XRP Price Forms a Risky Pattern as ETF Outflows Climb and Macro Risks Intensify",
+   "publisher": "Benzinga",
+   "published_at": "2026-10-17 18:45:21+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOVVJ6alVheU9wSnliQ3VSMUsyXzVrRk1mSTFqbGI5ZUptRlRBWm9qQzZ2cnBxVHBpRmd2QzctVXdseXZOQjFGWXUweFJyMmFsS2pwZ013amVfSGRwTVFhRWpUS1B5RmpLOFdsYWVEWTR1UkI3TVpBT1lib1BuclF0ZXNocDBlc3BkWjVRci1Lei1TUDRQajNqaTloS2dxSE9oT1JSQVhmQUZydnRvMFdNZ3A1YXRGVGh3b3BaTmc5b0NoZDlI?oc=5"
+  },
+  {
+   "title": "XRP's $1.30 Retest Triggers First ETF Outflow in 13 Weeks",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 18:34:58+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1jVTF5Q3ZJREtGNzBrUzl6QnpnMkM5eEp2UWdZaXZJVmJoLUxCd3BCc205aVFkcjZJbjlSNGxUZEVyZ2JvbDJJVV8xUjd1UHpnQjQ2SlI2TEh1ZDQ?oc=5"
+  },
+  {
+   "title": "Retail Interest in XRP Fades as Google Searches Plunge 90% Year-Over-Year",
+   "publisher": "eGamers.io",
+   "published_at": "2026-10-17 18:30:11+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNVDVuWEtKT19Ya2ZtMGlHdmJ6RVBJcnJTWmxiMjRNdjNRVmdqckF0Y3hvUGltTGlBX2MtUUNtd0Z3WkJxRGZuUjhKQThTZ1dDSmdSbFZXTUlpd3R0TmwwU09wWXpXWHhlQmxsNlY4Z2d5dUZVMTBfbkh0eUhYbHZpOVUxenhLQXE1cHRHbmMzQUJrYS1SQ19r?oc=5"
+  },
+  {
+   "title": "XRP Price Prediction: Cross River Embeds RLUSD Into Core Banking as Remittix Tests Its Own Crypto-to-Bank Model",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 18:22:54+00:00",
+   "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNaWxhV09BNnBsb3FkRlRES2FVM201aHRoRGRDS3NsN0s5QUJrb1NhQmYxSzdhc2s0SHd2TnEza0xtazNVV2JDNS05eVhMMUxxZUFCUm5odTdPRnc4akRNc1ZGQ3hpbWp5bWk0ZVNtaUtlcVRXTEpRbWFWckx3dm5kaDkwYzlaMGJZNlVCenJ0eWh6NFJVNkpvbTY5VGV2ZlJXSTZHMlpHRTR4Y3BwaGRzZHkyUDcxQ2xpYkxKUzc3ay00RVN1RDRES2Y3ZXA2QlV2YkNISFE5a1ROWHdmRTQ0UXhGZnFhTmFfR0pkcjJFc2hmdWJfS0VlTDNGU0xKbzlkNURN?oc=5"
+  },
+  {
+   "title": "AI just warned XRP\u2019s path to $2 is getting harder",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-17 18:20:32+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBoQk50dVQwSWRzX0t3ekpfLW5HU0VQSmZjZ2Q5MFZxWW9FRXF2OTROcWZFQTdnUU01MUxFOVpuSGRESlg2ajUtVEpPbjRNQTdySmFWb3VkdnZDWWM?oc=5"
+  },
+  {
+   "title": "Binance Founder CZ Reiterates Support for XRP, Zcash and Solana Amid China Scrutiny",
+   "publisher": "BigGo Finance",
+   "published_at": "2026-10-17 18:17:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE16NGt6bmQ2XzU3Tko4SjZoZ0VBMURZNHd3SHFWRTVrbDdwZ21tQ2ZJS3lseHlMUkUyRWNhT08yTmpEVDZTWlA2R0FJd2EzTW50V3IyYWxVbGVER0xCa2xBZWVtS183X2RUQjB5SVNOZlJ5cUt0YlE?oc=5"
+  },
+  {
+   "title": "Bitwise XRP Fund Passes $500 Million as Spot ETF Demand Builds",
+   "publisher": "BigGo Finance",
+   "published_at": "2026-10-17 18:16:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1VeHBHWHZocVFMdEJhSFVYeHBJbzY4Q0VJek90bUdScU1zTFVTdGRCMnpHODlOSzM0SllsM1lsRjJyLTlVeFpTUHBpZWZHdHpqSkNFd1IwNXNDZWhSdHVCdFROdUtCLW5aMFc2TXFZVy1CaVcwQ2c?oc=5"
+  },
+  {
+   "title": "XRP Retail Buzz Fades 84% From Peak Even as Token Holds $1.30",
+   "publisher": "BigGo Finance",
+   "published_at": "2026-10-17 18:15:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9tNkJBQURObVJoZHgwem1NclpmaXhlS2xMaHFxSWFWUzk5Z0Z6SkREWGNxS2paYVJjQXc1cElHNWozcjhzMGVyb1JUdElJWS1hX1IzWTFSTmlrbU5IY09tcWlwU2pTZk4zOUR1UllXcnR1SXhLNFE?oc=5"
+  },
+  {
+   "title": "XRP at $1.29 in Oct. 17 Snapshot as $0.80 Scenario Depends on $1.25 Break",
+   "publisher": "TOKENPOST",
+   "published_at": "2026-10-17 18:10:16+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5GQzdGaXpaT3EtdWt6WU9aVFRfN2NCYWJobTE5WkZpZWh3dVQ0aTlnQVVWY1hEcFRUZndPaUN2Zm1xaF9IMWxBSV9KTnJBQ2U2b2tQQThFTm43dw?oc=5"
+  },
+  {
+   "title": "Bitcoin, XRP Drop After US Producer Inflation Hits 6.3%, Hottest Since 2022",
+   "publisher": "BigGo Finance",
+   "published_at": "2026-10-17 18:05:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1pN25QR0JtaUdoSWtUVzIydFI0WGxGYkJ4Zlhvb2xYbzZXVjctNkpvYVNXZlZOMWlSbkVxZVFrakloWFdJWmlxQXhBQW1PRU5lemRia0ktQ2xWSmRORlRvZEduZzQ0anNzOVdHVWxfS1F6QU1HRGc?oc=5"
+  },
+  {
+   "title": "Ripple and DriveWealth Partner to Connect US Stock Trading With RLUSD Settlement on XRP Ledger",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 15:38:35+00:00",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNWEV5Y1RRVXhLWDRxdmFzb1dGU0Q3Nkg2b1hUb3puNldXdFdMQTEzRjlybEpIb3JqZUtJMURhOU84c0s1cFFGWGhBeVpMalpnNUdkTEVUd2hiMWtjOTd6MDBNVUJZb1FQNzNSb3JaNXQ0ZUtKZWs5NENwUXlOSFF1dEFJTjJtU0VrOXBoX2VndjJXNVcxVjZzbEt4SndpS0IwUGg5RVNyc3RGOUV0RzdPNjlQdEdMZ3B6Z2JmNlNReXdJRFJDRnlfdmpuaWw?oc=5"
+  },
+  {
+   "title": "XRP Whales Send 1.67 Billion Tokens to Binance as Seven-Month High Inflows Pressure Price",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 15:27:05+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQQjZscG9yYVpZZnc3Mk9KZDZmMWczT2s1cFFxVFFmeWFrMTN1cklHUlpjQVZLai04M285NUJUS0VBSGJYOGl6ZkVueTB0MHlpZkd0QzJ4aWR3dUs0TnNxYk1qSjhVU2hSXy1Fb2hWOEstUXBJeHh0ZlJxZEVHcHdST0Z5bll2RzZMVThhMUZLV0NOdGtCWC1TUlh5UlBFN1hFOFVNVm5UbDdtSkE5OHFYQmpzYVpuYWYyRlVoV2FzX0NMRjRh?oc=5"
+  },
+  {
+   "title": "Analyst to XRP Holders: Don\u2019t Expect Comfort At the Bottom. Here\u2019s why",
+   "publisher": "Bitget",
+   "published_at": "2026-10-17 15:24:42+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9EWndjeUtUUVo1RnEyQndNcmpCSURmaTFadzVwQ0JrX0FoTzJPclJxMWFNY3g4NjNrREhRSXhCcFNJRkNkaE1YaTltLWt4cURPSGNUblpiMndDXzE0YTk5RGdZNNIBY0FVX3lxTE9EWndjeUtUUVo1RnEyQndNcmpCSURmaTFadzVwQ0JrX0FoTzJPclJxMWFNY3g4NjNrREhRSXhCcFNJRkNkaE1YaTltLWt4cURPSGNUblpiMndDXzE0YTk5RGdZNA?oc=5"
+  },
+  {
+   "title": "Top 3 Cryptos to Buy Now: XRP, Stellar and Remittix as Bank Integrations and Stablecoin Platforms Expand",
+   "publisher": "StreetInsider",
+   "published_at": "2026-10-17 15:02:53+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQZUtpOGdSbzM0emRCVDlCTVNyMFpqZnZHM25lU2FkeXNwdzg2Q01WNkROeFhfUWNiZWxnWC1yWU1lQkl1OE83SU1vVlkxd0psX1ViYkpqREtraklXY0lYdzR4cUtDMG93MnV3ajdpclFMUG83d3ZLVVZGSmhnMU01MGp1b2tzeUczeUxtRlk0eDdSczJFWHFlM2IyN2hIZWlPYTZDX3NGMzVyWlY3YUhWLVpZRXVvVHQtaElHM0V1dGlfa2RzLXo2c0RzNHZDOWpZUEZGNUtOTWotbmxzVzJmYkVwWFhKSEpCTF9PWFZ2Tzd5SjBlbjRnalFpUnY?oc=5"
+  },
+  {
+   "title": "Crypto Price Analysis, ETH, XRP, HYPE, TIA and Lighter, October 17: Ethereum, XRP and Hyperliquid Remain Under Pressure",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 14:39:32+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNRUpDVFk0UUZDVTR1bHZSemhIMGxTSmRzNmRMOGxIMnR5Y29RXzF2YWFWWllwTW9zcWR1a1loeGxQQkxJMkpRTjg2MG0wMU9DWFpNTm9QWEh0aG02NEFxcEdEeWNYdEp3WWt1dFdHNThsYTFTb21NUXl2TXZ1bmZua1U0Slgtdm1oanlGX3NfQnY1TUxjODRmV0p2a3ZVeUVvQWZaZF9fNnQxMkhCbFM5Slh0TVBIcjFaN3A4TzBqY0w4aTNTUVAtbE96eUtDdmVQSHFyaGpQX0VvS3F4VWR2SGtxQ2U?oc=5"
+  },
+  {
+   "title": "Deutsche Bank Is Weeks From Holding Bitcoin and Ethereum for Clients. Could Other Big Banks Follow?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 14:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNek1CaFEyeW9Yc3NMR0tqdkwxSnNvNGlGN1VqdElTVWVVdU9fZVMxOURkaWxfR01qcnZmWUxBd2p5VDlQVUxXZi1DdTB2SnZqdlVVTzl1d2RVVm8xamlCSUlVcnpQMi1LUVE5SkxaeEFBenNaYkNHS19TLU1CM1YxMzVlWmxwZkJUdm9OVWtwRldHckNNaHVnSWVUWVA2NGxtU1hPV1BReTlYRHhoLUJMSEtXSTFKbkg3bTVTVDJHVWFJSlJIRWp1RjZPOGRtS2ZYaG83UU1HZXJOdkliSnowRko3a2tRSVBCbm1xcw?oc=5"
+  },
+  {
+   "title": "Key facts: CRYPTO:XRPUSD pressured; EW targets $3\u2013$4, $9\u2013$13; SBI RLUSD",
+   "publisher": "TradingView",
+   "published_at": "2026-10-17 12:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPVzF4Q0JqT2ZCU3kyN3R6NmlHSzNVRHJfY3hpQnN4MEo4OENxNlpRM2ZROFJsbHFiVGJaREttNEN1YmJJeUdQSXhOdjhKVEJXLWUzUzktdnplNzYtWDkyU1FkZXdLN2FveDJhOEJPZloyVkl4Rk9PVTVVNWQ3U2FaWVFBT1l0UVVDSjJTRTgxVnkxY3g2UmV3bjh2Tll3WjhpWGZZVm1YbTFNeTJFQ0ZGUUZIQXdBM3JnWFlreENtVExieUU?oc=5"
+  },
+  {
+   "title": "Nvidia Crypto(@Square-Creator-cb6799266)'s insights",
+   "publisher": "Binance",
+   "published_at": "2026-10-17 11:30:22+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9aNGF4NTctQmNEeGxrVmhUY3dtdDJYQmlnalliWVNubk41ZnFMZFA1UENYYnZhbUZVREdTT1VQazh4eVVnZGR0ODFkalN5ZHBwNXJBbUNKNUktQXc4SGdJSGNzVnQ?oc=5"
+  },
+  {
+   "title": "Aave Is Moving Closer to Accepting Native Bitcoin as Collateral. Is AAVE a Better Buy Than BTC?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 11:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPdHhVQ1JxSXRISWJEYmJ4VGhlMXgzblNYcEJsSkkyNjhJM0V1VUFmZUlIWXY4cnNuS1M5TTJRRlplbk9QdE5jZmtLM3pHejlDeWM2cWxtMXUyVVQ4U1lmcDVTS1RBMmZ2WmYxbUFIZFNvOEFIUnhONmtERy1Ha2k5cUxOaFdYSlp6bnJtUnNvaWxkdUEwSnlES0FmWFFOMm5lZThuaDBTaU5OWUhHd2VGRVJKREFtTDJFSi1wa2F6TVB4R3VWcXBLRURnOUdoRVZkSlRFcE5Ub0dsaEtXX2JWV1N5WjlKQkU?oc=5"
+  },
+  {
+   "title": "XRP Trades At 54% Below Target Price \u2013 Dip Buyers Alert",
+   "publisher": "MarketForces Africa",
+   "published_at": "2026-10-17 10:40:20+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNRUJQWTBpQm1TMVlmcUxFa1ZrVFBScF92RWIzV19nWUVBUEhrOTllOHB3bV9ZRDFsVXNRS1JsUm1zRk5CUWpCZlp0ck5CdExtS2hWeGlMZUtnZUx2dXRnYld5QkJEaHRmUUh5OXd2c1drOUJpMVhDVzhNQVozbndKSnhPbkIxdw?oc=5"
+  },
+  {
+   "title": "Former Ripple Adviser Says XRPL Is Ready for Banks, Price Gain Isn\u2019t Guaranteed",
+   "publisher": "Coinpedia",
+   "published_at": "2026-10-17 10:24:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNT19JMm4wZlR5MVVoOEFzYTZYTzZGV2pZMmhaVXlrVkViRTF3Qko0TktGd3hCQ254YW83M2ZvbGNBdm9iUW1pSUFGRHA5VnlSV25WdklYN1JWdnpRUVB3TzFHZDhuTjgyWHgzdE5pR25XTzlmUlhubFZhaGhRQW9HcU9pRWNkaE85Z1plNG5hXy1zNWFhRm1VVmdDRGhtQVN6Z0xaZlFBY0HSAa4BQVVfeXFMTkIzWjczNElOakU4bFhrQUc3YldMTTk3bjhNa0RfUXVtVDNQTUpwbFF6VkxnLWVvMXlkd0RtaGJZY1A2dzVmRjVDb1RhNERWdzdkQ25DREZnWG5kS2hFWXhuRFJ2V2F6VF9UbGQtc1FtNUFfbmVadWV0b3pveVFiWkNfeFhLb2tLczZ2a19hSHA2QW1kaGwtU25zazVRSzJQODZwbWJhWV9ESENlNDJ3?oc=5"
+  },
+  {
+   "title": "XRP Could Hit $3 by 2030. Here Is What Investors Need to Know.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 10:15:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOeE9GN2FHRGRtVTJMck9TaGFLY0diU3FpOThJQWpDTUNGUnR5dFU5bzBxNTJ4Qm1XUUlhZG5BeTBmbVNqSDdKdWdERUVGZlNMVWtEZkhIWU10cUV0RHZFU1pMZVRMelJDaTNjY3U2MGNaaTdKLTRfMkZBWk9KYlQwWjFrSTVhUEJmLTJTTlhn?oc=5"
+  },
+  {
+   "title": "Which XRP ETF Is the Biggest? One Fund Holds More Than a Third of the Money.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 10:00:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPS0hRU1k2N0hXWnlwUkI4QUVURmY1TlRIMmZpamdreHo4MWJFWTBabGJXZVlfN3F5MUpkUzVYdi1ObW1JOWpMdWh6T0pZNk5yejFSZUhwcUZkMVBtM0V3a1JQOUFYdmd4cThCcVRuTzZpR1lZOFhTeUdYNjlMUGVFN25ZcW13R1JkQ3BVNzAySF9ZVG8?oc=5"
+  },
+  {
+   "title": "Which XRP ETF Is the Biggest? One Fund Holds More Than a Third of the Money.",
+   "publisher": "AOL.com",
+   "published_at": "2026-10-17 10:00:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBDZTNLb2RRb242bVMwOVBSYmxDNkc4cjk5UmtwWkFWRlg4aEVKWkg1RTREcXRZaWVsUUh1OEo2aE04VC0wREtzTF95X21qZVJHcEpWQW9GZ2RDVWJfUkJPMGVFWmVBcUMwTnJfMG8xck5uRUxoME1Z?oc=5"
+  },
+  {
+   "title": "XRP News: Brad Garlinghouse Explains Why Ripple Handed XRP To Evernorth",
+   "publisher": "Bitget",
+   "published_at": "2026-10-17 09:42:27+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE93bElqd1Ytc1JZbWtocmh4UUFwaXlENFN3SHhiRG5sWmxtZWthUXhFWGF4c0c5b28wdDdNemYyQU5mOWE5NzZYYm5fcmtLajVRbEdFVzNuWmhpRUptcjB6WENZNNIBY0FVX3lxTE93bElqd1Ytc1JZbWtocmh4UUFwaXlENFN3SHhiRG5sWmxtZWthUXhFWGF4c0c5b28wdDdNemYyQU5mOWE5NzZYYm5fcmtLajVRbEdFVzNuWmhpRUptcjB6WENZNA?oc=5"
+  },
+  {
+   "title": "XRP Price Prediction: Escrow Release on November 1",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-17 09:17:59+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNVnZJaTJHcWxUYUpkVC1CNmhqNXctSmRhQ1d2YkYyajdNYXlqYjh4bFl1aWphYWcxcEthbVA5bFFxYnRhSGR2cEs5cUlwVFdGZFVKUS1GdmxnOGJFQjNSVG5OdDEzX3pSbUhzYmI2cWxEYjFFYlBVdk1idHRMekxqV254NzBHZnJBOFE?oc=5"
+  },
+  {
+   "title": "These Alts Bleed the Most as Bitcoin (BTC) Settles Below $82K: Weekend Watch",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 07:36:32+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZzNIUkF2OUVQTUhhOW9vYkVRaUN1cmJrelFXQ2NMSTJ6UEJNS2llallFNzhXenVrOXJxWkxRQXk1S2VUcGxFVExQaC0wUUFqaF8wY2NtYU10aV9rRmZjRE13UEhiOGRyU1lPc21NYlp1VTZWSjFJUHpJRUVrNDAwOXhnM2ZEN283NzdLUVYzRWNteUZ1b3MzWG9HU01aTzgyVEVRQmpFbFlHM25BNkZJ?oc=5"
+  },
+  {
+   "title": "$100B Gone From Crypto Markets as BTC, ETH, XRP Nosedive: Market Watch",
+   "publisher": "CryptoPotato",
+   "published_at": "2026-10-17 07:26:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZ0tHdk5OUk1tQXg4a0lkcmFGejVLVUNjWkl6ZWhsYXRTNkllM1Q2Q0x4ak1MaVpwNDdGaFVOS29BNlpJbFNzNlAwYVFVQmk0VEc0azVqOG9KUEd5OHF1RHRSdlBiMy1Gd01nSnpWQ2hWWGRKdTBPUHVqYWwzRDNXZUlQU3k5aUtNcExjMGl5anBMTFRvdWlv?oc=5"
+  },
+  {
+   "title": "Is Uptober Over for BTC? Bitcoin Is Down Nearly 4% So Far This October.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 07:16:25+00:00",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQWHFYZ0NPME9WM1ZOdEVBd2R4WlRlcWEyU3k4ZEhmMWRqSkhCZG5IUGQtRTA5Vi1HZUdZazdYTGNUcldmMjdhd052Ukw0OFdPckpFMUlMNV9EUWU3RnU0TENhNU9TdWZOZFdMYVI3TkliYTEwVWZ3TzJHaVR0bXFKZDFhcmh3SDNua0RiQm5GVFcyNnFkWTQtd0R3?oc=5"
+  },
+  {
+   "title": "Is Uptober Over for BTC? Bitcoin Is Down Nearly 4% So Far This October.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 07:16:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMGVqR2pIVjlEc1JfdXBtYWZtbEVsX2J3b043V21HbUVCMWNOei1LWFFEeEI1WDE2SVdHMVJtZ3hZZ1FWeTEtTHVNQWNaYmtLdngxY3hJZlpfTGlOLVN1cHFhVk5mdVc0cU9MYTNzVnFMVUVfYS1ZNjdtbmN0ZnVkN3RDa0VYSzd0NmlNZFZEUzFibGQwbGZ3aHpGYmZHMFNwZDYzcHRCMGNLVjBhWFVSYlQtdExtRXp4MHlySlVTdVNEdjQxT0E?oc=5"
+  },
+  {
+   "title": "Hedera's Network Activity Is Up 168%, but HBAR Fell 8% This Week. Better Buy Than Solana?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-10-17 07:07:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOcWRLbE05VlhGQXdwVnVFSzA3SUJJT3FyLVlXbGlZX1BSdm5JbkxvQ2FYSW50VzRTN2RvcTFnWjU0MjRxaXBDS2dveXNuUXUxMVRTa0FYcHM2Ukc1U1kxUXRnRWluY1BMLWczQ3E5eUkxTEJNQUVKaUtSN3ZwcUp3VWtvS2NoVTV4RkxjOE9UaWdtZjRud0ZWSHQ0c1NQbGtPYnY4R3NHV0VJby1hcHlVc21LcDNGNVg3dHR6RlNzZmZGakVtMmVwMWlIeHgyV0RQbXh5S0pNRW1YdkV0eFJGYXllWTliS2tOUjVKQWhiMFZKTWNES3BkZ3VZOHZ2NGhJTHRicjNpUEk?oc=5"
+  },
+  {
+   "title": "XRP\u2019s Chaos Near $1.33 Could Be the Start of a Much Bigger Move",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-17 04:26:53+00:00",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPZTVIdWhKNG5Vc3dKd1pMbXJId0tHZEItZE5NUGhIWDIwdlpBMjBvVUFMS2JKdkQ1cFJ1N25DMWNCdTNwX3B2QUpOLW5obkFRdGUzVzl2NmVQRktSZ1BqakN1bndzY3ppaFRIa1FGcVFMQnVmZ2NpU0FPd3hVSTR3eFF2MFU1MzFBaVFCeUtXMUd4VTFIYS1NVXFNYzJhS1hN?oc=5"
+  },
+  {
+   "title": "XRP Ledger amendment October 23: lending waits",
+   "publisher": "CryptoTicker",
+   "published_at": "2026-10-17 03:18:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFB5cGl6YjNjWDdmc2dCbHBxT1lpSURrOHBydncxX2dmNHR2QXBvZUNZNzU3TnpmZWFwTVJZV2tackFiTkJTdHEzUW1fOEltUl9mUml0a0ZYQWgzNTZ4VG5SZlFuQ0N4NVJsY0Y0UnRYSDBKNE5ISko1X3FVRFY?oc=5"
+  },
+  {
+   "title": "XRP Price Prediction: Social Mentions Favor Bullish Recovery as XRP Bounces Off Key Support",
+   "publisher": "FXEmpire",
+   "published_at": "2026-10-17 02:11:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPN2xDQU15MTc2X0szRGh6MnFjRXhDWU9CMTZ5NzZVanJDMFdIU1FKSmZHOXR1T2F3NzVVbEM2VTNzdEwzM1Z2ZU9NNkpoOWxMbU1IY04wdHBCanRPVGRNTExHLVotWjBjY0tQRF9nNUgyNGxKMUlxQmlCdlJIMmtKLVJscUplUm9SMEwyb2NCOXM0b2h2VTR0RDhXaTVYM1JSV1JyS1NfbGRUSVJublhGUVdiMjVwY0tDZzFhT2haUzN2ZE56VjR5bXF1b2hCWFpYMlBkY1ZBb3Q?oc=5"
+  },
+  {
+   "title": "Former Ripple Adviser Warns XRP\u2019s Biggest Test Is Still Ahead",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-10-17 00:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQa21ndThBUHItYnJkaWM4ZEZKM3hnWFdReFdMdk4taUhBMEV5RnhONy1NdGF4a2Z0by1zR2NPN3oxZ25CUVdLV1FpZEd1SE9JYUpLRFN4TGNXaUY2SDkzc19HZmZYOGtWSmJ6VWI2dHRRTUFWV0dYdjRnNnd0bDJoUlFCY0J6dTU0UVlaTEdFNnF0NGV0bng5UURDTXM?oc=5"
+  },
+  {
+   "title": "Former Ripple Adviser Warns XRP\u2019s Biggest Test Is Still Ahead",
+   "publisher": "BeInCrypto",
+   "published_at": "2026-10-17 00:00:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE82ckFuUXpGWFU3VEhYc0xhYTNabFA2XzRlMmkxaGgwRFFickRxQWQ2NjlQelN5UmVSdkk0ZkZCZmVudVNoTEJjLWMtR0dZTG1WM1MwTDY4RldhMHQxNU91cjFsdXptUURzeUlaWXlSYw?oc=5"
+  },
+  {
+   "title": "XRP Rich List Reveals Ripple\u2019s 35.6 Billion XRP Holdings",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-16 21:14:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1YR05lQWNfaFNtRm1tRndxU3hrVW9IWXNNVl9UYkhwcG8yZDkzSktIaXBTWTU5bU9MbDhIb2hJNEotekdxZkJNaU45bVVQbFR5OGRybnZNZnNTdw?oc=5"
+  },
+  {
+   "title": "XRP News: Brad Garlinghouse Explains Why Ripple Handed XRP To Evernorth",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-16 20:55:19+00:00",
+   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbzBrc183bEF5OGx4SjBGMmNWWG9NRVRyRHpva3FXa3FUa1ZsV3dRejZYejg3N3l6aDV0aFRxbmpCcVo5MjRCc1QwMWlWRkpRRmZ4MHVzU0ljTnhfSUw0M1FyUTNyaVg4RGVBZmlZU0ZoVlowcUpyMVlMSFNOSktYeUNCTFJnYzl2NTV2bndFM2RlbmVXUzZoSWlTcXlzVERFOVB6b3NYYk85WW9J?oc=5"
+  },
+  {
+   "title": "XRP Is Outtrading Bitcoin and Ether on South Korea's Biggest Exchange",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-16 20:19:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBUSjBHY214V2R6UGhLT3pmcy1DeUFlY0Y1QlRrYlF6T1RQNTBMTFhpRDZUTUxNZ1NOQXVXSzZUZC1aRlpYNmNFVU1kYUx4bEZxaURHczJZUQ?oc=5"
+  },
+  {
+   "title": "XRP Price Analysis: Buyers Absorb Heavy Selling Near $1.28, Eye $1.38 Liquidity",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-16 19:46:26+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQMGhXV0dTVjFsaHFmU2NLLUQ5Z3FRazVObkxvcFF0eTAzQjNKV0c4TmF2UUxXUU9obGllS25sVEdUaTVZQ2VLN1IzVFh0SkFpaFZxQnVRakhjdlp0MnVWNDcyWmhTUklqbV9Mc1RHYnlRM09JYU15c2RRX2xvODdCRUd1SDY4RS1Yc3hITHNjN3M0eWtOcVJhMHp2djM1ckJVLXFyR0tlQnFwYjZsSzVkbmtuYw?oc=5"
+  },
+  {
+   "title": "XRP Drops 22%, but $184M in Derivatives Bets Raise Hope",
+   "publisher": "Cryptonews.net",
+   "published_at": "2026-10-16 19:34:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBnRktKbEdDTEZkTktfVVR4UFhJLTc2bEt5djBfeS1odnJoQzJWTDNUcjdIREJPNVdSMFBzLW9neUY1cFl3V0plY0lZdE9VYXo3eTFXT09hWEk2aXM?oc=5"
+  },
+  {
+   "title": "Analyst identifies key XRP buy signals",
+   "publisher": "roundtable.io",
+   "published_at": "2026-10-16 19:19:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBzV1VabHNQVlY0UG4wdkVsS3RSZm52T1gxWS1GTWV4TEtTc3pRVDNFRjRqcGpoQmV4WVZfZ1ctbmxwcTV1SHFPQVlNek5QbXBuT3dacFhpamh4TlJVOGxxdElPSHFqem1vQXZ0ZjFsMHBjWVU?oc=5"
+  },
+  {
+   "title": "Analyst identifies key XRP buy signals",
+   "publisher": "TheStreet",
+   "published_at": "2026-10-16 19:11:09+00:00",
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPSzRMMDZTS21JYWd0YTlvdHNENDV2c3lVbVlfdlh1SmhWclNQWXJrR0hIdmFUcHNVc0FEcFY3YWxUUy04dENBS1Z3ZW1WQWUwZkpjNVh6U3lMT2YtVm1hNXpTTkFOTEpNTGVEME9kY0JDd0gxR2tBdWRuV1ptX2s2aFFpUFBJUQ?oc=5"
+  },
+  {
+   "title": "XRP Price Prediction: Social Mentions Favor Bullish Recovery as XRP Bounces Off Key Support",
+   "publisher": "Yahoo Finance UK",
+   "published_at": "2026-10-16 19:11:05+00:00",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQeFA4ZzliWWJWTUJGLVRsMFFlTC1taWdUb1ZLTXBvZjJLT0VnUUd0bUZZRGdoZUM1ei1oVVAxTHlGS3ZuV2RfeHJ6ZDlMUVh0bm1QZnhfR1c4V1VvTFVfRlhVTUs0eUxrZWlpVEk2cFZhTFRBTF9CM3QtM3NYSFVGRWdjd05MZzVpNzZNX2JB?oc=5"
+  },
+  {
+   "title": "XRP Slides Below Key Trendline as $959 Million Leverage Wipeout Rattles Crypto Markets",
+   "publisher": "BigGo Finance",
+   "published_at": "2026-10-16 18:25:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1fQ19Ea25VX29GUlpKNW5LQkwwQ3psT3JyckFxUmlobDNoMnpJMEQxOGg1Q0x2OGlFU0ZfeGl6WVpqdHBZRG5nVWlDaGZQMXJRVnFjaDlTVjRJM3I3V1lrcElSS1RFazEzRVB5LThtd1o1SkppTVE?oc=5"
+  },
+  {
+   "title": "XRP News: Brad Garlinghouse Explains Why Ripple Handed XRP To Evernorth",
+   "publisher": "TradingView",
+   "published_at": "2026-10-16 18:22:04+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOa2VKNVZUT0VCbDhySEpBVXREN1NZRWwxWlpxRkVzbEU5SXlCQl91NDlGaW5RUkhPc3ZiOXlSS0tXb1JnWWt2OTl2c1V2eDF4aU12cmdTaUoyajlCOGd6MEtUOTBsMlZjZXJHQVZzdVZoS29hUWZTZUYwTFlrTWhoZ3VpMmpiS3JkbkxyS05pLTZHT2h0UThYSGV2VHhYLU5Kd1BkSzBBeENBMnQ0dU82czZEbXVoemtrWk81aUp5VG9JdjFYQTc0MmhR?oc=5"
+  },
+  {
+   "title": "XRP Price Could Surge 145% as 2023 Rally Pattern Returns",
+   "publisher": "Cryptonews",
+   "published_at": "2026-10-16 17:45:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5rckxJSW5DOEd5aWlnaEhhcXhRX3paMHFDSjk5VnRtWkZhbnNWOURza2VJM2lEM2lkTEpvUUZRS2hQWVRoSXEyeU5naW5ZcHM3TUFTcFpXLWhndEg0cmxObEUwUjFpbXB3UzBsTzFTbHJFSjlhcVlxaGFqRnVHRGs?oc=5"
+  },
+  {
+   "title": "XRP, Solana and Ethereum ETFs Lose $71 Million as Bitcoin Funds Attract $5.1 Million in One Day",
+   "publisher": "CryptoRank",
+   "published_at": "2026-10-16 17:40:02+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQT2s5UDNQLVhpeFZFa29oTWJqdVFjR0pXSThsOWNwMTBBUGRRQ1Z5XzF1N0piT0JLVFRLM3NiMER6WERBV0VqWjhzNXZBRjlVcFp3VmczYW03N1c0a3RkLWhLekk1bGsyaTlGQVY3YjNGMHZmQ0hLS2x1ZXVZbC11X1pPVnRDWE5ZRktoa2hVdWhtMks5bG9rR2loamFDV1lBRGFDR2ZzZ1JYdjdWM3YzNEhCUzFtVzlsRVdybkhVZEFWYWpEV29sZw?oc=5"
+  },
+  {
+   "title": "New Cryptocurrency: Remittix Locks In November 24 RTX",
+   "publisher": "GlobeNewswire",
+   "published_at": "2026-10-16 17:30:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMiswJBVV95cUxPTTR0bjBxbjZnR2NOS0J4bUI4aWJlSGhBY1lnNm1jX09ETDhRbDdRZnpzaWYtUWk5QVVmbDBYVXYwSGg5VDVfNWsyNHdFekFaajFMU3NHVmRiMnBuZU1WX2NaYzdyb0VkS2szeGdPWHZFUmVuVG9RaFc4c1UtUUk2cWNCVEptRFdXRHpLU2txcVdzMVI0ZUlZTVV4ZHhBTmxBM0hZbHFSSXRIVlpuQi1HSDBzME00dVNzTEFwNFJ0Sy0xTWRkbTQtWVQ2alR3NVpfU2hfR1NBZnVDX3lJa1pkdmUzbFpmWFJwSm0yampOV0JoZVJTZDZlSDVYOXV1cndsRC0zSDl2TGxlZjBEVTNSWHhiT08wV2ZHNUdZYVZMSmJLWHRlMG9lNG8yUnJPclpCaXJN?oc=5"
+  },
+  {
+   "title": "Cryptocurrencies price prediction: XRP, Bitcoin & Cryptos \u2013 American Wrap 16 October",
+   "publisher": "FXStreet",
+   "published_at": "2026-10-16 16:32:34+00:00",
+   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPb3pzMHZySzJFY1loSjNMYnNudFl4NDliWWczMWU4VUVGU2p3YVRaQUdBejRPYzR2LVZxSmpBQ1NLWllaNENxMGkwZ1p2dVNBZmd6XzdOWnBtcXNYTFBZZk9xOVpCeFRDRGZzc1o4Q1k3dXdpZlh1RVRRMllOWF9iN2NxcEl4aXdabWhtVU01TDRRM3hUZkR1d05sbG0tQ1JJT0RRWnhQSjB6YkU4Q2ZjU1NFb2FDQmVpR2N6Uk5udHNpSEJMSE9wemdFZ0tYSkRja3E1eA?oc=5"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "tool": "compute_metrics",
+ "args": {
+  "symbol": "DOGEUSDT",
+  "window": "7d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:14.225288+00:00",
+ "data": {
+  "symbol": "DOGEUSDT",
+  "base_asset": "DOGE",
+  "window": "7d",
+  "interval": "4h",
+  "n_candles": 42,
+  "start_price": 0.0869,
+  "end_price": 0.07769,
+  "return_pct": -10.6,
+  "high": 0.08814,
+  "low": 0.07704,
+  "range_pct": 14.41,
+  "volatility_pct": 1.29,
+  "annualized_volatility_pct": 60.44,
+  "max_drawdown_pct": -11.75,
+  "rsi_14": 33.44,
+  "rsi_overbought": 70,
+  "rsi_oversold": 30,
+  "sma_20": 0.08029,
+  "sma_50": 0.08282,
+  "price_vs_sma_20_pct": -3.24,
+  "vwap": 0.08165,
+  "price_vs_vwap_pct": -4.86,
+  "volume_base": 5665474238.0,
+  "volume_quote": 460420588.14,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:14.220213Z"
+ }
+}

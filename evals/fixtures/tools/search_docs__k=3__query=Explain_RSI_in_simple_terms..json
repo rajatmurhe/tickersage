@@ -1,0 +1,39 @@
+{
+ "tool": "search_docs",
+ "args": {
+  "query": "Explain RSI in simple terms.",
+  "k": 3
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:26:57.555850+00:00",
+ "data": {
+  "query": "Explain RSI in simple terms.",
+  "chunks": [
+   {
+    "id": "rsi#0",
+    "title": "Relative strength index (RSI)",
+    "url": "https://en.wikipedia.org/wiki/Relative_strength_index",
+    "text": "The relative strength index (RSI) is a momentum indicator that compares the size of recent gains with the size of recent losses. It ranges from 0 to 100 and is most often calculated over 14 periods using Wilder's smoothing. Readings above 70 are conventionally described as overbought and readings below 30 as oversold. These are descriptive labels for recent momentum, not signals that a reversal will happen; RSI can stay above 70 or below 30 for long stretches during strong trends.",
+    "score": 0.257,
+    "redacted": false
+   },
+   {
+    "id": "stablecoin#0",
+    "title": "Stablecoin",
+    "url": "https://en.wikipedia.org/wiki/Stablecoin",
+    "text": "A stablecoin is a cryptocurrency designed to keep a stable value relative to a reference asset, most often the US dollar. Fiat-backed stablecoins such as USDT and USDC hold reserves of cash and short-term instruments. Other designs use crypto collateral or algorithms. Stablecoins are widely used as the quote currency on exchanges, which is why most trading pairs are quoted against USDT. A stablecoin can lose its peg if confidence in its reserves or mechanism breaks down.",
+    "score": 0.169,
+    "redacted": false
+   },
+   {
+    "id": "tickersage-methodology#0",
+    "title": "How TickerSage computes its metrics",
+    "url": "https://en.wikipedia.org/wiki/Rate_of_return",
+    "text": "TickerSage calculates every figure in Python from exchange candles; the language model only explains them. For a 24-hour window it uses 24 hourly candles, for 7 days 42 four-hour candles, and for 30 days 30 daily candles. Return is the last close divided by the first candle's open, minus one. Volatility is the standard deviation of log returns between consecutive candles, and annualized volatility scales that by the square root of the number of candles per year. RSI uses 14 periods with Wilder smoothing. VWAP uses each candle's typical price weighted by volume. Maximum drawdown is the largest decline from a running peak of closing prices within the window.",
+    "score": 0.16,
+    "redacted": false
+   }
+  ],
+  "source": "TickerSage docs corpus"
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "tool": "compute_metrics",
+ "args": {
+  "symbol": "ADAUSDT",
+  "window": "24h"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:12.937519+00:00",
+ "data": {
+  "symbol": "ADAUSDT",
+  "base_asset": "ADA",
+  "window": "24h",
+  "interval": "1h",
+  "n_candles": 24,
+  "start_price": 0.2195,
+  "end_price": 0.2164,
+  "return_pct": -1.41,
+  "high": 0.2233,
+  "low": 0.2142,
+  "range_pct": 4.25,
+  "volatility_pct": 0.72,
+  "annualized_volatility_pct": 67.32,
+  "max_drawdown_pct": -2.96,
+  "rsi_14": 35.04,
+  "rsi_overbought": 70,
+  "rsi_oversold": 30,
+  "sma_20": 0.2193,
+  "sma_50": 0.2217,
+  "price_vs_sma_20_pct": -1.3,
+  "vwap": 0.2193,
+  "price_vs_vwap_pct": -1.32,
+  "volume_base": 59282864.9,
+  "volume_quote": 12987898.64,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:12.908982Z"
+ }
+}

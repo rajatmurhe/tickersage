@@ -1,0 +1,49 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "ETHUSDT",
+   "BTCUSDT"
+  ],
+  "window": "30d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:25.559267+00:00",
+ "data": {
+  "window": "30d",
+  "rows": [
+   {
+    "symbol": "ETHUSDT",
+    "base_asset": "ETH",
+    "end_price": 2369.22,
+    "return_pct": -9.3,
+    "volatility_pct": 1.92,
+    "annualized_volatility_pct": 36.74,
+    "max_drawdown_pct": -14.66,
+    "rsi_14": 34.76,
+    "volume_quote": 20262633568.96
+   },
+   {
+    "symbol": "BTCUSDT",
+    "base_asset": "BTC",
+    "end_price": 81246.61,
+    "return_pct": 0.45,
+    "volatility_pct": 1.7,
+    "annualized_volatility_pct": 32.56,
+    "max_drawdown_pct": -6.2,
+    "rsi_14": 45.32,
+    "volume_quote": 38340759980.75
+   }
+  ],
+  "highest_return": "BTC",
+  "lowest_return": "ETH",
+  "highest_volatility": "ETH",
+  "highest_volume": "BTC",
+  "volume_ratio": 0.53,
+  "volatility_ratio": 1.13,
+  "return_gap_pct": -9.75,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:25.546036Z"
+ }
+}

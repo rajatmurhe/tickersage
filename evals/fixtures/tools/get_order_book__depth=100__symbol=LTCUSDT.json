@@ -1,0 +1,66 @@
+{
+ "tool": "get_order_book",
+ "args": {
+  "symbol": "LTCUSDT",
+  "depth": 100
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:16.566808+00:00",
+ "data": {
+  "symbol": "LTCUSDT",
+  "best_bid": 58.29,
+  "best_ask": 58.3,
+  "mid_price": 58.3,
+  "spread": 0.01,
+  "spread_bps": 1.715,
+  "bid_depth_quote_1pct": 560261.61,
+  "ask_depth_quote_1pct": 606525.59,
+  "depth_imbalance_pct": -3.97,
+  "top_bids": [
+   {
+    "price": 58.29,
+    "qty": 58.412
+   },
+   {
+    "price": 58.28,
+    "qty": 79.131
+   },
+   {
+    "price": 58.27,
+    "qty": 185.219
+   },
+   {
+    "price": 58.26,
+    "qty": 48.45
+   },
+   {
+    "price": 58.25,
+    "qty": 134.211
+   }
+  ],
+  "top_asks": [
+   {
+    "price": 58.3,
+    "qty": 1.984
+   },
+   {
+    "price": 58.31,
+    "qty": 187.07
+   },
+   {
+    "price": 58.32,
+    "qty": 190.732
+   },
+   {
+    "price": 58.33,
+    "qty": 149.806
+   },
+   {
+    "price": 58.34,
+    "qty": 285.469
+   }
+  ],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:16.566327Z"
+ }
+}

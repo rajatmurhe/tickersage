@@ -1,0 +1,37 @@
+{
+ "tool": "compute_metrics",
+ "args": {
+  "symbol": "TRXUSDT",
+  "window": "24h"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-18T16:27:19.993768+00:00",
+ "data": {
+  "symbol": "TRXUSDT",
+  "base_asset": "TRX",
+  "window": "24h",
+  "interval": "1h",
+  "n_candles": 24,
+  "start_price": 0.3347,
+  "end_price": 0.3325,
+  "return_pct": -0.66,
+  "high": 0.335,
+  "low": 0.3319,
+  "range_pct": 0.93,
+  "volatility_pct": 0.09,
+  "annualized_volatility_pct": 8.38,
+  "max_drawdown_pct": -0.84,
+  "rsi_14": 35.24,
+  "rsi_overbought": 70,
+  "rsi_oversold": 30,
+  "sma_20": 0.3332,
+  "sma_50": 0.3345,
+  "price_vs_sma_20_pct": -0.22,
+  "vwap": 0.3334,
+  "price_vs_vwap_pct": -0.27,
+  "volume_base": 55585735.4,
+  "volume_quote": 18531180.01,
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:27:19.983710Z"
+ }
+}
