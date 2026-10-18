@@ -23,9 +23,12 @@ class Settings(BaseSettings):
     openrouter_api_key: str | None = None
     # NVIDIA's API catalog (build.nvidia.com): Nemotron models, free for prototyping, OpenAI-compatible.
     nvidia_api_key: str | None = None
+    # Groq (console.groq.com): very fast OpenAI-compatible inference with a free, rate-limited tier. Used as
+    # the first backup when the primary provider errors or stalls.
+    groq_api_key: str | None = None
     llm_mode: Literal["auto", "live", "offline"] = "auto"
     # Unset or blank: picked from the keys (see _pick_primary_provider). Always set after validation.
-    primary_provider: Literal["anthropic", "openai", "openrouter", "nvidia"] | None = None
+    primary_provider: Literal["anthropic", "openai", "openrouter", "nvidia", "groq"] | None = None
     routing_mode: Literal["routed", "single"] = "routed"
     planner_mode: Literal["rules", "llm"] = "rules"
 
@@ -39,6 +42,10 @@ class Settings(BaseSettings):
     nvidia_base_url: str = "https://integrate.api.nvidia.com/v1"
     nvidia_fast_model: str = "nvidia/nemotron-3.5-lightning-30b-a3b"
     nvidia_strong_model: str = "nvidia/nemotron-3-super-120b-a12b"
+    groq_base_url: str = "https://api.groq.com/openai/v1"
+    # gpt-oss models: Groq enforces strict JSON schemas on these, which the router relies on.
+    groq_fast_model: str = "openai/gpt-oss-20b"
+    groq_strong_model: str = "openai/gpt-oss-120b"
     # Server-side refusal fallback on Claude Sonnet 5.5 (Claude API only).
     anthropic_server_fallback: bool = True
     llm_timeout_s: float = 30.0
@@ -108,6 +115,8 @@ class Settings(BaseSettings):
                 self.primary_provider = "openrouter"
             elif self.nvidia_api_key:
                 self.primary_provider = "nvidia"
+            elif self.groq_api_key:
+                self.primary_provider = "groq"
             else:
                 self.primary_provider = "anthropic"
         return self
@@ -118,7 +127,8 @@ class Settings(BaseSettings):
             return False
         if self.llm_mode == "live":
             return True
-        return bool(self.anthropic_api_key or self.openai_api_key or self.openrouter_api_key or self.nvidia_api_key)
+        return bool(self.anthropic_api_key or self.openai_api_key or self.openrouter_api_key or self.nvidia_api_key
+                    or self.groq_api_key)
 
 
 @lru_cache

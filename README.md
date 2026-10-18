@@ -41,7 +41,7 @@ Backend (FastAPI, Python 3.11):
 
 ```bash
 python3.11 -m venv .venv && .venv/bin/pip install -r requirements.txt
-cp .env.example .env   # optional: add ANTHROPIC_API_KEY / OPENAI_API_KEY, OPENROUTER_API_KEY or NVIDIA_API_KEY
+cp .env.example .env   # optional: add ANTHROPIC_API_KEY / OPENAI_API_KEY, OPENROUTER_API_KEY, NVIDIA_API_KEY or GROQ_API_KEY
 .venv/bin/uvicorn app.main:app --app-dir backend --port 8077
 ```
 
@@ -60,6 +60,8 @@ With no API keys the agent runs **offline**: a rules router plus template answer
 An `OPENROUTER_API_KEY` works instead: the same two Claude models run through OpenRouter's OpenAI-compatible API (`anthropic/claude-haiku-5.5`, `anthropic/claude-sonnet-5.5`). With only that key set, OpenRouter becomes the primary provider. Each call records the cost OpenRouter reports billing, not a price-table estimate. Anthropic's server-side refusal fallback isn't available through OpenRouter.
 
 For a free setup, a `NVIDIA_API_KEY` from [build.nvidia.com](https://build.nvidia.com) runs NVIDIA's Nemotron models on its rate-limited developer tier: `nvidia/nemotron-3.5-lightning-30b-a3b` for routing and `nvidia/nemotron-3-super-120b-a12b` for analysis, recorded at $0. Set `PRIMARY_PROVIDER=nvidia` if another key is also present. Citation markers in the style some open models write (`【1】`) are normalised to `[1]` before the verifier runs.
+
+A free `GROQ_API_KEY` ([console.groq.com](https://console.groq.com)) adds a fast backup: when the primary provider errors or stalls past `LLM_TIMEOUT_S`, the call is retried on Groq's `openai/gpt-oss-20b` (routing) or `openai/gpt-oss-120b` (analysis) before any slower provider. Backups are tried in this order: Claude API, OpenAI, Groq, OpenRouter, NVIDIA (skipping the primary and any without a key).
 
 Full stack (Next.js + API + Postgres + pgvector + Redis), with the chat at http://localhost:3000 and the API at http://localhost:8000. The Compose file and the pgvector backend haven't been run end to end yet; the default SQLite + in-memory path is what the tests cover:
 
@@ -121,7 +123,7 @@ The same tools are exposed over **MCP** (`python backend/mcp_server.py`, stdio),
 ## Cost and latency
 
 * **Model routing:** Haiku 5.5 ($0.10/$0.50 per 1M tokens) for routing and price lookups, Sonnet 5.5 ($2/$10) for analysis. `ROUTING_MODE=single` uses Sonnet everywhere for comparison.
-* **Provider fallback:** Claude errors, timeouts, refusals and truncations retry on OpenAI. Sonnet calls also opt into Anthropic's server-side refusal fallback (`fallbacks: "default"`). Every fallback is logged and flagged in the trace.
+* **Provider fallback:** Claude errors, timeouts, refusals and truncations retry on OpenAI (then Groq, OpenRouter or NVIDIA when those keys are set). Sonnet calls also opt into Anthropic's server-side refusal fallback (`fallbacks: "default"`). Every fallback is logged and flagged in the trace.
 * **Caching:** market data in Redis with short TTLs; concept answers in a semantic cache (embedding similarity ≥ 0.92). The system prompt is a static cache prefix.
 * **Token budget:** 5 headlines, 3 doc chunks, at most 24 candles per prompt; order-book levels are trimmed.
 * **Tracing:** one row per request (Postgres or SQLite): intent, tools and args, tokens in/out, cost from the pricing table, per-step latency, models, fallback flag, status, refusal reason, faithfulness. `GET /api/traces` (it needs an `X-Admin-Token` header when `ADMIN_TOKEN` is set).
@@ -197,7 +199,7 @@ backend/app/
   cache.py, semantic_cache.py, embeddings.py, tracing.py, symbols.py, pricing.py
 backend/mcp_server.py  the same tools over MCP
 backend/docs_corpus/   cited glossary and API notes for search_docs
-backend/tests/         161 tests (pytest)
+backend/tests/         164 tests (pytest)
 frontend/              Next.js (App Router, TypeScript) chat and /evals pages
   lib/api.ts           SSE over fetch for POST /api/chat/stream
   components/          Chat, Markdown (React elements only, no raw HTML), TracePanel, EvalsView

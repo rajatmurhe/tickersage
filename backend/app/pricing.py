@@ -27,6 +27,9 @@ PRICES: dict[str, tuple[float, float]] = {
     # NVIDIA API catalog (build.nvidia.com): the developer tier is free and rate-limited.
     "nvidia/nemotron-3.5-lightning-30b-a3b": (0.0, 0.0),
     "nvidia/nemotron-3-super-120b-a12b": (0.0, 0.0),
+    # Groq's free tier (rate-limited). On a paid Groq plan, replace these with its per-token prices.
+    "openai/gpt-oss-20b": (0.0, 0.0),
+    "openai/gpt-oss-120b": (0.0, 0.0),
 }
 
 CACHE_WRITE_MULT = 1.25

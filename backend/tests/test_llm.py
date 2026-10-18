@@ -9,8 +9,8 @@ import openai
 import pytest
 
 from app.config import Settings
-from app.llm import (AnthropicProvider, LLMClient, LLMUnavailable, NvidiaProvider, OpenAIProvider, OpenRouterProvider,
-                     ProviderError, Usage)
+from app.llm import (AnthropicProvider, GroqProvider, LLMClient, LLMUnavailable, NvidiaProvider, OpenAIProvider,
+                     OpenRouterProvider, ProviderError, Usage)
 from app.synthesizer import normalize_citations
 from app.pricing import cost_usd
 
@@ -20,7 +20,7 @@ from .conftest import ScriptedProvider
 def s(**kw) -> Settings:
     # No .env and no keys, so a developer's local settings can't change what these tests exercise.
     base = dict(_env_file=None, llm_mode="live", database_url="sqlite://", anthropic_api_key=None,
-                openai_api_key=None, openrouter_api_key=None, nvidia_api_key=None)
+                openai_api_key=None, openrouter_api_key=None, nvidia_api_key=None, groq_api_key=None)
     return Settings(**{**base, **kw})
 
 
@@ -318,3 +318,59 @@ def test_normalize_citations():
     assert normalize_citations("Volume was 3.07x SOL's【1】.") == "Volume was 3.07x SOL's[1]."
     assert normalize_citations("See 【2†source】, 【1, 3】, 【 4 】 and 【1，2】.") == "See [2], [1, 3], [4] and [1, 2]."
     assert normalize_citations("Already [1] fine; 【not a cite】 stays.") == "Already [1] fine; 【not a cite】 stays."
+
+
+async def test_timeouts_are_named_in_the_fallback_record():
+    class Hangs:
+        name = "nvidia"
+
+        async def generate(self, **kw):
+            raise TimeoutError()
+
+    backup = ScriptedProvider("openrouter", default="ok")
+    resp = await LLMClient(s(primary_provider="nvidia"), {"nvidia": Hangs(), "openrouter": backup}).generate("fast", "s", "u")
+    assert resp.fell_back and resp.failed_attempts == ["nvidia/nvidia/nemotron-3.5-lightning-30b-a3b: TimeoutError"]
+
+
+# --- Groq ------------------------------------------------------------------------------------------
+
+
+async def test_groq_request_shape_sets_reasoning_effort_only_for_gpt_oss():
+    seen: list[httpx.Request] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen.append(request)
+        body = _nvidia_completion("{\"intent\": \"price\"}")
+        body["model"] = json.loads(request.content)["model"]
+        return httpx.Response(200, json=body)
+
+    provider = GroqProvider("gsk-test", "https://groq.test/openai/v1", 10)
+    provider.client = openai.AsyncOpenAI(api_key="gsk-test", base_url="https://groq.test/openai/v1", max_retries=0,
+                                         http_client=httpx.AsyncClient(transport=httpx.MockTransport(handler)))
+    schema = {"type": "object", "properties": {"intent": {"type": "string"}}, "required": ["intent"],
+              "additionalProperties": False}
+    text, _, model = await provider.generate(model="openai/gpt-oss-20b", system="S", user="U", max_tokens=500,
+                                             json_schema=schema, effort="low")
+    await provider.generate(model="llama-3.3-70b-versatile", system="S", user="U", max_tokens=500,
+                            json_schema=None, effort="low")
+    first, second = (json.loads(r.content) for r in seen)
+    assert seen[0].url.path == "/openai/v1/chat/completions" and json.loads(text) == {"intent": "price"}
+    assert first["reasoning_effort"] == "low" and first["response_format"]["json_schema"]["strict"] is True
+    assert "chat_template_kwargs" not in first  # that switch is NVIDIA's
+    assert "reasoning_effort" not in second and model == "openai/gpt-oss-20b"
+
+
+async def test_groq_is_the_first_backup_when_nvidia_stalls():
+    class Hangs:
+        name = "nvidia"
+
+        async def generate(self, **kw):
+            raise TimeoutError()
+
+    groq = ScriptedProvider("groq", default="fast backup answer")
+    slow = ScriptedProvider("openrouter", default="slow backup answer")
+    client = LLMClient(s(primary_provider="nvidia"), {"nvidia": Hangs(), "groq": groq, "openrouter": slow})
+    resp = await client.generate("strong", "s", "u")
+    assert resp.provider == "groq" and resp.model == "openai/gpt-oss-120b" and resp.fell_back and not slow.calls
+    assert cost_usd("openai/gpt-oss-120b", 1_000_000, 1_000_000) == 0.0
+    assert client._order() == ["nvidia", "anthropic", "openai", "groq", "openrouter"]

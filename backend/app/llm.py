@@ -194,19 +194,23 @@ class OpenRouterProvider:
         return _parse_chat_completion(resp, model)
 
 
-class NvidiaProvider:
-    """NVIDIA's API catalog (build.nvidia.com): Nemotron models behind an OpenAI-compatible Chat Completions API.
+class _ChatCompletionsProvider:
+    """A plain OpenAI-compatible Chat Completions endpoint: system + user message, optional strict JSON output.
 
-    The developer tier is free and rate-limited, so calls are recorded at $0.
+    Subclasses differ only in how they turn a model's thinking down (`_tune`).
     """
 
-    name = "nvidia"
+    name = ""
 
     def __init__(self, api_key: str, base_url: str, timeout: float) -> None:
         import openai
 
         self._openai = openai
         self.client = openai.AsyncOpenAI(api_key=api_key, base_url=base_url, timeout=timeout, max_retries=1)
+
+    def _tune(self, model: str, effort: str | None, kwargs: dict[str, Any]) -> dict[str, Any] | None:
+        """Adjust `kwargs` for the effort level; return provider-specific body fields, if any."""
+        return None
 
     async def generate(self, *, model, system, user, max_tokens, json_schema, effort):
         kwargs: dict[str, Any] = {
@@ -217,15 +221,37 @@ class NvidiaProvider:
         if json_schema:
             kwargs["response_format"] = {"type": "json_schema",
                                          "json_schema": {"name": "output", "strict": True, "schema": json_schema}}
-        extra: dict[str, Any] | None = None
+        extra = self._tune(model, effort, kwargs)
+        resp = await _chat_completion(self.client, self._openai, kwargs, extra)
+        return _parse_chat_completion(resp, model)
+
+
+class NvidiaProvider(_ChatCompletionsProvider):
+    """NVIDIA's API catalog (build.nvidia.com): Nemotron models. The developer tier is free and rate-limited ($0)."""
+
+    name = "nvidia"
+
+    def _tune(self, model, effort, kwargs):
         if effort == "low":
             # Nemotron thinks at length by default: ~1,700 tokens and 16 s to classify one question.
             # With thinking off the same call is ~20 tokens and 1 s.
-            extra = {"chat_template_kwargs": {"enable_thinking": False}}
-        elif effort:
+            return {"chat_template_kwargs": {"enable_thinking": False}}
+        if effort:
             kwargs["reasoning_effort"] = effort
-        resp = await _chat_completion(self.client, self._openai, kwargs, extra)
-        return _parse_chat_completion(resp, model)
+        return None
+
+
+class GroqProvider(_ChatCompletionsProvider):
+    """Groq (console.groq.com): fast inference on a free, rate-limited tier ($0). The first backup provider."""
+
+    name = "groq"
+
+    def _tune(self, model, effort, kwargs):
+        # gpt-oss reasons before answering; Groq returns that reasoning separately and honours reasoning_effort.
+        # Other Groq models don't take the parameter.
+        if effort and model.startswith("openai/gpt-oss"):
+            kwargs["reasoning_effort"] = effort
+        return None
 
 
 async def _chat_completion(client: Any, o: Any, kwargs: dict[str, Any], extra: dict[str, Any] | None) -> Any:
@@ -289,6 +315,8 @@ class LLMClient:
             providers["openrouter"] = OpenRouterProvider(s.openrouter_api_key, s.openrouter_base_url, s.llm_timeout_s)
         if s.nvidia_api_key:
             providers["nvidia"] = NvidiaProvider(s.nvidia_api_key, s.nvidia_base_url, s.llm_timeout_s)
+        if s.groq_api_key:
+            providers["groq"] = GroqProvider(s.groq_api_key, s.groq_base_url, s.llm_timeout_s)
         return providers
 
     @property
@@ -308,12 +336,15 @@ class LLMClient:
             ("openrouter", "strong"): s.openrouter_strong_model,
             ("nvidia", "fast"): s.nvidia_fast_model,
             ("nvidia", "strong"): s.nvidia_strong_model,
+            ("groq", "fast"): s.groq_fast_model,
+            ("groq", "strong"): s.groq_strong_model,
         }
         return table[(provider, tier)]
 
     def _order(self) -> list[str]:
         primary = self.settings.primary_provider
-        return [primary] + [p for p in ("anthropic", "openai", "openrouter", "nvidia") if p != primary]
+        # Backups in order: the paid APIs, then Groq (fast, free), then the slower free tiers.
+        return [primary] + [p for p in ("anthropic", "openai", "groq", "openrouter", "nvidia") if p != primary]
 
     async def generate(
         self,
@@ -336,11 +367,12 @@ class LLMClient:
                 text, usage, served = await asyncio.wait_for(
                     provider.generate(model=model, system=system, user=user, max_tokens=max_tokens,
                                       json_schema=json_schema,
-                                      effort=effort if name in ("anthropic", "openrouter", "nvidia") else None),
+                                      effort=effort if name in ("anthropic", "openrouter", "nvidia", "groq") else None),
                     timeout=self.settings.llm_timeout_s + 5,
                 )
             except (ProviderError, TimeoutError) as exc:
-                msg = f"{name}/{model}: {exc or 'timeout'}"
+                # Exceptions are always truthy, and asyncio's TimeoutError has an empty message.
+                msg = f"{name}/{model}: {str(exc) or type(exc).__name__}"
                 log.warning("LLM call failed, trying next provider: %s", msg)
                 failed.append(msg)
                 continue
