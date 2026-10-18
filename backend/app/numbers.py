@@ -116,6 +116,11 @@ class ExtractedNumber:
         )
 
 
+# Models often write typographic dashes ("24‑hour", "−14.6%"); without this, "24‑hour" escapes the
+# window exemption above and "24" gets flagged as an unsupported figure.
+_ASCII_DASHES = str.maketrans({c: "-" for c in "‐‑‒–—−﹣－"})
+
+
 def strip_exempt(text: str) -> str:
     for pattern in _EXEMPT_PATTERNS:
         text = pattern.sub(" ", text)
@@ -123,6 +128,7 @@ def strip_exempt(text: str) -> str:
 
 
 def extract_numbers(text: str, apply_exemptions: bool = True) -> list[ExtractedNumber]:
+    text = text.translate(_ASCII_DASHES)
     if apply_exemptions:
         text = strip_exempt(text)
     out: list[ExtractedNumber] = []

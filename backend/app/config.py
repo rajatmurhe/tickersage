@@ -40,7 +40,8 @@ class Settings(BaseSettings):
     openrouter_fast_model: str = "anthropic/claude-haiku-5.5"
     openrouter_strong_model: str = "anthropic/claude-sonnet-5.5"
     nvidia_base_url: str = "https://integrate.api.nvidia.com/v1"
-    nvidia_fast_model: str = "nvidia/nemotron-3.5-lightning-30b-a3b"
+    # Super for routing too: in testing, Lightning stalled on ~1 in 6 calls and 26 times in one 110-case eval.
+    nvidia_fast_model: str = "nvidia/nemotron-3-super-120b-a12b"
     nvidia_strong_model: str = "nvidia/nemotron-3-super-120b-a12b"
     groq_base_url: str = "https://api.groq.com/openai/v1"
     # gpt-oss models: Groq enforces strict JSON schemas on these, which the router relies on.

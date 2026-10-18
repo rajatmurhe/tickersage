@@ -59,7 +59,7 @@ With no API keys the agent runs **offline**: a rules router plus template answer
 
 An `OPENROUTER_API_KEY` works instead: the same two Claude models run through OpenRouter's OpenAI-compatible API (`anthropic/claude-haiku-5.5`, `anthropic/claude-sonnet-5.5`). With only that key set, OpenRouter becomes the primary provider. Each call records the cost OpenRouter reports billing, not a price-table estimate. Anthropic's server-side refusal fallback isn't available through OpenRouter.
 
-For a free setup, a `NVIDIA_API_KEY` from [build.nvidia.com](https://build.nvidia.com) runs NVIDIA's Nemotron models on its rate-limited developer tier: `nvidia/nemotron-3.5-lightning-30b-a3b` for routing and `nvidia/nemotron-3-super-120b-a12b` for analysis, recorded at $0. Set `PRIMARY_PROVIDER=nvidia` if another key is also present. Citation markers in the style some open models write (`【1】`) are normalised to `[1]` before the verifier runs.
+For a free setup, a `NVIDIA_API_KEY` from [build.nvidia.com](https://build.nvidia.com) runs NVIDIA's Nemotron models on its rate-limited developer tier, recorded at $0. `nvidia/nemotron-3-super-120b-a12b` handles both routing and analysis: the smaller `nemotron-3.5-lightning-30b-a3b` stalled on about 1 in 6 calls in testing (set `NVIDIA_FAST_MODEL` to try it). Set `PRIMARY_PROVIDER=nvidia` if another key is also present. Citation markers in the style some open models write (`【1】`) are normalised to `[1]` before the verifier runs.
 
 A free `GROQ_API_KEY` ([console.groq.com](https://console.groq.com)) adds a fast backup: when the primary provider errors or stalls past `LLM_TIMEOUT_S`, the call is retried on Groq's `openai/gpt-oss-20b` (routing) or `openai/gpt-oss-120b` (analysis) before any slower provider. Backups are tried in this order: Claude API, OpenAI, Groq, OpenRouter, NVIDIA (skipping the primary and any without a key).
 
@@ -158,6 +158,18 @@ Metrics: tool selection accuracy, intent accuracy, number faithfulness (share of
 
 Offline latency on replayed tools: p50 17 ms, p95 31 ms on the latest run (these move by tens of milliseconds between runs). Cost is $0 because no model is called.
 
+### Live-LLM results (NVIDIA Nemotron, free tier)
+
+The same 110 cases with a live model and replayed tools. Reports: `evals/history/04` to `06`.
+
+| Run | Setup | Pass | Key numbers | Faithfulness | Refusal recall / false refusals | Injection | p50 / p95 |
+|---|---|---|---|---|---|---|---|
+| 1 | Nemotron 3.5 Lightning (routing) + 3 Super, OpenRouter free tier as backup | 81.8% | 70.0% | 100% | 100% / 0% | 100% | 6.3 s / 58.3 s |
+| 2 | Super for both, Groq as first backup | 80.0% | 72.0% | 100% | 100% / 0% | 100% | 2.6 s / 14.4 s |
+| 3 | Run 2 + prompt and number-extraction fixes below | **90.0%** | 80.0% | 100% | 100% / 0% | 100% | 2.6 s / 7.6 s |
+
+Caveats: run 3's prompt was tuned on this same set, so 90% is a training score (the untouched held-out v3 set is the next honest number). NVIDIA's free tier rate-limited the eval (HTTP 429), so part of runs 2 and 3 was answered by Groq's `gpt-oss` models. Cost is $0 on both free tiers. The safety metrics held at 100% in every run: the number verifier and the rule guardrails don't depend on the model.
+
 ### Experiments
 
 | # | Experiment | Status |
@@ -177,7 +189,13 @@ Offline latency on replayed tools: p50 17 ms, p95 31 ms on the latest run (these
 
 Smaller ones: "BTC/USDT last price" called the ticker for USDT too; "What's LTC at?" routed to a concept lookup; the first request after startup spent 1.5 s downloading the 3.7 MB symbol whitelist (now preloaded at startup, 2.9 ms); and the lexical embedder retrieved a spread chunk for "Why do perps have funding payments?" because of a hash collision. That last one was fixed with a wider hash space, 4-letter prefix features and a small crypto-slang synonym map.
 
-*Add the failures you find in live-LLM runs here. Those are the ones worth telling in interviews.*
+**Found in live-LLM runs (Nemotron):**
+
+4. **A "fast" model that wasn't.** Nemotron 3.5 Lightning, chosen for routing, thought for ~1,700 tokens (16 s) to classify one question, and in the first live run 26 cases fell back to the slow free-tier backup (every cause visible in the logs was a Lightning timeout), giving a 58 s p95. *Fix:* turn thinking off for low-effort calls (`enable_thinking: false`, 16 s → 1 s), route with Nemotron Super instead, and add Groq as the first backup with a 15 s timeout. p95 dropped to 14 s, then 7.6 s.
+5. **Correct answers scored as incomplete, and drafts rejected for typography.** Nemotron answered "How much is BNB right now?" with the price but not the 24h change, and compared assets without their returns (key numbers present: 70%). It also wrote window lengths with non-breaking hyphens ("24‑hour"), which slipped past the verifier's window exemption, so "24" was flagged as a made-up figure and drafts fell back to the template. *Fix:* the answer prompt now names each question type's headline figures and bans unit conversions (a draft had turned 0.042 bps into "0.0004%"); number extraction normalises typographic dashes. Pass rate 80% → 90%; wrong-status failures (mostly template fallbacks after rejected drafts) 7 → 1.
+6. **Open models cite differently.** Nemotron writes sources as `【1】`, which the UI, the verifier and the citation check didn't recognise. *Fix:* drafts are normalised to `[1]` before anything reads them.
+
+What's still failing: 7 of 15 comparisons, mostly because the eval expects every asset's return even when the question only asks about volume or volatility. That expectation may be too strict, and it's a judgment call about the test rather than the model.
 
 ## Repo layout
 
@@ -199,7 +217,7 @@ backend/app/
   cache.py, semantic_cache.py, embeddings.py, tracing.py, symbols.py, pricing.py
 backend/mcp_server.py  the same tools over MCP
 backend/docs_corpus/   cited glossary and API notes for search_docs
-backend/tests/         164 tests (pytest)
+backend/tests/         165 tests (pytest)
 frontend/              Next.js (App Router, TypeScript) chat and /evals pages
   lib/api.ts           SSE over fetch for POST /api/chat/stream
   components/          Chat, Markdown (React elements only, no raw HTML), TracePanel, EvalsView

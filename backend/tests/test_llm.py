@@ -307,8 +307,7 @@ def test_nvidia_calls_are_free_and_picked_when_it_is_the_only_key():
     only = s(nvidia_api_key="nvapi-test")
     assert only.primary_provider == "nvidia" and only.llm_live and list(LLMClient(only).providers) == ["nvidia"]
     client = LLMClient(only)
-    assert (client.model_for("nvidia", "fast"), client.model_for("nvidia", "strong")) == (
-        "nvidia/nemotron-3.5-lightning-30b-a3b", "nvidia/nemotron-3-super-120b-a12b")
+    assert client.model_for("nvidia", "fast") == client.model_for("nvidia", "strong") == "nvidia/nemotron-3-super-120b-a12b"
     # With both free-tier keys, OpenRouter comes first unless PRIMARY_PROVIDER says otherwise.
     assert s(nvidia_api_key="nvapi-test", openrouter_api_key="sk-or-test").primary_provider == "openrouter"
     assert s(nvidia_api_key="nvapi-test", openrouter_api_key="sk-or-test", primary_provider="nvidia").primary_provider == "nvidia"
@@ -329,7 +328,7 @@ async def test_timeouts_are_named_in_the_fallback_record():
 
     backup = ScriptedProvider("openrouter", default="ok")
     resp = await LLMClient(s(primary_provider="nvidia"), {"nvidia": Hangs(), "openrouter": backup}).generate("fast", "s", "u")
-    assert resp.fell_back and resp.failed_attempts == ["nvidia/nvidia/nemotron-3.5-lightning-30b-a3b: TimeoutError"]
+    assert resp.fell_back and resp.failed_attempts == ["nvidia/nvidia/nemotron-3-super-120b-a12b: TimeoutError"]
 
 
 # --- Groq ------------------------------------------------------------------------------------------

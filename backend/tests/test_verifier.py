@@ -97,3 +97,10 @@ def test_formatting_round_trips_through_verifier():
         text = f"price {fmt_price(round_price(value))}"
         assert verify(text, [ticker_result(last_price=round_price(value))]).unsupported == []
     assert verify(f"volume {fmt_big(727768495.71)}", [ticker_result()]).unsupported == []
+
+
+def test_typographic_dashes_do_not_create_unsupported_numbers():
+    from app.numbers import extract_numbers
+    # Nemotron writes non-breaking hyphens and minus signs; window lengths stay exempt, figures still parse.
+    nums = extract_numbers("TRX fell \u221214.6\u202f% over the past 24\u2011hour window and 7\u2011day range.")
+    assert [(n.value, n.is_pct) for n in nums] == [(14.6, True)]

@@ -89,7 +89,7 @@ async def test_lenticular_citations_from_nemotron_become_markdown_markers():
     await agent.aclose()
     assert r.status == "ok" and "【" not in r.answer
     assert re.match(r"BTC is trading at \$[\d,.]+\[1\], per \[1\]\.", r.answer)
-    assert r.trace.models == ["nvidia/nemotron-3.5-lightning-30b-a3b"] and r.trace.cost_usd == 0
+    assert r.trace.models == ["nvidia/nemotron-3-super-120b-a12b"] and r.trace.cost_usd == 0
 
 
 async def test_verifier_retries_once_then_accepts_fixed_draft():
