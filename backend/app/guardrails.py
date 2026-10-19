@@ -605,6 +605,12 @@ def check_input(question: str) -> GuardResult:
     return GuardResult(True)
 
 
+# Per clause, a key that is only mentioned ("apiKey=[REDACTED]") is not a request to act; the whole-message check
+# above still refuses "here's my API key, connect to my account".
+_CLAUSE_TRADE_PATTERNS = TRADE_PATTERNS + [p for p in ACCOUNT_PATTERNS if "api[- ]?key" not in p.pattern] \
+    + EXTRA_TRADE_PATTERNS + CLAUSE_START_TRADE
+
+
 def _foreign(text: str, category: Category) -> str | None:
     plain = _rejoin_and_fix_typos(_deaccent(text))
     for cat, p in FOREIGN_PATTERNS:
@@ -634,7 +640,7 @@ def _check_text(text: str) -> GuardResult:
     for clause in clauses:  # a concept opener only exempts its own clause
         if _CONCEPT_QUESTION.search(clause) and not _ACT_FOR_ME.search(clause):
             continue
-        hit = _first_match(TRADE_PATTERNS + ACCOUNT_PATTERNS + EXTRA_TRADE_PATTERNS + CLAUSE_START_TRADE, clause)
+        hit = _first_match(_CLAUSE_TRADE_PATTERNS, clause)
         if hit:
             return GuardResult(False, "trade", f"trade/account request: {hit!r}", [hit])
     hit = _foreign(text, "trade")

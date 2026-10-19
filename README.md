@@ -236,7 +236,7 @@ backend/app/
   cache.py, semantic_cache.py, embeddings.py, tracing.py, symbols.py, pricing.py
 backend/mcp_server.py  the same tools over MCP
 backend/docs_corpus/   cited glossary and API notes for search_docs
-backend/tests/         204 tests (pytest)
+backend/tests/         205 tests (pytest)
 frontend/              Next.js (App Router, TypeScript) chat and /evals pages
   lib/api.ts           SSE over fetch for POST /api/chat/stream
   components/          Chat, Markdown (React elements only, no raw HTML), TracePanel, EvalsView
