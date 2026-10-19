@@ -27,6 +27,7 @@ import yaml
 from . import _BACKEND  # noqa: F401  (puts backend/ on sys.path)
 from app.agent import Agent
 from app.config import Settings
+from app.graph import Deps
 from app.llm import LLMClient, LLMUnavailable
 from app.schemas import ToolCall
 from app.strategy.api import backtest
@@ -132,7 +133,7 @@ class LlmRecorder:
         return resp
 
 
-async def run_case(case: dict, compiler: StrategyCompiler, toolbox) -> dict[str, Any]:
+async def run_case(case: dict, compiler: StrategyCompiler, deps: Deps) -> dict[str, Any]:
     cat, idea, answers = case["category"], case["idea"], case.get("answers") or {}
     out: dict[str, Any] = {"id": case["id"], "category": cat, "idea": idea, "passed": False, "failures": [],
                            "status": None, "rules": [], "error_rules": [], "questions": [], "source": None}
@@ -181,7 +182,7 @@ async def run_case(case: dict, compiler: StrategyCompiler, toolbox) -> dict[str,
         if r.status != "ok" or r.spec is None:
             fails.append(f"didn't compile: {out['questions'] or r.status}")
         else:
-            bt = await backtest(r.spec, r.lint_text, toolbox)
+            bt = await backtest(r.spec, r.lint_text, deps.toolbox, deps.policy)
             if bt.status != "ok" or bt.result is None:
                 fails.append(f"backtest {bt.status}: {bt.error}")
             else:
@@ -352,7 +353,7 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
     compiler = StrategyCompiler(agent.deps.registry, LlmRecorder(llm) if llm is not None else None)
     started = time.perf_counter()
     try:
-        results = [await run_case(case, compiler, agent.deps.toolbox) for case in cases]
+        results = [await run_case(case, compiler, agent.deps) for case in cases]
     finally:
         await agent.aclose()
     # "llm" whenever the model was called, even if every reply fell back; the summary counts the fallbacks.

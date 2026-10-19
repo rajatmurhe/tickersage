@@ -11,10 +11,17 @@ IDEA = "buy ETH when RSI drops below 30, take profit at 5%, stop at 3%"
 
 
 @pytest.fixture
-def client(tmp_path, monkeypatch):
-    settings = replay_settings(database_url=f"sqlite:///{tmp_path / 'traces.db'}")
-    monkeypatch.setattr(main_module, "get_settings", lambda: settings)
-    with TestClient(main_module.app) as c:
+def make_client(tmp_path, monkeypatch):
+    def make(**overrides) -> TestClient:
+        settings = replay_settings(database_url=f"sqlite:///{tmp_path / 'traces.db'}", **overrides)
+        monkeypatch.setattr(main_module, "get_settings", lambda: settings)
+        return TestClient(main_module.app)
+    return make
+
+
+@pytest.fixture
+def client(make_client):
+    with make_client() as c:
         yield c
 
 
@@ -60,6 +67,8 @@ def test_lint_errors_block_the_backtest(client):
     r = client.post("/api/strategy/backtest", json={"spec": spec}).json()
     assert r["status"] == "blocked" and r["result"] is None
     assert {f["rule"] for f in r["findings"]} == {"rsi_out_of_range", "entry_never_triggers"}
+    # no data call was proposed, so there's nothing in the audit log
+    assert client.get("/api/audit", params={"request_id": r["request_id"]}).json() == []
 
 
 def test_decimal_slip_against_the_text_blocks_the_backtest(client):
@@ -67,6 +76,33 @@ def test_decimal_slip_against_the_text_blocks_the_backtest(client):
     spec = done["spec"] | {"stop_loss_pct": 0.3}  # the text says 3%
     r = client.post("/api/strategy/backtest", json={"spec": spec, "text": done["lint_text"]}).json()
     assert r["status"] == "blocked" and r["findings"][0]["rule"] == "suspicious_decimal"
+
+
+def test_backtest_candles_go_through_the_policy_engine_and_audit_log(client):
+    spec = compiled(client, {"interval": "4h", "position_size": "10"})["spec"]
+    r = client.post("/api/strategy/backtest", json={"spec": spec}).json()
+    assert r["status"] == "ok" and r["request_id"].startswith("bt-")
+    rows = client.get("/api/audit", params={"request_id": r["request_id"]}).json()
+    assert [(row["tool"], row["decision"], row["required_scope"], row["scopes"]) for row in rows] == [
+        ("get_klines", "allow", "market:read", ["market:read"])]
+    assert rows[0]["args"] == {"symbol": "ETH", "interval": "4h", "limit": 500}
+
+
+@pytest.mark.parametrize("overrides, reason", [
+    ({"policy_scopes": ["news:read", "docs:read"]}, "needs the market:read scope"),
+    ({"policy_allowed_tools": ["get_ticker"]}, "not on the tool allow-list"),
+])
+def test_backtest_denied_by_the_policy_never_fetches_candles(make_client, monkeypatch, overrides, reason):
+    async def must_not_run(*args, **kwargs):
+        raise AssertionError("get_klines ran")
+
+    with make_client(**overrides) as c:
+        spec = compiled(c, {"interval": "4h", "position_size": "10"})["spec"]
+        monkeypatch.setattr(main_module.app.state.agent.deps.toolbox, "call", must_not_run)
+        r = c.post("/api/strategy/backtest", json={"spec": spec}).json()
+        assert r["status"] == "blocked" and r["result"] is None and reason in r["error"]
+        rows = c.get("/api/audit", params={"decision": "deny"}).json()
+        assert [(row["request_id"], row["tool"]) for row in rows] == [(r["request_id"], "get_klines")]
 
 
 def test_missing_fixture_is_a_clean_error(client):
