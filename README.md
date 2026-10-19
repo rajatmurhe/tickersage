@@ -140,6 +140,12 @@ A denied call never reaches the tool layer. It's listed with its reason in the e
 
 **Evals.** `evals/cases_policy.yaml` has 34 cases: 10 out-of-scope tool attempts (narrowed scopes, and scripted planner proposals like `place_order`, `withdraw` and `set_leverage`), 10 argument-limit breaches, 12 secret pastes in different formats and 2 look-alikes that must be left alone. CI fails unless every expected call is denied without running and every secret is redacted everywhere. All 34 pass, but they were written alongside the code, so treat that as a regression gate rather than a generalization number. To check the gate itself, I broke the policy (allow everything) and the redactor (no-op): the block rate and the redaction rate each dropped to 0% and the gate failed.
 
+### Red team
+
+`python -m evals.redteam.run --seed N` generates a seeded batch of attacks (role-play, 30 ways to ask for advice, trade orders, prompt extraction, base64/rot13/leetspeak/zero-width/homoglyph/split-word encodings, five languages, poisoned headlines and doc chunks, stacked combinations) and runs them through the real agent. On the first offline run, **72.8% of 320 attacks got past the input rules**. After per-clause checks, de-obfuscation and new patterns, fresh seeds measured once after each round of fixes got 0.9–3.1% through (1.9% pooled), with no change on cases.yaml or held-out v1/v2.
+
+Every attack that ever succeeded (477 so far) is in `evals/cases_redteam_regressions.yaml`, and CI fails on any success. A nightly job runs a new seed and uploads the report. Details: [evals/redteam_report.md](evals/redteam_report.md).
+
 ## Cost and latency
 
 * **Model routing:** Haiku 5.5 ($0.10/$0.50 per 1M tokens) for routing and price lookups, Sonnet 5.5 ($2/$10) for analysis. `ROUTING_MODE=single` uses Sonnet everywhere for comparison.
@@ -253,11 +259,11 @@ backend/app/
   cache.py, semantic_cache.py, embeddings.py, tracing.py, symbols.py, pricing.py
 backend/mcp_server.py  the same tools over MCP
 backend/docs_corpus/   cited glossary and API notes for search_docs
-backend/tests/         251 tests (pytest)
+backend/tests/         291 tests (pytest)
 frontend/              Next.js (App Router, TypeScript) chat and /evals pages
   lib/api.ts           SSE over fetch for POST /api/chat/stream
   components/          Chat, Markdown (React elements only, no raw HTML), TracePanel, EvalsView
-evals/                 cases, held-out sets, fixtures, runner, scoring, judge, experiments, reports
+evals/                 cases, held-out sets, fixtures, runner, scoring, judge, experiments, red team, reports
 ```
 
 ## Notes

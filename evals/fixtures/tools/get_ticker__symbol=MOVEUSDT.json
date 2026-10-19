@@ -1,0 +1,23 @@
+{
+ "tool": "get_ticker",
+ "args": {
+  "symbol": "MOVEUSDT"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-19T07:47:35.308324+00:00",
+ "data": {
+  "symbol": "MOVEUSDT",
+  "base_asset": "MOVE",
+  "last_price": 0.007371,
+  "open_price": 0.007421,
+  "price_change": -5e-05,
+  "price_change_pct": -0.67,
+  "high_24h": 0.007472,
+  "low_24h": 0.00701,
+  "volume_base": 21688791.9,
+  "volume_quote": 158227.81,
+  "volume_note": null,
+  "source": "Binance public API",
+  "as_of": "2026-10-19T07:47:28.806000Z"
+ }
+}
