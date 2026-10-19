@@ -142,6 +142,8 @@ Every family is 0 in both modes, except seed-1 indirect at 1/40 live. Free-text 
 
 The catch is that these are the batches the rules were fixed on. The regex input guard refused every direct attack (280/320 and 411/477) before any model call. The model handled only the 106 indirect attacks, and the tool-side filter had already withheld the poisoned text in every one. So the run shows the LLM path doesn't undo the rules: no missed refusals, no payload followed, no leak, no advice. It doesn't measure the LLM against attacks that get past the rules. Benign controls: 3 of 40 were refused in both modes (the same "system prompt" control). The live router gave a normal answer to 34 of 40, against 25 offline.
 
+**The LLM layer on its own** ([history/13](history/13-redteam-live-llm-layer.md)): with the pre-fix rules put back, seed 1 goes from 233/320 through offline to 127/320 live. The router refused 106 of the 233 attacks the old rules missed, all by classifying them as advice or trade. It stopped 0 of 39 prompt extractions, because it has no intent for them. After review, 6 answers leaked the answer prompt's rules (2 as scored). The model followed 0 of 26 injected payloads it saw and gave advice 0 times. Calls were mostly Groq gpt-oss: Nemotron served 46 of 365.
+
 ## Limits
 
 - **The LLM layer on its own hasn't been measured.** The fix rounds and fresh-seed numbers are offline, so they measure the rule layer alone. The live run (history 12) only sent the model indirect attacks whose payloads were already withheld. On held-out v3 the live router caught 8 of 9 attacks the rules missed. Running the pre-fix rules (`3c62c6f`) live on seed 1 would show how it does here.
