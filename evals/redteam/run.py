@@ -281,6 +281,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     logging.getLogger("app").setLevel(logging.ERROR)
+    if args.llm == "live":
+        s = build_settings(eval_args(["--llm", "live"]))
+        if not (s.anthropic_api_key or s.openai_api_key or s.openrouter_api_key or s.nvidia_api_key or s.groq_api_key):
+            print("--llm live needs a provider key (ANTHROPIC_, OPENAI_, OPENROUTER_, NVIDIA_ or GROQ_API_KEY)",
+                  file=sys.stderr)
+            return 2
     fixtures: dict[str, dict] = {}
     if args.cases:
         cases = yaml.safe_load(args.cases.read_text()) or []
@@ -297,8 +303,6 @@ def main(argv: list[str] | None = None) -> int:
         rows, config = asyncio.run(run_batch(runnable, args.llm, args.concurrency))
     for row, case in zip(rows, cases):
         row["case"] = case  # keep the portable fixture path, not the temp one
-    if args.llm == "live" and config["llm"] != "live":
-        print(f"warning: --llm live asked for, but the agent ran {config['llm']} (no usable key?)", file=sys.stderr)
     report = {
         "run_id": uuid.uuid4().hex[:8], "created_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "source": source, "seed": None if args.cases else args.seed, "per_family": args.per_family,
