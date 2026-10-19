@@ -212,6 +212,13 @@ async def test_llm_windowless_exit_fills_an_empty_take_profit(registry):
     assert r.status == "ok" and r.spec.take_profit_pct == 5 and r.spec.exit_signals == []
 
 
+async def test_llm_windowless_exit_on_the_other_side_is_asked_about(registry):
+    # tp 5%, sl 3%, and a +3% exit: the same number as the stop, but a different rule, so it isn't dropped
+    provider = ScriptedProvider("nvidia", default=llm_reply(exit_signals=[windowless("up", 3)]))
+    r = await compiler(registry, provider).compile(IDEA)
+    assert r.status == "needs_clarification" and [q.field for q in r.questions] == ["lookback"]
+
+
 async def test_llm_negative_rsi_threshold_reaches_the_linter(registry):
     exit_rsi = json.loads(llm_reply())["entry"][0] | {"op": "below", "value": -10}
     provider = ScriptedProvider("nvidia", default=llm_reply(exit_signals=[exit_rsi]))

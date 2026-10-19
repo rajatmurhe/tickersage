@@ -399,10 +399,12 @@ def _fold_windowless_exits(data: _LlmDraft) -> None:
             keep.append(c)
             continue
         pct = abs(c.pct)
-        if same(pct, data.take_profit_pct) or same(pct, data.stop_loss_pct):
-            continue
         up = c.direction == "up" or (c.direction is None and c.op in ("above", "crosses_above"))
         down = c.direction == "down" or (c.direction is None and c.op in ("below", "crosses_below"))
+        # Only a repeat on the same side is dropped: "+3%" next to a 3% stop is a different rule, so it gets
+        # a question.
+        if (up and same(pct, data.take_profit_pct)) or (down and same(pct, data.stop_loss_pct)):
+            continue
         if up and data.take_profit_pct is None:
             data.take_profit_pct = pct
         elif down and data.stop_loss_pct is None:
