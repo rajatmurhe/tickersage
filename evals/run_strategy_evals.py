@@ -17,6 +17,7 @@ import math
 import sys
 import time
 import uuid
+from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -26,6 +27,7 @@ import yaml
 from . import _BACKEND  # noqa: F401  (puts backend/ on sys.path)
 from app.agent import Agent
 from app.config import Settings
+from app.llm import LLMClient, LLMUnavailable
 from app.schemas import ToolCall
 from app.strategy.api import backtest
 from app.strategy.compiler import StrategyCompiler
@@ -109,6 +111,27 @@ def _consistent(result: dict) -> list[str]:
     return problems
 
 
+class LlmRecorder:
+    """Wraps the LLM client so the report can show each compile's raw reply and failed provider attempts."""
+
+    def __init__(self, llm: LLMClient) -> None:
+        self.llm = llm
+        self.last: dict[str, Any] | None = None
+
+    @property
+    def available(self) -> bool:
+        return self.llm.available
+
+    async def generate(self, *args: Any, **kwargs: Any):
+        try:
+            resp = await self.llm.generate(*args, **kwargs)
+        except LLMUnavailable as exc:
+            self.last = {"failed_attempts": exc.attempts}
+            raise
+        self.last = {"failed_attempts": resp.failed_attempts, "text": resp.text}
+        return resp
+
+
 async def run_case(case: dict, compiler: StrategyCompiler, toolbox) -> dict[str, Any]:
     cat, idea, answers = case["category"], case["idea"], case.get("answers") or {}
     out: dict[str, Any] = {"id": case["id"], "category": cat, "idea": idea, "passed": False, "failures": [],
@@ -118,10 +141,18 @@ async def run_case(case: dict, compiler: StrategyCompiler, toolbox) -> dict[str,
         findings = lint(StrategySpec.model_validate(case["spec"]), idea)
         out["status"] = "linted spec"
     else:
+        recorder = compiler.llm if isinstance(compiler.llm, LlmRecorder) else None
+        if recorder:
+            recorder.last = None
         r = await compiler.compile(idea, answers, request_id=f"eval-{case['id']}")
         findings = r.findings
         out.update(status=r.status, questions=[q.field for q in r.questions], source=r.source,
                    rejection=r.rejection_category)
+        if r.llm or r.fallback_reason:  # the model was called (rejected ideas never reach it)
+            out.update(llm=r.llm.model_dump() if r.llm else None, fallback_reason=r.fallback_reason,
+                       dropped=[n for n in r.notes if n.startswith("The model returned")])
+            if recorder and recorder.last:
+                out["llm_reply"] = recorder.last
     out["latency_ms"] = round((time.perf_counter() - started) * 1000, 2)
     out["rules"] = [f.rule for f in findings]
     out["error_rules"] = [f.rule for f in findings if f.severity == "error"]
@@ -175,7 +206,7 @@ def summarize(results: list[dict]) -> dict[str, Any]:
         return by_cat[cat]["pass_rate"] if cat in by_cat else None
 
     lat = sorted(r["latency_ms"] for r in results if r["category"] != "backtest")
-    return {
+    summary = {
         "pass_rate": round(sum(r["passed"] for r in results) / len(results), 4) if results else None,
         "spec_accuracy": rate("compile"),
         "clarify_accuracy": rate("clarify"),
@@ -187,6 +218,25 @@ def summarize(results: list[dict]) -> dict[str, Any]:
         "compile_p50_ms": lat[len(lat) // 2] if lat else None,
         "by_category": by_cat,
     }
+    called = [r for r in results if "fallback_reason" in r]
+    if called:
+        usage = [r["llm"] for r in called if r["llm"]]
+        llm_lat = sorted(u["latency_ms"] for u in usage)
+        fallbacks = [r["fallback_reason"] for r in called if r["fallback_reason"]]
+        summary["llm"] = {
+            "calls": len(called),
+            "used": sum(r["source"] == "llm" for r in called),
+            "rules_fallbacks": len(fallbacks),
+            "fallback_reasons": dict(Counter(f.split(":")[0] for f in fallbacks)),
+            "provider_fallbacks": sum(u["fell_back"] for u in usage),
+            "served_by": dict(Counter(f"{u['provider']}/{u['model']}" for u in usage)),
+            "cost_usd": round(sum(u["cost_usd"] for u in usage), 6),
+            "latency_p50_ms": llm_lat[len(llm_lat) // 2] if llm_lat else None,
+            "latency_p95_ms": llm_lat[min(len(llm_lat) - 1, math.ceil(0.95 * len(llm_lat)) - 1)] if llm_lat else None,
+            "grounding_drops": sum(len(r["dropped"]) for r in called),
+            "cases_with_drops": sum(bool(r["dropped"]) for r in called),
+        }
+    return summary
 
 
 def check_gates(s: dict[str, Any]) -> list[str]:
@@ -224,6 +274,22 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"| Error findings on well-formed ideas | {s['clean_error_findings']} |",
         f"| Backtests completed with consistent numbers | {_p(s['backtest_ok'])} |",
         f"| Compile latency p50 | {s['compile_p50_ms']} ms |",
+    ]
+    if llm := s.get("llm"):
+        served = ", ".join(f"{k} ({n})" for k, n in llm["served_by"].items()) or "none"
+        reasons = ", ".join(f"{k} ({n})" for k, n in llm["fallback_reasons"].items())
+        lines += [
+            f"| Ideas sent to the model | {llm['calls']} |",
+            f"| Compiled from the model's reply | {llm['used']} |",
+            f"| Fell back to the rules parser | {llm['rules_fallbacks']}{f' ({reasons})' if reasons else ''} |",
+            f"| Served by | {served} |",
+            f"| Answered by a backup provider | {llm['provider_fallbacks']} |",
+            f"| Numbers dropped by grounding (not in the idea) | {llm['grounding_drops']} in "
+            f"{llm['cases_with_drops']} case(s) |",
+            f"| Model cost | ${llm['cost_usd']:.4f} |",
+            f"| Model latency p50 / p95 | {llm['latency_p50_ms']} / {llm['latency_p95_ms']} ms |",
+        ]
+    lines += [
         "",
         "## By category",
         "",
@@ -231,6 +297,13 @@ def render_markdown(report: dict[str, Any]) -> str:
         "|---|---|---|---|",
     ]
     lines += [f"| {cat} | {v['n']} | {v['passed']} | {_p(v['pass_rate'])} |" for cat, v in s["by_category"].items()]
+    noted = [r for r in report["cases"] if r.get("fallback_reason") or r.get("dropped")]
+    if noted:
+        lines += ["", "## Rules fallbacks and grounding drops", "", "| Case | Passed | What happened |", "|---|---|---|"]
+        for r in noted:
+            what = ([f"fell back to rules: {r['fallback_reason']}"] if r["fallback_reason"] else []) + r["dropped"]
+            lines.append(f"| {r['id']} | {'yes' if r['passed'] else 'no'} | "
+                         f"{'; '.join(what).replace('|', '/')} |")
     bts = [r for r in report["cases"] if r.get("backtest")]
     if bts:
         lines += ["", "## Backtests on the recorded candles", "",
@@ -275,19 +348,22 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
                         fixtures_dir=EVALS_DIR / "fixtures", cache_enabled=False, semantic_cache_enabled=False)
     cases = load_cases(args.cases, category=args.category, ids=args.ids.split(",") if args.ids else None)
     agent = await Agent.create(settings, store_traces=False)
-    compiler = StrategyCompiler(agent.deps.registry, agent.deps.llm)
+    llm = agent.deps.llm
+    compiler = StrategyCompiler(agent.deps.registry, LlmRecorder(llm) if llm is not None else None)
     started = time.perf_counter()
     try:
         results = [await run_case(case, compiler, agent.deps.toolbox) for case in cases]
     finally:
         await agent.aclose()
-    used_llm = any(r["source"] == "llm" for r in results)
+    # "llm" whenever the model was called, even if every reply fell back; the summary counts the fallbacks.
+    used_llm = any("fallback_reason" in r for r in results)
     return {
         "run_id": uuid.uuid4().hex[:8],
         "created_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "wall_time_s": round(time.perf_counter() - started, 2),
         "cases_run": len(results),
-        "config": {"compiler": "llm" if used_llm else "rules", "tool_mode": settings.tool_mode},
+        "config": {"compiler": "llm" if used_llm else "rules", "tool_mode": settings.tool_mode,
+                   **({"primary_provider": settings.primary_provider} if used_llm else {})},
         "summary": summarize(results),
         "cases": results,
     }
@@ -320,6 +396,11 @@ def main(argv: list[str] | None = None) -> int:
           f"questions {_p(s['clarify_accuracy'])} · linter catch {_p(s['lint_catch_rate'])} · "
           f"rejections {_p(s['rejection_recall'])} · false rejections {s['false_rejections']} · "
           f"clean errors {s['clean_error_findings']} · backtests {_p(s['backtest_ok'])}")
+    if llm := s.get("llm"):
+        print(f"model: {llm['used']}/{llm['calls']} compiled from the reply · {llm['rules_fallbacks']} rules "
+              f"fallbacks {llm['fallback_reasons']} · served by {llm['served_by']} · "
+              f"{llm['grounding_drops']} grounding drops · ${llm['cost_usd']:.4f} · "
+              f"p50 {llm['latency_p50_ms']} ms, p95 {llm['latency_p95_ms']} ms")
     for r in report["cases"]:
         if not r["passed"]:
             print(f"  FAIL {r['id']}: {'; '.join(r['failures'])}")

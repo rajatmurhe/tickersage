@@ -194,6 +194,31 @@ async def test_llm_decimal_slip_is_kept_for_the_linter(registry):
     assert r.spec.stop_loss_pct == 30 and slips and "your text says 3%" in slips[0].message
 
 
+def windowless(direction: str, pct: float) -> dict:
+    return {"kind": "price_change", "op": None, "value": None, "period": None, "fast": None, "slow": None,
+            "direction": direction, "pct": pct, "lookback_hours": None}
+
+
+async def test_llm_take_profit_and_stop_repeated_as_exit_signals_are_folded_back(registry):
+    # Nemotron's most common slip on the live evals: the tp and sl again as % moves with no window.
+    provider = ScriptedProvider("nvidia", default=llm_reply(exit_signals=[windowless("up", 5), windowless("down", 3)]))
+    r = await compiler(registry, provider).compile(IDEA)
+    assert r.status == "ok" and r.spec.exit_signals == [] and r.spec.take_profit_pct == 5
+
+
+async def test_llm_windowless_exit_fills_an_empty_take_profit(registry):
+    provider = ScriptedProvider("nvidia", default=llm_reply(take_profit_pct=None, exit_signals=[windowless("up", 5)]))
+    r = await compiler(registry, provider).compile(IDEA)
+    assert r.status == "ok" and r.spec.take_profit_pct == 5 and r.spec.exit_signals == []
+
+
+async def test_llm_negative_rsi_threshold_reaches_the_linter(registry):
+    exit_rsi = json.loads(llm_reply())["entry"][0] | {"op": "below", "value": -10}
+    provider = ScriptedProvider("nvidia", default=llm_reply(exit_signals=[exit_rsi]))
+    r = await compiler(registry, provider).compile(IDEA + ", sell when RSI drops below -10")
+    assert "rsi_out_of_range" in [f.rule for f in r.findings]
+
+
 async def test_llm_miss_on_an_unsupported_feature_is_still_caught(registry):
     provider = ScriptedProvider("anthropic", default=llm_reply())  # the model ignores the short
     r = await compiler(registry, provider).compile("short ETH on 4h when RSI drops below 30, tp 5% sl 3%, 10% size")
