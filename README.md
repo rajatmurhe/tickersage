@@ -118,7 +118,20 @@ The same tools are exposed over **MCP** (`python backend/mcp_server.py`, stdio),
 | Advice slipping into an answer | Output guard drops advice and prediction sentences |
 | Stale data | Every answer carries "Data as of HH:MM UTC from <source>" |
 | Auditability | Every refusal is logged with its reason and stored in the trace table (`/api/refusals` counts them) |
+| A trading idea typed into Strategy Studio | Its own endpoints, outside the chat graph: backtest only, no order or wallet tool, the chat's injection rules on every input, explicit live/paper-trading requests refused, and a linter gate before any backtest |
 | Abuse of a public demo | Per-IP rate limits, a daily LLM budget that switches to offline answers, and an admin token on the endpoints that show users' questions (see [Deploying a public demo](#deploying-a-public-demo)) |
+
+## Strategy Studio
+
+`/strategy` turns a plain-language trading idea ("buy ETH when RSI drops below 30, take profit at 5%, stop at 3%") into a validated spec, lints it, draws it and backtests it on Binance candles. **Backtest only:** there is no paper trading and no order, wallet or account tool, and the output only describes how the rules behaved on past candles, with a "not investment advice" line. It never says whether a strategy is good. It is separate from the chat, whose guardrails still refuse "should I buy…" and trade requests exactly as before.
+
+* **Spec** (`backend/app/strategy/spec.py`): one asset, 15m/1h/4h/1d candles, long-only entries on RSI levels and crosses, price vs SMA, SMA crosses and % moves over a window; exits by take profit, stop loss, max holding time or an exit signal; size as a % of a $10,000 demo balance; fees (0.1%) and slippage (0.05%) per fill.
+* **Compiler:** with an LLM configured, the fast tier at low effort returns strict JSON, which is schema-validated and grounded: every %, threshold and size must be a number the user wrote. Offline (and as the fallback) a deterministic rules parser reads the common phrasings. When the asset, timeframe, entry, stop loss, exit or size is missing, it asks instead of guessing. Shorts, leverage, EMA/MACD, trailing stops and dollar price levels get a question too, so they are never quietly turned into a different rule.
+* **Linter** (pure Python; errors block the backtest): `no_stop_loss`, `stop_wider_than_target` (with the break-even win rate), `size_above_cap` (25%, or above 100%), `suspicious_decimal` (a 50% stop when the text said 5, 0.5 vs 5, RSI 0.3), `rsi_out_of_range`, `timeframe_mismatch` (text says 4h but the spec runs 1h, a 200-day SMA on hourly candles, a hold shorter than one candle), `entry_never_triggers` (RSI below 0, below 30 and above 70 at once, an SMA longer than the data) and `no_exit`.
+* **Diagram:** a Mermaid flowchart string, drawn on the page by a small flow view (no Mermaid runtime in the bundle).
+* **Backtester** (Pandas, every number in Python): candles come through `get_klines`, so replay fixtures work. A signal at a candle's close fills at the next candle's open; the take profit and stop are resting orders checked against high and low, with the stop assumed first when one candle touches both. Reports total return, max drawdown, win rate, trade count, average trade, exposure and buy-and-hold over the same window.
+* **API:** `POST /api/strategy/compile`, `POST /api/strategy/backtest`.
+* **Evals:** `python -m evals.run_strategy_evals --gate` (in CI) runs `evals/cases_strategy.yaml`: 22 ideas to compile, 16 that need questions, 22 deliberately broken ideas the linter must all catch, 8 injection or live-trading requests, and 4 backtests on recorded candles. First run: 72/72. I wrote those cases and the parser, so a separate agent also wrote a blind held-out set (`evals/cases_strategy_holdout.yaml`, 40 cases) from a feature description without seeing the code. Its first run was also 40/40. That set was still written from a list of the supported phrasings, so it's an easier test than real users would be. The LLM compiler is tested with scripted providers only; it hasn't been run against a live model yet.
 
 ## Cost and latency
 
@@ -215,6 +228,7 @@ What's still failing on the main set: 7 of 15 comparisons, mostly because the ev
 ```
 backend/app/
   main.py            FastAPI: /api/chat, /api/chat/stream (SSE), traces, evals, CORS, static UI
+  strategy/          Strategy Studio: spec, rules parser, LLM compiler, linter, Mermaid diagram, backtester, API
   ratelimit.py       per-IP limits on the chat endpoints (Redis or in-memory)
   agent.py           dependency wiring, streaming runner, trace building
   graph.py           LangGraph nodes and edges
@@ -230,8 +244,8 @@ backend/app/
   cache.py, semantic_cache.py, embeddings.py, tracing.py, symbols.py, pricing.py
 backend/mcp_server.py  the same tools over MCP
 backend/docs_corpus/   cited glossary and API notes for search_docs
-backend/tests/         165 tests (pytest)
-frontend/              Next.js (App Router, TypeScript) chat and /evals pages
+backend/tests/         261 tests (pytest)
+frontend/              Next.js (App Router, TypeScript) chat, /evals, /traces and /strategy pages; 65 tests (Vitest)
   lib/api.ts           SSE over fetch for POST /api/chat/stream
   components/          Chat, Markdown (React elements only, no raw HTML), TracePanel, EvalsView
 evals/                 cases, held-out sets, fixtures, runner, scoring, judge, experiments, reports

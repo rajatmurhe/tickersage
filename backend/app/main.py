@@ -21,6 +21,7 @@ from .agent import Agent
 from .config import REPO_DIR, get_settings
 from .ratelimit import RateLimiter
 from .schemas import ChatRequest, ChatResponse
+from .strategy.api import router as strategy_router
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 log = logging.getLogger("tickersage")
@@ -145,4 +146,5 @@ async def index() -> FileResponse:
     return FileResponse(STATIC_DIR / "index.html")
 
 
+app.include_router(strategy_router)  # Strategy Studio: compile and backtest, separate from the chat graph
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")

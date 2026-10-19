@@ -40,7 +40,9 @@ export default function Header() {
             ? "eval results"
             : path.startsWith("/traces")
               ? "request traces"
-              : "crypto market research · read-only"}
+              : path.startsWith("/strategy")
+                ? "strategy backtests · read-only"
+                : "crypto market research · read-only"}
         </span>
       </div>
       <nav>
@@ -50,6 +52,9 @@ export default function Header() {
         </Link>
         <Link href="/evals" aria-current={path.startsWith("/evals") ? "page" : undefined}>
           Evals
+        </Link>
+        <Link href="/strategy" aria-current={path.startsWith("/strategy") ? "page" : undefined}>
+          Strategy
         </Link>
         <Link href="/traces" aria-current={path.startsWith("/traces") ? "page" : undefined}>
           Traces

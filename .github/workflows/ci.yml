@@ -35,6 +35,13 @@ jobs:
           python -m evals.run_evals --cases evals/cases_holdout.yaml --out evals/results/holdout.json --report evals/report_holdout.md --gate
           python -m evals.run_evals --cases evals/cases_holdout_v2.yaml --out evals/results/holdout_v2.json --report evals/report_holdout_v2.md --gate
 
+      # Strategy Studio: compiler, clarifying questions, input screening, backtests on recorded klines, and the
+      # linter, which must flag every deliberately broken idea.
+      - name: Strategy Studio evals (gated)
+        run: |
+          python -m evals.run_strategy_evals --gate
+          python -m evals.run_strategy_evals --cases evals/cases_strategy_holdout.yaml --out evals/results/strategy_holdout.json --report evals/report_strategy_holdout.md --gate
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:
