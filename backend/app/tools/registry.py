@@ -24,7 +24,7 @@ from typing import Any
 from pydantic import BaseModel, ValidationError
 
 from ..cache import TTL_DEPTH, TTL_KLINES, TTL_NEWS, TTL_TICKER, Cache
-from ..schemas import ToolCall, ToolErrorInfo, ToolName, ToolResult
+from ..schemas import Scope, ToolCall, ToolErrorInfo, ToolName, ToolResult
 from ..symbols import SymbolRegistry
 from .docs import DocsIndex, DocsInput, DocsOutput, _sanitize
 from .errors import ToolError
@@ -64,6 +64,18 @@ TOOL_DESCRIPTIONS: dict[str, str] = {
     "search_docs": "Search crypto glossary and exchange API docs; returns chunks with source URLs.",
 }
 
+# The capability scope each tool needs. The policy engine (app/policy.py) lets a request call a tool only
+# when the request's scope set includes it.
+TOOL_SCOPES: dict[str, Scope] = {
+    "get_ticker": "market:read",
+    "get_klines": "market:read",
+    "get_order_book": "market:read",
+    "compute_metrics": "market:read",
+    "compare_assets": "market:read",
+    "get_news_sentiment": "news:read",
+    "search_docs": "docs:read",
+}
+
 TOOL_TIMEOUT_S = 25.0
 LOCAL_TOOLS = {"search_docs"}  # deterministic and offline; replayed only when overridden
 
@@ -72,6 +84,9 @@ LOCAL_TOOLS = {"search_docs"}  # deterministic and offline; replayed only when o
 class RunOptions:
     faults: dict[str, str] = field(default_factory=dict)  # tool -> error code to raise
     overrides: dict[str, str] = field(default_factory=dict)  # tool -> fixture path (relative)
+    # Evals: a scripted plan ([{"tool", "args"}]) used in place of the planner's, standing in for whatever an
+    # LLM planner might propose. It is not validated here, so the policy engine sees it exactly as written.
+    plan: list[dict[str, Any]] | None = None
 
 
 class Toolbox:

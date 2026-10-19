@@ -1,7 +1,10 @@
-"""Request traces in a SQL table: PostgreSQL in production, SQLite by default.
+"""Request traces and the tool-call audit log, in SQL tables: PostgreSQL in production, SQLite by default.
 
-One row per request: intent, tools called, tokens in and out, cost, per-step latency,
+traces: one row per request: intent, tools called, tokens in and out, cost, per-step latency,
 models used, whether a provider fallback happened, final status and refusal reason.
+
+audit_log: one row per tool call the planner proposed, with the policy engine's decision
+(allow or deny) and its reason, the request's scopes and the call's arguments.
 """
 
 from __future__ import annotations
@@ -43,6 +46,20 @@ traces = Table(
     Column("unsupported_numbers", JSON),
 )
 
+audit_log = Table(
+    "audit_log",
+    metadata,
+    Column("id", Integer, primary_key=True, autoincrement=True),
+    Column("created_at", DateTime(timezone=True), nullable=False),
+    Column("request_id", String(64), nullable=False, index=True),
+    Column("scopes", JSON),  # what the request was allowed to touch
+    Column("tool", String(64), nullable=False),
+    Column("required_scope", String(32)),
+    Column("args", JSON),
+    Column("decision", String(8), nullable=False),  # allow | deny
+    Column("reason", Text, nullable=False),
+)
+
 
 class TraceStore:
     def __init__(self, database_url: str) -> None:
@@ -79,6 +96,32 @@ class TraceStore:
             await asyncio.to_thread(self._save, question, trace)
         except Exception:
             log.exception("failed to store trace %s", trace.request_id)
+
+    def _save_audit(self, request_id: str, scopes: list[str], decisions: list[dict[str, Any]]) -> None:
+        now = datetime.now(UTC)
+        rows = [{"created_at": now, "request_id": request_id, "scopes": scopes, "tool": d["tool"],
+                 "required_scope": d["scope"], "args": json.loads(json.dumps(d["args"], default=str)),
+                 "decision": d["decision"], "reason": d["reason"]} for d in decisions]
+        with self.engine.begin() as conn:
+            conn.execute(insert(audit_log), rows)
+
+    async def save_audit(self, request_id: str, scopes: list[str], decisions: list[dict[str, Any]]) -> None:
+        if not decisions:
+            return
+        try:
+            await asyncio.to_thread(self._save_audit, request_id, scopes, decisions)
+        except Exception:
+            log.exception("failed to store audit rows for %s", request_id)
+
+    def audit(self, limit: int = 100, request_id: str | None = None, decision: str | None = None) -> list[dict[str, Any]]:
+        """Newest first, optionally for one request or one decision."""
+        query = select(audit_log).order_by(audit_log.c.id.desc()).limit(limit)
+        if request_id:
+            query = query.where(audit_log.c.request_id == request_id)
+        if decision:
+            query = query.where(audit_log.c.decision == decision)
+        with self.engine.connect() as conn:
+            return [dict(r) for r in conn.execute(query).mappings().all()]
 
     def recent(self, limit: int = 50) -> list[dict[str, Any]]:
         with self.engine.connect() as conn:

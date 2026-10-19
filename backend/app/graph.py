@@ -1,11 +1,15 @@
 """The LangGraph flow.
 
 input_guard -> router -> [cache_lookup] -> planner -> executor -> synthesizer -> verifier -> output_guard
-     |            |                           |                        ^           |
-     v            v                           v                        +-- retry --+ (once)
+     |            |                           |            |           ^           |
+     v            v                           v         policy         +-- retry --+ (once)
    refuse      redirect                    clarify                                 |
                                                                                    v
                                                                               safe_answer
+
+input_guard redacts pasted secrets before anything else reads the question. Every tool call (the
+executor's, and the refusal's data snapshot) goes through the policy engine first: calls it denies
+never run, and they are listed in the step detail and at the end of the answer.
 """
 
 from __future__ import annotations
@@ -13,7 +17,7 @@ from __future__ import annotations
 import asyncio
 import operator
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Annotated, Any, TypedDict
 
 from langgraph.graph import END, START, StateGraph
@@ -22,10 +26,12 @@ from .config import Settings
 from .guardrails import FOLLOW_UPS, REFUSAL_MESSAGES, check_input, check_output, data_footer, log_refusal
 from .llm import LLMClient, LLMResponse, LLMUnavailable
 from .planner import Planner
+from .policy import Policy, denial_note
 from .router import Router
 from .schemas import (
     RouteDecision, StepTrace, ToolCall, ToolPlan, ToolResult, VerificationReport,
 )
+from .secrets_guard import redact_secrets, secret_warning
 from .semantic_cache import SemanticCache
 from .symbols import SymbolRegistry
 from .synthesizer import normalize_citations, synthesize
@@ -41,9 +47,12 @@ SAFE_PREFIX = (
 
 
 class AgentState(TypedDict, total=False):
-    question: str
+    question: str  # redacted by input_guard when it contained a secret
     request_id: str
     opts: RunOptions
+    scopes: list[str]  # the request's capability scopes
+    redactions: list[str]  # kinds of secret removed from the question
+    policy_decisions: Annotated[list[dict[str, Any]], operator.add]  # one per proposed tool call
     guard_category: str | None
     guard_reason: str | None
     route: RouteDecision | None
@@ -71,6 +80,7 @@ class Deps:
     planner: Planner
     llm: LLMClient | None
     semantic_cache: SemanticCache | None
+    policy: Policy = field(default_factory=Policy)
 
 
 def _step(name: str, started: float, resp: LLMResponse | None = None, **detail: Any) -> StepTrace:
@@ -87,10 +97,27 @@ def _step(name: str, started: float, resp: LLMResponse | None = None, **detail: 
     return step
 
 
-async def _run_calls(deps: Deps, calls: list[ToolCall], opts: RunOptions, start_id: int = 1) -> list[ToolResult]:
-    return list(
-        await asyncio.gather(*(deps.toolbox.call(c, start_id + i, opts) for i, c in enumerate(calls)))
-    )
+def _policy(deps: Deps, state: AgentState) -> Policy:
+    return deps.policy.for_request(state.get("scopes"))
+
+
+async def _run_calls(deps: Deps, calls: list[ToolCall], state: AgentState) -> tuple[list[ToolResult], list[dict]]:
+    """Runs the calls the policy allows. Returns their results and every decision, denied calls included."""
+    used = sum(d["decision"] == "allow" for d in state.get("policy_decisions", []))
+    decisions = _policy(deps, state).review(calls, used)
+    allowed = [c for c, d in zip(calls, decisions, strict=True) if d.allowed]
+    opts = state.get("opts") or RunOptions()
+    results = await asyncio.gather(*(deps.toolbox.call(c, i + 1, opts) for i, c in enumerate(allowed)))
+    return list(results), [d.as_dict() for d in decisions]
+
+
+def _policy_detail(state: AgentState, decisions: list[dict]) -> dict[str, Any]:
+    return {
+        "scopes": state.get("scopes", []),
+        "allowed": sum(d["decision"] == "allow" for d in decisions),
+        "denied": [{"tool": d["tool"], "args": d["args"], "reason": d["reason"]}
+                   for d in decisions if d["decision"] == "deny"],
+    }
 
 
 def build_graph(deps: Deps):
@@ -100,15 +127,23 @@ def build_graph(deps: Deps):
 
     async def input_guard(state: AgentState) -> dict:
         t = time.perf_counter()
-        g = check_input(state["question"])
+        # Secrets come out first, so the rules, the LLM, logs, traces, caches and the audit log never see them.
+        redaction = redact_secrets(state["question"])
+        g = check_input(redaction.text)
+        detail: dict[str, Any] = {"allowed": g.allowed, "category": g.category, "reason": g.reason}
+        update: dict[str, Any] = {}
+        if redaction.found:
+            update = {"question": redaction.text, "redactions": redaction.kinds}
+            detail["secrets_redacted"] = redaction.kinds
         return {
+            **update,
             "guard_category": g.category,
             "guard_reason": g.reason,
             "status": "ok",
             "attempts": 0,
             "results": [],
             "notes": [],
-            "steps": [_step("input_guard", t, allowed=g.allowed, category=g.category, reason=g.reason)],
+            "steps": [_step("input_guard", t, **detail)],
         }
 
     async def refuse(state: AgentState) -> dict:
@@ -118,9 +153,10 @@ def build_graph(deps: Deps):
         symbols = route.symbols if route else deps.registry.extract(state["question"])
         message = REFUSAL_MESSAGES[category]  # type: ignore[index]
         results: list[ToolResult] = []
+        decisions: list[dict] = []
         if category in ("advice", "trade") and symbols:
             calls = [ToolCall(tool="get_ticker", args={"symbol": sym}) for sym in symbols[:2]]
-            results = await _run_calls(deps, calls, state.get("opts") or RunOptions())
+            results, decisions = await _run_calls(deps, calls, state)
             ok = [r for r in results if r.ok]
             if ok:
                 message += "\n\n" + advice_snapshot_intro([r.data["base_asset"] for r in ok]) + "\n\n" + render(None, ok)
@@ -130,12 +166,16 @@ def build_graph(deps: Deps):
             message += " " + FOLLOW_UPS[category]  # type: ignore[index]
         reason = f"{category}: {state.get('guard_reason') or 'classified by router'}"
         log_refusal(state.get("request_id", ""), category, state.get("guard_reason"))
+        detail: dict[str, Any] = {"category": category}
+        if decisions:
+            detail["policy"] = _policy_detail(state, decisions)
         return {
             "answer": message,
             "status": "refused",
             "refusal_reason": reason,
             "results": results,
-            "steps": [_step("refuse", t, category=category)],
+            "policy_decisions": decisions,
+            "steps": [_step("refuse", t, **detail)],
         }
 
     async def route_node(state: AgentState) -> dict:
@@ -158,9 +198,11 @@ def build_graph(deps: Deps):
         return {"answer": msg, "status": "out_of_scope", "steps": [_step("redirect", t)]}
 
     def _cache_allowed(state: AgentState) -> bool:
-        # Runs with injected faults or fixture overrides must exercise the tools, not a cached answer.
+        # Runs with injected faults, fixture overrides or a scripted plan must exercise the tools, not a cached
+        # answer. A cached concept answer is search_docs output, so it is only served when the request may call it.
         opts = state.get("opts")
-        return deps.semantic_cache is not None and not (opts and (opts.faults or opts.overrides))
+        return (deps.semantic_cache is not None and not (opts and (opts.faults or opts.overrides or opts.plan))
+                and _policy(deps, state).allows_tool("search_docs"))
 
     async def cache_lookup(state: AgentState) -> dict:
         t = time.perf_counter()
@@ -179,9 +221,17 @@ def build_graph(deps: Deps):
         t = time.perf_counter()
         route = state["route"]
         assert route is not None
-        plan, resp, fallback = await deps.planner.plan(route, state["question"])
+        opts = state.get("opts")
+        if opts and opts.plan is not None:
+            # Built without validation on purpose: the policy engine has to cope with whatever a planner proposes.
+            calls = [ToolCall.model_construct(tool=c["tool"], args=dict(c.get("args") or {})) for c in opts.plan]
+            plan, resp, fallback = ToolPlan.model_construct(calls=calls, note="scripted"), None, None
+            mode = "scripted"
+        else:
+            plan, resp, fallback = await deps.planner.plan(route, state["question"])
+            mode = deps.planner.mode
         update: dict[str, Any] = {"plan": plan}
-        detail: dict[str, Any] = {"calls": [c.model_dump() for c in plan.calls], "mode": deps.planner.mode}
+        detail: dict[str, Any] = {"calls": [{"tool": c.tool, "args": c.args} for c in plan.calls], "mode": mode}
         if fallback:
             detail["fallback"] = fallback
         if not plan.calls:
@@ -194,10 +244,11 @@ def build_graph(deps: Deps):
         t = time.perf_counter()
         plan = state["plan"]
         assert plan is not None
-        results = await _run_calls(deps, plan.calls, state.get("opts") or RunOptions())
+        results, decisions = await _run_calls(deps, plan.calls, state)
         summary = [{"tool": r.tool, "ok": r.ok, "cached": r.cached, "ms": r.latency_ms,
                     "error": r.error.code if r.error else None} for r in results]
-        return {"results": results, "steps": [_step("executor", t, tools=summary)]}
+        return {"results": results, "policy_decisions": decisions,
+                "steps": [_step("executor", t, tools=summary, policy=_policy_detail(state, decisions))]}
 
     async def synthesizer(state: AgentState) -> dict:
         t = time.perf_counter()
@@ -264,8 +315,13 @@ def build_graph(deps: Deps):
         market = [r for r in results if r.ok and r.as_of and r.tool != "search_docs"]
         as_of = min((r.as_of for r in market), default=None)  # type: ignore[type-var]
         footer = data_footer(as_of, [r.source for r in market if r.source])
+        # The secret warning goes first and the policy note last; both sit outside the verified body.
+        redactions = state.get("redactions")
+        denied = [d for d in state.get("policy_decisions", []) if d["decision"] == "deny"]
+        parts = [secret_warning(redactions) if redactions else None, body,
+                 denial_note(denied) if denied else None, footer]
         update["body"] = body
-        update["answer"] = f"{body}\n\n{footer}"
+        update["answer"] = "\n\n".join(p for p in parts if p is not None)
         if (_cache_allowed(state) and route and route.intent == "concept" and status == "ok"
                 and not state.get("cache_hit") and any(r.ok for r in results)):
             await deps.semantic_cache.store(  # type: ignore[union-attr]

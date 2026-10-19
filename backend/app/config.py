@@ -9,6 +9,8 @@ from typing import Literal
 from pydantic import field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+from .schemas import Scope, ToolName
+
 BACKEND_DIR = Path(__file__).resolve().parent.parent
 REPO_DIR = BACKEND_DIR.parent
 
@@ -87,8 +89,17 @@ class Settings(BaseSettings):
     trusted_proxy_hops: int = 1
     # Once today's (UTC) traced LLM cost reaches this, answers use offline mode until midnight UTC.
     daily_budget_usd: float | None = None
-    # When set, /api/traces and /api/refusals (they show raw user questions) need an X-Admin-Token header.
+    # When set, /api/traces, /api/refusals and /api/audit (they show user questions) need an X-Admin-Token header.
     admin_token: str | None = None
+
+    # --- Tool permissions (the policy engine in app/policy.py) ---------------
+    # Scopes a request gets by default. A request can ask for fewer, never more.
+    policy_scopes: list[Scope] = ["market:read", "news:read", "docs:read"]
+    # Tools the planner may call at all; empty means every registered tool.
+    policy_allowed_tools: list[ToolName] = []
+    policy_max_tool_calls: int = 6
+    policy_max_symbols: int = 5
+    policy_max_order_book_depth: int = 100
 
     # --- Quality switches (used by the experiments) --------------------------
     verifier_enabled: bool = True

@@ -1,4 +1,4 @@
-"""FastAPI app: chat (JSON and SSE streaming), traces, eval results and the static UI.
+"""FastAPI app: chat (JSON and SSE streaming), traces, the tool-call audit log, eval results and the static UI.
 
 Run from the repo root:  uvicorn app.main:app --app-dir backend --reload
 """
@@ -10,6 +10,7 @@ import logging
 import secrets
 from contextlib import asynccontextmanager
 from pathlib import Path
+from typing import Literal
 
 from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -65,7 +66,7 @@ async def rate_limit(request: Request) -> None:
 
 
 async def require_admin(request: Request, x_admin_token: str | None = Header(default=None)) -> None:
-    """Traces hold raw user questions: with ADMIN_TOKEN set, only callers that send it may read them."""
+    """Traces and the audit log hold user questions: with ADMIN_TOKEN set, only callers that send it may read them."""
     token = _agent(request).settings.admin_token
     if token and not (x_admin_token and secrets.compare_digest(x_admin_token.encode(), token.encode())):
         raise HTTPException(401, "admin token required: send it in the X-Admin-Token header")
@@ -81,7 +82,7 @@ async def health(request: Request) -> dict:
 
 @app.post("/api/chat", response_model=ChatResponse, dependencies=[Depends(rate_limit)])
 async def chat(body: ChatRequest, request: Request) -> ChatResponse:
-    return await _agent(request).ask(body.question)
+    return await _agent(request).ask(body.question, scopes=body.scopes)
 
 
 @app.post("/api/chat/stream", dependencies=[Depends(rate_limit)])
@@ -94,7 +95,7 @@ async def chat_stream(body: ChatRequest, request: Request) -> EventSourceRespons
     agent = _agent(request)
 
     async def events():
-        async for event in agent.stream(body.question):
+        async for event in agent.stream(body.question, scopes=body.scopes):
             if event["type"] == "step":
                 yield {"event": "step", "data": json.dumps(event, default=str)}
                 continue
@@ -126,6 +127,15 @@ async def get_trace(request_id: str, request: Request) -> dict:
 async def refusal_counts(request: Request) -> dict:
     store = _agent(request).traces
     return {} if store is None else store.refusal_counts()
+
+
+@app.get("/api/audit", dependencies=[Depends(require_admin)])
+async def audit(request: Request, limit: int = 100, request_id: str | None = None,
+                decision: Literal["allow", "deny"] | None = None) -> list[dict]:
+    """The policy engine's decision on every proposed tool call, newest first."""
+    store = _agent(request).traces
+    rows = [] if store is None else store.audit(min(limit, 1000), request_id, decision)
+    return json.loads(json.dumps(rows, default=str))
 
 
 @app.get("/api/evals/latest")

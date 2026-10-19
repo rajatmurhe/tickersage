@@ -35,6 +35,11 @@ jobs:
           python -m evals.run_evals --cases evals/cases_holdout.yaml --out evals/results/holdout.json --report evals/report_holdout.md --gate
           python -m evals.run_evals --cases evals/cases_holdout_v2.yaml --out evals/results/holdout_v2.json --report evals/report_holdout_v2.md --gate
 
+      # Out-of-scope and over-limit tool calls must all be denied (none may run), and every pasted secret must be
+      # redacted everywhere with a warning to the user: --gate fails the build below 100% on either.
+      - name: Policy engine and secret redaction evals (gated)
+        run: python -m evals.run_evals --cases evals/cases_policy.yaml --out evals/results/policy.json --report evals/report_policy.md --gate
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:
