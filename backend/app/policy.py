@@ -17,7 +17,7 @@ from typing import TYPE_CHECKING, Any
 
 from .schemas import ToolCall
 from .templates import TOOL_LABELS
-from .tools.registry import TOOL_SCOPES
+from .tools.registry import TOOL_EXTRA_SCOPES, TOOL_SCOPES
 
 if TYPE_CHECKING:
     from .config import Settings
@@ -70,7 +70,8 @@ class Policy:
 
     def allows_tool(self, tool: str) -> bool:
         """Whether this request could call `tool` at all (allow-list and scope, ignoring arguments)."""
-        return tool in self.allowed_tools and TOOL_SCOPES.get(tool) in self.scopes
+        needs = (TOOL_SCOPES.get(tool), *TOOL_EXTRA_SCOPES.get(tool, ()))
+        return tool in self.allowed_tools and all(scope in self.scopes for scope in needs)
 
     def review(self, calls: list[ToolCall], already_allowed: int = 0) -> list[Decision]:
         """One decision per proposed call, in plan order. Calls past the per-request budget are denied."""
@@ -94,6 +95,9 @@ class Policy:
             return deny("not on the tool allow-list for this deployment")
         if scope not in self.scopes:
             return deny(f"needs the {scope} scope, which this request doesn't have")
+        for extra in TOOL_EXTRA_SCOPES.get(tool, ()):
+            if extra not in self.scopes:
+                return deny(f"also returns data that needs the {extra} scope, which this request doesn't have")
         problem = self._argument_problem(args)
         if problem:
             return deny(problem)

@@ -26,6 +26,7 @@ from pydantic import BaseModel, ValidationError
 from ..cache import TTL_DEPTH, TTL_KLINES, TTL_NEWS, TTL_TICKER, Cache
 from ..schemas import Scope, ToolCall, ToolErrorInfo, ToolName, ToolResult
 from ..symbols import SymbolRegistry
+from .attribution import AttributeMoveInput, attribute_move
 from .docs import DocsIndex, DocsInput, DocsOutput, _sanitize
 from .errors import ToolError
 from .market import KlinesInput, MarketData, OrderBookInput, TickerInput
@@ -43,6 +44,7 @@ INPUT_MODELS: dict[str, type[BaseModel]] = {
     "compare_assets": CompareInput,
     "get_news_sentiment": NewsInput,
     "search_docs": DocsInput,
+    "attribute_move": AttributeMoveInput,
 }
 
 TTLS: dict[str, float] = {
@@ -62,6 +64,9 @@ TOOL_DESCRIPTIONS: dict[str, str] = {
     "compare_assets": "Side-by-side metrics for 2-5 symbols over a window, with volume and volatility ratios.",
     "get_news_sentiment": "Recent headlines for a query with VADER sentiment scores (untrusted text).",
     "search_docs": "Search crypto glossary and exchange API docs; returns chunks with source URLs.",
+    "attribute_move": "Why a symbol moved over a window (24h|7d|30d): beta-to-BTC split into market-implied and "
+                      "coin-specific parts, volume z-score, order-book imbalance, news-sentiment shift and funding, "
+                      "with only the factors that cross a threshold listed as drivers.",
 }
 
 # The capability scope each tool needs. The policy engine (app/policy.py) lets a request call a tool only
@@ -74,6 +79,13 @@ TOOL_SCOPES: dict[str, Scope] = {
     "compare_assets": "market:read",
     "get_news_sentiment": "news:read",
     "search_docs": "docs:read",
+    "attribute_move": "market:read",
+}
+
+# Scopes a tool needs beyond its main one, because its output includes that kind of data:
+# attribute_move folds a news-sentiment shift into its evidence pack.
+TOOL_EXTRA_SCOPES: dict[str, tuple[Scope, ...]] = {
+    "attribute_move": ("news:read",),
 }
 
 TOOL_TIMEOUT_S = 25.0
@@ -181,6 +193,8 @@ class Toolbox:
         return data, cached
 
     async def _run_inner(self, tool: str, args: dict[str, Any], opts: RunOptions) -> tuple[dict[str, Any], bool]:
+        if tool == "attribute_move":  # composite: its parts come back through this method
+            return await attribute_move(self, args, opts), False
         override = opts.overrides.get(tool)
         if override:
             return self._from_fixture(tool, args, self._load(Path(override))), False

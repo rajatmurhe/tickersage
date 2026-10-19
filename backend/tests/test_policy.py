@@ -112,8 +112,13 @@ async def test_denied_call_never_runs_and_the_answer_says_why(offline_agent):
     executor = [s for s in r.trace.steps if s.name == "executor"][0]
     assert executor.detail["policy"] == {
         "scopes": ["market:read"], "allowed": 2,
-        "denied": [{"tool": "get_news_sentiment", "args": {"query": "Bitcoin"},
-                    "reason": "needs the news:read scope, which this request doesn't have"}],
+        "denied": [
+            # attribute_move's evidence pack includes a news-sentiment shift, so it needs news:read too
+            {"tool": "attribute_move", "args": {"symbol": "BTC", "window": "24h"},
+             "reason": "also returns data that needs the news:read scope, which this request doesn't have"},
+            {"tool": "get_news_sentiment", "args": {"query": "Bitcoin"},
+             "reason": "needs the news:read scope, which this request doesn't have"},
+        ],
     }
     assert "**BTC** is trading at" in r.answer
     assert "- news sentiment: needs the news:read scope" in r.answer
@@ -189,12 +194,14 @@ def test_audit_log_records_every_decision(make_client):
         c.post("/api/chat", json={"question": "What's ETH trading at?"})
         rows = c.get("/api/audit", params={"request_id": rid}).json()
         assert sorted((r["tool"], r["decision"]) for r in rows) == [
-            ("compute_metrics", "allow"), ("get_news_sentiment", "deny"), ("get_ticker", "allow")]
-        denied = [r for r in rows if r["decision"] == "deny"][0]
+            ("attribute_move", "deny"), ("compute_metrics", "allow"), ("get_news_sentiment", "deny"),
+            ("get_ticker", "allow")]
+        denied = [r for r in rows if r["tool"] == "get_news_sentiment"][0]
         assert denied["scopes"] == ["docs:read", "market:read"] and denied["required_scope"] == "news:read"
         assert denied["args"] == {"query": "Bitcoin"} and "news:read" in denied["reason"] and denied["created_at"]
-        assert [r["tool"] for r in c.get("/api/audit", params={"decision": "deny"}).json()] == ["get_news_sentiment"]
-        assert len(c.get("/api/audit").json()) == 4 and c.get("/api/audit?decision=maybe").status_code == 422
+        assert sorted(r["tool"] for r in c.get("/api/audit", params={"decision": "deny"}).json()) == [
+            "attribute_move", "get_news_sentiment"]
+        assert len(c.get("/api/audit").json()) == 5 and c.get("/api/audit?decision=maybe").status_code == 422
 
 
 def test_audit_log_needs_the_admin_token_when_set(make_client):
@@ -204,3 +211,14 @@ def test_audit_log_needs_the_admin_token_when_set(make_client):
         assert c.get("/api/audit", headers={"X-Admin-Token": "wrong"}).status_code == 401
         rows = c.get("/api/audit", headers={"X-Admin-Token": "s3cret"}).json()
         assert [(r["tool"], r["decision"]) for r in rows] == [("get_ticker", "allow")]
+
+
+def test_a_tool_needs_every_scope_whose_data_it_returns():
+    from app.policy import Policy
+    from app.tools.registry import TOOL_EXTRA_SCOPES
+
+    assert TOOL_EXTRA_SCOPES == {"attribute_move": ("news:read",)}
+    market_only = Policy().for_request(["market:read"])
+    decision = market_only.check("attribute_move", {"symbol": "BTC", "window": "24h"})
+    assert decision.decision == "deny" and "news:read" in decision.reason
+    assert Policy().check("attribute_move", {"symbol": "BTC", "window": "24h"}).decision == "allow"

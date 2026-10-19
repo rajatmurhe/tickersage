@@ -102,7 +102,10 @@ All tools are read-only and validated with Pydantic. Symbols are checked against
 | `compute_metrics(symbol, window)` | return, volatility (per candle and annualized), RSI(14), SMA 20/50, VWAP, max drawdown |
 | `compare_assets(symbols, window)` | side-by-side metrics plus volume and volatility ratios, computed in Python |
 | `get_news_sentiment(query)` | top 5 Google News headlines with VADER scores; instruction-like headlines are withheld |
+| `attribute_move(symbol, window)` | why-it-moved evidence pack: beta-to-BTC split into market-implied and coin-specific parts, volume z-score, order-book imbalance, news-sentiment shift, funding rate, and the factors that crossed a threshold |
 | `search_docs(query)` | top 3 chunks from a cited glossary / API-docs corpus (in-memory or pgvector) |
+
+**Why it moved.** "Why did X move?" answers are built on an evidence pack computed in Python, not on the model's guesses. `attribute_move` splits the move into a market-implied part (30-day beta to BTC times BTC's move) and a coin-specific residual, then checks volume against the 30 days before, order-book imbalance, the shift in headline sentiment (last 24 h vs the day before) and perpetual funding (reported as unavailable where Binance futures are geo-blocked). Every factor has an explicit threshold in `backend/app/tools/attribution.py`; only the ones that cross it are listed as `drivers`, and when none does the answer says "no clear driver found". The evals fail any answer that names a cause the pack didn't flag (`evals/causes.py`).
 
 The same tools are exposed over **MCP** (`python backend/mcp_server.py`, stdio), annotated `readOnlyHint`.
 
@@ -127,6 +130,7 @@ The same tools are exposed over **MCP** (`python backend/mcp_server.py`, stdio),
 The planner (rules or LLM) only proposes tool calls. `backend/app/policy.py` decides which ones run, in plain Python with no model involved, so the same plan always gets the same decisions. It's the same idea as an exchange letting an AI agent act only within the permissions set on its API key:
 
 * **Scopes.** Each request carries a scope set: `market:read` (ticker, candles, order book, metrics, compare), `news:read` and `docs:read`. All three are the default. A request can narrow them (`"scopes": ["market:read"]` on `POST /api/chat`) but never widen them, and there is no write scope.
+* **Every scope a tool's output needs.** `attribute_move` returns market numbers and a news-sentiment shift, so it needs both `market:read` and `news:read`; a market-only request can't reach headlines through it.
 * **Allow-list.** Only the registered read-only tools run (`POLICY_ALLOWED_TOOLS` can narrow that). A proposed `place_order` or `withdraw` is denied by name.
 * **Argument limits.** At most 5 symbols per call, windows 24h/7d/30d, intervals 15m/1h/4h/1d, order-book depth ≤ 100, ≤ 500 candles, and at most 6 tool calls per request.
 
@@ -249,7 +253,7 @@ backend/app/
   cache.py, semantic_cache.py, embeddings.py, tracing.py, symbols.py, pricing.py
 backend/mcp_server.py  the same tools over MCP
 backend/docs_corpus/   cited glossary and API notes for search_docs
-backend/tests/         222 tests (pytest)
+backend/tests/         251 tests (pytest)
 frontend/              Next.js (App Router, TypeScript) chat and /evals pages
   lib/api.ts           SSE over fetch for POST /api/chat/stream
   components/          Chat, Markdown (React elements only, no raw HTML), TracePanel, EvalsView

@@ -17,6 +17,7 @@ ToolName = Literal[
     "compare_assets",
     "get_news_sentiment",
     "search_docs",
+    "attribute_move",
 ]
 Status = Literal["ok", "refused", "out_of_scope", "clarify", "safe_fallback", "error"]
 # Capability scopes a request can carry. All of them are read-only: there is no scope that can trade.

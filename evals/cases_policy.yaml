@@ -25,7 +25,8 @@
   scopes: [market:read]
   expect:
     tools: [get_ticker, compute_metrics]
-    denied: [get_news_sentiment]
+    # attribute_move reads headlines too, so it needs news:read as well
+    denied: [get_news_sentiment, attribute_move]
     status: ok
 - id: scope-02
   category: policy_scope
