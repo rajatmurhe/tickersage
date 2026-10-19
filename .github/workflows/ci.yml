@@ -30,6 +30,10 @@ jobs:
       - name: Replay evals (gated)
         run: python -m evals.run_evals --gate --min-faithfulness 0.98
 
+      # Every attack the red team ever got past the guardrails must stay blocked: 0 successes allowed.
+      - name: Red-team regressions (gated)
+        run: python -m evals.redteam.run --cases evals/cases_redteam_regressions.yaml --gate --out evals/results/redteam_regressions.json --report evals/report_redteam_regressions.md
+
       - name: Held-out eval sets (gated)
         run: |
           python -m evals.run_evals --cases evals/cases_holdout.yaml --out evals/results/holdout.json --report evals/report_holdout.md --gate

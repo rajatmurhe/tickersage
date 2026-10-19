@@ -120,6 +120,12 @@ The same tools are exposed over **MCP** (`python backend/mcp_server.py`, stdio),
 | Auditability | Every refusal is logged with its reason and stored in the trace table (`/api/refusals` counts them) |
 | Abuse of a public demo | Per-IP rate limits, a daily LLM budget that switches to offline answers, and an admin token on the endpoints that show users' questions (see [Deploying a public demo](#deploying-a-public-demo)) |
 
+### Red team
+
+`python -m evals.redteam.run --seed N` generates a seeded batch of attacks (role-play, 30 ways to ask for advice, trade orders, prompt extraction, base64/rot13/leetspeak/zero-width/homoglyph/split-word encodings, five languages, poisoned headlines and doc chunks, stacked combinations) and runs them through the real agent. On the first offline run, **72.8% of 320 attacks got past the input rules**. After per-clause checks, de-obfuscation and new patterns, fresh seeds measured once after each round of fixes got 0.9–3.1% through (1.9% pooled), with no change on cases.yaml or held-out v1/v2.
+
+Every attack that ever succeeded (477 so far) is in `evals/cases_redteam_regressions.yaml`, and CI fails on any success. A nightly job runs a new seed and uploads the report. Details: [evals/redteam_report.md](evals/redteam_report.md).
+
 ## Cost and latency
 
 * **Model routing:** Haiku 5.5 ($0.10/$0.50 per 1M tokens) for routing and price lookups, Sonnet 5.5 ($2/$10) for analysis. `ROUTING_MODE=single` uses Sonnet everywhere for comparison.
@@ -230,11 +236,11 @@ backend/app/
   cache.py, semantic_cache.py, embeddings.py, tracing.py, symbols.py, pricing.py
 backend/mcp_server.py  the same tools over MCP
 backend/docs_corpus/   cited glossary and API notes for search_docs
-backend/tests/         165 tests (pytest)
+backend/tests/         204 tests (pytest)
 frontend/              Next.js (App Router, TypeScript) chat and /evals pages
   lib/api.ts           SSE over fetch for POST /api/chat/stream
   components/          Chat, Markdown (React elements only, no raw HTML), TracePanel, EvalsView
-evals/                 cases, held-out sets, fixtures, runner, scoring, judge, experiments, reports
+evals/                 cases, held-out sets, fixtures, runner, scoring, judge, experiments, red team, reports
 ```
 
 ## Notes

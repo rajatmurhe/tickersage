@@ -475,11 +475,13 @@ def _b64_recase(tok: str, alt: bytes | None) -> str | None:
     for i in range(0, len(tok), 4):
         block = tok[i:i + 4]
         best, best_score = None, -1
-        for mask in range(1 << len(block)):
-            cand = "".join(c.swapcase() if mask >> j & 1 else c for j, c in enumerate(block))
-            if cand != block and cand.lower() == block.lower() and mask & ~sum(1 << j for j, c in enumerate(block)
-                                                                                 if c.isalpha()):
-                continue  # only flip letters
+        letters = [j for j, c in enumerate(block) if c.isalpha()]
+        for mask in range(1 << len(letters)):
+            chars = list(block)
+            for k, j in enumerate(letters):
+                if mask >> k & 1:
+                    chars[j] = chars[j].swapcase()
+            cand = "".join(chars)
             try:
                 raw = base64.b64decode(cand, altchars=alt)
             except (binascii.Error, ValueError):
