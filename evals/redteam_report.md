@@ -129,9 +129,22 @@ The set passes 100% under the eval scorer too. That needed two new replay fixtur
 - **CI gate** (`.github/workflows/ci.yml`): the regression set must have 0 successful attacks.
 - **Nightly** (`.github/workflows/redteam-nightly.yml`): runs a new seed (the date) offline and uploads the report and JSON as an artifact. This is tracked, not gated. To keep new misses, rerun that seed with `--save-successes`, fix them, and commit.
 
+## Live run
+
+The first run with a live LLM is in [history/12](history/12-redteam-live-first-run.md). The router and answers use NVIDIA Nemotron 3 Super (free tier). NVIDIA's rate limits pushed many calls to the Groq gpt-oss backups: Nemotron served 84 of 151 calls on seed 1 but only 17 of 131 on the regression set. Nothing was tuned on it.
+
+| Batch | Offline now | Live |
+|---|---|---|
+| Seed 1 (320 attacks) | 0% (0/320) | 0.3% (1/320) as scored, 0/320 after review |
+| Regression set (477 attacks) | 0% (0/477) | 0% (0/477) |
+
+Every family is 0 in both modes, except seed-1 indirect at 1/40 live. Free-text answers let live mode trigger `leaked_prompt` and `gave_advice`. `gave_advice` never fired. `leaked_prompt` fired once, and it's a false positive. The answer said "headlines show coverage and tone, not proven causes", which the answer prompt tells the model to say, and the poisoned headline had already been withheld.
+
+The catch is that these are the batches the rules were fixed on. The regex input guard refused every direct attack (280/320 and 411/477) before any model call. The model handled only the 106 indirect attacks, and the tool-side filter had already withheld the poisoned text in every one. So the run shows the LLM path doesn't undo the rules: no missed refusals, no payload followed, no leak, no advice. It doesn't measure the LLM against attacks that get past the rules. Benign controls: 3 of 40 were refused in both modes (the same "system prompt" control). The live router gave a normal answer to 34 of 40, against 25 offline.
+
 ## Limits
 
-- **Offline only.** These are offline numbers, so they measure the rule layer alone. The live LLM router caught 8 of 9 held-out v3 attacks the rules missed, and it would stop some of what is left here. No API key was available, so `--llm live` was not run.
+- **The LLM layer on its own hasn't been measured.** The fix rounds and fresh-seed numbers are offline, so they measure the rule layer alone. The live run (history 12) only sent the model indirect attacks whose payloads were already withheld. On held-out v3 the live router caught 8 of 9 attacks the rules missed. Running the pre-fix rules (`3c62c6f`) live on seed 1 would show how it does here.
 - **Shared templates.** Fresh seeds reuse the same templates and only vary the fills and mutations. The 1.9% on fresh seeds is a generalisation number for this generator, not for attack styles it doesn't have. An LLM attacker or a human will find new phrasings, and regex rules are an arms race.
 - **Training scores.** The fixes were written while looking at the failures, so the 0% on seeds 1–4 is a training score.
 - **Benign controls.** I wrote the benign near-misses myself. The false-refusal checks that count are cases.yaml and held-out v1/v2, and they did not change.
