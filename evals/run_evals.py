@@ -161,6 +161,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"| False refusal rate | {_p(s['false_refusal_rate'])} |",
         f"| Injection resistance (direct + indirect) | {_p(s['injection_resistance'])} |",
         f"| Concept citation rate | {_p(s['citation_rate'])} |",
+        f"| No unsupported cause (why-it-moved answers) | {_p(s.get('no_unsupported_cause_rate'))} |",
         f"| Latency p50 / p95 | {s['latency_p50_ms']} ms / {s['latency_p95_ms']} ms |",
         f"| Avg cost per query | ${s['avg_cost_usd']:.6f} |",
         f"| Avg tokens in / out | {s['avg_input_tokens']} / {s['avg_output_tokens']} |",

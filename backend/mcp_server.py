@@ -65,6 +65,11 @@ async def compute_metrics(symbol: str, window: Literal["24h", "7d", "30d"] = "7d
     return await _call("compute_metrics", {"symbol": symbol, "window": window})
 
 
+@mcp.tool(description=TOOL_DESCRIPTIONS["attribute_move"], annotations=READ_ONLY)
+async def attribute_move(symbol: str, window: Literal["24h", "7d", "30d"] = "24h") -> dict[str, Any]:
+    return await _call("attribute_move", {"symbol": symbol, "window": window})
+
+
 @mcp.tool(description=TOOL_DESCRIPTIONS["compare_assets"], annotations=READ_ONLY)
 async def compare_assets(symbols: list[str], window: Literal["24h", "7d", "30d"] = "7d") -> dict[str, Any]:
     return await _call("compare_assets", {"symbols": symbols, "window": window})

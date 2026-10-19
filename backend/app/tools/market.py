@@ -198,11 +198,15 @@ class MarketData:
 
     # ------------------------------------------------------------------ klines
 
-    async def get_klines(self, pair: str, interval: Interval, limit: int) -> KlinesOutput:
+    async def get_klines(
+        self, pair: str, interval: Interval, limit: int, end: datetime | None = None
+    ) -> KlinesOutput:
+        """The latest `limit` candles, or the ones up to `end` when it's given (the CoinGecko backup ignores it)."""
+        params: dict = {"symbol": pair, "interval": interval, "limit": limit}
+        if end is not None:
+            params["endTime"] = _to_ms(end)
         try:
-            raw, source = await self._binance(
-                "/api/v3/klines", {"symbol": pair, "interval": interval, "limit": limit}
-            )
+            raw, source = await self._binance("/api/v3/klines", params)
         except ToolError as exc:
             if exc.code == "unknown_symbol":
                 raise
@@ -281,6 +285,25 @@ class MarketData:
             source=source,
             as_of=datetime.now(UTC),
         )
+
+
+    # ---------------------------------------------------------------- funding
+
+    async def get_funding_history(self, pair: str, start: datetime, end: datetime) -> list[dict]:
+        """Settled perpetual funding rates between `start` and `end`, oldest first, as {time, rate}.
+
+        Read-only USD-M futures market data. Errors are raised as they are (UpstreamHTTPError for a 4xx such
+        as a 451 geo-block); the caller decides how to fail soft.
+        """
+        rows = await self._get(
+            f"{self.settings.binance_futures_base_url}/fapi/v1/fundingRate",
+            {"symbol": pair, "startTime": _to_ms(start), "endTime": _to_ms(end), "limit": 1000},
+        )
+        return [{"time": int(r["fundingTime"]), "rate": float(r["fundingRate"])} for r in rows]
+
+
+def _to_ms(value: datetime) -> int:
+    return int(value.timestamp() * 1000)
 
 
 def _ms(value: int | float) -> datetime:

@@ -49,6 +49,7 @@ def plan_rules(route: RouteDecision, question: str) -> ToolPlan:
         calls = [
             ToolCall(tool="get_ticker", args={"symbol": s}),
             ToolCall(tool="compute_metrics", args={"symbol": s, "window": window}),
+            ToolCall(tool="attribute_move", args={"symbol": s, "window": window}),
             ToolCall(tool="get_news_sentiment", args={"query": asset_name(s)}),
         ]
     elif route.intent == "concept":

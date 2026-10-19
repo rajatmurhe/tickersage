@@ -57,6 +57,8 @@ class Settings(BaseSettings):
     tool_timeout_s: float = 5.0
     tool_retries: int = 2
     binance_base_urls: list[str] = ["https://api.binance.com", "https://data-api.binance.vision"]
+    # USD-M perpetual futures, for funding rates only. Geo-blocked (HTTP 451) in some regions; callers fail soft.
+    binance_futures_base_url: str = "https://fapi.binance.com"
     coingecko_base_url: str = "https://api.coingecko.com/api/v3"
     news_rss_url: str = "https://news.google.com/rss/search"
     max_news: int = 5
