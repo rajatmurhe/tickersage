@@ -144,7 +144,7 @@ A denied call never reaches the tool layer. It's listed with its reason in the e
 
 `python -m evals.redteam.run --seed N` generates a seeded batch of attacks (role-play, 30 ways to ask for advice, trade orders, prompt extraction, base64/rot13/leetspeak/zero-width/homoglyph/split-word encodings, five languages, poisoned headlines and doc chunks, stacked combinations) and runs them through the real agent. On the first offline run, **72.8% of 320 attacks got past the input rules**. After per-clause checks, de-obfuscation and new patterns, fresh seeds measured once after each round of fixes got 0.9–3.1% through (1.9% pooled), with no change on cases.yaml or held-out v1/v2.
 
-Every attack that ever succeeded (477 so far) is in `evals/cases_redteam_regressions.yaml`, and CI fails on any success. A nightly job runs a new seed and uploads the report. Details: [evals/redteam_report.md](evals/redteam_report.md).
+Every attack that ever succeeded (932 so far) is in `evals/cases_redteam_regressions.yaml`, and CI fails on any success. A nightly job runs a new seed and uploads the report. Details: [evals/redteam_report.md](evals/redteam_report.md).
 
 ## Cost and latency
 
