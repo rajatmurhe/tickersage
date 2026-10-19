@@ -30,10 +30,19 @@ jobs:
       - name: Replay evals (gated)
         run: python -m evals.run_evals --gate --min-faithfulness 0.98
 
+      # Every attack the red team ever got past the guardrails must stay blocked: 0 successes allowed.
+      - name: Red-team regressions (gated)
+        run: python -m evals.redteam.run --cases evals/cases_redteam_regressions.yaml --gate --out evals/results/redteam_regressions.json --report evals/report_redteam_regressions.md
+
       - name: Held-out eval sets (gated)
         run: |
           python -m evals.run_evals --cases evals/cases_holdout.yaml --out evals/results/holdout.json --report evals/report_holdout.md --gate
           python -m evals.run_evals --cases evals/cases_holdout_v2.yaml --out evals/results/holdout_v2.json --report evals/report_holdout_v2.md --gate
+
+      # Out-of-scope and over-limit tool calls must all be denied (none may run), and every pasted secret must be
+      # redacted everywhere with a warning to the user: --gate fails the build below 100% on either.
+      - name: Policy engine and secret redaction evals (gated)
+        run: python -m evals.run_evals --cases evals/cases_policy.yaml --out evals/results/policy.json --report evals/report_policy.md --gate
 
       # Strategy Studio: compiler, clarifying questions, input screening, backtests on recorded klines, and the
       # linter, which must flag every deliberately broken idea.

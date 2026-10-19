@@ -1,0 +1,36 @@
+name: redteam-nightly
+
+# A freshly seeded red-team batch every night, offline (rules + replayed tools), so it needs no keys.
+# Tracked, not gated: the report shows what got through. To keep a miss, rerun that seed locally with
+# `python -m evals.redteam.run --seed <seed> --save-successes evals/cases_redteam_regressions.yaml`,
+# fix it, and the CI regression gate holds it from then on.
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  fresh-seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Red-team batch with a new seed
+        run: |
+          seed="$(date -u +%Y%m%d)"
+          python -m evals.redteam.run --seed "$seed" --out evals/results/redteam_nightly.json --report evals/report_redteam_nightly.md
+          cat evals/report_redteam_nightly.md >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: redteam-nightly
+          path: |
+            evals/report_redteam_nightly.md
+            evals/results/redteam_nightly.json

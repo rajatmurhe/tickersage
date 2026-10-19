@@ -22,6 +22,7 @@ TOOL_LABELS = {
     "compare_assets": "comparison",
     "get_news_sentiment": "news sentiment",
     "search_docs": "docs",
+    "attribute_move": "move attribution",
 }
 
 
@@ -170,6 +171,54 @@ def news_block(d: dict[str, Any], cite: int | None) -> str:
     return head + "\n" + "\n".join(items) + note
 
 
+def attribution_block(d: dict[str, Any], cite: int | None) -> str:
+    """The evidence pack in words. Names only the drivers the pack flagged, never another cause."""
+    w = {"24h": "24 hours", "7d": "7 days", "30d": "30 days"}[d["window"]]
+    m = d["market_wide"]
+    parts = [f"**Why it moved**{_cite(cite)}: over the last {w}, {d['base_asset']} moved {fmt_pct(d['move_pct'])}."]
+    if d.get("market_implied_pct") is not None:
+        parts.append(
+            f"With a {m['beta_days']}-day beta of {fmt_num(m['beta_vs_btc'])} to BTC, which moved "
+            f"{fmt_pct(m['btc_move_pct'])}, the market-implied part is {fmt_pct(d['market_implied_pct'])} and the "
+            f"coin-specific residual is {fmt_pct(d['residual_pct'])}."
+        )
+    elif m.get("note"):
+        parts.append(m["note"])
+    if d["no_clear_driver"]:
+        why = (
+            f"the move is smaller than the {fmt_pct(d['thresholds']['min_move_pct'], signed=False)} needed "
+            "before anything is attributed" if d["small_move"] else "nothing in the evidence crossed its threshold"
+        )
+        parts.append(f"No clear driver found: {why}.")
+    else:
+        parts.append("Drivers the evidence supports: " + "; ".join(_driver_phrase(n, d) for n in d["drivers"]) + ".")
+    gaps = [d[f]["note"] for f in ("volume", "order_book", "news", "funding") if not d[f]["available"] and d[f]["note"]]
+    parts += [g if g.endswith(".") else g + "." for g in gaps]
+    return " ".join(parts)
+
+
+def _driver_phrase(name: str, d: dict[str, Any]) -> str:
+    if name == "market_wide":
+        m = d["market_wide"]
+        return (f"a market-wide move (BTC moved {fmt_pct(m['btc_move_pct'])}, and the market-implied part is at "
+                f"least half of {d['base_asset']}'s move)")
+    if name == "volume":
+        v = d["volume"]
+        return (f"heavy volume ({fmt_big(v['window_avg_daily_volume'])} a day in the window, a z-score of "
+                f"{fmt_num(v['z_score'])} against {fmt_big(v['baseline_avg_daily_volume'])} a day over the "
+                f"{v['baseline_days']} days before)")
+    if name == "order_book":
+        b = d["order_book"]
+        return f"an order book tilted toward {b['heavier_side']} (depth imbalance {fmt_pct(b['imbalance_pct'])})"
+    if name == "news":
+        n = d["news"]
+        return (f"a shift in news tone (headlines from the last 24 hours average {n['recent_avg_sentiment']:.3f} "
+                f"against {n['earlier_avg_sentiment']:.3f} the day before, a shift of {n['sentiment_shift']:+.3f})")
+    f = d["funding"]
+    return (f"a change in perpetual funding (the rate is {f['funding_rate_pct']:.4f}% per {f['interval_hours']}h, "
+            f"{f['funding_change_pct']:+.4f} points over the window)")
+
+
 def docs_block(d: dict[str, Any], by_chunk: dict[str, int]) -> str:
     chunks = [c for c in d.get("chunks", []) if not c.get("redacted")]
     if not chunks:
@@ -227,6 +276,8 @@ def render(route: RouteDecision | None, results: list[ToolResult]) -> str:
             parts.append("Headlines show what is being discussed and its tone; they don't prove why the price moved.")
         elif r.tool == "search_docs":
             parts.append(docs_block(r.data, by_chunk))
+        elif r.tool == "attribute_move":
+            parts.append(attribution_block(r.data, cite))
         elif r.tool == "get_klines":
             candles = r.data.get("candles", [])
             if candles:

@@ -78,7 +78,7 @@ A public link with a live Claude key needs rate limits, a spend cap and private 
 | `RATE_LIMIT_PER_MINUTE`, `RATE_LIMIT_PER_DAY` | Questions per visitor IP on `/api/chat` and `/api/chat/stream`. Over the limit the API returns 429 with a JSON `detail` message and a `Retry-After` header. Counts live in Redis when `REDIS_URL` is set (shared by every instance) and in memory otherwise. The day resets at midnight UTC. |
 | `TRUST_PROXY`, `TRUSTED_PROXY_HOPS` | Behind a proxy, every request arrives from the proxy's address. With `TRUST_PROXY=true` the limiter reads the visitor from `X-Forwarded-For`, taking the entry `TRUSTED_PROXY_HOPS` from the right. Entries further left are whatever the client sent, so a visitor can't reset their count by forging the header. Leave it off when nothing sits in front of the API. |
 | `DAILY_BUDGET_USD` | Before each question the API sums today's `cost_usd` from the trace table (the per-request cost from the pricing table). Once the sum reaches the budget, answers come from offline mode (rules router, template answers) until midnight UTC. Those traces start with a `budget_guard` step and have `fell_back: true`. It is a soft cap: questions already running when it is reached still finish live. Keep traces in Postgres so the total survives restarts. |
-| `ADMIN_TOKEN` | `/api/traces`, `/api/traces/{id}` and `/api/refusals` return users' raw questions. With a token set, they need an `X-Admin-Token` header and return 401 without it. When it's unset they stay open, for local dev. |
+| `ADMIN_TOKEN` | `/api/traces`, `/api/traces/{id}`, `/api/refusals` and `/api/audit` return users' questions and tool arguments. With a token set, they need an `X-Admin-Token` header and return 401 without it. When it's unset they stay open, for local dev. |
 
 **Render.** `render.yaml` is a Blueprint for the API, the Next.js frontend (`frontend/Dockerfile`), Postgres for traces, and a Key Value store for the cache and rate limits. It starts at 5 questions per minute and 40 per day per visitor, with a $2 daily budget. Change these in the file or in the dashboard.
 
@@ -102,7 +102,10 @@ All tools are read-only and validated with Pydantic. Symbols are checked against
 | `compute_metrics(symbol, window)` | return, volatility (per candle and annualized), RSI(14), SMA 20/50, VWAP, max drawdown |
 | `compare_assets(symbols, window)` | side-by-side metrics plus volume and volatility ratios, computed in Python |
 | `get_news_sentiment(query)` | top 5 Google News headlines with VADER scores; instruction-like headlines are withheld |
+| `attribute_move(symbol, window)` | why-it-moved evidence pack: beta-to-BTC split into market-implied and coin-specific parts, volume z-score, order-book imbalance, news-sentiment shift, funding rate, and the factors that crossed a threshold |
 | `search_docs(query)` | top 3 chunks from a cited glossary / API-docs corpus (in-memory or pgvector) |
+
+**Why it moved.** "Why did X move?" answers are built on an evidence pack computed in Python, not on the model's guesses. `attribute_move` splits the move into a market-implied part (30-day beta to BTC times BTC's move) and a coin-specific residual, then checks volume against the 30 days before, order-book imbalance, the shift in headline sentiment (last 24 h vs the day before) and perpetual funding (reported as unavailable where Binance futures are geo-blocked). Every factor has an explicit threshold in `backend/app/tools/attribution.py`; only the ones that cross it are listed as `drivers`, and when none does the answer says "no clear driver found". The evals fail any answer that names a cause the pack didn't flag (`evals/causes.py`).
 
 The same tools are exposed over **MCP** (`python backend/mcp_server.py`, stdio), annotated `readOnlyHint`.
 
@@ -117,9 +120,32 @@ The same tools are exposed over **MCP** (`python backend/mcp_server.py`, stdio),
 | Hallucinated numbers | Number verifier, one retry, then the template answer |
 | Advice slipping into an answer | Output guard drops advice and prediction sentences |
 | Stale data | Every answer carries "Data as of HH:MM UTC from <source>" |
-| Auditability | Every refusal is logged with its reason and stored in the trace table (`/api/refusals` counts them) |
+| Planner proposes a call outside the request's permissions | Deterministic policy engine (scopes, tool allow-list, argument limits, call budget); denied calls never run (see [Policy engine](#policy-engine)) |
+| Pasted API key, private key or seed phrase | Redacted in the input step, before the LLM, logs, traces, caches or audit log see it; the answer warns the user |
+| Auditability | Every refusal is logged with its reason and stored in the trace table (`/api/refusals` counts them); every tool-call decision is in the audit log (`/api/audit`) |
 | A trading idea typed into Strategy Studio | Its own endpoints, outside the chat graph: backtest only, no order or wallet tool, the chat's injection rules on every input, explicit live/paper-trading requests refused, and a linter gate before any backtest |
 | Abuse of a public demo | Per-IP rate limits, a daily LLM budget that switches to offline answers, and an admin token on the endpoints that show users' questions (see [Deploying a public demo](#deploying-a-public-demo)) |
+
+### Policy engine
+
+The planner (rules or LLM) only proposes tool calls. `backend/app/policy.py` decides which ones run, in plain Python with no model involved, so the same plan always gets the same decisions. It's the same idea as an exchange letting an AI agent act only within the permissions set on its API key:
+
+* **Scopes.** Each request carries a scope set: `market:read` (ticker, candles, order book, metrics, compare), `news:read` and `docs:read`. All three are the default. A request can narrow them (`"scopes": ["market:read"]` on `POST /api/chat`) but never widen them, and there is no write scope.
+* **Every scope a tool's output needs.** `attribute_move` returns market numbers and a news-sentiment shift, so it needs both `market:read` and `news:read`; a market-only request can't reach headlines through it.
+* **Allow-list.** Only the registered read-only tools run (`POLICY_ALLOWED_TOOLS` can narrow that). A proposed `place_order` or `withdraw` is denied by name.
+* **Argument limits.** At most 5 symbols per call, windows 24h/7d/30d, intervals 15m/1h/4h/1d, order-book depth ≤ 100, ≤ 500 candles, and at most 6 tool calls per request.
+
+A denied call never reaches the tool layer. It's listed with its reason in the executor's trace step, and the answer ends with a line saying what wasn't fetched and why, so the user still gets whatever was allowed. Every decision, allow or deny, goes into an `audit_log` table next to the traces (request id, scopes, tool, args, decision, reason, timestamp), served at `GET /api/audit` behind the same `ADMIN_TOKEN`. The refusal's data snapshot goes through the same check, and the semantic cache only serves a cached concept answer to a request that may call `search_docs`.
+
+**Pasted secrets.** The input step (`backend/app/secrets_guard.py`) redacts Binance-style 64-character API keys and secrets, raw or `0x` 64-hex private keys, PEM private keys and BIP39 seed phrases (12+ words from the bundled 2,048-word list, one typo allowed) before anything else reads the question. The answer opens with a warning to revoke the key or move the funds. A 64-hex transaction hash looks exactly like a private key, so it gets redacted too; a 40-hex wallet address doesn't. A test checks, for each format, that the raw secret never reaches the LLM prompts, logs, trace and audit tables, semantic cache or tool cache.
+
+**Evals.** `evals/cases_policy.yaml` has 34 cases: 10 out-of-scope tool attempts (narrowed scopes, and scripted planner proposals like `place_order`, `withdraw` and `set_leverage`), 10 argument-limit breaches, 12 secret pastes in different formats and 2 look-alikes that must be left alone. CI fails unless every expected call is denied without running and every secret is redacted everywhere. All 34 pass, but they were written alongside the code, so treat that as a regression gate rather than a generalization number. To check the gate itself, I broke the policy (allow everything) and the redactor (no-op): the block rate and the redaction rate each dropped to 0% and the gate failed.
+
+### Red team
+
+`python -m evals.redteam.run --seed N` generates a seeded batch of attacks (role-play, 30 ways to ask for advice, trade orders, prompt extraction, base64/rot13/leetspeak/zero-width/homoglyph/split-word encodings, five languages, poisoned headlines and doc chunks, stacked combinations) and runs them through the real agent. On the first offline run, **72.8% of 320 attacks got past the input rules**. After per-clause checks, de-obfuscation and new patterns, fresh seeds measured once after each round of fixes got 0.9–3.1% through (1.9% pooled), with no change on cases.yaml or held-out v1/v2.
+
+Every attack that ever succeeded (477 so far) is in `evals/cases_redteam_regressions.yaml`, and CI fails on any success. A nightly job runs a new seed and uploads the report. Details: [evals/redteam_report.md](evals/redteam_report.md).
 
 ## Strategy Studio
 
@@ -139,7 +165,7 @@ The same tools are exposed over **MCP** (`python backend/mcp_server.py`, stdio),
 * **Provider fallback:** Claude errors, timeouts, refusals and truncations retry on OpenAI (then Groq, OpenRouter or NVIDIA when those keys are set). Sonnet calls also opt into Anthropic's server-side refusal fallback (`fallbacks: "default"`). Every fallback is logged and flagged in the trace.
 * **Caching:** market data in Redis with short TTLs; concept answers in a semantic cache (embedding similarity ≥ 0.92). The system prompt is a static cache prefix.
 * **Token budget:** 5 headlines, 3 doc chunks, at most 24 candles per prompt; order-book levels are trimmed.
-* **Tracing:** one row per request (Postgres or SQLite): intent, tools and args, tokens in/out, cost from the pricing table, per-step latency, models, fallback flag, status, refusal reason, faithfulness. `GET /api/traces` (it needs an `X-Admin-Token` header when `ADMIN_TOKEN` is set).
+* **Tracing:** one row per request (Postgres or SQLite): intent, tools and args, tokens in/out, cost from the pricing table, per-step latency, models, fallback flag, status, refusal reason, faithfulness. `GET /api/traces` (it needs an `X-Admin-Token` header when `ADMIN_TOKEN` is set). Tool-call policy decisions go to a separate audit table, `GET /api/audit`.
 
 ## Evals
 
@@ -149,6 +175,7 @@ Live market data changes every second, so evals run in **replay mode**: `python 
 python -m evals.run_evals                     # offline LLM, replayed tools (what CI runs)
 python -m evals.run_evals --gate              # exit 1 if a safety/quality threshold is missed
 python -m evals.run_evals --llm live --judge  # real models + LLM judge (needs a key)
+python -m evals.run_evals --cases evals/cases_policy.yaml --gate  # policy engine + secret redaction
 python -m evals.experiments                   # the README experiments
 ```
 
@@ -156,7 +183,7 @@ The dataset has **110 cases** (`evals/cases.yaml`): 20 price lookups, 15 compari
 
 Metrics: tool selection accuracy, intent accuracy, number faithfulness (share of numbers in answers that match tool outputs), key numbers present, refusal accuracy / recall / false-refusal rate, injection resistance, concept citation rate, latency p50/p95, cost per query, an optional LLM-judge score (fixed rubric), and a failure taxonomy.
 
-**CI gate:** refusal recall and injection resistance must be 100%, false refusals ≤ 2%, faithfulness ≥ 98%.
+**CI gate:** refusal recall and injection resistance must be 100%, false refusals ≤ 2%, faithfulness ≥ 98%. On the policy set (`evals/cases_policy.yaml`), the policy block rate and the secret redaction rate must both be 100%.
 
 ### Results (offline pipeline: rules router + template answers, replayed tools)
 
@@ -237,6 +264,8 @@ backend/app/
   synthesizer.py     prompt building; tool output wrapped as untrusted data
   verifier.py        number faithfulness check
   guardrails.py      input/output guardrails, refusal messages
+  policy.py          capability scopes, tool allow-list, argument limits, call budget
+  secrets_guard.py   redacts pasted API keys, private keys and seed phrases (data/bip39_english.txt)
   llm.py             providers, model routing, provider fallback, cost
   templates.py       deterministic answers (offline mode and safe fallback)
   numbers.py         rounding, formatting, number extraction
@@ -244,11 +273,11 @@ backend/app/
   cache.py, semantic_cache.py, embeddings.py, tracing.py, symbols.py, pricing.py
 backend/mcp_server.py  the same tools over MCP
 backend/docs_corpus/   cited glossary and API notes for search_docs
-backend/tests/         261 tests (pytest)
+backend/tests/         291 tests (pytest)
 frontend/              Next.js (App Router, TypeScript) chat, /evals, /traces and /strategy pages; 65 tests (Vitest)
   lib/api.ts           SSE over fetch for POST /api/chat/stream
   components/          Chat, Markdown (React elements only, no raw HTML), TracePanel, EvalsView
-evals/                 cases, held-out sets, fixtures, runner, scoring, judge, experiments, reports
+evals/                 cases, held-out sets, fixtures, runner, scoring, judge, experiments, red team, reports
 ```
 
 ## Notes

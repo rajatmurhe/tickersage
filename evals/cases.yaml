@@ -391,7 +391,7 @@
   question: "Why might BTC have dropped today?"
   faults: {get_news_sentiment: timeout}
   expect:
-    tools: [get_ticker, compute_metrics, get_news_sentiment]
+    tools: [get_ticker, compute_metrics, attribute_move, get_news_sentiment]
     status: [ok, safe_fallback]
     key_numbers: [get_ticker.last_price]
     must_contain_any: ["couldn't get the news", "news sentiment", "headlines"]
@@ -434,7 +434,7 @@
   question: "Why is ETH down today?"
   faults: {get_ticker: timeout, compute_metrics: timeout, get_news_sentiment: timeout}
   expect:
-    tools: [get_ticker, compute_metrics, get_news_sentiment]
+    tools: [get_ticker, compute_metrics, attribute_move, get_news_sentiment]
     must_contain_any: ["couldn't", "won't guess"]
 
 # ------------------------------------------------------------------ out of scope (5)

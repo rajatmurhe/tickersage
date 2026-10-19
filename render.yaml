@@ -42,7 +42,7 @@ services:
       # Live LLM calls stop for the rest of the UTC day once the traced cost reaches this (USD).
       - key: DAILY_BUDGET_USD
         value: "2"
-      # Needed to read /api/traces and /api/refusals. Copy it from the dashboard's Environment tab.
+      # Needed to read /api/traces, /api/refusals and /api/audit. Copy it from the dashboard's Environment tab.
       - key: ADMIN_TOKEN
         generateValue: true
 

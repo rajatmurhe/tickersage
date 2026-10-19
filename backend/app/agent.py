@@ -17,6 +17,7 @@ from .embeddings import HashingEmbedder, OpenAIEmbedder
 from .graph import AgentState, Deps, build_graph
 from .llm import LLMClient
 from .planner import Planner
+from .policy import Policy
 from .router import Router
 from .schemas import ChatResponse, StepTrace, Trace
 from .semantic_cache import SemanticCache
@@ -93,6 +94,7 @@ class Agent:
             planner=Planner(llm, s.planner_mode),
             llm=llm,
             semantic_cache=SemanticCache(embedder, s.semantic_cache_threshold) if s.semantic_cache_enabled else None,
+            policy=Policy.from_settings(s),
         )
         traces = TraceStore(s.database_url) if store_traces else None
         return cls(s, deps, http, traces)
@@ -108,9 +110,13 @@ class Agent:
     # --------------------------------------------------------------- running
 
     async def stream(
-        self, question: str, opts: RunOptions | None = None, request_id: str | None = None
+        self, question: str, opts: RunOptions | None = None, request_id: str | None = None,
+        scopes: list[str] | None = None,
     ) -> AsyncIterator[dict[str, Any]]:
-        """Yields {"type": "step"} events as nodes finish, then {"type": "final", "response": ...}."""
+        """Yields {"type": "step"} events as nodes finish, then {"type": "final", "response": ...}.
+
+        `scopes` narrows the server's default capability scopes for this request (None keeps them all).
+        """
         rid = request_id or uuid.uuid4().hex[:16]
         started = time.perf_counter()
         graph, steps = self.graph, []
@@ -119,7 +125,9 @@ class Agent:
             graph, steps = self._offline(), [budget_step]
             yield {"type": "step", "node": budget_step.name, "label": STEP_LABELS[budget_step.name],
                    "detail": budget_step.model_dump()}
-        init: AgentState = {"question": question, "request_id": rid, "opts": opts or RunOptions(), "steps": steps}
+        granted = sorted(self.deps.policy.for_request(scopes).scopes)
+        init: AgentState = {"question": question, "request_id": rid, "opts": opts or RunOptions(), "scopes": granted,
+                            "steps": steps}
         final: AgentState | None = None
         async for mode, chunk in graph.astream(init, stream_mode=["updates", "values"]):
             if mode == "updates":
@@ -130,14 +138,17 @@ class Agent:
             else:
                 final = chunk
         assert final is not None
+        question = final["question"]  # with any pasted secret redacted by input_guard
         response = self._response(question, rid, final, (time.perf_counter() - started) * 1000)
         if self.traces:
             await self.traces.save(question, response.trace)
+            await self.traces.save_audit(rid, granted, final.get("policy_decisions", []))
         yield {"type": "final", "response": response, "state": final}
 
-    async def ask(self, question: str, opts: RunOptions | None = None, request_id: str | None = None) -> ChatResponse:
+    async def ask(self, question: str, opts: RunOptions | None = None, request_id: str | None = None,
+                  scopes: list[str] | None = None) -> ChatResponse:
         response: ChatResponse | None = None
-        async for event in self.stream(question, opts, request_id):
+        async for event in self.stream(question, opts, request_id, scopes):
             if event["type"] == "final":
                 response = event["response"]
         assert response is not None
