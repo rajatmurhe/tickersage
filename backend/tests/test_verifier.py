@@ -104,3 +104,16 @@ def test_typographic_dashes_do_not_create_unsupported_numbers():
     # Nemotron writes non-breaking hyphens and minus signs; window lengths stay exempt, figures still parse.
     nums = extract_numbers("TRX fell \u221214.6\u202f% over the past 24\u2011hour window and 7\u2011day range.")
     assert [(n.value, n.is_pct) for n in nums] == [(14.6, True)]
+
+
+@pytest.mark.parametrize("sep", [" ", " ", " "])
+def test_space_grouped_thousands_are_one_number(sep):
+    # gpt-oss on Groq writes "$81 241.63" with a narrow no-break space; read as two numbers, both looked made up.
+    answer = f"BTC is at $81{sep}113.66 with $727{sep}768{sep}495.71 traded [1]."
+    assert [n.value for n in extract_numbers(answer)] == [81113.66, 727768495.71]
+    assert verify(answer, [ticker_result()]).unsupported == []
+
+
+def test_a_space_before_a_separate_number_is_not_grouping():
+    assert [n.value for n in extract_numbers("up 12 345 times")] == [12345]  # three digits: grouping
+    assert [n.value for n in extract_numbers("RSI of 55 and 7 1234")] == [55, 7, 1234]

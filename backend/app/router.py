@@ -137,11 +137,11 @@ def _clean_symbols(raw: list[str], registry: SymbolRegistry, question: str) -> l
         if s and s not in out:
             out.append(s)
     known = registry.bases
-    # Prefer the deterministic extraction when the model returned nothing usable.
-    if not out or not any(s in known for s in out):
-        extracted = registry.extract(question)
-        if extracted:
-            return extracted
+    extracted = registry.extract(question)
+    # Prefer the deterministic extraction when the model returned nothing usable, or named none of the assets the
+    # question names: gpt-oss-20b read "Polkadot" as POL (Polygon), and POL's real prices passed the verifier.
+    if extracted and (not out or not any(s in known for s in out) or not set(out) & set(extracted)):
+        return extracted
     return out
 
 

@@ -19,6 +19,7 @@ Writes evals/experiments.md.
 from __future__ import annotations
 
 import argparse
+import json
 import asyncio
 import statistics
 import time
@@ -40,7 +41,7 @@ OPENROUTER_GPT = "openai/gpt-5-mini,openai/gpt-5"
 def live_provider(s: Settings) -> str | None:
     """The configured primary provider if it has a key, otherwise the first provider that has one."""
     keys = {"anthropic": s.anthropic_api_key, "openai": s.openai_api_key, "openrouter": s.openrouter_api_key,
-            "nvidia": s.nvidia_api_key}
+            "nvidia": s.nvidia_api_key, "groq": s.groq_api_key}
     if keys.get(s.primary_provider):
         return s.primary_provider
     return next((name for name, key in keys.items() if key), None)
@@ -64,21 +65,38 @@ HEADER = [
 ]
 
 
-async def eval_config(extra: list[str]) -> dict[str, Any]:
-    return await run(parse_args(["--llm", "live", "--judge", *extra]))
+# Extra run_evals flags shared by every experiment run (cases file, concurrency, judge provider, ...).
+SHARED: list[str] = []
+RESULTS_DIR = EVALS_DIR / "results"
+
+
+async def eval_config(extra: list[str], save_as: str | None = None) -> dict[str, Any]:
+    report = await run(parse_args(["--llm", "live", "--judge", *SHARED, *extra]))
+    if save_as:  # keep every case, so the README's failure analysis can cite real answers
+        RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+        (RESULTS_DIR / f"exp_{save_as}.json").write_text(json.dumps(report, indent=1, default=str))
+    return report
+
+
+def _setup(report: dict[str, Any]) -> str:
+    c = report["config"]
+    judges = ", ".join(c.get("judge_models") or []) or "same client"
+    return (f"{report['cases_run']} cases, provider `{c['primary_provider']}`, provider fallback "
+            f"{'on' if c.get('provider_fallback', True) else 'off'}, judge: {judges}. Run {report['created_at']}.")
 
 
 async def exp_routing(provider: str) -> list[str]:
-    routed = await eval_config(["--provider", provider, "--routing", "routed"])
-    single = await eval_config(["--provider", provider, "--routing", "single"])
-    return ["## 1. Routed vs single strong model", "", *HEADER, _row("routed (fast + strong model)", routed),
-            _row("single (strong model everywhere)", single)]
+    routed = await eval_config(["--provider", provider, "--routing", "routed"], "routing_routed")
+    single = await eval_config(["--provider", provider, "--routing", "single"], "routing_single")
+    return ["## 1. Routed vs single strong model", "", _setup(routed), "", *HEADER,
+            _row("routed (fast + strong model)", routed), _row("single (strong model everywhere)", single)]
 
 
 async def exp_verifier(provider: str) -> list[str]:
-    on = await eval_config(["--provider", provider])
-    off = await eval_config(["--provider", provider, "--no-verifier"])
-    return ["## 2. Number verifier on vs off", "", *HEADER, _row("verifier on", on), _row("verifier off", off)]
+    on = await eval_config(["--provider", provider], "verifier_on")
+    off = await eval_config(["--provider", provider, "--no-verifier"], "verifier_off")
+    return ["## 2. Number verifier on vs off", "", _setup(on), "", *HEADER, _row("verifier on", on),
+            _row("verifier off", off)]
 
 
 async def exp_providers(provider: str) -> list[str]:
@@ -129,14 +147,58 @@ async def exp_cache() -> list[str]:
     return lines
 
 
+NAMES = ["routing", "verifier", "cache", "providers"]
+
+
+def _previous_sections() -> dict[str, list[str]]:
+    """Sections of the existing file by experiment name, so `--only` updates one without losing the others."""
+    if not OUT.exists():
+        return {}
+    out: dict[str, list[str]] = {}
+    name = None
+    for line in OUT.read_text().splitlines():
+        if line.startswith("<!-- exp:"):
+            name = line.removeprefix("<!-- exp:").removesuffix(" -->").strip()
+            out[name] = []
+        elif line.startswith("## "):
+            h = line.lower()  # files written before the markers existed
+            guess = next((n for n, keys in (("routing", ("routing", "routed")), ("verifier", ("verifier",)),
+                                            ("cache", ("cache",)), ("providers", ("provider", "primary model")))
+                          if any(k in h for k in keys)), None)
+            if name is None or guess not in out:
+                name = guess or name
+                out.setdefault(name, [])
+            out[name].append(line)
+        elif name is not None:
+            out[name].append(line)
+    return {k: _trim(v) for k, v in out.items() if k}
+
+
+def _trim(lines: list[str]) -> list[str]:
+    while lines and not lines[-1].strip():
+        lines.pop()
+    return lines
+
+
 async def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--only", choices=["routing", "verifier", "cache", "providers"])
+    ap.add_argument("--only", nargs="+", choices=NAMES, help="run these; the other sections of the file are kept")
+    ap.add_argument("--provider", help="provider for experiments 1 and 2 (default: the primary provider)")
+    ap.add_argument("--cases", help="cases file for the live experiments (default: evals/cases.yaml)")
+    ap.add_argument("--concurrency", type=int)
+    ap.add_argument("--judge-provider")
+    ap.add_argument("--no-provider-fallback", action="store_true")
     args = ap.parse_args()
+    for flag, value in (("--cases", args.cases), ("--concurrency", args.concurrency),
+                        ("--judge-provider", args.judge_provider)):
+        if value is not None:
+            SHARED.extend([flag, str(value)])
+    if args.no_provider_fallback:
+        SHARED.append("--no-provider-fallback")
     s = Settings()
-    live = live_provider(s)
+    live = args.provider or live_provider(s)
     both = "anthropic" if s.anthropic_api_key and s.openai_api_key else "openrouter" if s.openrouter_api_key else None
-    sections: list[list[str]] = []
+    sections: dict[str, list[str]] = {}
     plan = [
         ("routing", lambda: exp_routing(live), live, "needs an LLM API key"),
         ("verifier", lambda: exp_verifier(live), live, "needs an LLM API key"),
@@ -144,18 +206,22 @@ async def main() -> None:
         ("providers", lambda: exp_providers(both), both,
          "needs ANTHROPIC_API_KEY and OPENAI_API_KEY, or OPENROUTER_API_KEY"),
     ]
+    previous = _previous_sections()
     for name, fn, ok, why in plan:
-        if args.only and name != args.only:
+        if args.only and name not in args.only:
+            if name in previous:
+                sections[name] = previous[name]
             continue
         if not ok:
-            sections.append([f"## {name}", "", f"Skipped: {why}."])
+            sections[name] = [f"## {name}", "", f"Skipped: {why}."]
             print(f"skipped {name}: {why}")
             continue
         print(f"running {name} …")
-        sections.append(await fn())
-    body = [f"# TickerSage experiments", "", f"Generated {datetime.now(UTC):%Y-%m-%d %H:%M} UTC.", ""]
-    for sec in sections:
-        body += sec + [""]
+        sections[name] = await fn()
+    body = ["# TickerSage experiments", "", f"Updated {datetime.now(UTC):%Y-%m-%d %H:%M} UTC.", ""]
+    for name in NAMES:
+        if name in sections:
+            body += [f"<!-- exp:{name} -->", *sections[name], ""]
     OUT.write_text("\n".join(body))
     print(f"wrote {OUT}")
 

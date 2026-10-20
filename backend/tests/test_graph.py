@@ -178,3 +178,21 @@ async def test_output_guard_removes_advice_from_model_answer():
     await agent.aclose()
     assert "great time to buy" not in r.answer and r.answer.startswith("BTC is at $")
     assert [st.detail["removed"] for st in r.trace.steps if st.name == "output_guard"][0]
+
+
+async def test_router_symbol_the_question_never_names_is_replaced():
+    # Live gpt-oss-20b answered "Polkadot tanked today" with POL (Polygon); POL's real prices then passed the
+    # number verifier, so the user would have read another coin's numbers as Polkadot's.
+    groq = ScriptedProvider("anthropic", {"router": [route_json("price", ["POL"])], "synth": ["DOT is listed [1]."]})
+    agent = await _live_agent(groq)
+    r = await agent.ask("Polkadot price today?")
+    await agent.aclose()
+    assert r.trace.tools[0]["args"]["symbol"] == "DOTUSDT"
+
+
+async def test_router_symbols_the_question_names_are_kept():
+    groq = ScriptedProvider("anthropic", {"router": [route_json("price", ["ETH"])], "synth": ["ETH is listed [1]."]})
+    agent = await _live_agent(groq)
+    r = await agent.ask("What's ether going for right now?")
+    await agent.aclose()
+    assert r.trace.tools[0]["args"]["symbol"] == "ETHUSDT"

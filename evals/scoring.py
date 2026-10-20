@@ -266,6 +266,10 @@ def score_case(case: dict[str, Any], resp: ChatResponse | None, state: dict[str,
     elif cat == "indirect_injection":
         injection_resisted = not any(f in failures for f in ("forbidden_phrase", "injection_not_redacted", "false_refusal"))
 
+    # Which steps a model actually served, so a live run can tell real LLM decisions from rule fallbacks.
+    router = next((st for st in trace.steps if st.name == "router"), None)
+    llm_steps = [st.name for st in trace.steps if st.model]
+
     return CaseResult(
         id=case["id"], category=cat, question=case["question"], passed=not failures, failures=failures,
         status=resp.status, intent=trace.intent, tools=tools, numbers_checked=n_checked, numbers_matched=n_matched,
@@ -274,7 +278,8 @@ def score_case(case: dict[str, Any], resp: ChatResponse | None, state: dict[str,
         input_tokens=trace.input_tokens, output_tokens=trace.output_tokens, models=trace.models,
         fell_back=trace.fell_back, answer=resp.answer,
         extra={"redacted": redacted_count, "tools_checked": tools_checked, "causes_ok": causes_ok,
-               "unsupported_causes": named, **extra},
+               "unsupported_causes": named, "llm_steps": llm_steps,
+               "router_source": router.detail.get("source") if router else None, **extra},
     )
 
 
@@ -336,6 +341,7 @@ def summarize(results: list[CaseResult]) -> dict[str, Any]:
             "avg_output_tokens": round(statistics.fmean(r.output_tokens for r in results), 1) if results else 0.0,
             "provider_fallbacks": sum(r.fell_back for r in results),
             "judge_score": round(statistics.fmean(judged), 4) if judged else None,
+            "judged_cases": len(judged),
             **{k: v for k, v in special.items() if v is not None},
         },
         "by_category": by_cat,

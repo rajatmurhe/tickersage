@@ -373,3 +373,16 @@ async def test_groq_is_the_first_backup_when_nvidia_stalls():
     assert resp.provider == "groq" and resp.model == "openai/gpt-oss-120b" and resp.fell_back and not slow.calls
     assert cost_usd("openai/gpt-oss-120b", 1_000_000, 1_000_000) == 0.0
     assert client._order() == ["nvidia", "anthropic", "openai", "groq", "openrouter"]
+
+
+def test_retry_setting_reaches_the_openai_compatible_clients():
+    default = LLMClient(s(groq_api_key="gsk-test", nvidia_api_key="nv-test"))
+    patient = LLMClient(s(groq_api_key="gsk-test", nvidia_api_key="nv-test", llm_max_retries=6))
+    assert default.providers["groq"].client.max_retries == 1
+    assert patient.providers["groq"].client.max_retries == 6 and patient.providers["nvidia"].client.max_retries == 6
+
+
+def test_call_budget_keeps_the_default_and_grows_with_retries():
+    # One retry keeps the old timeout + 5 s cap; extra retries need room for their own timeout and a 429 wait.
+    assert LLMClient(s(llm_timeout_s=15), providers={})._call_budget_s() == 20
+    assert LLMClient(s(llm_timeout_s=15, llm_max_retries=4), providers={})._call_budget_s() == 20 + 3 * 30

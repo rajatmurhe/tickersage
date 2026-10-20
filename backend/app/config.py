@@ -52,6 +52,9 @@ class Settings(BaseSettings):
     # Server-side refusal fallback on Claude Sonnet 5.5 (Claude API only).
     anthropic_server_fallback: bool = True
     llm_timeout_s: float = 30.0
+    # SDK retries per call on the OpenAI-compatible providers (Groq, NVIDIA). The SDK waits out a 429's
+    # retry-after, so a long eval run on a rate-limited free tier can raise this instead of falling back.
+    llm_max_retries: int = 1
 
     # --- Tools ---------------------------------------------------------------
     tool_mode: Literal["live", "replay", "record"] = "live"

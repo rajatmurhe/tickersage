@@ -30,7 +30,11 @@ async def judge(llm: LLMClient, question: str, answer: str, results: list[ToolRe
                                   effort="medium")
     except LLMUnavailable as exc:
         return {"error": str(exc)}
-    verdict = json.loads(resp.text)
-    verdict["score"] = sum(verdict[c] for c in CRITERIA) / len(CRITERIA)
+    try:
+        verdict = json.loads(resp.text)
+        verdict["score"] = sum(int(verdict[c]) for c in CRITERIA) / len(CRITERIA)
+    except (ValueError, KeyError, TypeError) as exc:  # an unparseable verdict is a judge failure, not a crash
+        return {"error": f"unusable judge output: {exc}", "model": resp.model}
     verdict["cost_usd"] = resp.cost_usd
+    verdict["model"] = resp.model
     return verdict

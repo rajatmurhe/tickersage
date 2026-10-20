@@ -1,0 +1,49 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "LTCUSDT",
+   "TRXUSDT"
+  ],
+  "window": "7d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-19T17:54:25.208619+00:00",
+ "data": {
+  "window": "7d",
+  "rows": [
+   {
+    "symbol": "LTCUSDT",
+    "base_asset": "LTC",
+    "end_price": 59.46,
+    "return_pct": -5.38,
+    "volatility_pct": 1.51,
+    "annualized_volatility_pct": 70.7,
+    "max_drawdown_pct": -9.01,
+    "rsi_14": 48.35,
+    "volume_quote": 123153795.8
+   },
+   {
+    "symbol": "TRXUSDT",
+    "base_asset": "TRX",
+    "end_price": 0.3312,
+    "return_pct": 0.3,
+    "volatility_pct": 0.37,
+    "annualized_volatility_pct": 17.55,
+    "max_drawdown_pct": -1.87,
+    "rsi_14": 42.22,
+    "volume_quote": 220640832.67
+   }
+  ],
+  "highest_return": "TRX",
+  "lowest_return": "LTC",
+  "highest_volatility": "LTC",
+  "highest_volume": "TRX",
+  "volume_ratio": 0.56,
+  "volatility_ratio": 4.08,
+  "return_gap_pct": -5.68,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-19T17:54:25.201064Z"
+ }
+}

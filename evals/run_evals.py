@@ -26,6 +26,7 @@ import yaml
 from . import _BACKEND  # noqa: F401  (puts backend/ on sys.path)
 from app.agent import Agent
 from app.config import Settings
+from app.llm import LLMClient
 from app.tools.registry import RunOptions
 
 from .judge import judge
@@ -76,7 +77,17 @@ def build_settings(args: argparse.Namespace) -> Settings:
     return s
 
 
-async def run_case(agent: Agent, case: dict, use_judge: bool) -> CaseResult:
+def build_judge(settings: Settings, provider: str | None) -> LLMClient | None:
+    """A judge on its own provider, so it doesn't grade its own answers or spend the answering model's quota."""
+    if not provider:
+        return None
+    built = LLMClient._build(settings.model_copy(update={"llm_mode": "live"}))
+    if provider not in built:
+        raise SystemExit(f"--judge-provider {provider}: no API key configured for it")
+    return LLMClient(settings.model_copy(update={"primary_provider": provider}), providers={provider: built[provider]})
+
+
+async def run_case(agent: Agent, case: dict, use_judge: bool, judge_llm: LLMClient | None = None) -> CaseResult:
     opts = RunOptions(faults=case.get("faults") or {}, overrides=case.get("overrides") or {}, plan=case.get("plan"))
     try:
         resp = state = None
@@ -87,8 +98,9 @@ async def run_case(agent: Agent, case: dict, use_judge: bool) -> CaseResult:
         result = score_case(case, resp, state)
     except Exception as exc:  # a crash is a failure, not an aborted run
         return score_case(case, None, None, error=f"{type(exc).__name__}: {exc}")
-    if use_judge and agent.deps.llm and agent.deps.llm.available and resp is not None and state is not None:
-        result.judge = await judge(agent.deps.llm, case["question"], state.get("body") or resp.answer,
+    judge_llm = judge_llm or agent.deps.llm
+    if use_judge and judge_llm and judge_llm.available and resp is not None and state is not None:
+        result.judge = await judge(judge_llm, case["question"], state.get("body") or resp.answer,
                                    state.get("results", []))
     return result
 
@@ -96,13 +108,18 @@ async def run_case(agent: Agent, case: dict, use_judge: bool) -> CaseResult:
 async def run(args: argparse.Namespace) -> dict[str, Any]:
     settings = build_settings(args)
     cases = load_cases(args.cases, category=args.category, ids=args.ids.split(",") if args.ids else None)
+    judge_llm = build_judge(settings, args.judge_provider) if args.judge else None
     agent = await Agent.create(settings, store_traces=False)
+    if args.no_provider_fallback and agent.deps.llm:
+        # Every answer comes from the primary provider or visibly fails; no other model's output mixes in.
+        llm = agent.deps.llm
+        llm.providers = {k: v for k, v in llm.providers.items() if k == settings.primary_provider}
     sem = asyncio.Semaphore(args.concurrency)
     started = time.perf_counter()
 
     async def guarded(case: dict) -> CaseResult:
         async with sem:
-            return await run_case(agent, case, args.judge)
+            return await run_case(agent, case, args.judge, judge_llm)
 
     try:
         results = await asyncio.gather(*(guarded(c) for c in cases))
@@ -117,7 +134,8 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
         config={
             "llm": agent.llm_mode, "tool_mode": settings.tool_mode, "routing_mode": settings.routing_mode,
             "planner_mode": settings.planner_mode, "primary_provider": settings.primary_provider,
-            "verifier": settings.verifier_enabled, "cache": settings.cache_enabled, "judge": bool(args.judge),
+            "verifier": settings.verifier_enabled, "cache": settings.cache_enabled, "judge": bool(args.judge), "provider_fallback": not args.no_provider_fallback,
+            "judge_models": sorted({r.judge["model"] for r in results if r.judge and r.judge.get("model")}),
             "models": sorted({m for r in results for m in r.models}),
         },
         cases=[asdict(r) for r in results],
@@ -171,7 +189,8 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"| Avg cost per query | ${s['avg_cost_usd']:.6f} |",
         f"| Avg tokens in / out | {s['avg_input_tokens']} / {s['avg_output_tokens']} |",
         f"| Provider fallbacks | {s['provider_fallbacks']} |",
-        f"| LLM judge score | {_p(s['judge_score']) if s['judge_score'] is not None else 'not run'} |",
+        f"| LLM judge score | {_p(s['judge_score']) if s['judge_score'] is not None else 'not run'}"
+        f"{' (' + ', '.join(c['judge_models']) + ')' if c.get('judge_models') else ''} |",
     ]
     if "policy_block_rate" in s:
         lines.append(f"| Policy block rate (out-of-scope and over-limit calls denied, none ran) | "
@@ -209,12 +228,16 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument("--tools", choices=["replay", "live"], default="replay")
     p.add_argument("--routing", choices=["routed", "single"], default="routed")
     p.add_argument("--planner", choices=["rules", "llm"], default="rules")
-    p.add_argument("--provider", choices=["anthropic", "openai", "openrouter", "nvidia"],
+    p.add_argument("--provider", choices=["anthropic", "openai", "openrouter", "nvidia", "groq"],
                    help="primary LLM provider (default: PRIMARY_PROVIDER, or the one whose key is set)")
     p.add_argument("--models", help="FAST,STRONG model ids for the primary provider, e.g. openai/gpt-5-mini,openai/gpt-5")
     p.add_argument("--no-verifier", action="store_true")
     p.add_argument("--no-cache", action="store_true")
     p.add_argument("--judge", action="store_true", help="score answers with the LLM judge (live only)")
+    p.add_argument("--no-provider-fallback", action="store_true",
+                   help="answer only with the primary provider, so a measured run is one model family")
+    p.add_argument("--judge-provider", choices=["anthropic", "openai", "openrouter", "nvidia", "groq"],
+                   help="run the judge on this provider only (default: the answering client)")
     p.add_argument("--cases", type=Path, default=CASES, help="cases file (default: evals/cases.yaml)")
     p.add_argument("--category")
     p.add_argument("--ids", help="comma-separated case ids")

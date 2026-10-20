@@ -1,0 +1,61 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "BTCUSDT",
+   "SOLUSDT",
+   "DOGEUSDT"
+  ],
+  "window": "24h"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-19T17:54:20.878039+00:00",
+ "data": {
+  "window": "24h",
+  "rows": [
+   {
+    "symbol": "BTCUSDT",
+    "base_asset": "BTC",
+    "end_price": 81892.01,
+    "return_pct": 0.86,
+    "volatility_pct": 0.31,
+    "annualized_volatility_pct": 28.92,
+    "max_drawdown_pct": -1.16,
+    "rsi_14": 44.48,
+    "volume_quote": 1197626787.43
+   },
+   {
+    "symbol": "SOLUSDT",
+    "base_asset": "SOL",
+    "end_price": 104.04,
+    "return_pct": 1.86,
+    "volatility_pct": 0.64,
+    "annualized_volatility_pct": 60.06,
+    "max_drawdown_pct": -1.62,
+    "rsi_14": 46.49,
+    "volume_quote": 212144294.69
+   },
+   {
+    "symbol": "DOGEUSDT",
+    "base_asset": "DOGE",
+    "end_price": 0.07905,
+    "return_pct": 1.63,
+    "volatility_pct": 0.73,
+    "annualized_volatility_pct": 68.04,
+    "max_drawdown_pct": -1.67,
+    "rsi_14": 47.37,
+    "volume_quote": 38131988.19
+   }
+  ],
+  "highest_return": "SOL",
+  "lowest_return": "BTC",
+  "highest_volatility": "DOGE",
+  "highest_volume": "BTC",
+  "volume_ratio": 5.65,
+  "volatility_ratio": 0.48,
+  "return_gap_pct": -1.0,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-19T17:54:20.873802Z"
+ }
+}

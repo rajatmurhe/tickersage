@@ -1,0 +1,49 @@
+{
+ "tool": "compare_assets",
+ "args": {
+  "symbols": [
+   "AVAXUSDT",
+   "LINKUSDT"
+  ],
+  "window": "7d"
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-19T17:54:24.525472+00:00",
+ "data": {
+  "window": "7d",
+  "rows": [
+   {
+    "symbol": "AVAXUSDT",
+    "base_asset": "AVAX",
+    "end_price": 9.57,
+    "return_pct": -9.2,
+    "volatility_pct": 1.78,
+    "annualized_volatility_pct": 83.08,
+    "max_drawdown_pct": -10.91,
+    "rsi_14": 41.15,
+    "volume_quote": 176490325.62
+   },
+   {
+    "symbol": "LINKUSDT",
+    "base_asset": "LINK",
+    "end_price": 11.9,
+    "return_pct": -8.33,
+    "volatility_pct": 1.62,
+    "annualized_volatility_pct": 75.59,
+    "max_drawdown_pct": -11.48,
+    "rsi_14": 42.38,
+    "volume_quote": 157042374.06
+   }
+  ],
+  "highest_return": "LINK",
+  "lowest_return": "AVAX",
+  "highest_volatility": "AVAX",
+  "highest_volume": "AVAX",
+  "volume_ratio": 1.12,
+  "volatility_ratio": 1.1,
+  "return_gap_pct": -0.87,
+  "skipped": [],
+  "source": "Binance public API",
+  "as_of": "2026-10-19T17:54:24.517818Z"
+ }
+}

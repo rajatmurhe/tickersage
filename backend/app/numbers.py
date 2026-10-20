@@ -127,8 +127,13 @@ def strip_exempt(text: str) -> str:
     return text
 
 
+# Some models group thousands with a narrow no-break, thin or no-break space ("$81\u202f241.63", as gpt-oss
+# does). Read those as commas, or "$81" and "241.63" look like two numbers that aren't in the data.
+_SPACE_GROUPING = re.compile(r"(?<=\d)[\u202f\u2009\u00a0](?=\d{3}(?!\d))")
+
+
 def extract_numbers(text: str, apply_exemptions: bool = True) -> list[ExtractedNumber]:
-    text = text.translate(_ASCII_DASHES)
+    text = _SPACE_GROUPING.sub(",", text.translate(_ASCII_DASHES))
     if apply_exemptions:
         text = strip_exempt(text)
     out: list[ExtractedNumber] = []

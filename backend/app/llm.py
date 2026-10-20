@@ -202,11 +202,11 @@ class _ChatCompletionsProvider:
 
     name = ""
 
-    def __init__(self, api_key: str, base_url: str, timeout: float) -> None:
+    def __init__(self, api_key: str, base_url: str, timeout: float, max_retries: int = 1) -> None:
         import openai
 
         self._openai = openai
-        self.client = openai.AsyncOpenAI(api_key=api_key, base_url=base_url, timeout=timeout, max_retries=1)
+        self.client = openai.AsyncOpenAI(api_key=api_key, base_url=base_url, timeout=timeout, max_retries=max_retries)
 
     def _tune(self, model: str, effort: str | None, kwargs: dict[str, Any]) -> dict[str, Any] | None:
         """Adjust `kwargs` for the effort level; return provider-specific body fields, if any."""
@@ -314,9 +314,9 @@ class LLMClient:
         if s.openrouter_api_key:
             providers["openrouter"] = OpenRouterProvider(s.openrouter_api_key, s.openrouter_base_url, s.llm_timeout_s)
         if s.nvidia_api_key:
-            providers["nvidia"] = NvidiaProvider(s.nvidia_api_key, s.nvidia_base_url, s.llm_timeout_s)
+            providers["nvidia"] = NvidiaProvider(s.nvidia_api_key, s.nvidia_base_url, s.llm_timeout_s, s.llm_max_retries)
         if s.groq_api_key:
-            providers["groq"] = GroqProvider(s.groq_api_key, s.groq_base_url, s.llm_timeout_s)
+            providers["groq"] = GroqProvider(s.groq_api_key, s.groq_base_url, s.llm_timeout_s, s.llm_max_retries)
         return providers
 
     @property
@@ -340,6 +340,12 @@ class LLMClient:
             ("groq", "strong"): s.groq_strong_model,
         }
         return table[(provider, tier)]
+
+    def _call_budget_s(self) -> float:
+        """Wall-clock cap for one provider attempt, including the SDK's own retries and their 429 waits."""
+        # One retry (the default) keeps the old cap; each extra retry adds a timeout plus room for a 429 wait.
+        extra = max(self.settings.llm_max_retries - 1, 0)
+        return self.settings.llm_timeout_s + 5 + extra * (self.settings.llm_timeout_s + 15)
 
     def _order(self) -> list[str]:
         primary = self.settings.primary_provider
@@ -368,7 +374,7 @@ class LLMClient:
                     provider.generate(model=model, system=system, user=user, max_tokens=max_tokens,
                                       json_schema=json_schema,
                                       effort=effort if name in ("anthropic", "openrouter", "nvidia", "groq") else None),
-                    timeout=self.settings.llm_timeout_s + 5,
+                    timeout=self._call_budget_s(),
                 )
             except (ProviderError, TimeoutError) as exc:
                 # Exceptions are always truthy, and asyncio's TimeoutError has an empty message.
