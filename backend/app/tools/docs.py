@@ -1,26 +1,29 @@
-"""Retrieval over a small corpus of crypto glossary and exchange API notes.
+"""search_docs: hybrid retrieval over the docs corpus, returned as citable chunks.
 
-Each corpus file is Markdown with a front-matter block giving its title and source
-URL. Chunks come back with that URL so every concept answer can cite where it came
-from. Backends: in-memory cosine search (default) or PostgreSQL + pgvector.
+The corpus is the hand-written glossary plus ~90 fetched public documents (whitepapers, BIPs/EIPs,
+ethereum.org and Binance API docs, Wikipedia), each with its source URL and licence; see app/rag/ and
+docs_corpus/manifest.yaml. Retrieval is BM25 + vector search fused with RRF and then reranked
+(app/rag/retriever.py). Vector backends: in-memory (default, and what CI runs) or PostgreSQL + pgvector;
+if pgvector can't be reached at startup the index falls back to memory rather than failing.
+
+Every returned chunk carries its id, title and URL so answers can cite it, and chunks that contain
+instructions rather than reference text are withheld before anything downstream sees them.
 """
 
 from __future__ import annotations
 
 import logging
-import re
 from pathlib import Path
 
-import numpy as np
 from pydantic import BaseModel, Field
 
-from ..embeddings import Embedder, tokens
+from ..embeddings import Embedder
 from ..guardrails import detect_injection
+from ..rag import corpus as rag_corpus
+from ..rag.rerank import CrossEncoderReranker, LexicalReranker, Reranker
+from ..rag.retriever import MemoryStore, PgVectorStore, Retriever, Thresholds, VectorStore
 
 log = logging.getLogger(__name__)
-
-MIN_SCORE = 0.12
-CHUNK_WORDS = 110
 
 
 class DocsInput(BaseModel):
@@ -34,6 +37,7 @@ class DocChunk(BaseModel):
     url: str
     text: str
     score: float
+    section: str = ""
     redacted: bool = False
 
 
@@ -44,136 +48,87 @@ class DocsOutput(BaseModel):
 
 
 def load_corpus(docs_dir: Path) -> list[dict]:
-    chunks: list[dict] = []
-    for path in sorted(docs_dir.glob("*.md")):
-        raw = path.read_text(encoding="utf-8")
-        meta, body = _front_matter(raw)
-        title, url = meta.get("title", path.stem), meta.get("url", "")
-        for i, text in enumerate(_chunk(body)):
-            chunks.append({"id": f"{path.stem}#{i}", "title": title, "url": url, "text": text})
-    return chunks
+    return [c.as_dict() for c in rag_corpus.load(docs_dir).chunks]
 
 
-def _front_matter(raw: str) -> tuple[dict[str, str], str]:
-    m = re.match(r"^---\n(.*?)\n---\n(.*)$", raw, re.S)
-    if not m:
-        return {}, raw
-    meta = {}
-    for line in m.group(1).splitlines():
-        if ":" in line:
-            key, value = line.split(":", 1)
-            meta[key.strip()] = value.strip()
-    return meta, m.group(2)
-
-
-def _chunk(body: str) -> list[str]:
-    paras = [" ".join(p.split()) for p in re.split(r"\n\s*\n", body) if p.strip()]
-    chunks, current = [], []
-    for para in paras:
-        words = para.split()
-        if current and len(current) + len(words) > CHUNK_WORDS:
-            chunks.append(" ".join(current))
-            current = []
-        current.extend(words)
-    if current:
-        chunks.append(" ".join(current))
-    return chunks
+def default_thresholds(embedder: Embedder, reranker: Reranker | None) -> Thresholds:
+    """No-answer thresholds per configuration, picked on the dev split only (evals/experiments.md)."""
+    t = Thresholds()
+    if embedder.name != "hash-2048":
+        t.vector = 0.62  # bge-small cosines sit higher than the hash embedder's
+    if isinstance(reranker, CrossEncoderReranker):
+        t.rerank = 0.10
+    return t
 
 
 class DocsIndex:
-    def __init__(self, docs_dir: Path, embedder: Embedder, backend: str = "memory", pg_url: str | None = None):
+    def __init__(self, docs_dir: Path, embedder: Embedder, backend: str = "memory", pg_url: str | None = None, *,
+                 reranker: str | Reranker | None = "lexical", mode: str = "hybrid_rerank",
+                 cache_dir: Path | None = None, model_cache_dir: str | None = None,
+                 thresholds: Thresholds | None = None):
         self.docs_dir = docs_dir
         self.embedder = embedder
         self.backend = backend
         self.pg_url = pg_url
-        self.chunks: list[dict] = []
-        self.matrix: np.ndarray | None = None
+        self.mode = mode
+        self.cache_dir = cache_dir
+        self._reranker_spec = reranker
+        self._model_cache_dir = model_cache_dir
+        self._thresholds = thresholds
+        self.retriever: Retriever | None = None
+
+    @property
+    def chunks(self) -> list:
+        return self.retriever.chunks if self.retriever else []
 
     async def build(self) -> None:
-        self.chunks = load_corpus(self.docs_dir)
-        texts = [f"{c['title']}. {c['title']}. {c['text']}" for c in self.chunks]
-        self.matrix = await self.embedder.embed(texts)
+        corpus = rag_corpus.load(self.docs_dir)
+        reranker = self._make_reranker(corpus)
+        mode = self.mode if reranker is not None or self.mode != "hybrid_rerank" else "hybrid"
+        store: VectorStore = MemoryStore()
         if self.backend == "pgvector" and self.pg_url:
-            await self._pg_upsert()
-        log.info("docs index built: %d chunks (%s)", len(self.chunks), self.backend)
+            store = PgVectorStore(self.pg_url)
+        self.retriever = Retriever(corpus, self.embedder, reranker, mode=mode, store=store,
+                                   thresholds=self._thresholds or default_thresholds(self.embedder, reranker),
+                                   cache_dir=self.cache_dir)
+        try:
+            await self.retriever.build()
+        except Exception as exc:  # pgvector down or misconfigured: keep answering from memory
+            if isinstance(store, MemoryStore):
+                raise
+            log.warning("pgvector unavailable (%s); docs index falling back to in-memory search", exc)
+            self.retriever.store = MemoryStore()
+            await self.retriever.build()
+        log.info("docs index built: %d chunks from %d documents (%d duplicates dropped), store=%s, embedder=%s, "
+                 "mode=%s", len(corpus.chunks), len(corpus.docs), len(corpus.dropped), self.retriever.store.name,
+                 self.embedder.name, mode)
+
+    def _make_reranker(self, corpus: rag_corpus.Corpus) -> Reranker | None:
+        spec = self._reranker_spec
+        if spec is None or spec == "none":
+            return None
+        if spec == "lexical":
+            from ..rag.bm25 import BM25
+
+            return LexicalReranker(BM25([c.index_text for c in corpus.chunks]).idf)
+        if spec == "cross-encoder":
+            return CrossEncoderReranker(cache_dir=self._model_cache_dir)
+        return spec  # type: ignore[return-value]
 
     async def search(self, query: str, k: int = 3) -> DocsOutput:
-        if self.matrix is None:
+        if self.retriever is None:
             await self.build()
-        qvec = (await self.embedder.embed([query]))[0]
-        if self.backend == "pgvector" and self.pg_url:
-            scored = await self._pg_search(qvec, k * 3)
-        else:
-            sims = self.matrix @ qvec  # type: ignore[operator]
-            scored = [(float(sims[i]), self.chunks[i]) for i in range(len(self.chunks))]
-        qtoks = set(tokens(query))
-        rescored = []
-        for score, chunk in scored:
-            title_toks = set(tokens(chunk["title"]))
-            if title_toks and title_toks <= qtoks:
-                score += 0.15  # the query names the concept exactly
-            if chunk["id"].endswith("#0"):
-                score += 0.03  # the opening chunk holds the definition
-            rescored.append((score, chunk))
-        rescored.sort(key=lambda x: x[0], reverse=True)
-        out, seen_titles = [], set()
-        for score, chunk in rescored:
-            if score < MIN_SCORE or len(out) >= k:
-                break
-            if chunk["title"] in seen_titles and len(out) >= 1 and score < rescored[0][0] - 0.1:
-                continue
-            seen_titles.add(chunk["title"])
-            out.append(_sanitize(chunk, score))
-        # Keep each document's chunks together and in reading order, best document first.
-        best: dict[str, float] = {}
-        for c in out:
-            best[c.title] = max(best.get(c.title, 0.0), c.score)
-        out.sort(key=lambda c: (-best[c.title], int(c.id.rsplit("#", 1)[-1])))
-        return DocsOutput(query=query, chunks=out)
-
-    # ------------------------------------------------------------ pgvector
-
-    async def _pg_upsert(self) -> None:  # pragma: no cover - needs a running Postgres
-        import psycopg
-
-        async with await psycopg.AsyncConnection.connect(self.pg_url) as conn:
-            await conn.execute("CREATE EXTENSION IF NOT EXISTS vector")
-            await conn.execute(
-                f"CREATE TABLE IF NOT EXISTS doc_chunks (id text PRIMARY KEY, title text, url text, "
-                f"body text, embedding vector({self.embedder.dim}))"
-            )
-            async with conn.cursor() as cur:
-                for chunk, vec in zip(self.chunks, self.matrix, strict=True):  # type: ignore[arg-type]
-                    await cur.execute(
-                        "INSERT INTO doc_chunks (id, title, url, body, embedding) VALUES (%s,%s,%s,%s,%s::vector) "
-                        "ON CONFLICT (id) DO UPDATE SET title=EXCLUDED.title, url=EXCLUDED.url, "
-                        "body=EXCLUDED.body, embedding=EXCLUDED.embedding",
-                        (chunk["id"], chunk["title"], chunk["url"], chunk["text"], _vec_literal(vec)),
-                    )
-            await conn.commit()
-
-    async def _pg_search(self, qvec: np.ndarray, k: int) -> list[tuple[float, dict]]:  # pragma: no cover
-        import psycopg
-
-        async with await psycopg.AsyncConnection.connect(self.pg_url) as conn:
-            cur = await conn.execute(
-                "SELECT id, title, url, body, 1 - (embedding <=> %s::vector) AS score FROM doc_chunks "
-                "ORDER BY embedding <=> %s::vector LIMIT %s",
-                (_vec_literal(qvec), _vec_literal(qvec), k),
-            )
-            rows = await cur.fetchall()
-        return [(float(r[4]), {"id": r[0], "title": r[1], "url": r[2], "text": r[3]}) for r in rows]
+        hits = await self.retriever.search(query, k)  # type: ignore[union-attr]
+        chunks = [_sanitize(h.chunk.as_dict(), h.score) for h in hits]
+        return DocsOutput(query=query, chunks=chunks)
 
 
 def _sanitize(chunk: dict, score: float) -> DocChunk:
     hit = detect_injection(chunk["text"])
     if hit:
         log.warning("redacted doc chunk %s (matched %r)", chunk["id"], hit)
-        return DocChunk(id=chunk["id"], title=chunk["title"], url=chunk["url"],
+        return DocChunk(id=chunk["id"], title=chunk["title"], url=chunk["url"], section=chunk.get("section", ""),
                         text="[passage withheld: it contained instructions rather than reference text]",
                         score=round(score, 3), redacted=True)
-    return DocChunk(id=chunk["id"], title=chunk["title"], url=chunk["url"], text=chunk["text"], score=round(score, 3))
-
-
-def _vec_literal(vec: np.ndarray) -> str:
-    return "[" + ",".join(f"{x:.6f}" for x in vec) + "]"
+    return DocChunk(id=chunk["id"], title=chunk["title"], url=chunk["url"], text=chunk["text"],
+                    section=chunk.get("section", ""), score=round(score, 3))

@@ -51,6 +51,13 @@ jobs:
           python -m evals.run_strategy_evals --gate
           python -m evals.run_strategy_evals --cases evals/cases_strategy_holdout.yaml --out evals/results/strategy_holdout.json --report evals/report_strategy_holdout.md --gate
 
+      # Docs RAG: recall@k, MRR, no-answer handling and citation checks on the dev and held-out retrieval sets,
+      # offline (hash embedder + lexical rerank, no model download). --gate fails on a regression.
+      - name: Docs retrieval evals (gated)
+        run: |
+          python -m evals.rag.run --gate
+          python -m evals.rag.run --cases evals/rag/cases_holdout.yaml --out evals/results/rag_holdout.json --report evals/report_rag_holdout.md --gate
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:

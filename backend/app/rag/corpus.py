@@ -147,7 +147,12 @@ def _clean(text: str) -> str:
     if text.lstrip().startswith("```"):
         lines = [ln for ln in text.splitlines() if not ln.strip().startswith("```")]
         return "Code: " + " ".join(" ".join(lines).split())
-    return " ".join(text.split())
+    # Drop the source's own reference markers ("... previous hash [8]"): quoted in an answer they would read
+    # as TickerSage citations pointing at the wrong source.
+    return " ".join(_REF_MARKER.sub("", text).split())
+
+
+_REF_MARKER = re.compile(r"(?<![\w\]])\[\d{1,3}(?:\s*,\s*\d{1,3})*\]")
 
 
 def _sentences(text: str) -> list[str]:
@@ -187,7 +192,8 @@ def chunk_markdown(body: str) -> list[tuple[str, str]]:
         carry, carry_section = [], ""
         for unit in units:
             words = unit.split()
-            if cur and len(cur) + len(words) > TARGET_WORDS and len(cur) >= MIN_WORDS:
+            too_long = len(cur) + len(words) > MAX_WORDS
+            if cur and len(cur) + len(words) > TARGET_WORDS and (len(cur) >= MIN_WORDS or too_long):
                 out.append((sec_label, " ".join(cur)))
                 tail = _sentences(" ".join(cur))[-1].split()
                 cur = tail if len(tail) <= OVERLAP_WORDS and len(tail) + len(words) <= MAX_WORDS else []
@@ -199,7 +205,8 @@ def chunk_markdown(body: str) -> list[tuple[str, str]]:
             out.append((sec_label, " ".join(cur)))
     if carry:
         if out and len(out[-1][1].split()) + len(carry) <= MAX_WORDS:
-            out[-1] = (out[-1][0], out[-1][1] + " " + " ".join(carry))
+            head = f" {carry_section.rsplit(' > ', 1)[-1]}:" if carry_section and carry_section != out[-1][0] else ""
+            out[-1] = (out[-1][0], out[-1][1] + head + " " + " ".join(carry))
         else:
             out.append((carry_section, " ".join(carry)))
     return out

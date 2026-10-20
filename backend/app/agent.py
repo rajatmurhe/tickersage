@@ -76,8 +76,10 @@ class Agent:
             registry.loader = _fixture_symbol_loader(s)
         else:
             registry.loader = _recording_symbol_loader(s, market) if s.tool_mode == "record" else market.load_exchange_symbols
-        embedder = OpenAIEmbedder(s.openai_api_key) if s.embedding_provider == "openai" and s.openai_api_key else HashingEmbedder()
-        docs = DocsIndex(s.docs_dir, embedder, s.docs_backend, s.pgvector_url)
+        embedder = HashingEmbedder()  # the semantic answer cache's threshold is calibrated on this one
+        docs = DocsIndex(s.docs_dir, _docs_embedder(s), s.docs_backend, s.pgvector_url,
+                         reranker=s.rerank_provider, mode=s.retrieval_mode, cache_dir=s.rag_cache_dir,
+                         model_cache_dir=str(s.model_cache_dir))
         await docs.build()
         await registry.ensure_loaded()  # the ~3.7 MB symbol whitelist; otherwise the first request pays for it
         toolbox = Toolbox(
@@ -228,6 +230,16 @@ class Agent:
             data_as_of=min((r.as_of for r in market), default=None),  # type: ignore[type-var]
             trace=trace,
         )
+
+
+def _docs_embedder(s: Settings):
+    if s.embedding_provider == "local":
+        from .embeddings import LocalEmbedder
+
+        return LocalEmbedder(s.embedding_model, cache_dir=str(s.model_cache_dir))
+    if s.embedding_provider == "openai" and s.openai_api_key:
+        return OpenAIEmbedder(s.openai_api_key)
+    return HashingEmbedder()
 
 
 def _fixture_symbol_loader(s: Settings):

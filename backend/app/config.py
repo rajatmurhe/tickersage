@@ -75,8 +75,17 @@ class Settings(BaseSettings):
     database_url: str = f"sqlite:///{REPO_DIR / 'tickersage.db'}"
     docs_backend: Literal["memory", "pgvector"] = "memory"
     pgvector_url: str | None = None
-    embedding_provider: Literal["hash", "openai"] = "hash"
     docs_dir: Path = BACKEND_DIR / "docs_corpus"
+    # Docs retrieval (app/rag). hash: offline lexical hashing embedder (tests, CI). local: a sentence-transformers
+    # model on CPU via fastembed, downloaded once into model_cache_dir. openai: OpenAI's embeddings API.
+    embedding_provider: Literal["hash", "local", "openai"] = "hash"
+    embedding_model: str = "BAAI/bge-small-en-v1.5"
+    # Second stage over the fused candidates. lexical: query-coverage scoring, no model. cross-encoder: MiniLM.
+    rerank_provider: Literal["lexical", "cross-encoder", "none"] = "lexical"
+    rerank_model: str = "Xenova/ms-marco-MiniLM-L-6-v2"
+    retrieval_mode: Literal["bm25", "vector", "hybrid", "hybrid_rerank"] = "hybrid_rerank"
+    model_cache_dir: Path = REPO_DIR / ".cache" / "models"
+    rag_cache_dir: Path = REPO_DIR / ".cache" / "rag"
 
     # --- Browser access (the Next.js frontend calls the API cross-origin) ----
     # Any localhost port is allowed for development; add deployed frontend URLs as a JSON list.

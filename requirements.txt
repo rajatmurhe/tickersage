@@ -16,6 +16,9 @@ pyyaml>=6.0
 sqlalchemy>=2.0
 psycopg[binary]>=3.2
 mcp>=2,<3
+# docs RAG: local embeddings and cross-encoder reranking on CPU (ONNX, no torch); pypdf for ingest
+fastembed>=0.7,<1
+pypdf>=5
 
 # tests
 pytest>=8

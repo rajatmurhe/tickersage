@@ -2,12 +2,14 @@
 
 `HashingEmbedder` needs no model download or API key: it hashes unigrams and bigrams
 into a fixed-size vector, so similarity is lexical rather than semantic. It keeps the
-retrieval path (including pgvector) runnable anywhere. Set EMBEDDING_PROVIDER=openai
-for real semantic embeddings.
+retrieval path (including pgvector) runnable anywhere, and it is what tests and CI use.
+`LocalEmbedder` runs a sentence-transformers model on CPU through fastembed (ONNX, no torch,
+no API key): EMBEDDING_PROVIDER=local. EMBEDDING_PROVIDER=openai uses OpenAI's API.
 """
 
 from __future__ import annotations
 
+import asyncio
 import hashlib
 import math
 import re
@@ -39,8 +41,11 @@ _STOP = set(
 
 class Embedder(Protocol):
     dim: int
+    name: str
 
     async def embed(self, texts: list[str]) -> np.ndarray: ...
+
+    async def embed_query(self, text: str) -> np.ndarray: ...
 
 
 def tokens(text: str) -> list[str]:
@@ -59,6 +64,7 @@ def tokens(text: str) -> list[str]:
 
 class HashingEmbedder:
     dim = HASH_DIM
+    name = "hash-2048"
 
     def _vector(self, text: str) -> np.ndarray:
         vec = np.zeros(self.dim, dtype=np.float32)
@@ -76,9 +82,40 @@ class HashingEmbedder:
     async def embed(self, texts: list[str]) -> np.ndarray:
         return np.vstack([self._vector(t) for t in texts]) if texts else np.zeros((0, self.dim), np.float32)
 
+    async def embed_query(self, text: str) -> np.ndarray:
+        return self._vector(text)
+
+
+class LocalEmbedder:
+    """A sentence-transformers model on CPU via fastembed. bge-small-en-v1.5: 384 dims, ~130 MB download once."""
+
+    # bge models are trained with this instruction on the query side only.
+    BGE_QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
+
+    def __init__(self, model: str = "BAAI/bge-small-en-v1.5", cache_dir: str | None = None) -> None:
+        from fastembed import TextEmbedding
+
+        self._model = TextEmbedding(model, cache_dir=cache_dir)
+        self.name = model
+        self.dim = int(self._model.embedding_size)
+        self._prefix = self.BGE_QUERY_PREFIX if "bge" in model.lower() else ""
+
+    def _embed_sync(self, texts: list[str]) -> np.ndarray:
+        arr = np.array(list(self._model.embed(texts, batch_size=64)), dtype=np.float32)
+        return arr / np.linalg.norm(arr, axis=1, keepdims=True)
+
+    async def embed(self, texts: list[str]) -> np.ndarray:
+        if not texts:
+            return np.zeros((0, self.dim), np.float32)
+        return await asyncio.to_thread(self._embed_sync, texts)
+
+    async def embed_query(self, text: str) -> np.ndarray:
+        return (await self.embed([self._prefix + text]))[0]
+
 
 class OpenAIEmbedder:
     dim = DIM
+    name = "openai-text-embedding-3-small-384"
 
     def __init__(self, api_key: str, model: str = "text-embedding-3-small") -> None:
         from openai import AsyncOpenAI
@@ -90,6 +127,9 @@ class OpenAIEmbedder:
         resp = await self._client.embeddings.create(model=self._model, input=texts, dimensions=self.dim)
         arr = np.array([d.embedding for d in resp.data], dtype=np.float32)
         return arr / np.linalg.norm(arr, axis=1, keepdims=True)
+
+    async def embed_query(self, text: str) -> np.ndarray:
+        return (await self.embed([text]))[0]
 
 
 def cosine(a: np.ndarray, b: np.ndarray) -> float:

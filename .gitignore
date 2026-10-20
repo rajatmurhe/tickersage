@@ -9,3 +9,4 @@ evals/results/*.json
 node_modules/
 .DS_Store
 .claude/
+.cache/
