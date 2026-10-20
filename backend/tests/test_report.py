@@ -310,3 +310,9 @@ def test_report_html_endpoint(client):
 
 def test_report_rejects_empty_question(client):
     assert client.post("/api/report", json={"question": ""}).status_code == 422
+
+
+async def test_bitcoin_cash_is_not_also_bitcoin(offline_reports):
+    registry = offline_reports.agent.deps.registry
+    assert registry.extract("Weekly report: Litecoin, Bitcoin Cash and XRP") == ["LTC", "BCH", "XRP"]
+    assert registry.extract("Bitcoin and Bitcoin Cash") == ["BTC", "BCH"]
