@@ -138,8 +138,17 @@ async def answer_case(case: dict, out: DocsOutput, llm=None) -> dict:
 
         from ..judge import judge
 
+        from app.llm import LLMUnavailable
+
         route = RouteDecision(intent="concept", topic=case["q"])
-        resp = await synthesize(llm, case["q"], route, [result], None)
+        for attempt in range(5):  # free tiers answer 429 under load; back off rather than score a fallback
+            try:
+                resp = await synthesize(llm, case["q"], route, [result], None)
+                break
+            except LLMUnavailable as exc:
+                if attempt == 4:
+                    return {"llm_error": str(exc)[:300]}
+                await asyncio.sleep(20 * (attempt + 1))
         answer = resp.text
         judged = await judge(llm, case["q"], answer, [result], max_tokens=12000)  # reasoning models think at length
     n_to_id = {n: cid for cid, n in by_chunk.items()}
@@ -206,6 +215,9 @@ def metrics(rows: list[dict], answers: str | None) -> dict:
     m["no_answer"] = _ratio(sum(1 for r in none if not r["returned"]), len(none))
     m["false_abstain"] = _ratio(sum(1 for r in ans if not r["returned"]), len(ans))
     if answers:
+        m["llm_errors"] = sum(1 for r in rows if "llm_error" in r)  # no answer after retries: left out below
+        rows = [r for r in rows if "answer" in r]
+        ans = [r for r in rows if r["gold"]]
         m["citation_accuracy"] = _ratio(sum(1 for r in ans if set(r["cited"]) & set(r["gold"])), len(ans))
         m["bad_citations"] = _ratio(sum(1 for r in rows if r["bad_citation"]), len(rows))
         m["faithfulness"] = _ratio(sum(r["faithful_sentences"] for r in rows), sum(r["content_sentences"] for r in rows))
@@ -256,13 +268,15 @@ def render(results: list[dict], cases_path: Path, corpus: rag_corpus.Corpus, ans
                      f"| {r['p50_ms']} |")
     if answers:
         lines += ["", f"Answers ({'LLM' if answers == 'live' else 'offline templates'}, top 3 chunks):", "",
-                  "| Config | Citation accuracy | Bad citations | Faithfulness (lexical) | Judge grounded | Judge score |",
-                  "|---|---|---|---|---|---|"]
+                  "| Config | Citation accuracy | Bad citations | Faithfulness (lexical) | Judge grounded | Judge score "
+                  "| Judged | LLM errors |",
+                  "|---|---|---|---|---|---|---|---|"]
         for r in results:
             m = r["metrics"]
             js = f"{m['judge_score']:.3f}" if "judge_score" in m else "–"
             lines.append(f"| {r['label']} | {_pct(m['citation_accuracy'])} | {_pct(m['bad_citations'])} | "
-                         f"{_pct(m['faithfulness'])} | {_pct(m.get('judge_grounded'))} | {js} |")
+                         f"{_pct(m['faithfulness'])} | {_pct(m.get('judge_grounded'))} | {js} | {m.get('judge_n', '–')} "
+                         f"| {m.get('llm_errors', 0)} |")
     last = results[-1]
     misses = [c for c in last["cases"] if c["gold"] and (not c["first_gold_rank"] or c["first_gold_rank"] > 5)]
     lines += ["", f"Misses at k=5 for {last['label']} ({len(misses)}):", ""]

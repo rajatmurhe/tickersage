@@ -222,6 +222,9 @@ async def main() -> None:
     for name in NAMES:
         if name in sections:
             body += [f"<!-- exp:{name} -->", *sections[name], ""]
+    for name, lines in previous.items():  # sections written by other runners (e.g. the docs RAG ablation)
+        if name not in NAMES:
+            body += [f"<!-- exp:{name} -->", *lines, ""]
     OUT.write_text("\n".join(body))
     print(f"wrote {OUT}")
 

@@ -60,10 +60,11 @@ every config.
   wrong chunk: h11 (transaction fields), h17 (ERC-4337 bundler), h27 (Tether reserves) and h30 (short selling)
   all ranked other chunks of the gold document first. h05 and h18 found related documents (Wikipedia's Bitcoin
   article, ethereum.org's PoS page) instead of the whitepaper and EIP-3675.
-* **Latency.** Cross-encoder configs measured p50 4.9–5.2 s per query here, against 17–22 ms for bge-small
-  without it. The machine was an 8 GB M1 at load average 30–90 from other jobs, so treat that as an upper bound,
-  not a benchmark. Cold embedding of the 2,191 chunks with bge-small took over 15 minutes under the same load;
-  it is cached per chunk after that.
+* **Latency.** Cross-encoder configs measured p50 4.9–5.2 s per query during this run, against 17–22 ms for
+  bge-small without it. The machine was an 8 GB M1 at load average 30–90 from other jobs. Re-measured on the dev
+  set at load average ~15: p50 2.8 s, p95 4.0 s with the cross-encoder; 21 ms bge-small vectors alone; 4 ms for
+  the offline config. Treat both as upper bounds, not benchmarks. Cold embedding of the 2,191 chunks with
+  bge-small took over 15 minutes under load; it is cached per chunk after that.
 
 ## Side findings
 

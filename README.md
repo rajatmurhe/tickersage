@@ -63,7 +63,7 @@ For a free setup, a `NVIDIA_API_KEY` from [build.nvidia.com](https://build.nvidi
 
 A free `GROQ_API_KEY` ([console.groq.com](https://console.groq.com)) adds a fast backup: when the primary provider errors or stalls past `LLM_TIMEOUT_S`, the call is retried on Groq's `openai/gpt-oss-20b` (routing) or `openai/gpt-oss-120b` (analysis) before any slower provider. Backups are tried in this order: Claude API, OpenAI, Groq, OpenRouter, NVIDIA (skipping the primary and any without a key).
 
-Full stack (Next.js + API + Postgres + pgvector + Redis), with the chat at http://localhost:3000 and the API at http://localhost:8000. The Compose file hasn't been run end to end yet; the default SQLite + in-memory path is what the tests cover:
+Full stack (Next.js + API + Postgres + pgvector + Redis), with the chat at http://localhost:3000 and the API at http://localhost:8000. Compose runs the docs search on pgvector with bge-small embeddings and the cross-encoder; the image bakes both models in (~200 MB). Status: all four images build, and the stack starts (Postgres healthy, API and web up). On the 8 GB Mac it was tested on, Docker's engine then crashed within a minute, twice, under memory pressure, so a full end-to-end session through Compose is still pending. The pgvector store itself is tested against a `pgvector/pgvector:pg16` container: same top-3 results as the in-memory store on the test queries, a 25 s cold sync and a 4 s incremental re-sync with the hash embedder, and the fallback to memory when Postgres is down. To run that test: `PGVECTOR_TEST_URL=postgresql://user:pass@localhost:5432/db pytest backend/tests/test_rag.py`.
 
 ```bash
 docker compose up --build
@@ -136,7 +136,7 @@ Held-out first run (30 answerable + 3 off-corpus; full table and dev numbers in 
 | hybrid + lexical rerank, hash embedder (offline default, CI) | 50.0% | 80.0% | 86.7% | 0.630 | 2/3 | 70.0% |
 | **hybrid + MiniLM cross-encoder, bge-small** (Docker) | **66.7%** | 80.0% | 90.0% | **0.721** | **3/3** | 73.3% |
 
-Reranking is what helped: fusion alone was no better than its best leg, and fusing in the weak hash-embedder vectors without a reranker scored below BM25 alone (MRR 0.425 vs 0.533). The cross-encoder lifted R@1 from 53.3% to 66.7%, and with a model in the loop every off-corpus question returned nothing; lexical scores alone caught 2 of 3. Bad citations were 0% in every configuration. Most remaining misses find the right document but rank another of its chunks first. The cross-encoder is the slow part: p50 about 5 s per query on this 8 GB M1 while other jobs held the load average at 30 to 90, against about 20 ms without it, so that's an upper bound rather than a benchmark.
+Reranking is what helped: fusion alone was no better than its best leg, and fusing in the weak hash-embedder vectors without a reranker scored below BM25 alone (MRR 0.425 vs 0.533). The cross-encoder lifted R@1 from 53.3% to 66.7%, and with a model in the loop every off-corpus question returned nothing; lexical scores alone caught 2 of 3. Bad citations were 0% in every configuration. Most remaining misses find the right document but rank another of its chunks first. The cross-encoder is the slow part on CPU. On this 8 GB M1 with other jobs running (load average about 15), the dev set measured p50 2.8 s and p95 4.0 s per query, against 21 ms for bge-small vectors alone and 4 ms for the offline config. During the held-out run, at load 30 to 90, it was about 5 s. Treat those as upper bounds.
 
 Live answers on the held-out set (LLM-written, judged) are still to run.
 
@@ -365,6 +365,7 @@ Full tables in `evals/experiments.md`.
 | 2 | Number verifier on vs off, main set on Nemotron 3 Super | Faithfulness 100% on vs 99.7% off. Off, one of 318 numbers reaching users was unsupported (failure 12); on, that answer was replaced by the safe template. Pass 80.0% vs 78.2%. |
 | 3 | Market-data cache on vs off, live Binance data | p50 **120.5 ms → 5.0 ms** (24x), p95 315.8 ms → 6.4 ms on the second pass of 24 price/compare/explain questions. |
 | 4 | Claude vs OpenAI as primary | Not run: no Claude or OpenAI key. |
+| 5 | Docs retrieval: BM25 vs vector vs hybrid vs hybrid + rerank, held-out first run (30 + 3) | MRR 0.533 BM25, 0.668 bge-small vectors, 0.651 hybrid (RRF), **0.721** hybrid + cross-encoder. Fusion alone didn't help; the reranker did (R@1 53.3% → 66.7%). |
 
 Experiment 1 ran on the 33-case v4 set because Groq's free tier allows 200K tokens per model per day. Experiment 2 ran on Nemotron because it has no daily cap, and its fast and strong models are the same model, which rules it out for experiment 1.
 
@@ -421,7 +422,7 @@ backend/app/
   cache.py, semantic_cache.py, embeddings.py, tracing.py, symbols.py, pricing.py
 backend/mcp_server.py  the same tools over MCP
 backend/docs_corpus/   glossary + 87 fetched sources (manifest.yaml, sources/, sources.lock.json) for search_docs
-backend/tests/         445 tests (pytest)
+backend/tests/         488 tests (pytest; the pgvector one runs when PGVECTOR_TEST_URL is set)
 frontend/              Next.js (App Router, TypeScript) chat, /evals, /traces, /strategy and /alerts pages; 73 tests (Vitest)
   lib/api.ts           SSE over fetch for POST /api/chat/stream
   components/          Chat, Markdown (React elements only, no raw HTML), TracePanel, EvalsView

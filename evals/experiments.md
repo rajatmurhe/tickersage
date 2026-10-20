@@ -42,3 +42,26 @@ Median speed-up with the cache warm: 24x.
 ## providers
 
 Skipped: needs ANTHROPIC_API_KEY and OPENAI_API_KEY.
+
+<!-- exp:rag -->
+## 5. Docs retrieval ablation: BM25 vs vector vs hybrid vs hybrid + rerank
+
+`python -m evals.rag.run` on the held-out retrieval set (30 answerable + 3 off-corpus questions; first run, after
+all tuning on the dev split). Corpus: 111 documents, 2,191 chunks. Answer columns are offline template answers
+from the top 3 chunks. Dev-split numbers and per-case misses: `evals/report_rag_dev_ablation.md`,
+`evals/report_rag_holdout_ablation.md`; write-up: `evals/history/10-docs-rag-holdout-first-run.md`.
+
+| Config | R@1 | R@5 | R@10 | MRR | Off-corpus abstained | Citation accuracy | Bad citations |
+|---|---|---|---|---|---|---|---|
+| BM25 only | 40.0% | 70.0% | 83.3% | 0.533 | 2/3 | 46.7% | 0.0% |
+| vector only, hash embedder | 16.7% | 50.0% | 60.0% | 0.293 | 1/3 | 13.3% | 0.0% |
+| vector only, bge-small | 53.3% | 83.3% | 86.7% | 0.668 | 3/3 | 76.7% | 0.0% |
+| hybrid (RRF), hash embedder | 26.7% | 66.7% | 83.3% | 0.425 | 2/3 | 43.3% | 0.0% |
+| hybrid (RRF), bge-small | 53.3% | 80.0% | 90.0% | 0.651 | 2/3 | 66.7% | 0.0% |
+| hybrid + lexical rerank, hash embedder | 50.0% | 80.0% | 86.7% | 0.630 | 2/3 | 70.0% | 0.0% |
+| hybrid + lexical rerank, bge-small | 60.0% | 80.0% | 83.3% | 0.700 | 3/3 | 76.7% | 0.0% |
+| hybrid + MiniLM cross-encoder, hash embedder | 66.7% | 83.3% | 90.0% | 0.726 | 3/3 | 73.3% | 0.0% |
+| hybrid + MiniLM cross-encoder, bge-small | 66.7% | 80.0% | 90.0% | 0.721 | 3/3 | 73.3% | 0.0% |
+
+Fusion alone didn't beat its best leg; the reranker is where the gain came from (R@1 53.3% → 66.7% with the
+cross-encoder). With 30 questions, one question is 3.3 points, so the gaps among the four reranked configs are within noise.
