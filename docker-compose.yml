@@ -2,7 +2,10 @@
 # API keys are optional: without them the agent runs offline (rules router + template answers).
 services:
   api:
-    build: .
+    build:
+      context: .
+      args:
+        PRELOAD_RAG_MODELS: "1"
     ports:
       - "8000:8000"
     env_file:
@@ -13,6 +16,9 @@ services:
       DATABASE_URL: postgresql+psycopg://tickersage:tickersage@db:5432/tickersage
       DOCS_BACKEND: pgvector
       PGVECTOR_URL: postgresql://tickersage:tickersage@db:5432/tickersage
+      # Docs RAG: bge-small embeddings in pgvector + BM25, fused and reranked by a MiniLM cross-encoder (CPU).
+      EMBEDDING_PROVIDER: local
+      RERANK_PROVIDER: cross-encoder
     depends_on:
       db:
         condition: service_healthy

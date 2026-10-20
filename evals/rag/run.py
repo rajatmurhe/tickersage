@@ -139,7 +139,7 @@ async def answer_case(case: dict, out: DocsOutput, llm=None) -> dict:
         route = RouteDecision(intent="concept", topic=case["q"])
         resp = await synthesize(llm, case["q"], route, [result], None)
         answer = resp.text
-        judged = await judge(llm, case["q"], answer, [result])
+        judged = await judge(llm, case["q"], answer, [result], max_tokens=12000)  # reasoning models think at length
     n_to_id = {n: cid for cid, n in by_chunk.items()}
     text_of = {by_chunk[c.id]: c.text for c in out.chunks if c.id in by_chunk}
     # Brackets inside quoted chunk text (code like `x = [0]`) are the source's, not citation markers.

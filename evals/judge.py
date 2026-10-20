@@ -14,7 +14,8 @@ from app.templates import build_citations
 CRITERIA = ["answers_question", "grounded", "no_advice", "handles_gaps", "clear"]
 
 
-async def judge(llm: LLMClient, question: str, answer: str, results: list[ToolResult]) -> dict[str, Any]:
+async def judge(llm: LLMClient, question: str, answer: str, results: list[ToolResult],
+                max_tokens: int = 4000) -> dict[str, Any]:
     _, _, by_chunk = build_citations(results)
     data = [
         {"tool": r.tool, "ok": r.ok, "data": _compact(r.tool, r.data, by_chunk) if r.ok and r.data else None,
@@ -26,7 +27,7 @@ async def judge(llm: LLMClient, question: str, answer: str, results: list[ToolRe
         f"<tool_data>{_safe_json(data)}</tool_data>"
     )
     try:
-        resp = await llm.generate("strong", JUDGE_SYSTEM, user, json_schema=JUDGE_SCHEMA, max_tokens=4000,
+        resp = await llm.generate("strong", JUDGE_SYSTEM, user, json_schema=JUDGE_SCHEMA, max_tokens=max_tokens,
                                   effort="medium")
     except LLMUnavailable as exc:
         return {"error": str(exc)}
