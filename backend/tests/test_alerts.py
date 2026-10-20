@@ -135,6 +135,30 @@ async def test_llm_trade_classification_refuses(agent):
     assert r.status == "rejected" and r.rejection_category == "trade" and r.source == "llm"
 
 
+async def test_llm_reply_is_reconciled_with_the_text(agent):
+    # Seen on gpt-oss-20b: "any" for conditions joined by "and", a repeated condition, the asset left null.
+    move = cond("price_change", direction="down", pct=9, window_hours=24)
+    reply = llm_alert(symbol=None, logic="any", conditions=[move, move, cond("news_sentiment", tone="negative")])
+    llm = llm_client(replay_settings(), ScriptedProvider("anthropic", {"synth": [reply]}))
+    r = await AlertCompiler(agent.deps.registry, llm).compile(
+        "notify me if Solana is down more than 9% over 24 hours and the news is bearish")
+    assert r.status == "ok" and r.spec.symbol == "SOL" and r.spec.logic == "all"
+    assert [c.kind for c in r.spec.conditions] == ["price_change", "news_sentiment"]
+
+
+async def test_llm_advice_label_with_a_condition_still_compiles(agent):
+    reply = llm_alert(request_type="advice_request", symbol="LINK", conditions=[cond("news_sentiment", tone="positive")])
+    llm = llm_client(replay_settings(), ScriptedProvider("anthropic", {"synth": [reply]}))
+    r = await AlertCompiler(agent.deps.registry, llm).compile("Tell me about upbeat headlines on chainlink")
+    assert r.status == "ok" and r.spec.conditions[0].kind == "news_sentiment"
+
+
+async def test_llm_reading_nothing_falls_back_to_the_parsers_conditions(agent):
+    llm = llm_client(replay_settings(), ScriptedProvider("anthropic", {"synth": [llm_alert(symbol="ADA")]}))
+    r = await AlertCompiler(agent.deps.registry, llm).compile("alert me when ADA moons")
+    assert [q.field for q in r.questions] == ["threshold", "window"]
+
+
 async def test_bad_llm_output_falls_back_to_rules(agent):
     llm = llm_client(replay_settings(), ScriptedProvider("anthropic", {"synth": ["not json"]}))
     r = await AlertCompiler(agent.deps.registry, llm).compile("Alert me if BTC goes above $90,000")

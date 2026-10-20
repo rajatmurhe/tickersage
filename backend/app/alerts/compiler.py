@@ -340,13 +340,23 @@ def _from_llm(data: _LlmAlert, text: str, rules: Parsed, registry: SymbolRegistr
             d.symbol = sym or None
         else:
             drop("the asset", sym)
+    elif len(rules.symbols_seen) == 1:
+        d.symbol = rules.symbols_seen[0]  # the text names exactly one asset: the model left it out
     others = {re.sub(r"[^A-Z0-9]", "", s.upper()) for s in data.other_symbols} - {d.symbol}
     if others and (len(rules.symbols_seen) > 1 or any(_symbol_written(s, g.lowered) for s in others)):
         named = [s for s in [d.symbol, *sorted(others)] if s]
         parsed.issues["symbol"] = (f"You mentioned {', '.join(named[:4])}. Each alert watches one asset: which one "
                                    "should this one watch?")
-    d.conditions = [x for x in (condition(c) for c in data.conditions) if x is not None][:3]
-    d.logic = data.logic
+    conditions: list[DraftCondition] = []
+    for x in (condition(c) for c in data.conditions):
+        if x is not None and x not in conditions:  # models sometimes repeat a condition
+            conditions.append(x)
+    if not conditions and rules.draft.conditions and not rules.unsupported:
+        conditions = rules.draft.conditions  # the model read nothing; the parser's reading is grounded by design
+    d.conditions = conditions[:3]
+    # "any" only when the text joins conditions with "or": models often answer "any" for a single condition
+    # or for conditions joined by "and".
+    d.logic = "any" if data.logic == "any" and len(d.conditions) > 1 and re.search(r"\bor\b", g.lowered) else "all"
     if data.cooldown_minutes is not None and data.cooldown_minutes > 0:
         if g.minutes(data.cooldown_minutes):
             d.cooldown_minutes = max(1, min(MAX_COOLDOWN_MIN, int(round(data.cooldown_minutes))))
@@ -439,7 +449,9 @@ class AlertCompiler:
         except (ValueError, ValidationError) as exc:
             log.warning("alert LLM returned unusable output, using rules: %s", exc)
             return rules, "rules", f"bad model output: {str(exc).splitlines()[0][:160]}", usage, []
-        if data.request_type != "alert":
+        # A trade request is refused whatever else the reply holds. An advice request is refused only when the
+        # reply has no condition to watch: "tell me about upbeat headlines on chainlink" is still an alert.
+        if data.request_type == "trade_request" or (data.request_type == "advice_request" and not data.conditions):
             category: Category = "trade" if data.request_type == "trade_request" else "advice"
             log_refusal("alert", f"alert_{category}", "model classified the request")
             return AlertCompileResult(status="rejected", rejection=REJECTIONS[category], rejection_category=category,
