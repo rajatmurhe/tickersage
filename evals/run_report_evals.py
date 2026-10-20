@@ -8,6 +8,10 @@ Scores: number faithfulness over the whole report body, section coverage (summar
 comparison for 2+ assets, risks, sources, both charts), key numbers present in each asset's own section,
 refusal of advice, trade and injection requests, the policy engine and poisoned-headline handling, and an
 LLM-judge score on the judge's fixed rubric.
+
+    python -m evals.run_report_evals --rejudge evals/results/research_live.json --judge-provider nvidia
+re-grades the reports saved in a results file (for when judge calls failed), without writing new reports: each
+case's tool data is rebuilt from the same replayed fixtures, faults and overrides.
 """
 
 from __future__ import annotations
@@ -315,6 +319,44 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
     return report
 
 
+async def rejudge(args: argparse.Namespace) -> dict[str, Any]:
+    saved = json.loads(args.rejudge.read_text())
+    settings = build_settings(argparse.Namespace(**{**vars(args), "llm": "offline", "provider": None, "models": None}))
+    judge_llm = build_judge(settings, args.judge_provider or "nvidia")
+    cases = {c["id"]: c for c in load_cases(args.cases)}
+    agent = await Agent.create(settings, store_traces=False)
+    svc = ReportService(agent)
+    sem = asyncio.Semaphore(args.concurrency)
+
+    async def one(row: dict[str, Any]) -> None:
+        if row["status"] not in PROSE_STATUSES or (row.get("judge") and "score" in row["judge"]):
+            return
+        case = cases[row["id"]]
+        opts = RunOptions(faults=case.get("faults") or {}, overrides=case.get("overrides") or {})
+        async with sem:
+            state = None
+            async for event in svc.stream(case["question"], opts, scopes=case.get("scopes")):
+                if event["type"] == "final":
+                    state = event["state"]
+            try:
+                row["judge"] = await judge(judge_llm, case["question"], row["markdown"],
+                                           facts_for_judge(state.get("results", [])))
+            except Exception as exc:
+                row["judge"] = {"error": f"{type(exc).__name__}: {exc}"}
+
+    try:
+        await asyncio.gather(*(one(r) for r in saved["cases"]))
+    finally:
+        await agent.aclose()
+    judged = [r["judge"]["score"] for r in saved["cases"] if r.get("judge") and "score" in r["judge"]]
+    saved["summary"]["judge_score"] = round(statistics.fmean(judged), 4) if judged else None
+    saved["summary"]["judged_cases"] = len(judged)
+    saved["config"]["judge_models"] = sorted({r["judge"]["model"] for r in saved["cases"]
+                                              if r.get("judge") and r["judge"].get("model")})
+    saved["rejudged_at"] = datetime.now(UTC).isoformat(timespec="seconds")
+    return saved
+
+
 def check_gates(report: dict[str, Any], args: argparse.Namespace) -> list[str]:
     s = report["summary"]
     problems = []
@@ -408,6 +450,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument("--min-faithfulness", type=float, default=0.98)
     p.add_argument("--min-coverage", type=float, default=1.0)
     p.add_argument("--min-key-numbers", type=float, default=0.95)
+    p.add_argument("--rejudge", type=Path, help="re-grade the reports saved in this results file")
     args = p.parse_args(argv)
     # build_settings reads these from the chat eval's arguments
     args.planner, args.no_verifier, args.no_cache = "rules", False, True
@@ -416,7 +459,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
-    report = asyncio.run(run(args))
+    report = asyncio.run(rejudge(args) if args.rejudge else run(args))
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(report, indent=1, default=str))
     args.report.write_text(render_markdown(report))
