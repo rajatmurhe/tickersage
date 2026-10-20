@@ -31,7 +31,8 @@ class ScriptedProvider:
 
     async def generate(self, *, model, system, user, max_tokens, json_schema, effort):
         role = "router" if "classify" in system else "planner" if "plan read-only" in system else \
-            "judge" if "grade answers" in system else "synth"
+            "judge" if "grade answers" in system else "section" if "one asset's section" in system else \
+            "writer" if "editor of a crypto market research report" in system else "synth"
         self.calls.append({"role": role, "model": model, "user": user, "json_schema": json_schema, "effort": effort})
         queue = self.script.get(role)
         item = queue.pop(0) if queue else self.default

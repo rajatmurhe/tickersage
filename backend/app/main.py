@@ -21,6 +21,7 @@ from sse_starlette.sse import EventSourceResponse
 from .agent import Agent
 from .config import REPO_DIR, get_settings
 from .ratelimit import RateLimiter
+from .report.api import router as report_router
 from .schemas import ChatRequest, ChatResponse
 from .strategy.api import router as strategy_router
 
@@ -157,4 +158,5 @@ async def index() -> FileResponse:
 
 
 app.include_router(strategy_router)  # Strategy Studio: compile and backtest, separate from the chat graph
+app.include_router(report_router)  # multi-agent research reports
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
