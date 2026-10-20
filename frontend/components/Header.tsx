@@ -42,13 +42,18 @@ export default function Header() {
               ? "request traces"
               : path.startsWith("/strategy")
                 ? "strategy backtests · read-only"
-                : "crypto market research · read-only"}
+                : path.startsWith("/report")
+                  ? "research reports · read-only"
+                  : "crypto market research · read-only"}
         </span>
       </div>
       <nav>
         {mode}
         <Link href="/" aria-current={path === "/" ? "page" : undefined}>
           Chat
+        </Link>
+        <Link href="/report" aria-current={path.startsWith("/report") ? "page" : undefined}>
+          Reports
         </Link>
         <Link href="/evals" aria-current={path.startsWith("/evals") ? "page" : undefined}>
           Evals

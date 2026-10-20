@@ -1,0 +1,234 @@
+{
+ "tool": "get_klines",
+ "args": {
+  "symbol": "LTCUSDT",
+  "interval": "1h",
+  "limit": 24
+ },
+ "kind": "output",
+ "recorded_at": "2026-10-20T07:38:09.852886+00:00",
+ "data": {
+  "symbol": "LTCUSDT",
+  "interval": "1h",
+  "candles": [
+   {
+    "open_time": "2026-10-17T17:00:00Z",
+    "open": 58.56,
+    "high": 58.94,
+    "low": 58.47,
+    "close": 58.7,
+    "volume": 10233.991,
+    "quote_volume": 601229.11949
+   },
+   {
+    "open_time": "2026-10-17T18:00:00Z",
+    "open": 58.7,
+    "high": 59.2,
+    "low": 58.69,
+    "close": 59.13,
+    "volume": 29523.903,
+    "quote_volume": 1738591.16602
+   },
+   {
+    "open_time": "2026-10-17T19:00:00Z",
+    "open": 59.13,
+    "high": 59.42,
+    "low": 59.1,
+    "close": 59.36,
+    "volume": 6854.762,
+    "quote_volume": 406491.97845
+   },
+   {
+    "open_time": "2026-10-17T20:00:00Z",
+    "open": 59.37,
+    "high": 59.43,
+    "low": 59.24,
+    "close": 59.36,
+    "volume": 4897.798,
+    "quote_volume": 290607.11078
+   },
+   {
+    "open_time": "2026-10-17T21:00:00Z",
+    "open": 59.37,
+    "high": 59.48,
+    "low": 57.6,
+    "close": 58.07,
+    "volume": 18751.39,
+    "quote_volume": 1093503.48092
+   },
+   {
+    "open_time": "2026-10-17T22:00:00Z",
+    "open": 58.08,
+    "high": 58.77,
+    "low": 58.08,
+    "close": 58.67,
+    "volume": 8377.586,
+    "quote_volume": 490000.76225
+   },
+   {
+    "open_time": "2026-10-17T23:00:00Z",
+    "open": 58.66,
+    "high": 58.88,
+    "low": 58.54,
+    "close": 58.84,
+    "volume": 6306.349,
+    "quote_volume": 370323.34233
+   },
+   {
+    "open_time": "2026-10-18T00:00:00Z",
+    "open": 58.84,
+    "high": 58.86,
+    "low": 58.69,
+    "close": 58.82,
+    "volume": 4120.136,
+    "quote_volume": 242193.91563
+   },
+   {
+    "open_time": "2026-10-18T01:00:00Z",
+    "open": 58.82,
+    "high": 59.17,
+    "low": 58.75,
+    "close": 58.83,
+    "volume": 5465.488,
+    "quote_volume": 322308.17594
+   },
+   {
+    "open_time": "2026-10-18T02:00:00Z",
+    "open": 58.83,
+    "high": 59.04,
+    "low": 58.65,
+    "close": 59.01,
+    "volume": 4892.91,
+    "quote_volume": 288046.62576
+   },
+   {
+    "open_time": "2026-10-18T03:00:00Z",
+    "open": 59.01,
+    "high": 59.39,
+    "low": 58.98,
+    "close": 59.26,
+    "volume": 7513.765,
+    "quote_volume": 444704.11293
+   },
+   {
+    "open_time": "2026-10-18T04:00:00Z",
+    "open": 59.27,
+    "high": 59.29,
+    "low": 58.86,
+    "close": 58.91,
+    "volume": 4678.815,
+    "quote_volume": 276447.68305
+   },
+   {
+    "open_time": "2026-10-18T05:00:00Z",
+    "open": 58.91,
+    "high": 59.01,
+    "low": 58.6,
+    "close": 58.81,
+    "volume": 4429.638,
+    "quote_volume": 260373.36472
+   },
+   {
+    "open_time": "2026-10-18T06:00:00Z",
+    "open": 58.81,
+    "high": 59.2,
+    "low": 58.73,
+    "close": 59.12,
+    "volume": 5826.465,
+    "quote_volume": 344152.61516
+   },
+   {
+    "open_time": "2026-10-18T07:00:00Z",
+    "open": 59.13,
+    "high": 59.21,
+    "low": 58.89,
+    "close": 59.04,
+    "volume": 7421.05,
+    "quote_volume": 438338.25787
+   },
+   {
+    "open_time": "2026-10-18T08:00:00Z",
+    "open": 59.03,
+    "high": 59.17,
+    "low": 58.87,
+    "close": 59.15,
+    "volume": 6348.776,
+    "quote_volume": 374816.2163
+   },
+   {
+    "open_time": "2026-10-18T09:00:00Z",
+    "open": 59.16,
+    "high": 59.69,
+    "low": 59.11,
+    "close": 59.5,
+    "volume": 10890.949,
+    "quote_volume": 647514.09541
+   },
+   {
+    "open_time": "2026-10-18T10:00:00Z",
+    "open": 59.5,
+    "high": 59.6,
+    "low": 59.27,
+    "close": 59.3,
+    "volume": 19714.022,
+    "quote_volume": 1171128.30275
+   },
+   {
+    "open_time": "2026-10-18T11:00:00Z",
+    "open": 59.29,
+    "high": 59.44,
+    "low": 59.09,
+    "close": 59.4,
+    "volume": 7462.946,
+    "quote_volume": 442329.78733
+   },
+   {
+    "open_time": "2026-10-18T12:00:00Z",
+    "open": 59.4,
+    "high": 59.68,
+    "low": 59.35,
+    "close": 59.68,
+    "volume": 6142.223,
+    "quote_volume": 365518.40473
+   },
+   {
+    "open_time": "2026-10-18T13:00:00Z",
+    "open": 59.68,
+    "high": 60.04,
+    "low": 59.23,
+    "close": 59.71,
+    "volume": 26710.818,
+    "quote_volume": 1594859.7373
+   },
+   {
+    "open_time": "2026-10-18T14:00:00Z",
+    "open": 59.72,
+    "high": 59.81,
+    "low": 58.62,
+    "close": 58.89,
+    "volume": 14723.937,
+    "quote_volume": 869264.32619
+   },
+   {
+    "open_time": "2026-10-18T15:00:00Z",
+    "open": 58.89,
+    "high": 59.17,
+    "low": 58.0,
+    "close": 58.13,
+    "volume": 43400.303,
+    "quote_volume": 2531088.6967
+   },
+   {
+    "open_time": "2026-10-18T16:00:00Z",
+    "open": 58.14,
+    "high": 58.35,
+    "low": 57.99,
+    "close": 58.24,
+    "volume": 9340.042,
+    "quote_volume": 543352.41397
+   }
+  ],
+  "source": "Binance public API",
+  "as_of": "2026-10-18T16:59:59.999000Z"
+ }
+}

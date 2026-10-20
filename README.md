@@ -191,6 +191,27 @@ How to read it:
 * **The safety numbers held in every run:** 100% of injection and live-trading requests refused, 0 ordinary ideas refused, 0 error findings on well-formed ideas, and the model's reply was used every time (0 fallbacks to the rules parser). Grounding dropped one number in total: the model's RSI of -10 on the first dev run, because numbers in the text are read without their sign. That's fixed, so the linter now flags it as out of range.
 * Cost was $0 on NVIDIA's free tier (a few calls fell back to Groq). Model latency was 3.2–4.3 s at p50 and 7.4–11.3 s at p95 across the five runs, measured on a heavily loaded machine. Reports: `evals/report_strategy.md`, `evals/report_strategy_holdout.md` and `evals/history/12` to `16`.
 
+## Research reports
+
+`/report` (and `POST /api/report`) writes a structured research report from a request like "Weekly report on BTC, ETH and SOL". It's a small multi-agent LangGraph graph (`backend/app/report/`):
+
+* **Planner:** the chat's input guard runs first (advice, trade and injection requests are refused before any tool runs), then the chat router picks out the assets and window (an LLM router also gets a second say on advice). The planner makes one task per asset, at most 5 assets. Unlisted tickers are dropped and the report says so.
+* **Sub-agents, in parallel:** LangGraph `Send` fans out one sub-agent per asset, plus a `compare_assets` call for 2+ assets. Each sub-agent proposes its read-only calls (`get_ticker`, `compute_metrics`, `attribute_move`, `get_news_sentiment`, and `get_klines` for the chart). The policy engine reviews every call, and each sub-agent gets the usual per-request budget. The sub-agent then writes its section from its own data only, on the fast model.
+* **Number verifier on every part:** each section is checked against its own tool outputs, and the editor's summary and risks against all of them. A draft with an unsupported number goes back once with those numbers listed. If the retry also fails, that part falls back to a template rendered from the tool data. The output guard drops advice-like sentences, and the assembled report body is verified again as a whole.
+* **Writer (editor):** the strong model writes the summary and 2-4 risks as strict JSON. Sub-agents' citation markers are renumbered into one source list. The comparison table, standing caveats (data gaps, denied calls, "headlines aren't causes", not advice) and sources are rendered in code.
+* **Charts** come from tool data only: close prices from `get_klines` rebased to 100, and per-candle and annualized volatility from `compute_metrics`. The frontend draws them as SVG.
+* **Export:** the `done` event carries a standalone HTML file with inline SVG charts, no scripts and every piece of text escaped. `POST /api/report/html` returns the same file. Print it from the browser for a PDF; there's no PDF dependency. The page also downloads Markdown.
+* **Streaming:** SSE `step` events arrive as each node finishes, one per sub-agent ("Sub-agent researched ETH and wrote its section"), then `done`. Each report writes a trace and its policy decisions to the audit log, and goes through the chat's rate limit and daily LLM budget.
+
+**Evals.** `python -m evals.run_report_evals` runs `evals/cases_report.yaml` (15 cases): 8 reports over 1-3 assets and every window, 4 advice, trade and injection report requests, broken tools, a poisoned headline, and a `market:read`-only request where news and attribution must be denied. Scored: number faithfulness on the whole report body; section coverage (summary, a section and both charts per asset, comparison for 2+ assets, risks, sources); each asset's return and last price in its own section; refusals; injection; the policy engine; and an LLM judge. CI gates the offline run (templates, replayed tools). Report charts use candles recorded up to each coin's metrics snapshot (`python -m evals.record_report_fixtures`).
+
+| Run | Pass | Coverage | Faithfulness | Key numbers | Refusal recall / false refusals | Injection / policy | LLM parts kept | Judge | p50 / p95 |
+|---|---|---|---|---|---|---|---|---|---|
+| Offline (templates), CI | 100% | 100% | 100% (1,127 numbers) | 100% | 100% / 0% | 100% / 100% | n/a | not run | 0.26 s / 0.34 s |
+| gpt-oss on Groq, **first run** | **93.3%** | 100% | 100% (491 numbers) | 100% (48) | 100% / 0% | 100% / 100% | 97.1% (34 of 35) | 89.1% | 16.0 s / 55.9 s |
+
+The live run used `gpt-oss-20b` for routing and sections and `gpt-oss-120b` as the editor, with cross-provider fallback off. Reports averaged 4.3 LLM calls and about 6,300 tokens in and 890 out, at $0 on the free tier. The verifier sent 2 drafts back once, and both retries passed. One part used its template after a Groq call failed. The one failed case asked for a monthly report and got a weekly one: the 20b router returned no window, so the planner used its 7-day default. Latency was bimodal: 2.3-4.7 s for most reports, and 16-56 s when a run waited out Groq's tokens-per-minute limit. Nemotron 3 Super was meant to judge, as in the chat runs, but it timed out on 10 of 11 reports and then its NVIDIA endpoint returned 404. So the saved reports were re-graded by Nemotron 3 Ultra without being regenerated (`--rejudge`). The judge's 4 grounding misses were all words, not numbers: "monthly" answered as weekly; "negative sentiment for all three" when Litecoin's was slightly positive; "double-digit drawdowns" for -7.98% and -9.32%; and two recorded fixtures giving AVAX different 30-day returns, because the comparison was recorded a day after the metrics. The number verifier can't catch claims made in words, and the judge did. Reports: `evals/report_research_live.md`, `evals/history/23` and `24`.
+
 ## Cost and latency
 
 * **Model routing:** Haiku 5.5 ($0.10/$0.50 per 1M tokens) for routing and price lookups, Sonnet 5.5 ($2/$10) for analysis. `ROUTING_MODE=single` uses Sonnet everywhere for comparison.
@@ -315,6 +336,7 @@ What's still failing on the main set: 7 of 15 comparisons, mostly because the ev
 backend/app/
   main.py            FastAPI: /api/chat, /api/chat/stream (SSE), traces, evals, CORS, static UI
   strategy/          Strategy Studio: spec, rules parser, LLM compiler, linter, Mermaid diagram, backtester, API
+  report/            research reports: planner, per-asset sub-agents (LangGraph Send), writer, charts, HTML export, API
   ratelimit.py       per-IP limits on the chat endpoints (Redis or in-memory)
   agent.py           dependency wiring, streaming runner, trace building
   graph.py           LangGraph nodes and edges

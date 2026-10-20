@@ -122,8 +122,12 @@ class SymbolRegistry:
         """
         found: list[tuple[int, str]] = []
         lowered = text.lower()
+        taken: list[tuple[int, int]] = []  # spans already matched by a longer alias
         for alias in sorted(NAME_ALIASES, key=len, reverse=True):
             for m in re.finditer(rf"(?<![\w$]){re.escape(alias)}(?![\w])", lowered):
+                if any(a < m.end() and m.start() < b for a, b in taken):
+                    continue  # the "bitcoin" inside "bitcoin cash" is not BTC
+                taken.append(m.span())
                 found.append((m.start(), NAME_ALIASES[alias]))
         unknown: list[tuple[int, str]] = []
         bases = self.bases

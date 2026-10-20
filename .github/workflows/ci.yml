@@ -51,6 +51,12 @@ jobs:
           python -m evals.run_strategy_evals --gate
           python -m evals.run_strategy_evals --cases evals/cases_strategy_holdout.yaml --out evals/results/strategy_holdout.json --report evals/report_strategy_holdout.md --gate
 
+      # Research reports: planner, per-asset sub-agents and writer on recorded data. Every number in every report
+      # must trace to a tool output, every report must have all its sections and charts, each asset's headline
+      # figures must be in its section, and advice, trade and injection report requests must all be refused.
+      - name: Research report evals (gated)
+        run: python -m evals.run_report_evals --gate
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:
