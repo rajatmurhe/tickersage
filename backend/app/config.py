@@ -106,6 +106,25 @@ class Settings(BaseSettings):
     policy_max_symbols: int = 5
     policy_max_order_book_depth: int = 100
 
+    # --- Alerts (app/alerts) -------------------------------------------------
+    # The background scheduler that checks enabled rules every `alerts_check_interval_s` seconds.
+    alerts_scheduler: bool = True
+    alerts_check_interval_s: float = 300.0
+    alerts_concurrency: int = 4  # rules checked at once
+    alerts_max_rules_per_owner: int = 20
+    # Optional delivery channels, used only when set. Telegram: a bot token from @BotFather and the chat id
+    # to message. Email: any SMTP server (STARTTLS on 587 by default).
+    telegram_bot_token: str | None = None
+    telegram_chat_id: str | None = None
+    telegram_api_url: str = "https://api.telegram.org"
+    smtp_host: str | None = None
+    smtp_port: int = 587
+    smtp_username: str | None = None
+    smtp_password: str | None = None
+    smtp_starttls: bool = True
+    alert_email_from: str | None = None
+    alert_email_to: str | None = None
+
     # --- Quality switches (used by the experiments) --------------------------
     verifier_enabled: bool = True
     semantic_cache_enabled: bool = True
