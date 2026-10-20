@@ -123,6 +123,7 @@ The same tools are exposed over **MCP** (`python backend/mcp_server.py`, stdio),
 | Planner proposes a call outside the request's permissions | Deterministic policy engine (scopes, tool allow-list, argument limits, call budget); denied calls never run (see [Policy engine](#policy-engine)) |
 | Pasted API key, private key or seed phrase | Redacted in the input step, before the LLM, logs, traces, caches or audit log see it; the answer warns the user |
 | Auditability | Every refusal is logged with its reason and stored in the trace table (`/api/refusals` counts them); every tool-call decision is in the audit log (`/api/audit`) |
+| A trading idea typed into Strategy Studio | Its own endpoints, outside the chat graph: backtest only, no order or wallet tool, the chat's injection rules on every input, explicit live/paper-trading requests refused, and a linter gate before any backtest |
 | Abuse of a public demo | Per-IP rate limits, a daily LLM budget that switches to offline answers, and an admin token on the endpoints that show users' questions (see [Deploying a public demo](#deploying-a-public-demo)) |
 
 ### Policy engine
@@ -145,6 +146,50 @@ A denied call never reaches the tool layer. It's listed with its reason in the e
 `python -m evals.redteam.run --seed N` generates a seeded batch of attacks (role-play, 30 ways to ask for advice, trade orders, prompt extraction, base64/rot13/leetspeak/zero-width/homoglyph/split-word encodings, five languages, poisoned headlines and doc chunks, stacked combinations) and runs them through the real agent. On the first offline run, **72.8% of 320 attacks got past the input rules**. After per-clause checks, de-obfuscation and new patterns, fresh seeds measured once after each round of fixes got 0.9–3.1% through (1.9% pooled), with no change on cases.yaml or held-out v1/v2.
 
 Every attack that ever succeeded (932 so far) is in `evals/cases_redteam_regressions.yaml`, and CI fails on any success. A nightly job runs a new seed and uploads the report. Details: [evals/redteam_report.md](evals/redteam_report.md).
+
+## Strategy Studio
+
+`/strategy` turns a plain-language trading idea ("buy ETH when RSI drops below 30, take profit at 5%, stop at 3%") into a validated spec. It asks about anything missing, lints the spec, draws it and backtests it on Binance candles. Exchanges have started shipping assistants that turn plain language into trading bots; this one keeps TickerSage read-only.
+
+**Backtest only.** There is no paper trading, no live mode and no order, wallet or account tool, and a test checks that no order, trade, wallet or paper-trading endpoint exists. Ideas that ask to auto-trade, run a bot, connect an account or use API keys are refused, and the chat's injection rules run on every idea and answer. The output only describes how the rules behaved on one window of past candles, next to buy-and-hold over the same window, with a "not investment advice" line. It never says whether a strategy is good. The studio has its own endpoints, so the chat's guardrails still refuse "should I buy…" and trade requests exactly as before (a test sends a studio idea to the chat and checks it's still refused).
+
+* **Spec** (`backend/app/strategy/spec.py`): one asset, 15m/1h/4h/1d candles, long-only entries on RSI levels and crosses, price vs SMA, SMA crosses and % moves over a window. Exits by take profit, stop loss, max holding time or an exit signal. Size as a % of a $10,000 demo balance; fees (0.1%) and slippage (0.05%) per fill.
+* **Compiler:** with an LLM configured, the fast tier at low effort returns strict JSON, which is schema-validated and grounded: every %, threshold and size must be a number the user wrote (or one the idea implies, like 30 for "oversold" or 10% for "$1,000 per trade"), otherwise it's dropped with a note. Offline, and as the fallback, a deterministic rules parser reads the common phrasings. When the asset, timeframe, entry, stop loss, exit or size is missing, it asks instead of guessing. Shorts, leverage, EMA/MACD, trailing stops and dollar price levels get a question too, so they are never quietly turned into a different rule.
+* **Linter** (`backend/app/strategy/linter.py`, pure Python, no model). Errors block the backtest; warnings are shown next to the results.
+
+  | Rule | Catches | Severity |
+  |---|---|---|
+  | `no_stop_loss` | no stop loss | warning |
+  | `stop_wider_than_target` | a stop wider than the take profit (with the win rate needed to break even) | warning |
+  | `size_above_cap` | a position above 25% of the balance; above 100% needs leverage | warning; error above 100% |
+  | `suspicious_decimal` | a number 10x or 100x away from the one in the text (a 30% stop when the text says 3%, 0.5 vs 5, RSI 0.3) | error when it contradicts the text or can't be right, else a warning |
+  | `rsi_out_of_range` | an RSI threshold outside 0–100 | error |
+  | `timeframe_mismatch` | the text says 4h but the spec runs on 1h, a 200-day SMA on hourly candles, a hold or lookback shorter than one candle | error (a hold longer than the data, or one rounded to whole candles, is a warning) |
+  | `entry_never_triggers` | RSI below 0, below 30 and above 70 at once, an SMA longer than the data | error |
+  | `no_exit` | nothing closes a winning trade | warning |
+
+* **Diagram:** a Mermaid flowchart string, drawn on the page by a small flow view (no Mermaid runtime in the bundle).
+* **Backtester** (Pandas, every number in Python). A signal at a candle's close fills at the next candle's open, so there is no look-ahead. The take profit and stop are resting orders checked against each candle's high and low, with the stop assumed first when one candle touches both. It reports total return, max drawdown, win rate, trade count, average trade, exposure and buy-and-hold over the same window.
+* **Data access goes through the policy engine.** The backtest's one data call, `get_klines`, is checked by `policy.py` with only the `market:read` scope and written to the audit log like a chat tool call. The response carries a `bt-…` request id for `GET /api/audit?request_id=`. A deployment whose policy drops `market:read` or `get_klines` gets a blocked backtest, and the candles are never fetched. Replay fixtures work as they do for the chat.
+* **API:** `POST /api/strategy/compile`, `POST /api/strategy/backtest`.
+
+**Evals.** `python -m evals.run_strategy_evals` runs the dev set (`evals/cases_strategy.yaml`, 72 cases: 22 ideas to compile, 16 that need questions, 22 deliberately broken ideas the linter must catch, 8 injection or live-trading requests, 4 backtests on recorded candles). I wrote those cases alongside the parser. A separate agent wrote a held-out set (`evals/cases_strategy_holdout.yaml`, 40 cases) from a feature description, without seeing the code. `--llm live` runs the LLM compiler instead of the rules parser. CI gates the offline runs of both sets.
+
+| Set | Compiler | Run | Pass | Spec | Questions | Linter catch | Refused (injection, live trading) |
+|---|---|---|---|---|---|---|---|
+| Dev (72) | rules | first run | 100% | 100% | 100% | 100% | 100% |
+| Held-out (40) | rules | first run, blind | 100% | 100% | 100% | 100% | 100% |
+| Dev (72) | Nemotron 3 Super (live) | first run | 66.7% | 40.9% | 56.2% | 90.9% | 100% |
+| Held-out (40) | Nemotron 3 Super (live) | **first run, blind** | **62.5%** | 60.0% | 40.0% | 70.0% | 100% |
+| Dev (72) | Nemotron 3 Super (live) | after fixes tuned on it | 90.3% | 81.8% | 93.8% | 90.9% | 100% |
+| Held-out (40) | Nemotron 3 Super (live) | after fixes, no longer blind | 85.0% | 86.7% | 70.0% | 90.0% | 100% |
+
+How to read it:
+
+* **The first runs of the held-out set are the honest numbers:** 100% for the rules parser and 62.5% for the live model. The held-out cases were still written from a list of the supported phrasings, which is the rules parser's home ground, so neither number says how the compiler does on free-form ideas from real users.
+* **The live dev score went from 66.7% to 88.9% to 90.3% on the set the fixes were tuned on,** so it's a training score. The fixes came from reading the first live runs. The commonest failure (16 of 24 on dev, 8 of 15 on held-out) was the model repeating the take profit and stop as exit signals with no time window, which made the compiler ask "over what period?". The others were "$1000 per trade" sizes left empty, "goes above" read as a level instead of a cross, and invented unsupported features. The held-out re-run (85%) came after fixes partly aimed at its own failures, so it isn't blind any more. A fresh blind set is needed for an honest post-fix number.
+* **The safety numbers held in every run:** 100% of injection and live-trading requests refused, 0 ordinary ideas refused, 0 error findings on well-formed ideas, and the model's reply was used every time (0 fallbacks to the rules parser). Grounding dropped one number in total: the model's RSI of -10 on the first dev run, because numbers in the text are read without their sign. That's fixed, so the linter now flags it as out of range.
+* Cost was $0 on NVIDIA's free tier (a few calls fell back to Groq). Model latency was 3.2–4.3 s at p50 and 7.4–11.3 s at p95 across the five runs, measured on a heavily loaded machine. Reports: `evals/report_strategy.md`, `evals/report_strategy_holdout.md` and `evals/history/12` to `16`.
 
 ## Cost and latency
 
@@ -269,6 +314,7 @@ What's still failing on the main set: 7 of 15 comparisons, mostly because the ev
 ```
 backend/app/
   main.py            FastAPI: /api/chat, /api/chat/stream (SSE), traces, evals, CORS, static UI
+  strategy/          Strategy Studio: spec, rules parser, LLM compiler, linter, Mermaid diagram, backtester, API
   ratelimit.py       per-IP limits on the chat endpoints (Redis or in-memory)
   agent.py           dependency wiring, streaming runner, trace building
   graph.py           LangGraph nodes and edges
@@ -286,8 +332,8 @@ backend/app/
   cache.py, semantic_cache.py, embeddings.py, tracing.py, symbols.py, pricing.py
 backend/mcp_server.py  the same tools over MCP
 backend/docs_corpus/   cited glossary and API notes for search_docs
-backend/tests/         304 tests (pytest)
-frontend/              Next.js (App Router, TypeScript) chat and /evals pages
+backend/tests/         407 tests (pytest)
+frontend/              Next.js (App Router, TypeScript) chat, /evals, /traces and /strategy pages; 65 tests (Vitest)
   lib/api.ts           SSE over fetch for POST /api/chat/stream
   components/          Chat, Markdown (React elements only, no raw HTML), TracePanel, EvalsView
 evals/                 cases, held-out sets, fixtures, runner, scoring, judge, experiments, red team, reports

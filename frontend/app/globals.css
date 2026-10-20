@@ -229,3 +229,62 @@ main:has(> .traces-page) { max-width: 1040px; }
   .traces tr.trace-detail { display: block; border-bottom: 1px solid var(--border); }
   .panel .traces tr.trace-detail > td { display: block; padding: 0 0 12px; }
 }
+
+/* strategy page */
+.strategy-page .intro { margin-top: 0; }
+.strategy-page form.idea label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+.strategy-page textarea, .strategy-page .questions input {
+  width: 100%; font: inherit; font-size: 16px; padding: 10px 12px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--panel); color: var(--text); box-shadow: var(--shadow);
+}
+.strategy-page textarea { resize: vertical; min-height: 84px; }
+.strategy-page textarea:focus, .strategy-page .questions input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.strategy-page .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 10px 0 20px; }
+.strategy-page .hint { font-size: 13px; }
+.btn {
+  font: inherit; font-weight: 600; padding: 9px 18px; border-radius: 10px; border: 0; background: var(--accent);
+  color: var(--panel); cursor: pointer;
+}
+.btn:disabled { opacity: 0.5; cursor: default; }
+.btn:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+.panel .note-top { margin: -4px 0 12px; font-size: 13px; }
+.questions .q { margin-bottom: 12px; }
+.questions label { display: block; font-size: 14px; margin-bottom: 4px; }
+.questions .actions { margin-bottom: 0; }
+.summary-list { margin: 0; padding-left: 20px; }
+.summary-list li { margin: 2px 0; overflow-wrap: anywhere; }
+.summary-list.notes { margin-top: 10px; font-size: 13px; color: var(--muted); }
+.code-block { background: var(--code); border-radius: 8px; padding: 10px 12px; overflow-x: auto; margin: 8px 0 0; }
+.findings { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+.findings li { display: flex; align-items: baseline; gap: 8px; }
+.findings li > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+.findings code { font-size: 12px; color: var(--muted); }
+.flow-arrow { text-align: center; color: var(--muted); font-size: 12.5px; padding: 3px 0; }
+.flow-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.flow-node {
+  display: flex; flex-direction: column; gap: 1px; flex: 1 1 150px; max-width: 420px; min-width: 0;
+  background: var(--code); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px;
+  font-size: 13.5px; text-align: center; overflow-wrap: anywhere;
+}
+.flow-node b { font-weight: 600; }
+.flow-node span { color: var(--muted); font-size: 12.5px; }
+.flow-node.decision { background: var(--accent-soft); border: 1px dashed var(--accent); }
+.flow-node.terminal { border-radius: 18px; background: var(--panel); }
+.flow-node .edge { color: var(--accent); font-size: 12px; }
+.flow-loop { text-align: center; color: var(--muted); font-size: 12px; margin-top: 4px; }
+.strategy-page .cards { margin: 12px 0 16px; }
+.strategy-page .card b { font-size: 19px; }
+figure.equity { margin: 0; }
+figure.equity figcaption { font-size: 13px; margin-bottom: 4px; }
+figure.equity figcaption b { font-variant-numeric: tabular-nums; }
+.spark { display: block; width: 100%; height: 96px; touch-action: none; }
+.spark .line { fill: none; stroke: var(--accent); stroke-width: 2; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.spark .base { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; vector-effect: non-scaling-stroke; opacity: 0.7; }
+.spark .cross { stroke: var(--text); stroke-width: 1; vector-effect: non-scaling-stroke; opacity: 0.5; }
+figure.equity .axis { display: flex; justify-content: space-between; gap: 8px; margin: 4px 0 0; font-size: 11.5px; }
+.panel table.trades td, .panel table.trades th { font-size: 13px; font-variant-numeric: tabular-nums; }
+.disclaimer { color: var(--muted); font-size: 12.5px; margin-top: 4px; }
+@media (max-width: 560px) {
+  figure.equity .axis span:nth-child(2) { display: none; }
+  .flow-node { flex-basis: 100%; }
+}

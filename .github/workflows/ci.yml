@@ -44,6 +44,13 @@ jobs:
       - name: Policy engine and secret redaction evals (gated)
         run: python -m evals.run_evals --cases evals/cases_policy.yaml --out evals/results/policy.json --report evals/report_policy.md --gate
 
+      # Strategy Studio: compiler, clarifying questions, input screening, backtests on recorded klines, and the
+      # linter, which must flag every deliberately broken idea.
+      - name: Strategy Studio evals (gated)
+        run: |
+          python -m evals.run_strategy_evals --gate
+          python -m evals.run_strategy_evals --cases evals/cases_strategy_holdout.yaml --out evals/results/strategy_holdout.json --report evals/report_strategy_holdout.md --gate
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:

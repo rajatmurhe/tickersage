@@ -99,7 +99,7 @@ def test_leaves_lookalikes_alone(text):
 
 
 def test_no_false_positives_on_any_eval_question():
-    questions = [c["question"] for path in sorted((REPO_DIR / "evals").glob("cases*.yaml"))
+    questions = [c.get("question") or c["idea"] for path in sorted((REPO_DIR / "evals").glob("cases*.yaml"))
                  if path.name != "cases_redteam_regressions.yaml"  # generated attacks; base64 can look like a key
                  for c in yaml.safe_load(path.read_text()) if not c["category"].startswith("secret_paste")]
     assert len(questions) > 200
