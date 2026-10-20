@@ -1,0 +1,68 @@
+# Retrieval eval, dev split. Written 2026-10-20 before any retrieval tuning; tune only against this file.
+# gold: the chunks that answer the question, named by document id plus a phrase the chunk contains (matched
+# case-insensitively against heading path + text, ignoring Markdown `*` and backticks). The runner resolves
+# these to chunk ids, so re-chunking can't silently break them; a phrase that matches nothing fails the run.
+# gold: [] means the corpus has no answer and the right result is no chunks.
+cases:
+- {id: d01, q: "How often does a bitcoin halving happen?", gold: [{doc: bitcoin-halving, contains: "210,000 blocks"}, {doc: wiki-bitcoin, contains: "halved every 210,000 blocks"}]}
+- {id: d02, q: "When perps trade above spot, which side pays funding?", gold: [{doc: funding-rate, contains: "long position holders pay short position holders"}]}
+- {id: d03, q: "What happens to a leveraged position if my margin falls below the maintenance requirement?", gold: [{doc: leverage-liquidation, contains: "the position is liquidated"}]}
+- {id: d04, q: "Why did my order fill at a worse price than the one on screen?", gold: [{doc: slippage, contains: "difference between the price a trader expects"}]}
+- {id: d05, q: "For the 7-day window, which candles does TickerSage use?", gold: [{doc: tickersage-methodology, contains: "42 four-hour candles"}]}
+- {id: d06, q: "What compound score makes a headline count as positive?", gold: [{doc: news-sentiment, contains: "0.05 or more are labelled positive"}]}
+- {id: d07, q: "What does it mean when open interest is going up?", gold: [{doc: open-interest, contains: "Rising open interest means new positions"}]}
+- {id: d08, q: "How can you tell if resting liquidity is heavier on the buy side?", gold: [{doc: market-depth, contains: "depth imbalance"}]}
+- {id: d09, q: "How does Bitcoin prevent double spending without a trusted third party?", gold: [{doc: bitcoin-whitepaper, contains: "solution to the double-spending problem"}]}
+- {id: d10, q: "According to the Bitcoin paper, what motivates nodes to support the network?", gold: [{doc: bitcoin-whitepaper, contains: "special transaction that starts a new coin"}]}
+- {id: d11, q: "How can a Bitcoin node throw away old spent transactions to save storage?", gold: [{doc: bitcoin-whitepaper, contains: "discarded to save disk space"}]}
+- {id: d12, q: "How can someone verify bitcoin payments without running a full node?", gold: [{doc: bitcoin-whitepaper, contains: "copy of the block headers of the longest proof-of-work chain"}]}
+- {id: d13, q: "How does the chance of an attacker rewriting the chain change as more blocks get added?", gold: [{doc: bitcoin-whitepaper, contains: "diminishes exponentially"}, {doc: bitcoin-whitepaper, contains: "probability drops exponentially"}]}
+- {id: d14, q: "If every bitcoin transaction is public, how is privacy kept?", gold: [{doc: bitcoin-whitepaper, contains: "keeping public keys anonymous"}]}
+- {id: d15, q: "Why would a wallet use hardened child keys instead of normal ones?", gold: [{doc: bip-0032, contains: "distinguishes them from hardened keys"}]}
+- {id: d16, q: "How much entropy does a BIP39 mnemonic encode?", gold: [{doc: bip-0039, contains: "multiple of 32 bits"}]}
+- {id: d17, q: "How does a bitcoin transaction say it can be replaced by one paying a higher fee?", gold: [{doc: bip-0125, contains: "add a signal to a transaction"}]}
+- {id: d18, q: "What is the block weight limit that came with segwit?", gold: [{doc: bip-0141, contains: "Base size * 3 + Total size"}, {doc: bip-0141, contains: "4,000,000"}]}
+- {id: d19, q: "Which characters are left out of the bech32 address alphabet?", gold: [{doc: bip-0173, contains: "alphanumeric characters excluding"}]}
+- {id: d20, q: "What's the difference between an externally-owned account and a contract account on Ethereum?", gold: [{doc: eth-docs-accounts, contains: "Externally-owned account (EOA)"}]}
+- {id: d21, q: "What does the nonce on an Ethereum account count?", gold: [{doc: eth-docs-accounts, contains: "A counter that indicates the number of transactions"}]}
+- {id: d22, q: "Do I still pay gas if my Ethereum transaction fails?", gold: [{doc: eth-docs-gas, contains: "regardless of whether a transaction succeeds or fails"}]}
+- {id: d23, q: "After EIP-1559, does the base fee go to miners?", gold: [{doc: eip-1559, contains: "base fee is always burned"}, {doc: eip-1559, contains: "base fee per gas is burned"}]}
+- {id: d24, q: "By how much can Ethereum's base fee rise from one block to the next?", gold: [{doc: eth-docs-gas, contains: "maximum of 12.5% per block"}]}
+- {id: d25, q: "How long are slots and epochs in proof-of-stake Ethereum?", gold: [{doc: eth-docs-pos, contains: "slots (12 seconds) and epochs (32 slots)"}]}
+- {id: d26, q: "How much ETH do I need to activate my own validator?", gold: [{doc: eth-staking-solo, contains: "minimum of 32 ETH"}, {doc: eth-staking-solo, contains: "at least 32 ETH"}]}
+- {id: d27, q: "What is a sandwich attack?", gold: [{doc: eth-docs-mev, contains: "Sandwich trading is another common method"}]}
+- {id: d28, q: "Why can't smart contracts just read off-chain data themselves?", gold: [{doc: eth-docs-oracles, contains: "oracle problem"}]}
+- {id: d29, q: "How long does it take to withdraw from an optimistic rollup back to Ethereum?", gold: [{doc: eth-docs-optimistic-rollups, contains: "lasting roughly seven days"}]}
+- {id: d30, q: "How do zk-rollups prove their state changes are correct?", gold: [{doc: eth-docs-zk-rollups, contains: "validity proof is a cryptographic assurance"}]}
+- {id: d31, q: "Which functions does an ERC-20 token contract have to implement?", gold: [{doc: eth-docs-erc20, contains: "function approve(address _spender"}, {doc: erc-20, contains: "function transferFrom"}]}
+- {id: d32, q: "What are blob-carrying transactions in proto-danksharding?", gold: [{doc: eip-4844, contains: "blob-carrying transactions"}]}
+- {id: d33, q: "What problem is the GHOST protocol in the Ethereum whitepaper meant to fix?", gold: [{doc: ethereum-whitepaper, contains: "Greedy Heaviest Observed Subtree"}, {doc: ethereum-whitepaper, contains: "GHOST solves the first issue"}]}
+- {id: d34, q: "How does Ethereum stop a contract from running forever?", gold: [{doc: ethereum-whitepaper, contains: "anti-denial of service model"}, {doc: ethereum-whitepaper, contains: "maximum number of computational steps"}]}
+- {id: d35, q: "What happens if a client keeps sending requests after Binance returns a 429?", gold: [{doc: binance-rest-api, contains: "automated IP ban (HTTP status 418)"}, {doc: binance-rest-api, contains: "418 return code is used"}]}
+- {id: d36, q: "Are Binance API rate limits counted per API key or per IP address?", gold: [{doc: binance-rest-api, contains: "based on the IPs, not the API keys"}]}
+- {id: d37, q: "How many candles can I fetch in one Binance klines request?", gold: [{doc: binance-rest-api, contains: "Kline/candlestick bars for a symbol"}]}
+- {id: d38, q: "What price rules does Binance's PRICE_FILTER enforce?", gold: [{doc: binance-filters, contains: "PRICE_FILTER defines the price rules"}]}
+- {id: d39, q: "What does the LOT_SIZE filter control on Binance?", gold: [{doc: binance-filters, contains: "LOT_SIZE filter defines the quantity"}]}
+- {id: d40, q: "What does Binance error code -1121 mean?", gold: [{doc: binance-errors, contains: "-1121 BADSYMBOL"}]}
+- {id: d41, q: "What's the difference between GTC, IOC and FOK orders?", gold: [{doc: binance-enums, contains: "Good Til Canceled"}]}
+- {id: d42, q: "Which Binance domain serves only public market data?", gold: [{doc: binance-market-data-only, contains: "data-api.binance.vision"}]}
+- {id: d43, q: "What happens to a Binance market order when the book doesn't have enough liquidity?", gold: [{doc: binance-market-orders-faq, contains: "partially filled to the extent of"}]}
+- {id: d44, q: "What does the EXPIRE_TAKER self-trade prevention mode do?", gold: [{doc: binance-stp-faq, contains: "immediately expiring the taker"}]}
+- {id: d45, q: "What unit is trailingDelta measured in for Binance trailing stops?", gold: [{doc: binance-trailing-stop-faq, contains: "defined in BIPS"}, {doc: binance-trailing-stop-faq, contains: "Basis Points, also known as BIP"}]}
+- {id: d46, q: "Which Binance websocket stream pushes best bid and ask updates in real time?", gold: [{doc: binance-web-socket-streams, contains: "@bookTicker"}]}
+- {id: d47, q: "How long does a Binance websocket connection stay open?", gold: [{doc: binance-web-socket-streams, contains: "only valid for 24 hours"}]}
+- {id: d48, q: "What happened to TerraUSD and the Terra blockchain in May 2022?", gold: [{doc: wiki-terra, contains: "temporarily halted after the collapse"}]}
+- {id: d49, q: "How many bitcoins did Mt. Gox say it had lost?", gold: [{doc: wiki-mt-gox, contains: "850,000"}]}
+- {id: d50, q: "Why did FTX file for bankruptcy?", gold: [{doc: wiki-ftx-bankruptcy, contains: "Alameda Research, a trading firm affiliated with FTX"}]}
+- {id: d51, q: "What is a Merkle tree?", gold: [{doc: wiki-merkle-tree, contains: "hash tree or Merkle tree is a tree"}]}
+- {id: d52, q: "How are Bollinger Bands calculated?", gold: [{doc: wiki-bollinger-bands, contains: "upper band at K times an N-period standard deviation"}]}
+- {id: d53, q: "What are the usual MACD settings?", gold: [{doc: wiki-macd, contains: "MACD(12,26,9)"}]}
+- {id: d54, q: "What is wash trading?", gold: [{doc: wiki-wash-trading, contains: "simultaneously sells and buys"}]}
+- {id: d55, q: "How do Lightning Network payment channels work?", gold: [{doc: wiki-lightning, contains: "opening a payment channel"}]}
+- {id: d56, q: "Who created Dogecoin and why?", gold: [{doc: wiki-dogecoin, contains: "Billy Markus and Jackson Palmer"}]}
+- {id: d57, q: "What does the Sharpe ratio measure?", gold: [{doc: wiki-sharpe-ratio, contains: "measures the performance of an investment"}]}
+- {id: d58, q: "What consensus mechanism does Cardano use?", gold: [{doc: wiki-cardano, contains: "proof-of-stake (PoS) protocol named Ouroboros"}]}
+- {id: d59, q: "What's a good sourdough bread recipe?", gold: []}
+- {id: d60, q: "Who won the 2018 FIFA World Cup?", gold: []}
+- {id: d61, q: "What is the capital of Australia?", gold: []}
+- {id: d62, q: "Which running shoes are best for flat feet?", gold: []}

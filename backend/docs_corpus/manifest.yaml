@@ -1,0 +1,156 @@
+# Sources for the docs corpus. `python -m app.rag.ingest` (run from backend/) fetches each one, converts it to
+# Markdown and writes backend/docs_corpus/sources/<id>.md with this metadata in its front matter, so the app,
+# the tests and CI never touch the network. Every source is permissively licensed or public documentation.
+#
+# format: pdf | markdown (GitHub-flavoured, ethereum.org MDX) | mediawiki (BIPs) | wikipedia (plain-text extract)
+# The 24 hand-written glossary files in backend/docs_corpus/*.md are original TickerSage text and are listed last.
+
+licenses:
+  MIT-bitcoin.org: "MIT (bitcoin.org states the whitepaper is MIT-licensed)"
+  MIT-ethereum.org: "MIT (ethereum/ethereum-org-website LICENSE)"
+  CC0-1.0: "CC0 1.0 (all EIPs and ERCs are CC0)"
+  CC-BY-SA-4.0: "CC BY-SA 4.0 (Wikipedia text; attribution: Wikipedia contributors)"
+  binance-public-docs: "No license file; public API documentation from github.com/binance/binance-spot-api-docs, used for reference with attribution (Binance terms: https://www.binance.com/en/terms)"
+  bip-header: "Per-document licence from the BIP header (recorded on fetch)"
+  tickersage: "Original TickerSage text (glossary)"
+
+sources:
+  # --- Bitcoin -------------------------------------------------------------
+  - {id: bitcoin-whitepaper, title: "Bitcoin: A Peer-to-Peer Electronic Cash System", format: pdf, license: MIT-bitcoin.org,
+     url: "https://bitcoin.org/bitcoin.pdf", fetch: "https://bitcoin.org/bitcoin.pdf"}
+  - {id: bip-0032, title: "BIP 32: Hierarchical Deterministic Wallets", format: mediawiki, license: bip-header,
+     url: "https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki", fetch: "https://raw.githubusercontent.com/bitcoin/bips/master/bip-0032.mediawiki"}
+  - {id: bip-0039, title: "BIP 39: Mnemonic code for generating deterministic keys", format: mediawiki, license: bip-header,
+     url: "https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki", fetch: "https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039.mediawiki"}
+  - {id: bip-0125, title: "BIP 125: Opt-in Full Replace-by-Fee Signaling", format: mediawiki, license: bip-header,
+     url: "https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki", fetch: "https://raw.githubusercontent.com/bitcoin/bips/master/bip-0125.mediawiki"}
+  - {id: bip-0141, title: "BIP 141: Segregated Witness (Consensus layer)", format: mediawiki, license: bip-header,
+     url: "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki", fetch: "https://raw.githubusercontent.com/bitcoin/bips/master/bip-0141.mediawiki"}
+  - {id: bip-0173, title: "BIP 173: Base32 address format for native v0-16 witness outputs", format: mediawiki, license: bip-header,
+     url: "https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki", fetch: "https://raw.githubusercontent.com/bitcoin/bips/master/bip-0173.mediawiki"}
+  - {id: bip-0341, title: "BIP 341: Taproot: SegWit version 1 spending rules", format: mediawiki, license: bip-header,
+     url: "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki", fetch: "https://raw.githubusercontent.com/bitcoin/bips/master/bip-0341.mediawiki"}
+
+  # --- Ethereum ------------------------------------------------------------
+  - {id: ethereum-whitepaper, title: "Ethereum Whitepaper", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/whitepaper/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/whitepaper/index.md"}
+  - {id: eth-docs-accounts, title: "Ethereum accounts", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/accounts/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/accounts/index.md"}
+  - {id: eth-docs-transactions, title: "Ethereum transactions", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/transactions/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/transactions/index.md"}
+  - {id: eth-docs-blocks, title: "Ethereum blocks", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/blocks/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/blocks/index.md"}
+  - {id: eth-docs-gas, title: "Gas and fees (Ethereum)", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/gas/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/gas/index.md"}
+  - {id: eth-docs-evm, title: "Ethereum Virtual Machine (EVM)", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/evm/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/evm/index.md"}
+  - {id: eth-docs-smart-contracts, title: "Introduction to smart contracts (Ethereum)", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/smart-contracts/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/smart-contracts/index.md"}
+  - {id: eth-docs-pos, title: "Proof-of-stake (Ethereum)", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/consensus-mechanisms/pos/index.md"}
+  - {id: eth-docs-pow, title: "Proof-of-work (Ethereum)", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/consensus-mechanisms/pow/index.md"}
+  - {id: eth-docs-mev, title: "Maximal extractable value (MEV)", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/mev/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/mev/index.md"}
+  - {id: eth-docs-oracles, title: "Oracles (Ethereum)", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/oracles/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/oracles/index.md"}
+  - {id: eth-docs-bridges, title: "Blockchain bridges", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/bridges/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/bridges/index.md"}
+  - {id: eth-docs-scaling, title: "Scaling (Ethereum)", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/scaling/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/scaling/index.md"}
+  - {id: eth-docs-optimistic-rollups, title: "Optimistic rollups", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/scaling/optimistic-rollups/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/scaling/optimistic-rollups/index.md"}
+  - {id: eth-docs-zk-rollups, title: "Zero-knowledge rollups", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/scaling/zk-rollups/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/scaling/zk-rollups/index.md"}
+  - {id: eth-docs-erc20, title: "ERC-20 token standard (ethereum.org)", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/developers/docs/standards/tokens/erc-20/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/developers/docs/standards/tokens/erc-20/index.md"}
+  - {id: eth-staking-solo, title: "Solo stake your ETH", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/staking/solo/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/staking/solo/index.md"}
+  - {id: eth-staking-pools, title: "Pooled staking", format: markdown, license: MIT-ethereum.org,
+     url: "https://ethereum.org/en/staking/pools/", fetch: "https://raw.githubusercontent.com/ethereum/ethereum-org-website/master/public/content/staking/pools/index.md"}
+  - {id: eip-1559, title: "EIP-1559: Fee market change for ETH 1.0 chain", format: markdown, license: CC0-1.0,
+     url: "https://eips.ethereum.org/EIPS/eip-1559", fetch: "https://raw.githubusercontent.com/ethereum/EIPs/master/EIPS/eip-1559.md"}
+  - {id: eip-4844, title: "EIP-4844: Shard Blob Transactions", format: markdown, license: CC0-1.0,
+     url: "https://eips.ethereum.org/EIPS/eip-4844", fetch: "https://raw.githubusercontent.com/ethereum/EIPs/master/EIPS/eip-4844.md"}
+  - {id: eip-3675, title: "EIP-3675: Upgrade consensus to Proof-of-Stake", format: markdown, license: CC0-1.0,
+     url: "https://eips.ethereum.org/EIPS/eip-3675", fetch: "https://raw.githubusercontent.com/ethereum/EIPs/master/EIPS/eip-3675.md"}
+  - {id: erc-20, title: "ERC-20: Token Standard", format: markdown, license: CC0-1.0,
+     url: "https://eips.ethereum.org/EIPS/eip-20", fetch: "https://raw.githubusercontent.com/ethereum/ERCs/master/ERCS/erc-20.md"}
+  - {id: erc-721, title: "ERC-721: Non-Fungible Token Standard", format: markdown, license: CC0-1.0,
+     url: "https://eips.ethereum.org/EIPS/eip-721", fetch: "https://raw.githubusercontent.com/ethereum/ERCs/master/ERCS/erc-721.md"}
+  - {id: erc-4337, title: "ERC-4337: Account Abstraction Using Alt Mempool", format: markdown, license: CC0-1.0,
+     url: "https://eips.ethereum.org/EIPS/eip-4337", fetch: "https://raw.githubusercontent.com/ethereum/ERCs/master/ERCS/erc-4337.md"}
+
+  # --- Binance spot API docs -------------------------------------------------
+  - {id: binance-rest-api, title: "Binance Spot REST API", format: markdown, license: binance-public-docs,
+     url: "https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md", fetch: "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/rest-api.md"}
+  - {id: binance-web-socket-streams, title: "Binance Spot WebSocket Streams", format: markdown, license: binance-public-docs,
+     url: "https://github.com/binance/binance-spot-api-docs/blob/master/web-socket-streams.md", fetch: "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/web-socket-streams.md"}
+  - {id: binance-filters, title: "Binance Spot API filters", format: markdown, license: binance-public-docs,
+     url: "https://github.com/binance/binance-spot-api-docs/blob/master/filters.md", fetch: "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/filters.md"}
+  - {id: binance-enums, title: "Binance Spot API enum definitions", format: markdown, license: binance-public-docs,
+     url: "https://github.com/binance/binance-spot-api-docs/blob/master/enums.md", fetch: "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/enums.md"}
+  - {id: binance-errors, title: "Binance Spot API error codes", format: markdown, license: binance-public-docs,
+     url: "https://github.com/binance/binance-spot-api-docs/blob/master/errors.md", fetch: "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/errors.md"}
+  - {id: binance-spot-glossary, title: "Binance Spot glossary", format: markdown, license: binance-public-docs,
+     url: "https://github.com/binance/binance-spot-api-docs/blob/master/faqs/spot_glossary.md", fetch: "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/faqs/spot_glossary.md"}
+  - {id: binance-market-data-only, title: "Binance market data only URLs", format: markdown, license: binance-public-docs,
+     url: "https://github.com/binance/binance-spot-api-docs/blob/master/faqs/market_data_only.md", fetch: "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/faqs/market_data_only.md"}
+  - {id: binance-market-orders-faq, title: "Binance market orders FAQ", format: markdown, license: binance-public-docs,
+     url: "https://github.com/binance/binance-spot-api-docs/blob/master/faqs/market_orders_faq.md", fetch: "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/faqs/market_orders_faq.md"}
+  - {id: binance-stp-faq, title: "Binance self-trade prevention (STP) FAQ", format: markdown, license: binance-public-docs,
+     url: "https://github.com/binance/binance-spot-api-docs/blob/master/faqs/stp_faq.md", fetch: "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/faqs/stp_faq.md"}
+  - {id: binance-trailing-stop-faq, title: "Binance trailing stop FAQ", format: markdown, license: binance-public-docs,
+     url: "https://github.com/binance/binance-spot-api-docs/blob/master/faqs/trailing-stop-faq.md", fetch: "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/faqs/trailing-stop-faq.md"}
+  - {id: binance-commission-faq, title: "Binance commission rates FAQ", format: markdown, license: binance-public-docs,
+     url: "https://github.com/binance/binance-spot-api-docs/blob/master/faqs/commission_faq.md", fetch: "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/faqs/commission_faq.md"}
+  - {id: binance-sor-faq, title: "Binance smart order routing (SOR) FAQ", format: markdown, license: binance-public-docs,
+     url: "https://github.com/binance/binance-spot-api-docs/blob/master/faqs/sor_faq.md", fetch: "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/faqs/sor_faq.md"}
+  - {id: binance-pegged-orders, title: "Binance pegged orders FAQ", format: markdown, license: binance-public-docs,
+     url: "https://github.com/binance/binance-spot-api-docs/blob/master/faqs/pegged_orders.md", fetch: "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/faqs/pegged_orders.md"}
+  - {id: binance-api-key-types, title: "Binance API key types", format: markdown, license: binance-public-docs,
+     url: "https://github.com/binance/binance-spot-api-docs/blob/master/faqs/api_key_types.md", fetch: "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/faqs/api_key_types.md"}
+
+  # --- Wikipedia (plain-text extracts, CC BY-SA 4.0) ------------------------
+  - {id: wiki-bitcoin, title: "Bitcoin (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Bitcoin"}
+  - {id: wiki-ethereum, title: "Ethereum (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Ethereum"}
+  - {id: wiki-blockchain, title: "Blockchain (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Blockchain"}
+  - {id: wiki-cryptocurrency, title: "Cryptocurrency (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Cryptocurrency"}
+  - {id: wiki-stablecoin, title: "Stablecoin (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Stablecoin"}
+  - {id: wiki-tether, title: "Tether (cryptocurrency) (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Tether_(cryptocurrency)"}
+  - {id: wiki-usdc, title: "USD Coin (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/USD_Coin"}
+  - {id: wiki-proof-of-stake, title: "Proof of stake (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Proof_of_stake"}
+  - {id: wiki-proof-of-work, title: "Proof of work (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Proof_of_work"}
+  - {id: wiki-defi, title: "Decentralized finance (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Decentralized_finance"}
+  - {id: wiki-nft, title: "Non-fungible token (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Non-fungible_token"}
+  - {id: wiki-smart-contract, title: "Smart contract (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Smart_contract"}
+  - {id: wiki-crypto-wallet, title: "Cryptocurrency wallet (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Cryptocurrency_wallet"}
+  - {id: wiki-crypto-exchange, title: "Cryptocurrency exchange (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Cryptocurrency_exchange"}
+  - {id: wiki-lightning, title: "Lightning Network (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Lightning_Network"}
+  - {id: wiki-solana, title: "Solana (blockchain platform) (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Solana_(blockchain_platform)"}
+  - {id: wiki-cardano, title: "Cardano (blockchain platform) (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Cardano_(blockchain_platform)"}
+  - {id: wiki-dogecoin, title: "Dogecoin (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Dogecoin"}
+  - {id: wiki-binance, title: "Binance (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Binance"}
+  - {id: wiki-ftx-bankruptcy, title: "Bankruptcy of FTX (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Bankruptcy_of_FTX"}
+  - {id: wiki-terra, title: "Terra (blockchain) (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Terra_(blockchain)"}
+  - {id: wiki-mt-gox, title: "Mt. Gox (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Mt._Gox"}
+  - {id: wiki-double-spending, title: "Double-spending (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Double-spending"}
+  - {id: wiki-merkle-tree, title: "Merkle tree (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Merkle_tree"}
+  - {id: wiki-ico, title: "Initial coin offering (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Initial_coin_offering"}
+  - {id: wiki-market-maker, title: "Market maker (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Market_maker"}
+  - {id: wiki-order-book, title: "Order book (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Order_book"}
+  - {id: wiki-bid-ask-spread, title: "Bid–ask spread (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Bid%E2%80%93ask_spread"}
+  - {id: wiki-short-selling, title: "Short (finance) (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Short_(finance)"}
+  - {id: wiki-margin, title: "Margin (finance) (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Margin_(finance)"}
+  - {id: wiki-futures-contract, title: "Futures contract (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Futures_contract"}
+  - {id: wiki-arbitrage, title: "Arbitrage (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Arbitrage"}
+  - {id: wiki-technical-analysis, title: "Technical analysis (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Technical_analysis"}
+  - {id: wiki-bollinger-bands, title: "Bollinger Bands (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Bollinger_Bands"}
+  - {id: wiki-macd, title: "MACD (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/MACD"}
+  - {id: wiki-candlestick-chart, title: "Candlestick chart (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Candlestick_chart"}
+  - {id: wiki-market-cap, title: "Market capitalization (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Market_capitalization"}
+  - {id: wiki-market-liquidity, title: "Market liquidity (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Market_liquidity"}
+  - {id: wiki-wash-trading, title: "Wash trade (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Wash_trade"}
+  - {id: wiki-pump-and-dump, title: "Pump and dump (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Pump_and_dump"}
+  - {id: wiki-sharpe-ratio, title: "Sharpe ratio (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Sharpe_ratio"}
+  - {id: wiki-hash-function, title: "Cryptographic hash function (Wikipedia)", format: wikipedia, license: CC-BY-SA-4.0, url: "https://en.wikipedia.org/wiki/Cryptographic_hash_function"}

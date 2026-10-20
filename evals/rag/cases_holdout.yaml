@@ -1,0 +1,37 @@
+# Retrieval eval, held-out split. Written 2026-10-20 together with the dev split, before any retrieval tuning,
+# and committed before the pipeline it measures. Never tune against it: its first run is the number we report.
+# Same format as cases_dev.yaml.
+cases:
+- {id: h01, q: "Is market cap the amount of money that has been invested in a coin?", gold: [{doc: market-cap, contains: "not the amount of money that has flowed into"}]}
+- {id: h02, q: "How is VWAP calculated?", gold: [{doc: vwap, contains: "sum of price times volume divided by total volume"}]}
+- {id: h03, q: "What RSI reading counts as overbought?", gold: [{doc: rsi, contains: "above 70"}]}
+- {id: h04, q: "What does the timestamp server in the Bitcoin paper do?", gold: [{doc: bitcoin-whitepaper, contains: "timestamp server works by taking a hash"}]}
+- {id: h05, q: "How does Bitcoin keep block times steady as hashing power grows?", gold: [{doc: bitcoin-whitepaper, contains: "moving average targeting an average number of blocks per hour"}]}
+- {id: h06, q: "What is an extended public key in an HD wallet?", gold: [{doc: bip-0032, contains: "extended public key is represented as"}]}
+- {id: h07, q: "When is taproot key path spending used?", gold: [{doc: bip-0341, contains: "key path spending is used"}]}
+- {id: h08, q: "Where is the segwit witness commitment stored in a block?", gold: [{doc: bip-0141, contains: "commitment is recorded in a scriptPubKey of the coinbase"}]}
+- {id: h09, q: "How is the seed derived from a BIP39 mnemonic phrase?", gold: [{doc: bip-0039, contains: "PBKDF2 function with a mnemonic sentence"}]}
+- {id: h10, q: "How deep is the EVM stack?", gold: [{doc: eth-docs-evm, contains: "stack machine with a depth of 1024 items"}]}
+- {id: h11, q: "What fields does an Ethereum transaction include?", gold: [{doc: eth-docs-transactions, contains: "amount of ETH to transfer from sender to recipient"}]}
+- {id: h12, q: "Can a finalized Ethereum block be reverted?", gold: [{doc: eth-docs-pos, contains: "cannot be reverted or changed without a majority slashing"}]}
+- {id: h13, q: "What are the risks of using a cross-chain bridge?", gold: [{doc: eth-docs-bridges, contains: "Using any bridge carries the following risks"}]}
+- {id: h14, q: "What is a sidechain?", gold: [{doc: eth-docs-scaling, contains: "A sidechain is an independent EVM-compatible blockchain"}]}
+- {id: h15, q: "Which fee fields does an EIP-1559 transaction carry?", gold: [{doc: eip-1559, contains: "max_priority_fee_per_gas, max_fee_per_gas"}]}
+- {id: h16, q: "How do you safely transfer an NFT under ERC-721?", gold: [{doc: erc-721, contains: "function safeTransferFrom"}]}
+- {id: h17, q: "What does a bundler do in ERC-4337 account abstraction?", gold: [{doc: erc-4337, contains: "bundlers package up a set of these objects"}]}
+- {id: h18, q: "What triggered Ethereum's switch from proof of work to proof of stake?", gold: [{doc: eip-3675, contains: "amount of total difficulty reached by the network that triggers the consensus upgrade"}]}
+- {id: h19, q: "How much request weight does the Binance order book depth endpoint cost?", gold: [{doc: binance-rest-api, contains: "GET /api/v3/depth"}]}
+- {id: h20, q: "What is the minimum notional filter on Binance?", gold: [{doc: binance-filters, contains: "MIN_NOTIONAL filter defines the minimum notional value"}]}
+- {id: h21, q: "What does Binance error -1003 mean?", gold: [{doc: binance-errors, contains: "-1003 TOOMANYREQUESTS"}]}
+- {id: h22, q: "What is a pegged order on Binance?", gold: [{doc: binance-pegged-orders, contains: "Pegged orders are essentially limit orders"}]}
+- {id: h23, q: "How does Binance smart order routing fill an order?", gold: [{doc: binance-sor-faq, contains: "goes through the eligible order books"}]}
+- {id: h24, q: "How can I see the maker and taker commission rates for an order on Binance?", gold: [{doc: binance-commission-faq, contains: "standardCommissionForOrder"}]}
+- {id: h25, q: "Which API key type does Binance recommend?", gold: [{doc: binance-api-key-types, contains: "recommend to use Ed25519 API keys"}]}
+- {id: h26, q: "What backs USDC?", gold: [{doc: wiki-usdc, contains: "backed by fully reserved assets"}]}
+- {id: h27, q: "What have Tether's reserves been made of?", gold: [{doc: wiki-tether, contains: "backed by commercial paper"}]}
+- {id: h28, q: "What is an ICO?", gold: [{doc: wiki-ico, contains: "initial coin offering (ICO) or token sale"}]}
+- {id: h29, q: "How does a pump and dump scheme work?", gold: [{doc: wiki-pump-and-dump, contains: "artificially inflating the price"}]}
+- {id: h30, q: "How does short selling work?", gold: [{doc: wiki-short-selling, contains: "short seller borrows an asset"}]}
+- {id: h31, q: "How tall is the Eiffel Tower?", gold: []}
+- {id: h32, q: "What will the weather be in Mumbai tomorrow?", gold: []}
+- {id: h33, q: "Who is the current CEO of Apple?", gold: []}
