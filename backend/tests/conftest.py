@@ -15,7 +15,8 @@ FIXTURES = REPO_DIR / "evals" / "fixtures"
 def replay_settings(**overrides) -> Settings:
     base = dict(_env_file=None, llm_mode="offline", tool_mode="replay", fixtures_dir=FIXTURES, database_url="sqlite://",
                 anthropic_api_key=None, openai_api_key=None, openrouter_api_key=None, nvidia_api_key=None,
-                groq_api_key=None, redis_url=None)
+                groq_api_key=None, redis_url=None, alerts_scheduler=False, telegram_bot_token=None,
+                telegram_chat_id=None, smtp_host=None)
     base.update(overrides)
     return Settings(**base)
 
@@ -31,7 +32,8 @@ class ScriptedProvider:
 
     async def generate(self, *, model, system, user, max_tokens, json_schema, effort):
         role = "router" if "classify" in system else "planner" if "plan read-only" in system else \
-            "judge" if "grade answers" in system else "synth"
+            "judge" if "grade answers" in system else "section" if "one asset's section" in system else \
+            "writer" if "editor of a crypto market research report" in system else "synth"
         self.calls.append({"role": role, "model": model, "user": user, "json_schema": json_schema, "effort": effort})
         queue = self.script.get(role)
         item = queue.pop(0) if queue else self.default

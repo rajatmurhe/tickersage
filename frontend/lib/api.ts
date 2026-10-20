@@ -74,7 +74,7 @@ export async function streamChat(question: string, handlers: StreamHandlers, sig
 }
 
 /** FastAPI errors carry a readable `detail` string (e.g. the rate limit message on a 429); use it when present. */
-async function failureMessage(resp: Response): Promise<string> {
+export async function failureMessage(resp: Response): Promise<string> {
   try {
     const body = (await resp.json()) as { detail?: unknown };
     if (typeof body.detail === "string" && body.detail.trim()) return body.detail;
@@ -84,7 +84,7 @@ async function failureMessage(resp: Response): Promise<string> {
   return `Request failed (${resp.status}).`;
 }
 
-function parseEvent(raw: string): { type: string; data: unknown } | null {
+export function parseEvent(raw: string): { type: string; data: unknown } | null {
   let type = "message";
   const data: string[] = [];
   for (const line of raw.split(/\r\n|\n|\r/)) {

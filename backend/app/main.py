@@ -19,8 +19,12 @@ from fastapi.staticfiles import StaticFiles
 from sse_starlette.sse import EventSourceResponse
 
 from .agent import Agent
+from .alerts.api import router as alerts_router
+from .alerts.service import AlertService
+from .alerts.store import AlertStore
 from .config import REPO_DIR, get_settings
 from .ratelimit import RateLimiter
+from .report.api import router as report_router
 from .schemas import ChatRequest, ChatResponse
 from .strategy.api import router as strategy_router
 
@@ -37,6 +41,13 @@ async def lifespan(app: FastAPI):
     settings = get_settings()
     app.state.agent = await Agent.create(settings)
     app.state.limiter = RateLimiter.from_settings(settings)
+    try:
+        app.state.alerts = AlertService(app.state.agent, AlertStore(settings.database_url))
+    except Exception:
+        log.exception("alert store unavailable: /api/alerts will answer 503")
+        app.state.alerts = None
+    if app.state.alerts is not None and settings.alerts_scheduler:
+        app.state.alerts.start()
     log.info("TickerSage ready: llm=%s tools=%s routing=%s", app.state.agent.llm_mode, settings.tool_mode,
              settings.routing_mode)
     if app.state.limiter or settings.daily_budget_usd is not None or settings.admin_token:
@@ -44,15 +55,19 @@ async def lifespan(app: FastAPI):
                  settings.rate_limit_per_minute or "-", settings.rate_limit_per_day or "-",
                  settings.daily_budget_usd, "set" if settings.admin_token else "unset")
     yield
+    if app.state.alerts is not None:
+        await app.state.alerts.stop()
     await app.state.agent.aclose()
 
 
 app = FastAPI(title="TickerSage", version="0.1.0", lifespan=lifespan)
 # The API is read-only and uses no cookies, so CORS only decides which frontends may call it.
-# X-Admin-Token lets a frontend traces page send the admin token; Retry-After is readable on a 429.
+# X-Admin-Token lets a frontend traces page send the admin token; X-Client-Id scopes alert rules to a browser;
+# Retry-After is readable on a 429.
 _web = get_settings()
 app.add_middleware(CORSMiddleware, allow_origins=_web.cors_origins, allow_origin_regex=_web.cors_origin_regex,
-                   allow_methods=["GET", "POST"], allow_headers=["Content-Type", "X-Admin-Token"],
+                   allow_methods=["GET", "POST", "DELETE"],
+                   allow_headers=["Content-Type", "X-Admin-Token", "X-Client-Id"],
                    expose_headers=["Retry-After"])
 
 
@@ -157,4 +172,6 @@ async def index() -> FileResponse:
 
 
 app.include_router(strategy_router)  # Strategy Studio: compile and backtest, separate from the chat graph
+app.include_router(report_router)  # multi-agent research reports
+app.include_router(alerts_router)  # watchlists and smart alerts: compile, store, check on a schedule, notify
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
