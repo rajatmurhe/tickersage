@@ -191,6 +191,38 @@ How to read it:
 * **The safety numbers held in every run:** 100% of injection and live-trading requests refused, 0 ordinary ideas refused, 0 error findings on well-formed ideas, and the model's reply was used every time (0 fallbacks to the rules parser). Grounding dropped one number in total: the model's RSI of -10 on the first dev run, because numbers in the text are read without their sign. That's fixed, so the linter now flags it as out of range.
 * Cost was $0 on NVIDIA's free tier (a few calls fell back to Groq). Model latency was 3.2–4.3 s at p50 and 7.4–11.3 s at p95 across the five runs, measured on a heavily loaded machine. Reports: `evals/report_strategy.md`, `evals/report_strategy_holdout.md` and `evals/history/12` to `16`.
 
+## Alerts
+
+`/alerts` lets you write alert rules in plain language ("tell me when ETH RSI(14) on 1h drops below 30", "SOL moves more than 5% in 24h with negative news"). A scheduler checks them with the read-only tools, and when one fires you get a short "why it moved" brief in which every number is checked against the data. There's also a watchlist of assets, and a feed of fired alerts with an unread badge in the header on every page.
+
+**Notify only.** Alerts watch market data and tell you; nothing trades. A request to trade, set orders, read a portfolio or connect an account is refused, and so is one for advice ("tell me when to buy SOL", "send me a buy signal", "before it pumps"). The chat's injection rules run on every rule. Market words such as "sell-off", "selling pressure" and "buy walls" aren't treated as trade requests. Each brief ends with a "not investment advice" line, and the chat's output guard removes any advice or prediction sentence a model writes.
+
+* **Spec** (`backend/app/alerts/spec.py`): one asset per rule, with one to three conditions joined by all/any. The conditions are RSI above or below a level, price vs an SMA, SMA crosses, a % move up, down or either way over a window, a price level (above, below or "reaches"), and headline sentiment. Each rule has a cooldown (60 min by default, or "at most once a day" and the like).
+* **Compiler** (the Strategy Studio pattern): with an LLM configured, the fast tier returns strict JSON, which is schema-validated and grounded. Every level, %, period, window, price and cooldown must be a number the user wrote, or one a word implies (30 for "oversold", 24 hours for "a day", 50/200 for "golden cross", 75000 for "75k"). Anything else is dropped with a note, and the compiler asks about it instead. The candle interval must be one the text names. The model's reply is reconciled with the text: "any" only when the text says "or", repeated conditions are removed, and the asset is filled from the text when the model leaves it out. A deterministic parser is the offline compiler and the fallback, and its checks (one asset, unsupported features such as volume, MACD, EMA, Bollinger Bands, funding and on-chain data) run on the model's output too. A missing asset, condition, interval, level or window always gets a question, never a guess. When a rule is saved, the server checks every number in the spec against the rule's text again, so a client can't save a spec the text doesn't support.
+* **Checks go through the policy engine.** Each check proposes only the calls it needs (`get_klines` with 500 candles, `get_ticker`, `get_news_sentiment`), with the `market:read` and `news:read` scopes. The calls are audited like a chat request (`alert-…` request ids in `/api/audit`) and run through the toolbox, so the cache, replay fixtures and fault injection apply. The maths is Pandas. A condition whose data couldn't be loaded counts as unknown, never false, so a failed fetch neither fires a rule nor re-arms it.
+* **Debounce and cooldown** (`evaluator.decide`, a pure state machine): a rule fires when its conditions become true. It then waits until they are false again before it can fire again, so a level that stays crossed alerts once, and it never fires twice within its cooldown. A rule that re-arms during the cooldown fires on the first check after the cooldown if it still holds.
+* **Brief:** the trigger lines (what the check measured) plus the `attribute_move` evidence pack for the matching window (beta-to-BTC split, volume, order book, news, funding; only flagged drivers are named). With an LLM, the model writes the paragraph. Every number in the finished brief must trace back to the tool outputs, the measured values or the user's rule, or the brief is replaced by the template paragraph, which only restates the pack.
+* **Scheduler and delivery:** an asyncio loop in the app checks enabled rules every `ALERTS_CHECK_INTERVAL_S` (300 s by default, a few at a time). Rules, fired alerts and the watchlist are stored in the same SQL database as the traces (SQLite or Postgres). Each fired alert goes to the in-app feed. It also goes to Telegram (`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`) or email (`SMTP_HOST`, `ALERT_EMAIL_FROM`, `ALERT_EMAIL_TO`, optional login) when those are set and the rule asks for them. A channel that fails is recorded on the alert, not raised. Rules belong to a random client id the browser keeps, so demo visitors see only their own. With `ADMIN_TOKEN` set, only callers that send it can use Telegram and email, since those go to the server owner.
+* **API:** `POST /api/alerts/compile`, `GET|POST /api/alerts/rules`, `POST /api/alerts/rules/{id}/enabled`, `POST /api/alerts/rules/{id}/check`, `DELETE /api/alerts/rules/{id}`, `GET /api/alerts/events`, `POST /api/alerts/events/read`, `GET /api/alerts/status`, `GET|POST|DELETE /api/watchlist`.
+
+**Evals.** `python -m evals.run_alert_evals` runs the dev set (`evals/cases_alerts.yaml`, 62 cases): 26 alerts to compile (3 of them false-refusal probes), 12 that need questions, 10 trade, advice or injection requests, 10 rules checked against recorded candles, tickers and headlines, and 4 scripted check sequences for the fire, re-arm and cooldown decisions. The held-out set (`evals/cases_alerts_holdout.yaml`, 30 cases) was written and committed before the parser existed, by the same author, and was not used for tuning before its first runs. `--llm live` uses the LLM compiler and LLM briefs. CI gates the offline runs of both sets. The safety gates are 100% refusal recall, 0 false refusals, 100% fire and cooldown accuracy, 100% brief number faithfulness and 0 advice sentences. The held-out set's accuracy floor is its first run.
+
+| Set | Compiler | Run | Pass | Spec | Questions | Refused (trade, advice, injection) | False refusals |
+|---|---|---|---|---|---|---|---|
+| Dev (62) | rules | after tuning on it | 100% | 100% | 100% | 100% | 0 |
+| Held-out (30) | rules | **first run, blind** | **96.7%** | 100% | 85.7% | 100% | 0 |
+| Held-out (30) | gpt-oss-20b on Groq (live) | **first run, blind** | **83.3%** | 76.5% | 85.7% | 100% | 1 |
+| Dev (62) | Nemotron 3 Ultra (live) | first run, after fixes | 96.8% | 96.2% | 91.7% | 100% | 1 |
+| Held-out (30) | Nemotron 3 Ultra (live) | first run on this model, set no longer blind | 96.7% | 94.1% | 100% | 100% | 0 |
+
+How to read it:
+
+* **The blind numbers are the first held-out runs:** 96.7% for the rules parser and 83.3% for gpt-oss-20b. The rules parser's one miss was "BTC or ETH crosses 50 RSI", where it reads only an RSI level written after "RSI". The gpt-oss misses were "any" for conditions joined by "and", a repeated condition, a null asset, a news alert labelled as an advice request (the false refusal) and "moons" with no condition. Two of its replies failed Groq's schema check and fell back to the rules parser.
+* **The Nemotron 3 Ultra rows came after fixes for those failures,** which reconcile the model's reply with the text (logic, repeats, a missing asset), refuse on the model's "advice" label only when it found no condition, and use the parser's conditions when the model finds none. So the held-out set is no longer blind for them. Nemotron 3 Super, the default NVIDIA model, answered HTTP 404 for this account on the day, so these runs used Ultra.
+* **Firing and briefs, on replayed data:** 10 of 10 rules fired exactly when the recorded values met them, and 4 of 4 scripted sequences got every fire, re-arm and cooldown decision right. Offline, 6 template briefs had 46 of 46 numbers verified. On Nemotron 3 Ultra the model wrote all 6 briefs, with 61 of 61 numbers verified, 0 template fallbacks and 0 advice sentences.
+* **Refusals held in every run:** 100% of trade, advice and injection requests were refused. There were 0 false refusals offline, and 1 in each of two live runs, both from the model labelling a vague alert as an advice request.
+* Cost was $0 on the free tiers. Model latency was 2.9 s at p50 and 12.5–19.2 s at p95 on Nemotron 3 Ultra. On gpt-oss-20b it was 10.7 s at p50 and 15.4 s at p95, including the SDK's waits on Groq 429s. Reports: `evals/report_alerts*.md` and `evals/history/23` to `26`. A dev-set run on gpt-oss-20b hit Groq's 200K tokens/day cap partway through, so it isn't reported.
+
 ## Cost and latency
 
 * **Model routing:** Haiku 5.5 ($0.10/$0.50 per 1M tokens) for routing and price lookups, Sonnet 5.5 ($2/$10) for analysis. `ROUTING_MODE=single` uses Sonnet everywhere for comparison.
@@ -315,6 +347,7 @@ What's still failing on the main set: 7 of 15 comparisons, mostly because the ev
 backend/app/
   main.py            FastAPI: /api/chat, /api/chat/stream (SSE), traces, evals, CORS, static UI
   strategy/          Strategy Studio: spec, rules parser, LLM compiler, linter, Mermaid diagram, backtester, API
+  alerts/            smart alerts: spec, rules parser, LLM compiler, checks, briefs, store, scheduler, delivery, API
   ratelimit.py       per-IP limits on the chat endpoints (Redis or in-memory)
   agent.py           dependency wiring, streaming runner, trace building
   graph.py           LangGraph nodes and edges
@@ -332,8 +365,8 @@ backend/app/
   cache.py, semantic_cache.py, embeddings.py, tracing.py, symbols.py, pricing.py
 backend/mcp_server.py  the same tools over MCP
 backend/docs_corpus/   cited glossary and API notes for search_docs
-backend/tests/         407 tests (pytest)
-frontend/              Next.js (App Router, TypeScript) chat, /evals, /traces and /strategy pages; 65 tests (Vitest)
+backend/tests/         445 tests (pytest)
+frontend/              Next.js (App Router, TypeScript) chat, /evals, /traces, /strategy and /alerts pages; 73 tests (Vitest)
   lib/api.ts           SSE over fetch for POST /api/chat/stream
   components/          Chat, Markdown (React elements only, no raw HTML), TracePanel, EvalsView
 evals/                 cases, held-out sets, fixtures, runner, scoring, judge, experiments, red team, reports
