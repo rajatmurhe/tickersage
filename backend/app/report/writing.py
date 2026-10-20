@@ -269,8 +269,8 @@ def guard(text: str) -> tuple[str, list[str]]:
 
 
 def facts_for_judge(results: list[ToolResult]) -> list[ToolResult]:
-    """Tool outputs the judge sees: candles are left out (they only feed the chart)."""
-    return [_slim(r) for r in results if r.tool != "get_klines"]
+    """Tool outputs the judge sees: candles are left out (they only feed the chart); headlines stay in."""
+    return [r for r in results if r.tool != "get_klines"]
 
 
 __all__ = [

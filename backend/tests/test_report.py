@@ -316,3 +316,18 @@ async def test_bitcoin_cash_is_not_also_bitcoin(offline_reports):
     registry = offline_reports.agent.deps.registry
     assert registry.extract("Weekly report: Litecoin, Bitcoin Cash and XRP") == ["LTC", "BCH", "XRP"]
     assert registry.extract("Bitcoin and Bitcoin Cash") == ["BTC", "BCH"]
+
+
+async def test_judge_sees_headlines_but_not_candles(offline_reports):
+    from app.report.writing import facts_for_judge
+    from app.synthesizer import _compact
+
+    stream = offline_reports.stream("Weekly report on BTC")
+    state = None
+    async for event in stream:
+        if event["type"] == "final":
+            state = event["state"]
+    facts = facts_for_judge(state["results"])
+    assert {r.tool for r in facts} == {"get_ticker", "compute_metrics", "attribute_move", "get_news_sentiment"}
+    for r in facts:
+        _compact(r.tool, r.data, {})  # what evals/judge.py does with each one

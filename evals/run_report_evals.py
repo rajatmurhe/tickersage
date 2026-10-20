@@ -212,8 +212,11 @@ async def run_case(svc: ReportService, case: dict, use_judge: bool, judge_llm: L
         return score_report(case, None, None, error=f"{type(exc).__name__}: {exc}")
     judge_llm = judge_llm or svc.agent.deps.llm
     if use_judge and judge_llm and judge_llm.available and report.status in PROSE_STATUSES:
-        result.judge = await judge(judge_llm, case["question"], report.markdown,
-                                   facts_for_judge(state.get("results", [])))
+        try:
+            result.judge = await judge(judge_llm, case["question"], report.markdown,
+                                       facts_for_judge(state.get("results", [])))
+        except Exception as exc:  # a judge failure is recorded on the case, not a crashed run
+            result.judge = {"error": f"{type(exc).__name__}: {exc}"}
     return result
 
 
