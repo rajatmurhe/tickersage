@@ -131,7 +131,7 @@ The set passes 100% under the eval scorer too. That needed two new replay fixtur
 
 ## Live run
 
-The first run with a live LLM is in [history/12](history/12-redteam-live-first-run.md). The router and answers use NVIDIA Nemotron 3 Super (free tier). NVIDIA's rate limits pushed many calls to the Groq gpt-oss backups: Nemotron served 84 of 151 calls on seed 1 but only 17 of 131 on the regression set. Nothing was tuned on it.
+The first run with a live LLM is in [history/17](history/17-redteam-live-first-run.md). The router and answers use NVIDIA Nemotron 3 Super (free tier). NVIDIA's rate limits pushed many calls to the Groq gpt-oss backups: Nemotron served 84 of 151 calls on seed 1 but only 17 of 131 on the regression set. Nothing was tuned on it.
 
 | Batch | Offline now | Live |
 |---|---|---|
@@ -142,12 +142,12 @@ Every family is 0 in both modes, except seed-1 indirect at 1/40 live. Free-text 
 
 The catch is that these are the batches the rules were fixed on. The regex input guard refused every direct attack (280/320 and 411/477) before any model call. The model handled only the 106 indirect attacks, and the tool-side filter had already withheld the poisoned text in every one. So the run shows the LLM path doesn't undo the rules: no missed refusals, no payload followed, no leak, no advice. It doesn't measure the LLM against attacks that get past the rules. Benign controls: 3 of 40 were refused in both modes (the same "system prompt" control). The live router gave a normal answer to 34 of 40, against 25 offline.
 
-**The LLM layer on its own** ([history/13](history/13-redteam-live-llm-layer.md)): with the pre-fix rules put back, seed 1 goes from 233/320 through offline to 127/320 live. The router refused 106 of the 233 attacks the old rules missed, all by classifying them as advice or trade. It stopped 0 of 39 prompt extractions, because it has no intent for them. After review, 6 answers leaked the answer prompt's rules (2 as scored). The model followed 0 of 26 injected payloads it saw and gave advice 0 times. Calls were mostly Groq gpt-oss: Nemotron served 46 of 365.
+**The LLM layer on its own** ([history/18](history/18-redteam-live-llm-layer.md)): with the pre-fix rules put back, seed 1 goes from 233/320 through offline to 127/320 live. The router refused 106 of the 233 attacks the old rules missed, all by classifying them as advice or trade. It stopped 0 of 39 prompt extractions, because it has no intent for them. After review, 6 answers leaked the answer prompt's rules (2 as scored). The model followed 0 of 26 injected payloads it saw and gave advice 0 times. Calls were mostly Groq gpt-oss: Nemotron served 46 of 365.
 
 ## Limits
 
-- **The LLM layer on its own hasn't been measured.** The fix rounds and fresh-seed numbers are offline, so they measure the rule layer alone. The live run (history 12) only sent the model indirect attacks whose payloads were already withheld. On held-out v3 the live router caught 8 of 9 attacks the rules missed. Running the pre-fix rules (`3c62c6f`) live on seed 1 would show how it does here.
+- **The LLM layer was measured once.** [history/18](history/18-redteam-live-llm-layer.md) put the pre-fix rules (`3c62c6f`) back and ran seed 1 live, with most calls on Groq gpt-oss (Nemotron served 46 of 365). That's one seed and one setup. The router has no intent for prompt extraction and stopped 0 of 39, so the rules are the only defence there. The fix rounds and fresh-seed numbers are offline and measure the rule layer alone.
 - **Shared templates.** Fresh seeds reuse the same templates and only vary the fills and mutations. The 1.9% on fresh seeds is a generalisation number for this generator, not for attack styles it doesn't have. An LLM attacker or a human will find new phrasings, and regex rules are an arms race.
 - **Training scores.** The fixes were written while looking at the failures, so the 0% on seeds 1–4 is a training score.
 - **Benign controls.** I wrote the benign near-misses myself. The false-refusal checks that count are cases.yaml and held-out v1/v2, and they did not change.
-- **Held-out v3** was not run or used for tuning. The next honest held-out set will be v4.
+- **Held-out sets.** v3 and v4 have both had their first runs since this report was written (see the README), so the next honest held-out set is v5.
