@@ -36,7 +36,8 @@ def body_markdown(summary: str, sections: list[tuple[str, str]], comparison: str
     """The verified part of the report: summary, per-asset sections, comparison and risks."""
     parts = ["## Summary", summary]
     for asset, text in sections:
-        parts += [f"## {asset_name(asset)} ({asset})", text]
+        name = asset_name(asset)
+        parts += [f"## {name} ({asset})" if name != asset else f"## {asset}", text]
     if comparison:
         parts += ["## Comparison", comparison]
     parts += ["## Risks and caveats", "\n".join(f"- {r}" for r in risks)]
