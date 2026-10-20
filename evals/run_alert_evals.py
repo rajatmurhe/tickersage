@@ -257,12 +257,16 @@ def summarize(results: list[dict]) -> dict[str, Any]:
     return summary
 
 
-def check_gates(s: dict[str, Any]) -> list[str]:
+def check_gates(s: dict[str, Any], min_accuracy: float | None = None) -> list[str]:
+    """The safety gates (refusals, false refusals, fire and cooldown decisions, brief faithfulness and advice) are
+    fixed. `min_accuracy` replaces the spec and question accuracy floors, for sets gated at their first-run level."""
     problems = []
     for key in ("spec_accuracy", "clarify_accuracy", "rejection_recall", "fire_accuracy", "cooldown_accuracy",
                 "brief_faithfulness"):
-        if s[key] is not None and s[key] < GATES[key]:
-            problems.append(f"{key} {s[key]} < {GATES[key]}")
+        floor = min_accuracy if min_accuracy is not None and key in ("spec_accuracy", "clarify_accuracy") \
+            else GATES[key]
+        if s[key] is not None and s[key] < floor:
+            problems.append(f"{key} {s[key]} < {floor}")
     if s["false_rejections"] > GATES["false_rejections_max"]:
         problems.append(f"false rejections {s['false_rejections']} > {GATES['false_rejections_max']}")
     if s["brief_advice"] > GATES["brief_advice_max"]:
@@ -400,6 +404,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument("--out", type=Path, default=RESULTS)
     p.add_argument("--report", type=Path, default=REPORT)
     p.add_argument("--gate", action="store_true", help="exit 1 when a CI threshold is missed")
+    p.add_argument("--min-accuracy", type=float, help="with --gate, the floor for spec and question accuracy")
     return p.parse_args(argv)
 
 
@@ -424,7 +429,7 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  FAIL {r['id']}: {'; '.join(r['failures'])}")
     print(f"wrote {args.out} and {args.report}")
     if args.gate:
-        problems = check_gates(s)
+        problems = check_gates(s, args.min_accuracy)
         if problems:
             print("gate failed: " + "; ".join(problems))
             return 1

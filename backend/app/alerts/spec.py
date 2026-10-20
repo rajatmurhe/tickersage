@@ -172,7 +172,8 @@ def describe(c: AlertCondition | DraftCondition) -> str:
         verb = {"above": "is above", "below": "is below", "reaches": "reaches"}.get(c.op or "", "?")
         return f"Price {verb} {price}"
     level = c.threshold if c.threshold is not None else (NEWS_NEGATIVE if c.tone == "negative" else NEWS_POSITIVE)
-    return f"Headline sentiment is {c.tone or '?'} (average score {'at or below' if c.tone == 'negative' else 'at or above'} {level:+g})"
+    side = "at or below" if c.tone == "negative" else "at or above"
+    return f"Headline sentiment is {c.tone or '?'} (average score {side} {level:+g})"
 
 
 def _decimals(price: float) -> int:

@@ -1,6 +1,6 @@
 # TickerSage smart alerts eval report
 
-Run `6f150cff` at 2026-10-20T07:46:38+00:00 on `evals/cases_alerts.yaml`: 62 cases in 0.29s. Compiler: **rules**, data: **replay** (recorded candles, tickers and headlines).
+Run `2a412c18` at 2026-10-20T07:50:41+00:00 on `evals/cases_alerts.yaml`: 62 cases in 1.32s. Compiler: **rules**, data: **replay** (recorded candles, tickers and headlines).
 
 | Metric | Value |
 |---|---|
@@ -15,7 +15,7 @@ Run `6f150cff` at 2026-10-20T07:46:38+00:00 on `evals/cases_alerts.yaml`: 62 cas
 | Brief number faithfulness | 100.0% |
 | Briefs that fell back to the template | 0 |
 | Advice sentences in briefs | 0 |
-| Compile latency p50 | 0.36 ms |
+| Compile latency p50 | 1.34 ms |
 
 ## By category
 

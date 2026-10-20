@@ -51,6 +51,15 @@ jobs:
           python -m evals.run_strategy_evals --gate
           python -m evals.run_strategy_evals --cases evals/cases_strategy_holdout.yaml --out evals/results/strategy_holdout.json --report evals/report_strategy_holdout.md --gate
 
+      # Smart alerts: rule compilation, clarifying questions, refusals of trade and advice requests, rules
+      # checked on recorded candles / tickers / headlines with a number-verified brief, and the scheduler's
+      # fire / re-arm / cooldown decisions. The held-out set's accuracy floor is its first run (29/30); its
+      # safety gates are the same as the dev set's.
+      - name: Smart alert evals (gated)
+        run: |
+          python -m evals.run_alert_evals --gate
+          python -m evals.run_alert_evals --cases evals/cases_alerts_holdout.yaml --out evals/results/alerts_holdout.json --report evals/report_alerts_holdout.md --gate --min-accuracy 0.85
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:

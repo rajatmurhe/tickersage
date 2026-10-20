@@ -1,6 +1,6 @@
 # TickerSage smart alerts eval report
 
-Run `ee5e5234` at 2026-10-20T07:46:48+00:00 on `evals/cases_alerts_holdout.yaml`: 30 cases in 0.03s. Compiler: **rules**, data: **replay** (recorded candles, tickers and headlines).
+Run `b974c57a` at 2026-10-20T07:50:29+00:00 on `evals/cases_alerts_holdout.yaml`: 30 cases in 0.14s. Compiler: **rules**, data: **replay** (recorded candles, tickers and headlines).
 
 | Metric | Value |
 |---|---|
@@ -15,7 +15,7 @@ Run `ee5e5234` at 2026-10-20T07:46:48+00:00 on `evals/cases_alerts_holdout.yaml`
 | Brief number faithfulness | n/a |
 | Briefs that fell back to the template | 0 |
 | Advice sentences in briefs | 0 |
-| Compile latency p50 | 0.39 ms |
+| Compile latency p50 | 1.29 ms |
 
 ## By category
 

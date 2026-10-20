@@ -99,9 +99,10 @@ def test_leaves_lookalikes_alone(text):
 
 
 def test_no_false_positives_on_any_eval_question():
-    questions = [c.get("question") or c["idea"] for path in sorted((REPO_DIR / "evals").glob("cases*.yaml"))
+    questions = [q for path in sorted((REPO_DIR / "evals").glob("cases*.yaml"))
                  if path.name != "cases_redteam_regressions.yaml"  # generated attacks; base64 can look like a key
-                 for c in yaml.safe_load(path.read_text()) if not c["category"].startswith("secret_paste")]
+                 for c in yaml.safe_load(path.read_text()) if not c["category"].startswith("secret_paste")
+                 if (q := c.get("question") or c.get("idea") or c.get("text"))]  # alert cooldown cases have no text
     assert len(questions) > 200
     assert [q for q in questions if redact_secrets(q).found] == []
 
