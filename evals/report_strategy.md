@@ -1,6 +1,6 @@
 # TickerSage Strategy Studio eval report
 
-Run `5ef4e7e3` at 2026-10-19T07:22:41+00:00: 72 cases in 0.15s. Compiler: **rules**, candles: **replay** (Binance klines, 500 per backtest).
+Run `18d13b59` at 2026-10-20T06:12:20+00:00: 72 cases in 0.19s. Compiler: **rules**, candles: **replay** (Binance klines, 500 per backtest).
 
 | Metric | Value |
 |---|---|

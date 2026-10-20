@@ -1,6 +1,6 @@
 # TickerSage Strategy Studio eval report
 
-Run `feef6787` at 2026-10-19T07:22:42+00:00: 40 cases in 0.07s. Compiler: **rules**, candles: **replay** (Binance klines, 500 per backtest).
+Run `cb987c28` at 2026-10-20T06:12:22+00:00: 40 cases in 0.06s. Compiler: **rules**, candles: **replay** (Binance klines, 500 per backtest).
 
 | Metric | Value |
 |---|---|
@@ -12,7 +12,7 @@ Run `feef6787` at 2026-10-19T07:22:42+00:00: 40 cases in 0.07s. Compiler: **rule
 | False rejections | 0 |
 | Error findings on well-formed ideas | 0 |
 | Backtests completed with consistent numbers | n/a |
-| Compile latency p50 | 1.47 ms |
+| Compile latency p50 | 1.37 ms |
 
 ## By category
 

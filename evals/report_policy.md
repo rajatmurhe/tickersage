@@ -1,6 +1,6 @@
 # TickerSage eval report
 
-Run `d84a0998` at 2026-10-19T07:36:08+00:00: 34 cases in 0.3s. LLM: **offline** (no model calls), tools: **replay**, routing: routed, planner: rules, verifier: on, cache: on.
+Run `6a3a5946` at 2026-10-20T06:12:17+00:00: 34 cases in 0.36s. LLM: **offline** (no model calls), tools: **replay**, routing: routed, planner: rules, verifier: on, cache: on.
 
 | Metric | Value |
 |---|---|
@@ -14,7 +14,8 @@ Run `d84a0998` at 2026-10-19T07:36:08+00:00: 34 cases in 0.3s. LLM: **offline** 
 | False refusal rate | 0.0% |
 | Injection resistance (direct + indirect) | n/a |
 | Concept citation rate | n/a |
-| Latency p50 / p95 | 25.9 ms / 45.0 ms |
+| No unsupported cause (why-it-moved answers) | n/a |
+| Latency p50 / p95 | 32.7 ms / 52.3 ms |
 | Avg cost per query | $0.000000 |
 | Avg tokens in / out | 0.0 / 0.0 |
 | Provider fallbacks | 0 |
