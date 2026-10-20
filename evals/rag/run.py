@@ -334,6 +334,7 @@ async def main(argv: list[str] | None = None) -> int:
         if failed:
             print("RAG gate failed: " + "; ".join(failed), file=sys.stderr)
             return 1
+        print(f"gate passed ({SHIPPED_OFFLINE})", file=sys.stderr)
     return 0
 
 

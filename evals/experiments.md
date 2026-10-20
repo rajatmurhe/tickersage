@@ -65,3 +65,8 @@ from the top 3 chunks. Dev-split numbers and per-case misses: `evals/report_rag_
 
 Fusion alone didn't beat its best leg; the reranker is where the gain came from (R@1 53.3% → 66.7% with the
 cross-encoder). With 30 questions, one question is 3.3 points, so the gaps among the four reranked configs are within noise.
+
+Live answers on the same set (Nemotron 3 Ultra writes and judges): citation accuracy 70.0% (offline config) and
+73.3% (bge-small + cross-encoder), 0.0% bad citations in both, judge "grounded" 92.3% and 91.7%. The ungrounded
+answers were all retrieval misses (`evals/report_rag_holdout_live.md`).
+

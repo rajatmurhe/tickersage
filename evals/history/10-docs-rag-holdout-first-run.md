@@ -66,6 +66,31 @@ every config.
   the offline config. Treat both as upper bounds, not benchmarks. Cold embedding of the 2,191 chunks with
   bge-small took over 15 minutes under load; it is cached per chunk after that.
 
+## Live answers, held-out first run (2026-10-21)
+
+Nemotron 3 Ultra 550B (NVIDIA free tier) wrote each answer from the top 3 chunks through the normal synthesizer
+(untrusted-data wrapping included) and judged it with the fixed rubric. Two at a time, with backoff on 429s; no
+answer was lost to an LLM error. Report: `evals/report_rag_holdout_live.md`.
+
+| Config | Citation accuracy | Bad citations | Lexical faithfulness | Judge grounded | Judge score | Judged |
+|---|---|---|---|---|---|---|
+| hybrid + lexical rerank, hash embedder | 70.0% | 0.0% | 34.4% | 92.3% | 0.969 | 26 / 33 |
+| hybrid + cross-encoder, bge-small | 73.3% | 0.0% | 31.2% | 91.7% | 0.975 | 24 / 33 |
+
+* No answer cited a non-existent source.
+* The 4 ungrounded verdicts (h05, h06 on the offline config; h08, h30 on the Docker one) are all retrieval misses:
+  the gold chunk wasn't in the top 3, and the model filled the gap with correct but uncited facts (2,016-block
+  difficulty retargeting, the chain code in an xpub, the `OP_RETURN` commitment output, borrowing from a broker).
+  Better recall@3 is the fix, not the prompt.
+* All 3 off-corpus questions were declined in both configs, including the lexical config's case where retrieval
+  had passed the model unrelated chunks.
+* The judge returned no verdict on 7 and 9 answers (reasoning truncated at 12K tokens, or a timeout); they are
+  excluded, not scored.
+* Lexical faithfulness is low because the model paraphrases; it is meaningful for template answers (~65%) and
+  the judge is the measure for LLM answers.
+* Nemotron 3 Super returned HTTP 404 ("function not found for account") for this key, so Ultra was used for both
+  writing and judging.
+
 ## Side findings
 
 * 23 of 2,191 chunks (1.0%) trip the existing injection redactor on ordinary text ("act as", "behave like",

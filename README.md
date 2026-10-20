@@ -138,7 +138,14 @@ Held-out first run (30 answerable + 3 off-corpus; full table and dev numbers in 
 
 Reranking is what helped: fusion alone was no better than its best leg, and fusing in the weak hash-embedder vectors without a reranker scored below BM25 alone (MRR 0.425 vs 0.533). The cross-encoder lifted R@1 from 53.3% to 66.7%, and with a model in the loop every off-corpus question returned nothing; lexical scores alone caught 2 of 3. Bad citations were 0% in every configuration. Most remaining misses find the right document but rank another of its chunks first. The cross-encoder is the slow part on CPU. On this 8 GB M1 with other jobs running (load average about 15), the dev set measured p50 2.8 s and p95 4.0 s per query, against 21 ms for bge-small vectors alone and 4 ms for the offline config. During the held-out run, at load 30 to 90, it was about 5 s. Treat those as upper bounds.
 
-Live answers on the held-out set (LLM-written, judged) are still to run.
+Live answers on the same held-out set (first run; Nemotron 3 Ultra 550B writes from the top 3 chunks and judges; `evals/report_rag_holdout_live.md`):
+
+| Config | Citation accuracy | Bad citations | Judge: grounded | Judge score | Off-corpus declined |
+|---|---|---|---|---|---|
+| hybrid + lexical rerank, hash embedder | 70.0% | 0.0% | 92.3% (24/26) | 0.969 | 3/3 |
+| hybrid + cross-encoder, bge-small | 73.3% | 0.0% | 91.7% (22/24) | 0.975 | 3/3 |
+
+No answer cited a source that wasn't returned. The judge failed to return a verdict on 7 and 9 of the 33 answers (truncated reasoning or timeouts on the free tier); those are left out rather than counted. All four ungrounded answers come from retrieval misses: the gold chunk wasn't in the top 3 (Bitcoin difficulty retargeting, the xpub definition, the segwit commitment's `OP_RETURN`, short selling's borrow step), and the model filled the gap with correct but uncited facts. The model declined all off-corpus questions even when the lexical config passed it chunks. Lexical faithfulness (share of sentences whose words appear in the cited chunks) drops from about 65% for template answers to 31–34% for the model's paraphrases, so for LLM answers the judge is the faithfulness measure. Nemotron 3 Super, the README's default NVIDIA model, returned 404 for this account during the run, so Ultra was used.
 
 ## Safety layer
 
