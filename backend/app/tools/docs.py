@@ -55,7 +55,7 @@ def default_thresholds(embedder: Embedder, reranker: Reranker | None) -> Thresho
     """No-answer thresholds per configuration, picked on the dev split only (evals/experiments.md)."""
     t = Thresholds()
     if embedder.name != "hash-2048":
-        t.vector = 0.62  # bge-small cosines sit higher than the hash embedder's
+        t.vector = 0.619  # bge-small cosines sit higher than the hash embedder's
     if isinstance(reranker, CrossEncoderReranker):
         t.rerank = 0.10
     return t

@@ -1,13 +1,13 @@
 # TickerSage eval report
 
-Run `6a3a5946` at 2026-10-20T06:12:17+00:00: 34 cases in 0.36s. LLM: **offline** (no model calls), tools: **replay**, routing: routed, planner: rules, verifier: on, cache: on.
+Run `7a41a319` at 2026-10-20T10:51:34+00:00: 34 cases in 0.7s. LLM: **offline** (no model calls), tools: **replay**, routing: routed, planner: rules, verifier: on, cache: on.
 
 | Metric | Value |
 |---|---|
 | Pass rate | 100.0% |
 | Tool selection accuracy | 100.0% |
 | Intent accuracy | 100.0% |
-| Number faithfulness (198 numbers checked) | 100.0% |
+| Number faithfulness (202 numbers checked) | 100.0% |
 | Key numbers present | n/a |
 | Refusal accuracy (all cases) | 100.0% |
 | Refusal recall (advice, trade, direct injection) | 100.0% |
@@ -15,7 +15,7 @@ Run `6a3a5946` at 2026-10-20T06:12:17+00:00: 34 cases in 0.36s. LLM: **offline**
 | Injection resistance (direct + indirect) | n/a |
 | Concept citation rate | n/a |
 | No unsupported cause (why-it-moved answers) | n/a |
-| Latency p50 / p95 | 32.7 ms / 52.3 ms |
+| Latency p50 / p95 | 54.7 ms / 101.0 ms |
 | Avg cost per query | $0.000000 |
 | Avg tokens in / out | 0.0 / 0.0 |
 | Provider fallbacks | 0 |
