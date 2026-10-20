@@ -63,7 +63,7 @@ For a free setup, a `NVIDIA_API_KEY` from [build.nvidia.com](https://build.nvidi
 
 A free `GROQ_API_KEY` ([console.groq.com](https://console.groq.com)) adds a fast backup: when the primary provider errors or stalls past `LLM_TIMEOUT_S`, the call is retried on Groq's `openai/gpt-oss-20b` (routing) or `openai/gpt-oss-120b` (analysis) before any slower provider. Backups are tried in this order: Claude API, OpenAI, Groq, OpenRouter, NVIDIA (skipping the primary and any without a key).
 
-Full stack (Next.js + API + Postgres + pgvector + Redis), with the chat at http://localhost:3000 and the API at http://localhost:8000. The Compose file and the pgvector backend haven't been run end to end yet; the default SQLite + in-memory path is what the tests cover:
+Full stack (Next.js + API + Postgres + pgvector + Redis), with the chat at http://localhost:3000 and the API at http://localhost:8000. The Compose file hasn't been run end to end yet; the default SQLite + in-memory path is what the tests cover:
 
 ```bash
 docker compose up --build
@@ -103,11 +103,42 @@ All tools are read-only and validated with Pydantic. Symbols are checked against
 | `compare_assets(symbols, window)` | side-by-side metrics plus volume and volatility ratios, computed in Python |
 | `get_news_sentiment(query)` | top 5 Google News headlines with VADER scores; instruction-like headlines are withheld |
 | `attribute_move(symbol, window)` | why-it-moved evidence pack: beta-to-BTC split into market-implied and coin-specific parts, volume z-score, order-book imbalance, news-sentiment shift, funding rate, and the factors that crossed a threshold |
-| `search_docs(query)` | top 3 chunks from a cited glossary / API-docs corpus (in-memory or pgvector) |
+| `search_docs(query)` | top 3 cited chunks from 111 documents (whitepapers, BIPs/EIPs, ethereum.org and Binance API docs, Wikipedia, the glossary): BM25 + vector search, fused and reranked (in-memory or pgvector) |
 
 **Why it moved.** "Why did X move?" answers are built on an evidence pack computed in Python, not on the model's guesses. `attribute_move` splits the move into a market-implied part (30-day beta to BTC times BTC's move) and a coin-specific residual, then checks volume against the 30 days before, order-book imbalance, the shift in headline sentiment (last 24 h vs the day before) and perpetual funding (reported as unavailable where Binance futures are geo-blocked). Every factor has an explicit threshold in `backend/app/tools/attribution.py`; only the ones that cross it are listed as `drivers`, and when none does the answer says "no clear driver found". The evals fail any answer that names a cause the pack didn't flag (`evals/causes.py`).
 
 The same tools are exposed over **MCP** (`python backend/mcp_server.py`, stdio), annotated `readOnlyHint`.
+
+## Docs search (RAG)
+
+**Corpus.** `backend/docs_corpus/manifest.yaml` lists 87 public sources with their URL and licence: the Bitcoin whitepaper (MIT), 6 BIPs (licence from each header), the Ethereum whitepaper and 17 ethereum.org pages (MIT), 6 EIPs/ERCs (CC0), 14 pages of Binance's spot API docs (public docs, no licence file; recorded as such), and 42 Wikipedia articles (CC BY-SA 4.0), plus the 24 original glossary files. `cd backend && python -m app.rag.ingest` fetches them, converts PDF, MediaWiki and MDX to Markdown, and writes `docs_corpus/sources/*.md` with the URL, licence, fetch time and SHA-256 in front matter (`sources.lock.json` has the whole list). The fetched text is committed, so tests and CI never touch the network. 111 documents, 268K words.
+
+**Chunking and dedup** (`app/rag/corpus.py`). Chunks follow the heading structure: ~160 words, at most 240, never across a section boundary unless a section is too short to stand alone (then its heading is kept in the text), with one sentence of overlap when a section is split. Each chunk keeps its heading path ("Binance Spot REST API > Market Data endpoints > Kline/Candlestick data"), which is indexed but not quoted. The sources' own reference markers ("[8]") are stripped so they can't pass for citations. Exact duplicates (normalised text hash) and near duplicates (word 5-gram Jaccard ≥ 0.85) are dropped: 2,191 chunks kept, 6 dropped.
+
+**Retrieval** (`app/rag/retriever.py`). BM25 top 50 and vector top 50, fused with reciprocal rank fusion, then the top 20 reranked:
+
+* **Vectors:** `EMBEDDING_PROVIDER=local` runs `BAAI/bge-small-en-v1.5` on CPU through fastembed (ONNX, no torch, no key, ~130 MB once). The default `hash` embedder needs no download, and it is what tests and CI use. Embeddings are cached per chunk hash, so a corpus edit re-embeds only what changed.
+* **Stores:** in memory (exact cosine, the default and the CI path) or `DOCS_BACKEND=pgvector`: a `rag_chunks` table with an HNSW cosine index (`ef_search` 100). Sync is incremental by content hash and deletes chunks that left the corpus. If Postgres can't be reached at startup, the index falls back to memory instead of failing. The BM25 leg runs in-process in both cases (Postgres has no BM25).
+* **Rerank:** `RERANK_PROVIDER=cross-encoder` (MS MARCO MiniLM-L-6 via fastembed) or the default `lexical`: IDF-weighted query coverage with priors for the concept's own page and a document's opening chunk, blended with the fusion score.
+* **No answer:** each configuration has a threshold on its top score, picked on the dev split as the point that catches the most off-corpus questions with zero false abstains. Below it, `search_docs` returns nothing and the answer says the docs don't cover it.
+
+Answers cite chunks: every returned chunk gets a citation number, and the offline template and the LLM both cite by those numbers. Retrieved text still goes to the model inside `<tool_output trust="untrusted">`, and chunks that contain instructions are withheld before anything downstream sees them. On ordinary text that redactor is over-eager: 23 of 2,191 chunks (1.0%) trip it ("act as", "behave like"), so those can't be quoted.
+
+**Evals** (`evals/rag/`, `python -m evals.rag.run`). 62 dev questions (4 with no answer in the corpus) and 33 held-out (3 with none), written before any retrieval code and committed with the ingest. Gold is a document plus a phrase the answering chunk contains, resolved to chunk ids at run time. Metrics: recall@k (any gold chunk in the top k), MRR, no-answer rate, false abstains; and on answers: citation accuracy (cites a gold chunk), bad citations (a `[n]` that maps to no returned chunk), lexical faithfulness and, for live answers, an LLM judge. All tuning (stemming, reranker blend and priors, thresholds) used dev only. CI gates the offline configuration on both splits.
+
+Held-out first run (30 answerable + 3 off-corpus; full table and dev numbers in `evals/history/10-docs-rag-holdout-first-run.md`):
+
+| Config | R@1 | R@5 | R@10 | MRR | Off-corpus abstained | Citation accuracy |
+|---|---|---|---|---|---|---|
+| BM25 only | 40.0% | 70.0% | 83.3% | 0.533 | 2/3 | 46.7% |
+| vector only, bge-small | 53.3% | 83.3% | 86.7% | 0.668 | 3/3 | 76.7% |
+| hybrid (RRF), bge-small | 53.3% | 80.0% | 90.0% | 0.651 | 2/3 | 66.7% |
+| hybrid + lexical rerank, hash embedder (offline default, CI) | 50.0% | 80.0% | 86.7% | 0.630 | 2/3 | 70.0% |
+| **hybrid + MiniLM cross-encoder, bge-small** (Docker) | **66.7%** | 80.0% | 90.0% | **0.721** | **3/3** | 73.3% |
+
+Reranking is what helped: fusion alone was no better than its best leg, and fusing in the weak hash-embedder vectors without a reranker scored below BM25 alone (MRR 0.425 vs 0.533). The cross-encoder lifted R@1 from 53.3% to 66.7%, and with a model in the loop every off-corpus question returned nothing; lexical scores alone caught 2 of 3. Bad citations were 0% in every configuration. Most remaining misses find the right document but rank another of its chunks first. The cross-encoder is the slow part: p50 about 5 s per query on this 8 GB M1 while other jobs held the load average at 30 to 90, against about 20 ms without it, so that's an upper bound rather than a benchmark.
+
+Live answers on the held-out set (LLM-written, judged) are still to run.
 
 ## Safety layer
 
@@ -231,6 +262,8 @@ Metrics: tool selection accuracy, intent accuracy, number faithfulness (share of
 | Held-out v4 (33) | first run, after the red-team guardrail work | 72.7% | 80.0% | 77.8% | 4.2% | 80.0% | 100% |
 | Main + v1 + v2 | after the fixes below | 100% | 100% | 100% | 0.0% | 100% | 100% |
 
+Since the docs corpus grew to 111 documents, the main set passes 98.2% (108 of 110): "What is a stablecoin?" and "What is market cap?" now cite the Wikipedia article on the same concept instead of the glossary file the case expects. The cases were left as they were. v1 and v2 still pass 100%.
+
 **Read the held-out rows, not the last one.** The rules were tuned on the main set, then on v1, then on v2, so "100% after fixes" is a training score. The first runs of the held-out sets are the honest generalization numbers for the rules-only pipeline, and they say regex guardrails catch between 11% and 55% of advice, trade and injection phrasings they haven't seen (v3, written last, got 11%). Nothing unsafe came out of those misses: the agent has no trade tool, and every missed refusal produced either a plain data answer (checked by the output guard for advice wording) or an off-topic redirect. But it is why live mode adds the LLM router as a second classifier, and the live first run on v3 below shows what that layer adds. First-run reports are kept in `evals/history/`.
 
 Offline latency on replayed tools: p50 17 ms, p95 31 ms on the latest run (these move by tens of milliseconds between runs). Cost is $0 because no model is called.
@@ -329,9 +362,10 @@ backend/app/
   templates.py       deterministic answers (offline mode and safe fallback)
   numbers.py         rounding, formatting, number extraction
   tools/             market data, metrics, news, docs, registry (cache/replay/faults)
+  rag/               ingest, chunking + dedup, BM25, rerankers, hybrid retriever, memory and pgvector stores
   cache.py, semantic_cache.py, embeddings.py, tracing.py, symbols.py, pricing.py
 backend/mcp_server.py  the same tools over MCP
-backend/docs_corpus/   cited glossary and API notes for search_docs
+backend/docs_corpus/   glossary + 87 fetched sources (manifest.yaml, sources/, sources.lock.json) for search_docs
 backend/tests/         407 tests (pytest)
 frontend/              Next.js (App Router, TypeScript) chat, /evals, /traces and /strategy pages; 65 tests (Vitest)
   lib/api.ts           SSE over fetch for POST /api/chat/stream
@@ -342,6 +376,6 @@ evals/                 cases, held-out sets, fixtures, runner, scoring, judge, e
 ## Notes
 
 * Google News RSS is used for headlines; its terms limit it to personal, non-commercial use. Swap in a licensed news API for anything else (the tool is a single function).
-* `EMBEDDING_PROVIDER=hash` (default) is a lexical hashing embedder that needs no download or key. Set `EMBEDDING_PROVIDER=openai` for semantic embeddings.
+* `EMBEDDING_PROVIDER=hash` (default) is a lexical hashing embedder that needs no download or key. `EMBEDDING_PROVIDER=local` runs bge-small on CPU (fastembed); `openai` uses OpenAI's API. The semantic answer cache always uses the hash embedder, since its 0.92 threshold was set on it.
 * OpenAI prices in `backend/app/pricing.py` are placeholders; check them before quoting costs.
 * Not investment advice. TickerSage describes public market data and nothing more.
