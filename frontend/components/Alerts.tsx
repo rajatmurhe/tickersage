@@ -342,7 +342,7 @@ function RulesPanel({ rules, status, busy, onCheck, onToggle, onDelete }: {
 }) {
   const schedule = status
     ? status.scheduler
-      ? `Checked every ${Math.round(status.interval_s / 60) || 1} min${status.last_run ? `, last pass ${timeAgo(status.last_run.at)}` : ""}.`
+      ? `Checked every ${status.interval_s < 60 ? `${Math.round(status.interval_s)} s` : `${Math.round(status.interval_s / 60)} min`}${status.last_run ? `, last pass ${timeAgo(status.last_run.at)}` : ""}.`
       : "The scheduler is off on this server: use “Check now”."
     : "";
   return (
