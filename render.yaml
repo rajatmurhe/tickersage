@@ -1,4 +1,4 @@
-# Render blueprint for the public demo: API + Next.js frontend + Postgres + Redis-compatible key value store.
+# Render blueprint for the public demo (free plans: services sleep when idle and the free Postgres expires after 30 days): API + Next.js frontend + Postgres + Redis-compatible key value store.
 # `sync: false` values (API keys) are asked for once, when the Blueprint is created, and never stored in git.
 # The two URLs below assume Render gave the services the names in this file. If a name was taken, Render
 # adds a suffix: then fix NEXT_PUBLIC_API_URL and CORS_ORIGINS in the dashboard and redeploy both services.
@@ -6,7 +6,7 @@ services:
   - type: web
     name: tickersage
     runtime: docker
-    plan: starter
+    plan: free
     healthCheckPath: /api/health
     envVars:
       - key: ANTHROPIC_API_KEY
@@ -49,7 +49,7 @@ services:
   - type: web
     name: tickersage-web
     runtime: docker
-    plan: starter
+    plan: free
     dockerfilePath: ./frontend/Dockerfile
     dockerContext: ./frontend
     healthCheckPath: /
@@ -63,9 +63,9 @@ services:
 
   - type: keyvalue
     name: tickersage-cache
-    plan: starter
+    plan: free
     ipAllowList: []
 
 databases:
   - name: tickersage-db
-    plan: basic-256mb
+    plan: free
