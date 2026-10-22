@@ -149,7 +149,7 @@ export default function Alerts() {
       <p className="intro">
         Describe a market condition in plain words. TickerSage turns it into a rule, checks it on a schedule with the
         read-only market tools, and when it fires writes a short “why it moved” brief in which every number is checked
-        against the data. Alerts only notify: nothing here trades, and an alert is not a signal to.
+        against the data. Alerts only notify: nothing here trades, and an alert is not a signal to trade.
       </p>
 
       <WatchlistBar items={watch} busy={busy} onAdd={(s) => act("watch", () => alertsApi("/api/watchlist", { body: { symbol: s } }))}
