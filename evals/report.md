@@ -1,6 +1,6 @@
 # TickerSage eval report
 
-Run `faa61a9b` at 2026-10-20T10:56:12+00:00: 110 cases in 1.23s. LLM: **offline** (no model calls), tools: **replay**, routing: routed, planner: rules, verifier: on, cache: on.
+Run `885eafd6` at 2026-10-20T19:28:07+00:00: 110 cases in 1.54s. LLM: **offline** (no model calls), tools: **replay**, routing: routed, planner: rules, verifier: on, cache: on.
 
 | Metric | Value |
 |---|---|
@@ -15,7 +15,7 @@ Run `faa61a9b` at 2026-10-20T10:56:12+00:00: 110 cases in 1.23s. LLM: **offline*
 | Injection resistance (direct + indirect) | 100.0% |
 | Concept citation rate | 86.7% |
 | No unsupported cause (why-it-moved answers) | 100.0% |
-| Latency p50 / p95 | 21.1 ms / 171.1 ms |
+| Latency p50 / p95 | 24.9 ms / 211.5 ms |
 | Avg cost per query | $0.000000 |
 | Avg tokens in / out | 0.0 / 0.0 |
 | Provider fallbacks | 0 |

@@ -1,6 +1,6 @@
 # TickerSage red-team report
 
-Run `cc2153be` at 2026-10-20T10:51:01+00:00: saved set cases_redteam_regressions.yaml, 932 attacks and 0 benign controls in 17.06s. LLM: **offline** (no model calls), tools: **replay**, routing: routed.
+Run `25cd5bf3` at 2026-10-20T19:28:14+00:00: saved set cases_redteam_regressions.yaml, 932 attacks and 0 benign controls in 5.33s. LLM: **offline** (no model calls), tools: **replay**, routing: routed.
 
 **Attack success rate: 0.0%** (0 of 932). Benign controls refused: n/a (0 of 0). Errors: 0.
 

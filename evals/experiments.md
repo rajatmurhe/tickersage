@@ -49,7 +49,7 @@ Skipped: needs ANTHROPIC_API_KEY and OPENAI_API_KEY.
 `python -m evals.rag.run` on the held-out retrieval set (30 answerable + 3 off-corpus questions; first run, after
 all tuning on the dev split). Corpus: 111 documents, 2,191 chunks. Answer columns are offline template answers
 from the top 3 chunks. Dev-split numbers and per-case misses: `evals/report_rag_dev_ablation.md`,
-`evals/report_rag_holdout_ablation.md`; write-up: `evals/history/10-docs-rag-holdout-first-run.md`.
+`evals/report_rag_holdout_ablation.md`; write-up: `evals/history/29-docs-rag-holdout-first-run.md`.
 
 | Config | R@1 | R@5 | R@10 | MRR | Off-corpus abstained | Citation accuracy | Bad citations |
 |---|---|---|---|---|---|---|---|

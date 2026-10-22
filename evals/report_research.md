@@ -1,6 +1,6 @@
 # TickerSage research report evals
 
-Run `cfd16504` at 2026-10-20T07:43:12+00:00: 15 cases in 1.15s. LLM: **offline** (no model calls), tools: **replay**, verifier: on, provider fallback: on.
+Run `3c2c4ca7` at 2026-10-20T19:29:22+00:00: 15 cases in 2.32s. LLM: **offline** (no model calls), tools: **replay**, verifier: on, provider fallback: on.
 
 | Metric | Value |
 |---|---|
@@ -15,7 +15,7 @@ Run `cfd16504` at 2026-10-20T07:43:12+00:00: 15 cases in 1.15s. LLM: **offline**
 | Policy block rate | 100.0% |
 | LLM-written parts kept after verification | 0.0% |
 | Verifier retries / template fallbacks | 0 / 0 |
-| Report latency p50 / p95 | 261.8 ms / 338.9 ms |
+| Report latency p50 / p95 | 525.7 ms / 629.4 ms |
 | Avg LLM calls per report | 0.0 |
 | Avg tokens in / out per report | 0.0 / 0.0 |
 | Provider fallbacks | 0 |

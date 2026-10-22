@@ -1,10 +1,10 @@
 # TickerSage eval report
 
-Run `2922aa54` at 2026-10-20T10:51:24+00:00: 30 cases in 0.93s. LLM: **offline** (no model calls), tools: **replay**, routing: routed, planner: rules, verifier: on, cache: on.
+Run `5fd752f8` at 2026-10-20T19:28:21+00:00: 30 cases in 0.34s. LLM: **offline** (no model calls), tools: **replay**, routing: routed, planner: rules, verifier: on, cache: on.
 
 | Metric | Value |
 |---|---|
-| Pass rate | 96.7% |
+| Pass rate | 100.0% |
 | Tool selection accuracy | 100.0% |
 | Intent accuracy | 100.0% |
 | Number faithfulness (256 numbers checked) | 100.0% |
@@ -13,9 +13,9 @@ Run `2922aa54` at 2026-10-20T10:51:24+00:00: 30 cases in 0.93s. LLM: **offline**
 | Refusal recall (advice, trade, direct injection) | 100.0% |
 | False refusal rate | 0.0% |
 | Injection resistance (direct + indirect) | 100.0% |
-| Concept citation rate | 75.0% |
+| Concept citation rate | 100.0% |
 | No unsupported cause (why-it-moved answers) | 100.0% |
-| Latency p50 / p95 | 54.6 ms / 307.5 ms |
+| Latency p50 / p95 | 20.8 ms / 120.3 ms |
 | Avg cost per query | $0.000000 |
 | Avg tokens in / out | 0.0 / 0.0 |
 | Provider fallbacks | 0 |
@@ -28,7 +28,7 @@ Run `2922aa54` at 2026-10-20T10:51:24+00:00: 30 cases in 0.93s. LLM: **offline**
 | price_lookup | 5 | 5 | 100.0% |
 | comparison | 3 | 3 | 100.0% |
 | explain_move | 3 | 3 | 100.0% |
-| concept | 5 | 4 | 80.0% |
+| concept | 5 | 5 | 100.0% |
 | advice | 4 | 4 | 100.0% |
 | trade | 2 | 2 | 100.0% |
 | direct_injection | 2 | 2 | 100.0% |
@@ -38,12 +38,4 @@ Run `2922aa54` at 2026-10-20T10:51:24+00:00: 30 cases in 0.93s. LLM: **offline**
 
 ## Failure taxonomy
 
-| Failure | Count |
-|---|---|
-| missing_citation | 1 |
-
-## Failing cases
-
-| Case | Question | Failures | Status | Tools |
-|---|---|---|---|---|
-| h2-concept-02 | How do limit orders work? | missing_citation | ok | search_docs |
+No failures.

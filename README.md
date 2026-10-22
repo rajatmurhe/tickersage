@@ -126,7 +126,7 @@ Answers cite chunks: every returned chunk gets a citation number, and the offlin
 
 **Evals** (`evals/rag/`, `python -m evals.rag.run`). 62 dev questions (4 with no answer in the corpus) and 33 held-out (3 with none), written before any retrieval code and committed with the ingest. Gold is a document plus a phrase the answering chunk contains, resolved to chunk ids at run time. Metrics: recall@k (any gold chunk in the top k), MRR, no-answer rate, false abstains; and on answers: citation accuracy (cites a gold chunk), bad citations (a `[n]` that maps to no returned chunk), lexical faithfulness and, for live answers, an LLM judge. All tuning (stemming, reranker blend and priors, thresholds) used dev only. CI gates the offline configuration on both splits.
 
-Held-out first run (30 answerable + 3 off-corpus; full table and dev numbers in `evals/history/10-docs-rag-holdout-first-run.md`):
+Held-out first run (30 answerable + 3 off-corpus; full table and dev numbers in `evals/history/29-docs-rag-holdout-first-run.md`):
 
 | Config | R@1 | R@5 | R@10 | MRR | Off-corpus abstained | Citation accuracy |
 |---|---|---|---|---|---|---|
