@@ -192,6 +192,6 @@ describe("postJson", () => {
 
   it("reports an unreachable API", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => Promise.reject(new TypeError("fetch failed"))));
-    await expect(postJson("/api/strategy/compile", {})).rejects.toThrow(/Could not reach the API/);
+    await expect(postJson("/api/strategy/compile", {})).rejects.toThrow(/waking up/);
   });
 });

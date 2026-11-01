@@ -77,7 +77,7 @@ export async function streamReport(question: string, handlers: ReportHandlers, s
     });
   } catch (err) {
     if (signal?.aborted) throw err;
-    throw new ApiError(`Could not reach the API at ${API_URL}. Is the backend running?`);
+    throw new ApiError(`The server is waking up (free hosting sleeps when idle). Please try again in a minute.`);
   }
   if (!resp.ok || !resp.body) throw new ApiError(await failureMessage(resp), resp.status);
 

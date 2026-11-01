@@ -151,7 +151,8 @@ describe("streamChat", () => {
 
   it("throws ApiError when the API is unreachable", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => Promise.reject(new TypeError("fetch failed"))));
-    await expect(run()).rejects.toThrow(/Could not reach the API/);
+    const handlers = { onStep: () => {}, onToken: () => {}, onDone: () => {}, wakeTimeoutMs: 0 };
+    await expect(streamChat("price of btc", handlers)).rejects.toThrow(/didn't wake up/);
   });
 
   it("rethrows the abort error instead of wrapping it when the caller aborts", async () => {
@@ -161,5 +162,40 @@ describe("streamChat", () => {
     vi.stubGlobal("fetch", vi.fn(async () => Promise.reject(abort)));
     const noop = { onStep() {}, onToken() {}, onDone() {} };
     await expect(streamChat("q", noop, controller.signal)).rejects.toBe(abort);
+  });
+});
+
+describe("waking a sleeping server", () => {
+  it("waits for /api/health and retries once when the first connection fails", async () => {
+    const enc = new TextEncoder();
+    let calls = 0;
+    const fetchMock = vi.fn(async (url: string) => {
+      calls += 1;
+      if (calls === 1) throw new TypeError("Failed to fetch"); // asleep: connection dropped
+      if (url.endsWith("/api/health")) return new Response("{}", { status: 200 });
+      const body = new ReadableStream<Uint8Array>({
+        start(c) {
+          c.enqueue(enc.encode(BODY));
+          c.close();
+        },
+      });
+      return new Response(body, { status: 200 });
+    });
+    vi.stubGlobal("fetch", fetchMock);
+    let woke = false;
+    const done: ChatResponse[] = [];
+    await streamChat("price of btc", {
+      onWaking: () => (woke = true),
+      onStep: () => {},
+      onToken: () => {},
+      onDone: (r) => done.push(r),
+    });
+    expect(woke).toBe(true);
+    expect(fetchMock.mock.calls.map((c) => String(c[0]).replace(API_URL, ""))).toEqual([
+      "/api/chat/stream",
+      "/api/health",
+      "/api/chat/stream",
+    ]);
+    expect(done).toHaveLength(1);
   });
 });

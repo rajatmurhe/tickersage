@@ -23,6 +23,7 @@ interface Turn {
   text: string;
   response: ChatResponse | null;
   error: string | null;
+  waking?: boolean;
 }
 
 const STORE_KEY = "tickersage.chat.v1";
@@ -88,7 +89,8 @@ export default function Chat() {
       await streamChat(
         question,
         {
-          onStep: (step) => update((t) => ({ ...t, steps: [...t.steps, step] })),
+          onWaking: () => update((t) => ({ ...t, waking: true })),
+          onStep: (step) => update((t) => ({ ...t, waking: false, steps: [...t.steps, step] })),
           onToken: (delta) => update((t) => ({ ...t, text: t.text + delta })),
           onDone: (response) => update((t) => ({ ...t, text: response.answer, response })),
         },
@@ -187,7 +189,10 @@ function BotBubble({ turn }: { turn: Turn }) {
               {s.detail.model && <span className="muted"> · {s.detail.model}</span>}
             </li>
           ))}
-          {!turn.text && <li className="running">{turn.steps.length ? "Working" : "Starting"}</li>}
+          {turn.waking && (
+            <li className="running">Waking up the server (the free hosting sleeps when idle, this takes up to a minute)</li>
+          )}
+          {!turn.text && !turn.waking && <li className="running">{turn.steps.length ? "Working" : "Starting"}</li>}
         </ol>
       )}
 

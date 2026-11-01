@@ -123,7 +123,7 @@ export async function postJson<T>(path: string, body: unknown, signal?: AbortSig
     });
   } catch (err) {
     if (signal?.aborted) throw err;
-    throw new ApiError(`Could not reach the API at ${API_URL}. Is the backend running?`);
+    throw new ApiError(`The server is waking up (free hosting sleeps when idle). Please try again in a minute.`);
   }
   if (!resp.ok) throw new ApiError(await errorDetail(resp), resp.status);
   return (await resp.json()) as T;

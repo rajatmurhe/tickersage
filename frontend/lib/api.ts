@@ -25,6 +25,10 @@ export async function getJson<T>(path: string, signal?: AbortSignal): Promise<T>
 }
 
 export interface StreamHandlers {
+  /** Called when the API can't be reached and we're waiting for it to wake up (free hosting sleeps). */
+  onWaking?: () => void;
+  /** How long to wait for a sleeping server; default 90 s. */
+  wakeTimeoutMs?: number;
   onStep: (step: StepEvent) => void;
   onToken: (delta: string) => void;
   onDone: (response: ChatResponse) => void;
@@ -40,17 +44,24 @@ export async function streamChat(
   signal?: AbortSignal,
   history: string[] = [],
 ): Promise<void> {
-  let resp: Response;
-  try {
-    resp = await fetch(`${API_URL}/api/chat/stream`, {
+  const post = () =>
+    fetch(`${API_URL}/api/chat/stream`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
       body: JSON.stringify({ question, history: history.slice(-5) }),
       signal,
     });
+  let resp: Response;
+  try {
+    resp = await post();
   } catch (err) {
     if (signal?.aborted) throw err;
-    throw new ApiError(`Could not reach the API at ${API_URL}. Is the backend running?`);
+    // A sleeping free-tier server drops the first connection: wait for /api/health, then try once more.
+    handlers.onWaking?.();
+    if (!(await waitForApi(signal, handlers.wakeTimeoutMs))) {
+      throw new ApiError("The server didn't wake up in time. Please try again in a minute.");
+    }
+    resp = await post();
   }
   if (!resp.ok || !resp.body) throw new ApiError(await failureMessage(resp), resp.status);
 
@@ -76,6 +87,22 @@ export async function streamChat(
     }
   }
   if (!finished) throw new ApiError("The answer stream ended early. Please try again.");
+}
+
+/** Poll /api/health until it answers or `timeoutMs` passes. */
+export async function waitForApi(signal?: AbortSignal, timeoutMs = 90_000, everyMs = 3_000): Promise<boolean> {
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    if (signal?.aborted) return false;
+    try {
+      const r = await fetch(`${API_URL}/api/health`, { signal, cache: "no-store" });
+      if (r.ok) return true;
+    } catch {
+      /* still asleep */
+    }
+    await new Promise((res) => setTimeout(res, everyMs));
+  }
+  return false;
 }
 
 /** FastAPI errors carry a readable `detail` string (e.g. the rate limit message on a 429); use it when present. */
