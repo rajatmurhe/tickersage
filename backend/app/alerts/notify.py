@@ -24,7 +24,8 @@ TELEGRAM_MAX = 4000  # Telegram's limit is 4096 characters per message
 def configured(settings: Settings) -> dict[str, bool]:
     return {
         "in_app": True,
-        "telegram": bool(settings.telegram_bot_token and settings.telegram_chat_id),
+        # Per-user chats are linked with /start; TELEGRAM_CHAT_ID alone (no per-user link) covers a local install.
+        "telegram": bool(settings.telegram_bot_token),
         "email": bool(settings.smtp_host and settings.alert_email_from and settings.alert_email_to),
     }
 
@@ -34,9 +35,9 @@ def plain(text: str) -> str:
     return re.sub(r"(\*\*|__|(?<!\w)_(?!\s)|(?<!\s)_(?!\w))", "", text)
 
 
-async def send_telegram(settings: Settings, http: httpx.AsyncClient, text: str) -> None:
+async def send_telegram(settings: Settings, http: httpx.AsyncClient, text: str, chat_id: str | None = None) -> None:
     url = f"{settings.telegram_api_url.rstrip('/')}/bot{settings.telegram_bot_token}/sendMessage"
-    resp = await http.post(url, json={"chat_id": settings.telegram_chat_id, "text": plain(text)[:TELEGRAM_MAX],
+    resp = await http.post(url, json={"chat_id": chat_id or settings.telegram_chat_id, "text": plain(text)[:TELEGRAM_MAX],
                                       "disable_web_page_preview": True}, timeout=10.0)
     if resp.status_code != 200:
         # The token is part of the URL: never put the URL in the error.
@@ -62,7 +63,7 @@ async def send_email(settings: Settings, subject: str, text: str) -> None:
 
 
 async def deliver(settings: Settings, http: httpx.AsyncClient | None, channels: list[str], subject: str,
-                  text: str) -> dict[str, str]:
+                  text: str, telegram_chat_id: str | None = None) -> dict[str, str]:
     """Channel -> 'delivered', 'skipped: ...' or 'failed: ...'. In-app is always delivered (the stored event)."""
     ready = configured(settings)
     out = {"in_app": "delivered"}
@@ -72,11 +73,14 @@ async def deliver(settings: Settings, http: httpx.AsyncClient | None, channels: 
         if not ready[channel]:
             out[channel] = "skipped: not configured on this server"
             continue
+        if channel == "telegram" and not telegram_chat_id:
+            out[channel] = "skipped: Telegram isn't connected for this user"
+            continue
         try:
             if channel == "telegram":
                 if http is None:
                     raise RuntimeError("no HTTP client")
-                await send_telegram(settings, http, text)
+                await send_telegram(settings, http, text, telegram_chat_id)
             else:
                 await send_email(settings, subject, text)
             out[channel] = "delivered"

@@ -371,3 +371,5 @@ figure.equity .axis { display: flex; justify-content: space-between; gap: 8px; m
 
 .interpreted { font-size: 13px; margin: 0 0 8px; }
 .clear-chat { background: none; border: 0; padding: 0; color: var(--muted); font: inherit; font-size: 13px; cursor: pointer; text-decoration: underline; }
+.telegram-link { margin: 0 0 12px; font-size: 14px; }
+.telegram-link .link { background: none; border: 0; padding: 0; color: var(--accent); font: inherit; cursor: pointer; text-decoration: underline; }

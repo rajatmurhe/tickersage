@@ -1,0 +1,28 @@
+name: alerts-cron
+
+# Checks every enabled alert rule on the deployed API every 10 minutes. The free Render plan sleeps when
+# idle, which stops the in-process scheduler, so this run both wakes the server and does the check.
+# Needs two repository secrets: TICKERSAGE_API_URL (e.g. https://tickersage.onrender.com) and
+# TICKERSAGE_ADMIN_TOKEN (the API's ADMIN_TOKEN). Without them the job does nothing.
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  check-alerts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      API: ${{ secrets.TICKERSAGE_API_URL }}
+      TOKEN: ${{ secrets.TICKERSAGE_ADMIN_TOKEN }}
+    steps:
+      - name: Wake the API and run one alert pass
+        if: env.API != '' && env.TOKEN != ''
+        run: |
+          for i in 1 2 3 4 5 6; do
+            curl -fsS --max-time 30 "$API/api/health" && break
+            echo "waiting for the API to wake up ($i)"; sleep 15
+          done
+          curl -fsS --max-time 120 -X POST -H "X-Admin-Token: $TOKEN" "$API/api/alerts/run"

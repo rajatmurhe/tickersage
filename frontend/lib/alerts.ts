@@ -101,6 +101,8 @@ export interface Status {
   last_run: { at: string; rules: number; actions: Record<string, number> } | null;
   channels: Record<"in_app" | "telegram" | "email", boolean>;
   external_channels_need_admin: boolean;
+  telegram_linkable?: boolean;
+  telegram_connected?: boolean;
   unread: number;
   max_rules: number;
   disclaimer: string;

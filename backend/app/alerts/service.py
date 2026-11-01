@@ -76,8 +76,11 @@ class AlertService:
             })
             values.update(last_fired_at=now, fire_count=int(rule.get("fire_count") or 0) + 1)
             await self.store.update_rule(rule["id"], **values)
+            chat = await self.store.telegram_chat(rule["owner"])
+            if chat is None and rule["owner"] == "local":
+                chat = self.settings.telegram_chat_id  # a single-user local install with a fixed chat
             deliveries = await deliver(self.settings, self.agent.http, list(rule.get("channels") or []),
-                                       f"TickerSage alert: {spec.symbol}", brief.text)
+                                       f"TickerSage alert: {spec.symbol}", brief.text, telegram_chat_id=chat)
             await self.store.set_deliveries(event["id"], deliveries)
             event["deliveries"] = deliveries
         else:

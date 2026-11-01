@@ -10,6 +10,9 @@
   POST   /api/alerts/events/read             mark alerts read
   GET    /api/alerts/status                  scheduler and channel status, unread count
   GET/POST/DELETE /api/watchlist             the assets this client follows
+  POST   /api/alerts/telegram/link           a one-time t.me deep link that connects this client's Telegram
+  DELETE /api/alerts/telegram                disconnect it
+  POST   /api/telegram/webhook/{secret}      Telegram's updates: "/start <code>" links a chat, "/stop" unlinks it
 
 Rules belong to the client id the browser sends in X-Client-Id (a random id kept in local storage), so on a
 shared demo each visitor sees only their own. Nothing here can trade: the only tools a check can reach are the
@@ -28,7 +31,7 @@ from pydantic import BaseModel, Field, field_validator
 
 from ..tools.errors import ToolError
 from .compiler import AlertCompileResult, AlertCompiler, screen, spec_numbers_grounded
-from .notify import configured
+from .notify import configured, send_telegram
 from .parser import FIELDS
 from .spec import DISCLAIMER, AlertSpec, summarize
 
@@ -133,10 +136,12 @@ async def create_rule(body: CreateRule, request: Request, owner: str = Depends(o
         symbol = registry.base(registry.resolve(body.spec.symbol))
     except ToolError as exc:
         raise HTTPException(422, exc.message) from exc
-    external = [c for c in body.channels if c != "in_app"]
-    if external and not _is_admin(request, x_admin_token):
-        raise HTTPException(403, "Telegram and email go to the server owner's chat and inbox: send the admin token "
-                                 "in X-Admin-Token to use them")
+    if "email" in body.channels and not _is_admin(request, x_admin_token):
+        raise HTTPException(403, "Email goes to the server owner's inbox: send the admin token in X-Admin-Token "
+                                 "to use it")
+    if "telegram" in body.channels and await service.store.telegram_chat(owner) is None and not (
+            owner == DEFAULT_OWNER and service.settings.telegram_chat_id):
+        raise HTTPException(422, "Connect Telegram first: press Connect Telegram on the Alerts page")
     limit = service.settings.alerts_max_rules_per_owner
     if await service.store.count_rules(owner) >= limit:
         raise HTTPException(429, f"limit of {limit} alert rules reached: delete one first")
@@ -199,6 +204,8 @@ async def status(request: Request, owner: str = Depends(owner_id)) -> dict[str, 
     s = service.settings
     return {"scheduler": service.running, "interval_s": s.alerts_check_interval_s, "last_run": service.last_run,
             "channels": configured(s), "external_channels_need_admin": bool(s.admin_token),
+            "telegram_linkable": bool(s.telegram_bot_token and s.telegram_bot_username and s.telegram_webhook_secret),
+            "telegram_connected": await service.store.telegram_chat(owner) is not None,
             "unread": await service.store.unread(owner), "max_rules": s.alerts_max_rules_per_owner,
             "disclaimer": DISCLAIMER, "now": datetime.now().astimezone().isoformat()}
 
@@ -239,4 +246,52 @@ async def add_to_watchlist(body: WatchBody, request: Request, owner: str = Depen
 @router.delete("/api/watchlist/{symbol}")
 async def remove_from_watchlist(symbol: str, request: Request, owner: str = Depends(owner_id)) -> dict[str, bool]:
     return {"removed": await _service(request).store.unwatch(owner, symbol.upper())}
+
+
+# ------------------------------------------------------------------ per-user Telegram
+
+
+@router.post("/api/alerts/telegram/link", dependencies=[Depends(rate_limit)])
+async def telegram_link(request: Request, owner: str = Depends(owner_id)) -> dict[str, Any]:
+    service = _service(request)
+    s = service.settings
+    if not (s.telegram_bot_token and s.telegram_bot_username and s.telegram_webhook_secret):
+        raise HTTPException(503, "Telegram isn't set up on this server")
+    code = await service.store.new_link_code(owner)
+    return {"url": f"https://t.me/{s.telegram_bot_username.lstrip('@')}?start={code}", "expires_in_s": 900}
+
+
+@router.delete("/api/alerts/telegram")
+async def telegram_unlink(request: Request, owner: str = Depends(owner_id)) -> dict[str, bool]:
+    return {"unlinked": bool(await _service(request).store.unlink_telegram(owner=owner))}
+
+
+@router.post("/api/telegram/webhook/{secret}", include_in_schema=False)
+async def telegram_webhook(secret: str, request: Request) -> dict[str, bool]:
+    service = _service(request)
+    s = service.settings
+    if not (s.telegram_webhook_secret and secrets.compare_digest(secret.encode(), s.telegram_webhook_secret.encode())):
+        raise HTTPException(404)
+    update = await request.json()
+    message = update.get("message") or {}
+    chat_id = str((message.get("chat") or {}).get("id") or "")
+    text = (message.get("text") or "").strip()
+    if not chat_id or not text.startswith("/"):
+        return {"ok": True}
+    command, _, arg = text.partition(" ")
+    if command.split("@")[0] == "/start" and arg.strip():
+        owner = await service.store.claim_link_code(arg.strip(), chat_id)
+        reply = ("Connected. Alerts you set on TickerSage with Telegram ticked will arrive here. Send /stop to "
+                 "disconnect." if owner else "That link has expired or was already used. Open a new one from the "
+                 "Alerts page.")
+    elif command.split("@")[0] == "/stop":
+        await service.store.unlink_telegram(chat_id=chat_id)
+        reply = "Disconnected. You won't get TickerSage alerts here any more."
+    else:
+        reply = "Open the Alerts page on TickerSage and press Connect Telegram to link this chat."
+    try:
+        await send_telegram(s, service.agent.http, reply, chat_id)
+    except Exception:  # the link itself is done; a failed reply is not worth a retry from Telegram
+        pass
+    return {"ok": True}
 

@@ -142,7 +142,26 @@ export default function Alerts() {
     );
 
   const unread = events.filter((e) => !e.read).length;
-  const external = status ? (["telegram", "email"] as const).filter((c) => status.channels[c]) : [];
+  // Telegram goes to this browser's own linked chat; email goes to the server owner (admin only).
+  const external = status
+    ? (["telegram", "email"] as const).filter((c) => status.channels[c] && (c !== "telegram" || status.telegram_connected))
+    : [];
+
+  async function connectTelegram() {
+    try {
+      const { url } = await alertsApi<{ url: string }>("/api/alerts/telegram/link", { method: "POST" });
+      window.open(url, "_blank", "noopener");
+      setNotice("Press Start in Telegram, then come back: this page picks up the connection.");
+      window.setTimeout(() => void refresh(), 15_000);
+    } catch (err) {
+      setError(message(err, "Could not create a Telegram link."));
+    }
+  }
+
+  async function disconnectTelegram() {
+    await alertsApi("/api/alerts/telegram", { method: "DELETE" });
+    void refresh();
+  }
 
   return (
     <div className="strategy-page alerts-page">
@@ -152,6 +171,20 @@ export default function Alerts() {
         against the data. Alerts only notify: nothing here trades, and an alert is not a signal to trade.
       </p>
 
+      {status?.telegram_linkable && (
+        <p className="telegram-link">
+          {status.telegram_connected ? (
+            <>
+              Telegram connected: tick Telegram when you save an alert.{" "}
+              <button type="button" className="link" onClick={() => void disconnectTelegram()}>Disconnect</button>
+            </>
+          ) : (
+            <button type="button" className="btn secondary" onClick={() => void connectTelegram()}>
+              Connect Telegram
+            </button>
+          )}
+        </p>
+      )}
       <WatchlistBar items={watch} busy={busy} onAdd={(s) => act("watch", () => alertsApi("/api/watchlist", { body: { symbol: s } }))}
         onRemove={(s) => act(`unwatch-${s}`, () => alertsApi(`/api/watchlist/${encodeURIComponent(s)}`, { method: "DELETE" }))}
         onPick={(s) => setText(`Tell me when ${s} `)} />
@@ -268,7 +301,9 @@ export default function Alerts() {
                         {c === "telegram" ? "Telegram" : "Email"}
                       </label>
                     ))}
-                    {status?.external_channels_need_admin && <span className="muted hint">needs the admin token</span>}
+                    {status?.external_channels_need_admin && external.includes("email") && (
+                      <span className="muted hint">email needs the admin token</span>
+                    )}
                   </fieldset>
                 )}
                 <div className="actions">

@@ -45,6 +45,14 @@ services:
       # Needed to read /api/traces, /api/refusals and /api/audit. Copy it from the dashboard's Environment tab.
       - key: ADMIN_TOKEN
         generateValue: true
+      # Per-user Telegram alerts (optional): a bot token and @username from @BotFather. After the first deploy,
+      # point the bot at https://<api>/api/telegram/webhook/<TELEGRAM_WEBHOOK_SECRET> with setWebhook.
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_BOT_USERNAME
+        sync: false
+      - key: TELEGRAM_WEBHOOK_SECRET
+        generateValue: true
 
   - type: web
     name: tickersage-web

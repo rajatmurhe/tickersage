@@ -13,8 +13,9 @@ from __future__ import annotations
 
 import asyncio
 import json
+import secrets
 import uuid
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from typing import Any
 
 from sqlalchemy import (
@@ -72,6 +73,25 @@ watchlist = Table(
     Column("symbol", String(20), nullable=False),
     Column("added_at", DateTime(timezone=True), nullable=False),
     UniqueConstraint("owner", "symbol", name="uq_watchlist_owner_symbol"),
+)
+
+
+# Telegram chats linked to a browser's client id, and the one-time codes that link them. The code (not the
+# client id, which is the only key to a user's alerts) is what travels in the t.me deep link.
+telegram_links = Table(
+    "telegram_links",
+    metadata,
+    Column("owner", String(64), primary_key=True),
+    Column("chat_id", String(32), nullable=False, index=True),
+    Column("linked_at", DateTime(timezone=True), nullable=False),
+)
+
+telegram_codes = Table(
+    "telegram_codes",
+    metadata,
+    Column("code", String(32), primary_key=True),
+    Column("owner", String(64), nullable=False),
+    Column("expires_at", DateTime(timezone=True), nullable=False),
 )
 
 
@@ -245,3 +265,52 @@ class AlertStore:
 
     async def unwatch(self, owner: str, symbol: str) -> bool:
         return await self._run(self._unwatch, owner, symbol)
+
+    # ------------------------------------------------------------ telegram links
+
+    def _new_link_code(self, owner: str, ttl_s: int) -> str:
+        code = secrets.token_urlsafe(16)[:22]
+        now = datetime.now(UTC)
+        with self.engine.begin() as conn:
+            conn.execute(delete(telegram_codes).where(telegram_codes.c.owner == owner))
+            conn.execute(delete(telegram_codes).where(telegram_codes.c.expires_at < now))
+            conn.execute(insert(telegram_codes).values(code=code, owner=owner,
+                                                       expires_at=now + timedelta(seconds=ttl_s)))
+        return code
+
+    async def new_link_code(self, owner: str, ttl_s: int = 900) -> str:
+        return await self._run(self._new_link_code, owner, ttl_s)
+
+    def _claim_link_code(self, code: str, chat_id: str) -> str | None:
+        now = datetime.now(UTC)
+        with self.engine.begin() as conn:
+            row = conn.execute(select(telegram_codes).where(telegram_codes.c.code == code)).mappings().first()
+            if row is None:
+                return None
+            conn.execute(delete(telegram_codes).where(telegram_codes.c.code == code))  # one use only
+            if _utc(row["expires_at"]) < now:
+                return None
+            owner = row["owner"]
+            conn.execute(delete(telegram_links).where(telegram_links.c.owner == owner))
+            conn.execute(insert(telegram_links).values(owner=owner, chat_id=chat_id, linked_at=now))
+        return owner
+
+    async def claim_link_code(self, code: str, chat_id: str) -> str | None:
+        """Link `chat_id` to the code's owner. None when the code is unknown, used or expired."""
+        return await self._run(self._claim_link_code, code, chat_id)
+
+    def _telegram_chat(self, owner: str) -> str | None:
+        with self.engine.connect() as conn:
+            return conn.execute(select(telegram_links.c.chat_id).where(telegram_links.c.owner == owner)).scalar()
+
+    async def telegram_chat(self, owner: str) -> str | None:
+        return await self._run(self._telegram_chat, owner)
+
+    def _unlink(self, owner: str | None, chat_id: str | None) -> int:
+        q = delete(telegram_links)
+        q = q.where(telegram_links.c.owner == owner) if owner else q.where(telegram_links.c.chat_id == chat_id)
+        with self.engine.begin() as conn:
+            return conn.execute(q).rowcount
+
+    async def unlink_telegram(self, owner: str | None = None, chat_id: str | None = None) -> int:
+        return await self._run(self._unlink, owner, chat_id)

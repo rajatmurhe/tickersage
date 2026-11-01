@@ -126,6 +126,10 @@ class Settings(BaseSettings):
     telegram_bot_token: str | None = None
     telegram_chat_id: str | None = None
     telegram_api_url: str = "https://api.telegram.org"
+    # Per-user Telegram: the bot's @username (for the t.me deep link) and a random secret that forms the
+    # webhook path, so only Telegram (which you tell the URL to) can post updates.
+    telegram_bot_username: str | None = None
+    telegram_webhook_secret: str | None = None
     smtp_host: str | None = None
     smtp_port: int = 587
     smtp_username: str | None = None

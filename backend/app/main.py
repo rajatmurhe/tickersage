@@ -140,6 +140,16 @@ async def chat_stream(body: ChatRequest, request: Request) -> EventSourceRespons
     return EventSourceResponse(events())
 
 
+@app.post("/api/alerts/run", dependencies=[Depends(require_admin)])
+async def run_alerts(request: Request) -> dict:
+    """One pass over every enabled alert rule. Called by the GitHub Actions cron, so alerts are checked even
+    while a free-tier server sleeps (the call also wakes it)."""
+    service = getattr(request.app.state, "alerts", None)
+    if service is None:
+        raise HTTPException(503, "alerts are unavailable")
+    return await service.run_once()
+
+
 @app.get("/api/traces", dependencies=[Depends(require_admin)])
 async def list_traces(request: Request, limit: int = 50) -> list[dict]:
     store = _agent(request).traces

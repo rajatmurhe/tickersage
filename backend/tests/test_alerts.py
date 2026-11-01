@@ -329,7 +329,7 @@ async def test_delivery_skips_unconfigured_and_records_failures(monkeypatch):
             return_value=httpx.Response(200, json={"ok": True}))
         async with httpx.AsyncClient() as http:
             out = await notify.deliver(s, http, ["in_app", "telegram", "email"], "TickerSage alert: ETH",
-                                       "**ETH alert**\n\n_not advice_")
+                                       "**ETH alert**\n\n_not advice_", telegram_chat_id="42")
     assert out == {"in_app": "delivered", "telegram": "delivered", "email": "delivered"}
     assert json.loads(route.calls[0].request.content) == {"chat_id": "42", "text": "ETH alert\n\nnot advice",
                                                           "disable_web_page_preview": True}
@@ -338,8 +338,12 @@ async def test_delivery_skips_unconfigured_and_records_failures(monkeypatch):
     with respx.mock() as mock:
         mock.post("https://api.telegram.org/bot123:abc/sendMessage").mock(return_value=httpx.Response(401))
         async with httpx.AsyncClient() as http:
-            out = await notify.deliver(s, http, ["telegram"], "s", "t")
+            out = await notify.deliver(s, http, ["telegram"], "s", "t", telegram_chat_id="42")
     assert out["telegram"] == "failed: Telegram returned HTTP 401" and "abc" not in out["telegram"]
+
+    # A user who hasn't connected Telegram is skipped, never sent to someone else's chat.
+    out = await notify.deliver(s, None, ["telegram"], "s", "t")
+    assert out["telegram"] == "skipped: Telegram isn't connected for this user"
 
 
 # ------------------------------------------------------------------ API
@@ -397,13 +401,18 @@ def test_api_rejects_tampered_specs_and_trade_text(make_client):
         assert bad.status_code == 400
 
 
-def test_api_external_channels_need_the_admin_token(make_client):
-    body = {"text": "Alert me when SOL is above $100", "channels": ["telegram"],
-            "spec": {"symbol": "SOL", "conditions": [{"kind": "price_level", "op": "above", "price": 100}]}}
+def test_api_email_needs_the_admin_token_and_telegram_needs_a_connection(make_client):
+    spec = {"symbol": "SOL", "conditions": [{"kind": "price_level", "op": "above", "price": 100}]}
+    email = {"text": "Alert me when SOL is above $100", "channels": ["email"], "spec": spec}
+    telegram = {"text": "Alert me when SOL is above $100", "channels": ["telegram"], "spec": spec}
     with make_client(admin_token="s3cret") as client:
-        assert client.post("/api/alerts/rules", headers=ME, json=body).status_code == 403
-        r = client.post("/api/alerts/rules", headers=ME | {"X-Admin-Token": "s3cret"}, json=body)
-        assert r.status_code == 200 and r.json()["channels"] == ["in_app", "telegram"]
+        # Email goes to the server owner's inbox.
+        assert client.post("/api/alerts/rules", headers=ME, json=email).status_code == 403
+        r = client.post("/api/alerts/rules", headers=ME | {"X-Admin-Token": "s3cret"}, json=email)
+        assert r.status_code == 200 and r.json()["channels"] == ["in_app", "email"]
+        # Telegram goes to the user's own chat, so it needs that chat linked first, not the admin token.
+        r = client.post("/api/alerts/rules", headers=ME | {"X-Admin-Token": "s3cret"}, json=telegram)
+        assert r.status_code == 422 and "Connect Telegram" in r.json()["detail"]
 
 
 def test_api_rule_limit(make_client):
