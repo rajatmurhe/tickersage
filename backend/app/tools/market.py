@@ -24,6 +24,7 @@ from .errors import ToolError
 log = logging.getLogger(__name__)
 
 Interval = Literal["15m", "1h", "4h", "1d"]
+KRAKEN_URL = "https://api.kraken.com"
 INTERVAL_MINUTES = {"15m": 15, "1h": 60, "4h": 240, "1d": 1440}
 
 
@@ -259,10 +260,29 @@ class MarketData:
 
     # -------------------------------------------------------------- order book
 
+    async def _kraken_depth(self, pair: str, depth: int, cause: ToolError) -> tuple[dict, str]:
+        """Backup order book from Kraken's public API, for USD-quoted pairs. Binance blocks some regions."""
+        base = self.registry.base(pair)
+        kraken_base = {"BTC": "XBT", "DOGE": "XDG"}.get(base, base)
+        log.warning("falling back to Kraken order book for %s after: %s", pair, cause.message)
+        try:
+            data = await self._get(f"{KRAKEN_URL}/0/public/Depth", {"pair": f"{kraken_base}USD", "count": depth})
+        except ToolError:
+            raise cause from None
+        if data.get("error") or not data.get("result"):
+            raise cause
+        book = next(iter(data["result"].values()))
+        return {"bids": book.get("bids", []), "asks": book.get("asks", [])}, "Kraken public API (backup, USD pair)"
+
     async def get_order_book(self, pair: str, depth: int) -> OrderBookOutput:
-        raw, source = await self._binance("/api/v3/depth", {"symbol": pair, "limit": depth})
-        bids = [(float(p), float(q)) for p, q in raw.get("bids", [])]  # type: ignore[union-attr]
-        asks = [(float(p), float(q)) for p, q in raw.get("asks", [])]  # type: ignore[union-attr]
+        try:
+            raw, source = await self._binance("/api/v3/depth", {"symbol": pair, "limit": depth})
+        except ToolError as exc:
+            if exc.code == "unknown_symbol":
+                raise
+            raw, source = await self._kraken_depth(pair, depth, exc)
+        bids = [(float(b[0]), float(b[1])) for b in raw.get("bids", [])]  # type: ignore[union-attr]
+        asks = [(float(a[0]), float(a[1])) for a in raw.get("asks", [])]  # type: ignore[union-attr]
         if not bids or not asks:
             raise ToolError("empty_data", f"The order book for {pair} is empty right now.")
         best_bid, best_ask = bids[0][0], asks[0][0]

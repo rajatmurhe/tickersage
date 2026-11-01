@@ -123,3 +123,16 @@ def test_symbol_extraction():
     assert reg.extract("What's FAKECOIN trading at?") == ["FAKECOIN"]
     assert reg.extract("What is the RSI in UTC terms?") == []
     assert reg.resolve("eth") == "ETHUSDT" and reg.resolve("BTC/USDT") == "BTCUSDT"
+
+
+@respx.mock
+async def test_order_book_falls_back_to_kraken_when_binance_blocks_the_region(toolbox):
+    for host in (BINANCE, MIRROR):
+        respx.get(f"{host}/api/v3/depth").mock(return_value=httpx.Response(451, json={"msg": "restricted location"}))
+    kraken = respx.get("https://api.kraken.com/0/public/Depth").mock(return_value=httpx.Response(200, json={
+        "error": [], "result": {"XXBTZUSD": {"bids": [["100.0", "2", 1], ["99.5", "4", 1]],
+                                             "asks": [["100.2", "1", 1], ["100.9", "3", 1]]}}}))
+    r = await toolbox.call(ToolCall(tool="get_order_book", args={"symbol": "BTC", "depth": 5}), 1)
+    assert r.ok and r.source.startswith("Kraken")
+    assert r.data["best_bid"] == 100.0 and r.data["best_ask"] == 100.2
+    assert kraken.calls.last.request.url.params["pair"] == "XBTUSD"
