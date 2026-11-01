@@ -58,6 +58,7 @@ export interface ChatResponse {
   intent: string | null;
   citations: Citation[];
   data_as_of: string | null;
+  interpreted_as?: string | null;
   trace: Trace;
 }
 

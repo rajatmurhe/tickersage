@@ -25,6 +25,18 @@ interface Turn {
   error: string | null;
 }
 
+const STORE_KEY = "tickersage.chat.v1";
+const KEEP_TURNS = 20;
+
+function loadTurns(): Turn[] {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "[]") as Turn[];
+    return Array.isArray(saved) ? saved.filter((t) => t.response).slice(-KEEP_TURNS) : [];
+  } catch {
+    return [];
+  }
+}
+
 export default function Chat() {
   const [turns, setTurns] = useState<Turn[]>([]);
   const [busy, setBusy] = useState(false);
@@ -36,6 +48,21 @@ export default function Chat() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => () => abort.current?.abort(), []);
+
+  // Keep the conversation across refreshes, in this browser only.
+  useEffect(() => {
+    const saved = loadTurns();
+    nextId.current = saved.reduce((m, t) => Math.max(m, t.id + 1), 0);
+    if (saved.length) setTurns(saved);
+  }, []);
+  useEffect(() => {
+    if (busy) return;
+    try {
+      localStorage.setItem(STORE_KEY, JSON.stringify(turns.filter((t) => t.response).slice(-KEEP_TURNS)));
+    } catch {
+      /* private mode or full storage: the chat still works, it just won't survive a refresh */
+    }
+  }, [turns, busy]);
 
   // Follow the stream while the reader is at the bottom of what was there before this update;
   // if they have scrolled up to read, leave them there. A new question always jumps down.
@@ -49,6 +76,8 @@ export default function Chat() {
 
   async function ask(question: string) {
     const id = nextId.current++;
+    // Earlier answered questions let the backend resolve follow-ups like "and ETH?".
+    const history = turns.filter((t) => t.response).map((t) => t.response!.question);
     const update = (fn: (t: Turn) => Turn) => setTurns((ts) => ts.map((t) => (t.id === id ? fn(t) : t)));
     follow.current = true;
     setTurns((ts) => [...ts, { id, question, steps: [], text: "", response: null, error: null }]);
@@ -64,6 +93,7 @@ export default function Chat() {
           onDone: (response) => update((t) => ({ ...t, text: response.answer, response })),
         },
         controller.signal,
+        history,
       );
     } catch (err) {
       if (controller.signal.aborted) return;
@@ -98,6 +128,12 @@ export default function Chat() {
           </button>
         ))}
       </div>
+
+      {turns.length > 0 && !busy && (
+        <button type="button" className="link clear-chat" onClick={() => setTurns([])}>
+          Clear conversation
+        </button>
+      )}
 
       <div className="log">
         {turns.map((t) => (
@@ -154,6 +190,8 @@ function BotBubble({ turn }: { turn: Turn }) {
           {!turn.text && <li className="running">{turn.steps.length ? "Working" : "Starting"}</li>}
         </ol>
       )}
+
+      {r?.interpreted_as && <p className="muted interpreted">Answered as: “{r.interpreted_as}”</p>}
 
       {turn.text && (
         <div className="answer">

@@ -34,13 +34,18 @@ export interface StreamHandlers {
  * POST /api/chat/stream and dispatch its SSE events. EventSource only does GET, so this reads the
  * body with fetch + ReadableStream. Tokens arrive only after the backend has verified every number.
  */
-export async function streamChat(question: string, handlers: StreamHandlers, signal?: AbortSignal): Promise<void> {
+export async function streamChat(
+  question: string,
+  handlers: StreamHandlers,
+  signal?: AbortSignal,
+  history: string[] = [],
+): Promise<void> {
   let resp: Response;
   try {
     resp = await fetch(`${API_URL}/api/chat/stream`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
-      body: JSON.stringify({ question }),
+      body: JSON.stringify({ question, history: history.slice(-5) }),
       signal,
     });
   } catch (err) {

@@ -19,6 +19,7 @@ from fastapi.staticfiles import StaticFiles
 from sse_starlette.sse import EventSourceResponse
 
 from .agent import Agent
+from .followup import MAX_HISTORY, resolve_followup
 from .alerts.api import router as alerts_router
 from .alerts.service import AlertService
 from .alerts.store import AlertStore
@@ -96,9 +97,23 @@ async def health(request: Request) -> dict:
             "planner_mode": s.planner_mode, "verifier": s.verifier_enabled}
 
 
+def _resolve(agent: Agent, body: ChatRequest) -> str:
+    history = [h[:1000] for h in body.history[-MAX_HISTORY:] if h.strip()]
+    return resolve_followup(body.question, history, agent.deps.registry)
+
+
+def _mark(response: ChatResponse, asked: str, answered: str) -> ChatResponse:
+    if answered != asked:
+        response.interpreted_as = response.question
+    return response
+
+
 @app.post("/api/chat", response_model=ChatResponse, dependencies=[Depends(rate_limit)])
 async def chat(body: ChatRequest, request: Request) -> ChatResponse:
-    return await _agent(request).ask(body.question, scopes=body.scopes)
+    agent = _agent(request)
+    question = _resolve(agent, body)
+    response = await agent.ask(question, scopes=body.scopes)
+    return _mark(response, body.question, question)
 
 
 @app.post("/api/chat/stream", dependencies=[Depends(rate_limit)])
@@ -109,13 +124,14 @@ async def chat_stream(body: ChatRequest, request: Request) -> EventSourceRespons
     so the client never displays an unverified figure.
     """
     agent = _agent(request)
+    question = _resolve(agent, body)
 
     async def events():
-        async for event in agent.stream(body.question, scopes=body.scopes):
+        async for event in agent.stream(question, scopes=body.scopes):
             if event["type"] == "step":
                 yield {"event": "step", "data": json.dumps(event, default=str)}
                 continue
-            response: ChatResponse = event["response"]
+            response: ChatResponse = _mark(event["response"], body.question, question)
             text = response.answer
             for i in range(0, len(text), ANSWER_CHUNK):
                 yield {"event": "token", "data": json.dumps({"delta": text[i : i + ANSWER_CHUNK]})}

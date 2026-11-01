@@ -114,6 +114,8 @@ class ChatRequest(BaseModel):
     question: str = Field(min_length=1, max_length=1000)
     # Narrows what this request's tool calls may touch; omitted means the server's default scopes.
     scopes: list[Scope] | None = None
+    # The user's earlier questions in this conversation, oldest first; used only to resolve follow-ups.
+    history: list[str] = Field(default_factory=list, max_length=5)
 
 
 class ChatResponse(BaseModel):
@@ -124,4 +126,6 @@ class ChatResponse(BaseModel):
     intent: Intent | None = None
     citations: list[Citation] = Field(default_factory=list)
     data_as_of: datetime | None = None
+    # Set when a follow-up ("and ETH?") was rewritten into a full question before answering.
+    interpreted_as: str | None = None
     trace: Trace

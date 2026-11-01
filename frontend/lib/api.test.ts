@@ -58,7 +58,7 @@ describe("streamChat", () => {
     const [url, init] = fetchMock.mock.calls[0];
     expect(url).toBe(`${API_URL}/api/chat/stream`);
     expect(init?.method).toBe("POST");
-    expect(JSON.parse(String(init?.body))).toEqual({ question: "price of btc" });
+    expect(JSON.parse(String(init?.body))).toEqual({ question: "price of btc", history: [] });
 
     expect(steps).toEqual([STEP]);
     expect(tokens).toEqual(["BTC is ", "$67,000 €."]);

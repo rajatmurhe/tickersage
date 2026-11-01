@@ -368,3 +368,6 @@ figure.equity .axis { display: flex; justify-content: space-between; gap: 8px; m
   display: inline-block; min-width: 18px; margin-left: 5px; padding: 0 5px; border-radius: 999px;
   background: var(--accent); color: var(--panel); font-size: 11px; line-height: 18px; text-align: center; font-weight: 600;
 }
+
+.interpreted { font-size: 13px; margin: 0 0 8px; }
+.clear-chat { background: none; border: 0; padding: 0; color: var(--muted); font: inherit; font-size: 13px; cursor: pointer; text-decoration: underline; }
