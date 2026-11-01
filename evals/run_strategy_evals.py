@@ -5,7 +5,7 @@
     python -m evals.run_strategy_evals --llm live     # the LLM compiler on the same cases (needs a key)
     python -m evals.run_strategy_evals --record       # record the klines fixtures the backtest cases use
 
-Results go to evals/results/strategy.json and evals/report_strategy.md. evals/cases.yaml is not touched.
+Results go to evals/results/strategy.json and evals/reports/report_strategy.md. evals/cases.yaml is not touched.
 """
 
 from __future__ import annotations
@@ -38,7 +38,7 @@ from app.strategy.spec import CANDLES, StrategySpec
 EVALS_DIR = Path(__file__).resolve().parent
 CASES = EVALS_DIR / "cases_strategy.yaml"
 RESULTS = EVALS_DIR / "results" / "strategy.json"
-REPORT = EVALS_DIR / "report_strategy.md"
+REPORT = EVALS_DIR / "reports" / "report_strategy.md"
 # The demo grid recorded with --record; the backtest cases only use these.
 RECORD_GRID = [(s, i) for s in ("BTC", "ETH", "SOL") for i in ("1h", "4h", "1d")]
 

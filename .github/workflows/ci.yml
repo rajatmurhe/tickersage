@@ -32,31 +32,31 @@ jobs:
 
       # Every attack the red team ever got past the guardrails must stay blocked: 0 successes allowed.
       - name: Red-team regressions (gated)
-        run: python -m evals.redteam.run --cases evals/cases_redteam_regressions.yaml --gate --out evals/results/redteam_regressions.json --report evals/report_redteam_regressions.md
+        run: python -m evals.redteam.run --cases evals/cases_redteam_regressions.yaml --gate --out evals/results/redteam_regressions.json --report evals/reports/report_redteam_regressions.md
 
       - name: Held-out eval sets (gated)
         run: |
-          python -m evals.run_evals --cases evals/cases_holdout.yaml --out evals/results/holdout.json --report evals/report_holdout.md --gate
-          python -m evals.run_evals --cases evals/cases_holdout_v2.yaml --out evals/results/holdout_v2.json --report evals/report_holdout_v2.md --gate
+          python -m evals.run_evals --cases evals/cases_holdout.yaml --out evals/results/holdout.json --report evals/reports/report_holdout.md --gate
+          python -m evals.run_evals --cases evals/cases_holdout_v2.yaml --out evals/results/holdout_v2.json --report evals/reports/report_holdout_v2.md --gate
 
       # Out-of-scope and over-limit tool calls must all be denied (none may run), and every pasted secret must be
       # redacted everywhere with a warning to the user: --gate fails the build below 100% on either.
       - name: Policy engine and secret redaction evals (gated)
-        run: python -m evals.run_evals --cases evals/cases_policy.yaml --out evals/results/policy.json --report evals/report_policy.md --gate
+        run: python -m evals.run_evals --cases evals/cases_policy.yaml --out evals/results/policy.json --report evals/reports/report_policy.md --gate
 
       # Strategy Studio: compiler, clarifying questions, input screening, backtests on recorded klines, and the
       # linter, which must flag every deliberately broken idea.
       - name: Strategy Studio evals (gated)
         run: |
           python -m evals.run_strategy_evals --gate
-          python -m evals.run_strategy_evals --cases evals/cases_strategy_holdout.yaml --out evals/results/strategy_holdout.json --report evals/report_strategy_holdout.md --gate
+          python -m evals.run_strategy_evals --cases evals/cases_strategy_holdout.yaml --out evals/results/strategy_holdout.json --report evals/reports/report_strategy_holdout.md --gate
 
       # Docs RAG: recall@k, MRR, no-answer handling and citation checks on the dev and held-out retrieval sets,
       # offline (hash embedder + lexical rerank, no model download). --gate fails on a regression.
       - name: Docs retrieval evals (gated)
         run: |
           python -m evals.rag.run --gate
-          python -m evals.rag.run --cases evals/rag/cases_holdout.yaml --out evals/results/rag_holdout.json --report evals/report_rag_holdout.md --gate
+          python -m evals.rag.run --cases evals/rag/cases_holdout.yaml --out evals/results/rag_holdout.json --report evals/reports/report_rag_holdout.md --gate
 
       # Research reports: planner, per-asset sub-agents and writer on recorded data. Every number in every report
       # must trace to a tool output, every report must have all its sections and charts, each asset's headline
@@ -70,7 +70,7 @@ jobs:
       - name: Smart alert evals (gated)
         run: |
           python -m evals.run_alert_evals --gate
-          python -m evals.run_alert_evals --cases evals/cases_alerts_holdout.yaml --out evals/results/alerts_holdout.json --report evals/report_alerts_holdout.md --gate --min-accuracy 0.85
+          python -m evals.run_alert_evals --cases evals/cases_alerts_holdout.yaml --out evals/results/alerts_holdout.json --report evals/reports/report_alerts_holdout.md --gate --min-accuracy 0.85
 
       - uses: actions/upload-artifact@v4
         if: always()
@@ -95,13 +95,13 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - name: Live-LLM eval with judge (replayed tools)
-        run: python -m evals.run_evals --llm live --judge --gate --out evals/results/live.json --report evals/report_live.md
+        run: python -m evals.run_evals --llm live --judge --gate --out evals/results/live.json --report evals/reports/report_live.md
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: live-eval-report
           path: |
-            evals/report_live.md
+            evals/reports/report_live.md
             evals/results/live.json
 
   frontend:

@@ -4,8 +4,8 @@
 # False-refusal probes mention buying, selling or positions but only ask for data or a definition.
 #
 # Run:
-#   python -m evals.run_evals --cases evals/cases_holdout_v3.yaml --out evals/results/holdout_v3.json --report evals/report_holdout_v3.md
-#   python -m evals.run_evals --cases evals/cases_holdout_v3.yaml --llm live --judge --out evals/results/holdout_v3_live.json --report evals/report_holdout_v3_live.md
+#   python -m evals.run_evals --cases evals/cases_holdout_v3.yaml --out evals/results/holdout_v3.json --report evals/reports/report_holdout_v3.md
+#   python -m evals.run_evals --cases evals/cases_holdout_v3.yaml --llm live --judge --out evals/results/holdout_v3_live.json --report evals/reports/report_holdout_v3_live.md
 
 - id: h3-price-01
   category: price_lookup

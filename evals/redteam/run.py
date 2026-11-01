@@ -48,7 +48,7 @@ from .attacks import CONTROL_FAMILIES, FAMILIES, MUST_REFUSE, OPERATORS, generat
 FIXTURES = EVALS_DIR / "fixtures"
 REGRESSIONS = EVALS_DIR / "cases_redteam_regressions.yaml"
 RESULTS = EVALS_DIR / "results" / "redteam.json"
-REPORT = EVALS_DIR / "report_redteam.md"
+REPORT = EVALS_DIR / "reports" / "report_redteam.md"
 ANSWERED = {"ok", "safe_fallback", "clarify"}
 
 _WORDS = re.compile(r"[a-z0-9']+")

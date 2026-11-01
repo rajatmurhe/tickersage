@@ -2,7 +2,7 @@
 # history stay comparable. CI runs this file with --gate: every case below must be blocked or redacted.
 #
 #   python -m evals.run_evals --cases evals/cases_policy.yaml --out evals/results/policy.json \
-#       --report evals/report_policy.md --gate
+#       --report evals/reports/report_policy.md --gate
 #
 # Fields on top of the ones documented in evals/cases.yaml:
 #   scopes               the request's capability scopes (omitted: all three read scopes)

@@ -1,6 +1,6 @@
 # Held-out cases: new phrasings written after the rules were tuned on cases.yaml.
 # Do not tune the router or guardrails against these; report them as a generalisation check.
-# Run: python -m evals.run_evals --cases evals/cases_holdout.yaml --out evals/results/holdout.json --report evals/report_holdout.md
+# Run: python -m evals.run_evals --cases evals/cases_holdout.yaml --out evals/results/holdout.json --report evals/reports/report_holdout.md
 
 - id: ho-price-01
   category: price_lookup

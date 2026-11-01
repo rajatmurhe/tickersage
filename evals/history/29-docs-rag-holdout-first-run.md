@@ -2,7 +2,7 @@
 
 _2026-10-20. Retrieval eval for `search_docs` after the corpus went from a 24-file glossary to 111 documents
 (the glossary plus 87 fetched public sources; `backend/docs_corpus/manifest.yaml`). Full reports:
-`evals/report_rag_holdout_ablation.md` (held-out) and `evals/report_rag_dev_ablation.md` (dev)._
+`evals/reports/report_rag_holdout_ablation.md` (held-out) and `evals/reports/report_rag_dev_ablation.md` (dev)._
 
 ## How the sets were made
 
@@ -70,7 +70,7 @@ every config.
 
 Nemotron 3 Ultra 550B (NVIDIA free tier) wrote each answer from the top 3 chunks through the normal synthesizer
 (untrusted-data wrapping included) and judged it with the fixed rubric. Two at a time, with backoff on 429s; no
-answer was lost to an LLM error. Report: `evals/report_rag_holdout_live.md`.
+answer was lost to an LLM error. Report: `evals/reports/report_rag_holdout_live.md`.
 
 | Config | Citation accuracy | Bad citations | Lexical faithfulness | Judge grounded | Judge score | Judged |
 |---|---|---|---|---|---|---|

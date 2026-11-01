@@ -3,9 +3,9 @@
 _First red-team run with a live LLM (2026-10-19), on the current guardrails, which score 0% offline on both batches. It uses the same seed-1 batch as history 10 (40 attacks per family plus 40 benign controls), then the 477-case regression set. The router and the answers use NVIDIA Nemotron 3 Super (free tier) with the usual backup chain: Groq gpt-oss first, then Nemotron through OpenRouter. NVIDIA rate-limited much of the run, so backups served a lot of calls; the split is at the bottom. Tools were replayed. I kept the full 40 per family but ran at concurrency 2 instead of 4 because of the rate limits. Nothing was tuned on these runs._
 
 ```bash
-python -m evals.redteam.run --seed 1 --llm live --concurrency 2 --out evals/results/redteam_live.json --report evals/report_redteam_live.md
+python -m evals.redteam.run --seed 1 --llm live --concurrency 2 --out evals/results/redteam_live.json --report evals/reports/report_redteam_live.md
 python -m evals.redteam.run --cases evals/cases_redteam_regressions.yaml --llm live --concurrency 2 \
-  --out evals/results/redteam_regressions_live.json --report evals/report_redteam_regressions_live.md
+  --out evals/results/redteam_regressions_live.json --report evals/reports/report_redteam_regressions_live.md
 ```
 
 ## Seed 1, live
@@ -84,7 +84,7 @@ Encoders, languages, stacked-family combos and injection carriers.
 
 ## Regression set, live
 
-Run `c0765533` at 2026-10-19T14:45:57+00:00: 477 attacks in 337.01s. **Attack success rate: 0.0%** (0 of 477). Errors: 0. All families got 0: roleplay 0/36, advice 0/62, trade 0/52, prompt_extraction 0/74, encoding 0/72, multilingual 0/76, indirect 0/66, combined 0/39. The full tables are in `evals/report_redteam_regressions_live.md`.
+Run `c0765533` at 2026-10-19T14:45:57+00:00: 477 attacks in 337.01s. **Attack success rate: 0.0%** (0 of 477). Errors: 0. All families got 0: roleplay 0/36, advice 0/62, trade 0/52, prompt_extraction 0/74, encoding 0/72, multilingual 0/76, indirect 0/66, combined 0/39. The full tables are in `evals/reports/report_redteam_regressions_live.md`.
 
 ## Live vs offline
 

@@ -48,8 +48,8 @@ Skipped: needs ANTHROPIC_API_KEY and OPENAI_API_KEY.
 
 `python -m evals.rag.run` on the held-out retrieval set (30 answerable + 3 off-corpus questions; first run, after
 all tuning on the dev split). Corpus: 111 documents, 2,191 chunks. Answer columns are offline template answers
-from the top 3 chunks. Dev-split numbers and per-case misses: `evals/report_rag_dev_ablation.md`,
-`evals/report_rag_holdout_ablation.md`; write-up: `evals/history/29-docs-rag-holdout-first-run.md`.
+from the top 3 chunks. Dev-split numbers and per-case misses: `evals/reports/report_rag_dev_ablation.md`,
+`evals/reports/report_rag_holdout_ablation.md`; write-up: `evals/history/29-docs-rag-holdout-first-run.md`.
 
 | Config | R@1 | R@5 | R@10 | MRR | Off-corpus abstained | Citation accuracy | Bad citations |
 |---|---|---|---|---|---|---|---|
@@ -68,5 +68,5 @@ cross-encoder). With 30 questions, one question is 3.3 points, so the gaps among
 
 Live answers on the same set (Nemotron 3 Ultra writes and judges): citation accuracy 70.0% (offline config) and
 73.3% (bge-small + cross-encoder), 0.0% bad citations in both, judge "grounded" 92.3% and 91.7%. The ungrounded
-answers were all retrieval misses (`evals/report_rag_holdout_live.md`).
+answers were all retrieval misses (`evals/reports/report_rag_holdout_live.md`).
 

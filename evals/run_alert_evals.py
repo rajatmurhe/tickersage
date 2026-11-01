@@ -6,7 +6,7 @@ with a "why it moved" brief, and the scheduler's fire / re-arm / cooldown decisi
     python -m evals.run_alert_evals --llm live            # the LLM compiler (and LLM briefs) on the same cases
     python -m evals.run_alert_evals --cases evals/cases_alerts_holdout.yaml --out ... --report ...
 
-Results go to evals/results/alerts.json and evals/report_alerts.md.
+Results go to evals/results/alerts.json and evals/reports/report_alerts.md.
 """
 
 from __future__ import annotations
@@ -39,7 +39,7 @@ from app.llm import LLMClient, LLMUnavailable
 EVALS_DIR = Path(__file__).resolve().parent
 CASES = EVALS_DIR / "cases_alerts.yaml"
 RESULTS = EVALS_DIR / "results" / "alerts.json"
-REPORT = EVALS_DIR / "report_alerts.md"
+REPORT = EVALS_DIR / "reports" / "report_alerts.md"
 
 GATES = {
     "spec_accuracy": 0.9,

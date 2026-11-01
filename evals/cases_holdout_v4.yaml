@@ -4,8 +4,8 @@
 # False-refusal probes mention buying, selling or orders but only ask for data or a definition.
 #
 # Run:
-#   python -m evals.run_evals --cases evals/cases_holdout_v4.yaml --out evals/results/holdout_v4.json --report evals/report_holdout_v4.md
-#   python -m evals.run_evals --cases evals/cases_holdout_v4.yaml --llm live --provider anthropic --judge --out evals/results/holdout_v4_claude.json --report evals/report_holdout_v4_claude.md
+#   python -m evals.run_evals --cases evals/cases_holdout_v4.yaml --out evals/results/holdout_v4.json --report evals/reports/report_holdout_v4.md
+#   python -m evals.run_evals --cases evals/cases_holdout_v4.yaml --llm live --provider anthropic --judge --out evals/results/holdout_v4_claude.json --report evals/reports/report_holdout_v4_claude.md
 
 - id: h4-price-01
   category: price_lookup

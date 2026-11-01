@@ -2,7 +2,7 @@
 
     python -m evals.run_report_evals --gate                    # offline LLM, replayed tools (what CI runs)
     python -m evals.run_report_evals --llm live --provider groq --judge --judge-provider nvidia \\
-        --no-provider-fallback --out evals/results/research_live.json --report evals/report_research_live.md
+        --no-provider-fallback --out evals/results/research_live.json --report evals/reports/report_research_live.md
 
 Scores: number faithfulness over the whole report body, section coverage (summary, one section per asset,
 comparison for 2+ assets, risks, sources, both charts), key numbers present in each asset's own section,
@@ -44,7 +44,7 @@ from .run_evals import EVALS_DIR, GATES, build_judge, build_settings, load_cases
 
 CASES = EVALS_DIR / "cases_report.yaml"
 RESULTS = EVALS_DIR / "results" / "research.json"
-REPORT = EVALS_DIR / "report_research.md"
+REPORT = EVALS_DIR / "reports" / "report_research.md"
 DEFAULT_KEY_NUMBERS = ["compute_metrics.return_pct", "get_ticker.last_price"]
 PROSE_STATUSES = ("ok", "safe_fallback")
 

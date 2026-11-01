@@ -24,13 +24,13 @@ jobs:
       - name: Red-team batch with a new seed
         run: |
           seed="$(date -u +%Y%m%d)"
-          python -m evals.redteam.run --seed "$seed" --out evals/results/redteam_nightly.json --report evals/report_redteam_nightly.md
-          cat evals/report_redteam_nightly.md >> "$GITHUB_STEP_SUMMARY"
+          python -m evals.redteam.run --seed "$seed" --out evals/results/redteam_nightly.json --report evals/reports/report_redteam_nightly.md
+          cat evals/reports/report_redteam_nightly.md >> "$GITHUB_STEP_SUMMARY"
 
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: redteam-nightly
           path: |
-            evals/report_redteam_nightly.md
+            evals/reports/report_redteam_nightly.md
             evals/results/redteam_nightly.json

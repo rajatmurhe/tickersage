@@ -294,7 +294,7 @@ async def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--configs", nargs="*", default=OFFLINE_CONFIGS)
     ap.add_argument("--answers", choices=["offline", "live"], default="offline")
     ap.add_argument("--out", type=Path, default=Path("evals/results/rag_dev.json"))
-    ap.add_argument("--report", type=Path, default=Path("evals/report_rag_dev.md"))
+    ap.add_argument("--report", type=Path, default=Path("evals/reports/report_rag_dev.md"))
     ap.add_argument("--gate", action="store_true", help=f"fail unless {SHIPPED_OFFLINE} meets GATES")
     ap.add_argument("--concurrency", type=int, default=1, help="answers written at once (live runs)")
     ap.add_argument("--sweep", metavar="CONFIG", help="print a no-answer threshold sweep (dev split only)")
