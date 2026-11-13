@@ -131,6 +131,10 @@ export default function TracesView() {
 
   return (
     <div className="traces-page">
+      <header className="page-title">
+        <span className="eyebrow">Every request, every tool call</span>
+        <h1>Request traces</h1>
+      </header>
       <p className="intro">
         The agent&apos;s most recent requests from the trace store, newest first: what was asked, the route it took,
         the tools it called and what it cost.

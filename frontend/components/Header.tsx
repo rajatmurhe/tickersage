@@ -52,9 +52,12 @@ export default function Header() {
     <header className="top">
       <div className="brand">
         <Link href="/" className="brand-name">
+          <span className="brand-mark" aria-hidden="true">
+            <i />
+          </span>
           TickerSage
         </Link>
-        <span>
+        <span className="brand-sub">
           {path.startsWith("/evals")
             ? "eval results"
             : path.startsWith("/traces")
@@ -70,6 +73,7 @@ export default function Header() {
       </div>
       <nav>
         {mode}
+        <div className="nav-pills">
         <Link href="/" aria-current={path === "/" ? "page" : undefined}>
           Chat
         </Link>
@@ -96,6 +100,7 @@ export default function Header() {
         <a href={`${API_URL}/docs`} target="_blank" rel="noopener noreferrer">
           API
         </a>
+        </div>
       </nav>
     </header>
   );

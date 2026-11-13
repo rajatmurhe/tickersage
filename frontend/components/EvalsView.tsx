@@ -50,6 +50,10 @@ export default function EvalsView() {
 
   return (
     <>
+      <header className="page-title">
+        <span className="eyebrow">Replay evals · CI gated</span>
+        <h1>Eval results</h1>
+      </header>
       <p className="intro">
         Run <span className="mono">{run.run_id}</span> · {run.cases_run} cases · LLM {c.llm} · routing {c.routing_mode} ·
         verifier {c.verifier ? "on" : "off"} · tools {c.tool_mode}

@@ -165,6 +165,10 @@ export default function Alerts() {
 
   return (
     <div className="strategy-page alerts-page">
+      <header className="page-title">
+        <span className="eyebrow">Watchlist · read-only alerts</span>
+        <h1>Alerts</h1>
+      </header>
       <p className="intro">
         Describe a market condition in plain words. TickerSage turns it into a rule, checks it on a schedule with the
         read-only market tools, and when it fires writes a short “why it moved” brief in which every number is checked

@@ -101,6 +101,10 @@ export default function StrategyStudio() {
 
   return (
     <div className="strategy-page">
+      <header className="page-title">
+        <span className="eyebrow">Plain English → spec → backtest</span>
+        <h1>Strategy Studio</h1>
+      </header>
       <p className="intro">
         Describe a rule-based idea in plain words. Strategy Studio turns it into a spec, checks it for the usual
         mistakes, draws the rules and backtests them on historical Binance candles. It only backtests: nothing here

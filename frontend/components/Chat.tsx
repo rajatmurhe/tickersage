@@ -118,15 +118,35 @@ export default function Chat() {
   }
 
   return (
-    <>
-      <p className="intro">
-        Ask about prices, moves, volatility, order books, news sentiment or crypto concepts. Every number is computed in
-        Python from public exchange data and checked against the tool output before you see it. No trading, no advice.
-      </p>
+    <div className={turns.length ? "chat-started" : undefined}>
+      <section className="hero">
+        <span className="eyebrow">Read-only research · every number verified</span>
+        <h1>
+          Market answers
+          <br />
+          you can check<span className="tick">.</span>
+        </h1>
+        <p>
+          Ask about prices, moves, volatility, order books, news sentiment or crypto concepts. Every number is computed in
+          Python from public exchange data and checked against the tool output before you see it. No trading, no advice.
+        </p>
+        <div className="hero-meta">
+          <span>
+            Tools <b>8 read-only</b>
+          </span>
+          <span>
+            Data <b>Binance · Kraken</b>
+          </span>
+          <span>
+            Verifier <b>on</b>
+          </span>
+        </div>
+      </section>
       <div className="examples">
-        {EXAMPLES.map((ex) => (
+        {EXAMPLES.map((ex, i) => (
           <button key={ex} type="button" disabled={busy} onClick={() => void ask(ex)}>
-            {ex}
+            <span className="idx">{String(i + 1).padStart(2, "0")}</span>
+            <span>{ex}</span>
           </button>
         ))}
       </div>
@@ -163,11 +183,11 @@ export default function Chat() {
             required
           />
           <button type="submit" disabled={busy || !input.trim()}>
-            {busy ? "…" : "Ask"}
+            {busy ? "…" : "Ask ↗"}
           </button>
         </div>
       </form>
-    </>
+    </div>
   );
 }
 
@@ -180,6 +200,13 @@ function BotBubble({ turn }: { turn: Turn }) {
 
   return (
     <div className="bubble" aria-busy={working}>
+      <div className="receipt-head">
+        <span>TickerSage · answer</span>
+        <span className={working ? "live" : undefined}>
+          {working ? "● working" : r ? `${r.citations.length} source${r.citations.length === 1 ? "" : "s"} · ${ms(r.trace.latency_ms)}` : "stopped"}
+        </span>
+      </div>
+      <div className="receipt-body">
       {working && (
         <ol className="progress" aria-label="Progress">
           {turn.steps.map((s, i) => (
@@ -236,6 +263,7 @@ function BotBubble({ turn }: { turn: Turn }) {
           <TracePanel trace={r.trace} />
         </>
       )}
+      </div>
     </div>
   );
 }
