@@ -14,10 +14,12 @@ unchanged in [`../history/`](../history/); the experiments are in [`../experimen
 - [report_holdout_v2.md](report_holdout_v2.md) — Run `5fd752f8` at 2026-10-20T19:28:21+00:00: 30 cases in 0.34s. LLM: **offline** (no model calls), tools: **replay**, routing: routed, planner: rules,
 - [report_holdout_v4.md](report_holdout_v4.md) — Run `b70fcd1d` at 2026-10-19T17:54:34+00:00: 33 cases in 0.24s. LLM: **offline** (no model calls), tools: **replay**, routing: routed, planner: rules,
 - [report_holdout_v4_live_groq.md](report_holdout_v4_live_groq.md) — Run `751d83ba` at 2026-10-20T05:45:57+00:00: 33 cases in 245.81s. LLM: **live** (openai/gpt-oss-120b, openai/gpt-oss-20b), tools: **replay**, routing:
+- [report_holdout_v4_live_nemotron.md](report_holdout_v4_live_nemotron.md) — 33 cases live on Nemotron 3.5 Lightning + Nemotron 3 Ultra, 2026-11-22: pass 75.8%, 0 provider fallbacks
 
 ## Live LLM runs
 
 - [report_live_groq.md](report_live_groq.md) — Run `0e47099b` at 2026-10-20T05:41:27+00:00: 110 cases in 877.72s. LLM: **live** (openai/gpt-oss-120b, openai/gpt-oss-20b), tools: **replay**, routing
+- [report_live_nemotron.md](report_live_nemotron.md) — 110 cases live on Nemotron 3.5 Lightning + Nemotron 3 Ultra, 2026-11-22: pass 70.9%, but NVIDIA rate-limited (HTTP 429) the run and 17 calls fell back to the rules router
 
 ## Red team
 
