@@ -120,7 +120,7 @@ export default function Chat() {
   return (
     <div className={turns.length ? "chat-started" : undefined}>
       <section className="hero">
-        <span className="eyebrow">Read-only research · every number verified</span>
+        <span className="eyebrow">Crypto market research</span>
         <h1>
           Market answers
           <br />
@@ -128,7 +128,7 @@ export default function Chat() {
         </h1>
         <p>
           Ask about prices, moves, volatility, order books, news sentiment or crypto concepts. Every number is computed in
-          Python from public exchange data and checked against the tool output before you see it. No trading, no advice.
+          Python from public exchange data and checked against the tool output before you see it. It has no trading tools and gives no buy or sell advice.
         </p>
         <div className="hero-meta">
           <span>

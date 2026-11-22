@@ -102,7 +102,7 @@ export default function StrategyStudio() {
   return (
     <div className="strategy-page">
       <header className="page-title">
-        <span className="eyebrow">Plain English → spec → backtest</span>
+        <span className="eyebrow">Backtests on Binance candles</span>
         <h1>Strategy Studio</h1>
       </header>
       <p className="intro">

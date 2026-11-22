@@ -57,19 +57,7 @@ export default function Header() {
           </span>
           TickerSage
         </Link>
-        <span className="brand-sub">
-          {path.startsWith("/evals")
-            ? "eval results"
-            : path.startsWith("/traces")
-              ? "request traces"
-              : path.startsWith("/strategy")
-                ? "strategy backtests · read-only"
-                : path.startsWith("/report")
-                  ? "research reports · read-only"
-                : path.startsWith("/alerts")
-                  ? "smart alerts · read-only"
-                  : "crypto market research · read-only"}
-        </span>
+        <span className="brand-sub">read-only</span>
       </div>
       <nav>
         {mode}

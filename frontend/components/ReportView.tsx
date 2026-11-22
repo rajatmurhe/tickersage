@@ -61,13 +61,13 @@ export default function ReportView() {
   return (
     <div className="report-page">
       <header className="page-title">
-        <span className="eyebrow">Cited · verified · read-only</span>
+        <span className="eyebrow">Up to five assets per report</span>
         <h1>Research reports</h1>
       </header>
       <p className="intro">
         Ask for a research report on up to five assets. A planner splits it into one task per asset, sub-agents gather
         each asset&apos;s data in parallel and write its section, and an editor writes the summary and risks. Every number is
-        checked against the tool data before you see it. Research only: no trading, no advice.
+        checked against the tool data before you see it.
       </p>
       <form className="report-ask" onSubmit={onSubmit}>
         <input

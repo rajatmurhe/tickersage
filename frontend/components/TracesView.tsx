@@ -132,7 +132,7 @@ export default function TracesView() {
   return (
     <div className="traces-page">
       <header className="page-title">
-        <span className="eyebrow">Every request, every tool call</span>
+        <span className="eyebrow">Recent requests</span>
         <h1>Request traces</h1>
       </header>
       <p className="intro">

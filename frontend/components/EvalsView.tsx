@@ -51,7 +51,7 @@ export default function EvalsView() {
   return (
     <>
       <header className="page-title">
-        <span className="eyebrow">Replay evals · CI gated</span>
+        <span className="eyebrow">Latest replay run</span>
         <h1>Eval results</h1>
       </header>
       <p className="intro">
