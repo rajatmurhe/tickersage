@@ -263,6 +263,12 @@ def score_case(case: dict[str, Any], resp: ChatResponse | None, state: dict[str,
     # Which steps a model actually served, so a live run can tell real LLM decisions from rule fallbacks.
     router = next((st for st in trace.steps if st.name == "router"), None)
     llm_steps = [st.name for st in trace.steps if st.model]
+    # Time and output per model, for tokens/sec. Only model steps count: tool time isn't generation time.
+    llm_usage: dict[str, list[float]] = {}
+    for st in trace.steps:
+        if st.model and st.output_tokens:
+            ms, out = llm_usage.get(st.model, [0.0, 0])
+            llm_usage[st.model] = [ms + st.latency_ms, out + st.output_tokens]
 
     injection_resisted: bool | None = None
     if cat == "direct_injection":
@@ -282,7 +288,7 @@ def score_case(case: dict[str, Any], resp: ChatResponse | None, state: dict[str,
         input_tokens=trace.input_tokens, output_tokens=trace.output_tokens, models=trace.models,
         fell_back=trace.fell_back, answer=resp.answer,
         extra={"redacted": redacted_count, "tools_checked": tools_checked, "causes_ok": causes_ok,
-               "unsupported_causes": named, "llm_steps": llm_steps,
+               "unsupported_causes": named, "llm_steps": llm_steps, "llm_usage": llm_usage,
                "router_source": router.detail.get("source") if router else None, **extra},
     )
 
@@ -291,11 +297,18 @@ def _rate(values: list[bool]) -> float | None:
     return round(sum(values) / len(values), 4) if values else None
 
 
-def _pct(sorted_vals: list[float], q: float) -> float:
+def _pct(sorted_vals: list[float], q: float, digits: int = 1) -> float:
     if not sorted_vals:
         return 0.0
     idx = min(len(sorted_vals) - 1, max(0, round(q * (len(sorted_vals) - 1))))
-    return round(sorted_vals[idx], 1)
+    return round(sorted_vals[idx], digits)
+
+
+def _tps(usages) -> float | None:
+    """Output tokens per second of model time; None when no model produced output (offline runs)."""
+    ms = sum(u[0] for u in usages)
+    out = sum(u[1] for u in usages)
+    return round(out / (ms / 1000), 1) if ms and out else None
 
 
 def _must_refuse(r: CaseResult) -> bool:
@@ -305,6 +318,13 @@ def _must_refuse(r: CaseResult) -> bool:
 def summarize(results: list[CaseResult]) -> dict[str, Any]:
     tool_cases = [r for r in results if r.extra.get("tools_checked")]
     lat = sorted(r.latency_ms for r in results)
+    costs = sorted(r.cost_usd for r in results)
+    per_model_usage: dict[str, list[float]] = {}
+    for r in results:
+        for model, (ms, out) in r.extra.get("llm_usage", {}).items():
+            agg = per_model_usage.setdefault(model, [0.0, 0])
+            agg[0] += ms
+            agg[1] += out
     checked = sum(r.numbers_checked for r in results)
     matched = sum(r.numbers_matched for r in results)
     judged = [r.judge["score"] for r in results if r.judge and "score" in r.judge]
@@ -341,6 +361,11 @@ def summarize(results: list[CaseResult]) -> dict[str, Any]:
             "latency_p50_ms": _pct(lat, 0.5),
             "latency_p95_ms": _pct(lat, 0.95),
             "avg_cost_usd": round(statistics.fmean(r.cost_usd for r in results), 6) if results else 0.0,
+            "cost_p50_usd": _pct(costs, 0.5, 6),
+            "cost_p95_usd": _pct(costs, 0.95, 6),
+            "total_cost_usd": round(sum(costs), 6),
+            "output_tokens_per_sec": _tps(per_model_usage.values()),
+            "output_tokens_per_sec_by_model": {m: _tps([u]) for m, u in sorted(per_model_usage.items())},
             "avg_input_tokens": round(statistics.fmean(r.input_tokens for r in results), 1) if results else 0.0,
             "avg_output_tokens": round(statistics.fmean(r.output_tokens for r in results), 1) if results else 0.0,
             "provider_fallbacks": sum(r.fell_back for r in results),

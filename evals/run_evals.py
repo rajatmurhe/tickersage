@@ -162,6 +162,15 @@ def _p(x: float | None) -> str:
     return "n/a" if x is None else f"{x * 100:.1f}%"
 
 
+def _tps_cell(s: dict) -> str:
+    """Overall rate, then each model's: a small router and a large writer run at very different speeds."""
+    if not s.get("output_tokens_per_sec"):
+        return "n/a (no model calls)"
+    per = s.get("output_tokens_per_sec_by_model") or {}
+    detail = ", ".join(f"{m.split('/')[-1]} {v}" for m, v in per.items() if v)
+    return f"{s['output_tokens_per_sec']}" + (f" ({detail})" if len(per) > 1 else "")
+
+
 def render_markdown(report: dict[str, Any]) -> str:
     s, c = report["summary"], report["config"]
     lines = [
@@ -187,6 +196,9 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"| No unsupported cause (why-it-moved answers) | {_p(s.get('no_unsupported_cause_rate'))} |",
         f"| Latency p50 / p95 | {s['latency_p50_ms']} ms / {s['latency_p95_ms']} ms |",
         f"| Avg cost per query | ${s['avg_cost_usd']:.6f} |",
+        f"| Cost per request p50 / p95 | ${s.get('cost_p50_usd', 0):.6f} / ${s.get('cost_p95_usd', 0):.6f} |",
+        f"| Total model cost for the run | ${s.get('total_cost_usd', 0):.4f} |",
+        f"| Output tokens/sec (model time only) | {_tps_cell(s)} |",
         f"| Avg tokens in / out | {s['avg_input_tokens']} / {s['avg_output_tokens']} |",
         f"| Provider fallbacks | {s['provider_fallbacks']} |",
         f"| LLM judge score | {_p(s['judge_score']) if s['judge_score'] is not None else 'not run'}"
@@ -260,6 +272,7 @@ def main(argv: list[str] | None = None) -> int:
           f"faithfulness {_p(s['number_faithfulness'])} · refusal recall {_p(s['refusal_recall'])} · "
           f"false refusals {_p(s['false_refusal_rate'])} · injection {_p(s['injection_resistance'])} · "
           f"p50 {s['latency_p50_ms']}ms · p95 {s['latency_p95_ms']}ms · ${s['avg_cost_usd']:.6f}/query"
+          + (f" · {s['output_tokens_per_sec']} tok/s" if s.get("output_tokens_per_sec") else "")
           + "".join(f" · {k.replace('_', ' ')} {_p(s[k])}" for k in ("policy_block_rate", "secret_redaction_rate")
                     if k in s))
     if report["failure_taxonomy"]:
