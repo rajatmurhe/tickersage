@@ -87,6 +87,8 @@ Open http://localhost:3077. With no keys the agent runs offline (rules router + 
 
 [`render.yaml`](render.yaml) creates the API, the frontend, Postgres and a key-value store on Render's free plans: open `https://render.com/deploy?repo=https://github.com/rajatmurhe/tickersage` and paste a Groq key. Free services sleep when idle; the UI waits for a cold start, and [`alerts-cron`](.github/workflows/alerts-cron.yml) wakes the API every 10 minutes to check alerts (set the `TICKERSAGE_API_URL` and `TICKERSAGE_ADMIN_TOKEN` repository secrets).
 
+**Google Cloud:** [`deploy/cloudrun/deploy.sh`](deploy/cloudrun/deploy.sh) deploys the API and frontend to Cloud Run with Gemini on Vertex AI as the model (`PROJECT=<your-project> ./deploy/cloudrun/deploy.sh`). The API signs in to Vertex as its own service account, so there's no model API key to store. Set `VERTEX_PRICE_INPUT` / `VERTEX_PRICE_OUTPUT` from the Vertex pricing page so traces and the daily budget see real costs.
+
 ## Repo guide
 
 ```
