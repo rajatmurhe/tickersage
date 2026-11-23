@@ -374,7 +374,7 @@ async def test_groq_is_the_first_backup_when_nvidia_stalls():
     resp = await client.generate("strong", "s", "u")
     assert resp.provider == "groq" and resp.model == "openai/gpt-oss-120b" and resp.fell_back and not slow.calls
     assert cost_usd("openai/gpt-oss-120b", 1_000_000, 1_000_000) == 0.0
-    assert client._order() == ["nvidia", "anthropic", "openai", "groq", "openrouter"]
+    assert client._order() == ["nvidia", "anthropic", "openai", "vertex", "groq", "openrouter"]
 
 
 def test_retry_setting_reaches_the_openai_compatible_clients():
@@ -388,3 +388,63 @@ def test_call_budget_keeps_the_default_and_grows_with_retries():
     # One retry keeps the old timeout + 5 s cap; extra retries need room for their own timeout and a 429 wait.
     assert LLMClient(s(llm_timeout_s=15), providers={})._call_budget_s() == 20
     assert LLMClient(s(llm_timeout_s=15, llm_max_retries=4), providers={})._call_budget_s() == 20 + 3 * 30
+
+
+class _FakeGoogleCreds:
+    """Stands in for google.auth credentials: starts expired, so the first call must refresh."""
+
+    def __init__(self) -> None:
+        self.valid, self.token, self.refreshes = False, None, 0
+
+    def refresh(self, request) -> None:
+        self.refreshes += 1
+        self.valid, self.token = True, f"ya29.test-{self.refreshes}"
+
+
+def _vertex_provider(handler, prices=None):
+    from app.llm import VertexProvider
+
+    seen: list[httpx.Request] = []
+
+    def wrapped(request: httpx.Request) -> httpx.Response:
+        seen.append(request)
+        return handler(request)
+
+    creds = _FakeGoogleCreds()
+    provider = VertexProvider("demo-project", "global", 10, prices=prices, credentials=creds)
+    provider.client = openai.AsyncOpenAI(api_key="pending", base_url=str(provider.client.base_url), max_retries=0,
+                                         http_client=httpx.AsyncClient(transport=httpx.MockTransport(wrapped)))
+    return provider, seen, creds
+
+
+async def test_vertex_signs_in_with_google_credentials_and_prices_the_call():
+    reply = _nvidia_completion('{"intent": "price"}') | {"model": "google/gemini-3.8-flash"}
+    provider, seen, creds = _vertex_provider(lambda r: httpx.Response(200, json=reply), prices=(0.5, 3.0))
+    text, usage, model = await provider.generate(model="google/gemini-3.8-flash", system="S", user="Q",
+                                                 max_tokens=500, json_schema=None, effort="low")
+    await provider.generate(model="google/gemini-3.8-flash", system="S", user="Q", max_tokens=500,
+                            json_schema=None, effort="low")
+    assert seen[0].url.host == "aiplatform.googleapis.com"
+    assert seen[0].url.path == "/v1/projects/demo-project/locations/global/endpoints/openapi/chat/completions"
+    assert seen[0].headers["authorization"] == "Bearer ya29.test-1"
+    assert creds.refreshes == 1  # a still-valid token is reused
+    assert json.loads(seen[0].content)["reasoning_effort"] == "low"
+    assert json.loads(text) == {"intent": "price"} and model == "google/gemini-3.8-flash"
+    assert usage.reported_cost_usd == round((800 * 0.5 + 120 * 3.0) / 1_000_000, 6)
+
+
+async def test_vertex_regional_endpoint_and_unpriced_calls():
+    provider, seen, _ = _vertex_provider(lambda r: httpx.Response(200, json=_nvidia_completion("ok")))
+    from app.llm import VertexProvider
+
+    regional = VertexProvider("p", "asia-southeast1", 10, credentials=_FakeGoogleCreds())
+    assert str(regional.client.base_url).startswith(
+        "https://asia-southeast1-aiplatform.googleapis.com/v1/projects/p/locations/asia-southeast1/")
+    _, usage, _ = await provider.generate(model="google/gemini-3.8-flash", system="S", user="Q", max_tokens=50,
+                                          json_schema=None, effort=None)
+    assert usage.reported_cost_usd is None  # no VERTEX_PRICE_* set: falls through to the price table
+
+
+def test_vertex_is_picked_when_only_a_project_is_set():
+    only = s(vertex_project="demo-project")
+    assert only.primary_provider == "vertex" and only.llm_live

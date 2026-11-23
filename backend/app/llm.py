@@ -254,6 +254,54 @@ class GroqProvider(_ChatCompletionsProvider):
         return None
 
 
+class VertexProvider(_ChatCompletionsProvider):
+    """Gemini on Vertex AI through its OpenAI-compatible endpoint, signed in with Application Default Credentials.
+
+    Access tokens last about an hour, so each call refreshes the token when it's close to expiring. Cost comes
+    from VERTEX_PRICE_INPUT / VERTEX_PRICE_OUTPUT when they're set.
+    """
+
+    name = "vertex"
+
+    def __init__(self, project: str, location: str, timeout: float, max_retries: int = 1,
+                 prices: tuple[float, float] | None = None, credentials: Any = None) -> None:
+        host = "aiplatform.googleapis.com" if location == "global" else f"{location}-aiplatform.googleapis.com"
+        base_url = f"https://{host}/v1/projects/{project}/locations/{location}/endpoints/openapi"
+        super().__init__("pending", base_url, timeout, max_retries)
+        if credentials is None:
+            import google.auth
+
+            credentials, _ = google.auth.default(scopes=["https://www.googleapis.com/auth/cloud-platform"])
+        self.credentials = credentials
+        self.prices = prices
+
+    async def _token(self) -> str:
+        if not self.credentials.valid:
+            from google.auth.transport.requests import Request
+
+            try:
+                await asyncio.to_thread(self.credentials.refresh, Request())
+            except Exception as exc:  # noqa: BLE001 - any auth failure means this provider can't answer
+                raise ProviderError(f"Google credentials: {exc}") from exc
+        return self.credentials.token
+
+    def _tune(self, model, effort, kwargs):
+        if effort:
+            kwargs["reasoning_effort"] = effort
+        return None
+
+    async def generate(self, *, model, system, user, max_tokens, json_schema, effort):
+        self.client.api_key = await self._token()
+        text, usage, served = await super().generate(model=model, system=system, user=user, max_tokens=max_tokens,
+                                                     json_schema=json_schema, effort=effort)
+        if self.prices:
+            p_in, p_out = self.prices
+            usage.reported_cost_usd = round(
+                ((usage.input_tokens + usage.cache_write_tokens) * p_in + usage.cache_read_tokens * p_in * 0.1
+                 + usage.output_tokens * p_out) / 1_000_000, 6)
+        return text, usage, served
+
+
 async def _chat_completion(client: Any, o: Any, kwargs: dict[str, Any], extra: dict[str, Any] | None) -> Any:
     try:
         return await client.chat.completions.create(**kwargs, extra_body=extra)
@@ -317,6 +365,11 @@ class LLMClient:
             providers["nvidia"] = NvidiaProvider(s.nvidia_api_key, s.nvidia_base_url, s.llm_timeout_s, s.llm_max_retries)
         if s.groq_api_key:
             providers["groq"] = GroqProvider(s.groq_api_key, s.groq_base_url, s.llm_timeout_s, s.llm_max_retries)
+        if s.vertex_project:
+            prices = ((s.vertex_price_input, s.vertex_price_output)
+                      if s.vertex_price_input is not None and s.vertex_price_output is not None else None)
+            providers["vertex"] = VertexProvider(s.vertex_project, s.vertex_location, s.llm_timeout_s,
+                                                 s.llm_max_retries, prices)
         return providers
 
     @property
@@ -338,6 +391,8 @@ class LLMClient:
             ("nvidia", "strong"): s.nvidia_strong_model,
             ("groq", "fast"): s.groq_fast_model,
             ("groq", "strong"): s.groq_strong_model,
+            ("vertex", "fast"): s.vertex_fast_model,
+            ("vertex", "strong"): s.vertex_strong_model,
         }
         return table[(provider, tier)]
 
@@ -350,7 +405,8 @@ class LLMClient:
     def _order(self) -> list[str]:
         primary = self.settings.primary_provider
         # Backups in order: the paid APIs, then Groq (fast, free), then the slower free tiers.
-        return [primary] + [p for p in ("anthropic", "openai", "groq", "openrouter", "nvidia") if p != primary]
+        return [primary] + [p for p in ("anthropic", "openai", "vertex", "groq", "openrouter", "nvidia")
+                          if p != primary]
 
     async def generate(
         self,
@@ -373,7 +429,7 @@ class LLMClient:
                 text, usage, served = await asyncio.wait_for(
                     provider.generate(model=model, system=system, user=user, max_tokens=max_tokens,
                                       json_schema=json_schema,
-                                      effort=effort if name in ("anthropic", "openrouter", "nvidia", "groq") else None),
+                                      effort=effort if name in ("anthropic", "openrouter", "nvidia", "groq", "vertex") else None),
                     timeout=self._call_budget_s(),
                 )
             except (ProviderError, TimeoutError) as exc:

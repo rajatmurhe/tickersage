@@ -9,6 +9,7 @@ numpy>=1.26
 langgraph>=0.2
 anthropic>=1,<2
 openai>=1.50
+google-auth>=2.30
 redis>=5.0
 vaderSentiment>=3.3.2
 feedparser>=6.0

@@ -28,9 +28,12 @@ class Settings(BaseSettings):
     # Groq (console.groq.com): very fast OpenAI-compatible inference with a free, rate-limited tier. Used as
     # the first backup when the primary provider errors or stalls.
     groq_api_key: str | None = None
+    # Gemini on Vertex AI, through its OpenAI-compatible endpoint. No key: it signs in with Google
+    # Application Default Credentials (the Cloud Run service account, or `gcloud auth application-default login`).
+    vertex_project: str | None = None
     llm_mode: Literal["auto", "live", "offline"] = "auto"
     # Unset or blank: picked from the keys (see _pick_primary_provider). Always set after validation.
-    primary_provider: Literal["anthropic", "openai", "openrouter", "nvidia", "groq"] | None = None
+    primary_provider: Literal["anthropic", "openai", "openrouter", "nvidia", "groq", "vertex"] | None = None
     routing_mode: Literal["routed", "single"] = "routed"
     planner_mode: Literal["rules", "llm"] = "rules"
 
@@ -50,6 +53,13 @@ class Settings(BaseSettings):
     # gpt-oss models: Groq enforces strict JSON schemas on these, which the router relies on.
     groq_fast_model: str = "openai/gpt-oss-20b"
     groq_strong_model: str = "openai/gpt-oss-120b"
+    vertex_location: str = "global"
+    # Generally available on Vertex as of 2026-11; check the model-versions page before changing.
+    vertex_fast_model: str = "google/gemini-3.8-flash"
+    vertex_strong_model: str = "google/gemini-3.8-flash"
+    # USD per 1M tokens, from the Vertex AI pricing page for the models above. Unset: cost is recorded as $0.
+    vertex_price_input: float | None = None
+    vertex_price_output: float | None = None
     # Server-side refusal fallback on Claude Sonnet 5.5 (Claude API only).
     anthropic_server_fallback: bool = True
     llm_timeout_s: float = 30.0
@@ -167,6 +177,8 @@ class Settings(BaseSettings):
                 self.primary_provider = "nvidia"
             elif self.groq_api_key:
                 self.primary_provider = "groq"
+            elif self.vertex_project:
+                self.primary_provider = "vertex"
             else:
                 self.primary_provider = "anthropic"
         return self
@@ -178,7 +190,7 @@ class Settings(BaseSettings):
         if self.llm_mode == "live":
             return True
         return bool(self.anthropic_api_key or self.openai_api_key or self.openrouter_api_key or self.nvidia_api_key
-                    or self.groq_api_key)
+                    or self.groq_api_key or self.vertex_project)
 
 
 @lru_cache
